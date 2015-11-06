@@ -4,10 +4,17 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 30 Oct 2015 22:02:38 CST</pubDate>
-    <lastBuildDate>Fri, 30 Oct 2015 22:02:38 CST</lastBuildDate>
+    <pubDate>Fri, 06 Nov 2015 22:16:43 CST</pubDate>
+    <lastBuildDate>Fri, 06 Nov 2015 22:16:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Emacs 25 compiled file conflicts with Emacs 24</title>
+      <link>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</link>
+      <description><![CDATA[Don't use multiple versions of Emacs on the same machine]]></description>
+      <pubDate>2015-11-06</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</guid>
+    </item>
     <item>
       <title>Answers for Liqi Problems</title>
       <link>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</link>
