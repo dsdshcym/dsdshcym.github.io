@@ -4,10 +4,281 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 20 Nov 2015 22:30:49 CST</pubDate>
-    <lastBuildDate>Fri, 20 Nov 2015 22:30:49 CST</lastBuildDate>
+    <pubDate>Thu, 26 Nov 2015 18:22:47 CST</pubDate>
+    <lastBuildDate>Thu, 26 Nov 2015 18:22:47 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>A Simple Introduction to Docker II</title>
+      <link>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</link>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>A Simple Introduction to Docker II</h1>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">What is Docker?</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<ul class="org-ul">
+<li>Docker is a container implementation written in Go language.</li>
+<li>It's the most popular container implementations nowadays.</li>
+<li>It has the largest developer community out there,
+which means you can find the best documentations here.</li>
+</ul>
+
+<p>
+We now use docker as a example to illustrate how container works.
+</p>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Typical Use Cases</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li>Development Environments Configuration</li>
+<li>Build Microservices</li>
+<li>Distributed System
+<ul class="org-ul">
+<li><p>
+Docker Swarm
+</p>
+
+<p>
+Recently, Docker 1.9 was released. And a feature named Docker Swarm got out of
+beta and is ready for production usages. We will give it a brief introduction
+here.
+</p></li>
+
+<li>Swarm in general
+<ul class="org-ul">
+<li>Turns a set of Docker Engines into a single pool of resources</li>
+<li>Supports the Docker RESTful API (99%)</li>
+<li>Resource Management (CPU, Memory, Networking)</li>
+<li>Advanced scheduling with constraints and affinities</li>
+<li>Multiple Discovery Backends (hub, etcd, consul, zookeeper)</li>
+<li>TLS: Encryption and Authentication</li>
+<li>Multi Tenancy / Leader Election</li>
+</ul></li>
+<li>Usages
+<ul class="org-ul">
+<li>Build a overlay for a pool of Docker Engines</li>
+<li>Combine thest Docker Engines into a single virtual Engine</li>
+<li><p>
+Use this engine as a normal Docker engine
+</p>
+
+<p>
+Since they have almost the same API
+</p></li>
+
+<li>Provide distributed computing or data storage</li>
+<li><p>
+Swarm is ready for running production apps
+</p>
+<blockquote>
+<p>
+In Docker's tests, Swarm can run with 1,000 nodes and 30,000 containers on EC2
+and it keeps on scheduling containers in less than half a second.
+</p>
+</blockquote></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">How popular is Docker?</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<p>
+First of all, let's see how popular is docker nowadays.
+</p>
+</div>
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">A Quick Peek at Real Docker Adoption</h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<p>
+Here are the results of a survey from a monitoring startup Datadog.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<ul class="org-ul">
+<li>Real Docker Adoption Is Up 5x in One Year</li>
+<li>Docker Now Runs on 6% of the Hosts We Monitor</li>
+<li>Larger Companies Are the Early Adopters</li>
+<li>2/3 of Companies That Try Docker Adopt It</li>
+<li>Users Triple the Number of Containers They Use within 5 Months</li>
+<li>The Most Widely Used Images Are Registry, NGINX, and Redis</li>
+<li>Docker Hosts Often Run  Four Containers at a Time</li>
+<li>VMs Live 4x Longer Than Containers</li>
+</ul>
+
+<p>
+From this survey, we can know that docker is growing really fast in the last
+year. And it's widely used to provide web services.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5">Real World Applications</h4>
+<div class="outline-text-4" id="text-orgheadline5">
+<ul class="org-ul">
+<li>Used widely in productions
+<ul class="org-ul">
+<li><p>
+Google
+</p>
+<blockquote>
+<p>
+Indeed, few of you know it, but most of you have been using containers for
+years. Google has its own open-source, container technology
+<a href="http://www.linuxplumbersconf.org/2013/ocw//system/presentations/1239/original/lmctfy%20(1).pdf">lmctfy (Let Me Contain That For You)</a>. Anytime you use some of Google
+functionality — Search, Gmail, Google Docs, whatever — you're issued a new
+container.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</p>
+</blockquote></li>
+<li>Baidu</li>
+<li>Uber</li>
+<li>PayPal</li>
+</ul></li>
+<li>Paas
+<ul class="org-ul">
+<li>IBM BlueMix<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></li>
+<li>Coding.net</li>
+<li>Daocloud</li>
+<li><a href="https://c.163.com/">网易蜂巢</a></li>
+</ul></li>
+<li>Personal projects using docker to diliver
+<ul class="org-ul">
+<li><a href="http://modo.moe/">http://modo.moe/</a></li>
+<li>etc.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6">Docker can even run on ARM platforms</h4>
+<div class="outline-text-4" id="text-orgheadline6">
+<ul class="org-ul">
+<li><a href="http://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/">Getting started with Docker on your Raspberry Pi</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">How to use Docker?</h3>
+<div class="outline-text-3" id="text-orgheadline7">
+<p>
+Docker has a really good documentation. You can find almost anything you need to
+know about how to use Docker at <a href="http://docs.docker.com/">Docker Docs</a>. Here, we will use a example from
+this doc to show you some basic Docker commands.
+</p>
+</div>
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8">Using Docker in China</h4>
+<div class="outline-text-4" id="text-orgheadline8">
+<p>
+I suggest to use a docker hub mirror in china to download docker images.
+Otherwise you can hardly download an image file. You can find some information
+about the docker hub mirror <a href="http://dockone.io/article/160">here</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9">Download and Run a Image</h4>
+<div class="outline-text-4" id="text-orgheadline9">
+<div class="org-src-container">
+
+<pre class="src src-sh">docker run docker/whalesay cowsay foo bar
+</pre>
+</div>
+
+<pre class="example">
+ _________
+&lt; foo bar &gt;
+ ---------
+     \
+     \
+       \
+ #        .
+ # ## ##       ==
+ # ## ## ##      ===
+       /""""""""""""""""___/ ===
+   ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+       \______ o          __/
+         \    \        __/
+           \____\______/
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10">Build a Custom Image</h4>
+<div class="outline-text-4" id="text-orgheadline10">
+<ul class="org-ul">
+<li>Dockerfile Docker can build images automatically by reading the instructions
+from a <code>Dockerfile</code>, a text file that contains all the commands, in order,
+needed to build a given image. You can read more about Dockerfile <a href="http://docs.docker.com/engine/reference/builder/">here</a>.
+<ul class="org-ul">
+<li><p>
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-dockerfile">FROM nginx
+# RUN apt-get -y update &amp;&amp; apt-get install -y xxx
+COPY *.html /usr/share/nginx/html/
+</pre>
+</div></li>
+<li><p>
+Build a image using Dockerfile
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">docker build -t nginx-test .
+</pre>
+</div></li>
+<li><p>
+Use this image
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">docker run --name simple_html -d -p 80:80 -p 443:443 nginx_test
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11">Bonus</h4>
+<div class="outline-text-4" id="text-orgheadline11">
+<ul class="org-ul">
+<li><a href="https://github.com/docker/dockercraft">docker/dockercraft</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.datadoghq.com/docker-adoption/">8 surprising facts about real Docker adoption - Datadog</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.zdnet.com/article/what-is-docker-and-why-is-it-so-darn-popular/">What is Docker and why is it so darn popular? | ZDNet</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.ibm.com/cloud-computing/bluemix/">IBM Bluemix - Create, Deploy, Manage Your Applications in the Cloud</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>]]></description>
+      <pubDate>2015-11-26</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</guid>
+    </item>
     <item>
       <title>My Ideal Editor</title>
       <link>http://dsdshcym.github.io/blog/2015/11/20/my-ideal-editor</link>
