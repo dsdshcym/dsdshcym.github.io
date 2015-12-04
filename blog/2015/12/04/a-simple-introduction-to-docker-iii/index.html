@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>A Simple Introduction to Docker III - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="keywords" content="Docker, Container" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>A Simple Introduction to Docker III</h1>
+
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">What is Docker?</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Underlying Techniques</h3>
+<div class="outline-text-3" id="text-orgheadline6">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1">What do we need to do to build a container?</h4>
+<div class="outline-text-4" id="text-orgheadline1">
+<ol class="org-ol">
+<li><p>
+Isolate every container
+</p>
+
+<p>
+We need to isolate every container, which means make a process in a container
+(which usualy only has one sigle process) think it is the only process on the
+system.
+</p>
+
+<p>
+To do that, we need to use a technique provided by linux kernel, named
+<b>namespace</b>.
+</p></li>
+
+<li><p>
+Restrict resources a container can use
+</p>
+
+<p>
+We may need to restrict the resources a container can use since we don't want
+to let them to eat up all our system resources such as CPU, RAM, Disks.
+</p>
+
+<p>
+We may also need to account for the resources a container have used, for
+charging or something else.
+</p>
+
+<p>
+To do that, we need to use <b>cgroups</b> (abbreviated from <b>control groups</b>),
+which is a linux kernel feature that limits, accounts for, and isolates the
+resource usage of a collection of processes.
+</p></li>
+
+<li><p>
+Provide these resources wisely
+</p>
+
+<p>
+We may only have a couple of small, weak devices, but we want to provide
+great services. We can use container to combine these devices into one single
+device, at least it looks like one. So we can have enough resources we want.
+And more importantly, it's scalable.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2">Linux Namespace</h4>
+<div class="outline-text-4" id="text-orgheadline2">
+<ul class="org-ul">
+<li>Docker takes advantage of a technology called namespaces to provide the
+isolated workspace<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
+<li><p>
+Purpose of Namespace
+</p>
+
+<p>
+To wrap a particular global system resource in an <b>abstraction</b> that makes it
+<b>appear to</b> the processes within the namespace that they have their own
+<b>isolated</b> instance of the global resource.
+</p></li>
+
+<li><p>
+6 namespaces
+</p>
+
+<p>
+There are 6 different types of namespaces. Docker has used five of them, and
+is working on the last one (user namespace).
+</p>
+
+<dl class="org-dl">
+<dt>The pid namespace</dt><dd>Used for process isolation (PID: Process ID).</dd>
+<dt>The net namespace</dt><dd>Used for managing network interfaces (NET: Networking).</dd>
+<dt>The ipc namespace</dt><dd>Used for managing access to IPC resources (IPC: InterProcess Communication).</dd>
+<dt>The mnt namespace</dt><dd>Used for managing mount-points (MNT: Mount).</dd>
+<dt>The uts namespace</dt><dd>Used for isolating kernel and version identifiers. (UTS: Unix Timesharing System).</dd>
+</dl></li>
+
+<li>Related System Calls
+<ul class="org-ul">
+<li><p>
+<code>clone()</code>
+</p>
+
+<p>
+Create a new process. And can use different identifiers/flags to isolate
+different resources.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Namespaces</td>
+<td class="org-left">Identifier</td>
+<td class="org-left">Usage</td>
+<td class="org-left">Related Kernel Versions</td>
+</tr>
+
+<tr>
+<td class="org-left">Mount namespaces</td>
+<td class="org-left">CLONE_NEWNS</td>
+<td class="org-left">Managing mount-points</td>
+<td class="org-left">Since Linux 2.4.19</td>
+</tr>
+
+<tr>
+<td class="org-left">UTS namespaces</td>
+<td class="org-left">CLONE_NEWUTS</td>
+<td class="org-left">Isolating kernel and version identifiers</td>
+<td class="org-left">Since Linux 2.6.19</td>
+</tr>
+
+<tr>
+<td class="org-left">IPC namespaces</td>
+<td class="org-left">CLONE_NEWIPC</td>
+<td class="org-left">Managing access to IPC resources</td>
+<td class="org-left">Since Linux 2.6.19</td>
+</tr>
+
+<tr>
+<td class="org-left">PID namespaces</td>
+<td class="org-left">CLONE_NEWPID</td>
+<td class="org-left">Process isolation</td>
+<td class="org-left">Since Linux 2.6.24</td>
+</tr>
+
+<tr>
+<td class="org-left">Network namespaces</td>
+<td class="org-left">CLONE_NEWNET</td>
+<td class="org-left">Managing network interfaces</td>
+<td class="org-left">Started in Linux 2.6.24 and largely completed by about Linux 2.6.29</td>
+</tr>
+
+<tr>
+<td class="org-left">User namespaces</td>
+<td class="org-left">CLONE_NEWUSER</td>
+<td class="org-left">Managing user and group ID</td>
+<td class="org-left">Started in Linux 2.6.23 and completed in Linux 3.8</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+<code>unshare()</code>
+</p>
+
+<p>
+Disassociate parts of a progress's execution context, such as the mount
+namespace, that are currently being shared with other processes (or
+threads).
+</p></li>
+
+<li><p>
+<code>setns()</code>
+</p>
+
+<p>
+Reassociate thread with a namespace
+</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-4">
+<h4 id="orgheadline3">Control groups</h4>
+<div class="outline-text-4" id="text-orgheadline3">
+<blockquote>
+<p>
+Control groups allow Docker to share available hardware resources to containers
+and, if required, set up limits and constraints.<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup>
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li>Features
+<ul class="org-ul">
+<li>Resource limitation</li>
+<li>Prioritization</li>
+<li>Accounting</li>
+<li>Control</li>
+</ul></li>
+<li>CPU Restrictions
+<ul class="org-ul">
+<li>Example
+
+<ol class="org-ol">
+<li>mount cgroups
+<ul class="org-ul">
+<li><p>
+You can see your mounted cgroups using this command
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">mount -t cgroup
+</pre>
+</div>
+
+<pre class="example">
+systemd on /sys/fs/cgroup/systemd type cgroup (rw,noexec,nosuid,nodev,none,name=systemd)
+cpuset on /sys/fs/cgroup/cpuset type cgroup (rw,cpuset)
+cpu on /sys/fs/cgroup/cpu type cgroup (rw,cpu)
+memory on /sys/fs/cgroup/memory type cgroup (rw,memory)
+</pre></li>
+
+<li><p>
+If you can't see them, you can mount them by your self
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo mkdir cgroup
+sudo mount -t tmpfs cgroup_root ./cgroup
+sudo mkdir cgroup/cpuset
+sudo mount -t cgroup -ocpuset cpuset ./cgroup/cpuset/
+sudo mkdir cgroup/cpu
+sudo mount -t cgroup -ocpu cpu ./cgroup/cpu/
+sudo mkdir cgroup/memory
+sudo mount -t cgroup -omemory memory ./cgroup/memory/
+</pre>
+</div></li>
+
+<li><p>
+Then you can see config files under these directory
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ls /sys/fs/cgroup/cpu /sys/fs/cgroup/cpuset/
+</pre>
+</div>
+
+<pre class="example">
+/sys/fs/cgroup/cpu:
+cgroup.clone_children  cpu.cfs_period_us  cpu.shares       release_agent
+cgroup.procs         cpu.cfs_quota_us   cpu.stat       tasks
+cgroup.sane_behavior   cpu_group    notify_on_release
+
+/sys/fs/cgroup/cpuset/:
+cgroup.clone_children cpuset.memory_pressure_enabled
+cgroup.procs    cpuset.memory_spread_page
+cgroup.sane_behavior  cpuset.memory_spread_slab
+cpuset.cpu_exclusive  cpuset.mems
+cpuset.cpus   cpuset.sched_load_balance
+cpuset.mem_exclusive  cpuset.sched_relax_domain_level
+cpuset.mem_hardwall notify_on_release
+cpuset.memory_migrate release_agent
+cpuset.memory_pressure  tasks
+</pre></li>
+</ul></li>
+
+<li><p>
+Create a cpu group
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">mkdir /sys/fs/cgroup/cpu/temp
+</pre>
+</div></li>
+
+<li>Running a process in a cpu group
+<ul class="org-ul">
+<li><p>
+C program
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c">/* deadloop.c */
+int main(void) {
+    int i = 0;
+    for(;;) i++;
+    return 0;
+}
+</pre>
+</div></li>
+<li><p>
+<code>top</code> results
+</p>
+
+<p>
+We can see in the result table below that the CPU usage of this process
+is almost 100%.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">PID</td>
+<td class="org-left">USER</td>
+<td class="org-right">PR</td>
+<td class="org-right">NI</td>
+<td class="org-right">VIRT</td>
+<td class="org-right">RES</td>
+<td class="org-right">SHR</td>
+<td class="org-left">S</td>
+<td class="org-right">%CPU</td>
+<td class="org-right">%MEM</td>
+<td class="org-right">TIME+</td>
+<td class="org-left">COMMAND</td>
+</tr>
+
+<tr>
+<td class="org-right">107539</td>
+<td class="org-left">dsdshcym</td>
+<td class="org-right">20</td>
+<td class="org-right">0</td>
+<td class="org-right">4196</td>
+<td class="org-right">628</td>
+<td class="org-right">548</td>
+<td class="org-left">R</td>
+<td class="org-right">99.8</td>
+<td class="org-right">0.1</td>
+<td class="org-right">0:09.80</td>
+<td class="org-left">deadloop</td>
+</tr>
+</tbody>
+</table></li>
+<li>Restrict CPU usage
+<ol class="org-ol">
+<li><p>
+Restrict a cgroup's CPU usage
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
+echo 20000 &gt; /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
+cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
+</pre>
+</div>
+
+<pre class="example">
+-1
+25000
+</pre></li>
+
+<li><p>
+Add the process to a cgroup
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"># Add the process's pid to the cgroup's tasks file
+echo 107539 &gt;&gt; /sys/fs/cgroup/cpu/temp/tasks
+</pre>
+</div></li>
+<li><p>
+<code>top</code> results
+</p>
+
+<p>
+As we can see in the results below, the CPU usage have dropped down
+to about 20%, which was set by the value 20000 in the
+<code>cpu.cfs_quota_us</code> file.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">PID</td>
+<td class="org-left">USER</td>
+<td class="org-right">PR</td>
+<td class="org-right">NI</td>
+<td class="org-right">VIRT</td>
+<td class="org-right">RES</td>
+<td class="org-right">SHR</td>
+<td class="org-left">S</td>
+<td class="org-right">%CPU</td>
+<td class="org-right">%MEM</td>
+<td class="org-right">TIME+</td>
+<td class="org-left">COMMAND</td>
+</tr>
+
+<tr>
+<td class="org-right">107539</td>
+<td class="org-left">dsdshcym</td>
+<td class="org-right">20</td>
+<td class="org-right">0</td>
+<td class="org-right">4196</td>
+<td class="org-right">628</td>
+<td class="org-right">548</td>
+<td class="org-left">R</td>
+<td class="org-right">19.9</td>
+<td class="org-right">0.1</td>
+<td class="org-right">1:25.30</td>
+<td class="org-left">deadloop</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li>Memory Restrictions</li>
+<li>IO Speed Restrictions</li>
+<li>Disk Capacity Restrictions</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">Union File Systems</h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<blockquote>
+<p>
+Docker uses union file systems to provide the building blocks for
+containers.<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup>
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><p>
+UFS
+</p>
+
+<p>
+Unionfs is a filesystem service for Linux, FreeBSD and NetBSD which implements a
+union mount for other file systems. It allows files and directories of separate
+file systems, known as branches, to be transparently overlaid, forming a single
+coherent file system. Contents of directories which have the same path within
+the merged branches will be seen together in a single merged directory, within
+the new, virtual filesystem.
+</p></li>
+
+<li><p>
+Usage in docker
+</p>
+
+<p>
+Each Docker image consists of a series of layers. Docker makes use of union
+file systems to combine these layers into a single image.
+</p></li>
+</ul>
+</div>
+
+<ul class="org-ul"><li><a id="orgheadline5"></a>AUFS<br  /><div class="outline-text-5" id="text-orgheadline5">
+<ul class="org-ul">
+<li><p>
+Prepare
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">tree
+</pre>
+</div>
+
+<pre class="example">
+.
+|-- fruits
+|   |-- apple
+|   `-- tomato
+`-- vegetables
+    |-- carrots
+    `-- tomato
+
+2 directories, 4 files
+</pre></li>
+
+<li><p>
+Mount
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">mkdir mnt
+sudo mount -t aufs -o dirs=./fruits:./vegetables none ./mnt
+tree ./mnt
+</pre>
+</div>
+
+<pre class="example">
+./mnt
+|-- apple
+|-- carrots
+`-- tomato
+
+0 directories, 3 files
+</pre></li>
+
+<li><p>
+Modify
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">echo mnt_carrots &gt; ./mnt/carrots
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><p>
+results in vegetables
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">cat ./vegetables/carrots
+</pre>
+</div></li>
+
+<li><p>
+results in fruits
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">cat ./fruits/carrots
+</pre>
+</div>
+
+<pre class="example">
+mnt_carrots
+</pre></li>
+</ul></li>
+</ul>
+</div></li></ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://docs.docker.com/introduction/understanding-docker/#the-underlying-technology">The underlying technology of Docker</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2015-12-04</span>
+        <span title="last modification date" class="post-info">2015-12-04</span>
+        <span title="tags" class="post-info"><a href="/tags/docker/">Docker</a>, <a href="/tags/container/">Container</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
