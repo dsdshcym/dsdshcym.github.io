@@ -4,10 +4,107 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 04 Dec 2015 20:03:58 CST</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2015 20:03:58 CST</lastBuildDate>
+    <pubDate>Fri, 11 Dec 2015 21:54:33 CST</pubDate>
+    <lastBuildDate>Fri, 11 Dec 2015 21:54:33 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>A Simple Introduction to Docker IX</title>
+      <link>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</link>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>A Simple Introduction to Docker IX</h1>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">What are some concerns about using docker?</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Security</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<ul class="org-ul">
+<li><p>
+Shared kernel concern
+</p>
+
+<p>
+Since containers share the same kernel, if one of them panics, everyone of
+them will panic too.
+</p></li>
+
+<li><p>
+Privilege concern
+</p>
+
+<blockquote>
+<p>
+if a user or application has superuser privileges within the container, the
+underlying operating system could, in theory, be cracked.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><p>
+This concern will no longer be valid in a few months
+</p>
+
+<p>
+Docker has been working on linux <code>user namespace</code> for a while now. And once
+this feature is completed. Then we can build a docker container without root
+privileges, and meanwhile in this container, we can still have enough
+privileges for us to do our job.
+</p></li>
+</ul></li>
+
+<li><p>
+VM + Container
+</p>
+
+<p>
+<a href="http://hyper.sh/">Hyper</a> is a chinese startup project to make a lightweight virtual machine based
+on Docker images, which combines both advantages from container and VM.
+</p>
+
+<ul class="org-ul">
+<li>Its containers are isolated by VM. So it is immune from the "shared kernel"
+problem in containers.</li>
+<li>It's almost as lightweight as a container. So it's way more fast than a VM.</li>
+<li>Since it's a VM, you can choose your own kernel.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Management Complexity</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li>DevOps needs to manage too many docker files.
+<ul class="org-ul">
+<li>Since in docker's world, we need to seperate each of our apps into a single
+docker image.</li>
+<li>We must keep our eyes on many different docker files.</li>
+<li>This can be a problem when our project becomes so much big.</li>
+<li>But in general you won't face this.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.itworld.com/article/2915530/virtualization/containers-vs-virtual-machines-how-to-tell-which-is-the-right-choice-for-your-enterprise.html">Containers vs. virtual machines: How to tell which is the right choice for your enterprise | ITworld</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>]]></description>
+      <pubDate>2015-12-11</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</guid>
+    </item>
     <item>
       <title>A Simple Introduction to Docker III</title>
       <link>http://dsdshcym.github.io/blog/2015/12/04/a-simple-introduction-to-docker-iii</link>
