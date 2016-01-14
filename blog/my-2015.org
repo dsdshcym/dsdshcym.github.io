@@ -1,0 +1,10 @@
+#+TITLE:       My 2015 Review
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       dsdshcym@gmail.com
+#+DATE:        2016-01-14 Thu
+#+URI:         /blog/%y/%m/%d/my-2015-review
+#+KEYWORDS:    review, 2015
+#+TAGS:        review
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+#+DESCRIPTION: My review of my 2015

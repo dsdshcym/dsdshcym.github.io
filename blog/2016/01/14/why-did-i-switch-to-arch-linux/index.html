@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Why did I switch to Arch Linux - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="description" content="Why did I switch to Arch Linux and not use OS X anymore" />
+    <meta name="keywords" content="Arch Linux, OS X" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Why did I switch to Arch Linux</h1>
+<p>
+I installed Arch Linux on my macbook during the final exam week. :)
+</p>
+
+<p>
+And here is why I decided to do this.
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Why not use OS X anymore?</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+OS X is a great operating system. And I really appreaciate it for leading me
+into the UNIX world in the last one and a half years. But it's just not for me
+anymore. The reasons are listed below:
+</p>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Emacs for OS X is much slower than Emacs for Linux.</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<p>
+I did some tests in a virtual machine before I repartition my disk. And I
+just found that even in a virtual machine, whose performance is worse for
+sure, Emacs runs better than on OS X. Scrolling is smoother, magit
+responds much faster, everything just works faster.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">i3 - the tiling window manager</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<p>
+The main point of these needs (tiling window manager and fullscreen app) is
+to make the best use of my little 13 inch screen.
+</p>
+
+<p>
+There is no perfect window manager on OS X. I've tried almost every window
+manager for OS X. But none of them can make me completely comfortable. Though
+I have to admit that I haven't used any kind of window manager until I
+started using OS X, my eager for a better tiling window manager grows day by
+day.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Window size control
+</p>
+
+<p>
+Due to the control of Apple to it's OS's desktop environment. There are few
+things we can do to control our windows except using some poor assistant APIs
+to resize or move windows. You can even see the window resize animations
+showed in several steps. So the performance is not good too. And some apps,
+Wechat for example, have a minimal window size constraint, so it can't be
+"tiled" into a container. It's definitely a pain to watch it to be resized
+into a size you want it to be but struggle back in the next second.
+</p></li>
+
+<li><p>
+Switch between windows
+</p>
+
+<p>
+Another constraint is I can hardly use only my keyboard to move between
+different windows in the same space. Some window manager apps on OS X can
+let me to do this using keyboard shortcuts, but I can hardly switch to
+Wechat (Yeah, Wechat, you again) or some other apps successfully due to
+its special implementation of app window. I need to use spotlight or
+other keyboard shortcuts (binded using Karabiner) to switch to it. So I
+have three different ways to switch between apps, and it's even too
+confusing for me sometimes.
+</p></li>
+
+<li><p>
+Switch between spaces
+</p>
+
+<p>
+The last constraint of OS X's desktop environment is the differentiation
+between Spaces and Full Screen Apps. I can use some shortcuts to switch
+between different spaces, but I can't switch to a fullscreen app. For example
+I can switch to Space 1 using C-1, but if I have a fullscreen Chrome window
+after space 2, I can't switch to it using C-3. This feature can be done using
+TotalSpaces2. But I need to spend an extra 60 Yuan or so to buy this app,
+find a way to work around the SIP feature in El Capitan and write a ruby
+script to switch to make the fullscreen app works like a Space.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">I barely need to use apps other than Emacs, web browser and Telegram</h3>
+<div class="outline-text-3" id="text-orgheadline4">
+<p>
+This fact makes OS X too heavy to me. And these three apps all work well on
+Linux. So I thought I can install Arch Linux on my laptop and use apps that I
+really need.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">What I miss for OS X</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">Time Machine</h3>
+<div class="outline-text-3" id="text-orgheadline5">
+<p>
+This is a really useful feature. I can plug on my disk and setup only once then
+it will take care of all my files by backing up them every day or hour. And I
+can just forget about it. When I need to find something back, I just ask it for
+them and it will never let me down.
+</p>
+
+<p>
+I still can't find something works like Time Machine on Linux. But I believe in
+the Linux world there must be some similar or even better solutions.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Dictionary</h3>
+<div class="outline-text-3" id="text-orgheadline6">
+<p>
+OS X has a wonderful default dictionary. And I can use it through spotlight,
+three-finger tapping and even Emacs (osx-dictionary mode).
+</p>
+
+<p>
+I switch to goldendict on Linux. It works well actually since I have some
+dictionaries on my Android Phone. But it seems not have a command line version.
+So I still need to find a way to make it work in Emacs.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-01-14</span>
+        <span title="last modification date" class="post-info">2016-01-14</span>
+        <span title="tags" class="post-info"><a href="/tags/arch-linux/">Arch Linux</a>, <a href="/tags/os-x/">OS X</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

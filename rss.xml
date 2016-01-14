@@ -4,10 +4,17 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 19 Dec 2015 21:17:31 CST</pubDate>
-    <lastBuildDate>Sat, 19 Dec 2015 21:17:31 CST</lastBuildDate>
+    <pubDate>Thu, 14 Jan 2016 10:25:41 CST</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2016 10:25:41 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Why did I switch to Arch Linux</title>
+      <link>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</link>
+      <description><![CDATA[Why did I switch to Arch Linux and not use OS X anymore]]></description>
+      <pubDate>2016-01-14</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</guid>
+    </item>
     <item>
       <title>How To Use OS X With Keyboard Only</title>
       <link>http://dsdshcym.github.io/blog/2015/12/19/how-to-use-os-x-with-keyboard-only</link>
