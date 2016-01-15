@@ -4,15 +4,111 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 14 Jan 2016 10:25:41 CST</pubDate>
-    <lastBuildDate>Thu, 14 Jan 2016 10:25:41 CST</lastBuildDate>
+    <pubDate>Fri, 15 Jan 2016 20:43:04 CST</pubDate>
+    <lastBuildDate>Fri, 15 Jan 2016 20:43:04 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>My 2015 Review</title>
+      <link>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</link>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>My 2015 Review</h1>
+<p>
+2015 已经过去半个月了，在此我也对过去的一年作个小结，也算对 2016 作个规划，不知
+年末回头看看能有多少完成的。
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Spacemacs</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+2015 年最明智的就是跳了 Spacemacs 的坑，让我转入了 Emacs 邪教，并最终成为了我转
+投 Arch Linux 的导火索。以至于找实习时都说出了 "I just want to find a job I can
+do all the coding staffs under command line" 这样的话。
+</p>
+
+<p>
+一年过后，我在 Spacemacs 下的 Work Flow 也逐渐稳定，然而代码并没有写多少。一天做
+得最多的就是用 Org 做笔记， mu4e 查邮件， elfeed 刷 RSS 。希望新的一年能好好写代
+码，更好地把 Org-mode 融入到生活里去。
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">实习</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+老是因为偷懒没有找实习，结果好不容易找到一个待遇很好， Leader Title 又很牛逼的实
+习又因为投资人撤资而作罢了。
+</p>
+
+<p>
+在 EIA 的经历又让我觉得创业太不靠谱（或者是自己太水，无法凭技术让团队出彩），还
+是加入一家大公司好好学习比较好吧。
+</p>
+
+<p>
+希望新的一年能过掉 Google 面试，加入 Google 实习。
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">代码</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+回头看看，一年里也就学了 Django, Ruby, Rails, Elisp ，然而都只是皮毛， Ruby 算是
+略有深入，然而代码量依然捉急。 Elisp 也只是能简单调试的地步。在写简历的时候甚至
+发现自己几乎没有拿得出手的项目。
+</p>
+
+<p>
+新的一年要好好研究 Python 和 Ruby 了。至少也得有一个能写在简历上大书特书一番的项
+目。
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">学业</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+每次想要翘课都会因为怕老师点名而去（也和自己没啥项目写有关），最终在课上却各种水，
+结果效果比翘课还差。虽然有时能用 Org 作笔记强迫自己专心，但是作的笔记后面也没什
+么大的用处（除了锻炼了五笔）。身为一只「大四狗」还做不到翘课随心，深感有愧。
+</p>
+
+<p>
+导致每次考试前都在紧张怕挂科，然而依然不好好复习，甚至装 Arch 作死。幸好最后结果
+都还不错。
+</p>
+
+<p>
+下学期要好好翘水课写代码。
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Arch</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+在 2015 年的最后两天跳入了 Arch Linux 的坑，感觉找到了真正适合自己的操作系统，希
+望毕业以后能换一台对 Linux 支持得更好的 Laptop 吧，毕竟 Mac 上的 Linux 还是有某
+几个细节不完美的。当然如果 Emacs 25 出来后（在 Mac 上的性能更好），并且 OS X 能
+有不错的 Tiling Window Manager 的话（虽然并不可能），还是可以考虑回归 OS X 的。
+</p>
+</div>
+</div>
+
+</div>
+</div>]]></description>
+      <pubDate>2016-01-15</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</guid>
+    </item>
     <item>
       <title>Why did I switch to Arch Linux</title>
       <link>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</link>
       <description><![CDATA[Why did I switch to Arch Linux and not use OS X anymore]]></description>
-      <pubDate>2016-01-14</pubDate>
+      <pubDate>2016-01-15</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</guid>
     </item>
     <item>
@@ -1055,6 +1151,8 @@ another host.
 <p>
 In the real world, we often isolate apps that we want to run to provide more
 reliabilities. If an app fails, it won't cause any effect to any other apps,
+</p>
+<p>
 except for some errors.
 </p>
 
@@ -1094,6 +1192,8 @@ Thus we can save our unneeded cost on these physical machines.
 <p>
 Container, also called operating-system-level virtualization, is a
 server-virtualization method where the kernel of an operating system allows
+</p>
+<p>
 for multiple isolated user-space instances, instead of just one. Such
 instances may look and feel like a real server from the point of view of its
 owners and users.
@@ -1241,7 +1341,6 @@ And because the kernel running in a container is the same as the hosts.<sup><a i
 You can run different Linux distributions in the container. Since they are using
 the same kernel.
 </p>
-
 <p>
 For virtual machines, they all includes the application, the necessary binaries
 and libraries and an entire guest operating system - all of which may be tens of
@@ -1479,13 +1578,6 @@ Mac 上最好的文档工具，出 Dash 3 的时候趁降价入了正版。
 </div>]]></description>
       <pubDate>2015-10-30</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</guid>
-    </item>
-    <item>
-      <title>Why Blog?</title>
-      <link>http://dsdshcym.github.io/blog/2015/10/30/why-blog</link>
-      <description><![CDATA[Why I'm writting this blog]]></description>
-      <pubDate>2015-10-30</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/10/30/why-blog</guid>
     </item>
   </channel>
 </rss>
