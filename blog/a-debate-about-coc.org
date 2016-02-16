@@ -1,0 +1,42 @@
+#+TITLE:       A Debate About CoC
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       dsdshcym@gmail.com
+#+DATE:        2016-02-16 Tue
+#+URI:         /blog/%y/%m/%d/a-debate-about-coc
+#+KEYWORDS:    CoC, Community
+#+TAGS:        CoC, Thoughts
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+#+DESCRIPTION: Some thoughts about a debate around CoC
+
+Recently, a [[https://github.com/syl20bnr/spacemacs/pull/3484][PR]] for spacemacs gained a lot of attentions. And I want to talk
+about this.
+
+* What is CoC
+According to [[https://leetcode.com/discuss/62229/short-python-solution-using-bfs][Wikipedia]], a code of conduct is a set of rules outlining the social
+norms and rules and responsibilities of, or proper practices for, an individual,
+party or organization. Related concepts include ethical, honor, moral codes and
+religious laws.
+* Discussion
+There was a long discussion about whether to add a CoC for Spacemacs. And a
+maintainer from a third party library which used by Spacemacs even said they
+won't support Spacemacs until Spacemacs adds a CoC.
+* My thoughts
+Not supporting some projects just because they don't have a CoC? Seriously? This
+is too ridiculous for me.
+1. What's the point of a CoC? Isn't it to make the community more comfortable
+   and nicer to users and contributors?
+
+   And to treat users from a perticular project unevenly, isn't it against this
+   purpose?
+2. Although I don't have many experiences about communities. But Spacemacs'
+   community is the most friendly community I've ever seen. Everyone is kind and
+   nice. I don't even think it will need a CoC ever.
+3. The most important thing for a project is to focus on the project it self.
+   Spending too much time to choose a CoC among all these different CoCs. This
+   is definitely a waste of time.
+4. I think the best CoC is [[https://github.com/domgetter/NCoC][NCoC]].
+
+   To someone who thinks "everyone is an adult" is not always right: Even
+   physically he/she may be a child. But if he/she comes to this community, we
+   can treat him/her as an adult. I think this will be what he/she wants too.
