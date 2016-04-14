@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Use :var in code blocks - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="description" content="Some examples about :var" />
+    <meta name="keywords" content="Org, Tips, var" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Use :var in code blocks</h1>
+<p>
+In this semester, I have a lab about simulating a 8 bit CPU. I need to do it
+from scratch. And I have some tables about the instructions. I want to extract
+some info out of it to form my instruction define file.
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Table</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Here is the table:
+</p>
+
+<pre class="example">
+#+NAME: OperationDefinations
+| 编号 | 汇编码            | 指令码                 |
+|------+-------------------+------------------------|
+|    1 | ~MOV  Ai, #data8~ | ~00000iii dddddddd~    |
+|    2 | ~MOV  Ai, @Aj~    | ~00001iii 00000jjj~    |
+|    3 | ~MOV  @Aj, Ai~    | ~00010iii 00000jjj~    |
+|    4 | ~ADD  Ai, Aj~     | ~00011iii 00000jjj~    |
+|    5 | ~SUB  Ai, Aj~     | ~00100iii 00000jjj~    |
+|    6 | ~LD   Ai, addr~   | ~00101iii addrh addrl~ |
+|    7 | ~ST   Ai, addr~   | ~00110iii addrh addrl~ |
+|    8 | ~JMP  addr~       | ~00111000 addrh addrl~ |
+|    9 | ~JC   rel8~       | ~01000000 rel8~        |
+|   10 | ~BNKB rel8~       | ~01001000 rel8~        |
+|   11 | ~BNPB rel8~       | ~01010000 rel8~        |
+|   12 | ~JNKB addr~       | ~01011000 addrh addrl~ |
+|   13 | ~JNPB addr~       | ~01100000 addrh addrl~ |
+|   14 | ~SBC  Ai, #data8~ | ~01101iii dddddddd~    |
+|   15 | ~XOR  Ai, addr~   | ~01110iii addrh addrl~ |
+|   16 | ~DEC  @Ai~        | ~01111iii~             |
+|   17 | ~ASR  Ai~         | ~10000iii~             |
+|   18 | ~CALL addr~       | ~10001000 addrh addrl~ |
+|   19 | ~RET~             | ~10010000~             |
+#+TBLFM: $1=@#-1
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Results</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+And I need to get something like this:
+</p>
+
+<pre class="example">
+-MOV
+Ai, #data8
+00000iii
+dddddddd
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Code</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+Here is how I do this using Python and <code>:var</code>
+</p>
+
+<p>
+(The codes are a little bit ugly. But it's working.)
+</p>
+<ul class="org-ul">
+<li><p>
+def generator
+</p>
+<pre class="example">
+#+BEGIN_SRC python :results none :var operations=OperationDefinations[1:-1,1] :var instructions=OperationDefinations[1:-1,-1]
+    def replace_tilde(l):
+        return [s.replace("~", "") for s in l]
+
+    def correct(ins):
+        if "addr" in ins:
+            return "a" * 8
+        if "rel8" in ins:
+            return "r" * 8
+        return ins
+
+    operations = replace_tilde(operations)
+    instructions = replace_tilde(instructions)
+
+    with open("CPU8bit.def", "w") as f:
+      for operation, instruction in zip(operations, instructions):
+          operation = operation.split()
+          operation_name = '-' + operation[0]
+          operators = ' '.join(operation[1:])
+          f.write(operation_name + '\n')
+          f.write(operators + '\n')
+          for ins in instruction.split():
+              f.write(correct(ins) + '\n')
+          f.write('\n')
+
+      f.write("-enddef" + '\n')
+#+END_SRC
+</pre></li>
+</ul>
+
+<p>
+As we can see here, I'm using the :var option for code blocks to get the data
+from that table.
+</p>
+<ol class="org-ol">
+<li>First, add a name for the data source, no mater it's a table, list or even
+another code block.</li>
+<li>Then, use :var to assign these data or some of them to a variable.</li>
+<li>Use the variable in the script.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Note</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<ul class="org-ul">
+<li>We can specify a range for the data we want.
+<dl class="org-dl">
+<dt>[1, 1]</dt><dd>Second row, second column</dd>
+<dt>[1:-1,-1]</dt><dd>Second row to last row, last column</dd>
+<dt>[5:-1,1:-1]</dt><dd>Sixth row to last row, second column to last column</dd>
+</dl></li>
+<li>The data may be casted into different classes. (<code>str</code> or <code>int</code>)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">References</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+For further infomations, see:
+</p>
+<ol class="org-ol">
+<li><a href="https://acaird.github.io/2015/09/04/plots-from-org-mode-tables">Plotting Data in Org-Mode Tables with Python</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/org/var.html">The Org Manual: var</a></li>
+</ol>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-04-14</span>
+        <span title="last modification date" class="post-info">2016-04-14</span>
+        <span title="tags" class="post-info"><a href="/tags/org/">Org</a>, <a href="/tags/emacs/">Emacs</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
