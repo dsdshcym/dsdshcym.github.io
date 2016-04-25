@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Develop in Docker I: Virtualbox file syncing bug - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="keywords" content="Docker, Virtualbox, File Syncing" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Develop in Docker I: Virtualbox file syncing bug</h1>
+<p>
+Docker is a great tool for deployment. And I want to develop my Flask app in
+Docker so that I can get the same environments as the production environments.
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Bug description</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+But I went into this bug:
+</p>
+
+<ul class="org-ul">
+<li>When I first mount a directory into a container, everything works fine.</li>
+<li>After I change some code, the container aborted with a syntax error.</li>
+<li>Then I attach into the container and see what happened.
+<ul class="org-ul">
+<li>When I use <code>vim</code> to open the "syntax error" file, everything seems to be fine.</li>
+<li>When I use <code>cat</code> to get the file content. Then change I made to this file
+appeared at the end of this file instead of the place I wanted it to be.</li>
+</ul></li>
+</ul>
+
+<p>
+After some search, it seems to be a virtualbox bug:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/docker/docker/issues/15793">File mount does not update with changes from host · Issue #15793 · docker/docker</a>
+<ul class="org-ul">
+<li><a href="https://www.virtualbox.org/ticket/14920">#14920 (VboxSF volumes mounted in Docker containers do not update file contents) – Oracle VM VirtualBox</a></li>
+<li><a href="https://www.virtualbox.org/ticket/9069">#9069 (shared folder doesn't seem to update) – Oracle VM VirtualBox</a></li>
+</ul></li>
+</ul>
+
+<p>
+But this bug may not appear on everyone's machine. At least in this
+post<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, the speaker can get the file syncing correctly, I don't know if
+this is due to she didn't do any deletion. (If you are also interested in
+developing in Docker, you should read this post too)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Solution</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+The solution is simple:
+</p>
+
+<p>
+Just don't use virtualbox as the docker running virtual machine. Use xhyve
+instead, which is also the VM used by the new Docker for Mac<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. You can
+also check out this post<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> about Docker for Mac.
+</p>
+
+<p>
+And here is my post<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> about using xhyve as the Docker client host VM.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://blog.codeship.com/using-docker-for-rails-development/">Using Docker for Rails Development - via @codeship | via @codeship</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">Docker for Mac and Windows Beta: the simplest way to use Docker on your laptop | Docker Blog</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://blog.hypriot.com/post/first-touch-down-with-docker-for-mac/">First Touch Down with Docker for Mac · Docker Pirates ARMed with explosive stuff</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="use-xhyve-as-docker-client-host">use-xhyve-as-Docker-client-host</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-04-25</span>
+        <span title="last modification date" class="post-info">2016-04-25</span>
+        <span title="tags" class="post-info"><a href="/tags/docker/">Docker</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
