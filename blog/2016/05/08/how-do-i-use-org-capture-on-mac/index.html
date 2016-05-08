@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>How do I use org-capture on Mac - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="keywords" content="Org, org-capture, Mac" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>How do I use org-capture on Mac</h1>
+<p>
+org-capture is one of the most powerful feature of Org-Mode. It lets me capture
+my todo items and notes really quickly. Here is how I use org-capture.
+</p>
+
+<ol class="org-ol">
+<li>The most basic one is Task, which captures a todo item and save it to my
+refile.org file.</li>
+<li>You may wonder what are %a and %t do in my templates.
+<ul class="org-ul">
+<li>%a will add a link to current file into the capture content</li>
+<li>%t will add a timestamp</li>
+<li>%^{} will prompt for content</li>
+<li>You can even eval some elisp code using %()</li>
+</ul></li>
+<li>I have two different ways to grab a link from Chrome.
+<ol class="org-ol">
+<li><code>org-mac-chrome-insert-frontmost-url</code>, this is a function from
+<code>org-mac-link</code> package. This package use some apple scripts to grab
+links from some applications, such as Safari, Chrome, Skim. But these
+scripts don't work well when you have multiple windows of the same app
+opened. And it can also cause Emacs hanging.</li>
+<li>Use <code>org-protocol</code>, which is a great way to capture links. But the emacs
+installed from homebrew can not handle <code>org-protocol</code> links, you need to
+install the <code>emacs-mac</code> from emacs-mac-port.
+<ul class="org-ul">
+<li><p>
+Then I use a script to open a org-protocol link in Chrome.
+</p>
+<pre class="example">
+orgCapture(key) -&gt; {{
+location.href = 'org-protocol://capture://' + key + '/' +
+    encodeURIComponent(location.href) +
+    '/' +
+    encodeURIComponent(document.title) +
+    '/' +
+    encodeURIComponent(window.getSelection())
+}}
+</pre></li>
+<li>Emacs will deal with this link and choose which template I want to use.</li>
+</ul></li>
+</ol></li>
+</ol>
+
+<div class="org-src-container">
+
+<pre class="src src-elisp">(setq org-capture-templates
+          '(("t" "Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n")
+            ("T" "Clock-in Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n"
+              :clock-in t
+              :clock-resume t)
+            ("d" "Distraction in a pomodoro" entry
+              (file "~/Org/refile.org")
+              "* TODO %^{Task}\n  SCHEDULED: %t\n"
+              :immediate-finish t)
+            ("n" "Note" entry
+              (file "~/Org/refile.org")
+              "* %?\n")
+            ("l" "Note with link to current file" entry
+              (file "~/Org/refile.org")
+              "* %a")
+            ("j" "Journal" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n"
+              :clock-in t
+              :clock-resume t)
+            ("J" "Journal from Phone" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n  :LOGBOOK:\n  CLOCK: %^{Begin}U--%^{End}U\n  :END:")
+            ("c" "Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)")
+            ("C" "Clock-in Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)"
+              :clock-in t
+              :clock-resume t)
+            ("p" "People (Contacts)" entry
+              (file "~/Org/contacts.org")
+              "* %(org-contacts-template-name)\n  :PROPERTIES:\n  :EMAIL: %(org-contacts-template-email)\n  :END:")
+            ("k" "Push to Kindle" entry
+              (file+headline "~/Org/refile.org" "Push to Kindle")
+              "* %a"
+              :immediate-finish t)
+            ))
+</pre>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-05-08</span>
+        <span title="last modification date" class="post-info">2016-05-08</span>
+        <span title="tags" class="post-info"><a href="/tags/org/">Org</a>, <a href="/tags/mac/">Mac</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
