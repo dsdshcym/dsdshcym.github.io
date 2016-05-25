@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>Tag: Arch Linux - dsdshome</title>
+    <title>Five ways to free up rootfs in Arch Linux - dsdshome</title>
     <meta charset="utf-8" />
     <meta name="author" content="Yiming Chen" />
+    <meta name="keywords" content="Arch Linux, Free up disk" />
     <link rel="stylesheet" href="/media/css/main.css" type="text/css">
     <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
   </head>
@@ -25,16 +26,73 @@
         </form>
       </header>
     </div>
+
+<div>
+<div class="post">
+<h1>Five ways to free up rootfs in Arch Linux</h1>
+<ol class="org-ol">
+<li><p>
+Cleanup Pacman cache
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">paccache -k 0 -r
+</pre>
+</div></li>
+
+<li><p>
+Cleanup orphan packages
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">pac -Qtd
+</pre>
+</div></li>
+
+<li><p>
+Cleanup journal
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">journalctl --vaccum-time=1w
+</pre>
+</div></li>
+
+<li>Set max disk capacity for journals
+<ul class="org-ul">
+<li>Change <code>SystemMaxUse</code> to <code>100M</code> in <code>/etc/systemd/journald.conf</code></li>
+<li><p>
+Then restart journald service
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo systemctl restart systemd-journald.service
+</pre>
+</div></li>
+</ul></li>
+
+<li>Use <code>ncdu</code> to see which file uses most of the disk
+<ul class="org-ul">
+<li>Cleanup unused fonts</li>
+</ul></li>
+</ol>
+
+</div>
+</div>
     <div>
-      <div class="post">
-        <h1>Tag: Arch Linux</h1>
-        <ul class="org-ul">
-          <li><a href="/blog/2016/01/14/why-did-i-switch-to-arch-linux">Why did I switch to Arch Linux</a></li>
-          <li><a href="/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux">Five ways to free up rootfs in Arch Linux</a></li>
-        </ul>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-05-25</span>
+        <span title="last modification date" class="post-info">2016-05-25</span>
+        <span title="tags" class="post-info"><a href="/tags/arch-linux/">Arch Linux</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
       </div>
-    </div>
-    <div>
+      <section>
+        <h1>Comments</h1>
+      </section>
       <script src="//code.jquery.com/jquery-latest.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -49,5 +107,6 @@
         </p>
       </div>
     </div>
+
   </body>
 </html>
