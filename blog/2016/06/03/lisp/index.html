@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lisp 的语言特点和价值浅析 - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="keywords" content="Lisp" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Lisp 的语言特点和价值浅析</h1>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Lisp 简介</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<ul class="org-ul">
+<li>Lisp 于 1958 年由 John McCarthy 基于 Lambda 表达式创建。</li>
+<li>Lisp 是第二古老的高级语言。（第一古老的是 Fortran）</li>
+<li>Lisp 也是第一个函数式编程语言。</li>
+<li>Lisp 是 List Processing 的缩写，由此可见 List 在 Lisp 中的重要性。</li>
+<li><p>
+Lisp 从 1958 年开始发展出了许许多多的方言
+</p>
+
+
+<div class="figure">
+<p><img src="media/img/lisp_dialects.png" alt="lisp_dialects.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>古老的 Lisp 1.5 是由 McCarthy 及其 MIT 同事实现的第一个被广泛使用的 Lisp
+实现</li>
+<li>现在比较流行的 Lisp 方言有 Scheme，Common Lisp，Clojure，Emacs Lisp</li>
+</ul></li>
+<li>本文用 Scheme 和 Emacs Lisp 作例子，简要地介绍 Lisp 的基本元素与思想，以及函
+数式编程和面向对象编程在 Lisp 中的简单实践。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11">基本元素</h2>
+<div class="outline-text-2" id="text-orgheadline11">
+</div><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">符号表达式（Symbolic Expressions，或 S-Expressions）</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<ul class="org-ul">
+<li>是一种复合的列表结构</li>
+<li>既能用来表示数据，也能表示程序结构</li>
+<li>是 Lisp 语言的基本结构</li>
+<li>最初被用来设计为 M-Expression (Meta Expression) 的一种编码，但是由于最初的
+Lisp 实现为 S-Expression 的解释器，程序员们马上习惯了这种表示方式，与
+M-Expression 的区别也不大，便没有实现 M-Expression 了</li>
+<li><p>
+M-Expression 与 S-Expression 的对比
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">M-Expression</th>
+<th scope="col" class="org-left">S-Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">(A B C)</td>
+<td class="org-left">(QUOTE (A B C))</td>
+</tr>
+
+<tr>
+<td class="org-left">car[x]</td>
+<td class="org-left">(CAR X)</td>
+</tr>
+
+<tr>
+<td class="org-left">car[append[(A B C); (D E F)]]</td>
+<td class="org-left">(CAR (APPEND (QUOTE (A B C)) (QUOTE (D E F))))</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">基本数据类型</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<p>
+Lisp 中几乎只有两种基本的数据类型，即 S-Expression 的两种格式：Atom 和 List
+</p>
+</div>
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4">列表 List</h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<p>
+List 是 Lisp 中最重要的概念，可以看作只有两个节点（ 表头 <code>car</code>, 表尾 <code>cdr</code> ）的链表。
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>car 和 cdr 的名字来源于 IBM 704 计算机，分别对应了该计算机的以下两个操作
+<dl class="org-dl">
+<dt>car</dt><dd>Contents of the Address part of Register number</dd>
+<dt>cdr</dt><dd>Contents of the Decrement part of Register number</dd>
+</dl></li>
+</ul>
+</blockquote>
+<ul class="org-ul">
+<li><p>
+<code>cons</code>
+      <code>cons</code> 是 construct 的缩写，是 List 的构建方法，将传入的两个参数组合为一个列表。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme">(cons 1 2)
+</pre>
+</div>
+
+<pre class="example">
+(1 . 2)
+</pre></li>
+<li><p>
+<code>car</code>
+      <code>car</code> 的返回值是传入的列表元素在由 <code>cons</code> 方法创建时的第一个参数。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme">(car (cons 1 2))
+</pre>
+</div>
+
+<pre class="example">
+1
+</pre></li>
+<li><p>
+<code>cdr</code>
+      <code>cdr</code> 的返回值是传入的列表元素在由 <code>cons</code> 方法创建时的第二个参数。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-scheme">(cdr (cons 1 2))
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre></li>
+<li><p>
+多元素列表解释
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(cons 1 (cons 2 3))
+</pre>
+</div>
+
+<pre class="example">
+(1 2 . 3)
+</pre>
+
+<p>
+Lisp 中可以有如上所示的长度大于 2 的列表，解释如下：
+</p>
+<ul class="org-ul">
+<li><code>car</code> 和 <code>cdr</code> 都是指向某一对象的指针</li>
+<li>多元素列表即是一个如下结构的列表：
+<ul class="org-ul">
+<li><code>car</code> 指向表头元素</li>
+<li><code>cdr</code> 指向去掉表头的剩余列表</li>
+<li>如此递归直到 <code>cdr</code> 为原子元素</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>
+当然，Lisp 中也有其他形式的多元素列表。主要取决于不同解释器的实现，在此不
+多讨论。如：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(list 1 2 3 4 5)
+</pre>
+</div>
+
+<p>
+(1 2 3 4 5)
+</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5">原子 Atom</h4>
+<div class="outline-text-4" id="text-orgheadline5">
+<p>
+Atom 这个名字的由来是因为被称为 Atom 的元素都是不能够再被分解的元素
+（indivisible），即 Atom 这个单词的一个最初的含义。
+</p>
+
+<p>
+以下几个元素在 Lisp 中被称为 Atom
+</p>
+<dl class="org-dl">
+<dt>Number 数</dt><dd><p>
+         包括整数，浮点数等
+</p>
+
+<p>
+如 <code>1</code> ， <code>1.2</code> ， <code>1e-10</code> 等
+</p></dd>
+<dt>Symbol 符号</dt><dd><p>
+         相当于一般语言中的 variable 变量或函数名等概念。又因为在使用中与字符串
+比较接近，容易混淆。其实可以理解为指针，指向某一内存地址，比较两个
+Symbol 时即比较地址是否相同。
+</p>
+
+<p>
+如 <code>a_variable</code> ， <code>+</code> ， <code>Foo</code> 等
+</p></dd>
+<dt>String 字符串</dt><dd><p>
+         被双引号括起来的元素为字符串。
+</p>
+
+<p>
+如 "foo_bar"
+</p></dd>
+<dt>nil</dt><dd>表示空列表 <code>()</code> ，是 Lisp 中唯一一个既是 Atom 也是 List 的元素</dd>
+<dt>t</dt><dd>常用来表示 true</dd>
+</dl>
+
+<div class="org-src-container">
+
+<pre class="src src-elisp">(atom 12) ; =&gt; t
+(atom 12.3) ; =&gt; t
+(atom 'hello) ; =&gt; t
+(atom "hello") ; =&gt; t
+(atom [1 2 3]) ; =&gt; t
+(atom '(1 2 3)) ; =&gt; nil
+(atom '(1 . 2)) ; =&gt; nil
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">变量、函数定义</h3>
+<div class="outline-text-3" id="text-orgheadline6">
+<p>
+Lisp 中变量与函数的定义都通过 <code>define</code> 操作来实现。函数可以理解为一种特殊的变
+量，是通过 Lambda 函数实现的。
+</p>
+</div>
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7">变量</h4>
+<div class="outline-text-4" id="text-orgheadline7">
+<ul class="org-ul">
+<li><p>
+定义变量的格式为
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define &lt;argument-name&gt; &lt;value&gt;)
+</pre>
+</div></li>
+<li><p>
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define x 10)
+x
+</pre>
+</div>
+
+<pre class="example">
+10
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8">Lambda 函数</h4>
+<div class="outline-text-4" id="text-orgheadline8">
+<ul class="org-ul">
+<li><p>
+Lisp 中 <code>lambda</code> 也是一个基本操作，格式如下
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(lambda (x)
+  (+ x 1))
+</pre>
+</div></li>
+<li>即接收一个列表为函数参数表，剩下的参数为函数体</li>
+<li>返回一个匿名函数实例</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9">函数</h4>
+<div class="outline-text-4" id="text-orgheadline9">
+<ul class="org-ul">
+<li><p>
+定义函数的格式为
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (&lt;method-name&gt; &lt;argument1&gt; &lt;argument2&gt; ... &lt;argumentN&gt;)
+  &lt;method-steps&gt;)
+</pre>
+</div></li>
+<li><p>
+这个格式实际上是一种语法糖，是将一个匿名函数绑定到 <code>method-name</code> 上的缩写，
+展开后的格式为
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define &lt;method-name&gt;
+  (lambda (&lt;argument1&gt; &lt;argument2&gt; ... &lt;argumentN&gt;)
+    &lt;method-steps&gt;))
+</pre>
+</div>
+<ul class="org-ul">
+<li>由此可见，函数在 Lisp 中也是一种对象，可以作为其他函数的参数。</li>
+</ul></li>
+<li><p>
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (inc x)
+  (+ x 1))
+
+(inc 3)
+</pre>
+</div>
+
+<pre class="example">
+4
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">分支操作</h3>
+<div class="outline-text-3" id="text-orgheadline10">
+<p>
+Lisp 中主要有两种分支操作
+</p>
+<ul class="org-ul">
+<li><code>cond</code>
+<ul class="org-ul">
+<li><p>
+基本结构
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(cond (&lt;p1&gt; &lt;e1&gt;)
+      (&lt;p2&gt; &lt;e2&gt;)
+      ...
+      (&lt;pn&gt; &lt;en&gt;)
+      (else &lt;e&gt;))
+</pre>
+</div></li>
+<li><p>
+执行顺序
+</p>
+
+<p>
+依次执行 pi，直到某一 pi 为真（t），再执行对应的 ei，并将 ei 的返回值作为
+cond 的返回值。
+</p></li>
+<li><p>
+<code>else</code>
+</p>
+
+<p>
+else 是 Lisp 中的特殊符号，在所有 pi 都不为真的情况下执行 else 对应的
+expression。相当于一个恒为真的 Symbol。
+</p></li>
+</ul></li>
+<li><code>if</code>
+<ul class="org-ul">
+<li><p>
+基本结构
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(if &lt;predicate&gt;
+    &lt;consequent&gt;
+    &lt;alternative&gt;)
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+相当于如下 cond 语句
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(cond (&lt;predicate&gt; &lt;consequent&gt;)
+      (else &lt;alternative&gt;))
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><a id="ID-10e403a8-d0e2-4219-a0e0-ffcbd1d6cbce"></a>Lisp 函数调用的两种解释顺序</h2>
+<div class="outline-text-2" id="text-orgheadline12">
+<p>
+对 S-表达式表示的函数 <code>(define (&lt;method-name&gt; &lt;argument1&gt; &lt;argument2&gt; ...
+  &lt;argumentN&gt;))</code> ，我们有两种不同的解释顺序，分别是 Applicative order 和 Normal
+order。
+</p>
+</div>
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13">Applicative order</h3>
+<div class="outline-text-3" id="text-orgheadline13">
+<p>
+Applicative order 是 Scheme 采用的策略。解释顺序如下：
+</p>
+<ul class="org-ul">
+<li>先依次求出 argument 的值</li>
+<li>将求出的值代入函数体中求出结果返回</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">Normal order</h3>
+<div class="outline-text-3" id="text-orgheadline14">
+<p>
+Normal order 又称为 Lazy Evaluation。解释顺序如下：
+</p>
+<ul class="org-ul">
+<li>延迟 argument 的求值</li>
+<li>将 argument 的表达式代入函数体中</li>
+<li>直到 argument 被基本操作（如 +，-，*，if 等）调用才对 argument 进行求值</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15">Example</h3>
+<div class="outline-text-3" id="text-orgheadline15">
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (try a b)
+  (if (= a 0) 1 b))
+
+(try 0 (/ 1 0))
+</pre>
+</div>
+<ul class="org-ul">
+<li>Applicative order
+<ul class="org-ul">
+<li>对 <code>0</code> 和 <code>(/ 1 0)</code> 进行求值，此时会抛出异常</li>
+</ul></li>
+<li>Normal order
+<ul class="org-ul">
+<li>将 <code>0</code> 和 <code>(/ 1 0)</code> 代入 <code>try</code> 函数中</li>
+<li>得 <code>(if (= 0 0) 1 (/ 1 0))</code> ， <code>if</code> 为基本语句</li>
+<li>根据 <code>if</code> 语句的解释顺序， <code>(= 0 0)</code> 成立，返回 <code>1</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline16" class="outline-2">
+<h2 id="orgheadline16">Lisp 中的函数式编程简介</h2>
+<div class="outline-text-2" id="text-orgheadline16">
+<p>
+Lisp 是第一个采用函数式编程范式的语言。从上述的介绍中我们也可以发现 Lisp 并没
+有提供循环操作，本节将解释 Lisp 中的循环操作的递归实现和迭代实现，并介绍
+<code>map</code>, <code>reduce</code>, <code>filter</code> 等常用函数，以简单介绍 Lisp 中的函数式编程范式。
+</p>
+</div>
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17">循环操作</h3>
+<div class="outline-text-3" id="text-orgheadline17">
+<p>
+在我们常用的编程语言中，循环操作通常是通过对一个变量的迭代来实现的，常见的关
+键词为 <code>for</code> 和 <code>while</code> 。
+</p>
+
+<p>
+但是在函数式编程中，变量的使用是要被避免的。接下来我们以对 <code>[a, b]</code> 区间内的整数求和函数为例，来看看如何使用函数来实
+现循环。
+</p>
+</div>
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18">递归实现</h4>
+<div class="outline-text-4" id="text-orgheadline18">
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (sum a b)
+  (if (&gt; a b)
+      0
+      (+ a (sum (+ a 1) b))))
+
+(sum 1 10)
+</pre>
+</div>
+
+<pre class="example">
+55
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19">迭代实现</h4>
+<div class="outline-text-4" id="text-orgheadline19">
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (sum a b)
+  (define (sum-helper a b s)
+    (if (&gt; a b)
+        s
+        (sum-helper (+ 1 a) b (+ a s))))
+  (sum-helper a b 0))
+
+(sum 1 10)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20">递归实现与迭代实现的区别</h4>
+<div class="outline-text-4" id="text-orgheadline20">
+<ul class="org-ul">
+<li>参考对 <a href="#orgheadline12">Lisp 函数调用的两种解释顺序</a>，采用 Applicative order 对两种实现进行解释。</li>
+<li>递归实现
+<ul class="org-ul">
+<li>经过 Applicative order 解释后得到的 S-表达式是逐渐变长的</li>
+<li>以 <code>sum</code> 为例，最终的 S-表达式为 <code>(+ a (+ a 1) (+ (+ a 1) 1) ... b)</code></li>
+</ul></li>
+<li>迭代实现
+<ul class="org-ul">
+<li>经过 Applicative order 解释后得到的 S-表达式长度与最初的调用几乎一致</li>
+<li>以 <code>sum</code> 为例，最终的 S-表达式为 <code>(sum-helper b b sum)</code></li>
+</ul></li>
+<li>这与其他语言的实现是一致的，即：
+<ul class="org-ul">
+<li>递归调用通过堆栈实现，堆栈随着调用的深度加深而变长</li>
+<li>迭代调用通过变量实现，没有变长的堆栈结构</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21">Map, Reduce, Filter</h3>
+<div class="outline-text-3" id="text-orgheadline21">
+<p>
+使用递归的思想可以实现 Map, Reduce, Filter 等函数式编程中的常用函数。
+</p>
+</div>
+<div id="outline-container-orgheadline22" class="outline-4">
+<h4 id="orgheadline22">Map</h4>
+<div class="outline-text-4" id="text-orgheadline22">
+<ul class="org-ul">
+<li><p>
+Implementation
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (map proc items)
+  (if (null? items)
+      nil
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23">Reduce</h4>
+<div class="outline-text-4" id="text-orgheadline23">
+<ul class="org-ul">
+<li><p>
+Implementation
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (reduce op initial sequence)
+  (if (null? sequence)
+      initial
+      (op (car sequence)
+          (reduce op initial (cdr sequence)))))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline24" class="outline-4">
+<h4 id="orgheadline24">Filter</h4>
+<div class="outline-text-4" id="text-orgheadline24">
+<ul class="org-ul">
+<li><p>
+Implementation
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (filter predicate sequence)
+  (cond ((null? sequence) nil)
+        ((predicate (car sequence))
+         (cons (car sequence)
+               (filter predicate (cdr sequence))))
+        (else (filter predicate (cdr sequence)))))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline25" class="outline-2">
+<h2 id="orgheadline25">Lisp 中的面向对象编程</h2>
+<div class="outline-text-2" id="text-orgheadline25">
+<ul class="org-ul">
+<li>Lisp 中的面向对象特性通过闭包（Closure）和消息传递（Message Passing）来实现</li>
+<li>本节将介绍闭包和 Scheme 中类和子类的几个例子</li>
+<li>类似的思想在之后的程序语言中得到广泛应用
+<ul class="org-ul">
+<li>如：在 Ruby 中闭包和消息传递是元编程（Meta Programming）的重要技术</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28">Lisp 中的子程序环境</h3>
+<div class="outline-text-3" id="text-orgheadline28">
+</div><div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26">闭包</h4>
+<div class="outline-text-4" id="text-orgheadline26">
+<ul class="org-ul">
+<li>Lisp 有一个基础环境（全局环境，Global Environment）</li>
+<li>在每个环境中的变量和函数名都可看作指针，指向某一对象</li>
+<li>在调用函数时：
+<ol class="org-ol">
+<li>在当前环境的基础上构造一个子环境</li>
+<li>将函数参数变量指向传入的参数值</li>
+<li>依次执行函数体</li>
+<li>遇到当前环境中未绑定的变量时，向上到父环境中查找，直到找到或到全局环境中
+依然未找到为止</li>
+</ol></li>
+<li>其中，第 4 步可用来构造闭包（Closure）</li>
+<li><p>
+用闭包实现 <code>cons</code>, <code>car</code>, <code>cdr</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (cons x y)
+  (lambda (m) (m x y)))
+
+(define (car z)
+  (z (lambda (p q) p)))
+
+(define (cdr z)
+  (z (lambda (p q) q)))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><code>let</code> 语句</h4>
+<div class="outline-text-4" id="text-orgheadline27">
+<p>
+在函数定义中可用 <code>let</code> 语句定义局部变量：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (f a b c ... z)
+  (let ((&lt;var1&gt; &lt;exp1&gt;)
+        (&lt;var2&gt; &lt;exp2&gt;)
+        ...
+        (&lt;varn&gt; &lt;expn&gt;))
+    &lt;body&gt;)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32">面向对象编程</h3>
+<div class="outline-text-3" id="text-orgheadline32">
+</div><div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29">封装</h4>
+<div class="outline-text-4" id="text-orgheadline29">
+<ul class="org-ul">
+<li>通过定义一个初始化函数来定义新的类
+<ul class="org-ul">
+<li>该函数返回一个函数对象</li>
+<li>通过闭包的特性调用类内的函数</li>
+</ul></li>
+<li><p>
+以平面上的坐标点（point）为例
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (send message obj . par)
+  (let ((method (obj message)))
+    (apply method par)))
+
+(define (point x y)
+  (define (getx) x)
+  (define (gety) y)
+  (define (add p)
+    (point (+ x (send 'getx p)) (+ y (send 'gety p))))
+  (define (type-of) 'point)
+
+  (define (dispatch message)
+    (cond
+     ((eq? message 'getx) getx)
+     ((eq? message 'gety) gety)
+     ((eq? message 'add) add)
+     ((eq? message 'type-of) type-of)
+     (else (error "Message not understood"))))
+  dispatch)
+
+(define p (point 1 2))
+
+(display (send 'getx p))
+(newline)
+(display (send 'gety p))
+(newline)
+(display (send 'type-of p))
+</pre>
+</div>
+
+<pre class="example">
+1
+2
+point
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30">继承</h4>
+<div class="outline-text-4" id="text-orgheadline30">
+<ul class="org-ul">
+<li>通过加入 <code>super</code> 实现</li>
+<li>子类在初始化时实例化一个父类对象</li>
+<li>在遇到无法处理的调用时 Fallback 到父类调用</li>
+<li><p>
+以有颜色的坐标点为例
+</p>
+<div class="org-src-container">
+
+<pre class="src src-scheme">(define (method-lookup object selector)
+  (cond ((procedure? object) (object selector))
+        (else
+         (error "Inappropriate object in method-lookup: "
+                object))))
+
+(define (color-point x y color)
+  (let ((super (point x y))
+        (self 'nil))
+    (let ((color color))
+
+      (define (get-color)
+        color)
+
+      (define (type-of) 'color-point)
+
+      (define (dispatch message)
+        (cond ((eq? message 'get-color) get-color)
+              ((eq? message 'type-of) type-of)
+              (else (method-lookup super message))))
+
+      dispatch)))
+
+(define cp (color-point 10 20 'black))
+
+(display (send 'getx cp))
+(newline)
+(display (send 'gety cp))
+(newline)
+(display (send 'get-color cp))
+</pre>
+</div>
+
+<pre class="example">
+10
+20
+black
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline31" class="outline-4">
+<h4 id="orgheadline31">不要让程序语言限制自己的编程</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline39" class="outline-2">
+<h2 id="orgheadline39">参考资料</h2>
+<div class="outline-text-2" id="text-orgheadline39">
+</div><div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><a href="https://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs</a></h3>
+</div>
+<div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34"><a href="http://people.cs.aau.dk/~normark/prog3-03/html/notes/oop-scheme.html">Object-oriented programming in Scheme</a></h3>
+</div>
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35"><a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp (programming language) - Wikipedia, the free encyclopedia</a></h3>
+</div>
+<div id="outline-container-orgheadline36" class="outline-3">
+<h3 id="orgheadline36"><a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme (programming language) - Wikipedia, the free encyclopedia</a></h3>
+</div>
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37"><a href="https://en.wikipedia.org/wiki/S-expression">S-expression - Wikipedia, the free encyclopedia</a></h3>
+</div>
+<div id="outline-container-orgheadline38" class="outline-3">
+<h3 id="orgheadline38"><a href="http://kuanyui.github.io/2016/02/24/lisp-lambda/">淺談 Lisp 裡面的 Lambda | 東北角的小徑</a></h3>
+<div class="outline-text-3" id="text-orgheadline38">
+<p>
+
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-06-03</span>
+        <span title="last modification date" class="post-info">2016-06-03</span>
+        <span title="tags" class="post-info"><a href="/tags/lisp/">Lisp</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -4,79 +4,79 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 08 May 2016 19:19:22 CST</pubDate>
-    <lastBuildDate>Sun, 08 May 2016 19:19:22 CST</lastBuildDate>
+    <pubDate>Fri, 03 Jun 2016 19:49:46 CST</pubDate>
+    <lastBuildDate>Fri, 03 Jun 2016 19:49:46 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>A Simple Introduction to Docker I</title>
       <link>http://dsdshcym.github.io/blog/2015/11/13/a-simple-introduction-to-docker-i</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/11/13/a-simple-introduction-to-docker-i</guid>
     </item>
     <item>
       <title>A Simple Introduction to Docker II</title>
       <link>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</guid>
     </item>
     <item>
       <title>A Simple Introduction to Docker III</title>
       <link>http://dsdshcym.github.io/blog/2015/12/04/a-simple-introduction-to-docker-iii</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/12/04/a-simple-introduction-to-docker-iii</guid>
     </item>
     <item>
       <title>A Simple Introduction to Docker IX</title>
       <link>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</guid>
     </item>
     <item>
       <title>Add org-store-link Entry for elfeed</title>
       <link>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</guid>
     </item>
     <item>
       <title>Emacs 25 compiled file conflicts with Emacs 24</title>
       <link>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</guid>
+    </item>
+    <item>
+      <title>Five ways to free up rootfs in Arch Linux</title>
+      <link>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2016-06-03</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</guid>
     </item>
     <item>
       <title>Answers for Liqi Problems</title>
       <link>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</guid>
+    </item>
+    <item>
+      <title>Lisp 的语言特点和价值浅析</title>
+      <link>http://dsdshcym.github.io/blog/2016/06/03/lisp</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2016-06-03</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2016/06/03/lisp</guid>
     </item>
     <item>
       <title>My 2015 Review</title>
       <link>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</link>
       <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
+      <pubDate>2016-06-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</guid>
-    </item>
-    <item>
-      <title>My Ideal Editor</title>
-      <link>http://dsdshcym.github.io/blog/2015/11/20/my-ideal-editor</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/11/20/my-ideal-editor</guid>
-    </item>
-    <item>
-      <title>How do I use org-capture on Mac</title>
-      <link>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-05-08</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</guid>
     </item>
   </channel>
 </rss>
