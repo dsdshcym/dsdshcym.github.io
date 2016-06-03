@@ -34,47 +34,39 @@
 <li><p>
 Cleanup Pacman cache
 </p>
-
 <div class="org-src-container">
 
 <pre class="src src-sh">paccache -k 0 -r
 </pre>
 </div></li>
-
 <li><p>
 Cleanup orphan packages
 </p>
-
 <div class="org-src-container">
 
 <pre class="src src-sh">pac -Qtd
 </pre>
 </div></li>
-
 <li><p>
 Cleanup journal
 </p>
-
 <div class="org-src-container">
 
 <pre class="src src-sh">journalctl --vaccum-time=1w
 </pre>
 </div></li>
-
 <li>Set max disk capacity for journals
 <ul class="org-ul">
 <li>Change <code>SystemMaxUse</code> to <code>100M</code> in <code>/etc/systemd/journald.conf</code></li>
 <li><p>
 Then restart journald service
 </p>
-
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo systemctl restart systemd-journald.service
 </pre>
 </div></li>
 </ul></li>
-
 <li>Use <code>ncdu</code> to see which file uses most of the disk
 <ul class="org-ul">
 <li>Cleanup unused fonts</li>
