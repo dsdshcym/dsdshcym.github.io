@@ -31,15 +31,15 @@
 <div class="post">
 <h1>A Simple Introduction to Docker III</h1>
 
-<div id="outline-container-orgheadline7" class="outline-2">
-<h2 id="orgheadline7">What is Docker?</h2>
-<div class="outline-text-2" id="text-orgheadline7">
-</div><div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6">Underlying Techniques</h3>
-<div class="outline-text-3" id="text-orgheadline6">
-</div><div id="outline-container-orgheadline1" class="outline-4">
-<h4 id="orgheadline1">What do we need to do to build a container?</h4>
-<div class="outline-text-4" id="text-orgheadline1">
+<div id="outline-container-orge48c5a4" class="outline-2">
+<h2 id="orge48c5a4">What is Docker?</h2>
+<div class="outline-text-2" id="text-orge48c5a4">
+</div><div id="outline-container-orgbe0ed8d" class="outline-3">
+<h3 id="orgbe0ed8d">Underlying Techniques</h3>
+<div class="outline-text-3" id="text-orgbe0ed8d">
+</div><div id="outline-container-orgb21d43b" class="outline-4">
+<h4 id="orgb21d43b">What do we need to do to build a container?</h4>
+<div class="outline-text-4" id="text-orgb21d43b">
 <ol class="org-ol">
 <li><p>
 Isolate every container
@@ -89,9 +89,9 @@ And more importantly, it's scalable.
 </ol>
 </div>
 </div>
-<div id="outline-container-orgheadline2" class="outline-4">
-<h4 id="orgheadline2">Linux Namespace</h4>
-<div class="outline-text-4" id="text-orgheadline2">
+<div id="outline-container-orgdc31337" class="outline-4">
+<h4 id="orgdc31337">Linux Namespace</h4>
+<div class="outline-text-4" id="text-orgdc31337">
 <ul class="org-ul">
 <li>Docker takes advantage of a technology called namespaces to provide the
 isolated workspace<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
@@ -219,9 +219,9 @@ Reassociate thread with a namespace
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-4">
-<h4 id="orgheadline3">Control groups</h4>
-<div class="outline-text-4" id="text-orgheadline3">
+<div id="outline-container-org54f493f" class="outline-4">
+<h4 id="org54f493f">Control groups</h4>
+<div class="outline-text-4" id="text-org54f493f">
 <blockquote>
 <p>
 Control groups allow Docker to share available hardware resources to containers
@@ -248,7 +248,6 @@ and, if required, set up limits and constraints.<sup><a id="fnr.1.100" class="fo
 You can see your mounted cgroups using this command
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">mount -t cgroup
 </pre>
 </div>
@@ -264,7 +263,6 @@ memory on /sys/fs/cgroup/memory type cgroup (rw,memory)
 If you can't see them, you can mount them by your self
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">sudo mkdir cgroup
 sudo mount -t tmpfs cgroup_root ./cgroup
 sudo mkdir cgroup/cpuset
@@ -280,7 +278,6 @@ sudo mount -t cgroup -omemory memory ./cgroup/memory/
 Then you can see config files under these directory
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">ls /sys/fs/cgroup/cpu /sys/fs/cgroup/cpuset/
 </pre>
 </div>
@@ -308,7 +305,6 @@ cpuset.memory_pressure  tasks
 Create a cpu group
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">mkdir /sys/fs/cgroup/cpu/temp
 </pre>
 </div></li>
@@ -319,7 +315,6 @@ Create a cpu group
 C program
 </p>
 <div class="org-src-container">
-
 <pre class="src src-c">/* deadloop.c */
 int main(void) {
     int i = 0;
@@ -403,7 +398,6 @@ is almost 100%.
 Restrict a cgroup's CPU usage
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
 echo 20000 &gt; /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
 cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
@@ -419,7 +413,6 @@ cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
 Add the process to a cgroup
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh"># Add the process's pid to the cgroup's tasks file
 echo 107539 &gt;&gt; /sys/fs/cgroup/cpu/temp/tasks
 </pre>
@@ -504,9 +497,9 @@ to about 20%, which was set by the value 20000 in the
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline4" class="outline-4">
-<h4 id="orgheadline4">Union File Systems</h4>
-<div class="outline-text-4" id="text-orgheadline4">
+<div id="outline-container-org0e35b62" class="outline-4">
+<h4 id="org0e35b62">Union File Systems</h4>
+<div class="outline-text-4" id="text-org0e35b62">
 <blockquote>
 <p>
 Docker uses union file systems to provide the building blocks for
@@ -539,13 +532,12 @@ file systems to combine these layers into a single image.
 </ul>
 </div>
 
-<ul class="org-ul"><li><a id="orgheadline5"></a>AUFS<br  /><div class="outline-text-5" id="text-orgheadline5">
+<ul class="org-ul"><li><a id="orgd87af4a"></a>AUFS<br /><div class="outline-text-5" id="text-orgd87af4a">
 <ul class="org-ul">
 <li><p>
 Prepare
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">tree
 </pre>
 </div>
@@ -566,7 +558,6 @@ Prepare
 Mount
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">mkdir mnt
 sudo mount -t aufs -o dirs=./fruits:./vegetables none ./mnt
 tree ./mnt
@@ -586,7 +577,6 @@ tree ./mnt
 Modify
 </p>
 <div class="org-src-container">
-
 <pre class="src src-sh">echo mnt_carrots &gt; ./mnt/carrots
 </pre>
 </div>
@@ -597,7 +587,6 @@ results in vegetables
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-sh">cat ./vegetables/carrots
 </pre>
 </div></li>
@@ -607,7 +596,6 @@ results in fruits
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-sh">cat ./fruits/carrots
 </pre>
 </div>

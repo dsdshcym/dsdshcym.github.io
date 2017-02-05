@@ -31,19 +31,15 @@
 <div>
 <div class="post">
 <h1>Emacs 25 compiled file conflicts with Emacs 24</h1>
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1">Issue</h2>
-<div class="outline-text-2" id="text-orgheadline1">
+<div id="outline-container-orga4c088e" class="outline-2">
+<h2 id="orga4c088e">Issue</h2>
+<div class="outline-text-2" id="text-orga4c088e">
 <p>
-上周日，我看到评论说 Emacs 25 调用了 Mac 原生的图形接口，性能得到了大幅提高，便
-也在自己的 Mac 上装了最新的 Emacs 25 。性能的确有很大提高。但是，因为还不是稳定
-版本，总还是有点问题，比如颜色不准确之类的。在这里讲一下折腾了我好久的一个问题。
+上周日，我看到评论说 Emacs 25 调用了 Mac 原生的图形接口，性能得到了大幅提高，便也在自己的 Mac 上装了最新的 Emacs 25 。性能的确有很大提高。但是，因为还不是稳定版本，总还是有点问题，比如颜色不准确之类的。在这里讲一下折腾了我好久的一个问题。
 </p>
 
 <p>
-我遇到的第一个问题是 gh.el （一个提供 Github API 的库， Magit, helm, gist.el 都
-信赖于它）调用了一个在 Emacs 25 中失效的 API ，因此导致 Magit 无法呼出。这个问题
-非常严重，于是我打算换回 Emacs 24 。
+我遇到的第一个问题是 gh.el （一个提供 Github API 的库， Magit, helm, gist.el 都信赖于它）调用了一个在 Emacs 25 中失效的 API ，因此导致 Magit 无法呼出。这个问题非常严重，于是我打算换回 Emacs 24 。
 </p>
 
 <p>
@@ -55,13 +51,11 @@ Symbol's function definition is void: eieio-make-class-predicate
 </pre>
 
 <p>
-我以为是 Emacs 25 安装时把 Emacs 24 的包搞乱了。于是尝试重装 24 ，多次尝试后无果。
-让我陷入了一个没有 Emacs 可用的境地。
+我以为是 Emacs 25 安装时把 Emacs 24 的包搞乱了。于是尝试重装 24 ，多次尝试后无果。让我陷入了一个没有 Emacs 可用的境地。
 </p>
 
 <p>
-折腾几个小时后，发现将 Emacs 25 编译产生的 .elc 文件都删除用 Emacs 24 重新编译一
-遍就能正常打开 Emacs 24 了。
+折腾几个小时后，发现将 Emacs 25 编译产生的 .elc 文件都删除用 Emacs 24 重新编译一遍就能正常打开 Emacs 24 了。
 </p>
 
 <p>
@@ -69,19 +63,18 @@ Symbol's function definition is void: eieio-make-class-predicate
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5">Solution</h2>
-<div class="outline-text-2" id="text-orgheadline5">
-</div><div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">eieio</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<div id="outline-container-org3099c6c" class="outline-2">
+<h2 id="org3099c6c">Solution</h2>
+<div class="outline-text-2" id="text-org3099c6c">
+</div><div id="outline-container-org992e312" class="outline-3">
+<h3 id="org992e312">eieio</h3>
+<div class="outline-text-3" id="text-org992e312">
 <ol class="org-ol">
 <li><p>
 Remove all .elc files
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-sh">find . -name '*elc' -delete
 </pre>
 </div></li>
@@ -91,26 +84,23 @@ Remove all .elc files
 </ol>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">gh.el</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<div id="outline-container-org8d62ce8" class="outline-3">
+<h3 id="org8d62ce8">gh.el</h3>
+<div class="outline-text-3" id="text-org8d62ce8">
 <p>
-移除和 Github 相关的库就能正常使用 Emacs 25 了。虽然还有一些小问题，比如更容易崩
-溃，不会传 ESC 键给系统（迷之 bug ，没有这个都无法让 Rime 在退出
-evil-insert-mode 时切换成 Normal mode 了），但是性能的提升摆在那里，我还是选择了
-继续使用 Emacs 25
+移除和 Github 相关的库就能正常使用 Emacs 25 了。虽然还有一些小问题，比如更容易崩溃，不会传 ESC 键给系统（迷之 bug ，没有这个都无法让 Rime 在退出
+evil-insert-mode 时切换成 Normal mode 了），但是性能的提升摆在那里，我还是选择了继续使用 Emacs 25
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">附寻找 bug 源的方法</h3>
-<div class="outline-text-3" id="text-orgheadline4">
+<div id="outline-container-org620e6e2" class="outline-3">
+<h3 id="org620e6e2">附寻找 bug 源的方法</h3>
+<div class="outline-text-3" id="text-org620e6e2">
 <p>
 使用 ag 在第三方库代码文件夹中找出错的函数
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-sh">ag --nocolor --literal --line-number --smart-case --nogroup --column -u -- fringe-bitmap-p .
 </pre>
 </div>
