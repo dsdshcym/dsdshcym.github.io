@@ -4,607 +4,79 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 05 Feb 2017 23:52:13 CST</pubDate>
-    <lastBuildDate>Sun, 05 Feb 2017 23:52:13 CST</lastBuildDate>
+    <pubDate>Sun, 19 Feb 2017 22:03:38 CST</pubDate>
+    <lastBuildDate>Sun, 19 Feb 2017 22:03:38 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Review of /Are your lights on?/</title>
+      <link>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</link>
+      <description><![CDATA[My review of /Are your lights on?/. About how to define the real problem.]]></description>
+      <pubDate>2017-02-19</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</guid>
+    </item>
+    <item>
       <title>Why I give up Wubi</title>
       <link>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</link>
-      <description><![CDATA[我为什么在使用五笔两年后回到了拼音输入法]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-02-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</guid>
     </item>
     <item>
       <title>How do I use org-capture on Mac</title>
       <link>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>How do I use org-capture on Mac</h1>
-<p>
-org-capture is one of the most powerful feature of Org-Mode. It lets me capture
-my todo items and notes really quickly. Someone even use org-capture to <a href="https://www.youtube.com/watch?v=HVYQnvBrnZ4">capture
-Chinese words and build flash cards</a>. Here is how I use org-capture.
-</p>
-
-<ol class="org-ol">
-<li>The most basic one is Task, which captures a todo item and save it to my
-refile.org file.</li>
-<li>You may wonder what are %a and %t do in my templates.
-<ul class="org-ul">
-<li>%a will add a link to current file into the capture content</li>
-<li>%t will add a timestamp</li>
-<li>%^{} will prompt for content</li>
-<li>You can even eval some elisp code using %()</li>
-</ul></li>
-<li>I have two different ways to grab a link from Chrome.
-<ol class="org-ol">
-<li><code>org-mac-chrome-insert-frontmost-url</code>, this is a function from
-<code>org-mac-link</code> package. This package use some apple scripts to grab
-links from some applications, such as Safari, Chrome, Skim. But these
-scripts don't work well when you have multiple windows of the same app
-opened. And it can also cause Emacs hanging.</li>
-<li>Use <code>org-protocol</code>, which is a great way to capture links. But the emacs
-installed from homebrew can not handle <code>org-protocol</code> links, you need to
-install the <code>emacs-mac</code> from emacs-mac-port.
-<ul class="org-ul">
-<li><p>
-Then I use a script to open a org-protocol link in Chrome.
-</p>
-<pre class="example">
-orgCapture(key) -&gt; {{
-location.href = 'org-protocol://capture://' + key + '/' +
-    encodeURIComponent(location.href) +
-    '/' +
-    encodeURIComponent(document.title) +
-    '/' +
-    encodeURIComponent(window.getSelection())
-}}
-</pre></li>
-<li>Emacs will deal with this link and choose which template I want to use.</li>
-</ul></li>
-</ol></li>
-
-<li><p>
-Here are my templates
-</p>
-<div class="org-src-container">
-<pre class="src src-elisp">(setq org-capture-templates
-          '(("t" "Task" entry
-              (file "~/Org/refile.org")
-              "* TODO %?\n")
-            ("T" "Clock-in Task" entry
-              (file "~/Org/refile.org")
-              "* TODO %?\n"
-              :clock-in t
-              :clock-resume t)
-            ("d" "Distraction in a pomodoro" entry
-              (file "~/Org/refile.org")
-              "* TODO %^{Task}\n  SCHEDULED: %t\n"
-              :immediate-finish t)
-            ("n" "Note" entry
-              (file "~/Org/refile.org")
-              "* %?\n")
-            ("l" "Note with link to current file" entry
-              (file "~/Org/refile.org")
-              "* %a")
-            ("j" "Journal" entry
-              (file+datetree "~/Org/diary.org")
-              "* %^{Content}\n"
-              :clock-in t
-              :clock-resume t)
-            ("J" "Journal from Phone" entry
-              (file+datetree "~/Org/diary.org")
-              "* %^{Content}\n  :LOGBOOK:\n  CLOCK: %^{Begin}U--%^{End}U\n  :END:")
-            ("c" "Link from Chrome" entry
-              (file "~/Org/refile.org")
-              "* %(org-mac-chrome-get-frontmost-url)")
-            ("C" "Clock-in Link from Chrome" entry
-              (file "~/Org/refile.org")
-              "* %(org-mac-chrome-get-frontmost-url)"
-              :clock-in t
-              :clock-resume t)
-            ("p" "People (Contacts)" entry
-              (file "~/Org/contacts.org")
-              "* %(org-contacts-template-name)\n  :PROPERTIES:\n  :EMAIL: %(org-contacts-template-email)\n  :END:")
-            ("k" "Push to Kindle" entry
-              (file+headline "~/Org/refile.org" "Push to Kindle")
-              "* %a"
-              :immediate-finish t)
-            ))
-</pre>
-</div></li>
-</ol>
-
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-05-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</guid>
     </item>
     <item>
       <title>Use xhyve as Docker client host</title>
       <link>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>Use xhyve as Docker client host</h1>
-<p>
-When using Docker on a Mac, we need to use a Virtual Machine as the host of the
-Docker client. (This is due to the differences between the kernel of Mac and
-Linux) And most of the time, people will choose virtualbox. But it seems too
-heavy comparing to the lightwight of Docker.
-</p>
-
-<p>
-That's why the new Docker for Mac chooses to use xhyve as the new host of the
-Docker client. But Docker for Mac is still in beta. Here is how to use xhyve via
-docker-machine. It may not be as efficient as Docker for Mac Beta. But it's good
-enough for a taste.
-</p>
-
-<ul class="org-ul">
-<li><p>
-<code>xhyve</code>
-</p>
-
-<p>
-Follow the instruction <a href="https://github.com/mist64/xhyve#installation">here</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">brew install --HEAD xhyve
-</pre>
-</div></li>
-<li><p>
-<code>docker-machine-driver-xhyve</code>
-</p>
-
-<p>
-Follow the instruction <a href="https://github.com/zchee/docker-machine-driver-xhyve#install">here</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">brew install docker-machine-driver-xhyve
-
-# docker-machine-driver-xhyve need root owner and uid
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-</pre>
-</div></li>
-<li><p>
-<code>docker-machine create</code>
-</p>
-
-<p>
-Use this instruction to create a xhyve VM. Remember to add the
-<code>--xhyve-experimental-nfs-share</code> option to enable the file sharing.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">docker-machine create --driver xhyve --xhyve-experimental-nfs-share dev-xhyve
-</pre>
-</div></li>
-</ul>
-
-
-<p>
-The experience using xhyve is absolutly better than virtualbox. I hope I can use
-Docker for Mac soon.
-</p>
-
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-04-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</guid>
     </item>
     <item>
       <title>Develop in Docker I: Virtualbox file syncing bug</title>
       <link>http://dsdshcym.github.io/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>Develop in Docker I: Virtualbox file syncing bug</h1>
-<p>
-Docker is a great tool for deployment. And I want to develop my Flask app in
-Docker so that I can get the same environments as the production environments.
-</p>
-
-<div id="outline-container-org6d53e44" class="outline-2">
-<h2 id="org6d53e44">Bug description</h2>
-<div class="outline-text-2" id="text-org6d53e44">
-<p>
-But I went into this bug:
-</p>
-
-<ul class="org-ul">
-<li>When I first mount a directory into a container, everything works fine.</li>
-<li>After I change some code, the container aborted with a syntax error.</li>
-<li>Then I attach into the container and see what happened.
-<ul class="org-ul">
-<li>When I use <code>vim</code> to open the "syntax error" file, everything seems to be fine.</li>
-<li>When I use <code>cat</code> to get the file content. Then change I made to this file
-appeared at the end of this file instead of the place I wanted it to be.</li>
-</ul></li>
-</ul>
-
-<p>
-After some search, it seems to be a virtualbox bug:
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/docker/docker/issues/15793">File mount does not update with changes from host · Issue #15793 · docker/docker</a>
-<ul class="org-ul">
-<li><a href="https://www.virtualbox.org/ticket/14920">#14920 (VboxSF volumes mounted in Docker containers do not update file contents) – Oracle VM VirtualBox</a></li>
-<li><a href="https://www.virtualbox.org/ticket/9069">#9069 (shared folder doesn't seem to update) – Oracle VM VirtualBox</a></li>
-</ul></li>
-</ul>
-
-<p>
-But this bug may not appear on everyone's machine. At least in this
-post<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, the speaker can get the file syncing correctly, I don't know if
-this is due to she didn't do any deletion. (If you are also interested in
-developing in Docker, you should read this post too)
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5d9f624" class="outline-2">
-<h2 id="org5d9f624">Solution</h2>
-<div class="outline-text-2" id="text-org5d9f624">
-<p>
-The solution is simple:
-</p>
-
-<p>
-Just don't use virtualbox as the docker running virtual machine. Use xhyve
-instead, which is also the VM used by the new Docker for Mac<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. You can
-also check out this post<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> about Docker for Mac.
-</p>
-
-<p>
-And here is my post<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> about using xhyve as the Docker client host VM.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://blog.codeship.com/using-docker-for-rails-development/">Using Docker for Rails Development - via @codeship | via @codeship</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">Docker for Mac and Windows Beta: the simplest way to use Docker on your laptop | Docker Blog</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://blog.hypriot.com/post/first-touch-down-with-docker-for-mac/">First Touch Down with Docker for Mac · Docker Pirates ARMed with explosive stuff</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="use-xhyve-as-docker-client-host">use-xhyve-as-Docker-client-host</a>
-</p></div></div>
-
-
-</div>
-</div>
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-04-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug</guid>
     </item>
     <item>
       <title>Use :var in code blocks</title>
       <link>http://dsdshcym.github.io/blog/2016/04/14/use-var-in-code-blocks</link>
-      <description><![CDATA[Some examples about :var]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-04-14</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/14/use-var-in-code-blocks</guid>
     </item>
     <item>
       <title>《看海的人》书评</title>
       <link>http://dsdshcym.github.io/blog/2016/04/10/《看海的人》书评</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>《看海的人》书评</h1>
-<p>
-《看海的人》是我在某次 Kindle Special Offers 中一时冲动买下的一本书。事实证明这个冲动太值得了。小林泰三的想象力之丰富，让我在看这本书时感受到了比高中看《三体》还要神奇的世界。甚至在读《沙漠中的凸镜》一章时，我完全想像不出这个世界的样子。也许这就是科幻的魅力所在吧。
-</p>
-
-<p>
-总之强烈推荐这本书。
-</p>
-
-<p>
-本来是想在不剧透的情况下写一篇评论的，但是文笔有限，还是要拿出我最喜欢的几章来讲一讲，下面是剧透的部分。
-</p>
-
-
-
-<hr />
-
-
-<div id="outline-container-orgadfe145" class="outline-2">
-<h2 id="orgadfe145">独裁者的律令</h2>
-<div class="outline-text-2" id="text-orgadfe145">
-<p>
-不知是因为翻译的缘故还是我没有读仔细，我一直没发现这是两条时间线交叉叙述的故事。在最后揭晓独裁者就是那个女孩的瞬间，还是非常意外的。
-</p>
-
-<p>
-无法想像在无情地走上权利巅峰的过程中要做多少与本性相背的事，最终完成约定的那一刹那，让我想到了鲁鲁修之死。
-</p>
-</div>
-</div>
-<div id="outline-container-orgccc5c2d" class="outline-2">
-<h2 id="orgccc5c2d">缓存</h2>
-<div class="outline-text-2" id="text-orgccc5c2d">
-<p>
-也许是出于程序员的本能，这篇与程序复杂度有很大关系的故事是我最喜欢的一篇。更不用说它还描述了一个类似黑客帝国的 VR 世界。
-</p>
-
-<p>
-当我们在写一些数据量较大的算法时，难免要做一些 Trade-off，但这些 Trade-off 会不会也像《缓存》中写的那样，在算法看似正常运行的背后，默默影响着程序的正常运行呢。
-</p>
-
-<p>
-<del>当然，其实我更向往的是有「魔点」存在的 VR 世界啦</del>
-</p>
-</div>
-</div>
-<div id="outline-container-org3c90c3d" class="outline-2">
-<h2 id="org3c90c3d">看海的人</h2>
-<div class="outline-text-2" id="text-org3c90c3d">
-<p>
-又一个把时间概念玩到极致的故事，虽然其实就和「天上一天，地上一年」一样简单，可以说是牛郎织女的科幻版吧，读出了不同的味道。
-</p>
-</div>
-</div>
-
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-04-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/10/《看海的人》书评</guid>
     </item>
     <item>
       <title>Add org-store-link Entry for elfeed</title>
       <link>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>Add org-store-link Entry for elfeed</h1>
-
-<div id="outline-container-orgfcf4bc6" class="outline-2">
-<h2 id="orgfcf4bc6">Elfeed</h2>
-<div class="outline-text-2" id="text-orgfcf4bc6">
-<p>
-Elfeed is a RSS client for Emacs. I've been using elfeed to read all my rss
-feeds for a long time. And I really wish it can have some integrations with
-org-mode like mu4e. So that I can capture a link to a RSS news entry to my notes
-and jump to this directly using the link.
-</p>
-</div>
-</div>
-<div id="outline-container-org4f2925d" class="outline-2">
-<h2 id="org4f2925d">A Hack Way</h2>
-<div class="outline-text-2" id="text-org4f2925d">
-<p>
-So I posted a feature request on Elfeed's github page. And I got this note from
-@heikkil: <a href="http://heikkil.github.io/blog/2015/05/09/notes-from-elfeed-entries/">Note taking 3: Notes from elfeed entries - Heikki @ home</a>. This
-solution can do the trick for me, but this is not what I want.
-</p>
-</div>
-</div>
-<div id="outline-container-org1975555" class="outline-2">
-<h2 id="org1975555">The ideal way</h2>
-<div class="outline-text-2" id="text-org1975555">
-<p>
-Then I spent 30 minutes to improve his codes. And I got this based on <a href="http://orgmode.org/manual/Adding-hyperlink-types.html">Adding
-hyperlink types - The Org Manual</a>:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-elisp">;; ---------------------
-;; org capture in elfeed
-;; ---------------------
-(defun private/org-elfeed-entry-store-link ()
-  (when elfeed-show-entry
-    (let* ((link (elfeed-entry-link elfeed-show-entry))
-           (title (elfeed-entry-title elfeed-show-entry)))
-      (org-store-link-props
-       :link link
-       :description title)
-      )))
-
-(add-hook 'org-store-link-functions
-          'private/org-elfeed-entry-store-link)
-</pre>
-</div>
-
-<p>
-After adding this hook, I can now use a template like this to capture what I
-am reading in elfeed to an org-mode entry in my refile.org file:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-elisp">(setq org-capture-templates
-          '(("l" "Link" entry
-             (file "~/Org/refile.org")
-             "* %a\n%U")
-            ))
-</pre>
-</div>
-</div>
-</div>
-
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-01-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</guid>
     </item>
     <item>
       <title>My 2015 Review</title>
       <link>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>My 2015 Review</h1>
-<p>
-2015 已经过去半个月了，在此我也对过去的一年作个小结，也算对 2016 作个规划，不知年末回头看看能有多少完成的。
-</p>
-
-<div id="outline-container-org3b3884e" class="outline-2">
-<h2 id="org3b3884e">Spacemacs</h2>
-<div class="outline-text-2" id="text-org3b3884e">
-<p>
-2015 年最明智的就是跳了 Spacemacs 的坑，让我转入了 Emacs 邪教，并最终成为了我转投 Arch Linux 的导火索。以至于找实习时都说出了 "I just want to find a job I can
-do all the coding staffs under command line" 这样的话。
-</p>
-
-<p>
-一年过后，我在 Spacemacs 下的 Work Flow 也逐渐稳定，然而代码并没有写多少。一天做得最多的就是用 Org 做笔记， mu4e 查邮件， elfeed 刷 RSS 。希望新的一年能好好写代码，更好地把 Org-mode 融入到生活里去。
-</p>
-</div>
-</div>
-<div id="outline-container-orgf590f5a" class="outline-2">
-<h2 id="orgf590f5a">实习</h2>
-<div class="outline-text-2" id="text-orgf590f5a">
-<p>
-老是因为偷懒没有找实习，结果好不容易找到一个待遇很好， Leader Title 又很牛逼的实习又因为投资人撤资而作罢了。
-</p>
-
-<p>
-在 EIA 的经历又让我觉得创业太不靠谱（或者是自己太水，无法凭技术让团队出彩），还是加入一家大公司好好学习比较好吧。
-</p>
-
-<p>
-希望新的一年能过掉 Google 面试，加入 Google 实习。
-</p>
-</div>
-</div>
-<div id="outline-container-orgd60dcf0" class="outline-2">
-<h2 id="orgd60dcf0">代码</h2>
-<div class="outline-text-2" id="text-orgd60dcf0">
-<p>
-回头看看，一年里也就学了 Django, Ruby, Rails, Elisp ，然而都只是皮毛， Ruby 算是略有深入，然而代码量依然捉急。 Elisp 也只是能简单调试的地步。在写简历的时候甚至发现自己几乎没有拿得出手的项目。
-</p>
-
-<p>
-新的一年要好好研究 Python 和 Ruby 了。至少也得有一个能写在简历上大书特书一番的项目。
-</p>
-</div>
-</div>
-<div id="outline-container-org071a4dd" class="outline-2">
-<h2 id="org071a4dd">学业</h2>
-<div class="outline-text-2" id="text-org071a4dd">
-<p>
-每次想要翘课都会因为怕老师点名而去（也和自己没啥项目写有关），最终在课上却各种水，结果效果比翘课还差。虽然有时能用 Org 作笔记强迫自己专心，但是作的笔记后面也没什么大的用处（除了锻炼了五笔）。身为一只「大四狗」还做不到翘课随心，深感有愧。
-</p>
-
-<p>
-导致每次考试前都在紧张怕挂科，然而依然不好好复习，甚至装 Arch 作死。幸好最后结果都还不错。
-</p>
-
-<p>
-下学期要好好翘水课写代码。
-</p>
-</div>
-</div>
-<div id="outline-container-org9716e97" class="outline-2">
-<h2 id="org9716e97">Arch</h2>
-<div class="outline-text-2" id="text-org9716e97">
-<p>
-在 2015 年的最后两天跳入了 Arch Linux 的坑，感觉找到了真正适合自己的操作系统，希望毕业以后能换一台对 Linux 支持得更好的 Laptop 吧，毕竟 Mac 上的 Linux 还是有某几个细节不完美的。当然如果 Emacs 25 出来后（在 Mac 上的性能更好），并且 OS X 能有不错的 Tiling Window Manager 的话（虽然并不可能），还是可以考虑回归 OS X 的。
-</p>
-</div>
-</div>
-
-</div>
-</div>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-01-15</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</guid>
     </item>
     <item>
       <title>Why did I switch to Arch Linux</title>
       <link>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</link>
-      <description><![CDATA[Why did I switch to Arch Linux and not use OS X anymore]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-01-15</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux</guid>
-    </item>
-    <item>
-      <title>How To Use OS X With Keyboard Only</title>
-      <link>http://dsdshcym.github.io/blog/2015/12/19/how-to-use-os-x-with-keyboard-only</link>
-      <description><![CDATA[How Do I Use OS X With My Keyboard Only]]></description>
-      <pubDate>2015-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/12/19/how-to-use-os-x-with-keyboard-only</guid>
-    <pubDate>Fri, 03 Jun 2016 19:49:46 CST</pubDate>
-    <lastBuildDate>Fri, 03 Jun 2016 19:49:46 CST</lastBuildDate>
-    <docs>http://www.rssboard.org/rss-specification</docs>
-    <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
-    <item>
-      <title>A Simple Introduction to Docker I</title>
-      <link>http://dsdshcym.github.io/blog/2015/11/13/a-simple-introduction-to-docker-i</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/11/13/a-simple-introduction-to-docker-i</guid>
-    </item>
-    <item>
-      <title>A Simple Introduction to Docker II</title>
-      <link>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/11/26/a-simple-introduction-to-docker-ii</guid>
-    </item>
-    <item>
-      <title>A Simple Introduction to Docker III</title>
-      <link>http://dsdshcym.github.io/blog/2015/12/04/a-simple-introduction-to-docker-iii</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/12/04/a-simple-introduction-to-docker-iii</guid>
-    </item>
-    <item>
-      <title>A Simple Introduction to Docker IX</title>
-      <link>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/12/11/a-simple-introduction-to-docker-ix</guid>
-    </item>
-    <item>
-      <title>Add org-store-link Entry for elfeed</title>
-      <link>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</guid>
-    </item>
-    <item>
-      <title>Emacs 25 compiled file conflicts with Emacs 24</title>
-      <link>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24</guid>
-    </item>
-    <item>
-      <title>Five ways to free up rootfs in Arch Linux</title>
-      <link>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</guid>
-    </item>
-    <item>
-      <title>Answers for Liqi Problems</title>
-      <link>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2015/10/30/answers-for-liqi-problems</guid>
-    </item>
-    <item>
-      <title>Lisp 的语言特点和价值浅析</title>
-      <link>http://dsdshcym.github.io/blog/2016/06/03/lisp</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/06/03/lisp</guid>
-    </item>
-    <item>
-      <title>My 2015 Review</title>
-      <link>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-06-03</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/01/15/my-2015-review</guid>
     </item>
   </channel>
 </rss>
