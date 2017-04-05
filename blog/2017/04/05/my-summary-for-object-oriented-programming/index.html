@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>My Summary for Object-Oriented Programming - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="description" content="My summary for my learning from POODR, RubyTapas, Upcase, etc." />
+    <meta name="keywords" content="Object-Oriented Programming" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>My Summary for Object-Oriented Programming</h1>
+<p>
+I have been written Object-Oriented code (in C++, Python, Ruby) for almost 3
+years. But I only got to know Object-Oriented Programming until recently.
+</p>
+
+<p>
+After writing Ruby code for several months in a huge codebase, I started feeling
+the pain brought by my procedural programming habits. Then I read several books
+about clean code and object-oriented programming: <i>Clean Code</i>, <i>Refactoring:
+Improving the Design of Existing Code</i>, <i>Practical Object-Oriented Design in
+Ruby</i>, and <i>Objects on Rails</i>. I also watched many video tutorials from Upcase
+and RubyTapas. They really helped me understand what a good design is and how to
+achieve it.
+</p>
+
+<p>
+This article is a summary for my current understanding.
+</p>
+
+<div id="outline-container-org469ee6a" class="outline-2">
+<h2 id="org469ee6a">What is Object-Oriented Programming</h2>
+<div class="outline-text-2" id="text-org469ee6a">
+<p>
+A mind blown point for me to this problem is when I read what Alan Kay said
+about the meaning of Object-Oriented Programming<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>:
+</p>
+<blockquote>
+<p>
+OOP to me means only messaging, local retention and protection and hiding of
+state-process, and extreme late-binding of all things. It can be done in
+Smalltalk and in LISP. There are possibly other systems in which this is
+possible, but I'm not aware of them.
+</p>
+</blockquote>
+<p>
+So, basically, there are three fundamental things about OOP:
+</p>
+<dl class="org-dl">
+<dt>Messaging</dt><dd>Some people may think class is the fundamental component of OOP.
+But if we think further, a class is just data and the behaviors
+related to these data. And here, behavior is just another
+expression for "message".</dd>
+<dt>Local retention and protection and hiding of state-process</dt><dd><p>
+     I will choose another word for this part - <b>Encapsulation</b>.
+</p>
+
+<p>
+Think about the data in a class. They are all encapsulated into an instance
+so that the user of this instance doesn't need to know what data it holds,
+but only needs to know what messages it responds to.
+</p></dd>
+<dt>Extreme late-binding of all things</dt><dd><p>
+     Both messaging and encapsulation serve this purpose. And almost all the
+techniques we are using in Object-Oriented Programming - Inheritance,
+Delegation, Composition, Polymorphism, you name it - are aimed for this
+purpose, too.
+</p>
+
+<p>
+With this, you don't need to know what object responds to your message when
+you send it to an object. The response can happen anywhere: the object
+itself (within its singleton class), its mixins, its superclass, etc.
+</p></dd>
+</dl>
+<p>
+But what can late-binding help us in programming?
+</p>
+</div>
+</div>
+<div id="outline-container-orga216fc0" class="outline-2">
+<h2 id="orga216fc0">Why Object-Oriented Programming?</h2>
+<div class="outline-text-2" id="text-orga216fc0">
+</div><div id="outline-container-org8fbba93" class="outline-3">
+<h3 id="org8fbba93">Embrace Change</h3>
+<div class="outline-text-3" id="text-org8fbba93">
+<p>
+Change is the biggest problem in software engineering.
+</p>
+
+<p>
+If we are not going to change a program after it's working fine. Then we can
+write it in whatever the way we want, as long as it's working.
+</p>
+
+<p>
+But this cannot be the case most of the time. We always need to support
+different input/output. We always need to tweak some algorithms. We always need
+to add some new features.
+</p>
+
+<p>
+With the inevitable changes in our mind, we need to be agile, we need to embrace
+change and be prepared for them.
+</p>
+</div>
+</div>
+<div id="outline-container-org3a485bb" class="outline-3">
+<h3 id="org3a485bb">Code for Readability</h3>
+<div class="outline-text-3" id="text-org3a485bb">
+<p>
+I remembered this quote from SICP:
+</p>
+<blockquote>
+<p>
+Programs must be written for people to read, and only incidentally for machines
+to execute
+</p>
+</blockquote>
+<p>
+And there are many other experienced programmers like Martin Fowler, emphasis
+the same thing.
+</p>
+
+<p>
+If our program is readable enough so that a programmer can debug/tweak it with
+enough confidence. No matter this programmer is someone else or the same
+programmer several months later, he will admit it is good code.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfabd16a" class="outline-3">
+<h3 id="orgfabd16a">Late-binding to the rescue</h3>
+<div class="outline-text-3" id="text-orgfabd16a">
+<p>
+Late-binding can help us to write readable code.
+</p>
+
+<p>
+With late-binding, you can just send a message to an object and let it do its
+job. And you don't even need to know how it get the job done or which part of
+your codebase is handling this job. This is a really helpful feature when you
+read code. If you can always think in the same abstration layer and don't need
+to worry about things happen underneath, you can understand the whole project
+more easily.
+</p>
+
+<p>
+Without late-binding, we need to know almost everything else in this program.
+Unlike a CEO just leading the whole company towards a common goal, you need to
+be a manager that needs to know everything going on in the company. This can be
+a huge burden when we read the code.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org586ce32" class="outline-2">
+<h2 id="org586ce32">How to design good Object-Oriented Program?</h2>
+<div class="outline-text-2" id="text-org586ce32">
+<p>
+Object-Oriented Programming is not a new idea. It've existed for more than half
+a century (Simula came out in 1967).
+</p>
+
+<p>
+And I was suprised that most of the design problems in Object-Oriented
+Programming have already been solved/expained in 1980s<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+</p>
+</div>
+<div id="outline-container-orgd81abc1" class="outline-3">
+<h3 id="orgd81abc1">Know the principles</h3>
+<div class="outline-text-3" id="text-orgd81abc1">
+<p>
+First, you need to know the design principles. Without them, you don't know what
+is a well designed application. Among all these principles, I found that SOLID
+principle is the most powerful but the hardest to learn. I still have not seen
+any project follows SOLID principle entirely. And I'm still finding my way to
+fully understand these principles.
+</p>
+
+<p>
+There are several greate resources for these principles:
+</p>
+<ul class="org-ul">
+<li><a href="http://webpro.github.io/programming-principles/">Programming Principles</a></li>
+<li><a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">ArticleS.UncleBob.PrinciplesOfOod</a></li>
+<li>A series of video tutorials explaining SOLID on Upcase</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org37a7cbf" class="outline-3">
+<h3 id="org37a7cbf">Refactor</h3>
+<div class="outline-text-3" id="text-org37a7cbf">
+<dl class="org-dl">
+<dt>After a feature is implemented</dt><dd><p>
+     One thing I realize is that we cannot write a well designed program at the
+first time.
+</p>
+
+<p>
+Only when we finish the program, can we gain the better understanding of
+the scope of this project and rearrange the code better.
+</p>
+
+<p>
+Of course, this doesn't only apply to features. It also can apply to
+functions, classes, and tests. After I finish any of them, I'll go back and
+see if there is any way to make this code cleaner and more clear.
+</p></dd>
+<dt>Before adding a new feature</dt><dd><p>
+     I often found myself adding a new feature by just adding a few line of <code>if</code>
+statements before. And as time went by, the function became too long, the
+class became too large, the whole project became nearly unmaintainable.
+</p>
+
+<p>
+But if we refactor every time before we add a new feature, so that adding
+this new feature can be easily done after the refactoring. The code will
+stay clean much longer.
+</p></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge01cfd3" class="outline-3">
+<h3 id="orge01cfd3">UML</h3>
+<div class="outline-text-3" id="text-orge01cfd3">
+<p>
+When I first learned about UML, I was fully unaware about the power of these
+tools. "These are just simple diagrams, what a waste of time to draw these." But
+I was wrong.
+</p>
+
+<dl class="org-dl">
+<dt>They are really helpful when we design or refactor our system.</dt><dd>Actually, they are the cheapest way to do software design I've ever known.</dd>
+
+<dt>They are important when we need to communicate over different design solutions.</dt><dd>They are a standard for teammates to communicate over the same page. It's
+really hard to get on the same page if the two people are using different
+graphical languages when they discuss things like modeling.</dd>
+</dl>
+
+<p>
+I haven't done any design on UML in a real project yet. But I really hope to
+apply this in my daily design works.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">Dr. Alan Kay on the Meaning of "Object-Oriented Programming"</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.laputan.org/drc/drc.html">Designing Reusable Classes</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2017-04-05</span>
+        <span title="last modification date" class="post-info">2017-04-05</span>
+        <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -4,10 +4,17 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 04 Mar 2017 11:29:55 CST</pubDate>
-    <lastBuildDate>Sat, 04 Mar 2017 11:29:55 CST</lastBuildDate>
+    <pubDate>Wed, 05 Apr 2017 15:19:48 CST</pubDate>
+    <lastBuildDate>Wed, 05 Apr 2017 15:19:48 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>My Summary for Object-Oriented Programming</title>
+      <link>http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming</link>
+      <description><![CDATA[My summary for my learning from POODR, RubyTapas, Upcase, etc.]]></description>
+      <pubDate>2017-04-05</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming</guid>
+    </item>
     <item>
       <title>La La Land Review</title>
       <link>http://dsdshcym.github.io/blog/2017/03/04/la-la-land-review</link>
@@ -18,65 +25,371 @@
     <item>
       <title>Comparison between Poker II and New Poker II</title>
       <link>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[A comparison between Poker II and New Poker II]]></description>
       <pubDate>2017-02-21</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</guid>
     </item>
     <item>
       <title>Review of /Are your lights on?/</title>
       <link>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[My review of /Are your lights on?/. About how to define the real problem.]]></description>
       <pubDate>2017-02-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</guid>
     </item>
     <item>
       <title>Why I give up Wubi</title>
       <link>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[我为什么在使用五笔两年后回到了拼音输入法]]></description>
       <pubDate>2017-02-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</guid>
     </item>
     <item>
       <title>How do I use org-capture on Mac</title>
       <link>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>How do I use org-capture on Mac</h1>
+<p>
+org-capture is one of the most powerful feature of Org-Mode. It lets me capture
+my todo items and notes really quickly. Someone even use org-capture to <a href="https://www.youtube.com/watch?v=HVYQnvBrnZ4">capture
+Chinese words and build flash cards</a>. Here is how I use org-capture.
+</p>
+
+<ol class="org-ol">
+<li>The most basic one is Task, which captures a todo item and save it to my
+refile.org file.</li>
+<li>You may wonder what are %a and %t do in my templates.
+<ul class="org-ul">
+<li>%a will add a link to current file into the capture content</li>
+<li>%t will add a timestamp</li>
+<li>%^{} will prompt for content</li>
+<li>You can even eval some elisp code using %()</li>
+</ul></li>
+<li>I have two different ways to grab a link from Chrome.
+<ol class="org-ol">
+<li><code>org-mac-chrome-insert-frontmost-url</code>, this is a function from
+<code>org-mac-link</code> package. This package use some apple scripts to grab
+links from some applications, such as Safari, Chrome, Skim. But these
+scripts don't work well when you have multiple windows of the same app
+opened. And it can also cause Emacs hanging.</li>
+<li>Use <code>org-protocol</code>, which is a great way to capture links. But the emacs
+installed from homebrew can not handle <code>org-protocol</code> links, you need to
+install the <code>emacs-mac</code> from emacs-mac-port.
+<ul class="org-ul">
+<li><p>
+Then I use a script to open a org-protocol link in Chrome.
+</p>
+<pre class="example">
+orgCapture(key) -&gt; {{
+location.href = 'org-protocol://capture://' + key + '/' +
+    encodeURIComponent(location.href) +
+    '/' +
+    encodeURIComponent(document.title) +
+    '/' +
+    encodeURIComponent(window.getSelection())
+}}
+</pre></li>
+<li>Emacs will deal with this link and choose which template I want to use.</li>
+</ul></li>
+</ol></li>
+
+<li><p>
+Here are my templates
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(setq org-capture-templates
+          '(("t" "Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n")
+            ("T" "Clock-in Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n"
+              :clock-in t
+              :clock-resume t)
+            ("d" "Distraction in a pomodoro" entry
+              (file "~/Org/refile.org")
+              "* TODO %^{Task}\n  SCHEDULED: %t\n"
+              :immediate-finish t)
+            ("n" "Note" entry
+              (file "~/Org/refile.org")
+              "* %?\n")
+            ("l" "Note with link to current file" entry
+              (file "~/Org/refile.org")
+              "* %a")
+            ("j" "Journal" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n"
+              :clock-in t
+              :clock-resume t)
+            ("J" "Journal from Phone" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n  :LOGBOOK:\n  CLOCK: %^{Begin}U--%^{End}U\n  :END:")
+            ("c" "Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)")
+            ("C" "Clock-in Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)"
+              :clock-in t
+              :clock-resume t)
+            ("p" "People (Contacts)" entry
+              (file "~/Org/contacts.org")
+              "* %(org-contacts-template-name)\n  :PROPERTIES:\n  :EMAIL: %(org-contacts-template-email)\n  :END:")
+            ("k" "Push to Kindle" entry
+              (file+headline "~/Org/refile.org" "Push to Kindle")
+              "* %a"
+              :immediate-finish t)
+            ))
+</pre>
+</div></li>
+</ol>
+
+</div>
+</div>]]></description>
       <pubDate>2016-05-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</guid>
     </item>
     <item>
       <title>Use xhyve as Docker client host</title>
       <link>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>Use xhyve as Docker client host</h1>
+<p>
+When using Docker on a Mac, we need to use a Virtual Machine as the host of the
+Docker client. (This is due to the differences between the kernel of Mac and
+Linux) And most of the time, people will choose virtualbox. But it seems too
+heavy comparing to the lightwight of Docker.
+</p>
+
+<p>
+That's why the new Docker for Mac chooses to use xhyve as the new host of the
+Docker client. But Docker for Mac is still in beta. Here is how to use xhyve via
+docker-machine. It may not be as efficient as Docker for Mac Beta. But it's good
+enough for a taste.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<code>xhyve</code>
+</p>
+
+<p>
+Follow the instruction <a href="https://github.com/mist64/xhyve#installation">here</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">brew install --HEAD xhyve
+</pre>
+</div></li>
+<li><p>
+<code>docker-machine-driver-xhyve</code>
+</p>
+
+<p>
+Follow the instruction <a href="https://github.com/zchee/docker-machine-driver-xhyve#install">here</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">brew install docker-machine-driver-xhyve
+
+# docker-machine-driver-xhyve need root owner and uid
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+</pre>
+</div></li>
+<li><p>
+<code>docker-machine create</code>
+</p>
+
+<p>
+Use this instruction to create a xhyve VM. Remember to add the
+<code>--xhyve-experimental-nfs-share</code> option to enable the file sharing.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">docker-machine create --driver xhyve --xhyve-experimental-nfs-share dev-xhyve
+</pre>
+</div></li>
+</ul>
+
+
+<p>
+The experience using xhyve is absolutly better than virtualbox. I hope I can use
+Docker for Mac soon.
+</p>
+
+</div>
+</div>]]></description>
       <pubDate>2016-04-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</guid>
     </item>
     <item>
       <title>Develop in Docker I: Virtualbox file syncing bug</title>
       <link>http://dsdshcym.github.io/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>Develop in Docker I: Virtualbox file syncing bug</h1>
+<p>
+Docker is a great tool for deployment. And I want to develop my Flask app in
+Docker so that I can get the same environments as the production environments.
+</p>
+
+<div id="outline-container-org8e495f8" class="outline-2">
+<h2 id="org8e495f8">Bug description</h2>
+<div class="outline-text-2" id="text-org8e495f8">
+<p>
+But I went into this bug:
+</p>
+
+<ul class="org-ul">
+<li>When I first mount a directory into a container, everything works fine.</li>
+<li>After I change some code, the container aborted with a syntax error.</li>
+<li>Then I attach into the container and see what happened.
+<ul class="org-ul">
+<li>When I use <code>vim</code> to open the "syntax error" file, everything seems to be fine.</li>
+<li>When I use <code>cat</code> to get the file content. Then change I made to this file
+appeared at the end of this file instead of the place I wanted it to be.</li>
+</ul></li>
+</ul>
+
+<p>
+After some search, it seems to be a virtualbox bug:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/docker/docker/issues/15793">File mount does not update with changes from host · Issue #15793 · docker/docker</a>
+<ul class="org-ul">
+<li><a href="https://www.virtualbox.org/ticket/14920">#14920 (VboxSF volumes mounted in Docker containers do not update file contents) – Oracle VM VirtualBox</a></li>
+<li><a href="https://www.virtualbox.org/ticket/9069">#9069 (shared folder doesn't seem to update) – Oracle VM VirtualBox</a></li>
+</ul></li>
+</ul>
+
+<p>
+But this bug may not appear on everyone's machine. At least in this
+post<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, the speaker can get the file syncing correctly, I don't know if
+this is due to she didn't do any deletion. (If you are also interested in
+developing in Docker, you should read this post too)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43f4416" class="outline-2">
+<h2 id="org43f4416">Solution</h2>
+<div class="outline-text-2" id="text-org43f4416">
+<p>
+The solution is simple:
+</p>
+
+<p>
+Just don't use virtualbox as the docker running virtual machine. Use xhyve
+instead, which is also the VM used by the new Docker for Mac<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. You can
+also check out this post<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> about Docker for Mac.
+</p>
+
+<p>
+And here is my post<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> about using xhyve as the Docker client host VM.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://blog.codeship.com/using-docker-for-rails-development/">Using Docker for Rails Development - via @codeship | via @codeship</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">Docker for Mac and Windows Beta: the simplest way to use Docker on your laptop | Docker Blog</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://blog.hypriot.com/post/first-touch-down-with-docker-for-mac/">First Touch Down with Docker for Mac · Docker Pirates ARMed with explosive stuff</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="use-xhyve-as-docker-client-host">use-xhyve-as-Docker-client-host</a>
+</p></div></div>
+
+
+</div>
+</div>
+</div>
+</div>]]></description>
       <pubDate>2016-04-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug</guid>
     </item>
     <item>
       <title>Use :var in code blocks</title>
       <link>http://dsdshcym.github.io/blog/2016/04/14/use-var-in-code-blocks</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[Some examples about :var]]></description>
       <pubDate>2016-04-14</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/14/use-var-in-code-blocks</guid>
     </item>
     <item>
       <title>《看海的人》书评</title>
       <link>http://dsdshcym.github.io/blog/2016/04/10/《看海的人》书评</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<div>
+<div class="post">
+<h1>《看海的人》书评</h1>
+<p>
+《看海的人》是我在某次 Kindle Special Offers 中一时冲动买下的一本书。事实证明这个冲动太值得了。小林泰三的想象力之丰富，让我在看这本书时感受到了比高中看《三体》还要神奇的世界。甚至在读《沙漠中的凸镜》一章时，我完全想像不出这个世界的样子。也许这就是科幻的魅力所在吧。
+</p>
+
+<p>
+总之强烈推荐这本书。
+</p>
+
+<p>
+本来是想在不剧透的情况下写一篇评论的，但是文笔有限，还是要拿出我最喜欢的几章来讲一讲，下面是剧透的部分。
+</p>
+
+
+
+<hr />
+
+
+<div id="outline-container-org4b1192c" class="outline-2">
+<h2 id="org4b1192c">独裁者的律令</h2>
+<div class="outline-text-2" id="text-org4b1192c">
+<p>
+不知是因为翻译的缘故还是我没有读仔细，我一直没发现这是两条时间线交叉叙述的故事。在最后揭晓独裁者就是那个女孩的瞬间，还是非常意外的。
+</p>
+
+<p>
+无法想像在无情地走上权利巅峰的过程中要做多少与本性相背的事，最终完成约定的那一刹那，让我想到了鲁鲁修之死。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4d5fb8" class="outline-2">
+<h2 id="orgc4d5fb8">缓存</h2>
+<div class="outline-text-2" id="text-orgc4d5fb8">
+<p>
+也许是出于程序员的本能，这篇与程序复杂度有很大关系的故事是我最喜欢的一篇。更不用说它还描述了一个类似黑客帝国的 VR 世界。
+</p>
+
+<p>
+当我们在写一些数据量较大的算法时，难免要做一些 Trade-off，但这些 Trade-off 会不会也像《缓存》中写的那样，在算法看似正常运行的背后，默默影响着程序的正常运行呢。
+</p>
+
+<p>
+<del>当然，其实我更向往的是有「魔点」存在的 VR 世界啦</del>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb23dd45" class="outline-2">
+<h2 id="orgb23dd45">看海的人</h2>
+<div class="outline-text-2" id="text-orgb23dd45">
+<p>
+又一个把时间概念玩到极致的故事，虽然其实就和「天上一天，地上一年」一样简单，可以说是牛郎织女的科幻版吧，读出了不同的味道。
+</p>
+</div>
+</div>
+
+</div>
+</div>]]></description>
       <pubDate>2016-04-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/10/《看海的人》书评</guid>
-    </item>
-    <item>
-      <title>Add org-store-link Entry for elfeed</title>
-      <link>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2016-01-28</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/01/28/add-org-store-link-entry-for-elfeed</guid>
     </item>
   </channel>
 </rss>
