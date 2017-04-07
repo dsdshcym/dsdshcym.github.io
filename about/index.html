@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>About - dsdshome</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Yiming Chen" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
-  <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
+<head>
+  <title>About - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
 
-<div>
-<div class="post">
-<h1>About</h1>
-<div id="table-of-contents">
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>About</h1>
+            <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge0c3fb1">1. Basics</a></li>
-<li><a href="#org5b3b4fa">2. Social Networks</a></li>
-<li><a href="#orgf0edcac">3. Thanks</a></li>
+<li><a href="#org74c7053">1. Basics</a></li>
+<li><a href="#orgbcb7e4c">2. Social Networks</a></li>
+<li><a href="#org04a2601">3. Thanks</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge0c3fb1" class="outline-2">
-<h2 id="orge0c3fb1"><span class="section-number-2">1</span> Basics</h2>
+<div id="outline-container-org74c7053" class="outline-2">
+<h2 id="org74c7053"><span class="section-number-2">1</span> Basics</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>陈一鸣 aka dsdshcym</li>
@@ -50,8 +66,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b3b4fa" class="outline-2">
-<h2 id="org5b3b4fa"><span class="section-number-2">2</span> Social Networks</h2>
+<div id="outline-container-orgbcb7e4c" class="outline-2">
+<h2 id="orgbcb7e4c"><span class="section-number-2">2</span> Social Networks</h2>
 <div class="outline-text-2" id="text-2">
 <dl class="org-dl">
 <dt>Twitter</dt><dd><a href="https://twitter.com/dsdshcym">Yiming Chen (@dsdshcym) | Twitter</a></dd>
@@ -61,8 +77,8 @@
 </dl>
 </div>
 </div>
-<div id="outline-container-orgf0edcac" class="outline-2">
-<h2 id="orgf0edcac"><span class="section-number-2">3</span> Thanks</h2>
+<div id="outline-container-org04a2601" class="outline-2">
+<h2 id="org04a2601"><span class="section-number-2">3</span> Thanks</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 这个博客全部在 <a href="http://www.gnu.org/software/emacs/">Emacs</a> / <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a> 中完成，使用 <a href="http://orgmode.org/">Org mode</a> 编写， <a href="https://github.com/kelvinh/org-page">org-page</a> 生成导出，在此特别感谢！
@@ -75,23 +91,19 @@ This blog is completed by <a href="http://www.gnu.org/software/emacs/">Emacs</a>
 </div>
 </div>
 
-</div>
-</div>
-    <div>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
     </div>
+</section>
+
+
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
 
   </body>
 </html>

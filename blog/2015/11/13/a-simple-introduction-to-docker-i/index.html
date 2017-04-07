@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>A Simple Introduction to Docker I - dsdshome</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Yiming Chen" />
-    <meta name="keywords" content="Docker, Container" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
+<head>
+  <title>A Simple Introduction to Docker I - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Docker, Container" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
   <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
 
-<div>
-<div class="post">
-<h1>A Simple Introduction to Docker I</h1>
-
-<div id="outline-container-org2794913" class="outline-2">
-<h2 id="org2794913">Why do we need Virtualization?</h2>
-<div class="outline-text-2" id="text-org2794913">
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>A Simple Introduction to Docker I</h1>
+            
+<div id="outline-container-orgaf9d091" class="outline-2">
+<h2 id="orgaf9d091">Why do we need Virtualization?</h2>
+<div class="outline-text-2" id="text-orgaf9d091">
 <p>
 I believe everyone have used a virtual machine before. And I think you know how
 convenient a virtual machine is under a personal usage sceanario. Here, we
 mainly focus on the power of virtualization on the server side.
 </p>
 </div>
-<div id="outline-container-org37d93f2" class="outline-3">
-<h3 id="org37d93f2">Snapshots</h3>
-<div class="outline-text-3" id="text-org37d93f2">
+<div id="outline-container-orgf8f0033" class="outline-3">
+<h3 id="orgf8f0033">Snapshots</h3>
+<div class="outline-text-3" id="text-orgf8f0033">
 <p>
 Imagine how much work you need to do to backup a physical machine.
 </p>
@@ -63,9 +79,9 @@ another host.
 </p>
 </div>
 </div>
-<div id="outline-container-orgffa6223" class="outline-3">
-<h3 id="orgffa6223">Isolation</h3>
-<div class="outline-text-3" id="text-orgffa6223">
+<div id="outline-container-orgaeae3bd" class="outline-3">
+<h3 id="orgaeae3bd">Isolation</h3>
+<div class="outline-text-3" id="text-orgaeae3bd">
 <p>
 In the real world, we often isolate apps that we want to run to provide more
 reliabilities. If an app fails, it won't cause any effect to any other apps,
@@ -83,9 +99,9 @@ virtual machines.
 </p>
 </div>
 </div>
-<div id="outline-container-org23ccb65" class="outline-3">
-<h3 id="org23ccb65">Cost/Energy Saving</h3>
-<div class="outline-text-3" id="text-org23ccb65">
+<div id="outline-container-orgbf2083e" class="outline-3">
+<h3 id="orgbf2083e">Cost/Energy Saving</h3>
+<div class="outline-text-3" id="text-orgbf2083e">
 <p>
 Since we can provide isolation via virtualization, we can use a single machine
 to provide same functionality as hundreds physical machines thanks to the
@@ -98,13 +114,13 @@ Thus we can save our unneeded cost on these physical machines.
 </div>
 </div>
 </div>
-<div id="outline-container-orge7dcf8a" class="outline-2">
-<h2 id="orge7dcf8a">What's the Container?</h2>
-<div class="outline-text-2" id="text-orge7dcf8a">
+<div id="outline-container-orgd8e494d" class="outline-2">
+<h2 id="orgd8e494d">What's the Container?</h2>
+<div class="outline-text-2" id="text-orgd8e494d">
 </div>
-<div id="outline-container-orga9493ff" class="outline-3">
-<h3 id="orga9493ff">Operating-system-level virtualization</h3>
-<div class="outline-text-3" id="text-orga9493ff">
+<div id="outline-container-orgf571234" class="outline-3">
+<h3 id="orgf571234">Operating-system-level virtualization</h3>
+<div class="outline-text-3" id="text-orgf571234">
 <p>
 Container, also called operating-system-level virtualization, is a
 server-virtualization method where the kernel of an operating system allows
@@ -120,9 +136,9 @@ Virtualization</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org196f79b" class="outline-3">
-<h3 id="org196f79b">Compare with VM</h3>
-<div class="outline-text-3" id="text-org196f79b">
+<div id="outline-container-org3bc6e35" class="outline-3">
+<h3 id="org3bc6e35">Compare with VM</h3>
+<div class="outline-text-3" id="text-org3bc6e35">
 <p>
 Basically, a container is way more lightweight than a virtual machine. Thus, it
 can boot more quickly, use CPU and RAM more efficiently and have smaller image
@@ -241,9 +257,9 @@ this table below:
 </table></li>
 </ul>
 </div>
-<div id="outline-container-org068469b" class="outline-4">
-<h4 id="org068469b">Why can a container be so lightweight?</h4>
-<div class="outline-text-4" id="text-org068469b">
+<div id="outline-container-orge815f49" class="outline-4">
+<h4 id="orge815f49">Why can a container be so lightweight?</h4>
+<div class="outline-text-4" id="text-orge815f49">
 <p>
 Containers include the application and all of its dependencies, but share the
 kernel with other containers. They run as an isolated process in userspace on
@@ -264,12 +280,12 @@ GBs in size.
 </div>
 </div>
 </div>
-<div id="outline-container-org43dfa95" class="outline-3">
-<h3 id="org43dfa95">How does container help you build better software?</h3>
-<div class="outline-text-3" id="text-org43dfa95">
-</div><div id="outline-container-org67d94b9" class="outline-4">
-<h4 id="org67d94b9">Eliminate Environment Inconsistencies</h4>
-<div class="outline-text-4" id="text-org67d94b9">
+<div id="outline-container-org768582a" class="outline-3">
+<h3 id="org768582a">How does container help you build better software?</h3>
+<div class="outline-text-3" id="text-org768582a">
+</div><div id="outline-container-org890bdcd" class="outline-4">
+<h4 id="org890bdcd">Eliminate Environment Inconsistencies</h4>
+<div class="outline-text-4" id="text-org890bdcd">
 <p>
 You can package your container into one little config file. And it can run on
 another machine as the way you want it to. So you don't need to spend extra time
@@ -277,18 +293,18 @@ to install package A, B, C, D... in your test machine or even working machine.
 </p>
 </div>
 </div>
-<div id="outline-container-org8b7cb79" class="outline-4">
-<h4 id="org8b7cb79">Accelerate Developer Onboarding</h4>
-<div class="outline-text-4" id="text-org8b7cb79">
+<div id="outline-container-orgb0c1c6a" class="outline-4">
+<h4 id="orgb0c1c6a">Accelerate Developer Onboarding</h4>
+<div class="outline-text-4" id="text-orgb0c1c6a">
 <p>
 You can just give your new partner a container config file. And he can run it on
 his machine without any problems. Then he can start to work. It just works.
 </p>
 </div>
 </div>
-<div id="outline-container-org313df10" class="outline-4">
-<h4 id="org313df10">Empower Developer Creativity</h4>
-<div class="outline-text-4" id="text-org313df10">
+<div id="outline-container-org17ebb4f" class="outline-4">
+<h4 id="org17ebb4f">Empower Developer Creativity</h4>
+<div class="outline-text-4" id="text-org17ebb4f">
 <p>
 You don't need to worry about what language you should use. You can use any
 language you want in a container, as long as you provide a simple API through
@@ -309,32 +325,25 @@ this container. And this will not cause any conflicts.
 
 </div>
 </div>
-</div>
-</div>
-    <div>
-      <div class="post-meta">
+    </div>
+</section>
+
+
+    <div class="post-meta">
         <span title="post date" class="post-info">2015-11-13</span>
         <span title="last modification date" class="post-info">2015-11-13</span>
         <span title="tags" class="post-info"><a href="/tags/docker/">Docker</a>, <a href="/tags/container/">Container</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
-      </section>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
     </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
 
   </body>
 </html>

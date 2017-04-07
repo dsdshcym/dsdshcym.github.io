@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>A Simple Introduction to Docker III - dsdshome</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Yiming Chen" />
-    <meta name="keywords" content="Docker, Container" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
+<head>
+  <title>A Simple Introduction to Docker III - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Docker, Container" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
   <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
 
-<div>
-<div class="post">
-<h1>A Simple Introduction to Docker III</h1>
-
-<div id="outline-container-org8fe9ad1" class="outline-2">
-<h2 id="org8fe9ad1">What is Docker?</h2>
-<div class="outline-text-2" id="text-org8fe9ad1">
-</div><div id="outline-container-orgddc9adb" class="outline-3">
-<h3 id="orgddc9adb">Underlying Techniques</h3>
-<div class="outline-text-3" id="text-orgddc9adb">
-</div><div id="outline-container-org828c045" class="outline-4">
-<h4 id="org828c045">What do we need to do to build a container?</h4>
-<div class="outline-text-4" id="text-org828c045">
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>A Simple Introduction to Docker III</h1>
+            
+<div id="outline-container-org3bef78d" class="outline-2">
+<h2 id="org3bef78d">What is Docker?</h2>
+<div class="outline-text-2" id="text-org3bef78d">
+</div><div id="outline-container-orgc0483eb" class="outline-3">
+<h3 id="orgc0483eb">Underlying Techniques</h3>
+<div class="outline-text-3" id="text-orgc0483eb">
+</div><div id="outline-container-org8594196" class="outline-4">
+<h4 id="org8594196">What do we need to do to build a container?</h4>
+<div class="outline-text-4" id="text-org8594196">
 <ol class="org-ol">
 <li><p>
 Isolate every container
@@ -89,9 +105,9 @@ And more importantly, it's scalable.
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd6eace5" class="outline-4">
-<h4 id="orgd6eace5">Linux Namespace</h4>
-<div class="outline-text-4" id="text-orgd6eace5">
+<div id="outline-container-org72c3305" class="outline-4">
+<h4 id="org72c3305">Linux Namespace</h4>
+<div class="outline-text-4" id="text-org72c3305">
 <ul class="org-ul">
 <li>Docker takes advantage of a technology called namespaces to provide the
 isolated workspace<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
@@ -219,9 +235,9 @@ Reassociate thread with a namespace
 </div>
 </div>
 
-<div id="outline-container-orge394605" class="outline-4">
-<h4 id="orge394605">Control groups</h4>
-<div class="outline-text-4" id="text-orge394605">
+<div id="outline-container-org0ba1f8d" class="outline-4">
+<h4 id="org0ba1f8d">Control groups</h4>
+<div class="outline-text-4" id="text-org0ba1f8d">
 <blockquote>
 <p>
 Control groups allow Docker to share available hardware resources to containers
@@ -497,9 +513,9 @@ to about 20%, which was set by the value 20000 in the
 </ul>
 </div>
 </div>
-<div id="outline-container-org8fb658a" class="outline-4">
-<h4 id="org8fb658a">Union File Systems</h4>
-<div class="outline-text-4" id="text-org8fb658a">
+<div id="outline-container-orga2d2611" class="outline-4">
+<h4 id="orga2d2611">Union File Systems</h4>
+<div class="outline-text-4" id="text-orga2d2611">
 <blockquote>
 <p>
 Docker uses union file systems to provide the building blocks for
@@ -532,7 +548,7 @@ file systems to combine these layers into a single image.
 </ul>
 </div>
 
-<ul class="org-ul"><li><a id="org183c5a8"></a>AUFS<br /><div class="outline-text-5" id="text-org183c5a8">
+<ul class="org-ul"><li><a id="org2ce0620"></a>AUFS<br /><div class="outline-text-5" id="text-org2ce0620">
 <ul class="org-ul">
 <li><p>
 Prepare
@@ -620,32 +636,25 @@ mnt_carrots
 
 </div>
 </div>
-</div>
-</div>
-    <div>
-      <div class="post-meta">
+    </div>
+</section>
+
+
+    <div class="post-meta">
         <span title="post date" class="post-info">2015-12-04</span>
         <span title="last modification date" class="post-info">2015-12-04</span>
         <span title="tags" class="post-info"><a href="/tags/docker/">Docker</a>, <a href="/tags/container/">Container</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
-      </section>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
     </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
 
   </body>
 </html>

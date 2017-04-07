@@ -4,73 +4,77 @@
     <title>Blog Index - dsdshome</title>
     <meta charset="utf-8" />
     <meta name="author" content="Yiming Chen" />
+    <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
     <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </head>
   <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
-    <div>
-      <div class="post">
-        <h1>Blog Index</h1>
-        <ul class="org-ul">
-          <li>2017-04-07&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/04/07/review-of-objects-on-rails">Review of Objects on Rails</a></li>
-          <li>2017-04-05&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/04/05/my-summary-for-object-oriented-programming">My Summary for Object-Oriented Programming</a></li>
-          <li>2017-03-04&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/03/04/la-la-land-review">La La Land Review</a></li>
-          <li>2017-02-21&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii">Comparison between Poker II and New Poker II</a></li>
-          <li>2017-02-19&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/02/19/review-of-are-your-lights-on">Review of /Are your lights on?/</a></li>
-          <li>2017-02-05&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2017/02/05/why-i-give-up-wubi">Why I give up Wubi</a></li>
-          <li>2016-06-03&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/06/03/lisp">Lisp 的语言特点和价值浅析</a></li>
-          <li>2016-05-25&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux">Five ways to free up rootfs in Arch Linux</a></li>
-          <li>2016-05-08&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/05/08/how-do-i-use-org-capture-on-mac">How do I use org-capture on Mac</a></li>
-          <li>2016-04-25&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/04/25/use-xhyve-as-docker-client-host">Use xhyve as Docker client host</a></li>
-          <li>2016-04-25&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug">Develop in Docker I: Virtualbox file syncing bug</a></li>
-          <li>2016-04-14&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/04/14/use-var-in-code-blocks">Use :var in code blocks</a></li>
-          <li>2016-04-10&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/04/10/《看海的人》书评">《看海的人》书评</a></li>
-          <li>2016-01-28&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/01/28/add-org-store-link-entry-for-elfeed">Add org-store-link Entry for elfeed</a></li>
-          <li>2016-01-15&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/01/15/my-2015-review">My 2015 Review</a></li>
-          <li>2016-01-14&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2016/01/14/why-did-i-switch-to-arch-linux">Why did I switch to Arch Linux</a></li>
-          <li>2015-12-19&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/12/19/how-to-use-os-x-with-keyboard-only">How To Use OS X With Keyboard Only</a></li>
-          <li>2015-12-11&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/12/11/a-simple-introduction-to-docker-ix">A Simple Introduction to Docker IX</a></li>
-          <li>2015-12-04&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/12/04/a-simple-introduction-to-docker-iii">A Simple Introduction to Docker III</a></li>
-          <li>2015-11-26&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/11/26/a-simple-introduction-to-docker-ii">A Simple Introduction to Docker II</a></li>
-          <li>2015-11-20&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/11/20/my-ideal-editor">My Ideal Editor</a></li>
-          <li>2015-11-13&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/11/13/a-simple-introduction-to-docker-i">A Simple Introduction to Docker I</a></li>
-          <li>2015-11-06&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24">Emacs 25 compiled file conflicts with Emacs 24</a></li>
-          <li>2015-10-30&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/10/30/answers-for-liqi-problems">Answers for Liqi Problems</a></li>
-          <li>2015-10-30&nbsp;&nbsp;»&nbsp;&nbsp;<a href="/blog/2015/10/30/why-blog">Why Blog?</a></li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
-    </div>
+    <header id="header">
+      <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">dsdshome</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/blog/">Blog</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                <li><a href="/rss.xml">RSS</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </body>
+    </header>
+    <section id="content" role="main">
+      <h1>Blog</h1>
+      <ul class="org-ul">
+        <li>2017-04-07 &raquo; <a href="/blog/2017/04/07/review-of-objects-on-rails">Review of Objects on Rails</a></li>
+        <li>2017-04-05 &raquo; <a href="/blog/2017/04/05/my-summary-for-object-oriented-programming">My Summary for Object-Oriented Programming</a></li>
+        <li>2017-03-04 &raquo; <a href="/blog/2017/03/04/la-la-land-review">La La Land Review</a></li>
+        <li>2017-02-21 &raquo; <a href="/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii">Comparison between Poker II and New Poker II</a></li>
+        <li>2017-02-19 &raquo; <a href="/blog/2017/02/19/review-of-are-your-lights-on">Review of /Are your lights on?/</a></li>
+        <li>2017-02-05 &raquo; <a href="/blog/2017/02/05/why-i-give-up-wubi">Why I give up Wubi</a></li>
+        <li>2016-06-03 &raquo; <a href="/blog/2016/06/03/lisp">Lisp 的语言特点和价值浅析</a></li>
+        <li>2016-05-25 &raquo; <a href="/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux">Five ways to free up rootfs in Arch Linux</a></li>
+        <li>2016-05-08 &raquo; <a href="/blog/2016/05/08/how-do-i-use-org-capture-on-mac">How do I use org-capture on Mac</a></li>
+        <li>2016-04-25 &raquo; <a href="/blog/2016/04/25/use-xhyve-as-docker-client-host">Use xhyve as Docker client host</a></li>
+        <li>2016-04-25 &raquo; <a href="/blog/2016/04/25/develop-in-docker-i-virtualbox-file-syncing-bug">Develop in Docker I: Virtualbox file syncing bug</a></li>
+        <li>2016-04-14 &raquo; <a href="/blog/2016/04/14/use-var-in-code-blocks">Use :var in code blocks</a></li>
+        <li>2016-04-10 &raquo; <a href="/blog/2016/04/10/《看海的人》书评">《看海的人》书评</a></li>
+        <li>2016-01-28 &raquo; <a href="/blog/2016/01/28/add-org-store-link-entry-for-elfeed">Add org-store-link Entry for elfeed</a></li>
+        <li>2016-01-15 &raquo; <a href="/blog/2016/01/15/my-2015-review">My 2015 Review</a></li>
+        <li>2016-01-14 &raquo; <a href="/blog/2016/01/14/why-did-i-switch-to-arch-linux">Why did I switch to Arch Linux</a></li>
+        <li>2015-12-19 &raquo; <a href="/blog/2015/12/19/how-to-use-os-x-with-keyboard-only">How To Use OS X With Keyboard Only</a></li>
+        <li>2015-12-11 &raquo; <a href="/blog/2015/12/11/a-simple-introduction-to-docker-ix">A Simple Introduction to Docker IX</a></li>
+        <li>2015-12-04 &raquo; <a href="/blog/2015/12/04/a-simple-introduction-to-docker-iii">A Simple Introduction to Docker III</a></li>
+        <li>2015-11-26 &raquo; <a href="/blog/2015/11/26/a-simple-introduction-to-docker-ii">A Simple Introduction to Docker II</a></li>
+        <li>2015-11-20 &raquo; <a href="/blog/2015/11/20/my-ideal-editor">My Ideal Editor</a></li>
+        <li>2015-11-13 &raquo; <a href="/blog/2015/11/13/a-simple-introduction-to-docker-i">A Simple Introduction to Docker I</a></li>
+        <li>2015-11-06 &raquo; <a href="/blog/2015/11/06/emacs-25-compiled-file-conflicts-with-emacs-24">Emacs 25 compiled file conflicts with Emacs 24</a></li>
+        <li>2015-10-30 &raquo; <a href="/blog/2015/10/30/answers-for-liqi-problems">Answers for Liqi Problems</a></li>
+        <li>2015-10-30 &raquo; <a href="/blog/2015/10/30/why-blog">Why Blog?</a></li>
+      </ul>
+    </section>
+    <footer class="footer">
+      <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+      <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+      </p>
+    </footer>
   </body>
 </html>

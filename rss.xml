@@ -4,8 +4,8 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 07 Apr 2017 16:52:21 CST</pubDate>
-    <lastBuildDate>Fri, 07 Apr 2017 16:52:21 CST</lastBuildDate>
+    <pubDate>Fri, 07 Apr 2017 17:23:49 CST</pubDate>
+    <lastBuildDate>Fri, 07 Apr 2017 17:23:49 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -67,10 +67,11 @@
     <item>
       <title>How do I use org-capture on Mac</title>
       <link>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>How do I use org-capture on Mac</h1>
-<p>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>How do I use org-capture on Mac</h1>
+            <p>
 org-capture is one of the most powerful feature of Org-Mode. It lets me capture
 my todo items and notes really quickly. Someone even use org-capture to <a href="https://www.youtube.com/watch?v=HVYQnvBrnZ4">capture
 Chinese words and build flash cards</a>. Here is how I use org-capture.
@@ -165,18 +166,20 @@ Here are my templates
 </div></li>
 </ol>
 
-</div>
-</div>]]></description>
+    </div>
+</section>
+]]></description>
       <pubDate>2016-05-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</guid>
     </item>
     <item>
       <title>Use xhyve as Docker client host</title>
       <link>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</link>
-      <description><![CDATA[<div>
-<div class="post">
-<h1>Use xhyve as Docker client host</h1>
-<p>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use xhyve as Docker client host</h1>
+            <p>
 When using Docker on a Mac, we need to use a Virtual Machine as the host of the
 Docker client. (This is due to the differences between the kernel of Mac and
 Linux) And most of the time, people will choose virtualbox. But it seems too
@@ -240,8 +243,9 @@ The experience using xhyve is absolutly better than virtualbox. I hope I can use
 Docker for Mac soon.
 </p>
 
-</div>
-</div>]]></description>
+    </div>
+</section>
+]]></description>
       <pubDate>2016-04-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</guid>
     </item>

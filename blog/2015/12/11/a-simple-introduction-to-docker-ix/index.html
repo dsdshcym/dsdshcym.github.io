@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>A Simple Introduction to Docker IX - dsdshome</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Yiming Chen" />
-    <meta name="keywords" content="Docker, Container" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
+<head>
+  <title>A Simple Introduction to Docker IX - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Docker, Container" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
   <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
 
-<div>
-<div class="post">
-<h1>A Simple Introduction to Docker IX</h1>
-
-<div id="outline-container-orga7bbeef" class="outline-2">
-<h2 id="orga7bbeef">What are some concerns about using docker?</h2>
-<div class="outline-text-2" id="text-orga7bbeef">
-</div><div id="outline-container-org4486dd3" class="outline-3">
-<h3 id="org4486dd3">Security</h3>
-<div class="outline-text-3" id="text-org4486dd3">
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>A Simple Introduction to Docker IX</h1>
+            
+<div id="outline-container-org02badb7" class="outline-2">
+<h2 id="org02badb7">What are some concerns about using docker?</h2>
+<div class="outline-text-2" id="text-org02badb7">
+</div><div id="outline-container-org3223ca0" class="outline-3">
+<h3 id="org3223ca0">Security</h3>
+<div class="outline-text-3" id="text-org3223ca0">
 <ul class="org-ul">
 <li><p>
 Shared kernel concern
@@ -89,9 +105,9 @@ problem in containers.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcae3cad" class="outline-3">
-<h3 id="orgcae3cad">Management Complexity</h3>
-<div class="outline-text-3" id="text-orgcae3cad">
+<div id="outline-container-org562a541" class="outline-3">
+<h3 id="org562a541">Management Complexity</h3>
+<div class="outline-text-3" id="text-org562a541">
 <ul class="org-ul">
 <li>DevOps needs to manage too many docker files.
 <ul class="org-ul">
@@ -116,32 +132,25 @@ docker image.</li>
 
 </div>
 </div>
-</div>
-</div>
-    <div>
-      <div class="post-meta">
+    </div>
+</section>
+
+
+    <div class="post-meta">
         <span title="post date" class="post-info">2015-12-11</span>
         <span title="last modification date" class="post-info">2015-12-11</span>
         <span title="tags" class="post-info"><a href="/tags/docker/">Docker</a>, <a href="/tags/container/">Container</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
-      </section>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:12307130174 &lt;at&gt; fudan &lt;dot&gt; edu &lt;dot&gt; cn">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
     </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:12307130174 &lt;at&gt; fudan &lt;dot&gt; edu &lt;dot&gt; cn">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
 
   </body>
 </html>

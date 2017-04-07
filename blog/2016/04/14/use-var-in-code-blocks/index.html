@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>Use :var in code blocks - dsdshome</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Yiming Chen" />
-    <meta name="description" content="Some examples about :var" />
-    <meta name="keywords" content="Org, Tips, var" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
-  <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
-        <p>This is my small blog :)</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
-        </form>
-      </header>
-    </div>
+<head>
+  <title>Use :var in code blocks - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Some examples about :var" />
+  <meta name="keywords" content="Org, Tips, var" />
 
-<div>
-<div class="post">
-<h1>Use :var in code blocks</h1>
-<p>
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use :var in code blocks</h1>
+            <p>
 In this semester, I have a lab about simulating a 8 bit CPU. I need to do it
 from scratch. And I have some tables about the instructions. I want to extract
 some info out of it to form my instruction define file.
 </p>
 
-<div id="outline-container-orge103967" class="outline-2">
-<h2 id="orge103967">Table</h2>
-<div class="outline-text-2" id="text-orge103967">
+<div id="outline-container-org8831ff0" class="outline-2">
+<h2 id="org8831ff0">Table</h2>
+<div class="outline-text-2" id="text-org8831ff0">
 <p>
 Here is the table:
 </p>
@@ -71,9 +87,9 @@ Here is the table:
 </pre>
 </div>
 </div>
-<div id="outline-container-org61c8be7" class="outline-2">
-<h2 id="org61c8be7">Results</h2>
-<div class="outline-text-2" id="text-org61c8be7">
+<div id="outline-container-org069aeae" class="outline-2">
+<h2 id="org069aeae">Results</h2>
+<div class="outline-text-2" id="text-org069aeae">
 <p>
 And I need to get something like this:
 </p>
@@ -86,9 +102,9 @@ dddddddd
 </pre>
 </div>
 </div>
-<div id="outline-container-orgd6bc33a" class="outline-2">
-<h2 id="orgd6bc33a">Code</h2>
-<div class="outline-text-2" id="text-orgd6bc33a">
+<div id="outline-container-org5f1f245" class="outline-2">
+<h2 id="org5f1f245">Code</h2>
+<div class="outline-text-2" id="text-org5f1f245">
 <p>
 Here is how I do this using Python and <code>:var</code>
 </p>
@@ -143,9 +159,9 @@ another code block.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org58a3bd8" class="outline-2">
-<h2 id="org58a3bd8">Note</h2>
-<div class="outline-text-2" id="text-org58a3bd8">
+<div id="outline-container-org0f237f8" class="outline-2">
+<h2 id="org0f237f8">Note</h2>
+<div class="outline-text-2" id="text-org0f237f8">
 <ul class="org-ul">
 <li>We can specify a range for the data we want.
 <dl class="org-dl">
@@ -157,9 +173,9 @@ another code block.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org110d09c" class="outline-2">
-<h2 id="org110d09c">References</h2>
-<div class="outline-text-2" id="text-org110d09c">
+<div id="outline-container-orga6d491b" class="outline-2">
+<h2 id="orga6d491b">References</h2>
+<div class="outline-text-2" id="text-orga6d491b">
 <p>
 For further infomations, see:
 </p>
@@ -170,32 +186,25 @@ For further infomations, see:
 </div>
 </div>
 
-</div>
-</div>
-    <div>
-      <div class="post-meta">
+    </div>
+</section>
+
+
+    <div class="post-meta">
         <span title="post date" class="post-info">2016-04-14</span>
         <span title="last modification date" class="post-info">2016-04-14</span>
         <span title="tags" class="post-info"><a href="/tags/org/">Org</a>, <a href="/tags/emacs/">Emacs</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
-      </section>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
     </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
 
   </body>
 </html>
