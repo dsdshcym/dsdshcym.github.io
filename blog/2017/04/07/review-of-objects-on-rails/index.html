@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Review of Objects on Rails - dsdshome</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yiming Chen" />
+    <meta name="description" content="My review of /Objects on Rails/" />
+    <meta name="keywords" content="Objects on Rails, Book Review" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">dsdshome</a></h1>
+        <p>This is my small blog :)</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="dsdshcym.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Review of Objects on Rails</h1>
+<p>
+This is my review of the book <a href="http://objectsonrails.com/">Objects on Rails</a>.
+</p>
+
+<ul class="org-ul">
+<li>This book shows us another way to build a web application based on Rails:
+Write domain objects first, then use AR as an implementation detail. And use
+patterns like dependency injection (DI) and Data-Context-Interaction (DCI)
+to keep everything thin.</li>
+<li>I think treating AR as an implementation detail is a great way to build
+Rails application.
+<ol class="org-ol">
+<li>Even "Fat model, thin controller" can lead to really fat model classes.
+We need to keep everything thin and follow SRP.</li>
+<li>If we don't do this, then the model will violate SRP. Since it's both
+responsible for data persistence and business logic. So let AR handle the
+data persistence and let model object handle your business logic.</li>
+<li>Another way to do this is to use composition. For every business model,
+build a class for it and it don't inheritant from AR. If it needs to
+persistent some data, build another AR class and composite it into the
+business model object. It's more complicated than this solution but it
+makes the responsibility separation more clear.</li>
+</ol></li>
+<li>And there's another article about what framework can influence the software
+complexity: <a href="https://hackernoon.com/complexity-and-strategy-325cd7f59a92#.kgw67pysv">Complexity and Strategy</a>
+<ul class="org-ul">
+<li>Rails can help us to build the software faster at the beginning of the
+project.</li>
+<li>But once the project becomes into a huge application, Rails will slow us
+down.
+<ol class="org-ol">
+<li>As it says in Complexity and Strategy: Framework can take us to a
+higher point at the beginning, but it won't change the complexity curve
+(the relation between functionality and cost). So the cost will become
+higher as the app grows.</li>
+<li><p>
+As it says in this book:
+</p>
+<blockquote>
+<p>
+The dark side of having sensible framework conventions is that after a
+while, those conventions turn into assumptions
+</p>
+</blockquote></li>
+</ol></li>
+<li>Designing application in the way this book describes can let us understand
+our domain problems better. And it won't use Rails until it's necessary.
+So we'll start at a lower point in the complexity curve and can move
+faster later.</li>
+</ul></li>
+<li>For the Exhibit pattern, I agree with the idea to extract logic from view.
+<ul class="org-ul">
+<li>But I just feel the Exhibit pattern in this book is too much. It's like
+another framework just for view layer.</li>
+<li>If another new dev joins the team, he/she needs to learn this whole new
+view framework to get into work.</li>
+<li>And we can't get that many benifits from this framework.</li>
+<li>In my current understanding, A facade between view and controller is
+good enough. A controller builds a facade which contains all the
+information the view needs. A view reference this facade object by
+access method.</li>
+</ul></li>
+<li>Decoration vs Extension
+<ul class="org-ul">
+<li>For the DCI part (extend Taggable on an instance object), I'm against it
+at first. I think this is where we need to follow <i>Prefer composition over
+inheritance</i> principle.
+<ul class="org-ul">
+<li>Decorator (or something similar using composition) can easily do the same
+thing as the Taggable module did in this book.</li>
+<li><p>
+For the reasons to not use decorator in this book, I think it's not enough
+to convince me to use DCI. But I can understand the reason behind this:
+since AR is an implementation detail, and <code>#save</code> method is private, a
+decorator cannot access <code>#save</code> method.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Why use mixin instead of decorator?
+<ul class="org-ul">
+<li>we need the tight integration that only a module can give us.</li>
+<li>For instance, intercepting <code>#save</code> within the object</li>
+</ul></li>
+</ul>
+</blockquote></li>
+</ul></li>
+<li>But after I read <a href="../../../Org/notes.html#ID-cde797bd-afc4-4769-a7e7-c44e4e8c9c75">Appendix C: Decoration vs. Dynamic Module Extension</a>, I
+get the idea of extension here.
+<ul class="org-ul">
+<li>Decoration can fall apart when an undecorated method needs to call a
+decorated method (it can't, it can only call the undecorated version)</li>
+<li>How to choose between Decoration and Extension
+<dl class="org-dl">
+<dt>Decoration</dt><dd>For applications where you want to adorn an object with
+some extra functionality, or modify how it presents
+itself, a decorator is probably the best bet. Decorators
+are great for creating Presenters, where we just want to
+change an object’s “face” in a specific context.</dd>
+<dt>Extension</dt><dd>On the other hand, when building up a composite object at
+runtime object out of individual “aspects” or “facets”,
+module extension may make more sense. Judicious use of
+module extension can lead to a kind of “emergent
+behavior” which is hard to replicate with decoration or
+delegation.</dd>
+</dl></li>
+</ul></li>
+</ul></li>
+<li>Conclusion
+<ul class="org-ul">
+<li>There's more than one way to do it
+<ul class="org-ul">
+<li>Your project is not a Rails project; it is a software project, which uses
+Rails to satisfy the need of projecting your business objects onto the
+web.</li>
+<li>Rails is not the framework; it is a part of your overall project
+architecture.</li>
+<li>So don't be afraid to build up your project's architecture.</li>
+<li>There is very little new under the sun; whatever the problem you are
+facing, chances are Kent Beck already solved it in Smalltalk.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2017-04-07</span>
+        <span title="last modification date" class="post-info">2017-04-07</span>
+        <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/rails/">Rails</a>, <a href="/tags/ruby/">Ruby</a>, <a href="/tags/object-oriented/">Object-Oriented</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
