@@ -31,9 +31,9 @@
 <div class="post">
 <h1>A Simple Introduction to Docker II</h1>
 
-<div id="outline-container-org0b617e7" class="outline-2">
-<h2 id="org0b617e7">What is Docker?</h2>
-<div class="outline-text-2" id="text-org0b617e7">
+<div id="outline-container-org94a31d7" class="outline-2">
+<h2 id="org94a31d7">What is Docker?</h2>
+<div class="outline-text-2" id="text-org94a31d7">
 <ul class="org-ul">
 <li>Docker is a container implementation written in Go language.</li>
 <li>It's the most popular container implementations nowadays.</li>
@@ -45,9 +45,9 @@ which means you can find the best documentations here.</li>
 We now use docker as a example to illustrate how container works.
 </p>
 </div>
-<div id="outline-container-org0d458b4" class="outline-3">
-<h3 id="org0d458b4">Typical Use Cases</h3>
-<div class="outline-text-3" id="text-org0d458b4">
+<div id="outline-container-org2ad5f72" class="outline-3">
+<h3 id="org2ad5f72">Typical Use Cases</h3>
+<div class="outline-text-3" id="text-org2ad5f72">
 <ul class="org-ul">
 <li>Development Environments Configuration</li>
 <li>Build Microservices</li>
@@ -100,16 +100,16 @@ and it keeps on scheduling containers in less than half a second.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbf7cc4e" class="outline-3">
-<h3 id="orgbf7cc4e">How popular is Docker?</h3>
-<div class="outline-text-3" id="text-orgbf7cc4e">
+<div id="outline-container-orge2da9a0" class="outline-3">
+<h3 id="orge2da9a0">How popular is Docker?</h3>
+<div class="outline-text-3" id="text-orge2da9a0">
 <p>
 First of all, let's see how popular is docker nowadays.
 </p>
 </div>
-<div id="outline-container-org0e4f5bc" class="outline-4">
-<h4 id="org0e4f5bc">A Quick Peek at Real Docker Adoption</h4>
-<div class="outline-text-4" id="text-org0e4f5bc">
+<div id="outline-container-org16ccf54" class="outline-4">
+<h4 id="org16ccf54">A Quick Peek at Real Docker Adoption</h4>
+<div class="outline-text-4" id="text-org16ccf54">
 <p>
 Here are the results of a survey from a monitoring startup Datadog.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
@@ -131,9 +131,9 @@ year. And it's widely used to provide web services.
 </p>
 </div>
 </div>
-<div id="outline-container-orgecce28e" class="outline-4">
-<h4 id="orgecce28e">Real World Applications</h4>
-<div class="outline-text-4" id="text-orgecce28e">
+<div id="outline-container-orgd1102c2" class="outline-4">
+<h4 id="orgd1102c2">Real World Applications</h4>
+<div class="outline-text-4" id="text-orgd1102c2">
 <ul class="org-ul">
 <li>Used widely in productions
 <ul class="org-ul">
@@ -168,27 +168,27 @@ container.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5d99b4b" class="outline-4">
-<h4 id="org5d99b4b">Docker can even run on ARM platforms</h4>
-<div class="outline-text-4" id="text-org5d99b4b">
+<div id="outline-container-org037e257" class="outline-4">
+<h4 id="org037e257">Docker can even run on ARM platforms</h4>
+<div class="outline-text-4" id="text-org037e257">
 <ul class="org-ul">
 <li><a href="http://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/">Getting started with Docker on your Raspberry Pi</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orga1c1437" class="outline-3">
-<h3 id="orga1c1437">How to use Docker?</h3>
-<div class="outline-text-3" id="text-orga1c1437">
+<div id="outline-container-org2a2c0f2" class="outline-3">
+<h3 id="org2a2c0f2">How to use Docker?</h3>
+<div class="outline-text-3" id="text-org2a2c0f2">
 <p>
 Docker has a really good documentation. You can find almost anything you need to
 know about how to use Docker at <a href="http://docs.docker.com/">Docker Docs</a>. Here, we will use a example from
 this doc to show you some basic Docker commands.
 </p>
 </div>
-<div id="outline-container-org71028a6" class="outline-4">
-<h4 id="org71028a6">Using Docker in China</h4>
-<div class="outline-text-4" id="text-org71028a6">
+<div id="outline-container-org6967a07" class="outline-4">
+<h4 id="org6967a07">Using Docker in China</h4>
+<div class="outline-text-4" id="text-org6967a07">
 <p>
 I suggest to use a docker hub mirror in china to download docker images.
 Otherwise you can hardly download an image file. You can find some information
@@ -196,9 +196,9 @@ about the docker hub mirror <a href="http://dockone.io/article/160">here</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgaacc3d4" class="outline-4">
-<h4 id="orgaacc3d4">Download and Run a Image</h4>
-<div class="outline-text-4" id="text-orgaacc3d4">
+<div id="outline-container-orgff3ea50" class="outline-4">
+<h4 id="orgff3ea50">Download and Run a Image</h4>
+<div class="outline-text-4" id="text-orgff3ea50">
 <div class="org-src-container">
 <pre class="src src-sh">docker run docker/whalesay cowsay foo bar
 </pre>
@@ -222,9 +222,9 @@ about the docker hub mirror <a href="http://dockone.io/article/160">here</a>.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgec52547" class="outline-4">
-<h4 id="orgec52547">Build a Custom Image</h4>
-<div class="outline-text-4" id="text-orgec52547">
+<div id="outline-container-orge07cfd3" class="outline-4">
+<h4 id="orge07cfd3">Build a Custom Image</h4>
+<div class="outline-text-4" id="text-orge07cfd3">
 <ul class="org-ul">
 <li>Dockerfile Docker can build images automatically by reading the instructions
 from a <code>Dockerfile</code>, a text file that contains all the commands, in order,
@@ -257,9 +257,9 @@ Use this image
 </ul>
 </div>
 </div>
-<div id="outline-container-org9df10c4" class="outline-4">
-<h4 id="org9df10c4">Bonus</h4>
-<div class="outline-text-4" id="text-org9df10c4">
+<div id="outline-container-org61902da" class="outline-4">
+<h4 id="org61902da">Bonus</h4>
+<div class="outline-text-4" id="text-org61902da">
 <ul class="org-ul">
 <li><a href="https://github.com/docker/dockercraft">docker/dockercraft</a></li>
 </ul>

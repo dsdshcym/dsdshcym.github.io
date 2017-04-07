@@ -31,9 +31,9 @@
 <div>
 <div class="post">
 <h1>Emacs 25 compiled file conflicts with Emacs 24</h1>
-<div id="outline-container-orga4c088e" class="outline-2">
-<h2 id="orga4c088e">Issue</h2>
-<div class="outline-text-2" id="text-orga4c088e">
+<div id="outline-container-org285c5b9" class="outline-2">
+<h2 id="org285c5b9">Issue</h2>
+<div class="outline-text-2" id="text-org285c5b9">
 <p>
 上周日，我看到评论说 Emacs 25 调用了 Mac 原生的图形接口，性能得到了大幅提高，便也在自己的 Mac 上装了最新的 Emacs 25 。性能的确有很大提高。但是，因为还不是稳定版本，总还是有点问题，比如颜色不准确之类的。在这里讲一下折腾了我好久的一个问题。
 </p>
@@ -63,12 +63,12 @@ Symbol's function definition is void: eieio-make-class-predicate
 </p>
 </div>
 </div>
-<div id="outline-container-org3099c6c" class="outline-2">
-<h2 id="org3099c6c">Solution</h2>
-<div class="outline-text-2" id="text-org3099c6c">
-</div><div id="outline-container-org992e312" class="outline-3">
-<h3 id="org992e312">eieio</h3>
-<div class="outline-text-3" id="text-org992e312">
+<div id="outline-container-orgf230f93" class="outline-2">
+<h2 id="orgf230f93">Solution</h2>
+<div class="outline-text-2" id="text-orgf230f93">
+</div><div id="outline-container-org7a7c871" class="outline-3">
+<h3 id="org7a7c871">eieio</h3>
+<div class="outline-text-3" id="text-org7a7c871">
 <ol class="org-ol">
 <li><p>
 Remove all .elc files
@@ -84,18 +84,18 @@ Remove all .elc files
 </ol>
 </div>
 </div>
-<div id="outline-container-org8d62ce8" class="outline-3">
-<h3 id="org8d62ce8">gh.el</h3>
-<div class="outline-text-3" id="text-org8d62ce8">
+<div id="outline-container-org64bc0b4" class="outline-3">
+<h3 id="org64bc0b4">gh.el</h3>
+<div class="outline-text-3" id="text-org64bc0b4">
 <p>
 移除和 Github 相关的库就能正常使用 Emacs 25 了。虽然还有一些小问题，比如更容易崩溃，不会传 ESC 键给系统（迷之 bug ，没有这个都无法让 Rime 在退出
 evil-insert-mode 时切换成 Normal mode 了），但是性能的提升摆在那里，我还是选择了继续使用 Emacs 25
 </p>
 </div>
 </div>
-<div id="outline-container-org620e6e2" class="outline-3">
-<h3 id="org620e6e2">附寻找 bug 源的方法</h3>
-<div class="outline-text-3" id="text-org620e6e2">
+<div id="outline-container-orge617f9e" class="outline-3">
+<h3 id="orge617f9e">附寻找 bug 源的方法</h3>
+<div class="outline-text-3" id="text-orge617f9e">
 <p>
 使用 ag 在第三方库代码文件夹中找出错的函数
 </p>
