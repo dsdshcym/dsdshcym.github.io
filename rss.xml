@@ -4,250 +4,79 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 07 Apr 2017 17:23:49 CST</pubDate>
-    <lastBuildDate>Fri, 07 Apr 2017 17:23:49 CST</lastBuildDate>
+    <pubDate>Sun, 09 Apr 2017 22:02:34 CST</pubDate>
+    <lastBuildDate>Sun, 09 Apr 2017 22:02:34 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Review of Refactoring: Improving the Design of Existing Code</title>
+      <link>http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code</link>
+      <description><![CDATA[My personal review of Refactoring: Improving the Design of Existing Code]]></description>
+      <pubDate>2017-04-09</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code</guid>
+    </item>
+    <item>
       <title>Review of /Are your lights on?/</title>
       <link>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</link>
-      <description><![CDATA[My review of /Are your lights on?/. About how to define the real problem.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-04-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on</guid>
     </item>
     <item>
       <title>Five ways to free up rootfs in Arch Linux</title>
       <link>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</link>
-      <description><![CDATA[Five ways to free up rootfs in Arch Linux]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-04-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</guid>
     </item>
     <item>
       <title>Lisp 的语言特点和价值浅析</title>
       <link>http://dsdshcym.github.io/blog/2016/06/03/lisp</link>
-      <description><![CDATA[A simple intro to Lisp Language]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-04-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/06/03/lisp</guid>
     </item>
     <item>
       <title>Review of Objects on Rails</title>
       <link>http://dsdshcym.github.io/blog/2017/04/07/review-of-objects-on-rails</link>
-      <description><![CDATA[My review of /Objects on Rails/]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-04-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/04/07/review-of-objects-on-rails</guid>
     </item>
     <item>
       <title>My Summary for Object-Oriented Programming</title>
       <link>http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming</link>
-      <description><![CDATA[My summary for my learning from POODR, RubyTapas, Upcase, etc.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-04-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming</guid>
     </item>
     <item>
       <title>La La Land Review</title>
       <link>http://dsdshcym.github.io/blog/2017/03/04/la-la-land-review</link>
-      <description><![CDATA[My personal review for La La Land]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-03-04</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/03/04/la-la-land-review</guid>
     </item>
     <item>
       <title>Comparison between Poker II and New Poker II</title>
       <link>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</link>
-      <description><![CDATA[A comparison between Poker II and New Poker II]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-02-21</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</guid>
     </item>
     <item>
       <title>Why I give up Wubi</title>
       <link>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</link>
-      <description><![CDATA[我为什么在使用五笔两年后回到了拼音输入法]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-02-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/02/05/why-i-give-up-wubi</guid>
     </item>
     <item>
       <title>How do I use org-capture on Mac</title>
       <link>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>How do I use org-capture on Mac</h1>
-            <p>
-org-capture is one of the most powerful feature of Org-Mode. It lets me capture
-my todo items and notes really quickly. Someone even use org-capture to <a href="https://www.youtube.com/watch?v=HVYQnvBrnZ4">capture
-Chinese words and build flash cards</a>. Here is how I use org-capture.
-</p>
-
-<ol class="org-ol">
-<li>The most basic one is Task, which captures a todo item and save it to my
-refile.org file.</li>
-<li>You may wonder what are %a and %t do in my templates.
-<ul class="org-ul">
-<li>%a will add a link to current file into the capture content</li>
-<li>%t will add a timestamp</li>
-<li>%^{} will prompt for content</li>
-<li>You can even eval some elisp code using %()</li>
-</ul></li>
-<li>I have two different ways to grab a link from Chrome.
-<ol class="org-ol">
-<li><code>org-mac-chrome-insert-frontmost-url</code>, this is a function from
-<code>org-mac-link</code> package. This package use some apple scripts to grab
-links from some applications, such as Safari, Chrome, Skim. But these
-scripts don't work well when you have multiple windows of the same app
-opened. And it can also cause Emacs hanging.</li>
-<li>Use <code>org-protocol</code>, which is a great way to capture links. But the emacs
-installed from homebrew can not handle <code>org-protocol</code> links, you need to
-install the <code>emacs-mac</code> from emacs-mac-port.
-<ul class="org-ul">
-<li><p>
-Then I use a script to open a org-protocol link in Chrome.
-</p>
-<pre class="example">
-orgCapture(key) -&gt; {{
-location.href = 'org-protocol://capture://' + key + '/' +
-    encodeURIComponent(location.href) +
-    '/' +
-    encodeURIComponent(document.title) +
-    '/' +
-    encodeURIComponent(window.getSelection())
-}}
-</pre></li>
-<li>Emacs will deal with this link and choose which template I want to use.</li>
-</ul></li>
-</ol></li>
-
-<li><p>
-Here are my templates
-</p>
-<div class="org-src-container">
-<pre class="src src-elisp">(setq org-capture-templates
-          '(("t" "Task" entry
-              (file "~/Org/refile.org")
-              "* TODO %?\n")
-            ("T" "Clock-in Task" entry
-              (file "~/Org/refile.org")
-              "* TODO %?\n"
-              :clock-in t
-              :clock-resume t)
-            ("d" "Distraction in a pomodoro" entry
-              (file "~/Org/refile.org")
-              "* TODO %^{Task}\n  SCHEDULED: %t\n"
-              :immediate-finish t)
-            ("n" "Note" entry
-              (file "~/Org/refile.org")
-              "* %?\n")
-            ("l" "Note with link to current file" entry
-              (file "~/Org/refile.org")
-              "* %a")
-            ("j" "Journal" entry
-              (file+datetree "~/Org/diary.org")
-              "* %^{Content}\n"
-              :clock-in t
-              :clock-resume t)
-            ("J" "Journal from Phone" entry
-              (file+datetree "~/Org/diary.org")
-              "* %^{Content}\n  :LOGBOOK:\n  CLOCK: %^{Begin}U--%^{End}U\n  :END:")
-            ("c" "Link from Chrome" entry
-              (file "~/Org/refile.org")
-              "* %(org-mac-chrome-get-frontmost-url)")
-            ("C" "Clock-in Link from Chrome" entry
-              (file "~/Org/refile.org")
-              "* %(org-mac-chrome-get-frontmost-url)"
-              :clock-in t
-              :clock-resume t)
-            ("p" "People (Contacts)" entry
-              (file "~/Org/contacts.org")
-              "* %(org-contacts-template-name)\n  :PROPERTIES:\n  :EMAIL: %(org-contacts-template-email)\n  :END:")
-            ("k" "Push to Kindle" entry
-              (file+headline "~/Org/refile.org" "Push to Kindle")
-              "* %a"
-              :immediate-finish t)
-            ))
-</pre>
-</div></li>
-</ol>
-
-    </div>
-</section>
-]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2016-05-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac</guid>
-    </item>
-    <item>
-      <title>Use xhyve as Docker client host</title>
-      <link>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>Use xhyve as Docker client host</h1>
-            <p>
-When using Docker on a Mac, we need to use a Virtual Machine as the host of the
-Docker client. (This is due to the differences between the kernel of Mac and
-Linux) And most of the time, people will choose virtualbox. But it seems too
-heavy comparing to the lightwight of Docker.
-</p>
-
-<p>
-That's why the new Docker for Mac chooses to use xhyve as the new host of the
-Docker client. But Docker for Mac is still in beta. Here is how to use xhyve via
-docker-machine. It may not be as efficient as Docker for Mac Beta. But it's good
-enough for a taste.
-</p>
-
-<ul class="org-ul">
-<li><p>
-<code>xhyve</code>
-</p>
-
-<p>
-Follow the instruction <a href="https://github.com/mist64/xhyve#installation">here</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">brew install --HEAD xhyve
-</pre>
-</div></li>
-<li><p>
-<code>docker-machine-driver-xhyve</code>
-</p>
-
-<p>
-Follow the instruction <a href="https://github.com/zchee/docker-machine-driver-xhyve#install">here</a>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">brew install docker-machine-driver-xhyve
-
-# docker-machine-driver-xhyve need root owner and uid
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-</pre>
-</div></li>
-<li><p>
-<code>docker-machine create</code>
-</p>
-
-<p>
-Use this instruction to create a xhyve VM. Remember to add the
-<code>--xhyve-experimental-nfs-share</code> option to enable the file sharing.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">docker-machine create --driver xhyve --xhyve-experimental-nfs-share dev-xhyve
-</pre>
-</div></li>
-</ul>
-
-
-<p>
-The experience using xhyve is absolutly better than virtualbox. I hope I can use
-Docker for Mac soon.
-</p>
-
-    </div>
-</section>
-]]></description>
-      <pubDate>2016-04-25</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/04/25/use-xhyve-as-docker-client-host</guid>
     </item>
   </channel>
 </rss>

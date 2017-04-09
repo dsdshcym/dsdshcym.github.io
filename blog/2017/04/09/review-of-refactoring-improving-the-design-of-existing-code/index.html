@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Review of Refactoring: Improving the Design of Existing Code - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My personal review of Refactoring: Improving the Design of Existing Code" />
+  <meta name="keywords" content="Refactoring, Martin Fowler, Book Review" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Review of Refactoring: Improving the Design of Existing Code</h1>
+            <ul class="org-ul">
+<li>This book explains what is refactoring, why we need to refactor our code,
+when to refactor and how to refactor. And it shows us a list of code smells
+and a catalog of some typical refactoring techniques
+<ul class="org-ul">
+<li><p>
+What
+</p>
+
+<p>
+Refactoring is <b>the process of changing a software system</b> in such a way
+that <b>it does not alter the external behavior</b> of the code yet <b>improves
+its internal structure</b>.
+</p></li>
+<li>Why
+<ul class="org-ul">
+<li>Refactoring Improves the Design of Software</li>
+<li>Refactoring makes software easier to understand</li>
+<li>Refactoring helps you find bugs</li>
+<li>Refactoring helps you program faster</li>
+</ul></li>
+<li><p>
+When
+</p>
+
+<p>
+When you need to do something else and refactor can help you do that thing
+easier
+</p>
+
+<ol class="org-ol">
+<li>When you find some duplications</li>
+<li>When you add a function</li>
+<li>When you need to fix a bug</li>
+<li>When you review code</li>
+</ol></li>
+<li>How
+<ol class="org-ol">
+<li>Write tests first</li>
+<li>Refactor</li>
+<li>Keep the tests green</li>
+</ol></li>
+<li>Code smells
+<ul class="org-ul">
+<li>Duplicated Code</li>
+<li>Long Method</li>
+<li>Large Class</li>
+<li>Long Parameter List</li>
+<li>Divergent Change</li>
+<li>Shotgun Surgery</li>
+<li>Feature Envy</li>
+<li>Data Clumps</li>
+<li>Primitive Obsession</li>
+<li>Switch Statements</li>
+<li>Parallel Inheritance Hierarchies</li>
+<li>Lazy Class</li>
+<li>Speculative Generality</li>
+<li>Temporary Field</li>
+<li>Message Chains</li>
+<li>Middle Man</li>
+<li>Inappropriate Intimacy</li>
+<li>Alternative Classes with Different Interfaces</li>
+<li>Incomplete Library Class</li>
+<li>Data Class</li>
+<li>Refused Bequest</li>
+<li>Comments</li>
+</ul></li>
+<li>Refactoring Techniques
+<ul class="org-ul">
+<li>Extract Method</li>
+<li>Inline Method</li>
+<li>Inline Temp</li>
+<li>Replace Temp with Query</li>
+<li>Introduce Explaining Variable</li>
+<li>Split Temporary Variable</li>
+<li>Remove Assignments to Parameters</li>
+<li>Replace Method with Method Object</li>
+<li>Substitute Algorithm</li>
+<li>Move Method</li>
+<li>Move Field</li>
+<li>Extract Class</li>
+<li>Inline Class</li>
+<li>Hide Delegate</li>
+<li>Remove Middle Man</li>
+<li>Introduce Foreign Method</li>
+<li>Introduce Local Extension</li>
+<li>Self Encapsulate Field</li>
+<li>Replace Data Value with Object</li>
+<li>Change Value to Reference</li>
+<li>Change Reference to Value</li>
+<li>Replace Array with Object</li>
+<li>Duplicate Observed Data</li>
+<li>Change Unidirectional Association to Bidirectional</li>
+<li>Change Bidirectional Association to Unidirectional</li>
+<li>Replace Magic Number with Symbolic Constant</li>
+<li>Encapsulate Field</li>
+<li>Encapsulate Collection</li>
+<li>Replace Record with Data Class</li>
+<li>Replace Type Code with Class</li>
+<li>Replace Type Code with Subclasses</li>
+<li>Replace Type Code with State/Strategy</li>
+<li>Replace Subclass with Fields</li>
+<li>Decompose Conditional</li>
+<li>Consolidate Conditional Expression</li>
+<li>Consolidate Duplicate Conditional Fragments</li>
+<li>Remove Control Flag</li>
+<li>Replace Nested Conditional with Guard Clauses</li>
+<li>Replace Conditional with Polymorphism</li>
+<li>Introduce Null Object</li>
+<li>Introduce Assertion</li>
+<li>Tease Apart Inheritance</li>
+<li>Convert Procedural Design to Objects</li>
+<li>Separate Domain from Presentation</li>
+<li>Extract Hierarchy</li>
+</ul></li>
+</ul></li>
+<li>It's really important for a software developer to recognize how important
+refactoring is and why/when/how to refactor our code. So the chapter 1 and 2
+is really valuable.</li>
+<li>The code smells list can help us know more about bad code. When I read them
+and compare these smells with my daily work, I found many code smells and I
+got a complete idea why they appeared and why they made me feeling bad.
+<ul class="org-ul">
+<li><p>
+It's worth to note that <b>we don't need to refactor every time we spot a
+code smell</b>.
+</p>
+
+<p>
+Code smells are just "smells", which are just code that may prevent us to
+change the functionalities. We need to decide which is better: to keep the
+code as the same or to refactor, based on our current project status and
+feature specs.
+</p></li>
+</ul></li>
+<li>But I don't recommend to read the whole refactoring catelog carefully.
+<ul class="org-ul">
+<li>I think it's enough to know the following two things:
+<ol class="org-ol">
+<li>The name of the refactoring (to communicate with other devs)</li>
+<li>The summary of this refactoring (to get the basic idea of how to do
+this refactoring)</li>
+</ol></li>
+<li>The motivations are almost the same: to make our code more readable and
+easier to change.</li>
+<li>The mechanics are too Java specific (compile tools, assertions
+exceptions). Many of them are pretty easy in the Ruby world.</li>
+<li>So, for the catelog, I recommend skimming it once, have an idea of how
+many refactoring are there, and go back to a specific refactoring when you
+need to do it. And maybe build our own refactoring catelog</li>
+</ul></li>
+<li>As for general rules for refactoring, we just need to keep in mind that:
+<ul class="org-ul">
+<li>The things that make changes hard to make are called <i>Code Smells</i>. We
+need to find these pain points and use <i>Refactor</i> to eliminate them before
+we make some changes.</li>
+<li>Refactoring doesn't change the external behavior of the code so we need to
+<b>keep the tests green</b>.</li>
+<li>We need to <b>take small steps</b> each time so that if anything goes wrong, we
+can always revert it back.</li>
+</ul></li>
+<li>Some external resources:
+<ol class="org-ol">
+<li><a href="http://www.industriallogic.com/wp-content/uploads/2005/09/smellstorefactorings.pdf">Smells to Refactorings Quick Reference Guide</a></li>
+<li><a href="https://www.youtube.com/watch?v=PJjHfa5yxlU">RailsConf 2016 - Get a Whiff of This by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=DC-pQPq0acs">Aloha Ruby Conf 2012 Refactoring from Good to Great by Ben Orenstein - YouTube</a></li>
+<li><a href="http://robnapier.net/refactoring">Refactoring Slow and Steady - Cocoaphony</a></li>
+</ol></li>
+</ul>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-04-09</span>
+        <span title="last modification date" class="post-info">2017-04-09</span>
+        <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/refactor/">Refactor</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
