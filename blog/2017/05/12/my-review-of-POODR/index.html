@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>My Review of Practical Object-Oriented Design in Ruby - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My summary of POODR and why I think it&#39;s the best book about OOD." />
+  <meta name="keywords" content="Sendi Metz, Object-Oriented, Book Review, Ruby" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>My Review of Practical Object-Oriented Design in Ruby</h1>
+            <p>
+<i>Practical Object-Oriented Design in Ruby</i> is the best book about
+Object-Oriented Design I've ever read. I finished reading this book in January,
+but I spent several hours in April again to read it again. It's the first book
+(except textbooks) I have read for more than once. I highly recommand that
+everyone who wants to learn Object-Oriented Programming or Object-Oriented
+Design to read this book.
+</p>
+
+<p>
+Here is my summary for it and some random thoughts.
+</p>
+
+<div id="outline-container-org22aa2d8" class="outline-2">
+<h2 id="org22aa2d8">Summary</h2>
+<div class="outline-text-2" id="text-org22aa2d8">
+<p>
+This is a really well-structured book, started from how to write a good class to
+how to make different classes working together nicely. It's like a great code
+repo: every chapter serves one and only one single purpose, and all of them are
+combined together into a working whole piece. No wonder why people say that
+writing good software is like writing a book. You can know if one is a good
+developer by reading his/her book.
+</p>
+
+<p>
+Basically, Sendi Metz taught us how to write well-structured software by taking
+a bottom-up approach:
+</p>
+<dl class="org-dl">
+<dt>Object-Oriented Design</dt><dd>An introduction to OOD.
+<ul class="org-ul">
+<li>Why do we need to do OOD?</li>
+<li>What is OOD?</li>
+<li>When to do OOD?</li>
+<li>How to do OOD?</li>
+</ul></dd>
+<dt>Designing Classes with a Single Responsibility</dt><dd>This chapter is about how to code a well-designed, easy-to-change class.</dd>
+<dt>Managing Dependencies</dt><dd>How to manage dependencies for a class.</dd>
+<dt>Creating Flexible Interfaces</dt><dd>How to design interfaces for a class.</dd>
+<dt>Reducing Costs with Duck Typing</dt><dd>How to recognize and exploit duck types to make the application more
+flexible and easier to change.</dd>
+<dt>Acquiring Behavior Through Inheritance</dt><dd>How to properly use inheritance or how to build a technically sound
+inheritance hirarchy.</dd>
+<dt>Sharing Role Behavior with Modules</dt><dd>How to use an alternative inheritance way (modules) to share a role.</dd>
+<dt>Combining Objects with Composition</dt><dd>How to use composition to model a <i>has-a</i> relationship.</dd>
+<dt>Designing Cost-Effective Tests</dt><dd>How to write cost-effective tests.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgecabf73" class="outline-2">
+<h2 id="orgecabf73">Some random thoughts</h2>
+<div class="outline-text-2" id="text-orgecabf73">
+<p>
+OOD is truly an old topic in the computer science world. I'm surprised how
+people in 1980s had explained it well<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+But it's really hard to design our code well using OO techniques. Because our
+world is changing so fast, so do the requirements to our software. Making a good
+design requires us to know all the theories and use our existing experiences as
+much as possible.
+</p>
+
+<p>
+When we finish the implementation, our experiences grow, which means we might
+get a better design in our mind after the whole design process. But due to the
+cost of switching implementations, we might not be able to switch to the new
+design. To prevent this kind of things happening, we need to <b>keep things
+simple</b><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, only simple things are easy to read, understand and change.
+</p>
+
+<p>
+Design, implement, refactor. This loop reminds me of the TDD loop: red, green,
+refactor.
+</p>
+<dl class="org-dl">
+<dt>Red</dt><dd>Making a test fail is the design stage. We cannot write a test if we
+don't have a design in our mind.</dd>
+<dt>Green</dt><dd>Making a red test pass is the implementation stage.</dd>
+<dt>Refactor</dt><dd><p>
+This is the most important stage through the whole TDD loop in my
+opinion. Like our customers, who can't define the software until
+they see it, we as software developers can hardly see the whole
+picture before we finish the whole thing. I usually find that I
+have a new, better design after the implementation finished. Here
+is where refactor comes in and saves the world.
+</p>
+
+<p>
+But refactor is also a really big topic. I also wrote <a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">a review of
+<i>Refactor</i></a> by Martin Fowler.
+</p></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org8b57e10" class="outline-2">
+<h2 id="org8b57e10">Some final words</h2>
+<div class="outline-text-2" id="text-org8b57e10">
+<p>
+POODR is really a great book. I don't know how to use my word to praise it
+properly. So, just go and read it.
+</p>
+
+<p>
+BTW, Sandi Metz is also a great speaker, here are some talks I watched:
+</p>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=npOGOmkxuio">Baruco 2013: Rules, by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=JOM5_V5jLAs">RubyConf 2014 - Madam Sandi Tells Your Future by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=URSWYvyc42M">Rails Conf 2013 The Magic Tricks of Testing by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=PJjHfa5yxlU">RailsConf 2016 - Get a Whiff of This by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=v-2yFMzxqwU">GORUCO 2009 - SOLID Object-Oriented Design by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=8bZh5LMaSmE">RailsConf 2014 - All the Little Things by Sandi Metz - YouTube</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.laputan.org/drc/drc.html">Designing Reusable Classes</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-05-12</span>
+        <span title="last modification date" class="post-info">2017-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/object-oriented/">Object-Oriented</a>, <a href="/tags/ruby/">Ruby</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
