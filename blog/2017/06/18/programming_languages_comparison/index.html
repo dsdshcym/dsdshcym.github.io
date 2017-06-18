@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>我看程序语言的历史、现在与将来 - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="厚着脸皮把毕业论文发到上来" />
+  <meta name="keywords" content="Programming Languages, Comparison" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>我看程序语言的历史、现在与将来</h1>
+            <p>
+本文是我的本科毕业论文，限于时间等因素，深度、广度有限，但也算是我大学五年学习的一个总结：
+</p>
+
+<p>
+<b>程序语言的发展是一个不断抽象的过程，提高效率是我们写程序的一个重要目标。</b>
+</p>
+
+<div id="outline-container-org7f61308" class="outline-2">
+<h2 id="org7f61308">前言</h2>
+<div class="outline-text-2" id="text-org7f61308">
+<p>
+程序设计语言作为计算机科学领域的一个重要工具，伴随着计算机科学的发展不断进步，已有几十年的历史。在这几十年的历史中，各式各样的程序设计语言不断涌现，发展出了各种编程范式和理论。尤其在近几年，随着开源社区的发展，新兴移动平台的出现，我们又迎来了一个程序设计语言爆发的时期，我们能看到 Go (2009), Rust (2010), Elixir (2011),
+Swift (2014) 这些新的程序语言不断出现。
+</p>
+
+<p>
+这些不同的语言都各自有其特色及擅长的领域，如 Go 以 C 的继任者为目标，以高效和高并发著称，Rust 则以「安全、并发、实用」为准则，期望成为新的系统编程默认语言，
+Elixir 则继承了 Erlang 的函数式思想，Ruby 优雅的语法，支持分布式、高容错、实时应用程序的开发。
+</p>
+
+<p>
+在这成千上万种程序设计语言面前，我相信我们都曾迷失过方向：为什么会有这么多语言出现？该如何选择一门程序设计语言作为自己解决问题的工具？以后会不会有更多的程序语言出现？
+</p>
+
+<p>
+这篇文章的意图就是通过比较几种我们比较熟悉的高级程序设计语言，从中找到程序语言发展的规律，以及影响程序语言流行的因素，以此对程序语言的发展作出一个基本判断，对未来有所展望。
+</p>
+</div>
+</div>
+<div id="outline-container-orgeb4c870" class="outline-2">
+<h2 id="orgeb4c870">程序语言及其分类</h2>
+<div class="outline-text-2" id="text-orgeb4c870">
+<p>
+为了比较不同的高级程序设计语言，我们首先得定义以下几点：
+</p>
+<ol class="org-ol">
+<li><b>什么是程序设计语言？</b></li>
+<li><b>什么是高级程序设计语言？</b></li>
+<li><b>高级程序设计语言的分类</b> （即高级语言之间的不同）</li>
+</ol>
+<p>
+如果不明确以上 3 点，我们的比较将无从谈起。因此这一节将依次介绍以上几点。
+</p>
+</div>
+<div id="outline-container-org25bb31f" class="outline-3">
+<h3 id="org25bb31f">什么是程序设计语言？</h3>
+<div class="outline-text-3" id="text-org25bb31f">
+</div><div id="outline-container-org4447de0" class="outline-4">
+<h4 id="org4447de0">程序设计语言（Programming Language）</h4>
+<div class="outline-text-4" id="text-org4447de0">
+<p>
+引用维基百科对 Programming Language 的定义<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>：
+</p>
+<blockquote>
+<p>
+A programming language is a notation for writing programs, which are
+specifications of a computation or algorithm.
+</p>
+</blockquote>
+<p>
+一个程序设计语言是我们描述程序的记述方式，是对一种计算模型或者算法的说明。
+</p>
+</div>
+</div>
+<div id="outline-container-orgae48582" class="outline-4">
+<h4 id="orgae48582">程序语言的几个重要特征</h4>
+<div class="outline-text-4" id="text-orgae48582">
+<ol class="org-ol">
+<li><p>
+以机器为目标
+</p>
+
+<p>
+程序语言的一个目标就是要在机器（特别是计算机）上运行，因此，程序语言的规格与它要运行的目标机器的规格息息相关。冯·诺伊曼架构的计算机模型就对现代程序语言产生了巨大的影响（比如 C 中的指针概念）。量子计算机、生物计算机等新时代计算机架构的出现也会引起程序语言的巨大变革，但本文不做深入探讨。
+</p></li>
+
+<li><p>
+抽象
+</p>
+
+<p>
+可以说每个程序语言都是为抽象而生的。机器语言是对硬件操作的抽象，汇编语言是对机器语言的抽象，C 语言是对汇编语言的抽象。
+</p>
+
+<p>
+而抽象也有好坏之分，好的抽象能让人非常容易地理解，而坏的抽象则是雪上加霜，给本就复杂的对象平添了一层复杂度。程序语言也是如此，好的程序语言可以让程序员轻松地将自己想要表达的功能与计算机底层的逻辑联系起来，而坏的程序语言则要让程序员付出更多的时间与精力去完成同样的任务。
+</p>
+
+<p>
+抽象也因此可以称作语言在程序员书写和阅读时展现出来的表现能力。
+</p></li>
+
+<li><p>
+表现力
+</p>
+
+<p>
+此处的表现力与「抽象」不同，指的是语言在算法层面的表现能力。
+</p>
+
+<p>
+计算理论<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>通过对语言的表现能力进行分类。现代常用的高级语言都是图灵完备（Turing-Complete）的。
+</p>
+
+<p>
+注意：除了图灵的理论外，还有很多其他的计算模型<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>。
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0a2a4cb" class="outline-4">
+<h4 id="org0a2a4cb">构成程序语言的基本元素</h4>
+<div class="outline-text-4" id="text-org0a2a4cb">
+<ul class="org-ul">
+<li><p>
+语法
+</p>
+
+<p>
+语法是一个程序语言的最表面的表现形式。大部分的程序语言都是通过文字来表现的（一小部分语言是通过图形表示的，两者的区别在后续内容中讨论）。
+</p>
+
+<p>
+这些文字的语法通常通过正则表达式和巴克斯范式一起组合定义。其中，正则表达式负责词法分析的部分，巴克斯范式负责语法的部分。
+</p>
+
+<p>
+有的语言语法简洁明了，有的语言则像英语语法一样复杂。拥有一个简单、易懂、符合程序员直觉的语法是一个程序语言成功的必要因素。
+</p></li>
+
+<li><p>
+类型系统
+</p>
+
+<p>
+类型系统定义了一个程序语言如何对值和表达式进行分类，操作变换，以及不同类型之间的交互。
+</p>
+
+<p>
+类型是程序语言中一个重要的抽象概念，如果没有类型，那我们熟悉的字符串、整型、浮点型等基本概念都无从谈起，更不用说面向对象编程这种重度依赖数据类型的编程范式了。
+</p>
+
+<p>
+也正因此，一个程序语言对类型定义、变换、交互的支持会很大程度影响程序员在编程时的方方面面。
+</p></li>
+
+<li><p>
+标准库
+</p>
+
+<p>
+标准库也是程序语言在定义时的一个重要组成部分。标准库决定了程序员在只有这个程序语言支持的情况下完成自己任务的难易程度，因此标准库也对一个程序语言的好坏有着很大的影响。
+</p>
+
+<p>
+有的程序语言有着丰富的标准库（如 <code>Go</code> ），程序员甚至不用借助任何第三方库就能完成自己大部分的工作。
+</p>
+
+<p>
+有的程序语言则标准库不完善（如 <code>JavaScript</code> ），程序员需要大量借助第三方库的实现才能让自己的工作轻松一点，这样的语言是很难能被称得上是优秀的。
+</p></li>
+
+<li><p>
+语义
+</p>
+
+<p>
+语义是语法的反面，是一个程序的想要表达的算法的意义。
+</p>
+
+<p>
+一个程序的语义与使用者的能力息息相关，资深的程序员可以使用抽象能力差的语言写出同样表现力的程序，蹩脚的程序员也可以用抽象能力强的语言写出晦涩难懂的程序，而两个程序在语义上是完全一致的。
+</p>
+
+<p>
+这个假设和本文中的其他讨论都是建立在两个语言都是图灵完备的前提下的。程序员对程序语言语义表达的影响超出了本文讨论的范畴，后文将要讨论的是程序语言的设计会如何影响最终程序的可读性。
+</p>
+
+<p>
+我们会发现，程序语言的语法、类型系统、编程范式、标准库，最终都会影响到程序的语义是否清晰可读，甚至影响到程序语言使用者的思维。
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4cb291" class="outline-3">
+<h3 id="orgc4cb291">什么是高级程序设计语言？</h3>
+<div class="outline-text-3" id="text-orgc4cb291">
+<p>
+关于这个问题，我们要考察程序语言的发展历史才能得到答案，也只有从这段发展历史中，我们也才能知道程序语言的发展方向。
+</p>
+
+<ul class="org-ul">
+<li><p>
+第一代程序语言 （1GL）
+</p>
+
+<p>
+最早的计算机程序语言的抽象层级很低，程序员需要用纯粹的机器语言写程序。这些程序以十进制或二进制的形式「写」在卡片或纸带上，几乎是无法让人阅读的，也因此很容易出错。
+</p>
+
+<p>
+这些纯粹的机器语言被称为第一代程序语言。
+</p></li>
+
+<li><p>
+第二代程序语言 （2GL）
+</p>
+
+<p>
+第二代程序语言就是我们所熟知的汇编语言，汇编语言的抽象层级比机器语言要高一级，能够用一些关键字、数字写出的程序来控制计算机的行为，可读性比机器语言提高了不少。
+</p>
+
+<p>
+但汇编语言依然是平台相关的，一个计算机架构上的汇编语言无法在另一个计算机架构上运行。
+</p></li>
+
+<li><p>
+第三代程序语言 （3GL）
+</p>
+
+<p>
+编译技术的发展让程序语言的抽象能力得到了进一步的提升，程序语言不再和硬件有关，也因此从硬件的底层（Low-Level）限制中摆脱出来，正式迈入了高级语言时代。
+</p>
+
+<p>
+自 Fortran 以降，Lisp, Simula, C, Prolog 各种程序语言不断涌现，可谓是百花齐放。到如今，第三代程序语言的发展已经经历了 60 多个年头了。这 60 年间，各种编程范式，类型系统也随着程序语言的更迭而出现，而大大小小的程序语言也有成百上千个。
+</p>
+
+<p>
+经历过许许多多的编程语言后，现在的我们是不是能说我们已经见过了程序语言的所有可能性？我们能不能确定程序语言的发展方向？这是本文想要讨论的问题。
+</p></li>
+
+<li><p>
+第四代程序语言 （4GL）
+</p>
+
+<p>
+第四代程序语言以 SQL 为代表，在第三代程序语言的基础上进一步抽象，使得使用者可以完全无视计算机的结构，只用全心全意专注在自己要解决的问题领域（数据库管理、报表生成、Web 开发，等等）
+</p>
+
+<p>
+但是这一层抽象也带来了其功能的局限，即这类语言只能在自己的问题领域发挥作用，在其他领域则失去了其效率甚至完全不能发挥作用。也因此，有人将第四代程序语言归类为邻域特定语言的子集<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup><sup>, </sup><sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>。
+</p></li>
+
+<li><p>
+第五代程序语言 （5GL）
+</p>
+
+<p>
+第五代程序语言是通过定义问题的约束，而不是通过定义解决这个问题的算法来解决问题。
+</p>
+
+<p>
+然而，给定一个特定问题让人类本身去提出算法已经是一件很困难的事情了，更不用说让计算机语言来完成这件事情。受制于当时（1980-1990 年代）的人工智能水平，这样的程序语言是不切实际的，因此也被时代放弃了。
+</p>
+
+<p>
+也许随着人工智能等相关学科的发展，最终我们会让计算机拥有和人类一样理解问题，解决问题，提出算法的能力，但这样的功能已经超出了我们对程序语言的定义：「a
+notation for writing programs, which are specifications of a computation or
+algorithm.」
+</p>
+
+<p>
+换句话说，第五代程序语言没有在定义算法的抽象层次上发展，而是想让计算机为我们解决问题，从计算机语言偏向了人工智能方向，可能这也是它作为程序语言失败的原因。
+</p></li>
+</ul>
+
+<p>
+通过这一个小结，我们大致了解了程序语言的发展过程，可以说程序语言的发展过程就是「对算法的抽象水平」的不断发展提高的过程。
+</p>
+
+<p>
+高级程序设计语言，也就是对算法的抽象到了「硬件无关」水平的语言，即第三代及其以上的程序语言。由于第四代及第五代程序语言的特殊性，本文的主要讨论对象是第三代程序语言。
+</p>
+</div>
+</div>
+<div id="outline-container-org77f2c0b" class="outline-3">
+<h3 id="org77f2c0b">高级程序设计语言的分类</h3>
+<div class="outline-text-3" id="text-org77f2c0b">
+<p>
+本文对高级程序语言按以下几种标准进行分类：
+</p>
+<ol class="org-ol">
+<li><p>
+应用领域
+</p>
+
+<p>
+根据程序语言最终可以应用的领域来分，可以将程序语言分为以下两种
+</p>
+
+<ol class="org-ol">
+<li><p>
+通用编程语言
+</p>
+
+<p>
+通用编程语言即被设计为各种应用领域服务的编程语言，不含有为特定领域设计的结构。
+</p>
+
+<p>
+常见的 C, Java, Python, Fortran 等都是通用编程语言。
+</p></li>
+
+<li><p>
+领域特定语言
+</p>
+
+<p>
+领域特定语言即专注于某个特定应用领域的程序语言。
+</p>
+
+<p>
+常见的领域特定语言有 SQL, HTML, Gradle。
+</p></li>
+</ol></li>
+
+<li><p>
+类型系统
+</p>
+
+<p>
+我们知道，计算机用比特来存储数据，任何数据都是以一组比特组成的。但对人类来说，单纯的比特流是不符合我们的日常认知的，主要原因有两点：
+</p>
+
+<ol class="org-ol">
+<li>人类的数学教育是从十进制开始的，而比特流是二进制的。大部分人思考比特流时要先转换成十进制，这一点造成了我们在思考比特流上有先天的不足。</li>
+<li>现实世界不单单是由数字组成的。我们还有图片、文字、音频、视频等等等等复杂的表现形式。从二进制的比特流转换成十进制的数字已经有一定的难度了，更不必说从二进制比特流转换成字母、图片等等其他更复杂的格式。</li>
+</ol>
+<p>
+因此，高级程序设计语言中出现了类型这一抽象形式。类型，是程序和程序设计者用来区分不同的比特流的手段。定型（类型指派）赋予一组比特某个意义，这组比特的类型可以告诉程序和程序设计者如何对待这些比特。
+</p>
+
+<p>
+对程序语言来说，类型系统是一组关于变量和表达式的规则，这些规则限定了不同数值和表达式有哪些不同的类型、如何操作这些类型、这些类型之间如何相互作用。
+</p>
+
+<p>
+类型系统的主要作用有：
+</p>
+<dl class="org-dl">
+<dt>抽象化</dt><dd>如上所述，类型允许程序设计者以更高的层次（相比比特流或单纯的数字）思考，而不是烦人的低层次实现。这是第三代程序语言和第二代程序语言的一大进步。</dd>
+<dt>可读性</dt><dd>在抽象化的基础上，类型系统为程序提供了更好的可读性。比如：一个整数可以不单单是整数，而是代表一个时间戳（Timestamp）。而程序设计者在看到
+<code>Timestamp</code> 这一类型时也可以清楚的知道变量或表达式的类型。</dd>
+<dt>安全性</dt><dd>使用类型系统可以允许编译器探测无意义的，或者可能无效的代码，比如
+<code>"Hello, World!" + 3</code> ，在编译时，编译器可以侦测到这是字符串与整数相加，不符合类型系统的规则，属于一个无效操作，为程序员减少后期除错的时间。</dd>
+<dt>最优化</dt><dd>静态类型检查可以提供更多有用的信息给编译器。编译器可以针对不同的类型做不同的优化。</dd>
+</dl>
+<p>
+按程序语言的类型系统来分，程序语言可分为两类：
+</p>
+
+<ol class="org-ol">
+<li><p>
+无类型语言
+</p>
+
+<p>
+无类型语言允许在任意的数据上进行任意的操作。
+</p>
+
+<p>
+常见的有大部分的汇编语言，Tcl，Forth 等。
+</p></li>
+
+<li><p>
+有类型语言
+</p>
+
+<p>
+有类型语言则限制了在不同类型数据上能够进行的操作。
+</p>
+
+<p>
+现在大部分的高级语言都是有类型语言。
+</p>
+
+<ul class="org-ul">
+<li>类型语言可根据 <b>表达式类型的决定时间</b> 分为：
+<ol class="org-ol">
+<li><p>
+静态类型
+</p>
+
+<p>
+所有表达式的类型在程序执行前（通常是在编译时）决定。
+</p>
+
+<p>
+这种决定有两种方式：
+</p>
+<dl class="org-dl">
+<dt>显式声明</dt><dd><p>
+                     程序员在编写程序源代码时就把每个表达式的类型同时在源代码中声明。
+</p>
+
+<p>
+常见的有 C++, C#, Java
+</p></dd>
+<dt>隐式推导</dt><dd><p>
+                     由程序语言的编译器根据表达式的上下文来推导出表达式的类型，而不需要程序员在源代码中显式声明。
+</p>
+
+<p>
+常见的有 Haskell, ML
+</p></dd>
+</dl></li>
+<li><p>
+动态类型
+</p>
+
+<p>
+表达式的类型在程序运行时才最终决定，换句话说，类型是与表达式在程序运行时的值有关，而不是和源代码的字面表述有关。
+</p>
+
+<p>
+同隐式类型推导语言一样，表达式的类型也不需要在源代码中声明。
+</p>
+
+<p>
+常见的有 Lisp, Smalltalk, Python, Ruby
+</p></li>
+</ol></li>
+<li>类型语言可根据 <b>是否有类型的隐式转换</b> 分为：
+<ol class="org-ol">
+<li><p>
+弱类型
+</p>
+
+<p>
+弱类型语言允许一种类型的值被当作另一种类型使用，比如将字符串当做整型。弱类型通常是通过类型之间的隐式转换来实现的，即把字符串隐式转换成整型后再进行后续操作。
+</p>
+
+<p>
+C 语言可以被认为是弱类型语言，因为 <code>void*</code> 指针可以支持不同类型之间的隐式转换。
+</p></li>
+
+<li><p>
+强类型
+</p>
+
+<p>
+强类型语言则不允许用一种类型的值当作另一种类型使用，任何这样的尝试都会使程序报错。在这种意义上，强类型语言也可以理解为「类型安全」语言。
+</p></li>
+</ol></li>
+</ul></li>
+</ol></li>
+
+<li><p>
+编程范式
+</p>
+
+<p>
+范，即模范，范式即模式、方法。编程范式即为一类典型的编程风格。正如软件工程中不同的群体会提倡不同的「方法学」一样，不同的编程语言也会提倡不同的「编程范式」。一些语言是专门为某个特定的范式设计的（如 Ruby 是为面向对象编程设计的，Haskell
+和 Scheme 则是为函数式编程设计的），而有些语言则支持多种泛型（如 Python 支持过程化编程、面向对象编程、函数式编程、C++ 支持过程化编程、面向对象编程和泛型编程）。
+</p>
+
+<p>
+因为程序语言有成百上千种，可以说每种语言都有其自己独特的编程范式，经过总结后得出的不同的编程范式也有几十种，本文主要讨论其中最有影响力的几种，列表如下：
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">编程范式</td>
+<td class="org-left">简介</td>
+<td class="org-left">主要特征</td>
+<td class="org-left">典型代表</td>
+</tr>
+
+<tr>
+<td class="org-left">结构化编程</td>
+<td class="org-left">命令式编程的一种，有更多的逻辑子结构</td>
+<td class="org-left">禁止或限制 goto 语句的使用</td>
+<td class="org-left">C, Python, PHP</td>
+</tr>
+
+<tr>
+<td class="org-left">面向对象编程</td>
+<td class="org-left">将数据（data）和数据相关的行为（behavior）绑定为对象（object），所有行为都基于对象的 behavior 产生</td>
+<td class="org-left">对象，消息传递，封装，多态，继承</td>
+<td class="org-left">C++, Java, Ruby, Javascript</td>
+</tr>
+
+<tr>
+<td class="org-left">函数式编程</td>
+<td class="org-left">将计算看作数学里的函数计算，避免使用可变的状态和数据</td>
+<td class="org-left">匿名函数，组合，递归，没有副作用</td>
+<td class="org-left">Lisp, Clojure, Erlang, Haskell</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcac8a9a" class="outline-2">
+<h2 id="orgcac8a9a">程序语言的历史</h2>
+<div class="outline-text-2" id="text-orgcac8a9a">
+<p>
+程序语言的发展是一个不断抽象的过程
+</p>
+</div>
+<div id="outline-container-org500faa5" class="outline-3">
+<h3 id="org500faa5">抽象及抽象的好处</h3>
+<div class="outline-text-3" id="text-org500faa5">
+<p>
+引用维基百科对 抽象化（Abstraction）<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> 的定义：
+</p>
+<blockquote>
+<p>
+抽象化（英语：Abstraction）是指以缩减一个概念或是一个现象的资讯含量来将其广义化（Generalization）的过程，主要是为了只保存和一特定目的有关的资讯。
+</p>
+</blockquote>
+
+<p>
+在计算机科学中，抽象是我们控制复杂度的一个重要手段。计算机硬件和软件，可以说无一不超出了一个人可以理解的复杂度范畴。只有通过抽象，将一个复杂的系统变成一层层的接口集合，让人每次只需要考虑当前集合内的逻辑，而不用管当前层次以上和以下的复杂度，才可以让人从这些庞杂的系统中解放出来，一步一步地理解或者构造一个复杂系统。
+</p>
+
+<p>
+计算机系统本身就是通过一层层抽象构造出来的，从一个个微小的晶体管，抽象成一个个门电路，再到 ALU 等组件，到 CPU 等元器件，最终一个个硬件单元的抽象组成了计算机。抽象使计算机变成了一个由几层抽象构成的系统，每个层次之间通过清晰定义的接口进行通信。这让我们理解和设计计算机时，可以每次只考虑一个层次的逻辑，设计完一个层次之后再进行下一个层次。无论是自顶向下还是自底向上，复杂度都要比把它当做一个整体要来得简单许多。
+</p>
+
+<p>
+程序设计也是如此，通过不断的缩减概念，去伪存真，用高级程序设计语言、编译器等等辅助工具，对计算机硬件又做了若干层抽象，让我们能够用程序语言描述我们想要实现的算法，而辅助工具会帮助我们将这一描述结果转换成计算机硬件能够理解的语言，并运行起来。
+</p>
+
+<p>
+由此，我们可以看到抽象给程序设计带来的两个好处：
+</p>
+<ol class="org-ol">
+<li>让计算机帮助程序设计者完成抽象背后的事情，比如编译、链接等等，这些事情往往是与我们要描述的算法不是直接相关的。这个好处把程序设计者从抽象背后繁琐的事务中解放出来，让程序设计者能专心描述算法。</li>
+<li>让程序回归「描述算法」这一程序语言的本质，使程序所代表的算法更加明了，易于理解。这个好处让程序阅读者只用关心当前抽象层次的问题，而不用理解底层的实现，使得程序更加易读。</li>
+</ol>
+
+<p>
+本章就通过比高级程序语言发展过程中的一些语言，来看看语言的发展是如何帮助我们在抽象的阶梯上一步一步往上走的。
+</p>
+</div>
+</div>
+<div id="outline-container-orgcaf4e6b" class="outline-3">
+<h3 id="orgcaf4e6b">Fortran - 高级语言的出现 - 对硬件的抽象</h3>
+<div class="outline-text-3" id="text-orgcaf4e6b">
+<p>
+在第三代程序语言出现之前的机器语言和汇编语言时代，程序语言和目标机器之间是有很强的绑定关系的，相同的算法如果要在不同架构的机器上实现需要程序设计人员将算法用不同的语言重复实现若干遍，这显然是与我们的抽象原则相违背的。因此，第三代程序语言应运而生。
+</p>
+
+<p>
+如前所述，第三代程序语言通过编译技术，将程序语言与目标机器通过中间代码进行了解耦，程序设计者只需要关注算法层面的实现，而不需要关心目标机器的具体细节，大大减少了程序实现者的工作量。
+</p>
+
+<p>
+Fortran 是第一个被完整实现的高级程序语言，其第一个完整的编译器完成于 1957 年。<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>
+</p>
+
+<p>
+此处以简单的 Hello World 为例，对 Fortran 与汇编语言进行一个简要的对比。<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>
+</p>
+
+<ul class="org-ul">
+<li><p>
+Fortran
+</p>
+<div class="org-src-container">
+<pre class="src src-fortran">C     Hello World in Fortran
+
+      PROGRAM HELLO
+      WRITE (*,100)
+      STOP
+ 100  FORMAT (' Hello World! ' /)
+      END
+</pre>
+</div></li>
+<li>汇编语言
+<ul class="org-ul">
+<li><p>
+Intel 架构
+</p>
+<div class="org-src-container">
+<pre class="src src-asm">; Hello World for Intel Assembler (MSDOS)
+
+mov ax,cs
+mov ds,ax
+mov ah,9
+mov dx, offset Hello
+int 21h
+xor ax,ax
+int 21h
+
+Hello:
+  db "Hello World!",13,10,"$"
+</pre>
+</div></li>
+<li><p>
+MIPS 架构
+</p>
+<div class="org-src-container">
+<pre class="src src-asm">## Hello Word in Assemlber for the MIPS Architecture
+
+.globl main
+
+main:   jal hwbody             # call Hello Word Procedure
+        trap 10                # exit
+
+hwbody: addi $30, $30,-4       # we need to preserve
+        sw $4, 0($30)          # existing values in register 4
+
+        addi $4,$0,72          # H
+        trap 101
+        addi $4,$0,101         # e
+        trap 101
+        addi $4,$0,108         # l
+        trap 101
+        trap 101               # l
+        addi $4,$0,111         # o
+        trap 101
+        addi $4,$0,32          # &lt;space&gt;
+        trap 101
+        addi $4,$0,87          # W
+        trap 101
+        addi $4,$0,111         # o
+        trap 101
+        addi $4,$0,114         # r
+        trap 101
+        addi $4,$0,108         # l
+        trap 101
+        addi $4,$0,100         # d
+        trap 101
+        addi $4,$0,33          # !
+        trap 101
+        addi $4,$0,10          # \n
+        trap 101
+
+done:   lw $4, 0($30)          # restore values
+        addi $30, $30, 4       # in register 4
+        jr $31                 # return to the main
+</pre>
+</div></li>
+</ul></li>
+</ul>
+
+<p>
+从这个简单的例子中我们可以看出，
+</p>
+<ol class="org-ol">
+<li><p>
+汇编语言的代码根据语言的不同有很大的区别
+</p>
+
+<p>
+由于架构限制导致 MIPS 的字符操作比 Intel 架构复杂许多，也因此其汇编代码更长。而 Fortran 则没有架构的限制，只要有 Intel 和 MIPS 平台上的编译器，这段 Fortran
+代码就能在编译之后顺利运行。
+</p></li>
+
+<li><p>
+Fortran 代码相比汇编代码更加简单、易读
+</p>
+
+<p>
+由于 Fortran 是基于硬件架构的进一步抽象，其语法更符合人类的已有语言体系，如
+<code>PROGRAM</code>, <code>WRITE</code>, <code>STOP</code> 等词语的使用，只要有一定基础编程知识的人都能理解上述 Fortran 代码。
+</p>
+
+<p>
+而汇编语言则完全不同，跟硬件架构的深度耦合使得其语法与人类的语言体系相去甚远，没有相关经验的程序设计者必须要查询其各自对应的架构手册才能理解这两段汇编代码，程序中更是需要大量注释来说明在 Fortran 中用简要的代码就可以表达的字符数值。而且不同架构汇编语言的语法之间的区别不亚于如今各个高级语言之间的语法、范式差别。这让汇编语言的使用成本进一步提高。
+</p>
+
+<p>
+也因此，高级程序语言及编译技术的普及使得程序更加易读易写，让编程的成本大幅度降低。
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd189615" class="outline-3">
+<h3 id="orgd189615">C - 结构化程序语言 - 对控制流的抽象</h3>
+<div class="outline-text-3" id="text-orgd189615">
+<p>
+类似 Fortran 这样的高级语言已经很抽象了，已经脱离了汇编语言对阅读者不友好的阶段，具有了一定的可读性，但这样的可读性依然无法满足程序语言设计者们，程序语言继续往更高的抽象层次发展。
+</p>
+
+<p>
+从之前的例子我们可以看出，Frotran 依然带着一定汇编语言的影子，比如 <code>100 FORMAT
+(' Hello World! ' /)</code> 这一个标签，和 Intel 架构的汇编版本 <code>Hello: db "Hello
+World!",13,10,"$"</code> 类似，它们都用标签来标识一个字符串并在另外的地方使用该字符串。从程序的可读性上来讲，Fortran 的标签 <code>100</code> 还不如 Intel 汇编的 <code>Hello</code> ，至少
+<code>Hello</code> 比 <code>100</code> 更能代表 <code>Hello World!</code> 这个字符串。（当然，随着 Fortran 的发展，后续的版本比如 Fortran 77, Fortran 90 都和古老的 Fortran 有着显著的进步，此处不做引申）
+</p>
+
+<p>
+类似这样的汇编语言的影子在高级语言中依然有不少，另外一个饱受争议的就是 <code>goto</code> 语句。 <code>goto</code> 语句在 C 语言中也存在，但经过社区的激烈讨论之后<sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup><sup>, </sup><sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup>，=goto=
+语句在 C 语言中也不再提倡<sup><a id="fnr.11" class="footref" href="#fn.11">11</a></sup>。而禁止或限制使用 <code>goto</code> 语句也正是结构化程序语言的一个特征。该小节就探讨结构化语言是如何通过对 <code>goto</code> 语句的限制达到对控制流（control flow）更好的抽象。
+</p>
+
+<ul class="org-ul">
+<li><p>
+<code>goto</code> 和面条式代码（Spaghetti Code)
+</p>
+
+<p>
+在上述的 MIPS 汇编语句中， <code>jal hwbody</code> 就是 <code>goto</code> 在汇编语言中的一种展现形式：通过标签标注代码块，在程序的其他地方通过 <code>jump</code> 系列语句跳转到该代码块执行。
+</p>
+<div class="org-src-container">
+<pre class="src src-asm">main:   jal hwbody             # call Hello Word Procedure
+        trap 10                # exit
+
+hwbody: ...
+</pre>
+</div>
+
+<p>
+单看这个简单的 <code>goto</code> 语句并无法让我们看到 <code>goto</code> 的危害。但当 <code>goto</code> 在汇编语言中被广泛使用时，我们才会发现我们的汇编代码变成了一堆面条式代码（Spaghetti
+Code）。所谓面条式代码，即是一个控制结构复杂、混乱、难以理解的代码，就像一盘扭曲纠结的意大利面一般让人摸不着头脑。
+</p>
+
+<p>
+即使在写汇编代码时尽量用清晰的标签标注每段要跳转的子结构，依然不能避免由各种形式的 <code>jump</code> (<code>goto</code>) 所带来的「面条」感：每个 <code>jump</code> 都如一根面条穿进另外两根面条中间，多个代码块之间的穿梭就如面条交织纠结在一起，最终让整个程序难以阅读、修改。
+</p>
+
+<p>
+而 <code>goto</code> 这一语言特性也被 C, Basic 等高级语言继承，如下面这段 Basic 代码<sup><a id="fnr.12" class="footref" href="#fn.12">12</a></sup>：
+</p>
+<pre class="example">
+10 i = 0
+20 i = i + 1
+30 PRINT i; " squared = "; i * i
+40 IF i &gt;= 10 THEN GOTO 60
+50 GOTO 20
+60 PRINT "Program Completed."
+70 END
+</pre>
+<p>
+这段程序，是典型的面条式代码的例子。程序要在屏幕上打印出数字 1 到 10 的平方。
+<code>GOTO</code> 指令给这段程序带来了几个负面的影响：
+</p>
+<ol class="org-ol">
+<li><p>
+程序要配合行号才能知道程序的流向
+</p>
+
+<p>
+如前所述，程序设计者不是计算机，大部分人类在阅读代码时对数字的敏感程度是比不上文字的，而在计算机面前，代码和文字并没有什么区别。用行号来进行跳跃，实际上是强迫程序设计者用计算机的方式去思考。这和汇编代码相比，进步不够明显。
+</p></li>
+
+<li><p>
+由于 <code>GOTO</code> 指令的关系，要运行的程序会不可预测的从一个区域跳到另一个区域，不易追踪。
+</p>
+
+<p>
+如上例中从行 <code>40</code> 跳到行 <code>60</code> ，假设中间不仅仅只有一行代码，则程序设计者和阅读者要跨越一大段代码才能跟随程序运行的脚步。
+</p>
+
+<p>
+由于人类受自然时间的影响，阅读时总是线性的，再加上对行号的不敏感，这样的跳跃是非常反直觉的。只有顺序的、跟随函数名的跳转，对人类来说才是比较友好的。
+</p></li>
+</ol></li>
+
+<li><p>
+结构化语言与汇编语言的对比
+</p>
+
+<p>
+对比一段与上述面条式代码相同功能的 C 语言代码：
+</p>
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+
+int main() {
+  for (int i=0; i &lt;= 10; i++) {
+    printf("%d squared = %d\n", i, i * i);
+  }
+  printf("Program Completed.\n");
+}
+</pre>
+</div>
+<p>
+不再使用 <code>goto</code> 后的代码变得更加清晰明了，只用一个 <code>for</code> 循环语句就完成了之前需要两个 <code>goto</code> 语句才能完成的任务。而这也正是结构化语言所提倡的：用循环体等更加清晰明了的结构去解决 <code>goto</code> 想解决但又没解决好的控制流抽象问题。
+</p></li>
+
+<li><p>
+结构化程序理论
+</p>
+
+<p>
+结构化程序理论，又称为伯姆 - 贾可皮尼理论或 Böhm-Jacopini 理论，主要论证了只要三种控制流程就可以组成一个图灵完备的程序语言，即每个可计算函数都可以只用三种控制流程来表示<sup><a id="fnr.13" class="footref" href="#fn.13">13</a></sup>：
+</p>
+<ol class="org-ol">
+<li>顺序：即依次运行表达式</li>
+<li>选择：依照布尔表达式的结果，决定运行两端子程序中的一段</li>
+<li>循环：重复执行一段子程序，直到某特定布尔表达式为真</li>
+</ol></li>
+
+<li><p>
+结构化语言的兴起与 <code>goto</code> 语句的衰落
+</p>
+
+<p>
+有了结构化程序理论基础作为支撑，结构化语言凭借其更加强大的抽象能力，逐渐占据了主流，在 20 世纪末，几乎所有程序设计者都认为结构化程序设计，或者说用三种控制流程来避免使用 <code>goto</code> 是一种值得学习的程序设计思想。结构化的思想也因此在大部分的高级语言中得到实现，如 Fortran, COBOL 和 Basic 等等。
+</p></li>
+</ul>
+
+<p>
+由此，我们可以看到，即使如 Fortran 这样与机器无关的高级语言，在诞生之初依然带着汇编语言的影子，有着进一步抽象的空间，通过结构化思想抽象之后的控制流模型也能有利于我们写出更简明易懂的程序。
+</p>
+</div>
+</div>
+<div id="outline-container-orgabd4dde" class="outline-3">
+<h3 id="orgabd4dde">Ruby - 面向对象程序语言 - 对数据及其行为的抽象</h3>
+<div class="outline-text-3" id="text-orgabd4dde">
+<p>
+相比汇编语言，或者早期的高级语言，结构化的程序语言在控制流的抽象程度上又提高了一个等级，然而仅仅使用三种控制结构和子程序（过程、函数等概念）依然会在大项目时遇到难以维护的问题。面对这一问题，面向对象语言出现了，并且提供了一个比较可靠的解决方案，即对数据和与该数据相对应的行为进行抽象。也因此，面向对象语言成为了工业界的主流。出现了大量基于已有高级语言的面向对象语言（如基于 C 的 C++, Objective C），也出现了大量重新设计的面向对象语言（如 Java, Ruby, Python）。本小节以 Ruby 为例，讨论面向对象思想在抽象层次上的进步。
+</p>
+</div>
+
+<div id="outline-container-org01c1174" class="outline-4">
+<h4 id="org01c1174">对象 = 数据 + 行为</h4>
+<div class="outline-text-4" id="text-org01c1174">
+<p>
+用我们所熟知的面向对象思想来看，在面向对象语言写就的程序中，一个对象（object），所代表的就是其封装的数据（data）和行为（behavior）<sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup>。对象通过互相发送消息（message）调用其他对象的行为。
+</p>
+
+<p>
+而在结构化或者说过程式语言中，数据本身和行为是没有进行绑定的，每个子过程或者子函数必须通过某种方式知道参数的类型，才能决定下一步的行为。这在大型的项目中是无法满足开发维护的需求的，因为有很多对语言自带类型和自定义类型的使用，如果每次使用都要进行对类型的判断来决定程序的行为，程序本身将变得非常复杂，难以维护。
+</p>
+
+<p>
+反观面向对象语言，由于数据与行为的绑定这一抽象，对数据类型的判断可以由程序语言在一定程度上用类型系统辅助解决，帮助简化了程序。
+</p>
+</div>
+</div>
+<div id="outline-container-org3651aec" class="outline-4">
+<h4 id="org3651aec">面向对象是对控制流方向的反转</h4>
+<div class="outline-text-4" id="text-org3651aec">
+<p>
+如上小节所述，数据与行为的绑定，是面向对象在抽象层次上更为高明的地方。在这个抽象背后，是对过程式语言控制流方向的反转，下面是一个简单的例子：
+</p>
+
+<ul class="org-ul">
+<li><p>
+过程式编程
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">World = Struct.new(:category)
+Duck = Struct.new(:name)
+
+def hello(object)
+  case object
+  when World
+    puts "Hello World: #{object.category}!"
+  when Duck
+    puts "Hello Duck: #{object.name}!"
+  else
+    raise NoMethodError
+  end
+end
+
+world = World.new('CS')
+hello(world) # =&gt; Hello World: CS!
+
+duck = Duck.new('Donald')
+hello(duck) # =&gt; Hello Duck: Donald!
+
+int = 0
+hello(int) # =&gt; NoMethodError
+</pre>
+</div>
+
+<p>
+在过程式编程中，控制流的方向是以子过程为重心的，就如这个例子中 <code>object</code> 被传入
+<code>hello</code> ， <code>hello</code> 需要通过 <code>case</code> 表达式选择对待不同类型结构时自身的行为，这样的编程范式有几个缺点：
+</p>
+<dl class="org-dl">
+<dt>不易扩展</dt><dd>每次增加一个新的 <code>hello</code> 可以处理的类型时，都要修改 <code>hello</code> 自身，即违背了开闭原则<sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup>。而在大型程序中， 像 <code>hello</code> 一样要用到新类型的子过程可能非常多，而其中很大一部分的定义和新类型的定义很可能相隔遥远，要修改起来需要在整个项目中寻找每一个子过程的定义，非常繁琐。</dd>
+<dt>不利于抽象</dt><dd>当要接受的类型变多，行为变复杂时， <code>hello</code> 中要处理的逻辑将混杂着多个不同类型的逻辑，这很容易导致抽象层级的混杂，不利于抽象，最终让这个函数难以理解。</dd>
+<dt>难以处理错误</dt><dd>对类型的手动判断意味着对错误类型也要通过手动判断进行处理，这些额外的逻辑一方面增加了程序的复杂度，另一方面也增加了程序设计者的工作量，给程序员增加了更多负担。</dd>
+</dl></li>
+<li><p>
+进一步抽象后的过程式编程
+</p>
+
+<p>
+为了解决抽象层级复杂的问题，过程式编程发展到一定程度时会将 <code>hello</code> 中对不同类的逻辑单独抽到各自单独的子函数中，以方便管理和扩展。上例改进后的版本如下：
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">World = Struct.new(:category)
+Duck = Struct.new(:name)
+
+def hello(object)
+  case object
+  when World
+    world_hello(object)
+  when Duck
+    duck_hello(object)
+  else
+    raise NoMethodError
+  end
+end
+
+def world_hello(world)
+  puts "Hello World: #{world.category}!"
+end
+
+def duck_hello(duck)
+  puts "Hello Duck: #{duck.name}!"
+end
+
+world = World.new('CS')
+hello(world) # =&gt; Hello World: CS!
+
+duck = Duck.new('Donald')
+hello(duck) # =&gt; Hello Duck: Donald!
+
+int = 0
+hello(int) # =&gt; NoMethodError
+</pre>
+</div>
+<p>
+虽然这个版本改进了抽象层级难以统一的问题，但仍然没有解决「难以扩展」和「难以处理错误」这两个问题。而面向对象语言的出现则解决了以上两个问题。
+</p></li>
+<li><p>
+面向对象编程
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class World
+  def initialize(category)
+    @category = category
+  end
+
+  def hello
+    puts "Hello World: #{@category}!"
+  end
+end
+
+class Duck
+  def initialize(name)
+    @name = name
+  end
+
+  def hello
+    puts "Hello Duck: #{@name}!"
+  end
+end
+
+def hello(object)
+  object.hello
+end
+
+world = World.new('CS')
+hello(world) # =&gt; Hello World: CS!
+
+duck = Duck.new('Donald')
+hello(duck) # =&gt; Hello Duck: Donald!
+
+int = 0
+hello(int) # =&gt; NoMethodError
+</pre>
+</div>
+<p>
+在这个例子中我们可以看到 <code>hello</code> 函数中不再有判断参数类型的 <code>case</code> 语句，判断类型和分配消息的任务则交给了程序语言本身来完成。这在程序代码上的表现虽然只是由
+<code>world_hello(object)</code> 和 <code>duck_hello(object)</code> 变成 <code>object.hello</code> （ <code>object</code>
+可以是 <code>world</code> 也可以是 <code>duck</code> ）的简单改变，但这个简单的转变代表的是将控制流的方向从「对象作为函数的参数传入」反转成了「函数作为消息，传入对象」，这是在抽象层级上的一大进步。
+</p>
+<dl class="org-dl">
+<dt>程序语言负责了更多任务</dt><dd>在面向对象语言中，判断类型和消息分配的任务可由程序语言本身完成（用多态来代替条件判断），这将程序设计者从繁琐的类型判断和错误处理中解放了出来，让人可以专心于设计程序内各种类型的逻辑。</dd>
+<dt>更优雅的代码组织方式</dt><dd>由于类型相关的函数都被绑定到了类型本身的定义上，也就意味着在代码组织时，这些逻辑很自然地被归类到了一起，让设计者在设计时对这个类型的职责思考更加深入，让阅读者对类型的理解更加透彻。这也是对象作为数据和行为的结合这一抽象的高明之处。</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org17660bc" class="outline-3">
+<h3 id="org17660bc">Elixir - 函数式程序语言 - 对运算的抽象</h3>
+<div class="outline-text-3" id="text-org17660bc">
+<p>
+Elixir 是一门基于 Erlang 虚拟机的函数式通用程序语言，在设计之时，从 Ruby,
+Clojure, Erlang 等处借鉴了大量优秀的经验，成为了近年来非常火热的一门语言之一。甚至有人说，「Elixir 改变了我对编程的认知」（Elixir has changed how i think about
+programming）<sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>。本节通过讨论 Elixir 其中的一些特性，看看 21 世纪中新世代的编程语言在抽象上的进步。
+</p>
+</div>
+<div id="outline-container-org36eaa7e" class="outline-4">
+<h4 id="org36eaa7e">不可变对象（Immutable Object）</h4>
+<div class="outline-text-4" id="text-org36eaa7e">
+<p>
+在程序语言中，不可变对象就是在创建后无法被更改内部状态的对象。不可变对象的使用，迫使程序设计者在修改一个对象时，都不能在原有的对象上做任何修改，而是返回一个重新创建的新对象。
+</p>
+
+<p>
+内部状态的变化，是程序副作用（Side-Effect）的一部分，其他的副作用有对数据库的操作、输入输出等等。函数式程序语言倡导的一点就是写出「没有副作用」的函数体。若我们将函数看作一个个黑盒子，当副作用存在于一个函数中时，函数有三个职责：接收输入、产生副作用（如改变状态）和返回输出；当一个函数没有副作用时，函数只用接收输入和返回输出即可。当然，现代程序不可能完全没有副作用（比如数据库操作、磁盘读写等等），而函数式语言的使用者则会有意将具有副作用的函数和不具有副作用的函数明显分隔开，来尽量靠近理想的函数式程序模型。
+</p>
+
+<p>
+这个约束给程序设计带来几个好处<sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup>：
+</p>
+<ol class="org-ol">
+<li><p>
+数据稳定性
+</p>
+
+<p>
+在面向对象程序语言中，由于内部状态可变性的存在，一个状态复杂的对象很容易在进行某些操作失败时陷入一个不确定的异常状态中，这些破碎的状态，让程序的除错和修复变得非常困难。
+</p>
+
+<p>
+而使用不可变对象，让我们用新对象的创建来替代原有对旧对象状态修改的操作，这将一个复杂的操作变为了一个具有原子性的操作。新对象创建成功即保证了状态更新成功，否则状态更新失败，而不会有任何难以处理的中间状态出现，这对程序的健壮性是一大保障。
+</p></li>
+
+<li><p>
+代码质量提高
+</p>
+
+<p>
+不可变对象的使用也鼓励程序设计者写出更小的子程序体。因为大部分没有副作用的函数都能表示为一个简单的变换函数，如下：
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">new_data = transform(original_data)
+</pre>
+</div>
+
+<p>
+而将函数根据有无副作用分割开，也能写出职责更明确的函数，让代码质量提高：
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">new_state = transform(current_state, message)
+execute_impure_tasks(new_state)
+store_state(new_state)
+</pre>
+</div>
+<p>
+如本例中， <code>transform</code> 是没有副作用的函数，而 <code>execute_impure_tasks</code> 和
+<code>store_state</code> 是有副作用的，函数的职责更加明确、纯粹，易于阅读者理解。
+</p>
+
+<p>
+当一个函数没有副作用时，程序设计者能很容易地设计出一个输入对应唯一确定输出的函数，这样的函数如数学里的函数一般，能通过一定的表达式清楚表达出来，阅读者也能更加容易地理解这个函数的作用。
+</p></li>
+
+<li><p>
+并行计算更加容易
+</p>
+
+<p>
+没有副作用的函数可以很容易地被并行化，甚至不需要锁（Lock）等传统同步技术。因为不用担心副作用给程序中共享的数据带来改变，影响同时进行的其他计算。比如当需要改变一个共享对象中的状态时，两个线程不是直接改变其状态，而是使用写时复制（Copy-on-Write）等技术创建具有新状态的对象，不再共享原有对象。
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org81ae2d9" class="outline-4">
+<h4 id="org81ae2d9">用递归（Recursion）代替循环语句（Loop）</h4>
+<div class="outline-text-4" id="text-org81ae2d9">
+<p>
+由于不可变对象的特性，循环语句在 Elixir（或者其他函数式语言）中需要用递归来实现。下面是 C 和 Elixir 循环输出一条消息的代码对比：
+</p>
+<ul class="org-ul">
+<li><p>
+C
+</p>
+<div class="org-src-container">
+<pre class="src src-c">int print_multiple_times(string message, int n) {
+  for(int i = 0; i &lt; n; i++) {
+    printf("%s\n", message);
+  }
+}
+</pre>
+</div></li>
+<li><p>
+Elixir
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Recursion do
+  def print_multiple_times(msg, n) do
+    if n &gt;= 1 do
+      IO.puts msg
+      print_multiple_times(msg, n - 1)
+    end
+  end
+end
+
+Recursion.print_multiple_times("Hello!", 3)
+</pre>
+</div>
+
+<pre class="example">
+Hello!
+Hello!
+Hello!
+
+</pre></li>
+</ul>
+<p>
+由于没有 <code>i</code> 这个内部状态，Elixir 版本的循环更加易于理解，甚至于我们在此处都可以抛弃循环的概念，只用理解递归函数的概念就可以了。这也正是一种抽象：将程序语言里蕴含的概念进行缩减，让只保存了和「表达循环算法」这一目的有关的内容。这让程序设计者能更加方便地使用程序语言这一工具。
+</p>
+</div>
+</div>
+<div id="outline-container-org6b65fc2" class="outline-4">
+<h4 id="org6b65fc2">用模式匹配（Pattern Matching）代替条件语句（Condition）</h4>
+<div class="outline-text-4" id="text-org6b65fc2">
+<p>
+Elixir 中引入了另一个强大的特性，甚至于让程序设计者能够写出完全没有 <code>if</code>,
+<code>cond</code>, <code>case</code> 等条件判断语句的程序，这就是模式匹配（Pattern Matching）<sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>。简单地说，模式匹配可以让 Elixir 根据一个函数的参数不同，来选择不同的函数实现，功能上有点类似 C++ 中的函数重载，但更加强大（函数重载是基于类型判断，而模式匹配可以精确到值）。
+</p>
+
+<ul class="org-ul">
+<li><p>
+Fibonacci 数
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Fib do
+  def fib(0), do: 0
+  def fib(1), do: 1
+  def fib(n), do: fib(n-1) + fib(n-2)
+end
+
+Fib.fib(10) # =&gt; 55
+</pre>
+</div>
+
+<p>
+这是 Elixir 中求 Fibonacci 数的函数实现，简单到几乎和数学中的 Fibonacci 数定义一致：
+</p>
+
+<p>
+\[fib(n) =
+  \begin{cases}
+  0 & n = 0 \\
+  1 & n = 1 \\
+  fib(n-1) + fib(n-2) & n > 1
+  \end{cases}\]
+</p>
+
+<p>
+对比下面 Ruby 中的实现，没有了模式匹配，只能通过 <code>case</code> 等条件判断语句来决定函数的行为，而这个条件判断将函数体分为了三部分，程序阅读者在阅读这一个函数时需要理解 Elixir 版本中三个函数的信息量，自然在复杂度上比较高：
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Fib
+  def fib(n)
+    case n
+    when 0
+      0
+    when 1
+      1
+    else
+      fib(n - 1) + fib(n - 2)
+    end
+  end
+end
+</pre>
+</div></li>
+<li><p>
+Map
+</p>
+
+<p>
+下面是 Elixir 中实现 Map 函数的例子：
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyList do
+  def map([], _func), do: []
+
+  def map([head | tail], func), do: [func.(head) | map(tail, func)]
+end
+
+defmodule Math do
+  def square(x), do: x * x
+end
+
+MyList.map([1, 2, 3, 4, 5], fn(x) -&gt; x * x end)
+</pre>
+</div>
+
+<pre class="example">
+[1, 4, 9, 16, 25]
+
+</pre>
+<p>
+在本例中，Elixir 利用模式匹配和递归实现了一个简单的 <code>map</code> 实现，同样，模式匹配避免了我们去使用 <code>if array.empty?</code> 这类判断语句来增加复杂度，而让我们将一个函数切分成更小的子函数，更加易于理解。
+</p></li>
+<li><p>
+游程编码（RLE，run-length encoding）
+</p>
+
+<p>
+游程编码<sup><a id="fnr.19" class="footref" href="#fn.19">19</a></sup>，即将字符串中重复出现的字符用该字符和其重复出现的次数来代替，以实现数据的压缩。下面是 Elixir 实现的版本：
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule RLE do
+  def encode(list), do: _encode(list, [])
+
+  defp _encode([], result), do: Enum.reverse(result)
+
+  defp _encode([ a, a | tail ], result) do
+    _encode( [ {a, 2} | tail ], result )
+  end
+
+  defp _encode([ {a, n}, a | tail ], result) do
+    _encode( [ {a, n+1} | tail ], result )
+  end
+
+  defp _encode([ a | tail ], result) do
+    _encode(tail, [ a | result ])
+  end
+end
+
+RLE.encode([1, 2, 2, 2, 3, 4, 4, 4, 4, 4])
+</pre>
+</div>
+
+<pre class="example">
+[1, {2, 3}, 3, {4, 5}]
+
+</pre>
+<p>
+下面是 Ruby 实现的版本：
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class RLE
+  def encode(list)
+    @result = []
+
+    last = nil
+    count = 0
+    list.each do |num|
+      if last != num &amp;&amp; !last.nil?
+        update_result(last, count)
+        count = 0
+      end
+      count += 1
+      last = num
+    end
+    update_result(last, count)
+    @result
+  end
+
+  private
+
+  def update_result(last, count)
+    return if last.nil? || count == 0
+    if count == 1
+      @result &lt;&lt; last
+    else
+      @result &lt;&lt; [last, count]
+    end
+  end
+end
+
+p RLE.new.encode([1, 2, 2, 2, 3, 4, 4, 4, 4, 4])
+</pre>
+</div>
+
+<pre class="example">
+[1, [2, 3], 3, [4, 5]]
+
+</pre>
+
+<p>
+这个版本明显比 Elixir 的版本复杂了很多，原因有以下几点：
+</p>
+<ol class="org-ol">
+<li>Ruby 没有模式匹配机制，无法像 Elixir 一样做出复杂的函数自动分配机制，即使手动维护也十分麻烦，需要很多条件语句，因此难以用递归来解决这个问题，这是 Ruby
+版本不如 Elixir 版本优雅的最重要的一个原因。</li>
+<li>即使不用递归，用循环语句处理，依然需要用条件语句处理一些边界条件，这些边界条件让程序不够清晰易懂。</li>
+<li>Ruby 版本中用了可变的对象（ <code>@result</code> ），维护这个对象让程序变得复杂，更容易出错。</li>
+</ol></li>
+</ul>
+<p>
+通过上面几个例子，我们可以发现，通过模式匹配，将程序中的条件语句取代掉之后，函数体变成了职责更加明确的子函数，甚至能够简单到像数学函数的定义一般优雅。而且，模式匹配能够让程序设计者更容易地使用递归这一工具，避免很多复杂的条件判断。
+</p>
+</div>
+</div>
+<div id="outline-container-org41d3520" class="outline-4">
+<h4 id="org41d3520">小结</h4>
+<div class="outline-text-4" id="text-org41d3520">
+<p>
+本章通过几个简单的例子展现了 Elixir 的进步之处，在用不可变对象给编程加上一定限制之后，编程的实质变得更加明显了，即每个函数都被抽象成了一个个运算，这层抽象让大部分的操作都在形式上统一起来，如数学函数一般的程序让人更加易于理解。
+</p>
+
+<p>
+最后在用递归替代了循环语句，用模式匹配替代了条件语句之后，我们之前在结构化语言中讨论的结构化程序理论中只留下了顺序执行，而循环和选择都变成了函数的一种形式，这鼓励了程序设计者在写程序时写出更加短小的函数，由此让程序变得更加简洁、易懂。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7db0aa1" class="outline-3">
+<h3 id="org7db0aa1">SQL - 领域特定语言 - 对特定领域的抽象</h3>
+<div class="outline-text-3" id="text-org7db0aa1">
+<p>
+SQL 是第四代程序语言的代表，是一种领域特定语言，主要用于关系型数据库中的数据查询。
+SQL 于 1974 年发明，1986 年成为 ANSI 标准，至今已有 30 多年的历史，却依然是关系型数据库的查询语言的事实标准。SQL 语言能在变化迅速的计算机科学界坚持这么多年而不被取代，最重要的原因就是它对数据库操作这一特定领域的成功抽象，甚至有人因此说「SQL 是最完美的接口语言」<sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup>。本节通过 SQL 的几个例子说明领域特定语言的成功抽象对程序语言设计的启示。
+</p>
+</div>
+<div id="outline-container-org04820e6" class="outline-4">
+<h4 id="org04820e6">SQL 的成功之处</h4>
+<div class="outline-text-4" id="text-org04820e6">
+<p>
+SQL 通过几个简单的关键词将数据库领域最常用的增删改查（CRUD）操作抽象了出来：
+</p>
+<ul class="org-ul">
+<li><p>
+插入数据 INSERT
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">INSERT INTO Example
+(field1, field2, field3)
+VALUES
+('test', 'N', NULL);
+</pre>
+</div></li>
+<li><p>
+读取数据 SELECT
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">SELECT *
+FROM Example
+WHERE field2 = 'Y'
+ORDER BY title;
+</pre>
+</div></li>
+<li><p>
+更新数据 UPDATE
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">UPDATE Example
+SET field1 = 'updated value'
+WHERE field2 = 'N';
+</pre>
+</div></li>
+<li><p>
+删除数据 DELETE
+</p>
+<div class="org-src-container">
+<pre class="src src-sql">DELETE FROM Example
+WHERE field2 = 'N';
+</pre>
+</div></li>
+</ul>
+<p>
+从这些简单的例子，我们可以看出 SQL 这类领域特定语言的几个特点：
+</p>
+<ol class="org-ol">
+<li><p>
+所用词汇、语法与对应领域十分接近
+</p>
+
+<p>
+如 SQL 在数据库领域所做的，INSERT, SELECT, UPDATE, DELETE 都是数据库管理员在操作数据库时需要时常用到的词汇，而 INSERT INTO, DELETE FROM, ORDER BY 等词汇的组合则和英文环境下的数据库操作统一起来，这让数据库管理员在编写良好的 SQL 语句时就如书写英文句子一样。
+</p>
+
+<p>
+这些词汇和语法上的相似之处让领域从业人员能更容易地掌握这门语言，也减少了沟通上的成本（相比 C，Java 等通用语言程序，SQL 语句能更自然地读出来，直接交流）。
+</p></li>
+
+<li><p>
+不需担心底层实现
+</p>
+
+<p>
+在使用 SQL 语句查询数据库时，数据库管理员不需要知道这条 SQL 语句被转换成了什么样的底层实现，他不需要知道这条 SQL 要使用多少个 <code>for</code> 循环，多少个 <code>if</code> 判断，多少个磁盘读写，他只需要知道 SQL 的语法就能完成自己的工作。这个特性甚至在一定程度上促进了工程师和数据库管理员的进一步分工。
+</p>
+
+<p>
+而 SQL 与底层实现分离的另一个好处是：在保证 SQL 语法不变的情况下，对应的底层实现可以替换。SQL 现在覆盖的领域不单单是如 MySQL 和 PostgreSQL 这样的传统关系型数据库，还有 Amazon Redshift<sup><a id="fnr.21" class="footref" href="#fn.21">21</a></sup>，Vertica<sup><a id="fnr.22" class="footref" href="#fn.22">22</a></sup> 这样的列式数据库，甚至有 SparkSQL<sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup>，Amazon Athena<sup><a id="fnr.24" class="footref" href="#fn.24">24</a></sup>，Apache Hive<sup><a id="fnr.25" class="footref" href="#fn.25">25</a></sup> 这样的分布式大数据系统。
+</p>
+
+<p>
+能够覆盖不同类型、不同规模的数据库，SQL 的能力是令人惊叹的。而这跟 SQL 对数据操作领域精准的抽象是功不可没的。
+</p></li>
+
+<li><p>
+语句灵活，可以组合实现领域内的各种功能
+</p>
+
+<p>
+不单单每个 SQL 词汇都对该领域的一项特定操作做出了准确的抽象，他们之间互相组合也能实现更加复杂的功能。可以说，SQL 的函数都最大程度上实现了正交性，因此才能通过比较小的函数集合，满足该领域的所有需求。
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org74bcd40" class="outline-4">
+<h4 id="org74bcd40">程序语言也是一种领域特定语言</h4>
+<div class="outline-text-4" id="text-org74bcd40">
+<p>
+当然，本文想要讨论的依然是通用编程语言，而不是 SQL 这类领域特定语言。但笔者认为，通用编程语言依然可以从 SQL 这类成功的领域特定语言中学到很多东西。毕竟，如果我们换一个角度来看，通用编程语言也是一种「领域特定语言」，而这个领域正是编程（或者说程序设计）这一领域。如何设计出一个在程序设计领域让领域从业者（程序设计者）能够使用自如的特定语言，也正是本文想要探讨的问题。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e31130" class="outline-3">
+<h3 id="org8e31130">Prolog - 逻辑编程语言 - 对算法的抽象</h3>
+<div class="outline-text-3" id="text-org8e31130">
+<p>
+Prolog 是逻辑编程语言和第五代程序语言的代表。逻辑编程语言与传统的结构化语言有着很大程度的不同。结构化语言是通过定义解决问题的过程、步骤来定义算法，而逻辑语言则是通过定义一系列的规则和事实，由计算机通过逻辑推理来得出问题的答案。
+</p>
+
+<p>
+下面是用 Prolog 实现的快速排序算法：
+</p>
+<div class="org-src-container">
+<pre class="src src-prolog">partition([], _, [], []).
+partition([X|Xs], Pivot, Smalls, Bigs) :-
+    (   X @&lt; Pivot -&gt;
+        Smalls = [X|Rest],
+        partition(Xs, Pivot, Rest, Bigs)
+    ;   Bigs = [X|Rest],
+        partition(Xs, Pivot, Smalls, Rest)
+    ).
+
+quicksort([])     --&gt; [].
+quicksort([X|Xs]) --&gt;
+    { partition(Xs, X, Smaller, Bigger) },
+    quicksort(Smaller), [X], quicksort(Bigger).
+</pre>
+</div>
+<p>
+在这个实现中，我们定义了两组规则：
+</p>
+<ol class="org-ol">
+<li><code>partition</code> ：将一个数组按一个标准（ <code>Pivot</code> ）分为大小两组的规则</li>
+<li><code>quicksort</code> ：快速排序的递归实现规则</li>
+</ol>
+<p>
+在算法实际运行时，由 Prolog 程序本身决定由哪（几）组规则匹配当前的运行状态，不断地匹配规则并调用，最终达到终态，返回结果。
+</p>
+
+<p>
+从中，我们能看到如前文介绍 Elixir 时提到的用递归代替循环，用模式匹配代替条件语句等等抽象手段（实际上，也正是 Prolog 首次实现了模式匹配，并在后来被 Erlang 和
+Elixir 采用）。但这些函数在 Prolog 中被成为「规则」。这看似只是一个名称的转换，实则却是一次编程思想的变换：由定义步骤转换为定义规则，真正推导这些规则的是计算机，或者说是 Prolog 这一语言实现本身。
+</p>
+
+<p>
+也正是这一变换，体现了 Prolog 对算法的抽象：将所有算法都抽象为一系列的规则，算法的执行过程即为这些规则的推导过程。从而简化了算法的概念，将所有算法统一了起来。
+</p>
+</div>
+</div>
+<div id="outline-container-org668ef97" class="outline-3">
+<h3 id="org668ef97">小结</h3>
+<div class="outline-text-3" id="text-org668ef97">
+<p>
+在这一章中，我们看到，程序语言的发展是一个不断抽象，离其「描述算法」这一目标不断靠近的过程：
+</p>
+<ul class="org-ul">
+<li>高级语言的出现是对硬件语言的抽象，将硬件相关的因素从程序语言中抽离了出去。</li>
+<li>结构化程序语言是对控制流过程的抽象，将 GOTO 从程序语言中禁止，将程序语言和人类描述的算法进一步拉近。</li>
+<li>面向对象程序语言是对数据及其行为的抽象，将更多的工作（如判断类型，消息分配）交给了程序语言自身去处理，让人能专注于算法的描述上。</li>
+<li>函数式语言是对运算的抽象，对状态的变化加以限制，迫使人思考算法的设计（分离带有副作用的函数）；甚至将条件语句与循环语句用函数定义来替代，进一步提高了函数的抽象层级。</li>
+<li>领域特定语言是对其自身特定领域的抽象，如此高层的抽象让它能在这个领域里发挥它全部的能力，用最精炼的语句完成复杂的操作。</li>
+<li>逻辑编程语言是对算法的抽象，将所有算法抽象为规则，使得设计者对算法这一概念有了更清晰明了的认识。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org756ea0e" class="outline-2">
+<h2 id="org756ea0e">程序语言的现在</h2>
+<div class="outline-text-2" id="text-org756ea0e">
+</div><div id="outline-container-org2d75d68" class="outline-3">
+<h3 id="org2d75d68">当今流行语言的概况</h3>
+<div class="outline-text-3" id="text-org2d75d68">
+<p>
+在讨论影响程序语言流行的因素之前，让我们先来看一看现在流行语言的趋势与概况。
+</p>
+
+<p>
+下列表格是根据 GitHub 上 2014 年第四季度的代码库数据总结出来的十大流行程序语言排行<sup><a id="fnr.26" class="footref" href="#fn.26">26</a></sup>：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">语言</td>
+<td class="org-right">活跃代码库数量</td>
+<td class="org-right">语言发明时间</td>
+</tr>
+
+<tr>
+<td class="org-left">JavaScript</td>
+<td class="org-right">323938</td>
+<td class="org-right">1995</td>
+</tr>
+
+<tr>
+<td class="org-left">Java</td>
+<td class="org-right">222852</td>
+<td class="org-right">1995</td>
+</tr>
+
+<tr>
+<td class="org-left">Python</td>
+<td class="org-right">164852</td>
+<td class="org-right">1991</td>
+</tr>
+
+<tr>
+<td class="org-left">CSS</td>
+<td class="org-right">164585</td>
+<td class="org-right">1996</td>
+</tr>
+
+<tr>
+<td class="org-left">PHP</td>
+<td class="org-right">138771</td>
+<td class="org-right">1995</td>
+</tr>
+
+<tr>
+<td class="org-left">Ruby</td>
+<td class="org-right">132848</td>
+<td class="org-right">1995</td>
+</tr>
+
+<tr>
+<td class="org-left">C++</td>
+<td class="org-right">86505</td>
+<td class="org-right">1983</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-right">73075</td>
+<td class="org-right">1972</td>
+</tr>
+
+<tr>
+<td class="org-left">Shell</td>
+<td class="org-right">65670</td>
+<td class="org-right">1977</td>
+</tr>
+
+<tr>
+<td class="org-left">C#</td>
+<td class="org-right">56062</td>
+<td class="org-right">2000</td>
+</tr>
+</tbody>
+</table>
+<dl class="org-dl">
+<dt>JavaScript</dt><dd>作为现代浏览器中唯一可以运行的脚本语言，所有浏览器前端库都需要基于 JavaScript 实现。因此，我们也就不难理解 JavaScript 会在这个互联网大潮的时代中流行开来，并占据了第一流行语言的宝座。</dd>
+<dt>Java</dt><dd>作为最流行的面向对象语言之一，Java 通过其丰富的第三方库和完善的工具链征服了面向对象领域的大片江山，又有 Android 这一新兴移动操作系统依赖，
+Java 又迎来了它的春天。</dd>
+<dt>Python</dt><dd>随着大数据和人工智能的兴起，Python 凭借其接近英语、简单易懂的语法成为了大部分数据科学框架（如 TensorFlow，Spark）的默认语言。</dd>
+<dt>CSS</dt><dd>同 JavaScript 一样，作为网页样式的默认语言，CSS 也在现代前端开发中占据了重要的地位。</dd>
+<dt>PHP</dt><dd>PHP 同样也是随着互联网的发展而出现的服务器端脚本语言，先是作为服务器端脚本而实现，随后扩展为通用程序语言。</dd>
+<dt>Ruby</dt><dd>Ruby 凭借其优雅的语法征服了一批热爱编程本身的程序员，之后又通过开发效率极高的 Ruby on Rails 框架在 Web 领域爆发开来。</dd>
+<dt>C++</dt><dd>C++ 作为老牌的面向对象语言，即使历史已经相当悠久，但仍然在吸取新的思想，推出了 C++ 11，C++ 14，C++ 17 等新版本，继续维持活力。</dd>
+<dt>C</dt><dd>作为 Linux 的默认编程语言，C 语言的活跃和 Linux 在服务器端的优势是密不可分的。</dd>
+<dt>Shell</dt><dd>同样，作为 Linux 的默认脚本语言，Shell 这一简单的语言也依然能够流行开来。</dd>
+<dt>C#</dt><dd>C# 作为微软官方支持语言，是 Windows 的默认编程语言。</dd>
+</dl>
+<p>
+从以上的分析，我们不难看出，一个流行语言的背后原因，与当今时代的潮流是密不可分的：
+</p>
+<ol class="org-ol">
+<li><p>
+新兴领域
+</p>
+
+<p>
+JavaScript, CSS, PHP, Ruby 这些在浏览器、服务器端流行的语言是跟当今的互联网大潮一同流行开来的。
+</p>
+
+<p>
+Python 这一数据科学的默认语言，是随着数据科学的兴起流行开来的。
+</p>
+
+<p>
+可以说，一个新领域的热门，可以带动其背后的语言一同发展，吸引更多的人使用。
+</p></li>
+
+<li><p>
+流行范式
+</p>
+
+<p>
+Java, C++, Ruby 这些面向对象语言的流行，和面向对象这一编程范式的流行也是息息相关的。
+</p>
+
+<p>
+一个范式的流行，也能带动其代表性语言的流行。
+</p></li>
+
+<li><p>
+操作系统
+</p>
+
+<p>
+C, C# 作为 Linux 和 Windows 的默认编程语言，他们的流行，和 Linux 在服务器端的统治地位，Windows 在桌面端的统治地位也是密不可分的。
+</p>
+
+<p>
+Java 作为 Android 移动操作系统上的默认编程语言，也随着 Android 的流行迎来了第二春。
+</p></li>
+</ol>
+<p>
+这些时代因素，无不影响着语言的流行程度，但在这些因素的背后，真正影响语言流行与否的，是效率。
+</p>
+
+<p>
+操作系统、新兴领域，都是程序设计者使用语言要达到的目标。在一个操作系统中，效率最高的是其默认的官方编程语言，它们自然能够脱颖而出；在新兴领域中，效率更高的语言也自然能打败其他语言，随着新兴领域一同发展。
+</p>
+
+<p>
+流行范式，是更高效率的体现，其代表性语言也是该范式效率最高的语言，自然也能随着该范式的流行一同流行开来。
+</p>
+
+<p>
+因此，效率是决定程序语言流行的唯一因素。
+</p>
+</div>
+</div>
+<div id="outline-container-org952b583" class="outline-3">
+<h3 id="org952b583">效率是决定程序语言流行的唯一因素</h3>
+<div class="outline-text-3" id="text-org952b583">
+<p>
+在上一章我们知道，程序语言的发展过程是一个不断抽象的过程，但是语言的抽象程度却不是决定这个语言是否能流行起来的唯一因素。因为如今没有一个程序语言能满足所有特定领域的需要，人们在选择一个项目所要使用的程序语言时，往往是在多个因素之间做取舍，最终决定适合自己的那一个。
+</p>
+
+<p>
+那么这些取舍的背后，最终影响人们做出决定的是什么呢？是效率，是如何用最小的努力，让计算机帮助我们完成更多的任务。笔者认为，这也是计算机的使命所在。计算机的出现，将人类从大量繁的重复的科学计算中解放了出来，通过一个个不同的算法，我们可以让计算机帮助我们完成这些计算工作。而同样的思路，随着计算机能力的发展，沿用到了各行各业中去。这些算法变为一个个计算机软件影响到了现代人的工作生活：LaTeX 和 Word 改变了排版行业，Photoshop 和 Sketch 改变了 UI 设计师的工作流程，QQ 和微信改变了人们交流的方式，纵观这些例子，计算机软件的作用都是将人从繁重的工作中解放出来。因此，计算机的使命是解放人的生产力。
+</p>
+
+<p>
+从这个角度来看，程序设计语言可以说是「计算机软件」的一种，或者说计算机软件也是「程序设计语言」的一种：
+</p>
+<ul class="org-ul">
+<li>程序设计语言作为程序设计者使用的软件，最终的产出物是其他的软件，使用的过程中，它帮助设计者完成编译、链接等等工作，得到最终产物。</li>
+<li>计算机软件，如 PS，Word，它们其实也与程序设计语言一样，一个个按钮、菜单是它们的语法，一个个基础构件是它们的标准库，掌握了这些「语法」和「标准库」之后，人们可以拼凑出最终自己想要的产出物。</li>
+</ul>
+
+<p>
+因此，作为计算机软件的一种，程序设计语言是为了解放程序设计者的生产力，用最少的投入，获得更多更好的软件产出物。而生产效率更高的程序语言自然也就能更受青睐，更加流行。
+</p>
+
+<p>
+这一章主要讨论的是从几个不同方面影响程序语言流行程度（即程序语言生产效率）的因素，以期能为当代程序语言的设计提供一些方向。
+</p>
+</div>
+<div id="outline-container-orga14bbc3" class="outline-4">
+<h4 id="orga14bbc3">语言的精练程度</h4>
+<div class="outline-text-4" id="text-orga14bbc3">
+<p>
+程序语言的精练程度，即能否用尽可能少的语句表达出更多的意思。这在很大程度上也是程序语言生产效率的一部分，一个语言越精练，设计者也就能更容易地用更小的工作量来完成相同的任务。
+</p>
+
+<p>
+程序语言的精练程度，与它的抽象程度是密不可分的。正如前文所述，一个语言越抽象，相同行数的代码所蕴含的信息量也就越大，即这个语言越精练。抽象层次最高的语言——领域特定语言，就能通过最精练的语句，完成该领域内的一个特定任务。也正是因此，程序语言的发展是一个不断抽象的过程，当抽象层级更高的语言出现时，往往是这个语言兴起之时，也正是旧的抽象层级更低的语言衰落之时。
+</p>
+
+<p>
+当然，抽象程度高的语言也有可能不精练，但精练的语言一定要抽象。程序语言的精练程度不仅仅与其抽象程度唯一相关，也与其语法结构、类型系统有关。为了设计一个精练的语言，必须要保证其语法结构的清晰、简单；在保证可读性的同时，尽量减少保留关键词的数量。
+</p>
+
+<p>
+而关于类型系统，业界也有着许许多多的争论，为了语言的精练，很明显动态类型的语言因为不需要声明表达式的类型，在精练程度上是占优势的，但它们相比静态类型语言有着性能上的先天劣势，导致了两者各有各的簇拥，双方相持不下。笔者认为，一种介于两者之间的类型系统<sup><a id="fnr.27" class="footref" href="#fn.27">27</a></sup><sup>, </sup><sup><a id="fnr.28" class="footref" href="#fn.28">28</a></sup>是一个比较好的解决方案：在性能可以满足需求时使用动态类型，用最精练的语句完成任务，减少程序员的思考负担，避免过早优化；当碰到性能瓶颈时通过分析，加入类型声明等手段提高性能。
+</p>
+
+<p>
+但是，很多在抽象程度上很高，语法简单，也有着优秀的类型系统的精练语言也没有流行起来（如 Lisp）。这说明，语言的精练程度并不是决定语言是否流行（高效）的唯一因素，一个语言的流行程度还取决于很多语言设计以外的因素。
+</p>
+</div>
+</div>
+<div id="outline-container-org03c0df8" class="outline-4">
+<h4 id="org03c0df8">库（Library）</h4>
+<div class="outline-text-4" id="text-org03c0df8">
+<p>
+随着计算机软件的不断发展，现在大部分的软件已经不是能凭一己之力完成的小玩具了，代码的重用显得愈发的重要。而开源运动（Open Source）的不断发展，也让代码重用变得更加简单。即使一个语言设计的相当精练，没有完善的库支持，也比不上一个不够精练，但有丰富的库支持的语言。毕竟，最高效的开发模式莫过于直接复用别人已经完成的代码，这是再精练的设计也无法弥补的。因此，代码重用的难易程度，或者说一个程序语言对应的库（Library）的数量成为了影响开发效率的一大因素。
+</p>
+
+<p>
+而库的数量又包含两个方面：
+</p>
+<ul class="org-ul">
+<li><p>
+标准库（Standard Library）
+</p>
+
+<p>
+在高级语言发展的初期，各种语言的标准库的功能都非常有限，只有一些基本操作的封装，如 IO，数学运算，字符串操作，内存管理等等。随着计算机功能的逐渐增多，语言的标准库也不断丰富完善。在多线程出现之后，标准库中加入了对多线程的支持。再到如今，各式各样的需求层出不穷，程序语言的标准库也愈发强大，甚至可以直接利用标准库完成一个 Web 应用<sup><a id="fnr.29" class="footref" href="#fn.29">29</a></sup>，其中用到的标准库功能包括 <code>net/http</code> （网络传输）,
+<code>html/template</code> （HTML 模板处理）, <code>regexp</code> （正则表达式）等等。
+</p>
+
+<p>
+可以说，一个语言的标准库对于其生产效率起着越来越重要的作用，原因主要有二：
+</p>
+<ol class="org-ol">
+<li>标准库是一个语言中重用门槛最低的代码。标准库的功能越全，质量越高，则开发效率也就越高。</li>
+<li>标准库起到了标杆作用。在人们学习一门语言时，标准库往往代表着这个语言的核心思想，作为范例供人们参考。标准库的质量越高，人们上手这个语言也就越快，完成的项目质量也更高。</li>
+</ol>
+<p>
+当然，标准库功能越丰富，另一方面也增加了这个语言的学习成本，设计者要在标准库的功能上做出取舍，找到适当的平衡点，将多余的功能交给第三方库来完成。
+</p></li>
+<li><p>
+第三方库、框架等
+</p>
+
+<p>
+开源库和开源框架，作为标准库的补充，可以看作是一个个领域特定语言（如 Ruby on
+Rails 是 Web 领域的特定语言），它们的数量基本决定了一门语言的在面对某一领域通用功能时的开发效率。它们的数量越多，质量越好，代表着开发者在面对这一领域时的选择就越多，反之，开发者只能从头开始对这一领域实现自己的解决方案，这无疑降低了他的开发效率。
+</p>
+
+<p>
+因此开源软件在现代的软件开发中扮演的角色越来越重要，开源库和开源框架的影响力甚至能够超过语言本身，反过来提高相应语言的影响力。
+</p>
+
+<p>
+最能说明这一点的例子是 Ruby on Rails Web 框架对 Ruby 语言的影响：当 Ruby on
+Rails 在 2015 年发布时，Web 界的流行框架都非常繁琐，不够好用，Ruby on Rails 凭借 Ruby 的灵活特性和其自身的优秀设计迅速地在 Web 界获得了大量簇拥。为了能够使用 Ruby on Rails 快速构建 Web 应用，大量的 Web 开发者学习了 Ruby on Rails，与此同时学习了 Ruby 语言。可以说，是 Ruby on Rails 的出现使得 Ruby 成为了 Web 领域最有竞争力的一门流行语言。
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47a6e3a" class="outline-4">
+<h4 id="org47a6e3a">工具链</h4>
+<div class="outline-text-4" id="text-org47a6e3a">
+<p>
+语言的精练程度和库的数量、质量代表的是一个语言能够完成的产品质量，与完成它需要的时间。而另一个能影响生产效率的则是语言对应的工具链的成熟程度。它决定的是开发者在使用这个语言时的开发体验，体验越好，开发者的效率自然也就越高。
+</p>
+
+<p>
+因此，我们也就不难理解，为什么在移动开发领域，Apple 和 Google 两大公司都在不断地完善 iOS 和 Android 这两大移动操作系统应用的工具链（分别对应的是 iOS 的 Xcode 和
+Android 的 Android Studio）。
+</p>
+
+<p>
+另外，2011 年出现的 Elixir，也将其交互式环境（iEx）、构建工具（Mix）和测试框架（ExUnit）同语言本身一起打包，提供给开发者。这些工具链与语言本身的组合在之前的语言中是很少见到的，但笔者认为，工具链的完善是程序语言发展的一个重要方向。
+</p>
+
+<p>
+语言的工具链在开发过程中对生产效率的影响主要在以下几个方面：
+</p>
+<ol class="org-ol">
+<li><p>
+自动化测试、构建、部署
+</p>
+
+<p>
+在一个语言的工具链中最重要的部分就是其自动化工具的完善程度，只有让测试、构建、部署，这些在开发流程中重复而又繁琐的过程自动化，该程序语言的开发流程才能得到最大的简化，效率也能得到最大的提高。
+</p>
+
+<p>
+在上面的例子中，Xcode 和 Android Studio 都集成了自动测试、构建、部署的工具，
+Elixir 则用自带的 Mix 和 ExUnit 满足了这些需求。
+</p></li>
+
+<li><p>
+提供快速试验的场所
+</p>
+
+<p>
+如 Swift 以 Xcode 中的 Playground 作为交互式环境，Elixir 以 iEx 作为交互式的脚本试验场，他们都为开发者提供了一个快速试验想法的工具，以此加快开发者实现想法的速度。
+</p>
+
+<p>
+这类交互式的环境避免了传统的编译运行流程，能够让开发者快速试验一段代码是否可行，也能让开发者在调试、差错时更加容易，因此它们在如今的开发流程中显得越来越重要。
+</p></li>
+
+<li><p>
+引导开发者入门
+</p>
+
+<p>
+一个语言的工具链还包括了帮助开发者入门该语言的部分。
+</p>
+
+<p>
+如 Apple 在 2016 年发布的 Swift Playgrounds<sup><a id="fnr.30" class="footref" href="#fn.30">30</a></sup> 这个 iPad App，作为一个可交互的编程环境，结合说明文字、动画等等辅助内容，甚至能够让没有编程经验的小学生快速学习 Swift 语言。这对语言的传播和普及来说是影响深远的。
+</p>
+
+<p>
+当然，一般的程序语言并没有 Apple 这样实力雄厚的公司作为后盾，但我们仍能看到如
+Python 社区的 Jupyter Notebook<sup><a id="fnr.31" class="footref" href="#fn.31">31</a></sup> 这样的开源项目，实现类似的功能，笔者也相信这样的工具将会传播到更多的社区，降低语言的学习成本。
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbdc4554" class="outline-2">
+<h2 id="orgbdc4554">程序语言的将来</h2>
+<div class="outline-text-2" id="text-orgbdc4554">
+</div><div id="outline-container-orga29bc3f" class="outline-3">
+<h3 id="orga29bc3f">语言发展是计算机科学发展的体现</h3>
+<div class="outline-text-3" id="text-orga29bc3f">
+<p>
+虽然程序语言是计算机科学的一个重要组成部分，但程序语言的发展不是计算机科学发展的主要推动力，推动计算机科学发展的是计算机硬件的发展和算法革新等不同的方面。而程序语言的发展则是这些方面发展的体现。
+</p>
+
+<ul class="org-ul">
+<li><p>
+计算机硬件
+</p>
+
+<p>
+如前文所述，不断抽象，是程序语言发展的方向，而抽象带来的一个代价就是运行效率的损失，普遍来说，抽象层级越高的代码，运行效率越低。因此，更新更快的硬件是让抽象层级更高的代码能够投入实际生产环境使用的前提条件。我们在程序语言发展的历史中可以看到，从汇编语言到高级语言，从 C 这类编译型语言到 Python, Ruby 这类脚本语言的发展，都伴随着计算机硬件的升级换代。也因此，程序语言的发展是计算机硬件发展的一个体现。
+</p></li>
+
+<li><p>
+算法思想
+</p>
+
+<p>
+算法思想也是影响程序语言发展的一个重要因素。在面向对象一节我们介绍了「进一步抽象之后的过程式编程」代码，这部分代码实际上体现了面向对象思想在过程式代码中的应用。实际上，各种编程范式都只是一种算法思想，由于图灵完全的保证，不同图灵完备的语言能实现的算法实际上是等价的，因此，语言是否支持某种编程范式，并不能阻止程序设计者去使用这种范式，仅仅是在使用难度上有所差异。
+</p>
+
+<p>
+而为某种编程范式设计的程序语言也往往是由使用者在其他不支持该范式的语言中用类似的方法实现之后，再专门设计实现的。
+</p>
+
+<p>
+因此，程序语言的发展也是算法思想发展的一个体现。只有算法思想的进步才能引起程序语言的进步。
+</p></li>
+</ul>
+
+<p>
+当然，程序语言的发展反过来也促进了计算机科学的发展：更抽象的程序语言要求有更强力的硬件支持，语言使用时遇到的问题又促使新的算法思想出现，进而引发新的程序语言设计。
+</p>
+</div>
+</div>
+<div id="outline-container-org4ff7dec" class="outline-3">
+<h3 id="org4ff7dec">程序语言进化论</h3>
+<div class="outline-text-3" id="text-org4ff7dec">
+<p>
+再让我们纵观主流程序语言的发展历史<sup><a id="fnr.32" class="footref" href="#fn.32">32</a></sup>（如下所示），程序语言的发展就如物种进化一般，先从单一语言逐步发展（祖先），不同语言之间再交融产生新的语言（杂交），单一语言也可以发展出自身的后代（遗传），后代吸取更多经验（变异），相比前代更加适应时代的需求。
+</p>
+
+
+<div class="figure">
+<p><img src="./images/language_history_diagram.png" alt="language_history_diagram.png" />
+</p>
+</div>
+
+<p>
+也正是说，程序语言的发展并不仅仅来自于上述两种计算机科学发展的推动，也有不同语言之间思想的交融和碰撞。
+</p>
+
+<p>
+而程序语言发展至今也从一开始的两三种，发展到了现在成千上万种不同的高级语言，那程序语言的种类是否会像现在一样继续发展呢？
+</p>
+</div>
+<div id="outline-container-orga082571" class="outline-4">
+<h4 id="orga082571">语言的品种数目问题</h4>
+<div class="outline-text-4" id="text-orga082571">
+<p>
+语言的品种是多一点比较好，还是少一点比较好？这是一个非常难以回答的问题。就目前来说，他们都各有利弊：
+</p>
+
+<ul class="org-ul">
+<li>语言品种多
+<ul class="org-ul">
+<li><p>
+文化多元
+</p>
+
+<p>
+当语言品种够多时，不同语言都拥有自己的独特文化，而正是这些文化让程序语言的世界变得丰富多彩。也正是因为这些文化的存在，增加了程序语言的生命力，不同文化的语言互相交融碰撞产生新的语言为程序语言注入新的活力。
+</p></li>
+
+<li><p>
+选择困难
+</p>
+
+<p>
+但若语言品种过多，则会造成使用者的困惑和选择困难的情况。可以用很多不同的语言解决相同的问题说明了这些语言之间功能的重复，而对比不同语言才能最终做出决定则违背了设计程序语言提高效率的初衷。
+</p></li>
+</ul></li>
+<li>语言品种少
+<ul class="org-ul">
+<li><p>
+学习、沟通成本低
+</p>
+
+<p>
+当语言品种少时，程序设计者需要学习的语言也就相对较少，可以集中精力掌握主流的语言，满足自己的大部分需求。而且，语言品种少也降低了行业内的沟通成本，因为大家都能用相同的语言进行沟通，而不需要进行思维上的切换，使得知识的交流和分享门槛大大降低。
+</p></li>
+
+<li><p>
+单一语言有其局限性
+</p>
+
+<p>
+但语言种类少也有其缺陷，即单一语言的局限性。虽然现今的高级语言都属于「通用编程语言」，但是受限于语言设计者的能力和文化偏好，还有使用者的广泛程度、文化背景的不同，几乎每一门高级语言都有其擅长与不擅长的领域，即其局限性。而这种局限性在目前看来，只能通过语言的多样性来解决。
+</p></li>
+</ul></li>
+</ul>
+
+<p>
+但笔者认为，语言的分裂只是暂时的，可能这种情况会持续几十年，或者几百年，但最终程序语言应该会在扩张之后收敛到几个主流语言，最终收敛为一个主要语言。
+</p>
+
+<p>
+毕竟，单一语言的局限性仅仅是说明语言的抽象层级还不够高，当语言的抽象层级足够高时，自然能够覆盖所有可能的应用场景，也能通过其定制的库和框架实现文化上的多元。
+</p>
+
+<p>
+关于这一点，可能要参考科学语言和自然语言的发展历史。
+</p>
+</div>
+</div>
+<div id="outline-container-orgf043785" class="outline-4">
+<h4 id="orgf043785">程序语言与科学语言、自然语言的对比</h4>
+<div class="outline-text-4" id="text-orgf043785">
+<p>
+回顾程序语言发展的历史，其实才短短的几十年时间，而科学语言（数学、物理、化学等）和自然语言（英语、中文等等）均已有了上千年的历史了。从后两者的发展历史中我们也能学习到程序语言发展的方向。
+</p>
+<ul class="org-ul">
+<li><p>
+科学语言
+</p>
+
+<p>
+对比数学、物理、化学等历史比较久的科学，我们能发现，在这些学科中，所用的语言是比较统一的：数学有其完善的数学符号系统，化学有其一致的化学式系统。
+</p>
+
+<p>
+而程序语言则呈现出百花齐放的态势，原因主要有二：
+</p>
+<ol class="org-ol">
+<li><p>
+自然科学发展比较早
+</p>
+
+<p>
+在人类历史早期时，自然科学就已经萌芽并发展。而交流仅限于文化近似的区域，语言上比较容易统一，之后传播开来时，语言已经比较成熟，传播之后也不会有很大的变化。
+</p>
+
+<p>
+而程序语言的发展则伴随着互联网、开源运动的兴起，不同文化、不同背景的人能很容易的在网上、开源社区交流对语言的要求和想法。这一方面促进了其发展，另一方面也造成了其分裂的状态。
+</p></li>
+
+<li><p>
+自然科学历史比较悠久
+</p>
+
+<p>
+自然科学的发展时间比程序语言悠久得多。这一点是我们必须正视的。上千年悠久的时间，足够这些自然科学语言沉淀融合，最终达到一个比较统一的状态。
+</p>
+
+<p>
+这也是我认为程序语言最终会走向统一的原因，毕竟其目的就是为了更好的交流思想，表达算法，统一的语言带来的好处是显而易见的。
+</p></li>
+</ol></li>
+<li><p>
+自然语言
+</p>
+
+<p>
+从现状看，程序语言则更加类似于自然语言。
+</p>
+
+<p>
+自然语言也因为各个地区文化的不同，有着各种不同的分支，但如今占统治地位的则明显是英语这一种语言。
+</p>
+
+<p>
+但自然语言与程序语言有一点很重要的不同就是：程序语言是人工设定的，而自然语言是自然发展而来的。因此，程序语言相比自然语言更加规范。
+</p>
+
+<p>
+而且，程序语言比自然语言更加注重实用性，其存在就是为了解决实际的问题。而自然语言还有小说、诗歌等文化上的需求，也有交流达意等任务，相比程序语言不那么纯粹。
+</p>
+
+<p>
+也正因此，我认为程序语言相比自然语言更有可能收敛到几个主要语言上。
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4aa33c4" class="outline-4">
+<h4 id="org4aa33c4">语言的分裂与统一</h4>
+<div class="outline-text-4" id="text-org4aa33c4">
+<p>
+当一个理想的语言出现时，理应是这个语言一统江湖之时。不过如果我们回首程序语言发展的历史，我们会发现优秀的语言并不是没有出现过，但为什么工业界至今没有一个统一的语言标准呢？为何唯独计算机领域无法找到一个统一的解决方案？笔者认为原因有以下几点：
+</p>
+<ol class="org-ol">
+<li><p>
+计算机领域发展得太快
+</p>
+
+<p>
+过去几十年里，计算机硬件的飞速发展使得这一领域的知识交替得太快。当一个语言还没有来得及获得大多数人的认同时，新的需求出现，使得这一语言迅速落后，被别的语言淘汰了。
+</p></li>
+
+<li><p>
+语言间迁移成本太高
+</p>
+
+<p>
+由于不同语言之间的迁移无法自动化完成，又由于各语言都是图灵完备的，最终能完成的任务没有区别，除非在运行效率上有显著的提升，一般没有公司会主动进行项目语言的迁移。这导致了很多旧语言写就的程序（如 Cobol 在银行领域<sup><a id="fnr.33" class="footref" href="#fn.33">33</a></sup>）依然在运行，即使有更优秀的语言出现，也难以改变多种语言共存的现状。
+</p></li>
+
+<li><p>
+信息大爆炸
+</p>
+
+<p>
+伴随计算机出现的是信息的大爆炸，程序语言领域也是一样，单单程序语言领域内的知识已经超过了个人能够掌握的极限，因此没有人能够集各家之长，设计出一个「完美」的语言，每一个语言都有其特殊性和偏向性。
+</p></li>
+</ol>
+<p>
+但笔者认为，这些障碍都是暂时的。毕竟，对比数学等有上千年历史的学科，计算机科学这一仅有几十年历史的学科最多只能算得上还在蹒跚学步的阶段，给足一定时间，上述问题终究能够解决：即使因为不断有新需求的出现造成语言的更替，我们依然能看到编程范式的不断发展；即使语言间的迁移成本高，随着新旧软件的交替，旧语言的占比会不断降低；即使随着信息大爆炸造成语言设计难度的提高，但有开源社区的支持，一个语言的发展也会愈发迅速。
+</p>
+
+<p>
+笔者认为我们最终能达到一个理想的语言：它在抽象层级上足够高，有着丰富的库、框架，又有着强大的拓展能力，能够基于自身写出满足任意领域的特定语言，以此满足各个特定领域的独特需求，并且有着良好的开发体验，这些条件组合使得程序设计者能够高效地完成程序设计任务。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org63d6446" class="outline-3">
+<h3 id="org63d6446">理想中的「程序语言」</h3>
+<div class="outline-text-3" id="text-org63d6446">
+<p>
+从更加理想的角度来说，程序语言的最终形态和人工智能理应有很大程度的重合，这一点我们也能从第五代程序语言的尝试中看出来。通过定义问题的约束和期望得到的结果，其他的过程则完全由计算机完成。
+</p>
+
+<p>
+这时，「编程」的门槛已经大大降低，人人都能脱离计算机底层实现来通过一种语言来帮助自己提高生产力，那么我们在这种理想状态下会对计算机提出什么「问题」作为我们的程序语言语句呢？笔者认为，很有可能是「设计几个构图方案供我选择」、「找出从 A 到 B 的最近路线」、「当商品 X 处于最低价时购入并送到公司」、「发消息给 XXX，约他晚上吃饭」等等这类渗入到我们工作生活中的任务与问题。
+</p>
+
+<p>
+这些问题其实和如今 Siri, Google Now 等人工助手想要解决的问题非常类似，只是受目前技术水平的限制，他们还没能解决得很好。
+</p>
+
+<p>
+那我们稍退一步，在现在的计算机领域，有没有类似的语言（工具）呢？有，最接近的恐怕是 Linux 上的包管理工具：
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">apt-get install google-chrome
+</pre>
+</div>
+<p>
+只需要这样一句简洁明了的语句，就能完成安装一个浏览器的任务，恐怕已经是包管理这个领域所能到达的极限。注意，这里再次出现了「领域」一词，也就是说， <code>apt-get</code> 这一工具也可以看作是一个领域特定语言，这与前文提到的计算机软件即程序设计语言的思想是相通的。
+</p>
+
+<p>
+因此，基于文本的领域特定语言，加上自然语言处理、语音识别技术，是能被用来实现足够程度的人工智能助理（在此处也能理解为一个交互式编程环境）的，该思路也被 Mark
+Zuckerberg 成功实践过<sup><a id="fnr.34" class="footref" href="#fn.34">34</a></sup>。
+</p>
+
+<p>
+再进一步，或许，理想中的「程序语言」正是我们日常使用的自然语言本身，让计算机理解人类，帮助人类完成各种各样的任务，当这一需求能通过自然语言实现时，可能程序语言的历史使命也就完成了。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf57775b" class="outline-2">
+<h2 id="orgf57775b">参考文献</h2>
+<div class="outline-text-2" id="text-orgf57775b">
+<ol class="org-ol">
+<li>R. Cartwright and M. Fagan. Soft typing. In Proceedings PLDI’91. ACM
+Press, 1991.</li>
+
+<li>Sandi Metz. 2012. Practical Object-Oriented Design in Ruby: An Agile Primer
+(1st ed.). Addison-Wesley Professional.</li>
+
+<li>Bohm, Corrado; Giuseppe Jacopini (May 1966). "Flow Diagrams, Turing Machines
+and Languages with Only Two Formation Rules". Communications of the</li>
+
+<li>Donald Knuth (1974). "Structured Programming with go to Statements" (PDF).
+Computing Surveys. 6 (4): 261–301. <a href="10.1145/356635.356640">10.1145/356635.356640</a>. ACM. 9 (5):
+366–371. <a href="10.1145/355592.365646">10.1145/355592.365646</a></li>
+
+<li>Dijkstra, E. W. (March 1968). "Letters to the editor: go to statement
+considered harmful". Communications of the ACM. 11 (3): 147–148.
+<a href="10.1145/362929.362947">10.1145/362929.362947</a>. ISSN 0001-0782.</li>
+
+<li>Backus et al. "<a href="http://archive.computerhistory.org/resources/text/Fortran/102663113.05.01.acc.pdf">The FORTRAN automatic coding system</a>", Proc. AFIPS 1957 Western
+Joint Computer Conf., Spartan Books, Baltimore 188–198</li>
+
+<li>Arie van Deursen; Paul Klint; Joost Visser (1998). "<a href="https://web.archive.org/web/20090202154259/http://homepages.cwi.nl/~arie/papers/dslbib/">Domain-Specific
+Languages:An Annotated Bibliography</a>". Archived from <a href="http://homepages.cwi.nl/~arie/papers/dslbib/">the original</a> on
+2009-02-02. Retrieved 2009-03-15.</li>
+
+<li>35th Hawaii International Conference on System Sciences - 1002
+<a href="http://csdl.computer.org/comp/proceedings/hicss/2002/1435/09/14350279.pdf&amp;ei=pgcWQ6CwKsKYYMfF9OAI">Domain-Specific Languages for Software Engineering</a> <a href="https://web.archive.org/web/20110516121525/http://csdl.computer.org/comp/proceedings/hicss/2002/1435/09/14350279.pdf&amp;ei=pgcWQ6CwKsKYYMfF9OAI">Archived</a> May 16, 2011, at
+the <a href="https://en.wikipedia.org/wiki/Wayback_Machine">Wayback Machine</a>.</li>
+</ol>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Programming_language">Programming language - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory of computation - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Model_of_computation">Model of computation - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+35th Hawaii International Conference on System Sciences - 1002
+<a href="http://csdl.computer.org/comp/proceedings/hicss/2002/1435/09/14350279.pdf&amp;ei=pgcWQ6CwKsKYYMfF9OAI">Domain-Specific Languages for Software Engineering</a> <a href="https://web.archive.org/web/20110516121525/http://csdl.computer.org/comp/proceedings/hicss/2002/1435/09/14350279.pdf&amp;ei=pgcWQ6CwKsKYYMfF9OAI">Archived</a> May 16, 2011, at the
+<a href="https://en.wikipedia.org/wiki/Wayback_Machine">Wayback Machine</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+Arie van Deursen; Paul Klint; Joost Visser (1998). "<a href="https://web.archive.org/web/20090202154259/http://homepages.cwi.nl/~arie/papers/dslbib/">Domain-Specific
+Languages:An Annotated Bibliography</a>". Archived from <a href="http://homepages.cwi.nl/~arie/papers/dslbib/">the original</a> on 2009-02-02.
+Retrieved 2009-03-15.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E5%8C%96">抽象化 - 维基百科，自由的百科全书</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
+Backus et al. "<a href="http://archive.computerhistory.org/resources/text/Fortran/102663113.05.01.acc.pdf">The FORTRAN automatic coding system</a>", Proc. AFIPS 1957
+Western Joint Computer Conf., Spartan Books, Baltimore 188–198
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://helloworldcollection.github.io/">The Hello World Collection</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <div class="footpara"><p class="footpara">
+Dijkstra, E. W. (March 1968). "Letters to the editor: go to statement
+considered harmful". Communications of the ACM. 11 (3): 147–148.
+<a href="10.1145/362929.362947">10.1145/362929.362947</a>. ISSN 0001-0782.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <div class="footpara"><p class="footpara">
+Donald Knuth (1974). "Structured Programming with go to Statements"
+(PDF). Computing Surveys. 6 (4): 261–301. <a href="10.1145/356635.356640">10.1145/356635.356640</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://c-faq.com/style/stylewars.html">C FAQ - Style - Question 17.10: Goto</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Spaghetti_code#Examples">Spaghetti code - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <div class="footpara"><p class="footpara">
+Bohm, Corrado; Giuseppe Jacopini (May 1966). "Flow Diagrams, Turing
+Machines and Languages with Only Two Formation Rules". Communications of the
+ACM. 9 (5): 366–371. <a href="10.1145/355592.365646">10.1145/355592.365646</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <div class="footpara"><p class="footpara">
+Sandi Metz. 2012. Practical Object-Oriented Design in Ruby: An Agile
+Primer (1st ed.). Addison-Wesley Professional.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://zh.wikipedia.org/w/index.php?title=%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99&amp;withCSS=MediaWiki:Extiw.css&amp;withJS=MediaWiki:Extiw.js&amp;oldid=38299030">开闭原则 - 维基百科，自由的百科全书</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=5hDVftaPQwY">Elixir Conf 2014 - Keynote: Think Different by Dave Thomas - YouTube</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://theerlangelist.blogspot.com/2013/05/working-with-immutable-data.html">The Erlangelist: Working with immutable data</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://elixir-lang.org/getting-started/pattern-matching.html">Pattern matching - Elixir</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://zh.wikipedia.org/wiki/%E6%B8%B8%E7%A8%8B%E7%BC%96%E7%A0%81">游程编码 - 维基百科，自由的百科全书</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dangoldin.com/2017/04/11/sql-is-the-perfect-interface/">SQL is the perfect interface</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://aws.amazon.com/cn/redshift/">Amazon Redshift 数据仓库_PB 级云数据仓库服务 - AWS 云服务</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.vertica.com/">Blazing Performance on Premise, in the Clouds, or on Hadoop - Vertica</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://spark.apache.org/sql/">Spark SQL &amp; DataFrames - Apache Spark</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.24" class="footnum" href="#fnr.24">24</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://aws.amazon.com/cn/athena/">Amazon Athena – 无服务器交互式查询服务 – AWS</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.25" class="footnum" href="#fnr.25">25</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://hive.apache.org/">Apache Hive TM</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.26" class="footnum" href="#fnr.26">26</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://githut.info/">GitHut - Programming Languages and GitHub</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.27" class="footnum" href="#fnr.27">27</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.ics.uci.edu/~lopes/teaching/inf212W12/readings/rdl04meijer.pdf">Static Typing Where Possible, Dynamic Typing When Needed - The End of
+the Cold War Between Programming Languages</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.28" class="footnum" href="#fnr.28">28</a></sup> <div class="footpara"><p class="footpara">
+R. Cartwright and M. Fagan. Soft typing. In Proceedings PLDI’91. ACM
+Press, 1991.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.29" class="footnum" href="#fnr.29">29</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://news.ycombinator.com/item?id=13247858">Writing web applications using only the Go Standard Library - Hacker News</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.30" class="footnum" href="#fnr.30">30</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.apple.com/swift/playgrounds/">Swift Playgrounds - Apple</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.31" class="footnum" href="#fnr.31">31</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://jupyter.org/">Project Jupyter - Home</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.32" class="footnum" href="#fnr.32">32</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://rigaux.org/language-study/diagram.html">diagram &amp; history of programming languages</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.33" class="footnum" href="#fnr.33">33</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://www.reuters.com/article/us-usa-banks-cobol-idUSKBN17C0D8">Banks scramble to fix old systems as IT 'cowboys' ride into sunset - Reuters</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.34" class="footnum" href="#fnr.34">34</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.facebook.com/notes/mark-zuckerberg/building-jarvis/10154361492931634/">Building Jarvis</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-06-18</span>
+        <span title="last modification date" class="post-info">2017-06-18</span>
+        <span title="tags" class="post-info"><a href="/tags/programming-languages/">Programming Languages</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>

@@ -47,15 +47,15 @@
         <div class="col-md-2"></div>
             <h1>A Simple Introduction to Docker III</h1>
             
-<div id="outline-container-org3bef78d" class="outline-2">
-<h2 id="org3bef78d">What is Docker?</h2>
-<div class="outline-text-2" id="text-org3bef78d">
-</div><div id="outline-container-orgc0483eb" class="outline-3">
-<h3 id="orgc0483eb">Underlying Techniques</h3>
-<div class="outline-text-3" id="text-orgc0483eb">
-</div><div id="outline-container-org8594196" class="outline-4">
-<h4 id="org8594196">What do we need to do to build a container?</h4>
-<div class="outline-text-4" id="text-org8594196">
+<div id="outline-container-org4168f6e" class="outline-2">
+<h2 id="org4168f6e">What is Docker?</h2>
+<div class="outline-text-2" id="text-org4168f6e">
+</div><div id="outline-container-org850e7f3" class="outline-3">
+<h3 id="org850e7f3">Underlying Techniques</h3>
+<div class="outline-text-3" id="text-org850e7f3">
+</div><div id="outline-container-orge28ecc3" class="outline-4">
+<h4 id="orge28ecc3">What do we need to do to build a container?</h4>
+<div class="outline-text-4" id="text-orge28ecc3">
 <ol class="org-ol">
 <li><p>
 Isolate every container
@@ -105,9 +105,9 @@ And more importantly, it's scalable.
 </ol>
 </div>
 </div>
-<div id="outline-container-org72c3305" class="outline-4">
-<h4 id="org72c3305">Linux Namespace</h4>
-<div class="outline-text-4" id="text-org72c3305">
+<div id="outline-container-orgdb25811" class="outline-4">
+<h4 id="orgdb25811">Linux Namespace</h4>
+<div class="outline-text-4" id="text-orgdb25811">
 <ul class="org-ul">
 <li>Docker takes advantage of a technology called namespaces to provide the
 isolated workspace<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
@@ -235,9 +235,9 @@ Reassociate thread with a namespace
 </div>
 </div>
 
-<div id="outline-container-org0ba1f8d" class="outline-4">
-<h4 id="org0ba1f8d">Control groups</h4>
-<div class="outline-text-4" id="text-org0ba1f8d">
+<div id="outline-container-orgd7d55ad" class="outline-4">
+<h4 id="orgd7d55ad">Control groups</h4>
+<div class="outline-text-4" id="text-orgd7d55ad">
 <blockquote>
 <p>
 Control groups allow Docker to share available hardware resources to containers
@@ -273,6 +273,7 @@ systemd on /sys/fs/cgroup/systemd type cgroup (rw,noexec,nosuid,nodev,none,name=
 cpuset on /sys/fs/cgroup/cpuset type cgroup (rw,cpuset)
 cpu on /sys/fs/cgroup/cpu type cgroup (rw,cpu)
 memory on /sys/fs/cgroup/memory type cgroup (rw,memory)
+
 </pre></li>
 
 <li><p>
@@ -423,6 +424,7 @@ cat /sys/fs/cgroup/cpu/temp/cpu.cfs_quota_us
 <pre class="example">
 -1
 25000
+
 </pre></li>
 
 <li><p>
@@ -513,9 +515,9 @@ to about 20%, which was set by the value 20000 in the
 </ul>
 </div>
 </div>
-<div id="outline-container-orga2d2611" class="outline-4">
-<h4 id="orga2d2611">Union File Systems</h4>
-<div class="outline-text-4" id="text-orga2d2611">
+<div id="outline-container-orged099cb" class="outline-4">
+<h4 id="orged099cb">Union File Systems</h4>
+<div class="outline-text-4" id="text-orged099cb">
 <blockquote>
 <p>
 Docker uses union file systems to provide the building blocks for
@@ -548,7 +550,7 @@ file systems to combine these layers into a single image.
 </ul>
 </div>
 
-<ul class="org-ul"><li><a id="org2ce0620"></a>AUFS<br /><div class="outline-text-5" id="text-org2ce0620">
+<ul class="org-ul"><li><a id="orgb96ad64"></a>AUFS<br /><div class="outline-text-5" id="text-orgb96ad64">
 <ul class="org-ul">
 <li><p>
 Prepare
@@ -568,6 +570,7 @@ Prepare
     `-- tomato
 
 2 directories, 4 files
+
 </pre></li>
 
 <li><p>
@@ -587,6 +590,7 @@ tree ./mnt
 `-- tomato
 
 0 directories, 3 files
+
 </pre></li>
 
 <li><p>
@@ -618,6 +622,7 @@ results in fruits
 
 <pre class="example">
 mnt_carrots
+
 </pre></li>
 </ul></li>
 </ul>
