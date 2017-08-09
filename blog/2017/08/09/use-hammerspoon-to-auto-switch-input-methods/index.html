@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Use Hammerspoon to auto switch input methods - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="用 Hammerspoon 实现切换 App 时自动切换输入法" />
+  <meta name="keywords" content="macOS, input method, Automation" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use Hammerspoon to auto switch input methods</h1>
+            <p>
+输入法是每个中文用户日常使用中避不开的一个工具。中英文输入法的共存带来的一个麻烦就是在两个（甚至多个）输入法之间的切换，对程序员这样有大量英文输入的职业来说，一天可能要切换输入法上百次。如果能更自动化地切换到当前应用场景下的输入法，能够帮我们减轻记住当前是哪个输入法的心理负担，也能让我们输入更加快捷。
+</p>
+
+<div id="outline-container-org69efd63" class="outline-2">
+<h2 id="org69efd63">macOS 上的输入法切换</h2>
+<div class="outline-text-2" id="text-org69efd63">
+<p>
+在 macOS 上的输入法切换有两种模式：
+</p>
+<ol class="org-ol">
+<li><p>
+Automatically switch to a document's input source
+</p>
+
+<p>
+每个 App 的每个窗口（视这个 App 如何定义它的 document）绑定有自己的输入法，切换窗口时自动切换。
+</p>
+
+<p>
+听上去很美好，但是实际使用起来并不如想象中的那般如意：
+</p>
+<ol class="org-ol">
+<li><p>
+每个 App 对 Document 的定义不一样
+</p>
+
+<p>
+有的 App 每个窗口可以绑定不同的输入法，而有的 App 所有窗口共享一个输入法，丧心病狂如 Google Chrome 更是每个 Tab 都可以有不同的输入法。
+</p>
+
+<p>
+这样的行为很不统一，即使在同一个 App 中打字也要不断切换输入法。
+</p></li>
+<li><p>
+App 的重启并不会记得当前的输入法，下一次启动时会继承当前的输入法。
+</p>
+
+<p>
+这又增加了切换的成本。
+</p></li>
+<li><p>
+不同 App 间切换输入法并不稳定
+</p>
+
+<p>
+有的 App（如 Google Chrome）会覆盖别的 App 的输入法，这又让输入法的切换变的神鬼莫测。
+</p></li>
+</ol>
+<p>
+上面三个原因让我宁愿将这个功能关闭，选择第二种非智能模式。
+</p></li>
+<li><p>
+All app share a same input method
+</p>
+
+<p>
+所有 App 都公用一个输入法，虽然没有那么智能，强在比较可靠，只要能记得当前是哪个输入法，就能比较顺利地输入。
+</p>
+
+<p>
+但是，当全心投入工作时，记忆当前是哪个输入法，还是比较让人分心的。
+</p>
+
+<p>
+另一种方案就是输入前确认当前是哪个输入法，但是如果 menubar 被隐藏的话就比较麻烦了。
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd5e36cf" class="outline-2">
+<h2 id="orgd5e36cf">GhostSKB<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-orgd5e36cf">
+<p>
+因此，第三种方案出现了：为每个 App 设置一个默认输入法，每次切换 App 时都切换到对应的默认输入法。
+</p>
+
+<p>
+这个方案的优势在于：
+</p>
+<ol class="org-ol">
+<li><p>
+我们使用的 App 和输入法之间的对应关系是比较固定的
+</p>
+
+<p>
+微信之类的聊天工具主要使用中文输入法，编辑器等生产力工具主要使用英文输入法，至于浏览器这类需要切换的，再进行切换就可以满足需求了。
+</p></li>
+<li>如果每个 App 都设置了一个默认输入法，我们就能通过这一默认设置在进行
+App 切换后取得一个比较稳定的输入法状态，方便我们知道当前的状态。</li>
+</ol>
+
+<p>
+GhostSKB 就是使用这个思路的输入法自动切换工具。虽然在输入法切换方面做得不错了，实际使用后，它确实通过上述思路把输入法切换问题解决得不错，但是它还是有几点不足：
+</p>
+<ol class="org-ol">
+<li><p>
+不能检测到 Spotlight 的窗口
+</p>
+
+<p>
+对我来说（使用英文系统）Spotlight 是一个和英文输入法强耦合的应用，我在 Spotlight 中几乎没有中文输入的需求，因此，在微信这样的中文输入应用中打开 Spotlight 用中文输入法进行搜索对我这样的强迫症来说是比较痛苦的。
+</p></li>
+
+<li><p>
+UI 比较简陋
+</p>
+
+<p>
+作为通知栏应用，可能由于作者经验不足，UI 设计方面和 macOS 系统并不契合，显得比较突兀。幸好打开次数不多，但每次打开还是比较不舒服。
+</p></li>
+
+<li><p>
+操作比较繁琐
+</p>
+
+<p>
+毕竟是 GUI 操作，不如在编辑器中写配置文件方便。
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org048688a" class="outline-2">
+<h2 id="org048688a">Hammerspoon<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> + fcitx-remote-for-osx<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
+<div class="outline-text-2" id="text-org048688a">
+<p>
+基于以上几个痒点，我又开始寻找其他的解决方案，正好之前通过 Hammerspoon
+代替了 Slate 的窗口管理功能，又有 fcitx-remote-for-osx 在 Emacs 中的
+Evil-mode 切换输入法，就想着把按 App 切换输入法功能用 Hammerspoon 实现。
+</p>
+
+<p>
+经过半小时的研究，就实现了这个功能，代码十分简单：
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">local function fcitx_remote(arg)
+  hs.execute("/usr/local/bin/fcitx-remote " .. arg)
+end
+
+local function Chinese()
+  fcitx_remote("-o")
+end
+
+local function English()
+  fcitx_remote("-c")
+end
+
+local function set_app_input_method(app_name, set_input_method_function, event)
+  event = event or hs.window.filter.windowFocused
+
+  hs.window.filter.new(app_name)
+    :subscribe(event, function()
+                 set_input_method_function()
+              end)
+end
+
+set_app_input_method('Hammerspoon', English, hs.window.filter.windowCreated)
+set_app_input_method('Spotlight', English, hs.window.filter.windowCreated)
+set_app_input_method('Emacs', English)
+set_app_input_method('Slack', English)
+set_app_input_method('iTerm2', English)
+set_app_input_method('Google Chrome', English)
+
+set_app_input_method('WeChat', Chinese)
+set_app_input_method('Telegram', Chinese)
+
+</pre>
+</div>
+<p>
+对比 GhostSKB 有两个优势：
+</p>
+<ol class="org-ol">
+<li>能监听 Spotlight 窗口创建的事件为 Spotlight 设置默认输入法</li>
+<li>编辑器中设置，更加方便</li>
+</ol>
+
+<p>
+但几天使用下来发现依然不够稳定：
+</p>
+<ol class="org-ol">
+<li>通过 hs.execute 调用 fcitx-remote-for-osx 性能上有点问题，有时会有些许延迟</li>
+<li>在切换后马上开始输入的话有几率切换失败（表现为 menubar 输入法图标已经变化，但实际并没有切换成功）</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgaa1d40b" class="outline-2">
+<h2 id="orgaa1d40b">Pure Hammerspoon</h2>
+<div class="outline-text-2" id="text-orgaa1d40b">
+<p>
+今天发现 Hammerspoon 自身就带有输入法相关的模块 <code>hs.keycodes</code> ，便用它重写了上述功能：
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">local function Chinese()
+  -- hs.keycodes.setMethod("Pinyin - Simplified")
+  hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
+end
+
+local function English()
+  -- hs.keycodes.setLayout("U.S.")
+  hs.keycodes.currentSourceID("com.apple.keylayout.US")
+end
+
+local function set_app_input_method(app_name, set_input_method_function, event)
+  event = event or hs.window.filter.windowFocused
+
+  hs.window.filter.new(app_name)
+    :subscribe(event, function()
+                 set_input_method_function()
+              end)
+end
+</pre>
+</div>
+<p>
+一开始需要用两个不同的函数来设置 U.S. 和简体中文输入法，一番搜索后发现是 macOS 自身的限制，见：
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/Hammerspoon/hammerspoon/issues/1022">hs.keycodes.methods() should include com.apple.keylayout.US · Issue #1022 · Hammerspoon/hammerspoon</a></li>
+<li><a href="https://github.com/Hammerspoon/hammerspoon/issues/945">Add support to hs.keycodes for enumerating/selecting Input Methods · Issue #945 · Hammerspoon/hammerspoon</a></li>
+</ul>
+
+<p>
+于是就切换到了 <code>hs.keycode.currentSourceID</code>
+</p>
+
+<p>
+性能上比 fcitx-remote-for-osx 有一定提高，稳定了不少。
+</p>
+
+
+<p>
+Hammerspoon 还是一个非常强大的工具，能替代其他很多 App，下一回可以讲一讲我用 Hammerspoon 替代 Contexts 又回到 Contexts 的经过。
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/dingmingxin/GhostSKB">dingmingxin/GhostSKB: Smart input method switcher like a ghost</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/Hammerspoon/hammerspoon/">Hammerspoon/hammerspoon: Staggeringly powerful OS X desktop automation with Lua</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/CodeFalling/fcitx-remote-for-osx">CodeFalling/fcitx-remote-for-osx</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-08-09</span>
+        <span title="last modification date" class="post-info">2017-08-09</span>
+        <span title="tags" class="post-info"><a href="/tags/macos/">macOS</a>, <a href="/tags/hammerspoon/">Hammerspoon</a>, <a href="/tags/automation/">Automation</a>, <a href="/tags/input-method/">input method</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; Yimings-MacBook-Pro &lt;dot&gt; local">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>

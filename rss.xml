@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 18 Jun 2017 17:25:30 CST</pubDate>
-    <lastBuildDate>Sun, 18 Jun 2017 17:25:30 CST</lastBuildDate>
+    <pubDate>Wed, 09 Aug 2017 22:24:55 CST</pubDate>
+    <lastBuildDate>Wed, 09 Aug 2017 22:24:55 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Use Hammerspoon to auto switch input methods</title>
+      <link>http://dsdshcym.github.io/blog/2017/08/09/use-hammerspoon-to-auto-switch-input-methods</link>
+      <description><![CDATA[用 Hammerspoon 实现切换 App 时自动切换输入法]]></description>
+      <pubDate>2017-08-09</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/08/09/use-hammerspoon-to-auto-switch-input-methods</guid>
+    </item>
+    <item>
       <title>我看程序语言的历史、现在与将来</title>
       <link>http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison</link>
-      <description><![CDATA[厚着脸皮把毕业论文发到上来]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-06-18</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-03-04</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/03/04/la-la-land-review</guid>
-    </item>
-    <item>
-      <title>Comparison between Poker II and New Poker II</title>
-      <link>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-02-21</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/02/21/comparison-between-poker-ii-and-new-poker-ii</guid>
     </item>
   </channel>
 </rss>
