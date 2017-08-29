@@ -51,9 +51,9 @@
 输入法是每个中文用户日常使用中避不开的一个工具。中英文输入法的共存带来的一个麻烦就是在两个（甚至多个）输入法之间的切换，对程序员这样有大量英文输入的职业来说，一天可能要切换输入法上百次。如果能更自动化地切换到当前应用场景下的输入法，能够帮我们减轻记住当前是哪个输入法的心理负担，也能让我们输入更加快捷。
 </p>
 
-<div id="outline-container-org69efd63" class="outline-2">
-<h2 id="org69efd63">macOS 上的输入法切换</h2>
-<div class="outline-text-2" id="text-org69efd63">
+<div id="outline-container-org0ecebb1" class="outline-2">
+<h2 id="org0ecebb1">macOS 上的输入法切换</h2>
+<div class="outline-text-2" id="text-org0ecebb1">
 <p>
 在 macOS 上的输入法切换有两种模式：
 </p>
@@ -117,9 +117,9 @@ All app share a same input method
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd5e36cf" class="outline-2">
-<h2 id="orgd5e36cf">GhostSKB<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-orgd5e36cf">
+<div id="outline-container-org7753a34" class="outline-2">
+<h2 id="org7753a34">GhostSKB<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-org7753a34">
 <p>
 因此，第三种方案出现了：为每个 App 设置一个默认输入法，每次切换 App 时都切换到对应的默认输入法。
 </p>
@@ -169,9 +169,9 @@ UI 比较简陋
 </ol>
 </div>
 </div>
-<div id="outline-container-org048688a" class="outline-2">
-<h2 id="org048688a">Hammerspoon<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> + fcitx-remote-for-osx<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
-<div class="outline-text-2" id="text-org048688a">
+<div id="outline-container-org1b79618" class="outline-2">
+<h2 id="org1b79618">Hammerspoon<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> + fcitx-remote-for-osx<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
+<div class="outline-text-2" id="text-org1b79618">
 <p>
 基于以上几个痒点，我又开始寻找其他的解决方案，正好之前通过 Hammerspoon
 代替了 Slate 的窗口管理功能，又有 fcitx-remote-for-osx 在 Emacs 中的
@@ -232,9 +232,9 @@ set_app_input_method('Telegram', Chinese)
 </ol>
 </div>
 </div>
-<div id="outline-container-orgaa1d40b" class="outline-2">
-<h2 id="orgaa1d40b">Pure Hammerspoon</h2>
-<div class="outline-text-2" id="text-orgaa1d40b">
+<div id="outline-container-org291a0b1" class="outline-2">
+<h2 id="org291a0b1">Pure Hammerspoon</h2>
+<div class="outline-text-2" id="text-org291a0b1">
 <p>
 今天发现 Hammerspoon 自身就带有输入法相关的模块 <code>hs.keycodes</code> ，便用它重写了上述功能：
 </p>
