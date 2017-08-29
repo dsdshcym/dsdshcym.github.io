@@ -47,10 +47,41 @@
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
             <h1>Sandi Metz&#39;s Rules for OOP</h1>
-            
-<div id="outline-container-orge7992ee" class="outline-2">
-<h2 id="orge7992ee">Write short code with good names</h2>
-<div class="outline-text-2" id="text-orge7992ee">
+            <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org060eeae">Write short code with good names</a>
+<ul>
+<li><a href="#orgecf454d">We need short code because of our bad memories</a></li>
+<li><a href="#org11b1fb6">We need better names for better abstractions</a></li>
+<li><a href="#org45dd9d2">How Sandi Metz's Rules help us write shorter code</a></li>
+</ul>
+</li>
+<li><a href="#org03802e7">Sandi Metz's 5 Rules</a>
+<ul>
+<li><a href="#org5d7fa2a">100 lines per class</a></li>
+<li><a href="#org3247cc1">5 lines per method</a></li>
+<li><a href="#org75735e6">4 parameters per method</a></li>
+<li><a href="#org2d738b9">1 object per view</a></li>
+<li><a href="#orgf4bc4c3">2 class names per controller action</a></li>
+</ul>
+</li>
+<li><a href="#org33fb5fd">Why do we need these rules?</a>
+<ul>
+<li><a href="#org8d08709">These Rules are just simplified versions of code metrics.</a></li>
+<li><a href="#orgfc35787">Rules help us to make better trade-offs</a></li>
+</ul>
+</li>
+<li><a href="#orgbbc1c38">When to break the rule</a></li>
+<li><a href="#org9462a26">Further Reading</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org060eeae" class="outline-2">
+<h2 id="org060eeae">Write short code with good names</h2>
+<div class="outline-text-2" id="text-org060eeae">
 <p>
 If I can only use a sentence to describe how to write clean code, I
 would say "Write short code with good names".
@@ -62,9 +93,9 @@ understand than longer code. When it is not more readable, it does not
 have a good name.
 </p>
 </div>
-<div id="outline-container-org7db7243" class="outline-3">
-<h3 id="org7db7243">We need short code because of our bad memories</h3>
-<div class="outline-text-3" id="text-org7db7243">
+<div id="outline-container-orgecf454d" class="outline-3">
+<h3 id="orgecf454d">We need short code because of our bad memories</h3>
+<div class="outline-text-3" id="text-orgecf454d">
 <ul class="org-ul">
 <li>Memory comparison between PC and human
 <ul class="org-ul">
@@ -144,9 +175,9 @@ from the blocks below it.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org364607e" class="outline-3">
-<h3 id="org364607e">We need better names for better abstractions</h3>
-<div class="outline-text-3" id="text-org364607e">
+<div id="outline-container-org11b1fb6" class="outline-3">
+<h3 id="org11b1fb6">We need better names for better abstractions</h3>
+<div class="outline-text-3" id="text-org11b1fb6">
 <ul class="org-ul">
 <li><p>
 Short code can be a disaster when it has a bad name.
@@ -226,9 +257,9 @@ better abstractions.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc7e01bf" class="outline-3">
-<h3 id="orgc7e01bf">How Sandi Metz's Rules help us write shorter code</h3>
-<div class="outline-text-3" id="text-orgc7e01bf">
+<div id="outline-container-org45dd9d2" class="outline-3">
+<h3 id="org45dd9d2">How Sandi Metz's Rules help us write shorter code</h3>
+<div class="outline-text-3" id="text-org45dd9d2">
 <p>
 Sandi Metz's Rules for OOP are some heuristics to force us to write
 shorter code, so that our code cannot grow wildly and become a giant
@@ -237,12 +268,12 @@ piece of mess.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb502d5" class="outline-2">
-<h2 id="orgdb502d5">Sandi Metz's 5 Rules</h2>
-<div class="outline-text-2" id="text-orgdb502d5">
-</div><div id="outline-container-org1bb7596" class="outline-3">
-<h3 id="org1bb7596">100 lines per class</h3>
-<div class="outline-text-3" id="text-org1bb7596">
+<div id="outline-container-org03802e7" class="outline-2">
+<h2 id="org03802e7">Sandi Metz's 5 Rules</h2>
+<div class="outline-text-2" id="text-org03802e7">
+</div><div id="outline-container-org5d7fa2a" class="outline-3">
+<h3 id="org5d7fa2a">100 lines per class</h3>
+<div class="outline-text-3" id="text-org5d7fa2a">
 <p>
 <b>A class can be no longer than 100 lines of code.</b>
 </p>
@@ -263,9 +294,9 @@ this class to have more than one reason to change is pretty high</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7164cf4" class="outline-3">
-<h3 id="org7164cf4">5 lines per method</h3>
-<div class="outline-text-3" id="text-org7164cf4">
+<div id="outline-container-org3247cc1" class="outline-3">
+<h3 id="org3247cc1">5 lines per method</h3>
+<div class="outline-text-3" id="text-org3247cc1">
 <p>
 <b>A method can be no longer than 5 lines of code.</b>
 </p>
@@ -314,9 +345,9 @@ So this rule is asking us to
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaa0cfd9" class="outline-3">
-<h3 id="orgaa0cfd9">4 parameters per method</h3>
-<div class="outline-text-3" id="text-orgaa0cfd9">
+<div id="outline-container-org75735e6" class="outline-3">
+<h3 id="org75735e6">4 parameters per method</h3>
+<div class="outline-text-3" id="text-org75735e6">
 <p>
 <b>Pass no more than 4 parameters into a method.</b>
 </p>
@@ -382,9 +413,9 @@ a new abstraction
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf71b0fe" class="outline-3">
-<h3 id="orgf71b0fe"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
-<div class="outline-text-3" id="text-orgf71b0fe">
+<div id="outline-container-org2d738b9" class="outline-3">
+<h3 id="org2d738b9"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
+<div class="outline-text-3" id="text-org2d738b9">
 <p>
 <b>A view template should only refer to 1 object</b>
 </p>
@@ -419,9 +450,9 @@ different partials</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd010d87" class="outline-3">
-<h3 id="orgd010d87">2 class names per controller action</h3>
-<div class="outline-text-3" id="text-orgd010d87">
+<div id="outline-container-orgf4bc4c3" class="outline-3">
+<h3 id="orgf4bc4c3">2 class names per controller action</h3>
+<div class="outline-text-3" id="text-orgf4bc4c3">
 <p>
 <b>A controller action can only use 2 classes</b>.
 </p>
@@ -442,17 +473,17 @@ well<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></li>
 <li>Unit test service object</li>
 </ol></li>
 </ul></li>
-<li>Facade is explained in <a href="#orgf71b0fe">1 object per view</a></li>
+<li>Facade is explained in <a href="#org2d738b9">1 object per view</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd6e27d8" class="outline-2">
-<h2 id="orgd6e27d8">Why do we need these rules?</h2>
-<div class="outline-text-2" id="text-orgd6e27d8">
-</div><div id="outline-container-orgbe3b666" class="outline-3">
-<h3 id="orgbe3b666">These Rules are just simplified versions of code metrics.</h3>
-<div class="outline-text-3" id="text-orgbe3b666">
+<div id="outline-container-org33fb5fd" class="outline-2">
+<h2 id="org33fb5fd">Why do we need these rules?</h2>
+<div class="outline-text-2" id="text-org33fb5fd">
+</div><div id="outline-container-org8d08709" class="outline-3">
+<h3 id="org8d08709">These Rules are just simplified versions of code metrics.</h3>
+<div class="outline-text-3" id="text-org8d08709">
 <ul class="org-ul">
 <li>We don't have a perfect standard to measure good code and bad code.
 <ul class="org-ul">
@@ -488,9 +519,9 @@ help us write cleaner code
 </ul>
 </div>
 </div>
-<div id="outline-container-org8c19a4a" class="outline-3">
-<h3 id="org8c19a4a">Rules help us to make better trade-offs</h3>
-<div class="outline-text-3" id="text-org8c19a4a">
+<div id="outline-container-orgfc35787" class="outline-3">
+<h3 id="orgfc35787">Rules help us to make better trade-offs</h3>
+<div class="outline-text-3" id="text-orgfc35787">
 <ul class="org-ul">
 <li>Writing code is about making trade-offs
 <ul class="org-ul">
@@ -510,9 +541,9 @@ their early career, and help them make better decisions<sup><a id="fnr.6" class=
 </div>
 </div>
 </div>
-<div id="outline-container-org32decb2" class="outline-2">
-<h2 id="org32decb2">When to break the rule</h2>
-<div class="outline-text-2" id="text-org32decb2">
+<div id="outline-container-orgbbc1c38" class="outline-2">
+<h2 id="orgbbc1c38">When to break the rule</h2>
+<div class="outline-text-2" id="text-orgbbc1c38">
 <p>
 <b>Until you have good reasons to break them</b>
 </p>
@@ -526,9 +557,9 @@ developers, feel confident to break them</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org924c7f5" class="outline-2">
-<h2 id="org924c7f5">Further Reading</h2>
-<div class="outline-text-2" id="text-org924c7f5">
+<div id="outline-container-org9462a26" class="outline-2">
+<h2 id="org9462a26">Further Reading</h2>
+<div class="outline-text-2" id="text-org9462a26">
 <p>
 You can find more talks / blogs in these places:
 </p>
