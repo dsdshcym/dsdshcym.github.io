@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Sandi Metz&#39;s Rules for OOP - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Sandi Metz&#39;s 5 Rules for writing better Object-Oriented Code" />
+  <meta name="keywords" content="Object-Oriented, OOP, Sandi Metz, Principles, Rules" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Sandi Metz&#39;s Rules for OOP</h1>
+            
+<div id="outline-container-org554e2a0" class="outline-2">
+<h2 id="org554e2a0">Write short code with good names</h2>
+<div class="outline-text-2" id="text-org554e2a0">
+<p>
+If I can only use a sentence to describe how to write clean code, I
+would say "Write short code with good names".
+</p>
+
+<p>
+According to my experiences, short code is almost always easier to
+understand than longer code. When it is not more readable, it does not
+have a good name.
+</p>
+</div>
+<div id="outline-container-org439a080" class="outline-3">
+<h3 id="org439a080">We need short code because of our bad memories</h3>
+<div class="outline-text-3" id="text-org439a080">
+<ul class="org-ul">
+<li>Memory comparison between PC and human
+<ul class="org-ul">
+<li><p>
+Computer with large RAMs
+</p>
+
+<p>
+A modern computer can easily remember several gigabytes of information
+since they have these many of RAM. And it can even remember more since
+it can move the data between RAM and disks.
+</p>
+
+<p>
+That's why a single server can run a huge application with thousands
+of hundreds codes without any problems.
+</p></li>
+
+<li><p>
+Human beings with normal brains
+</p>
+
+<p>
+But for us, the normal human being, we can hardly remember even
+hundreds of code. That's a huge disadvantage compared to our
+machines.
+</p></li>
+</ul></li>
+<li><p>
+Screen Restriction
+</p>
+
+<p>
+In my editor, one page can only show 54 lines (font with 14 pixel
+size), so it needs 2 pages to show 100 lines of code.
+</p>
+
+<p>
+Even if there are only 2 pages of code, I still need to scroll forth
+and back to check the code.
+</p>
+
+<p>
+So a shorter class, function is easier for us to read and understand.
+</p></li>
+<li><p>
+Abstractions
+</p>
+
+<p>
+Due to our bad memories, we need variables, functions, and classes
+to help us to abstract the code.
+</p>
+
+<p>
+So that a single line of source code can represent more concepts and
+we can only think about this single line of source code and forget
+about all the things behind it.
+</p>
+
+<ul class="org-ul">
+<li><p>
+Source code pyramid
+</p>
+
+<p>
+The process of abstraction is like building a source code tree or
+a pyramid for a project.
+</p>
+
+<ul class="org-ul">
+<li>At the top, there are the higher level of concepts, building
+from the blocks below it.</li>
+<li>At the bottom, there are the real working code.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4578327" class="outline-3">
+<h3 id="org4578327">We need better names for better abstractions</h3>
+<div class="outline-text-3" id="text-org4578327">
+<ul class="org-ul">
+<li><p>
+Short code can be a disaster when it has a bad name.
+</p>
+
+<p>
+Consider the following code:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class User
+  def post_a_new_feed
+    step_1
+    step_2
+    step_3
+  end
+
+  private
+
+  def step_1
+    # 25 lines of code
+  end
+
+  def step_2
+    # 25 lines of code
+  end
+
+  def step_3
+    # 25 lines of code
+  end
+end
+</pre>
+</div>
+
+<p>
+<code>step_1</code>, <code>step_1</code>, <code>step_1</code>
+If <code>Publishable</code> and <code>Searchable</code> are not used anywhere else, I
+would not say this class is a well-written class. Although it gives
+a name to Publishable and Searchable module, it's still just
+rearranging the mess in somewhere else, like hiding the dirt under
+the carpet<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+If the <code>Publishable</code> or <code>Searchable</code>
+</p></li>
+
+<li><p>
+Naming things is what we do
+</p>
+
+<p>
+Abstraction is the only way for us to manage a large code
+repository. But We need to name things better to create better
+abstractions.
+</p>
+
+<p>
+Actually, naming things is almost all what we do as software
+developers<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+</p>
+<ul class="org-ul">
+<li>When we create a new project, we need to name it.</li>
+<li>When we create a new variable, we need to name it.</li>
+<li>When we create a new method, we need to name it.</li>
+<li>When we create a new class, we need to name it.</li>
+</ul>
+<p>
+Since it's an activity that's so common, no wonder it's one of the two
+hardest things in programming.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
+</p>
+
+<p>
+Every abstraction we make relies on a name, so if we can name things
+better and explain the concept behind this name well, we can have
+better abstractions.
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4d2ccd9" class="outline-3">
+<h3 id="org4d2ccd9">How Sandi Metz's Rules help us write shorter code</h3>
+<div class="outline-text-3" id="text-org4d2ccd9">
+<p>
+Sandi Metz's Rules for OOP are some heuristics to force us to write
+shorter code, so that our code cannot grow wildly and become a giant
+piece of mess.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org17f2e8e" class="outline-2">
+<h2 id="org17f2e8e">Sandi Metz's 5 Rules</h2>
+<div class="outline-text-2" id="text-org17f2e8e">
+</div><div id="outline-container-orgca026bb" class="outline-3">
+<h3 id="orgca026bb">100 lines per class</h3>
+<div class="outline-text-3" id="text-orgca026bb">
+<p>
+<b>A class can be no longer than 100 lines of code.</b>
+</p>
+<ul class="org-ul">
+<li><p>
+Single Responsibility Principle
+</p>
+<blockquote>
+<p>
+A class should only have one reason to change
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>If a class has more than 100 lines of code, the possibility for
+this class to have more than one reason to change is pretty high</li>
+<li>A class that has single responsibility is highly cohesive</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge2b58d8" class="outline-3">
+<h3 id="orge2b58d8">5 lines per method</h3>
+<div class="outline-text-3" id="text-orge2b58d8">
+<p>
+<b>A method can be no longer than 5 lines of code.</b>
+</p>
+<ul class="org-ul">
+<li>Some quotes
+<ul class="org-ul">
+<li><p>
+<i>Clean Code</i> by Robert Martin
+</p>
+<blockquote>
+<p>
+The first rule of functions is that they should <b>be small</b>.
+The second rule of functions is that they should <b>be smaller than that</b>.
+</p>
+</blockquote></li>
+<li><p>
+Ben Orenstein from thoughtbot
+</p>
+<blockquote>
+<p>
+Methods with 1 line is better than 2 lines.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
+</p>
+</blockquote></li>
+</ul></li>
+<li><p>
+5 lines of code equals to 1 <code>if</code> statement
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def foo
+  if condition
+    do_something
+  else
+    do_another_thing
+  end
+end
+</pre>
+</div>
+<p>
+So this rule is asking us to
+</p>
+<ol class="org-ol">
+<li>Do not write logic more complicated than an <code>if</code> statement</li>
+<li>Write only 1 line per branch</li>
+<li>Never use <code>elsif</code></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbbfd428" class="outline-3">
+<h3 id="orgbbfd428">4 parameters per method</h3>
+<div class="outline-text-3" id="text-orgbbfd428">
+<p>
+<b>Pass no more than 4 parameters into a method.</b>
+</p>
+<ul class="org-ul">
+<li><p>
+Hash options are also parameters
+Do not fool ourselves with a hash parameter like this
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def foo(option)
+  arg_a = option.fetch(:a)
+  arg_b = option.fetch(:b)
+  arg_c = option.fetch(:c)
+  arg_d = option.fetch(:d)
+  # ...
+  # do something with arg_{a, b, c, d}
+end
+</pre>
+</div></li>
+<li>If there are more than 4 parameters, most of the time we can pull a
+new object out of some of the parameters
+<ul class="org-ul">
+<li><p>
+A typical example would be date ranges
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class AnalyticsQuery
+  def initialize(label, filter, starts_at, ends_at)
+    # ...
+    @starts_at = starts_at
+    @ends_at = ends_at
+    # ...
+    @interval = ends_at - starts_at
+  end
+end
+</pre>
+</div>
+<p>
+We can then refactor this data pair (<code>starts_at</code> and <code>ends_at</code>) to
+a new class of object (<code>DateRange</code>)
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class DateRange
+  def initialize(starts_at, ends_at)
+    @starts_at = starts_at
+    @ends_at = ends_at
+  end
+
+  def interval
+    @ends_at - @starts_at
+  end
+end
+</pre>
+</div></li>
+<li>As we can see in the above example, this rule actually leads us to
+a new abstraction
+<ol class="org-ol">
+<li>The new abstraction consolidate code into a single place</li>
+<li>The new abstraction <i>names</i> this consolidated code</li>
+<li>The new abstraction tells you where your code <i>relies</i> upon an idea</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgae5e2f2" class="outline-3">
+<h3 id="orgae5e2f2"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
+<div class="outline-text-3" id="text-orgae5e2f2">
+<p>
+<b>A view template should only refer to 1 object</b>
+</p>
+<ul class="org-ul">
+<li><p>
+Facade Pattern
+</p>
+<blockquote>
+<p>
+A facade is an object that provides a simplified interface to a
+larger body of code
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>In Rails world, it's usually called Presenter</li>
+</ul></li>
+<li>We can use a Facade object in view template to reduce the dependency
+between view template and controller actions
+<ol class="org-ol">
+<li>Easier to test
+<ul class="org-ul">
+<li>When we need to test a view, we can simply setup a mock facade
+object rather than a bunch of mock objects to test it</li>
+</ul></li>
+<li>Encourages abstractions
+<ul class="org-ul">
+<li>We can use a facade object to wrap many objects for a view</li>
+<li>Then this view dispatches objects in this facade object to
+different partials</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f26b51" class="outline-3">
+<h3 id="org5f26b51">2 class names per controller action</h3>
+<div class="outline-text-3" id="text-org5f26b51">
+<p>
+<b>A controller action can only use 2 classes</b>.
+</p>
+<ul class="org-ul">
+<li>The purpose for these 2 classes
+<ul class="org-ul">
+<li>One <i>Service Object</i> for business logic.</li>
+<li>One <i>Facade Object</i> for presentation.</li>
+</ul></li>
+<li>Use Service Object to make a controller thin
+<ul class="org-ul">
+<li>A Rails controller is always hard to unit test</li>
+<li>Rails is moving away from controller test to integration test as
+well<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></li>
+<li>Use Service Object to wrap the controller logic
+<ol class="org-ol">
+<li>Integration test controller action</li>
+<li>Unit test service object</li>
+</ol></li>
+</ul></li>
+<li>Facade is explained in <a href="#orgae5e2f2">1 object per view</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org22a3514" class="outline-2">
+<h2 id="org22a3514">Why do we need these rules?</h2>
+<div class="outline-text-2" id="text-org22a3514">
+</div><div id="outline-container-org0ce09fb" class="outline-3">
+<h3 id="org0ce09fb">These Rules are just simplified versions of code metrics.</h3>
+<div class="outline-text-3" id="text-org0ce09fb">
+<ul class="org-ul">
+<li>We don't have a perfect standard to measure good code and bad code.
+<ul class="org-ul">
+<li>Because
+<ol class="org-ol">
+<li>The abstraction level of the code is hard to quantify</li>
+<li>Sometimes we as the developer even cannot tell the better code
+is better in which ways</li>
+</ol></li>
+<li>We only have some metrics that can act as heuristics to help us
+measure our code (<a href="../../../Org/notes/books.html#ID-EBB36066-25F3-4ECC-BB1D-3E47F8F91DB1">99 Bottles of OOP - Judging Code</a>)
+<dl class="org-dl">
+<dt>Source Line of Code (SLOC or LOC)</dt><dd>The number of lines in text of the source code</dd>
+<dt>Cyclomatic Complexity</dt><dd>The number of linearly independent paths through a program's
+source code</dd>
+<dt>Assignments, Branches and Conditions (ABC) Metric</dt><dd>count of variable Assignments,
+Branches of control (function calls of message sends), and
+count of Conditional logic</dd>
+<dt>(no term)</dt><dd>etc.</dd>
+</dl></li>
+</ul></li>
+<li>But it requires some work to calculate these metrics and some of the
+metrics are hard to understand for junior developers</li>
+<li>So we can use these rules as simplified versions of the metrics to
+help us write cleaner code
+<dl class="org-dl">
+<dt>100 lines per class</dt><dd>Simplified version of SLOC</dd>
+<dt>5 lines per method</dt><dd>Simplified version of SLOC and Cyclomatic Complexity</dd>
+<dt>4 parameters per method</dt><dd>Simplified version of ABC metric</dd>
+<dt>1 object per view</dt><dd>Simplified version of ABC metric</dd>
+<dt>2 class names per controller action</dt><dd>Simplified version of ABC metric</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0431000" class="outline-3">
+<h3 id="org0431000">Rules help us to make better trade-offs</h3>
+<div class="outline-text-3" id="text-org0431000">
+<ul class="org-ul">
+<li>Writing code is about making trade-offs
+<ul class="org-ul">
+<li>Different solution to a software problem makes different
+trade-offs. (<a href="../../../Org/notes/books.html#ID-3605F2DC-D6A6-4C11-B72B-95DAADA6F282">99 Bottles of OOP - Rediscovering Simplicity</a>)
+<ul class="org-ul">
+<li>Even DRY comes with some cost</li>
+</ul></li>
+<li>The best solution chooses what benefits us the most and hurts us
+the least.</li>
+</ul></li>
+<li>But when we first started writing software, most of us don't know
+how to make the best trade-off</li>
+<li>These rules can serve as a good guideline for those developers in
+their early career, and help them make better decisions<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9940e83" class="outline-2">
+<h2 id="org9940e83">When to break the rule</h2>
+<div class="outline-text-2" id="text-org9940e83">
+<p>
+<b>Until you have good reasons to break them</b>
+</p>
+<ul class="org-ul">
+<li>As we said in the previous section, these rules are just simplified
+metrics and guidelines for junior developers who can not make good
+trade-offs</li>
+<li>These rules are not absolutely right</li>
+<li>So if you find a good reason and can explain it clearly to other
+developers, feel confident to break them</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://wiki.c2.com/?HideTheDirtUnderTheCarpet">Hide The Dirt Under The Carpet</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://bikeshed.fm/3ae8f5a0">70: Make Small Things (Sandi Metz) | The Bike Shed</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://twitter.com/timbray/status/506146595650699264">Tim Bray on Twitter: \"@marcoskirsch @codinghorror Phil said it, I reported it, someone else added on the “off-by-one”.\"</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=DC-pQPq0acs">Aloha Ruby Conf 2012 Refactoring from Good to Great by Ben Orenstein - YouTube</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<a href="../../../Org/notes/ruby.html#ID-CE963F38-D99D-4861-99F8-56C9D1D11705">Changes to test controllers in Rails 5 - BigBinary Blog</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://devchat.tv/ruby-rogues/087-rr-book-club-practical-object-oriented-design-in-ruby-with-sandi-metz">087 RR Book Club: Practical Object-Oriented Design in Ruby with Sandi Metz - Devchat.tv</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-08-23</span>
+        <span title="last modification date" class="post-info">2017-08-29</span>
+        <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a>, <a href="/tags/sandi-metz/">Sandi Metz</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
