@@ -51,37 +51,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org060eeae">Write short code with good names</a>
+<li><a href="#org210e995">Write short code with good names</a>
 <ul>
-<li><a href="#orgecf454d">We need short code because of our bad memories</a></li>
-<li><a href="#org11b1fb6">We need better names for better abstractions</a></li>
-<li><a href="#org45dd9d2">How Sandi Metz's Rules help us write shorter code</a></li>
+<li><a href="#org7f4ffc2">We need short code because of our bad memories</a></li>
+<li><a href="#org8d51c6f">We need better names for better abstractions</a></li>
+<li><a href="#orgb2733e0">How Sandi Metz's Rules help us write shorter code</a></li>
 </ul>
 </li>
-<li><a href="#org03802e7">Sandi Metz's 5 Rules</a>
+<li><a href="#org6d63790">Sandi Metz's 5 Rules</a>
 <ul>
-<li><a href="#org5d7fa2a">100 lines per class</a></li>
-<li><a href="#org3247cc1">5 lines per method</a></li>
-<li><a href="#org75735e6">4 parameters per method</a></li>
-<li><a href="#org2d738b9">1 object per view</a></li>
-<li><a href="#orgf4bc4c3">2 class names per controller action</a></li>
+<li><a href="#org5db3b28">100 lines per class</a></li>
+<li><a href="#org78a7e3a">5 lines per method</a></li>
+<li><a href="#org2e27183">4 parameters per method</a></li>
+<li><a href="#org0edf058">1 object per view</a></li>
+<li><a href="#org5f97aeb">2 class names per controller action</a></li>
 </ul>
 </li>
-<li><a href="#org33fb5fd">Why do we need these rules?</a>
+<li><a href="#org5b5cf0a">Why do we need these rules?</a>
 <ul>
-<li><a href="#org8d08709">These Rules are just simplified versions of code metrics.</a></li>
-<li><a href="#orgfc35787">Rules help us to make better trade-offs</a></li>
+<li><a href="#orgd9d388b">These Rules are just simplified versions of code metrics.</a></li>
+<li><a href="#orgd664750">Rules help us to make better trade-offs</a></li>
 </ul>
 </li>
-<li><a href="#orgbbc1c38">When to break the rule</a></li>
-<li><a href="#org9462a26">Further Reading</a></li>
+<li><a href="#orga32b9ee">When to break the rule</a></li>
+<li><a href="#org30c4347">Further Reading</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org060eeae" class="outline-2">
-<h2 id="org060eeae">Write short code with good names</h2>
-<div class="outline-text-2" id="text-org060eeae">
+<div id="outline-container-org210e995" class="outline-2">
+<h2 id="org210e995">Write short code with good names</h2>
+<div class="outline-text-2" id="text-org210e995">
 <p>
 If I can only use a sentence to describe how to write clean code, I
 would say "Write short code with good names".
@@ -93,9 +93,9 @@ understand than longer code. When it is not more readable, it does not
 have a good name.
 </p>
 </div>
-<div id="outline-container-orgecf454d" class="outline-3">
-<h3 id="orgecf454d">We need short code because of our bad memories</h3>
-<div class="outline-text-3" id="text-orgecf454d">
+<div id="outline-container-org7f4ffc2" class="outline-3">
+<h3 id="org7f4ffc2">We need short code because of our bad memories</h3>
+<div class="outline-text-3" id="text-org7f4ffc2">
 <ul class="org-ul">
 <li>Memory comparison between PC and human
 <ul class="org-ul">
@@ -175,9 +175,9 @@ from the blocks below it.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org11b1fb6" class="outline-3">
-<h3 id="org11b1fb6">We need better names for better abstractions</h3>
-<div class="outline-text-3" id="text-org11b1fb6">
+<div id="outline-container-org8d51c6f" class="outline-3">
+<h3 id="org8d51c6f">We need better names for better abstractions</h3>
+<div class="outline-text-3" id="text-org8d51c6f">
 <ul class="org-ul">
 <li><p>
 Short code can be a disaster when it has a bad name.
@@ -257,9 +257,9 @@ better abstractions.
 </ul>
 </div>
 </div>
-<div id="outline-container-org45dd9d2" class="outline-3">
-<h3 id="org45dd9d2">How Sandi Metz's Rules help us write shorter code</h3>
-<div class="outline-text-3" id="text-org45dd9d2">
+<div id="outline-container-orgb2733e0" class="outline-3">
+<h3 id="orgb2733e0">How Sandi Metz's Rules help us write shorter code</h3>
+<div class="outline-text-3" id="text-orgb2733e0">
 <p>
 Sandi Metz's Rules for OOP are some heuristics to force us to write
 shorter code, so that our code cannot grow wildly and become a giant
@@ -268,12 +268,12 @@ piece of mess.
 </div>
 </div>
 </div>
-<div id="outline-container-org03802e7" class="outline-2">
-<h2 id="org03802e7">Sandi Metz's 5 Rules</h2>
-<div class="outline-text-2" id="text-org03802e7">
-</div><div id="outline-container-org5d7fa2a" class="outline-3">
-<h3 id="org5d7fa2a">100 lines per class</h3>
-<div class="outline-text-3" id="text-org5d7fa2a">
+<div id="outline-container-org6d63790" class="outline-2">
+<h2 id="org6d63790">Sandi Metz's 5 Rules</h2>
+<div class="outline-text-2" id="text-org6d63790">
+</div><div id="outline-container-org5db3b28" class="outline-3">
+<h3 id="org5db3b28">100 lines per class</h3>
+<div class="outline-text-3" id="text-org5db3b28">
 <p>
 <b>A class can be no longer than 100 lines of code.</b>
 </p>
@@ -294,9 +294,9 @@ this class to have more than one reason to change is pretty high</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3247cc1" class="outline-3">
-<h3 id="org3247cc1">5 lines per method</h3>
-<div class="outline-text-3" id="text-org3247cc1">
+<div id="outline-container-org78a7e3a" class="outline-3">
+<h3 id="org78a7e3a">5 lines per method</h3>
+<div class="outline-text-3" id="text-org78a7e3a">
 <p>
 <b>A method can be no longer than 5 lines of code.</b>
 </p>
@@ -345,9 +345,9 @@ So this rule is asking us to
 </ul>
 </div>
 </div>
-<div id="outline-container-org75735e6" class="outline-3">
-<h3 id="org75735e6">4 parameters per method</h3>
-<div class="outline-text-3" id="text-org75735e6">
+<div id="outline-container-org2e27183" class="outline-3">
+<h3 id="org2e27183">4 parameters per method</h3>
+<div class="outline-text-3" id="text-org2e27183">
 <p>
 <b>Pass no more than 4 parameters into a method.</b>
 </p>
@@ -413,9 +413,9 @@ a new abstraction
 </ul>
 </div>
 </div>
-<div id="outline-container-org2d738b9" class="outline-3">
-<h3 id="org2d738b9"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
-<div class="outline-text-3" id="text-org2d738b9">
+<div id="outline-container-org0edf058" class="outline-3">
+<h3 id="org0edf058"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
+<div class="outline-text-3" id="text-org0edf058">
 <p>
 <b>A view template should only refer to 1 object</b>
 </p>
@@ -450,9 +450,9 @@ different partials</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf4bc4c3" class="outline-3">
-<h3 id="orgf4bc4c3">2 class names per controller action</h3>
-<div class="outline-text-3" id="text-orgf4bc4c3">
+<div id="outline-container-org5f97aeb" class="outline-3">
+<h3 id="org5f97aeb">2 class names per controller action</h3>
+<div class="outline-text-3" id="text-org5f97aeb">
 <p>
 <b>A controller action can only use 2 classes</b>.
 </p>
@@ -473,17 +473,17 @@ well<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></li>
 <li>Unit test service object</li>
 </ol></li>
 </ul></li>
-<li>Facade is explained in <a href="#org2d738b9">1 object per view</a></li>
+<li>Facade is explained in <a href="#org0edf058">1 object per view</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org33fb5fd" class="outline-2">
-<h2 id="org33fb5fd">Why do we need these rules?</h2>
-<div class="outline-text-2" id="text-org33fb5fd">
-</div><div id="outline-container-org8d08709" class="outline-3">
-<h3 id="org8d08709">These Rules are just simplified versions of code metrics.</h3>
-<div class="outline-text-3" id="text-org8d08709">
+<div id="outline-container-org5b5cf0a" class="outline-2">
+<h2 id="org5b5cf0a">Why do we need these rules?</h2>
+<div class="outline-text-2" id="text-org5b5cf0a">
+</div><div id="outline-container-orgd9d388b" class="outline-3">
+<h3 id="orgd9d388b">These Rules are just simplified versions of code metrics.</h3>
+<div class="outline-text-3" id="text-orgd9d388b">
 <ul class="org-ul">
 <li>We don't have a perfect standard to measure good code and bad code.
 <ul class="org-ul">
@@ -494,7 +494,7 @@ well<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></li>
 is better in which ways</li>
 </ol></li>
 <li>We only have some metrics that can act as heuristics to help us
-measure our code (<a href="../../Org/notes/books.html#ID-EBB36066-25F3-4ECC-BB1D-3E47F8F91DB1">99 Bottles of OOP - Judging Code</a>)
+measure our code <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
 <dl class="org-dl">
 <dt>Source Line of Code (SLOC or LOC)</dt><dd>The number of lines in text of the source code</dd>
 <dt>Cyclomatic Complexity</dt><dd>The number of linearly independent paths through a program's
@@ -519,14 +519,14 @@ help us write cleaner code
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfc35787" class="outline-3">
-<h3 id="orgfc35787">Rules help us to make better trade-offs</h3>
-<div class="outline-text-3" id="text-orgfc35787">
+<div id="outline-container-orgd664750" class="outline-3">
+<h3 id="orgd664750">Rules help us to make better trade-offs</h3>
+<div class="outline-text-3" id="text-orgd664750">
 <ul class="org-ul">
 <li>Writing code is about making trade-offs
 <ul class="org-ul">
 <li>Different solution to a software problem makes different
-trade-offs. (<a href="../../Org/notes/books.html#ID-3605F2DC-D6A6-4C11-B72B-95DAADA6F282">99 Bottles of OOP - Rediscovering Simplicity</a>)
+trade-offs.<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>
 <ul class="org-ul">
 <li>Even DRY comes with some cost</li>
 </ul></li>
@@ -536,14 +536,14 @@ the least.</li>
 <li>But when we first started writing software, most of us don't know
 how to make the best trade-off</li>
 <li>These rules can serve as a good guideline for those developers in
-their early career, and help them make better decisions<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup></li>
+their early career, and help them make better decisions<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbbc1c38" class="outline-2">
-<h2 id="orgbbc1c38">When to break the rule</h2>
-<div class="outline-text-2" id="text-orgbbc1c38">
+<div id="outline-container-orga32b9ee" class="outline-2">
+<h2 id="orga32b9ee">When to break the rule</h2>
+<div class="outline-text-2" id="text-orga32b9ee">
 <p>
 <b>Until you have good reasons to break them</b>
 </p>
@@ -557,16 +557,36 @@ developers, feel confident to break them</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9462a26" class="outline-2">
-<h2 id="org9462a26">Further Reading</h2>
-<div class="outline-text-2" id="text-org9462a26">
-<p>
-You can find more talks / blogs in these places:
-</p>
+<div id="outline-container-org30c4347" class="outline-2">
+<h2 id="org30c4347">Further Reading</h2>
+<div class="outline-text-2" id="text-org30c4347">
 <ul class="org-ul">
+<li>You can find more discussions about these Rules in these places:
+<ul class="org-ul">
+<li><a href="https://devchat.tv/ruby-rogues/087-rr-book-club-practical-object-oriented-design-in-ruby-with-sandi-metz">087 RR Book Club: Practical Object-Oriented Design in Ruby with Sandi Metz - Devchat.tv</a>
+Where Sandi Metz first talked about her 5 Rules</li>
+<li><a href="../../Org/list.html#ID-A7E40342-B5E2-4D67-B682-6D68FF33F2EA">Baruco 2013: Rules, by Sandi Metz - YouTube</a>
+Where Sandi Metz talked more about the Rules more officially</li>
+<li><a href="http://bikeshed.fm/8203c121">1: Sandi &amp; Derek's Rules | The Bike Shed</a></li>
+<li><a href="http://bikeshed.fm/3ae8f5a0">70: Make Small Things (Sandi Metz) | The Bike Shed</a></li>
 <li><a href="../../Org/list.html#ID-3f76c18c-8f28-443f-babd-4f8df3137d7a">Sandi Metz's Rules - Online Video Tutorial by thoughtbot</a></li>
 <li><a href="https://robots.thoughtbot.com/sandi-metz-rules-for-developers">Sandi Metz's Rules For Developers</a></li>
+</ul></li>
+<li>Please read these 2 books Sandi wrote, they are just purely great:
+<ol class="org-ol">
+<li><a href="http://www.poodr.com/">Practical Object-Oriented Design in Ruby</a></li>
+<li><a href="https://www.sandimetz.com/99bottles/">99 Bottles — Sandi Metz</a></li>
+</ol></li>
+<li>Sandi also gave a lot of talks on multiple conferences, go to
+YouTube and watch them all if you have time:
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=v-2yFMzxqwU">GORUCO 2009 - SOLID Object-Oriented Design by Sandi Metz - YouTube</a></li>
 <li><a href="../../Org/list.html#ID-A7E40342-B5E2-4D67-B682-6D68FF33F2EA">Baruco 2013: Rules, by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=URSWYvyc42M">Rails Conf 2013 The Magic Tricks of Testing by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=JOM5_V5jLAs">RubyConf 2014 - Madam Sandi Tells Your Future by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=8bZh5LMaSmE">RailsConf 2014 - All the Little Things by Sandi Metz - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=PJjHfa5yxlU">RailsConf 2016 - Get a Whiff of This by Sandi Metz - YouTube</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -595,6 +615,14 @@ You can find more talks / blogs in these places:
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.sandimetz.com/99bottles/">99 Bottles — Sandi Metz</a> <a href="../../Org/notes/books.html#ID-EBB36066-25F3-4ECC-BB1D-3E47F8F91DB1">Judging Code</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.sandimetz.com/99bottles/">99 Bottles — Sandi Metz</a> <a href="../../Org/notes/books.html#ID-3605F2DC-D6A6-4C11-B72B-95DAADA6F282">Rediscovering Simplicity</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
 <a href="https://devchat.tv/ruby-rogues/087-rr-book-club-practical-object-oriented-design-in-ruby-with-sandi-metz">087 RR Book Club: Practical Object-Oriented Design in Ruby with Sandi Metz - Devchat.tv</a>
 </p></div></div>
 
@@ -607,7 +635,7 @@ You can find more talks / blogs in these places:
 
     <div class="post-meta">
         <span title="post date" class="post-info">2017-08-23</span>
-        <span title="last modification date" class="post-info">2017-08-29</span>
+        <span title="last modification date" class="post-info">2017-08-30</span>
         <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a>, <a href="/tags/sandi-metz/">Sandi Metz</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
