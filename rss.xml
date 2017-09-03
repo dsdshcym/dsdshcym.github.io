@@ -4,23 +4,23 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 30 Aug 2017 10:23:57 CST</pubDate>
-    <lastBuildDate>Wed, 30 Aug 2017 10:23:57 CST</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2017 15:49:07 CST</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2017 15:49:07 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Show PR-like commits log in Magit</title>
-      <link>http://dsdshcym.github.io/blog/2017/08/30/show-pr-like-commits-log-in-magit</link>
-      <description><![CDATA[Use magit-log ranges to show PR-like commits log]]></description>
-      <pubDate>2017-08-30</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/08/30/show-pr-like-commits-log-in-magit</guid>
-    </item>
-    <item>
       <title>Sandi Metz&#39;s Rules for OOP</title>
       <link>http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-08-29</pubDate>
+      <description><![CDATA[Sandi Metz's 5 Rules for writing better Object-Oriented Code]]></description>
+      <pubDate>2017-09-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop</guid>
+    </item>
+    <item>
+      <title>Show PR-like commits log in Magit</title>
+      <link>http://dsdshcym.github.io/blog/2017/08/30/show-pr-like-commits-log-in-magit</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2017-08-30</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/08/30/show-pr-like-commits-log-in-magit</guid>
     </item>
     <item>
       <title>Use Hammerspoon to auto switch input methods</title>
