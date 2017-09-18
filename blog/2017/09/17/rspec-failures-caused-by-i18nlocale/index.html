@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>RSpec failures caused by I18n.locale - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="A weired RSpec failure caused by I18n.locale" />
+  <meta name="keywords" content="RSpec, Rails, Test, I18n, locale" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>RSpec failures caused by I18n.locale</h1>
+            <p>
+Recently, I ran into a RSpec issue that an example failed when running
+with all the tests, but it can pass when it's ran separately.
+</p>
+
+<p>
+It's obvious that this test was affected by some other tests. Then I
+found this interesting RSpec failure caused by I18n.
+</p>
+
+<p>
+This blog post is a note about how I found the issue and how I solved
+it.
+</p>
+<div id="outline-container-org42b4436" class="outline-2">
+<h2 id="org42b4436">Find the order dependent failures</h2>
+<div class="outline-text-2" id="text-org42b4436">
+<p>
+Since there were not many tests in this project, and they were not
+running randomly, it was easy for me to find the test <i>files</i> that
+caused the failing example.
+</p>
+
+<p>
+But during my research, I also found that RSpec has a more elegant way
+to find the order dependent failures: <code>rspec --bisect</code>
+</p>
+</div>
+<div id="outline-container-orga914d4f" class="outline-3">
+<h3 id="orga914d4f"><code>rspec --bisect</code></h3>
+<div class="outline-text-3" id="text-orga914d4f">
+<p>
+When we run <code>rspec --bisect</code>, RSpec will:
+</p>
+<ol class="org-ol">
+<li>run all the tests to find the failing examples</li>
+<li>run failing examples independently to check if it's order-dependent</li>
+<li>bisect all the examples to find the minimum example set to
+reproduce the issue</li>
+</ol>
+<p>
+It's way faster than testing it by hand.
+</p>
+<div class="org-src-container">
+<pre><code class="src src-sh">rspec --seed 51012 --bisect
+# Bisect started using options: "--seed 51012"
+# Running suite to find failures... (18.73 seconds)
+# Starting bisect with 1 failing example and 39 non-failing examples.
+# Checking that failure(s) are order-dependent... failure appears to be order-dependent
+
+# Round 1: bisecting over non-failing examples 1-39 .. ignoring examples 21-39 (21.18 seconds)
+# Round 2: bisecting over non-failing examples 1-20 .. ignoring examples 11-20 (21.46 seconds)
+# Round 3: bisecting over non-failing examples 1-10 . ignoring examples 1-5 (9.71 seconds)
+# Round 4: bisecting over non-failing examples 6-10 . ignoring examples 6-8 (9.49 seconds)
+# Round 5: bisecting over non-failing examples 9-10 .. ignoring example 10 (18.34 seconds)
+# Bisect complete! Reduced necessary non-failing examples from 39 to 1 in 1 minute 30.53 seconds.
+
+# The minimal reproduction command is:
+#   rspec './spec/controllers/children_controller_spec.rb[1:1:5:1]' './spec/features/section_spec.rb[1:1:1]' --seed 51012
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b54faa" class="outline-3">
+<h3 id="org4b54faa"><code>minitest-bisect</code></h3>
+<div class="outline-text-3" id="text-org4b54faa">
+<p>
+Turns out minitest also provides an extra package that does the same
+thing: <a href="https://github.com/seattlerb/minitest-bisect">seattlerb/minitest-bisect</a>. Check it out if you are using
+minitest.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c76658" class="outline-2">
+<h2 id="org0c76658">Failing examples caused by <code>i18n.locale</code></h2>
+<div class="outline-text-2" id="text-org0c76658">
+<p>
+After I found the example that caused my feature spec to fail, I
+started debugging the issue. Turns out, it's pretty simple:
+</p>
+<ol class="org-ol">
+<li>A controller spec created some account fixtures, and set its
+language to French</li>
+<li>We're setting the <code>i18n.locale</code> value according to user account's
+language, so <code>i18n.locale = :fr</code> now</li>
+<li>My feature spec is using Capybara to find a button with text
+"Create", but since now the <code>i18n.locale</code> is <code>:fr</code>, the button is
+not showing "Create" (which is for <code>:en</code> locale). Thus this feature
+spec failed.</li>
+</ol>
+<p>
+And this seems to be an old issue for i18n: <a href="https://github.com/svenfuchs/i18n/issues/256">I18n.locale cached in
+rspec · Issue #256 · svenfuchs/i18n</a>
+</p>
+
+<p>
+We have no choice but to reset <code>i18n.locale</code> for every test (by
+setting it directly or setting <code>account</code> fixture's default language to
+<code>:en</code> so that <code>i18n.locale</code> is set to <code>:en</code> every time).
+</p>
+</div>
+</div>
+<div id="outline-container-org7261fa9" class="outline-2">
+<h2 id="org7261fa9">One More Thing: <code>git bisect</code></h2>
+<div class="outline-text-2" id="text-org7261fa9">
+<p>
+Since the <code>i18n.locale</code> behavior in our controller was introduced long
+time ago, I didn't get the chance to use <code>git bisect</code>, which can help
+us to find the commit that caused the test to fail.
+</p>
+
+<p>
+If you are interested in this command, you can also check these
+documents:
+</p>
+<ul class="org-ul">
+<li><a href="https://git-scm.com/docs/git-bisect">Git - git-bisect Documentation</a></li>
+<li><a href="https://robots.thoughtbot.com/git-bisect">git bisect - thoughtbot</a></li>
+</ul>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-09-17</span>
+        <span title="last modification date" class="post-info">2017-09-18</span>
+        <span title="tags" class="post-info"><a href="/tags/rails/">Rails</a>, <a href="/tags/ruby/">Ruby</a>, <a href="/tags/rspec/">RSpec</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
