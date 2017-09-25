@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 18 Sep 2017 14:26:53 CST</pubDate>
-    <lastBuildDate>Mon, 18 Sep 2017 14:26:53 CST</lastBuildDate>
+    <pubDate>Mon, 25 Sep 2017 12:56:06 CST</pubDate>
+    <lastBuildDate>Mon, 25 Sep 2017 12:56:06 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>我是怎么练英语的</title>
+      <link>http://dsdshcym.github.io/blog/2017/09/24/how-do-i-practice-my-english</link>
+      <description><![CDATA[从听说读写四个角度，简单介绍我是如何在日常生活学习中练习英语的]]></description>
+      <pubDate>2017-09-25</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/09/24/how-do-i-practice-my-english</guid>
+    </item>
+    <item>
       <title>RSpec failures caused by I18n.locale</title>
       <link>http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale</link>
-      <description><![CDATA[A weired RSpec failure caused by I18n.locale]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-09-18</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-04-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux</guid>
-    </item>
-    <item>
-      <title>Lisp 的语言特点和价值浅析</title>
-      <link>http://dsdshcym.github.io/blog/2016/06/03/lisp</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-04-07</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2016/06/03/lisp</guid>
     </item>
   </channel>
 </rss>
