@@ -51,37 +51,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org42b0a60">Write short code with good names</a>
+<li><a href="#org2624fc7">Write short code with good names</a>
 <ul>
-<li><a href="#org750dbfc">We need short code because of our bad memories</a></li>
-<li><a href="#org32237cb">We need better names for better abstractions</a></li>
-<li><a href="#org5ff0607">How Sandi Metz's Rules help us write shorter code</a></li>
+<li><a href="#orgcb8d423">We need short code because of our bad memories</a></li>
+<li><a href="#orgcb21492">We need better names for better abstractions</a></li>
+<li><a href="#org5314e83">How Sandi Metz's Rules help us write shorter code</a></li>
 </ul>
 </li>
-<li><a href="#org6eb2907">Sandi Metz's 5 Rules</a>
+<li><a href="#org94f30bb">Sandi Metz's 5 Rules</a>
 <ul>
-<li><a href="#org72fa214">100 lines per class</a></li>
-<li><a href="#orga16261f">5 lines per method</a></li>
-<li><a href="#orge290566">4 parameters per method</a></li>
-<li><a href="#org449aa68">1 object per view</a></li>
-<li><a href="#org1b993fd">2 class names per controller action</a></li>
+<li><a href="#org3f28ccf">100 lines per class</a></li>
+<li><a href="#orgdf3812e">5 lines per method</a></li>
+<li><a href="#org5b56170">4 parameters per method</a></li>
+<li><a href="#orgb53be3b">1 object per view</a></li>
+<li><a href="#orgd563786">2 class names per controller action</a></li>
 </ul>
 </li>
-<li><a href="#org3b292d7">Why do we need these rules?</a>
+<li><a href="#orgfaaa911">Why do we need these rules?</a>
 <ul>
-<li><a href="#orgd87ca35">These Rules are just simplified versions of code metrics.</a></li>
-<li><a href="#orgb2a9109">Rules help us to make better trade-offs</a></li>
+<li><a href="#orgf914dae">These Rules are just simplified versions of code metrics.</a></li>
+<li><a href="#org5d71878">Rules help us to make better trade-offs</a></li>
 </ul>
 </li>
-<li><a href="#org67a8b18">When to break the rule</a></li>
-<li><a href="#org40e138b">Further Reading</a></li>
+<li><a href="#org1868c88">When to break the rule</a></li>
+<li><a href="#orgc4216d7">Further Reading</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org42b0a60" class="outline-2">
-<h2 id="org42b0a60">Write short code with good names</h2>
-<div class="outline-text-2" id="text-org42b0a60">
+<div id="outline-container-org2624fc7" class="outline-2">
+<h2 id="org2624fc7">Write short code with good names</h2>
+<div class="outline-text-2" id="text-org2624fc7">
 <p>
 If I can only use a sentence to describe how to write clean code, I
 would say "Write short code with good names".
@@ -93,9 +93,9 @@ understand than longer code. When it is not more readable, it does not
 have a good name.
 </p>
 </div>
-<div id="outline-container-org750dbfc" class="outline-3">
-<h3 id="org750dbfc">We need short code because of our bad memories</h3>
-<div class="outline-text-3" id="text-org750dbfc">
+<div id="outline-container-orgcb8d423" class="outline-3">
+<h3 id="orgcb8d423">We need short code because of our bad memories</h3>
+<div class="outline-text-3" id="text-orgcb8d423">
 <ul class="org-ul">
 <li>Memory comparison between PC and human
 <ul class="org-ul">
@@ -175,9 +175,9 @@ the blocks below it.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org32237cb" class="outline-3">
-<h3 id="org32237cb">We need better names for better abstractions</h3>
-<div class="outline-text-3" id="text-org32237cb">
+<div id="outline-container-orgcb21492" class="outline-3">
+<h3 id="orgcb21492">We need better names for better abstractions</h3>
+<div class="outline-text-3" id="text-orgcb21492">
 <ul class="org-ul">
 <li><p>
 Short code can be a disaster when it has a bad name.
@@ -261,9 +261,9 @@ better abstractions.
 </ul>
 </div>
 </div>
-<div id="outline-container-org5ff0607" class="outline-3">
-<h3 id="org5ff0607">How Sandi Metz's Rules help us write shorter code</h3>
-<div class="outline-text-3" id="text-org5ff0607">
+<div id="outline-container-org5314e83" class="outline-3">
+<h3 id="org5314e83">How Sandi Metz's Rules help us write shorter code</h3>
+<div class="outline-text-3" id="text-org5314e83">
 <p>
 Sandi Metz's Rules for OOP are some heuristics to force us to write
 shorter code, so that our code cannot grow wildly and become a giant
@@ -272,13 +272,13 @@ piece of mess.
 </div>
 </div>
 </div>
-<div id="outline-container-org6eb2907" class="outline-2">
-<h2 id="org6eb2907">Sandi Metz's 5 Rules</h2>
-<div class="outline-text-2" id="text-org6eb2907">
+<div id="outline-container-org94f30bb" class="outline-2">
+<h2 id="org94f30bb">Sandi Metz's 5 Rules</h2>
+<div class="outline-text-2" id="text-org94f30bb">
 </div>
-<div id="outline-container-org72fa214" class="outline-3">
-<h3 id="org72fa214">100 lines per class</h3>
-<div class="outline-text-3" id="text-org72fa214">
+<div id="outline-container-org3f28ccf" class="outline-3">
+<h3 id="org3f28ccf">100 lines per class</h3>
+<div class="outline-text-3" id="text-org3f28ccf">
 <p>
 <b>A class can be no longer than 100 lines of code.</b>
 </p>
@@ -299,9 +299,9 @@ this class to have more than one reason to change is pretty high</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga16261f" class="outline-3">
-<h3 id="orga16261f">5 lines per method</h3>
-<div class="outline-text-3" id="text-orga16261f">
+<div id="outline-container-orgdf3812e" class="outline-3">
+<h3 id="orgdf3812e">5 lines per method</h3>
+<div class="outline-text-3" id="text-orgdf3812e">
 <p>
 <b>A method can be no longer than 5 lines of code.</b>
 </p>
@@ -372,9 +372,9 @@ will only contain ~5 lines of method calls.
 </ul>
 </div>
 </div>
-<div id="outline-container-orge290566" class="outline-3">
-<h3 id="orge290566">4 parameters per method</h3>
-<div class="outline-text-3" id="text-orge290566">
+<div id="outline-container-org5b56170" class="outline-3">
+<h3 id="org5b56170">4 parameters per method</h3>
+<div class="outline-text-3" id="text-org5b56170">
 <p>
 <b>Pass no more than 4 parameters into a method.</b>
 </p>
@@ -449,9 +449,9 @@ a new abstraction
 </ul>
 </div>
 </div>
-<div id="outline-container-org449aa68" class="outline-3">
-<h3 id="org449aa68"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
-<div class="outline-text-3" id="text-org449aa68">
+<div id="outline-container-orgb53be3b" class="outline-3">
+<h3 id="orgb53be3b"><a id="ID-EF82ECB9-6BEA-482F-B76A-0D8E759A61A6"></a>1 object per view</h3>
+<div class="outline-text-3" id="text-orgb53be3b">
 <p>
 <b>A view template should only refer to 1 object</b>
 </p>
@@ -486,9 +486,9 @@ different partials</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b993fd" class="outline-3">
-<h3 id="org1b993fd">2 class names per controller action</h3>
-<div class="outline-text-3" id="text-org1b993fd">
+<div id="outline-container-orgd563786" class="outline-3">
+<h3 id="orgd563786">2 class names per controller action</h3>
+<div class="outline-text-3" id="text-orgd563786">
 <p>
 <b>A controller action can only use 2 classes</b>.
 </p>
@@ -509,18 +509,18 @@ well<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup></li>
 <li>Unit test service object</li>
 </ol></li>
 </ul></li>
-<li>Facade is explained in <a href="#org449aa68">1 object per view</a></li>
+<li>Facade is explained in <a href="#orgb53be3b">1 object per view</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org3b292d7" class="outline-2">
-<h2 id="org3b292d7">Why do we need these rules?</h2>
-<div class="outline-text-2" id="text-org3b292d7">
+<div id="outline-container-orgfaaa911" class="outline-2">
+<h2 id="orgfaaa911">Why do we need these rules?</h2>
+<div class="outline-text-2" id="text-orgfaaa911">
 </div>
-<div id="outline-container-orgd87ca35" class="outline-3">
-<h3 id="orgd87ca35">These Rules are just simplified versions of code metrics.</h3>
-<div class="outline-text-3" id="text-orgd87ca35">
+<div id="outline-container-orgf914dae" class="outline-3">
+<h3 id="orgf914dae">These Rules are just simplified versions of code metrics.</h3>
+<div class="outline-text-3" id="text-orgf914dae">
 <ul class="org-ul">
 <li>We don't have a perfect standard to measure good code and bad code.
 <ul class="org-ul">
@@ -556,9 +556,9 @@ help us write cleaner code
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb2a9109" class="outline-3">
-<h3 id="orgb2a9109">Rules help us to make better trade-offs</h3>
-<div class="outline-text-3" id="text-orgb2a9109">
+<div id="outline-container-org5d71878" class="outline-3">
+<h3 id="org5d71878">Rules help us to make better trade-offs</h3>
+<div class="outline-text-3" id="text-org5d71878">
 <ul class="org-ul">
 <li>Writing code is about making trade-offs
 <ul class="org-ul">
@@ -578,9 +578,9 @@ their early career, and help them make better decisions<sup><a id="fnr.9" class=
 </div>
 </div>
 </div>
-<div id="outline-container-org67a8b18" class="outline-2">
-<h2 id="org67a8b18">When to break the rule</h2>
-<div class="outline-text-2" id="text-org67a8b18">
+<div id="outline-container-org1868c88" class="outline-2">
+<h2 id="org1868c88">When to break the rule</h2>
+<div class="outline-text-2" id="text-org1868c88">
 <p>
 <b>Until you have good reasons to break them</b>
 </p>
@@ -594,9 +594,9 @@ developers, feel confident to break them</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org40e138b" class="outline-2">
-<h2 id="org40e138b">Further Reading</h2>
-<div class="outline-text-2" id="text-org40e138b">
+<div id="outline-container-orgc4216d7" class="outline-2">
+<h2 id="orgc4216d7">Further Reading</h2>
+<div class="outline-text-2" id="text-orgc4216d7">
 <ul class="org-ul">
 <li>You can find more discussions about these Rules in these places:
 <ul class="org-ul">
@@ -686,7 +686,7 @@ YouTube and watch them all if you have time:
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
     <p>
         Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
         &nbsp;&nbsp;-&nbsp;&nbsp;
