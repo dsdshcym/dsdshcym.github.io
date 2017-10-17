@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>RubyConf China 2017 小记 - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="RubyConf China 2017 随想" />
+  <meta name="keywords" content="RubyConf China 2017" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>RubyConf China 2017 小记</h1>
+            <p>
+离 RubyConf China 2017 结束已经快一个月了，虽然已经比较迟了，但我还是想用这篇文章记录一下我在各个分享中得到的一些收获和感想。
+</p>
+
+<div id="outline-container-orgd765bc9" class="outline-2">
+<h2 id="orgd765bc9">Day 1</h2>
+<div class="outline-text-2" id="text-orgd765bc9">
+</div>
+<div id="outline-container-org17a832c" class="outline-3">
+<h3 id="org17a832c"><a href="https://www.youtube.com/watch?v=I8WXgutnCf4&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">01 - Tylerdiaz - Leveraging the power of NGINX with Ruby</a></h3>
+<div class="outline-text-3" id="text-org17a832c">
+<p>
+Tyler 是来自我的前东家 Strikingly 的高级工程师，可惜在他入职不久后我就离职了，非常遗憾没能和他一起共事。
+</p>
+
+<p>
+当我还在 Strikingly 就职的时候，公司内部就有使用 OpenResty（基于 Lua
+和 NGINX 的 Web 框架）提高性能的尝试与实践。
+</p>
+
+<p>
+这次 Talk 也算是为提高 Rails 应用性能这一需求提供一个新的方案——
+mRuby+NGINX。
+</p>
+
+<p>
+但是这个方案限制也比较多：
+</p>
+<ol class="org-ol">
+<li>不能 require 其他文件</li>
+<li>不能使用现有的 Gem</li>
+<li>只能使用 Ruby 1.9.3 的语法</li>
+</ol>
+<p>
+因此，要在生产环境下使用 mRuby 还是不够实际的。
+</p>
+
+<p>
+（于是这个 Talk 就更像是 Strikingly 产品的一个广告：想要避免这么多坑爹的 NGINX 问题吗？用 Strikingly 吧，我们都帮你处理好了！）
+</p>
+</div>
+</div>
+<div id="outline-container-org8148d50" class="outline-3">
+<h3 id="org8148d50"><a href="https://www.youtube.com/watch?v=9_bXF6L9BRM&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=2">02 - Jan - Ethereum on Ruby</a></h3>
+<div class="outline-text-3" id="text-org8148d50">
+<p>
+介绍以太网的一个 Talk，基本上算是从头把以太网介绍了一遍。
+</p>
+
+<p>
+但是讲师讲得比较枯燥，我之前对以太网也有一点粗浅的认识，但是兴趣不大，便没有仔细听讲（专心在下面写 Phoenix App 了）。
+</p>
+</div>
+</div>
+<div id="outline-container-orgcf6b31b" class="outline-3">
+<h3 id="orgcf6b31b"><a id="ID-E0A421F2-FEA1-4C11-BAC4-0F8348516EED"></a><a href="https://www.youtube.com/watch?v=suZ5Bph99hQ&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=3">03 - 丁盛豪 - Ruby 异步编程奥德赛</a></h3>
+<div class="outline-text-3" id="text-orgcf6b31b">
+<p>
+这个主题是我第三次听东仙队长（丁盛豪）讲了，每次都有新的收获。
+</p>
+
+<p>
+这次的收获如下：
+</p>
+<ol class="org-ol">
+<li><p>
+即使是创业公司，也需要考虑性能问题（万一火了呢？）
+</p>
+
+<p>
+比如之前很火爆的「足记」，就是因为后端异步性能不足，但是产品又太过火爆导致服务几乎不可用，最终失败
+</p></li>
+<li><p>
+软件开发不是一个人的事情，选择应用语言要考虑人均水平
+</p>
+
+<p>
+可能这也是队长开发 midori 做高性能 Ruby 异步 Web 框架的初衷吧，毕竟
+Ruby 确实是一门非常易于上手的语言，就像我找工作时的想法一样：只想要找 Ruby 相关的工作。
+</p>
+
+<p>
+但与之对应的是另一种思路：用程序语言来筛选高水平的工程师（出自
+<i>Hackers and Painters</i> ），比如选择 Lisp 来开发，吸引志趣相投的开发者们。（同样的思想在使用 Elixir 的公司上也有体现<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>）
+</p></li>
+<li><p>
+程序语言的发展要靠不断学习、引进新的特性
+</p>
+
+<p>
+但是在学习 Elixir/Phoenix 的我觉得适当选择合适的工具或许是一个更好的选择吧。就如队长吐槽的那样，Express 什么都没做，更新了 Node.js 的版本，性能就提升了一大截，反超了 midori；Phoenix 本身性能就优秀，还处于早期版本，随着框架迭代，性能也在不断提升，升级 Phoenix 的版本就能让自己的应用性能提升，这样的好事，何乐而不为（而且不会牺牲太多开发效率）。
+</p></li>
+</ol>
+
+<p>
+非常遗憾没有在会上和队长讨论一下对 Elixir 的看法。
+</p>
+</div>
+</div>
+<div id="outline-container-org69f52d0" class="outline-3">
+<h3 id="org69f52d0"><a href="https://www.youtube.com/watch?v=XuKp3511uLw&amp;index=4&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">04 - bhuztez - 如何用 Erlang 快速开发 Web 快速开发框架</a></h3>
+<div class="outline-text-3" id="text-org69f52d0">
+<p>
+B 大的 Talk 可能是没有准备好的原因，效果不是特别好。
+</p>
+
+<p>
+首先，在场的大部分听众基本没有太多的 Erlang 和函数式编程的知识，就算是学过 Elixir（基于 Erlang）的我，看 Erlang 代码也比较吃力，Slides 里又都是大段的 Erlang 代码，很难跟上讲师的节奏。
+</p>
+
+<p>
+其次，我对 Web Framework 的理解还不够深入，很多在讲师看来很理所当然的「背景知识」我都不具备（或者无法对应到 Erlang 的代码上），也让我理解这个 Talk 的难度提高了。
+</p>
+</div>
+</div>
+<div id="outline-container-org7be9f2b" class="outline-3">
+<h3 id="org7be9f2b"><a href="https://www.youtube.com/watch?v=Bolnzxxxb7A&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=5">05 - 侯俊杰 - 关于 Ruby Web 实时通信方案的深度剖析</a></h3>
+<div class="outline-text-3" id="text-org7be9f2b">
+<p>
+和<a href="#orgcf6b31b">东仙队长的 Talk</a> 一样，这是我第二次听这个分享。主要的内容是介绍在 Rails
+App 上加入高性能 WebSocket 支持的几种不同的方案。
+</p>
+
+<p>
+薄荷最终选择的是基于 NCHAN 的解决方案。
+</p>
+
+<p>
+这似乎又是一个 Phoenix 擅长的领域，毕竟 Chris 写 Phoenix 的初衷之一便是在 Rails App 里加入 WebSocket 支持太过痛苦<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>。也因此，Phoenix 有着对 WebSocket 的原生支持： <code>Channel</code> 。
+</p>
+
+<p>
+经过我的一些小实验，在 Phoenix 里写基于 WebSocket 的应用确实非常简单，而且基于 <code>Channel</code> 的抽象和传统的 RESTful server 架构其实非常类似，可以很容易地将旧有的知识迁移过来。
+</p>
+</div>
+</div>
+<div id="outline-container-orgac44a98" class="outline-3">
+<h3 id="orgac44a98"><a href="https://www.youtube.com/watch?v=ffPbRfvOVA0&amp;index=6&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">06 - Leon - ActiveRecord 源码分析及应用扩展</a></h3>
+<div class="outline-text-3" id="text-orgac44a98">
+<p>
+讲师用 Beauty of Mathematics 作为突破口来切入 ActiveRecord，感觉是火上浇油，让一个本已非常抽象的框架架构变得更加抽象了。也难怪大部分听众（包括我在内）都觉得太过枯燥，难以跟上了。
+</p>
+
+<p>
+可能，用更实际一些的例子来讲解 ActiveRecord 工作的流程能更好的将它解释清楚吧。
+</p>
+
+<p>
+至于 Beauty of Mathmatics 这样的鸡汤，就放在另外的话题中吧。
+</p>
+</div>
+</div>
+<div id="outline-container-org37217c4" class="outline-3">
+<h3 id="org37217c4"><a href="https://www.youtube.com/watch?v=eGZ7ogi33so&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=7">07 - 周艺 - 从头开始，打造 Ruby 项目的容器化集成工具</a></h3>
+<div class="outline-text-3" id="text-org37217c4">
+<p>
+这个分享还是非常成功的，向我们展示了一个公司的 CI/CD pipeline 从零到有再到成熟的过程。具体的内容我就暂且略过。
+</p>
+
+<p>
+几个亮点：
+</p>
+<ol class="org-ol">
+<li>Docker 镜像应该越简越好，而不是越小越好</li>
+<li>服务的配置管理要界面化，对不熟悉 devops 的同事会更友好</li>
+</ol>
+
+<p>
+让我疑惑不解的是在 Q&amp;A 环节，有人提到「不应该在开发环境上使用 Docker」，理由是「为了让开发人员能一步一步搭建开发环境，熟悉应用架构」。但我觉得这个理由是不成立的：
+</p>
+<ol class="org-ol">
+<li><p>
+Docker 的意义就在于在不同机器（开发、测试、生产）上统一应用的环境。
+</p>
+
+<p>
+如果没有在开发环境上使用 Docker，那 Docker 的一部分优势（提高开发效率）便无法体现。
+</p>
+
+<p>
+如果搭建本地环境时有靠谱的脚本程序还好，能一定程度上达到类似 Docker
+一件本地部署的效果。
+</p>
+
+<p>
+但若只是老旧的文档，则会让新开发者踩各种坑，这会大大打击新开发者的积极性，也减慢了他上手的速度。
+</p></li>
+<li><p>
+新开发者搭建本地环境对他熟悉应用架构的帮助有限。
+</p>
+
+<p>
+拿 Rails 应用举例，本地开发环境和服务器的生产环境其实有很大的差别：
+</p>
+
+<p>
+大部分 Rails 开发者使用的是 macOS，而生产环境往往是 Linux；即使开发者使用的也是 Linux，很有可能也是不同的发行版。搭建环境的流程和生产环境完全不一样，很难说能让新开发者熟悉环境的搭建流程。
+</p></li>
+</ol>
+
+<p>
+而使用 Docker 的话，则有 Dockerfile 的帮助，新开发者只要阅读这段代码就能理解服务是如何在各个环境下启动的，这比久久不更新的文档以及难以完善的脚本要好得多。
+</p>
+
+<p>
+在我看来，不在本地环境上使用 Docker 唯一的阻碍就只有「工具链的完善程度」了：
+</p>
+<ol class="org-ol">
+<li>对 Emacs 开发 Rails 来说还好，相关的插件都有 Docker 的支持，可以直接跟本地环境一样在 Docker container 下跑相关的测试、维护命令，</li>
+<li>Emacs 下的 Phoenix 开发可能就没有那么完善了，alchemist.el 对 Docker
+的支持还只有一个 issue。</li>
+</ol>
+
+<p>
+至于另外的 Rails 开发者迟迟不接受 Docker 生态，沉浸在 Capistrano 的世界，就是我无法理解的世界了。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4097a5" class="outline-2">
+<h2 id="orga4097a5">Day 2</h2>
+<div class="outline-text-2" id="text-orga4097a5">
+</div>
+<div id="outline-container-orgd876e48" class="outline-3">
+<h3 id="orgd876e48"><a href="https://www.youtube.com/watch?v=sbqLl8rWmu0&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=8">08 - 潘旻琦 - 为 Ruby 设计一款 AOT（Ahead-of-time） 编译器</a></h3>
+<div class="outline-text-3" id="text-orgd876e48">
+<p>
+又是一个干货满满的分享，作者垂涎于 Go 生态下完善的打包系统（特别是对于
+Windows），为 Ruby 也做了一个。
+</p>
+
+<p>
+这方面我想不到比较大众的应用场景，也便不多评论了，有兴趣可看视频。
+</p>
+</div>
+</div>
+<div id="outline-container-orge38a3f5" class="outline-3">
+<h3 id="orge38a3f5"><a href="https://www.youtube.com/watch?v=hwcx3GQyIu0&amp;index=9&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">09 - 祖与占 - 爱因斯坦搞炼丹 - Elixir: A Haskeller's Perspective</a></h3>
+<div class="outline-text-3" id="text-orge38a3f5">
+<p>
+又是一个函数式编程的分享（说是 Elixir，实际上更多的是借 Elixir 来安利
+Haskell）
+</p>
+
+<p>
+比较有收获的有三点：
+</p>
+<ol class="org-ol">
+<li>Null References: The Billion Dollar Mistake
+<ul class="org-ul">
+<li>在不同语言中是如何解决 <code>NoMethodError: undefined method `method'
+     for nil:NilClass</code> 这个问题的
+<dl class="org-dl">
+<dt>Haskell</dt><dd>ADT - Maybe/Monad</dd>
+<dt>Scala</dt><dd>Inheritance - Option</dd>
+<dt>Ruby 2.3</dt><dd>Safe navigation operator</dd>
+</dl></li>
+<li>其实在 Ruby 里更适合用 <code>NullObject</code> 来实现
+<ul class="org-ul">
+<li>用 <code>Safe navigation operator</code> 其实只是指标不治本，而且极其容易违反 <code>Law of Demeter</code></li>
+<li><code>NullObject</code> 则完全避免了 <code>nil</code> 的出现，并且更容易遵循 <code>LSP
+       (Liskov Substitution Principle)</code></li>
+</ul></li>
+</ul></li>
+<li>Sigil
+<ul class="org-ul">
+<li><p>
+Definition from Wikipedia
+</p>
+<blockquote>
+<p>
+In computer programming, a sigil (<i>ˈsɪdʒəl</i>) is a symbol attached
+to a variable name, showing the variable's datatype or scope,
+usually a prefix, as in $foo, where $ is the sigil.
+</p>
+</blockquote></li>
+<li>不同语言中的应用
+<dl class="org-dl">
+<dt>Ruby</dt><dd><p>
+Scope
+</p>
+<pre class="example">
+$GLOBAL_VAR, @instance_variable, @@class_variable
+</pre></dd>
+<dt>Python</dt><dd>Data Type</dd>
+<dt>Elixir</dt><dd><p>
+macro
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmacro sigil_w()
+end
+~w(string tuple)
+</pre>
+</div></dd>
+<dt>Haskell</dt><dd>Overloaded Strings
+Q(uasi)Q(uoter)</dd>
+</dl></li>
+</ul></li>
+<li>Elixir Pattern Matching 是如何实现的？
+<ul class="org-ul">
+<li><a href="https://www.microsoft.com/en-us/research/publication/the-implementation-of-functional-programming-languages/">The Implementation of Functional Programming Languages -
+Microsoft Research</a></li>
+<li><a href="https://github.com/papers-we-love/papers-we-love/tree/master/pattern_matching">papers-we-love/pattern_matching at master ·
+papers-we-love/papers-we-love</a></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4d36f2f" class="outline-3">
+<h3 id="org4d36f2f"><a href="https://www.youtube.com/watch?v=rkvL4FHZg7E&amp;index=10&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">10 - 姜鹏 - 金数据是如何鉴黄的</a></h3>
+<div class="outline-text-3" id="text-org4d36f2f">
+<p>
+介绍 Ruby 项目中使用机器学习鉴黄的案例，我对机器学习兴趣缺缺，但从这个分享中倒是看到了大项目中子系统演进的一个过程：
+</p>
+
+<ul class="org-ul">
+<li>金数据鉴黄模块的开发分为几个 Milestones：
+<ol class="org-ol">
+<li>人工识别</li>
+<li>关键字匹配
+<ul class="org-ul">
+<li>OCR
+<ul class="org-ul">
+<li>tesseract-ocr</li>
+</ul></li>
+<li>并行处理
+<ul class="org-ul">
+<li>gush for sidekiq</li>
+</ul></li>
+<li>文本处理
+<ul class="org-ul">
+<li>正则表达式保留中文</li>
+</ul></li>
+</ul></li>
+<li>机器学习
+<ul class="org-ul">
+<li>Python</li>
+<li>scikit learn</li>
+<li>Supervised Learning</li>
+<li>tf-idf</li>
+<li>SVM</li>
+<li>LinearSVC</li>
+</ul></li>
+</ol></li>
+<li>这实际上是一个很好的 Feature 开发的流程：
+<ol class="org-ol">
+<li>首先，从需求出发，用人工的方式完成任务，而不是一上来就直接用代码实现自动化
+<ul class="org-ul">
+<li>人工方式让我们更好地接触问题，熟悉问题，从而对问题更加了解</li>
+<li>直接写代码则容易让我们失去这个更好的了解问题的机会，容易吃力不讨好</li>
+</ul></li>
+<li>在使用人工手段足够时间之后，尝试用 Ruby 等脚本语言来快速地解决问题，而不是过早优化性能
+<ul class="org-ul">
+<li>在子项目初期，高效解决问题是第一要务</li>
+<li>在子项目初期，性能往往没那么重要</li>
+</ul></li>
+<li>在出现性能问题之后再考虑用其他语言或者框架解决</li>
+</ol></li>
+<li>而之后分享的 Flask 微服务架构也能供有机器学习的 Rails App 借鉴</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org37578ba" class="outline-3">
+<h3 id="org37578ba"><a href="https://www.youtube.com/watch?v=lCy7K-3EAEs&amp;index=11&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">11 - 李亚飞 - mobx-ruby 将前端联动编程带入 Ruby</a></h3>
+<div class="outline-text-3" id="text-org37578ba">
+<p>
+因为一些私人原因，没有听完整。此处便不作评论了。
+</p>
+</div>
+</div>
+<div id="outline-container-orgaeb6981" class="outline-3">
+<h3 id="orgaeb6981"><a href="https://www.youtube.com/watch?v=n90Oguu0g-w&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=12">12 - 刘思远 - Rails 的前端开发之道</a></h3>
+<div class="outline-text-3" id="text-orgaeb6981">
+<p>
+通过制定一系列的内部规范，优化知人项目中的 Rails 前端开发工作流。并用代码来固定这个规范，形成框架。
+</p>
+
+<ul class="org-ul">
+<li>其中提出的前端组件化，以面向对象的方式编写渲染逻辑，让我想起了
+Objects on Rails<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 中 Exhibit 的实现（也是使用面向对象的方式实现
+model 到 view 的对应）。而前端 js 文件的组件化则更进一步，将 js 代码也使用面向对象思想组织起来。</li>
+<li><p>
+另外，讲师提到 Rails 这样的 Full-Stack Application 能让工程师更多地参与到产品设计过程中来
+</p>
+
+<p>
+我对这样的说法是比较同意的。就我个人经验而言，在前后端分离的项目中，确实会对前端部分缺乏了解；而在前后端结合的项目中，则不得不对前端部分也做充分的了解。
+</p>
+
+<p>
+RubyConf China 2017 微信群中对前后端分离的做法也有一个热烈的讨论，有人提出，前后端分离在现在是必须的，也有人提出，要视项目情况而定。
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2bb5c59" class="outline-3">
+<h3 id="org2bb5c59"><a href="https://www.youtube.com/watch?v=M_DUmyRIkQ8&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=13">13 - 张文钿 - A brief introduction to Machine Learning - 如何在 Rails 项目中使用机器学习</a></h3>
+<div class="outline-text-3" id="text-org2bb5c59">
+<p>
+又一个关于机器学习在 Ruby 世界中应用的介绍，其实更多的则是对机器学习的介绍。
+</p>
+
+<p>
+讲师大概将林轩田等几个知名作者的机器学习教程过了一遍，结合了几个 Gem 做讲解。
+</p>
+
+<p>
+最大的收获是「要时不时地跳出自己的舒适区（Web Development），学学新的领域（Machine Learning），会有意想不到的收获」
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc19d49" class="outline-3">
+<h3 id="orgbc19d49"><a href="https://www.youtube.com/watch?v=9TmJZSBYPQA&amp;index=14&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">14 - 刘常洋 - Functional Programming Concepts</a></h3>
+<div class="outline-text-3" id="text-orgbc19d49">
+<p>
+不知道讲师是不是有参考之前 RubyConf 的 Talk，听下来感觉内容和 <a href="https://www.youtube.com/watch?v=25u-pp-7PHE">RubyConf
+2016 - Ruby versus the Titans of FP by Cassandra Cruz</a> 十分类似，但是讲起来枯燥不少，大概是因为后者有足够多的代码做例子，而前者概念居多的原因吧。
+</p>
+</div>
+</div>
+<div id="outline-container-org368bb25" class="outline-3">
+<h3 id="org368bb25"><a href="https://www.youtube.com/watch?v=LfS2P8lgTB0&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS&amp;index=15">15 - 庄表伟 - 我们如何改造 GitLab？</a></h3>
+<div class="outline-text-3" id="text-org368bb25">
+<p>
+来自华为这样量级的分享，感觉之前熬的时间都值得了。
+</p>
+
+<p>
+最大的感触来自于华为在 Fork GitLab 之后遇到的那些坑：虽然现在开源项目的流行让我们的开发变得无比简单，往往有时候我们的需求都已经被一个 Gem 解决了，然而在后期我们的需求变得更加特殊的时候，第三方库往往会成为绊脚石般的存在。
+</p>
+
+<p>
+就如 <a href="https://player.fm/1kGNLY">105: For Display Purposes Only by The Bike Shed</a> 中所讨论的：
+</p>
+<ul class="org-ul">
+<li>Framework brings extra feature and complexity at bootstrap phase
+<ul class="org-ul">
+<li>But when you need something different than what the framework
+provides, it's hard to change</li>
+<li>It's like building a skyscraper starting from 50F, but you cannot
+change these floors under 50F</li>
+</ul></li>
+</ul>
+
+<p>
+因此，对第三方库的引入，我们应该更加小心，很多时候，可能自己造轮子反而是最好的解决方案。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=blGJ_p4plbc">ElixirConf 2017 - Phoenix after 100000 lines - Renan Ranelli - YouTube</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://player.fm/1gnCFU">147: Elixir and Phoenix with Chris McCord by The Changelog</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://objectsonrails.com/">Objects on Rails</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-11</span>
+        <span title="last modification date" class="post-info">2017-10-17</span>
+        <span title="tags" class="post-info"><a href="/tags/conf/">Conf</a>, <a href="/tags/rubyconf-china/">RubyConf China</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
