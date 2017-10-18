@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>GOOS: Build a Faster Feedback Loop - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My take-away from Growing Object-Oriented Software Guided by Test" />
+  <meta name="keywords" content="GOOS, Agile, TDD, Feedback Loop" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>GOOS: Build a Faster Feedback Loop</h1>
+            <p>
+I just finished reading Growing Object-Oriented Software Guided by
+Tests (a.k.a GOOS) a few months ago. And it's the best TDD book I've
+read by far. It answered many of my questions about Testing and TDD.
+</p>
+
+<p>
+In this post, I'll explain what I think that is the most valuable
+thing from this book: the point of TDD is all about <b>building a faster
+feedback loop</b>.
+</p>
+
+<div id="outline-container-orgaf07cf0" class="outline-2">
+<h2 id="orgaf07cf0">Why do we need a fast feedback loop?</h2>
+<div class="outline-text-2" id="text-orgaf07cf0">
+<p>
+I think in the reason for this was explained pretty well in <i>Chapter
+1: What Is the Point of Test-Driven Development?</i>:
+</p>
+<ul class="org-ul">
+<li><b>Everything around our software is continuously changing</b></li>
+<li>Our development process is a learning process for us to get more
+familiar with the domain and the tools we have.</li>
+<li><b>To make us learn faster, we need a faster feedback loop.</b></li>
+</ul>
+
+<blockquote>
+<ul class="org-ul">
+<li>Software Development as a Learning Process
+<ol class="org-ol">
+<li>All but the most routine projects have elements of surprise
+<ul class="org-ul">
+<li>Almost all software projects are attempting something that nobody has
+done before</li>
+</ul></li>
+<li>Developers often don't completely understand the technologies they're
+using
+<ul class="org-ul">
+<li>New apps can force even senior dev into unfamiliar corners</li>
+<li>Complex system can be too complex to understand</li>
+</ul></li>
+<li>Customers and users have to look at their organization more closely
+than they have before</li>
+<li>Everyone involved has to learn as it progresses
+<ul class="org-ul">
+<li>They all know there will be changes</li>
+<li>They just don't know what changes</li>
+<li>They need a process to <i>anticipate unanticipated changes</i></li>
+</ul></li>
+</ol></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org455a826" class="outline-2">
+<h2 id="org455a826">How does TDD help us to build a faster feedback loop?</h2>
+<div class="outline-text-2" id="text-org455a826">
+<p>
+TDD requires us to have the following three things, and they all make
+the feedback loop in our development process faster.
+</p>
+</div>
+<div id="outline-container-org6e5f38f" class="outline-3">
+<h3 id="org6e5f38f">Different Levels of Testing</h3>
+<div class="outline-text-3" id="text-org6e5f38f">
+<p>
+<b>We need to have at least two levels of tests</b>:
+</p>
+<ol class="org-ol">
+<li>Acceptance tests
+<ul class="org-ul">
+<li>Acceptance tests set goals for our software's external
+(user-facing) behaviors.</li>
+<li>It has to be as end-to-end and automated as possible.</li>
+<li>So we can know that a feature is completed when its acceptance
+test passes.</li>
+<li>And when it's passed, the code can be accepted into our code
+base. (Thus it's called <b>Acceptance</b> test)</li>
+</ul></li>
+<li>Unit tests
+<ul class="org-ul">
+<li>Unit tests set goals for our software's internal (sub-system)
+behaviors.</li>
+<li>It has to be as simple as possible. (Just test the target unit)</li>
+<li>So we can use these tests as guidance when we write little pieces
+of code.</li>
+</ul></li>
+</ol>
+
+<p>
+These two levels of tests provides different levels of feedback for
+our development process:
+</p>
+<dl class="org-dl">
+<dt>Feature level feedback (outer loops)</dt><dd><p>
+Acceptance tests
+</p>
+
+<p>
+Acceptance tests keep us on the right track for solving our
+users' problems.
+</p></dd>
+<dt>Code level feedback (inner loops)</dt><dd><p>
+Unit tests
+</p>
+
+<p>
+Unit tests keep our internal code quality good, so that our
+software can embrace changes easily when it needs to.
+</p></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgbfbd695" class="outline-3">
+<h3 id="orgbfbd695">Constantly Automated Testing</h3>
+<div class="outline-text-3" id="text-orgbfbd695">
+<p>
+<b>We need to constantly run automated tests when we develop software</b>
+</p>
+
+<p>
+Even if we have two different levels of tests, the feedback loop won't
+help us if we don't run it constantly on our local machines or in our
+CI pipelines.
+</p>
+
+<p>
+GOOS tells us to run our tests constantly. It's definitely the best
+practice because <b>nothing can beat automated tests on feedback
+speeds.</b>
+</p>
+
+<ul class="org-ul">
+<li>With automated tests, the feedback loop length is at <b>milliseconds</b>
+level.</li>
+<li>Without automated tests, say if we need to go to the browser and
+refresh the page every time to test a UI change, the feedback loop
+will be at least <b>seconds</b> long (even with the help of
+auto-reloading, etc.)</li>
+</ul>
+
+<p>
+(P.S. This is also the reason we need to keep our tests fast.)
+</p>
+
+<p>
+From my personal experience, I feel much more comfortable writing
+backend code than frontend code now, because either it takes much more
+time even if the tests are automated or it's just a lot harder to
+automate. And switching to the browser and testing by hand really
+makes me feel a lot more unproductive.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc90b980" class="outline-3">
+<h3 id="orgc90b980">Gather Feedback from Test Results</h3>
+<div class="outline-text-3" id="text-orgc90b980">
+<p>
+<b>We need to constantly check the test results</b>.
+</p>
+
+<p>
+Test results can give us incredible feedback on not only the
+correctness but also many other parts of our code.
+</p>
+
+<p>
+Let's take error messages as an example.
+</p>
+
+<ul class="org-ul">
+<li><p>
+Error messages
+</p>
+
+<p>
+One interesting points raised in GOOS is that we need to make
+improving the diagnostics as part of the TDD cycle.
+</p>
+
+<p>
+In another word, instead of following a typical red-green-refactor TDD
+cycle, the TDD cycle GOOS recommends is that:
+</p>
+<ol class="org-ol">
+<li>Write a failing test (Red)</li>
+<li>Make the diagnostics clear (Watch the test fail)</li>
+<li>Make the test pass (Green)</li>
+<li>Refactor (Refactor)</li>
+</ol>
+<p>
+This cycle makes sure error messages are a important part of the
+feedback our test. Because a good error message help us in three
+ways:
+</p>
+<ol class="org-ol">
+<li>It checks our assumptions about our code. If the message doesn't
+make sense, there must be something wrong.</li>
+<li>It checks our emphasis on expressing our intentions in this test,
+which is fundamental for developing reliable, maintainable
+systems.</li>
+<li>Every time one test fails, we can fix it quickly and spend our
+time on things that matters. (But this is just a nice
+side-effect)</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf02b0b8" class="outline-2">
+<h2 id="orgf02b0b8">Build fast feedback loops in our whole project life cycle.</h2>
+<div class="outline-text-2" id="text-orgf02b0b8">
+<p>
+With these all said, I'm also thinking that we can apply this kind of
+thinking in our project life cycle: <b>build a feedback loop for
+everything we do, and always try to make it faster.</b>
+</p>
+
+<p>
+In the project development process, we have tons of ways to gather
+different feedback, I'll just take a list from GOOS that ranges from
+seconds to months:
+</p>
+
+<ol class="org-ol">
+<li><p>
+Pair programming
+</p>
+
+<p>
+It's interesting to see it here, because it's an even faster loop
+than unit tests. But it makes sense, and that's why it's great to
+pair programming.
+</p></li>
+
+<li>Unit tests</li>
+<li>Acceptance tests</li>
+<li>Daily meetings</li>
+<li>Iterations</li>
+<li><p>
+Releases
+</p>
+
+<p>
+If we can release every day, then all the things above will be
+forced to be faster as well. That's why we need to build daily (or
+even faster).
+</p></li>
+</ol>
+
+<p>
+P.S. Another interesting thing is that we can even take this thinking
+into our daily life: <b>build a fast feedback loop for everything in our
+life</b>.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-18</span>
+        <span title="last modification date" class="post-info">2017-10-18</span>
+        <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/tdd/">TDD</a>, <a href="/tags/agile/">Agile</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
