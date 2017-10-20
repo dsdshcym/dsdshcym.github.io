@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Ruby Tips from Ben Orenstein - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="A great example for writing shorter code from Ben Orenstein&#39;s new Rails course" />
+  <meta name="keywords" content="Ruby Tips" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Ruby Tips from Ben Orenstein</h1>
+            <p>
+Several weeks ago, I posted a blog post about <a href="http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/">Sandi Metz's Rules</a> and
+shout out for writing short code.
+</p>
+
+<p>
+I didn't provide great examples for that article but I found this
+perfect example from Ben Orenstein's new screencast: <a href="https://www.youtube.com/watch?v=0rsilnpU1DU&amp;__s=gdnpmshvmmhtjqmtnhm2">A Grab-Bag of
+Ruby/Rails Tips</a>.
+</p>
+
+<p>
+In this screencast, he steps through a refactoring process that makes
+a code shorter (or more abstracted).
+</p>
+
+<ol class="org-ol">
+<li><p>
+The original code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Post
+  def display_on_featured_page!
+    if created_at &lt; 10.days.ago &amp;&amp; user.has_confirmed_email?
+      update(featured: true)
+    end
+  end
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>It's not clear enough at the first glance what are <code>created_at &lt;
+     10.days.ago</code> and <code>user.has_confirmed_email?</code> doing</li>
+<li>So Ben extracted them into private methods and give them better
+names.</li>
+</ul></li>
+<li><p>
+Extract conditional statement to private methods
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Post
+  def display_on_featured_page!
+    if good_candidate_for_featuring?
+      update(featured: true)
+    end
+  end
+
+  def good_candidate_for_featuring?
+    not_too_old? &amp;&amp; low_spam_risk?
+  end
+
+  private
+
+  def not_too_old?
+    created_at &lt; 10.days.ago
+  end
+
+  def low_spam_risk?
+    user.has_confirmed_email?
+  end
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>After this refactoring, this code's abstraction level is higher
+and the code itself becomes more clear</li>
+<li>But Ben didn't stop at here, he continued discussing about what
+if we need to add another condition into this code: we need to
+add a Policy object handle this</li>
+</ul></li>
+<li><p>
+Policy Object
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Post
+  def display_on_featured_page!
+    if good_candidate_for_featuring?
+      update(featured: true)
+    end
+  end
+
+  def good_candidate_for_featuring?
+    FeatureablePostPolicy.new(self).good_candidate?
+  end
+end
+
+class FeatureablePostPolicy
+  def initiatives(post)
+    @post = post
+  end
+
+  def good_candidate?
+    not_too_old? &amp;&amp; low_spam_risk? # &amp;&amp; ...
+  end
+
+  private
+
+  def not_too_old?
+    @post.created_at &lt; 10.days.ago
+  end
+
+  def low_spam_risk?
+    @post.user.has_confirmed_email?
+  end
+
+  # ...
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>When the logic becomes more and more complicated, it's definitely
+necessary to move them into a separated object (Like
+<code>FeatureablePostPolicy</code>)</li>
+</ul></li>
+</ol>
+
+<p>
+This example shows a perfect path for our code logic to grow:
+</p>
+<ol class="org-ol">
+<li>At first, we write logic directly into our (public) method to pass
+the tests</li>
+<li>Then, we extract some (private) methods as helpers to support the
+original method (with the help of existing tests)</li>
+<li>At last, we extract these (private) methods into a separated new
+object</li>
+</ol>
+
+<p>
+In this screencast, he not only talked about this example, but also
+many other pretty useful tips for Ruby/Rails development.
+</p>
+
+<p>
+And this screencast is actually a part of his new course <a href="http://refactoringrails.io/">Refactoring
+Rails</a>. In this course, he will explain more great ways to refactor
+your Rails application.
+</p>
+
+<p>
+So if you are interested, definitely check them out.
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-20</span>
+        <span title="last modification date" class="post-info">2017-10-20</span>
+        <span title="tags" class="post-info"><a href="/tags/ruby/">Ruby</a>, <a href="/tags/rails/">Rails</a>, <a href="/tags/object-oriented/">Object-Oriented</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
