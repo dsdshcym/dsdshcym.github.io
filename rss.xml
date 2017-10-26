@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 21 Oct 2017 23:37:35 CST</pubDate>
-    <lastBuildDate>Sat, 21 Oct 2017 23:37:35 CST</lastBuildDate>
+    <pubDate>Thu, 26 Oct 2017 17:36:43 CST</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2017 17:36:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Thoughts on &quot;Implementing a Strong Code-Review Culture&quot;</title>
+      <link>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</link>
+      <description><![CDATA[My thoughts and sharing slides for Implementing a Strong Code-Review Culture by Derek Prior]]></description>
+      <pubDate>2017-10-26</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</guid>
+    </item>
+    <item>
       <title>Kingsman: The Goldren Circle Review</title>
       <link>http://dsdshcym.github.io/blog/2017/10/21/kingsman-the-goldren-circle-review</link>
-      <description><![CDATA[看完王牌特工：黄金圈后的一点评价]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-10-21</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/21/kingsman-the-goldren-circle-review</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-08-09</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/08/09/use-hammerspoon-to-auto-switch-input-methods</guid>
-    </item>
-    <item>
-      <title>我看程序语言的历史、现在与将来</title>
-      <link>http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-06-18</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison</guid>
     </item>
   </channel>
 </rss>

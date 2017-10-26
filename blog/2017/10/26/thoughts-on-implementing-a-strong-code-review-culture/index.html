@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Thoughts on &quot;Implementing a Strong Code-Review Culture&quot; - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My thoughts and sharing slides for Implementing a Strong Code-Review Culture by Derek Prior" />
+  <meta name="keywords" content="Code Review, Company Culture" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Thoughts on &quot;Implementing a Strong Code-Review Culture&quot;</h1>
+            
+<div id="outline-container-orga94af49" class="outline-2">
+<h2 id="orga94af49">Why Code-Review is so important?</h2>
+<div class="outline-text-2" id="text-orga94af49">
+<blockquote>
+<p>
+<b>Programming actually is all about empathy</b><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+</blockquote>
+
+<p>
+Because our code is for people to read, and we need to stand in our
+readers' feet to think about our code. Code Review is a great
+opportunity for us to get a reader to read our code as soon as
+possible.
+</p>
+
+<p>
+And as I explained in this post <a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop -
+dsdshome</a>, code review also serves an important role in the life cycle
+of our project.
+</p>
+</div>
+</div>
+<div id="outline-container-org455fced" class="outline-2">
+<h2 id="org455fced">My thoughts on this talk</h2>
+<div class="outline-text-2" id="text-org455fced">
+<p>
+I think this talk has explained almost everything we need to know
+about code review pretty well, from <i>Why we need to do code review</i> to
+<i>What is a strong code review culture</i>, and finally <i>How to do code
+review well</i> (from both perspectives of author and reviewer).
+</p>
+
+<p>
+So, please watch this video if you want to know more about code review.
+</p>
+
+<p>
+P.S.
+</p>
+
+<p>
+When I watched the part about Chief advantages in code reviews, Derek
+used a research from Microsoft, which reminds me of a book <i><a href="http://shop.oreilly.com/product/9780596808303.do">Making
+Software</a></i>. In this book, Andy Oram and Greg Wilson also took several
+researches to explain what really works in the software world. It's
+definitely worth checked out as well.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf078985" class="outline-2">
+<h2 id="orgf078985">Notes from this talk</h2>
+<div class="outline-text-2" id="text-orgf078985">
+<ul class="org-ul">
+<li>Chief advantages in code reviews
+<ol class="org-ol">
+<li>Knowledge Transfer</li>
+<li>Increased Team Awareness</li>
+<li>Finding Alternative Solutions</li>
+</ol></li>
+<li><p>
+Code Review Definition
+</p>
+<blockquote>
+<p>
+The discipline of explaining your code to your peers
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>Code Review is the discipline of discussing your code to your
+peers</li>
+</ul></li>
+<li>Rules of Engagement
+<ol class="org-ol">
+<li>As an author
+<ul class="org-ul">
+<li><p>
+Provide sufficient context
+</p>
+<blockquote>
+<p>
+If content is king, then context is God
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>"Why" is all that matters
+<ol class="org-ol">
+<li>Why does the problem happen?</li>
+<li>Quote from docs</li>
+<li>How this commit solves the problem?</li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li>As an reviewer
+<ul class="org-ul">
+<li>shout out for good parts</li>
+<li>Ask, don't tell
+<ul class="org-ul">
+<li><p>
+Don't use Command
+</p>
+<pre class="example">
+Extract a service to reduce some of this duplication
+</pre>
+<ul class="org-ul">
+<li>Avoid <b>Just</b> do something</li>
+</ul></li>
+<li><p>
+Use Question
+</p>
+<pre class="example">
+What do you think about extracting a service to reduce some of this
+duplication?
+</pre>
+<ul class="org-ul">
+<li>Be <b>Positive</b>
+<ul class="org-ul">
+<li>What do you think about...?</li>
+<li>Did you consider...?</li>
+<li><b>Can you clarify...?</b></li>
+</ul></li>
+</ul></li>
+<li><b>Force technical discussions</b></li>
+<li>Socratic Method</li>
+</ul></li>
+<li>Question All the Things</li>
+</ul></li>
+</ol></li>
+<li>In Practice
+<ul class="org-ul">
+<li>Insist on high quality reviews, but agree to disagree</li>
+<li>Review what's important to you</li>
+</ul></li>
+<li>How to handle disagreements?
+<ul class="org-ul">
+<li>Conflicts are good
+<ul class="org-ul">
+<li>Your team</li>
+<li>Leads to learning</li>
+</ul></li>
+<li>Types
+<ol class="org-ol">
+<li>We don't agree on the issue
+<ul class="org-ul">
+<li>First, have the same bar of quality</li>
+<li>Then, Discuss trade-offs</li>
+</ul></li>
+<li>We don't agree on the process
+<ul class="org-ul">
+<li>Committing directly to master?
+<ol class="org-ol">
+<li>comment on the commit and ask for a PR next time</li>
+<li>pull out the commit and create a PR for them</li>
+</ol></li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li>What should we be reviewing?
+<ul class="org-ul">
+<li>Everyone reviews their expertise</li>
+<li>Example
+<ol class="org-ol">
+<li>Single Responsibility Principle</li>
+<li>Naming</li>
+<li>Complexity
+<ul class="org-ul">
+<li>Squint test</li>
+</ul></li>
+<li>Test Coverage</li>
+</ol></li>
+<li><b>We are NOT doing QA</b>
+<ul class="org-ul">
+<li>Leave that to our tests</li>
+</ul></li>
+</ul></li>
+<li>What About Style?
+<ul class="org-ul">
+<li>Style is important</li>
+<li>But people looks down reviewers focus on style</li>
+<li>Style guide
+<ol class="org-ol">
+<li>Write it down</li>
+<li>Outsource it
+<ul class="org-ul">
+<li>rubocop</li>
+<li>linters</li>
+<li>Hound CI</li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li>Benefits of a Strong Code Review Culture
+<ul class="org-ul">
+<li>A culture that encourages discussion leads us to
+<ol class="org-ol">
+<li>Better Code</li>
+<li>Better Developers</li>
+<li>Team Ownership</li>
+<li>Healthy Debate
+<ul class="org-ul">
+<li>Everybody will own the code now</li>
+<li>Everybody will know what's going on now</li>
+</ul></li>
+</ol></li>
+<li>which will make the company a <b>Better Work Place</b></li>
+</ul></li>
+<li>Questions
+<ul class="org-ul">
+<li>How to get more reviews from senior devs?
+<ul class="org-ul">
+<li>Ask them directly.</li>
+<li>Keep the conversation going on.</li>
+</ul></li>
+<li>How to balance between change size and refactor needs?
+<ul class="org-ul">
+<li>Keep commits small</li>
+<li>Let reviewers walk through the commits log</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ac2110" class="outline-2">
+<h2 id="org5ac2110">Slides for a Sharing on this talk</h2>
+<div class="outline-text-2" id="text-org5ac2110">
+<p>
+In this slides, I used YouTube's <code>start</code> and <code>end</code> parameter to cut
+some parts of a video out to show it to my audience so that they can
+be guided better and this ~40 mins video can be shorten into ~15 mins.
+</p>
+</div>
+
+<div id="outline-container-orgf9b7fd7" class="outline-3">
+<h3 id="orgf9b7fd7">Code Review</h3>
+<div class="outline-text-3" id="text-orgf9b7fd7">
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/PJjmw9TRB7s?rel=0&amp;showinfo=0&amp;start=60&amp;end=325"
+frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="outline-container-org50996d5" class="outline-4">
+<h4 id="org50996d5">Why do we do code reviews?</h4>
+<div class="outline-text-4" id="text-org50996d5">
+<ul class="org-ul">
+<li>Quality Assurance? (Catch Bugs?)
+<ul class="org-ul">
+<li><b>NO</b>, leave that to our test suites</li>
+</ul></li>
+<li><b>It's to improve technical communication in our team</b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b4daac" class="outline-3">
+<h3 id="org1b4daac">Strong Code Review Culture</h3>
+<div class="outline-text-3" id="text-org1b4daac">
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/PJjmw9TRB7s?rel=0&amp;showinfo=0&amp;start=325&amp;end=390"
+frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="outline-container-org45053c7" class="outline-4">
+<h4 id="org45053c7">What is a Strong Code Review Culture?</h4>
+<div class="outline-text-4" id="text-org45053c7">
+<ul class="org-ul">
+<li>The entire team embraces the code review process</li>
+<li><b>Encourages code discussion</b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2cee28" class="outline-3">
+<h3 id="orge2cee28">What to review?</h3>
+<div class="outline-text-3" id="text-orge2cee28">
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/PJjmw9TRB7s?rel=0&amp;showinfo=0&amp;start=1333&amp;end=1547"
+frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="outline-container-orgd4f2851" class="outline-4">
+<h4 id="orgd4f2851">What should we be reviewing?</h4>
+<div class="outline-text-4" id="text-orgd4f2851">
+<ul class="org-ul">
+<li>Everyone reviews their expertise</li>
+<li>Examples
+<ol class="org-ol">
+<li>Single Responsibility Principle</li>
+<li>Naming</li>
+<li>Complexity</li>
+<li>Test Coverage</li>
+</ol></li>
+<li><b>We are NOT doing QA</b>
+<ul class="org-ul">
+<li>Leave that to our tests</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b98494" class="outline-3">
+<h3 id="org8b98494">Benefits of Code Review</h3>
+<div class="outline-text-3" id="text-org8b98494">
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/PJjmw9TRB7s?rel=0&amp;showinfo=0&amp;start=1708&amp;end=1860"
+frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="outline-container-org2cb7cad" class="outline-4">
+<h4 id="org2cb7cad">What's the benefits of a Strong Code Review Culture?</h4>
+<div class="outline-text-4" id="text-org2cb7cad">
+<ul class="org-ul">
+<li>A culture that encourages discussion leads us to
+<ol class="org-ol">
+<li>Better Code</li>
+<li>Better Developers</li>
+<li>Team Ownership</li>
+<li>Healthy Debate</li>
+</ol></li>
+<li>which will make the company a <b>Better Work Place</b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6645e99" class="outline-3">
+<h3 id="org6645e99">Some bad practices I saw</h3>
+<div class="outline-text-3" id="text-org6645e99">
+</div>
+<div id="outline-container-org0943464" class="outline-4">
+<h4 id="org0943464">Not all code are reviewed</h4>
+<div class="outline-text-4" id="text-org0943464">
+<p>
+All changes need to be reviewed in a Merge Request before get merged
+</p>
+</div>
+</div>
+<div id="outline-container-orgaafc51a" class="outline-4">
+<h4 id="orgaafc51a">Test suites are not good enough</h4>
+<div class="outline-text-4" id="text-orgaafc51a">
+<p>
+It's hard to tell if the changes are correct, which makes code review
+harder and more time-consuming
+</p>
+</div>
+</div>
+<div id="outline-container-org500c3d9" class="outline-4">
+<h4 id="org500c3d9">Most people don't know how to review code</h4>
+<div class="outline-text-4" id="text-org500c3d9">
+<p>
+It's another topic but most importantly, it needs practice
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org776eb8b" class="outline-3">
+<h3 id="org776eb8b">What I want from a Strong Code Review Culture</h3>
+<div class="outline-text-3" id="text-org776eb8b">
+</div>
+<div id="outline-container-orgf6f02ac" class="outline-4">
+<h4 id="orgf6f02ac">I want to review others' code</h4>
+<div class="outline-text-4" id="text-orgf6f02ac">
+<ul class="org-ul">
+<li>I can learn how others solve a problem</li>
+<li>I can discuss my thoughts with others</li>
+<li>I can know more about this code base
+<ul class="org-ul">
+<li>via the contexts in a PR</li>
+</ul></li>
+<li>I can improve my code-review skills</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfdbc275" class="outline-4">
+<h4 id="orgfdbc275">I want my code to be reviewed</h4>
+<div class="outline-text-4" id="text-orgfdbc275">
+<ul class="org-ul">
+<li>I can name things better
+<ul class="org-ul">
+<li>with the help from other developers</li>
+</ul></li>
+<li>I can understand my code better
+<ul class="org-ul">
+<li>by explaining it to others</li>
+</ul></li>
+<li>I can learn better solutions
+<ul class="org-ul">
+<li>if there is any</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://devchat.tv/ruby-rogues/023-rr-book-club-smalltalk-best-practice-patterns-with-kent-beck">023 RR Book Club: Smalltalk Best Practice Patterns with Kent Beck - Devchat.tv</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-26</span>
+        <span title="last modification date" class="post-info">2017-10-26</span>
+        <span title="tags" class="post-info"><a href="/tags/code-review/">Code Review</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
