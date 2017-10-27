@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 26 Oct 2017 17:36:43 CST</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2017 17:36:43 CST</lastBuildDate>
+    <pubDate>Fri, 27 Oct 2017 10:21:02 CST</pubDate>
+    <lastBuildDate>Fri, 27 Oct 2017 10:21:02 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>macOS High Sierra 下中文输入法突然消失</title>
+      <link>http://dsdshcym.github.io/blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared</link>
+      <description><![CDATA[macOS 下中文输入法突然消失的解决方案]]></description>
+      <pubDate>2017-10-27</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared</guid>
+    </item>
+    <item>
       <title>Thoughts on &quot;Implementing a Strong Code-Review Culture&quot;</title>
       <link>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</link>
-      <description><![CDATA[My thoughts and sharing slides for Implementing a Strong Code-Review Culture by Derek Prior]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-10-26</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-08-30</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/08/30/show-pr-like-commits-log-in-magit</guid>
-    </item>
-    <item>
-      <title>Use Hammerspoon to auto switch input methods</title>
-      <link>http://dsdshcym.github.io/blog/2017/08/09/use-hammerspoon-to-auto-switch-input-methods</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-08-09</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/08/09/use-hammerspoon-to-auto-switch-input-methods</guid>
     </item>
   </channel>
 </rss>
