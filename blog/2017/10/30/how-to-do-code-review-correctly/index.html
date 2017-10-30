@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>How to do Code Review correctly - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My current take on How to do code review correctly" />
+  <meta name="keywords" content="Code Review, How to" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>How to do Code Review correctly</h1>
+            <p>
+Last week, I posted this post about my <a href="http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture/">Thoughts on "Implementing a
+Strong Code-Review Culture"</a>.
+</p>
+
+<p>
+After that, I shared this talk with my whole team and it was a great
+success: everyone got interested in code review and wanted to do more
+reviews in their daily work. But a question raised up pretty quickly:
+How to do Code Review correctly. (I cut this part out to keep my
+sharing short and just to lure people into the world of Code Review).
+</p>
+
+<p>
+So, in this post, I'll explain my current understanding of how to do
+Code Review correctly and efficiently.
+</p>
+
+<div id="outline-container-org2bee492" class="outline-2">
+<h2 id="org2bee492">Always submit a merge request for review</h2>
+<div class="outline-text-2" id="text-org2bee492">
+<p>
+No matter you are senior or junior, you can always learn something
+from code review.
+</p>
+
+<p>
+No matter your code is a new feature or a hotfix, it can always be
+better after being reviewed.
+</p>
+
+<p>
+So, always send a merge request for a new change and assign it to
+someone to review it.
+</p>
+</div>
+</div>
+<div id="outline-container-orge144d18" class="outline-2">
+<h2 id="orge144d18">Keep your build passing</h2>
+<div class="outline-text-2" id="text-orge144d18">
+<p>
+Though the goal is code discussing, it's still important to keep your
+build passing.
+</p>
+
+<ul class="org-ul">
+<li><b>as the author</b>, you need to do following things before you send the
+MR link to your peer:
+<ol class="org-ol">
+<li>Make sure all the new features in this merge request are covered
+by tests.
+<ul class="org-ul">
+<li>Write integration test (e.g. use Capybara) for the new feature
+(at least cover the happy path)</li>
+<li>Write unit test to test your models, controllers, services, and
+even views</li>
+<li>Attach screenshot for features that's hard to test using Capybara</li>
+</ul></li>
+<li>Make sure style checkers are passing (rubocops, stylelint, eslint)</li>
+<li>Make sure CI pipeline is passing</li>
+</ol></li>
+<li><b>As the reviewer</b>, you need to do following things:
+<ol class="org-ol">
+<li>Make sure CI pipeline is passing (If not, notify the author and
+fix it together)</li>
+<li>Check if all the new features are covered by test cases</li>
+<li>You should be able to NOT check styles in a merge request because
+the style checker in your CI pipeline covers it for you (If it's
+not the case, update your CI settings)</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org7577ec6" class="outline-3">
+<h3 id="org7577ec6">What if CI is failing for something else</h3>
+<div class="outline-text-3" id="text-org7577ec6">
+<p>
+For example, due to a third API failure, CI failed because of a
+non-related test.
+</p>
+
+<p>
+Same solution: <b>DISCUSS</b> it with your reviewer/author.
+</p>
+
+<ul class="org-ul">
+<li>Try to find a way to fix it
+<ol class="org-ol">
+<li>Wrap the third party API in a new class</li>
+<li>Open a new branch/MR for it</li>
+<li>rebase the current branch to this new branch</li>
+</ol></li>
+<li>If you cannot fix it:
+<ol class="org-ol">
+<li>Discuss with your peer and see if it can be merged</li>
+<li>If your peer agrees, let him post a comment under the merge
+request and explain the reason for this failure</li>
+<li>Maybe post a solution for this failure (Open a new task about
+this)</li>
+<li>Merge it</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2c0ce0e" class="outline-2">
+<h2 id="org2c0ce0e">Write reasons down</h2>
+<div class="outline-text-2" id="text-org2c0ce0e">
+<p>
+Don't let the reviewers guess the reasons behind your changes, so,
+</p>
+<ul class="org-ul">
+<li><b>as an author</b>:
+<ol class="org-ol">
+<li><p>
+Make sure you write every commit message with enough contexts
+</p>
+
+<p>
+But it also needs to be pointed out that contexts are really
+important for a message. In another word, you should write down
+<b>*why you are doing this change</b>:
+</p>
+
+<ol class="org-ol">
+<li>Why is this refactor nesseccary? (e.g. The name is clearer)</li>
+
+<li>Why remove this line of code? (e.g. For issue #1234, the code was
+casuing xxx issue, removing it will still keep the behaviors the
+same, but prevent xxx issue from happenning again)</li>
+</ol>
+<p>
+You can also see a great example for commit message with enough
+contexts here: <a href="https://youtu.be/PJjmw9TRB7s?t=7m51s">RailsConf 2015 - Implementing a Strong Code-Review
+Culture - Commit Message Example</a>
+</p></li>
+
+<li><p>
+Make sure you write every Merge Request message with enough contexts
+</p>
+
+<p>
+It's the same idea as writting commit messages.
+</p>
+
+<p>
+You should write down <b>*why and how this merge request can help solve
+the issue</b>
+</p>
+
+<p>
+A good template is like this:
+</p>
+<pre class="example">
+Before this merge request:
+- (list the issues here)
+- (or the reasons for the new feature)
+
+This merge request:
+- (list the changes here)
+- (and try to guide your reviewer to follow your path)
+
+After this merge request:
+- (list the results here)
+- (maybe attach the screenshot as well)
+
+Thus fixes the issue
+</pre></li>
+</ol></li>
+<li>And <b>as a reviewer</b>:
+<ol class="org-ol">
+<li><p>
+Post comments aggresively
+</p>
+
+<p>
+If you think something is wrong, don't just reject the whole merge
+request. Post a comment, and <b>discuss it with the author</b>.
+</p></li>
+
+<li><p>
+Record your discussions on GitLab
+</p>
+
+<p>
+GitLab provides great tools for reviewing a merge request. (Like
+commenting on a line of change, mentioning another MR/issue, etc.) Use
+them well and keep every discussion on GitLab.
+</p>
+
+<p>
+If your conversation happens on Slack, copy/paste it to GitLab comments.
+</p></li>
+
+<li><p>
+Check the commit messages as well
+</p>
+
+<p>
+Code Review is not only about reviewing code changes, we should also
+check if the reason behind these changes are explained well.
+</p>
+
+<p>
+If it's not, you may find yourself in a bad place trying to figure out
+why the code looks like this when you try to <i>blame</i> this code after
+several months.
+</p></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org346c104" class="outline-2">
+<h2 id="org346c104">Keep your merge request small</h2>
+<div class="outline-text-2" id="text-org346c104">
+<p>
+It's hard to review code that's over hundreds of lines long. So, keep
+your changes in a merge request small so that your reviewer will be
+happier to review your code.
+</p>
+
+<p>
+It's the best to keep your merge request small enough so that the
+reviewer can review it in <b>under 10 minutes</b>.
+</p>
+</div>
+<div id="outline-container-org33c2ba2" class="outline-3">
+<h3 id="org33c2ba2">Techniques to keep merge request small</h3>
+<div class="outline-text-3" id="text-org33c2ba2">
+<p>
+Since our merge requests are feature based now, sometimes it's hard to
+keep the whole merge request small. Here are some techniques that
+would help:
+</p>
+
+<ol class="org-ol">
+<li><p>
+Keep your commit small
+</p>
+
+<p>
+Although the merge request can be large, each commits in it can be small
+enough (several lines of changes) and each with enough contexts.
+</p>
+
+<p>
+So that you can guide your reviewer through the same path you went when
+you developed this feature. And it would be easier to understand the
+whole merge request step by step.
+</p></li>
+
+<li><p>
+Use a feature branch
+</p>
+
+<ul class="org-ul">
+<li>Branch out a new feature branch</li>
+<li>Branch out a small feature branch</li>
+<li>Send merge request from small feature branch to feature branch.</li>
+</ul>
+<p>
+So that the reviewer can review one change at a time.
+</p></li>
+
+<li><p>
+Separate Refactor branch and Feature branch
+</p>
+
+<p>
+It's kind of like 2 but worth explained separately.
+</p>
+
+<p>
+It's highly recommended to REFACTOR your code first before you make
+any changes so that the change can be made easier than before.
+</p>
+
+<p>
+It will keep our codebase cleaner, and when a similar change comes,
+it can be added easily as well.
+</p>
+
+<p>
+Another advantage is that, even if the feature is rejected, the
+refactor branch can still be merged, so your work is not completely
+a waste of time.
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orge5e803e" class="outline-2">
+<h2 id="orge5e803e">Review your own merge request</h2>
+<div class="outline-text-2" id="text-orge5e803e">
+<p>
+To make things easier for reviewers, I highly recommend review your
+own merge request before sending it out to them.
+</p>
+</div>
+
+<div id="outline-container-org6d0e26c" class="outline-3">
+<h3 id="org6d0e26c">Fix silly mistakes</h3>
+<div class="outline-text-3" id="text-org6d0e26c">
+<p>
+We all make silly mistakes sometimes, like typos or forgetting to
+finish the descriptions.
+</p>
+
+<p>
+It's the best chance for us to review our own merge requests again and
+fix these embarrassing mistakes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge5191eb" class="outline-3">
+<h3 id="orge5191eb">Review it as a reviewer</h3>
+<div class="outline-text-3" id="text-orge5191eb">
+<p>
+After all, software development is all about empathy and how to make
+other developers understand your code better.
+</p>
+
+<p>
+Reviewing the merge request as the reviewer forces us to check our
+merge requests in our reviewer's perspective. And we can see if the
+code changes, commit messages, merge request descriptions, etc. etc.
+all makes sense to a third person.
+</p>
+
+<p>
+If not, we better fix the problem before we send it out to others.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc7f746e" class="outline-2">
+<h2 id="orgc7f746e">Keep server branches clean</h2>
+<div class="outline-text-2" id="text-orgc7f746e">
+<p>
+It's also important to keep the branches on our server as less as
+possible. It doesn't make sense to keep a merged branch on our server.
+And it will build a barrier for new developers to see what's really
+going on.
+</p>
+
+<p>
+<i>Do not destroy feature/bug/hotfix/refactor branches until they have
+been merged into master branch</i>. But <b>do destroy them after they are
+merged.</b>
+</p>
+
+<ul class="org-ul">
+<li><b>As the author</b>:
+<ul class="org-ul">
+<li>Check the checkbox for <i>Remove source branch when merge request is
+accepted.</i> when you open a new merge request.</li>
+</ul></li>
+<li><b>As the reviewer</b>:
+<ul class="org-ul">
+<li>Check if <i>Remove source branch when merge request is accepted.</i> is
+checked</li>
+<li>If not, delete the branch after the merge request gets merged.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7ea3e4f" class="outline-2">
+<h2 id="org7ea3e4f">When to merge a merge request</h2>
+<div class="outline-text-2" id="text-org7ea3e4f">
+<p>
+The base line is: <b>merge a merge request when another dev approves it</b>
+</p>
+
+<p>
+It doesn't matter who merges it, but the reviewer must give some
+evidence that he/she has reviewed the changes (it can be a thumb-up
+emoji, or a "reviewed" comment)
+</p>
+
+<p>
+So that it's clear that the change has been reviewed and if anything
+goes wrong, both reviewer and author need to take the responsibility
+to fix it.
+</p>
+</div>
+<div id="outline-container-org0425c4c" class="outline-3">
+<h3 id="org0425c4c">When to force merge</h3>
+<div class="outline-text-3" id="text-org0425c4c">
+<p>
+If there is still something unresolved (failing specs, style issues,
+etc.), and this merge request is kind of urgent, you can still merge
+it. But make sure the unresolved issues get solved soon.
+</p>
+
+<p>
+If there are just some style issues, and you trust the author enough,
+you can just merge it and let him/her fix it in another merge request.
+Everyone reviews their expertise Everyone should review their
+expertise. So that everyone can learn the best from each other.
+</p>
+
+<ul class="org-ul">
+<li><b>As the author</b>:
+<ul class="org-ul">
+<li>Send the merge request to different people to review</li>
+<li>Guide them for the changes they need to review</li>
+</ul></li>
+<li><b>As the reviewer</b>:
+(e.g. you are a backend developer and the code is a mix of backend
+and frontend code)
+<ul class="org-ul">
+<li>If the merge request contains something out of your area of
+expertise, don't hesitate to assign the rest of it to someone
+else.</li>
+<li>It's ok to involve developers from outside the project if
+necessary.</li>
+<li>Tell the next developer why you are assigning this merge request
+to them and what parts you'd like them to inspect.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org22219e0" class="outline-2">
+<h2 id="org22219e0">Summary</h2>
+<div class="outline-text-2" id="text-org22219e0">
+<p>
+Here are two lists for both author and reviewer when doing code
+reviews:
+</p>
+<ul class="org-ul">
+<li>As the author
+<ol class="org-ol">
+<li>Before Submitting the Merge Request
+<ol class="org-ol">
+<li>Open a new branch with short and well descriptive name</li>
+<li>Make sure writing every commit message with enough contexts</li>
+<li>Make sure all the new features in this branch are covered by
+tests.</li>
+<li>Make sure style checkers are passing (rubocops, stylelint,
+eslint)</li>
+</ol></li>
+<li>When Submitting the Merge Request
+<ol class="org-ol">
+<li>Make sure CI pipeline is passing</li>
+<li>Make sure writing every Merge Request message with enough
+contexts</li>
+<li>Check the checkbox for <i>Remove source branch when merge request
+is accepted.</i> when you open a new merge request.</li>
+<li>Review the Merge Request as a reviewer again before clicking the
+"Submit" button.</li>
+</ol></li>
+<li>After Submitting the Merge Request
+<ol class="org-ol">
+<li>Send/Assign the merge request to different people to review</li>
+<li>Guide them for the changes they need to review</li>
+</ol></li>
+</ol></li>
+<li>As the reviewer
+<ol class="org-ol">
+<li>Make sure CI pipeline is passing (If not, notify the author and
+fix it together)</li>
+<li>Check if all the new features are covered by test cases</li>
+<li>Check if <i>Remove source branch when merge request is accepted.</i> is
+checked
+<ul class="org-ul">
+<li>You should be able to NOT check styles in a merge request because
+the style checker in your CI pipeline covers it for you (If it's
+not the case, update your CI settings)</li>
+<li>If not, delete the branch after the merge request gets merged.
+(e.g. you are a backend developer and the code is a mix of
+backend and frontend code)</li>
+</ul></li>
+<li>If the merge request contains something out of your area of
+expertise, don't hesitate to assign the rest of it to someone else.
+<ul class="org-ul">
+<li>It's ok to involve developers from outside the project if
+necessary.</li>
+<li>Tell the next developer why you are assigning this merge request
+to them and what parts you'd like them to inspect.</li>
+</ul></li>
+</ol></li>
+</ul>
+
+<p>
+Code Review is an important in our development process. There are
+definitely more to talk about on this topic. Stay tuned for my future
+blog posts if you are interested!
+</p>
+</div>
+</div>
+<div id="outline-container-org0c66066" class="outline-2">
+<h2 id="org0c66066">Other resources for Code Review</h2>
+<div class="outline-text-2" id="text-org0c66066">
+<ul class="org-ul">
+<li><a href="https://webexpo.net/prague2016/talk/how-to-successfully-grow-a-code-review-culture/">How to Successfully Grow a Code Review Culture → WebExpo 2016</a></li>
+<li><a href="http://www.flickering.cn/uncategorized/2014/08/%E8%AE%A9-code-review%E6%88%90%E4%B8%BA%E4%B8%80%E7%A7%8D%E4%B9%A0%E6%83%AF/">让 Code Review 成为一种习惯 - 火光摇曳</a></li>
+<li><a href="http://coolshell.cn/articles/11432.html">从 Code Review 谈如何做技术 - - 酷 壳 - CoolShell</a></li>
+<li><a href="https://blog.scottnonnenberg.com/top-ten-pull-request-review-mistakes/">Top ten pull request review mistakes - Scott Nonnenberg</a></li>
+<li><a href="http://ana-balica.github.io/2017/02/21/code-review-checklist/">Ana Balica - Code review checklist</a></li>
+<li><a href="http://robertheaton.com/2014/06/20/code-review-without-your-eyes/">Code review without your glasses - Robert Heaton</a></li>
+<li><a href="https://www.youtube.com/watch?v=PJjmw9TRB7s">RailsConf 2015 - Implementing a Strong Code-Review Culture - YouTube</a></li>
+</ul>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-30</span>
+        <span title="last modification date" class="post-info">2017-10-30</span>
+        <span title="tags" class="post-info"><a href="/tags/code-review/">Code Review</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
