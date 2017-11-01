@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 30 Oct 2017 18:11:21 CST</pubDate>
-    <lastBuildDate>Mon, 30 Oct 2017 18:11:21 CST</lastBuildDate>
+    <pubDate>Wed, 01 Nov 2017 18:28:14 CST</pubDate>
+    <lastBuildDate>Wed, 01 Nov 2017 18:28:14 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Build an Image Resizing Microservice on AWS Lambda</title>
+      <link>http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda</link>
+      <description><![CDATA[My journey through building an image resizing microservice on AWS Lambda]]></description>
+      <pubDate>2017-11-01</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda</guid>
+    </item>
+    <item>
       <title>How to do Code Review correctly</title>
       <link>http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly</link>
-      <description><![CDATA[My current take on How to do code review correctly]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-10-30</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-09-25</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/09/24/how-do-i-practice-my-english</guid>
-    </item>
-    <item>
-      <title>RSpec failures caused by I18n.locale</title>
-      <link>http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-09-18</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale</guid>
     </item>
   </channel>
 </rss>

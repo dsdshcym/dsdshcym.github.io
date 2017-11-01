@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Build an Image Resizing Microservice on AWS Lambda - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My journey through building an image resizing microservice on AWS Lambda" />
+  <meta name="keywords" content="Image Processing, Microservice, AWS Lambda, Serverless" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Build an Image Resizing Microservice on AWS Lambda</h1>
+            <p>
+Recently, I'm working on a project which uses Carrierwave to resize
+user uploaded images and upload processed images to S3. It's a slow
+process and we want to speed it up.
+</p>
+
+<p>
+After some research and discussion, we decided to use AWS Lambda and
+build a microservice to handle this work.
+</p>
+
+<p>
+I basically followed the steps explained in AWS official blog<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to
+create an image resizing lambda function. I thought it would be a easy
+task. But I still encountered some unexpected problems.
+</p>
+<div id="outline-container-org80013e8" class="outline-2">
+<h2 id="org80013e8">Outdated Instructions</h2>
+<div class="outline-text-2" id="text-org80013e8">
+<p>
+The instructions in that blog post<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup> is pretty clear, but I found
+AWS Lambda had changed some of their UI and setup process so that the
+whole process is a little different now.
+</p>
+
+<p>
+Below is the process I use to setup a new Lambda function.
+</p>
+<ol class="org-ol">
+<li>Create a new S3 bucket
+<ol class="org-ol">
+<li><p>
+set bucket policy
+</p>
+<pre class="example">
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1508988363603",
+    "Statement": [
+        {
+            "Sid": "Stmt1508988359028",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::kidizz-serverless-image-resize-test/*"
+        }
+    ]
+}
+</pre></li>
+<li>setup Static Website Hosting for conditional redirection
+<ul class="org-ul">
+<li>enable website hosting</li>
+<li>index document: index.html</li>
+</ul></li>
+</ol></li>
+<li>Create the Lambda function
+<ol class="org-ol">
+<li>enter name</li>
+<li>set role
+<ul class="org-ul">
+<li><p>
+Edit Policy Document
+</p>
+<pre class="example">
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::__YOUR_BUCKET_NAME_HERE__/*"
+    }
+  ]
+}
+</pre></li>
+</ul></li>
+<li>upload zip file that contains the code
+(<a href="https://github.com/awslabs/serverless-image-resizing/raw/master/dist/function.zip">https://github.com/awslabs/serverless-image-resizing/raw/master/dist/function.zip</a>)</li>
+<li>set environment variables
+<dl class="org-dl">
+<dt>BUCKET</dt><dd><p>
+bucket name
+</p>
+<pre class="example">
+kidizz-serverless-image-resize-test
+</pre></dd>
+<dt>URL</dt><dd><p>
+bucket endpoint
+</p>
+<pre class="example">
+http://kidizz-serverless-image-resize-test.s3-website-us-east-1.amazonaws.com
+</pre></dd>
+</dl></li>
+<li>set Memory to 1536MB</li>
+<li>set timeout to 10s</li>
+<li>setup API Gateway
+<ul class="org-ul">
+<li>for Security, choose <code>Open</code></li>
+</ul></li>
+</ol></li>
+<li>Setup S3 redirection rule
+<ul class="org-ul">
+<li><p>
+Edit Redirection Rules in Static Website Hosting
+</p>
+<pre class="example">
+&lt;RoutingRules&gt;
+  &lt;RoutingRule&gt;
+    &lt;Condition&gt;
+      &lt;KeyPrefixEquals/&gt;
+      &lt;HttpErrorCodeReturnedEquals&gt;404&lt;/HttpErrorCodeReturnedEquals&gt;
+    &lt;/Condition&gt;
+    &lt;Redirect&gt;
+      &lt;Protocol&gt;https&lt;/Protocol&gt;
+      &lt;HostName&gt;__YOUR_API_HOSTNAME_HERE__(qtb42kl5xe.execute-api.us-east-1.amazonaws.com)&lt;/HostName&gt;
+      &lt;ReplaceKeyPrefixWith&gt;prod/resize?key=&lt;/ReplaceKeyPrefixWith&gt;
+      &lt;HttpRedirectCode&gt;307&lt;/HttpRedirectCode&gt;
+    &lt;/Redirect&gt;
+  &lt;/RoutingRule&gt;
+&lt;/RoutingRules&gt;
+</pre></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd0ea25c" class="outline-2">
+<h2 id="orgd0ea25c">Script from Official Repo</h2>
+<div class="outline-text-2" id="text-orgd0ea25c">
+<p>
+Because the manual setup process is kind of On the other hand, the
+scripts in <a href="https://github.com/awslabs/serverless-image-resizing">awslabs/serverless-image-resizing</a> repo is working as
+expected. Just follow the following steps to deploy the code in this
+repo:
+</p>
+<ol class="org-ol">
+<li><p>
+Setup <code>aws-cli</code> tool:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">aws configure
+</pre>
+</div></li>
+<li><p>
+build <code>function.zip</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">make dist
+</pre>
+</div></li>
+<li><p>
+deploy the whole stack
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">./bin/deploy
+</pre>
+</div></li>
+<li><p>
+update the lambda function
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">aws lambda update-function-code --function-name ServerlessImageResize-ResizeFunction-1X6W58ABKICYC --zip-file fileb://dist/function.zip
+</pre>
+</div></li>
+</ol>
+
+<p>
+Notice that in step 3, the deploy script will create following things
+every time:
+</p>
+<ol class="org-ol">
+<li>a S3 bucket for storing images</li>
+<li>a Lambda Function for resizing images</li>
+<li>an API Gateway for calling Lambda if the file is missing in the S3
+bucket.</li>
+</ol>
+
+<p>
+Two drawbacks for this strategy:
+</p>
+<ol class="org-ol">
+<li><p>
+Function updates
+</p>
+
+<p>
+It won't update the Lambda Function for you when you called it next
+time. Instead, we need to use step 4 to do that.
+</p></li>
+
+<li><p>
+Cannot integrate into existing S3 bucket
+</p>
+
+<p>
+In my project's scenario, we already have a S3 bucket running and
+storing things, so we would like to reuse this bucket instead of
+creating a new one.
+</p>
+
+<p>
+But it's hard to achieve via Cloudformation (the core service
+<code>deploy</code> is using, kind of like AWS's <code>docker-compose</code>), since it's
+for setting up new services using a template.
+</p>
+
+<p>
+So, to upgrade our old S3 bucket, I need to follow the steps in
+previous section, and I found it was very error-prone.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2396479" class="outline-2">
+<h2 id="org2396479">Ambiguous Errors from API Gateway</h2>
+<div class="outline-text-2" id="text-org2396479">
+<p>
+When I setup a new lambda for an existing S3 bucket manually, I ran
+into several different errors from API Gateway:
+</p>
+<ol class="org-ol">
+<li><p>
+Internal Server Error
+</p>
+
+<p>
+This is an easy one. It either means there is an exception when
+running the Lambda function, or the API Gateway has some error.
+</p>
+
+<p>
+Most of the time, I just go to CloudWatch (AWS's logging service
+for Lambda), and check the logs, fix the Lambda code, then it would
+be fine.
+</p></li>
+
+<li><p>
+Missing Authentication Token
+</p>
+
+<p>
+This error is both hard and easy.
+</p>
+
+<p>
+It's hard because it's confusing when you see it for the first
+time. And it's reasonable because there are two potential reasons
+for this error:
+</p>
+<ol class="org-ol">
+<li>The API Gateway permission was not set to Open (which means
+calling this API needs to provide some kind of token)</li>
+<li>The invocation link for API Gateway you are using is wrong.</li>
+</ol>
+<p>
+It's easy to understand because it's a common decision we as web
+developers would do to return <code>401 Unauthorized</code> instead of <code>404
+   Not Found</code> for sensitive resources.
+</p>
+
+<p>
+And when I created the API Gateway via the official script, its
+invocation endpoint is <code>/</code>, and I can call it without any problems.
+</p>
+
+<p>
+But when I created the API Gateway via the AWS console, its
+invocation endpoint is <code>/[lambda_name]</code>, but I was still using
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org023b442" class="outline-2">
+<h2 id="org023b442">AWS Region Issue</h2>
+<div class="outline-text-2" id="text-org023b442">
+<p>
+The final issue that cost me two days to debug was about AWS Regions.
+</p>
+
+<p>
+As we know that AWS has different regions to provide their best server
+for developers in different countries. And resources in different
+regions can not be shared quickly.
+</p>
+
+<p>
+When I created the Lambda manually for the first several times, I set
+the region to <code>us-east-1</code> (which is the default one for this account).
+Then, even the configurations for S3 bucket, API Gateway and Lambda
+are all correct, the function call will still timeout and API Gateway
+won't send any response.
+</p>
+
+<p>
+This is a weird issue to an AWS newbie like me, especially when
+</p>
+<ol class="org-ol">
+<li>API Gateway doesn't send any response</li>
+<li>There is no errors in Lambda logs. And the resized images are
+stored correctly.</li>
+<li>The Cloudformation stack setup using the script are working
+correctly.</li>
+</ol>
+<p>
+So I spent almost two days on this.
+</p>
+
+<p>
+And finally, I noticed that the region for the S3 bucket and the
+Lambda function are not the same. So I recreated a Lambda function in
+the same region as the S3 bucket. Then everything works fine.
+</p>
+</div>
+</div>
+<div id="outline-container-org27d7bde" class="outline-2">
+<h2 id="org27d7bde">Summary</h2>
+<div class="outline-text-2" id="text-org27d7bde">
+<p>
+Building a microservice, like image processing, using AWS Lambda is
+really convenient:
+</p>
+<ol class="org-ol">
+<li><p>
+Flexible
+</p>
+
+<p>
+The lambda function can be updated on the fly. And the application
+code can stay the same. (This is one of the main benefits of
+microservices architecture)
+</p>
+
+<p>
+Since we used Carrierwave before, we just need to remove the
+processing blocks for different versions, and override
+<code>store_versions!</code> to doing nothing, Carrierwave will no longer
+process nor upload different versions, but only upload the original
+image. By doing this, the migration would be very smooth. And we
+can refactor our application later.
+</p></li>
+
+<li><p>
+Cost-effective
+</p>
+
+<p>
+AWS Lambda is costing based on the time/memory cost for each call.
+It would be definitely cheaper than a server that's running all the
+time.
+</p></li>
+
+<li><p>
+Fast
+</p>
+
+<p>
+Before, we use Carrierwave to do all the image processing work.
+It's pretty slow from the user's perspective. (Because they need to
+wait for the processing and uploading finished)
+</p>
+
+<p>
+Now, resized images are lazy-loading, i.e. they will be generated
+by Lambda function when user asks for it. When a user uploads the
+original image, we do not need to process it and upload multiple
+versions.
+</p>
+
+<p>
+Thus, this is a huge improvement for our image processing speed.
+</p></li>
+</ol>
+
+<p>
+We will definitely try to use Lambda more in our applications, like
+video processing or other tasks alike. Stay tuned for my updates on
+this topic!
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/">Resize Images on the Fly with Amazon S3, AWS Lambda, and Amazon
+API Gateway - AWS Compute Blog</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-10-31</span>
+        <span title="last modification date" class="post-info">2017-11-01</span>
+        <span title="tags" class="post-info"><a href="/tags/serverless/">Serverless</a>, <a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
