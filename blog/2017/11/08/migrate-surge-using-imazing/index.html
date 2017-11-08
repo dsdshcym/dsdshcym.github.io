@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Migrate Surge using iMazing - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="利用 iMazing 的备份功能恢复已下架的应用（如 Surge）" />
+  <meta name="keywords" content="Surge, iOS, App, iMazing, Backup, Restore" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Migrate Surge using iMazing</h1>
+            <p>
+在首发当天收到了 iPhone X，迁移到了久违的 iOS 系统（上个 iOS 设备还是
+iPhone 4s）。虽然 iOS 系统上的（国产）App 质量高了很多，但是伴随而来的是翻墙的问题：在 Android 上一个 Shadowsocks 就能解决的问题到了 iOS 上变得非常麻烦。
+</p>
+
+<div id="outline-container-org889341c" class="outline-2">
+<h2 id="org889341c">Surge 之前的尝试</h2>
+<div class="outline-text-2" id="text-org889341c">
+<p>
+App Store 中国区在不久之前下架了大部分知名的使用 iOS Network Extension
+建立 VPN 的 App。<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 其中就包括了大名鼎鼎的 Surge。而且这些已下架的应用在「已购买」列表里也不能重新下载，只能转区或者加入 Testflight（但是成本都比较高）。
+</p>
+
+<p>
+刚开始我认为用免费翻墙 App 就能解决问题，（毕竟 Shadowsocks for Android
+也是免费 App 并且不需要配置），便开始尝试：
+</p>
+
+<ol class="org-ol">
+<li>先在中国区尝试了一些没被下架的翻墙 App，但是设计和易用性都比较差。</li>
+<li><p>
+然后便注册了 App Store 美区账号，下载了 Potatso Lite 使用。但是遇到了一个严重的问题是：
+</p>
+
+<p>
+iOS Safari 自带的 Google 搜索是根据 Region 设置决定使用哪个地区的
+Google 的（比如：China 对应 google.cn，Hong Kong 对应 google.com.hk），而且不受到 google.com/ncr 设定的影响，但是 google.cn 需要一次多余的点击跳转到 google.com.hk 才能显示搜索结果，非常烦人。
+</p>
+
+<p>
+Surge 的解决方案是使用 URL Rewrite 针对 google.cn 直接返回
+google.com，这样就省去了一次跳转。
+</p></li>
+<li>最后尝试 Wingy 和 ssrconnect（基于 NEKit 的 iOS 代理 App），但是
+NEKit 也不支持 URL Rewrite，而且 Wingy 也许久不更新了。</li>
+</ol>
+
+<p>
+最后还是只能将就着使用 Potatso Lite，并把 Region 设置为 U.S. 来直接访问 Google（但是会有一些不方便的地方，比如使用 Spotlight 进行货币转换时会默认使用美元计算，以及日历、健康等 App 的默认格式是美式）。
+</p>
+</div>
+</div>
+<div id="outline-container-org0b94891" class="outline-2">
+<h2 id="org0b94891">用 iMazing 恢复 Surge</h2>
+<div class="outline-text-2" id="text-org0b94891">
+<p>
+使用了几天 Potatso Lite 之后，在 V2EX 上偶然看到一个帖子下的回复<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+提到可以使用 iMazing 绕过 App Store 无法直接下载下架应用的限制恢复中国区 Surge，便赶紧迁移了。
+</p>
+
+<ol class="org-ol">
+<li>安装 iMazing（不是 iMazing Mini），试用即可</li>
+<li>连接装有 Surge 的 iOS 设备</li>
+<li>进入 Apps</li>
+<li>选择 Surge 并 Copy to Mac（iMazing 此时需要进行一次备份才能提取出
+Surge）</li>
+<li>等待备份完成</li>
+<li>连接新 iOS 设备</li>
+<li>点击 Copy to Device 并选择 Surge（iMazing 同样要进行一次备份才能同步）</li>
+<li>等待恢复完成设备重启</li>
+</ol>
+
+<p>
+我猜测 iMazing 是利用了 iTunes 的恢复备份功能，因为设备重启后显示「Restore Completed」
+</p>
+</div>
+</div>
+<div id="outline-container-org6cb0da8" class="outline-2">
+<h2 id="org6cb0da8">Update：直接使用 iMazing 下载 Surge</h2>
+<div class="outline-text-2" id="text-org6cb0da8">
+<p>
+昨天又看到 V2EX 另一个帖子更新提到：可以直接通过 iMazing 下载 ipa 并安装了：
+</p>
+<ul class="org-ul">
+<li><a href="https://www.v2ex.com/t/404477#r_4940604">imazing 可以用来安装 / 更新已经下架的应用 - V2EX</a></li>
+<li><a href="https://trello.com/c/gAcTOWVy/51-surge-ios-%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%9B%B4%E6%96%B0%E4%B8%8E%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97">Surge iOS 中国区更新与重新安装操作指南 on Surge | Trello</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.v2ex.com/t/378811?p=1#r_4580619">部分使用 Network Extension 功能的 app 在国区被下架 - V2EX</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.v2ex.com/t/403848#r_4932489">现在 Apple ID 没办法换区加拿大了？</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-11-08</span>
+        <span title="last modification date" class="post-info">2017-11-08</span>
+        <span title="tags" class="post-info"><a href="/tags/ios/">iOS</a>, <a href="/tags/app/">App</a>, <a href="/tags/gfw/">GFW</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
