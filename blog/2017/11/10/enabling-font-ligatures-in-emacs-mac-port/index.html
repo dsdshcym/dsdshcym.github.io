@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Enabling Font Ligatures in emacs-mac-port - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="How to enable font ligatures in =emacs-mac-port=" />
+  <meta name="keywords" content="Font, Ligature, Emacs, Mac" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Enabling Font Ligatures in emacs-mac-port</h1>
+            
+<div id="outline-container-org4bd6dc9" class="outline-2">
+<h2 id="org4bd6dc9">Iosevka</h2>
+<div class="outline-text-2" id="text-org4bd6dc9">
+<p>
+Several months ago, I switched to using Iosevka<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> as my main font
+for both editor and terminal.
+</p>
+
+<p>
+It's an awesome font with reasonable defaults while providing the same
+customizability as Input<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+</p>
+
+<p>
+Additionally, it also supports font ligatures<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> (while Input
+removed its support for ligatures in its latest version<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>)
+</p>
+</div>
+</div>
+<div id="outline-container-org9a4149d" class="outline-2">
+<h2 id="org9a4149d">Cause</h2>
+<div class="outline-text-2" id="text-org9a4149d">
+<p>
+I first noticed this feature in a talk given by Dave Thomas<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>. In
+this talk, his Elixir code looked better in Emacs with the font
+ligature feature enabled. (Though, he's using a different font,
+<code>FiraCode</code> maybe)
+</p>
+
+
+<div class="figure">
+<p><img src="https://i.loli.net/2017/11/10/5a0576e364c10.jpg" alt="5a0576e364c10.jpg" width="75%" />
+</p>
+</div>
+
+<p>
+So I tried to get the same effect in my Emacs.
+</p>
+</div>
+</div>
+<div id="outline-container-org53ca05c" class="outline-2">
+<h2 id="org53ca05c">How</h2>
+<div class="outline-text-2" id="text-org53ca05c">
+<p>
+Then I found this simple function to enable this feature for
+<code>emacs-mac-port</code><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(mac-auto-operator-composition-mode t)
+</pre>
+</div>
+
+<p>
+Unfortunately, this function does not exist in GNU Emacs for macOS.
+Because GNU Emacs doesn't support font ligature yet. (You can kind of
+enable it via <code>prettify-symbol-mode</code><sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>)
+</p>
+
+<p>
+(P.S. actually, I've tried to move back to GNU Emacs for a lightly
+better performance. But I found I kinda missed this font ligature
+feature and other nicer integration with the whole macOS system. And
+the performance of <code>emacs-mac-port</code> got better and better through
+Emacs 25 and Emacs 26.0.90. So I think I'm gonna stick with
+<code>emacs-mac-port</code> for a while.)
+</p>
+
+<p>
+The result looks like this:
+</p>
+
+
+<div class="figure">
+<p><img src="https://i.loli.net/2017/11/10/5a057968d79e1.jpg" alt="5a057968d79e1.jpg" width="75%" />
+</p>
+</div>
+
+<p>
+Hope this post can help you! And you can find more information below:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/tonsky/FiraCode/issues/42">What would it take to get ligatures working in emacs? · Issue #42 · tonsky/FiraCode</a></li>
+<li><a href="https://github.com/be5invis/Iosevka/issues/56#issuecomment-291626486">Programming Ligatures (like in Fira Code—or PragmataPro) · Issue #56 · be5invis/Iosevka</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/be5invis/Iosevka">be5invis/Iosevka: Spatial efficient monospace font family for programming. Built from code.</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://input.fontbureau.com/">Input: Fonts for Code</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Typographic_ligature">Typographic ligature - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://input.fontbureau.com/changelog/">http://input.fontbureau.com/changelog/</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=fTYkbPBOt1o">ElixirDaze 2017- Yesterday's Cargo by Dave Thomas - YouTube</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://bitbucket.org/mituharu/emacs-mac/">mituharu / emacs-mac — Bitbucket</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://gist.github.com/mrkgnao/49c7480e1df42405a36b7ab09fe87f3d">Render Iosevka ligatures to Private Use Area glyphs, for Emacs</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-11-10</span>
+        <span title="last modification date" class="post-info">2017-11-10</span>
+        <span title="tags" class="post-info"><a href="/tags/macos/">macOS</a>, <a href="/tags/emacs/">Emacs</a>, <a href="/tags/font/">Font</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
