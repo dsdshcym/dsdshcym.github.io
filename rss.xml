@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 10 Nov 2017 18:20:28 CST</pubDate>
-    <lastBuildDate>Fri, 10 Nov 2017 18:20:28 CST</lastBuildDate>
+    <pubDate>Mon, 20 Nov 2017 22:11:24 CST</pubDate>
+    <lastBuildDate>Mon, 20 Nov 2017 22:11:24 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Safari 11 CJK 伪粗体问题</title>
+      <link>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</link>
+      <description><![CDATA[Safari 11 中的 CJK 伪粗体问题已经在 Safari Technology Preview 版本中修复了]]></description>
+      <pubDate>2017-11-20</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</guid>
+    </item>
+    <item>
       <title>Enabling Font Ligatures in emacs-mac-port</title>
       <link>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</link>
-      <description><![CDATA[How to enable font ligatures in =emacs-mac-port=]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-11-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-10-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop</guid>
-    </item>
-    <item>
-      <title>RubyConf China 2017 小记</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/11/rubyconf-china-2017</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-17</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/11/rubyconf-china-2017</guid>
     </item>
   </channel>
 </rss>
