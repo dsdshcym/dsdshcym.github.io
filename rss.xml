@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 20 Nov 2017 22:11:24 CST</pubDate>
-    <lastBuildDate>Mon, 20 Nov 2017 22:11:24 CST</lastBuildDate>
+    <pubDate>Wed, 22 Nov 2017 18:18:04 CST</pubDate>
+    <lastBuildDate>Wed, 22 Nov 2017 18:18:04 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Sony WH-1000XM2 Review</title>
+      <link>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</link>
+      <description><![CDATA[My Review for Sony WH-1000XM2 Noise Canceling Headphone]]></description>
+      <pubDate>2017-11-22</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</guid>
+    </item>
+    <item>
       <title>Safari 11 CJK 伪粗体问题</title>
       <link>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</link>
-      <description><![CDATA[Safari 11 中的 CJK 伪粗体问题已经在 Safari Technology Preview 版本中修复了]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-11-20</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-10-20</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/20/ruby-tips-from-ben-orenstein</guid>
-    </item>
-    <item>
-      <title>GOOS: Build a Faster Feedback Loop</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-19</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop</guid>
     </item>
   </channel>
 </rss>
