@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Retrospect on Image Processing Using AWS Lambda - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Why I think AWS Lambda is not suitable for image processing. And why I think it&#39;s what microservices should be like." />
+  <meta name="keywords" content="AWS, Lambda, Serverless, Image Processing" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Retrospect on Image Processing Using AWS Lambda</h1>
+            <p>
+Recently, I wrote a post about <a href="http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/">processing images using AWS Lambda</a>. I
+finished this project and deployed the changes to the production this
+week, and I find that I have more to say on this topic. So, this post
+is basically a followup on my previous one.
+</p>
+
+<div id="outline-container-org8389b24" class="outline-2">
+<h2 id="org8389b24">TL;DR</h2>
+<div class="outline-text-2" id="text-org8389b24">
+<p>
+I <b>DO NOT</b> recommend using Lambda to process images in your S3 bucket
+and generate different versions for your applications.
+</p>
+
+<p>
+Two better choices are:
+</p>
+
+<ol class="org-ol">
+<li>Process images on frontend, upload them directly to S3</li>
+<li>Upload images to S3, trigger a Lambda function to generate
+different versions (Just do not dynamically generate new versions
+when the requests come)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgcda45c5" class="outline-2">
+<h2 id="orgcda45c5">Drawbacks of using Lambda to processing images on S3</h2>
+<div class="outline-text-2" id="text-orgcda45c5">
+<p>
+An important step for setting up a image processing lambda in my
+previous post is to setup Static Website Hosting for the S3 bucket to
+allow it redirect requests to API Gateway when the requested image
+does not exist.
+</p>
+
+<p>
+This name of this feature, actually was a huge
+warning. Static Website Hosting, is it only for hosting static
+websites like blogs?
+</p>
+</div>
+<div id="outline-container-org21bf51e" class="outline-3">
+<h3 id="org21bf51e">Key Differences Between the Amazon Website and the REST API Endpoint</h3>
+<div class="outline-text-3" id="text-org21bf51e">
+<p>
+Most of the time, when we use S3 as the storage solution for our
+application, we are using the REST API Endpoint to access the S3
+bucket.
+</p>
+
+<p>
+But for Static Website Hosting, we are using the Website Endpoint for
+the S3 bucket.
+</p>
+
+<p>
+You can see the key differences between these two APIs below<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Key Difference</th>
+<th scope="col" class="org-left">REST API Endpoint</th>
+<th scope="col" class="org-left">Website Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Access control</td>
+<td class="org-left">Supports both public and private content.</td>
+<td class="org-left"><b>Supports only publicly readable content.</b></td>
+</tr>
+
+<tr>
+<td class="org-left">Error message handling</td>
+<td class="org-left">Returns an XML-formatted error response.</td>
+<td class="org-left">Returns an HTML document.</td>
+</tr>
+
+<tr>
+<td class="org-left">Redirection support</td>
+<td class="org-left"><b>Not applicable</b></td>
+<td class="org-left">Supports both object-level and bucket-level redirects.</td>
+</tr>
+
+<tr>
+<td class="org-left">Requests supported</td>
+<td class="org-left">Supports all bucket and object operations</td>
+<td class="org-left"><b>Supports only GET and HEAD requests on objects.</b></td>
+</tr>
+
+<tr>
+<td class="org-left">Responses to GET and HEAD requests at the root of a bucket</td>
+<td class="org-left">Returns a list of the object keys in the bucket.</td>
+<td class="org-left">Returns the index document that is specified in the website configuration.</td>
+</tr>
+
+<tr>
+<td class="org-left">Secure Sockets Layer (SSL) support</td>
+<td class="org-left">Supports SSL connections.</td>
+<td class="org-left"><b>Does not support SSL connections.</b></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+I also highlighted some of the differences in this table. Let me
+explain them one by one:
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2241da" class="outline-3">
+<h3 id="orgb2241da">Supports only publicly readable content</h3>
+<div class="outline-text-3" id="text-orgb2241da">
+<p>
+A S3 bucket for Static Website Hosting only supports publicly readable
+content.
+</p>
+
+<p>
+Before we migrated our image processing service to AWS Lambda, our S3
+bucket was private all the time. Even when I was setting up the Lambda
+function, I still thought the S3 bucket could still be private. We
+didn't realize this issue until we tried to update the CloudFront
+configuration for the S3 bucket:
+</p>
+
+<p>
+<b>The CloudFront configuration won't treat a Static Website Hosting S3
+bucket URL as a S3 bucket</b>. So that, it cannot use an Origin Access
+Identity to access a private S3 bucket, which forces us to make the S3
+bucket public. (We were able to do that because it was basically
+public before since user can access any files in this bucket via
+CloudFront.)
+</p>
+
+<p>
+But this is completely unacceptable for applications that need more
+privacy control over user generated contents (images, videos, etc.).
+</p>
+</div>
+</div>
+<div id="outline-container-org72e95e3" class="outline-3">
+<h3 id="org72e95e3">Support only GET and HEAD requests on objects</h3>
+<div class="outline-text-3" id="text-org72e95e3">
+<p>
+This limit makes it impossible to use the same endpoint for image
+hosting and uploading.
+</p>
+
+<p>
+My solution to this issue was adding a new endpoint for uploading,
+which means we need to make our application setup more complicated by
+</p>
+<ol class="org-ol">
+<li>Creating an extra CloudFront Distribution for uploading.</li>
+<li>Adding a new endpoint to our config files.</li>
+</ol>
+
+<p>
+A better solution is to use multiple Origins on CloudFront. So that
+the default Origin can still use S3 RESTful API, and a new Origin can
+use the Website Hosting API. And CloudFront can dispatch requests to
+these 2 Origins based on the requested URL pattern. For example:
+</p>
+<ul class="org-ul">
+<li><code>original_images/*</code> will fallback to the default Origin, which
+allows users to get original images and upload images to S3.</li>
+<li><code>processed_images/*</code> will be dispatched to the Website Hosting
+Origin. And the Lambda function will get called. But users cannot
+upload anything to this folder through your application.</li>
+</ul>
+<p>
+(Note that even if you choose this solution, you still need to make
+<code>processed_images</code> folder public to allow CloudFront to get images
+from it.)
+</p>
+
+<p>
+We couldn't use this solution because we needed to keep backward
+compatibility for our images URL pattern so that this upgrade would
+not break anything.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb23414d" class="outline-3">
+<h3 id="orgb23414d">Does not support SSL connections</h3>
+<div class="outline-text-3" id="text-orgb23414d">
+<p>
+This is another unacceptable limitation because the whole web is
+migrating to HTTPS now.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb234047" class="outline-2">
+<h2 id="orgb234047">Summary</h2>
+<div class="outline-text-2" id="text-orgb234047">
+<p>
+I think with even one drawback listed above, this solution will not be
+suitable for a modern web application. With all these limitations, I
+guess this architecture can only be used for static sites like blogs
+to add a bit more dynamical behavior to its assets.
+</p>
+
+<p>
+I really hope AWS can reduce their constraints on Static Website
+Endpoints for S3 buckets, or add a trigger by requests for a
+non-existing file on S3. But I don't think either of them is possible
+in the near future.
+</p>
+
+<p>
+So, think if you can really afford the drawbacks above before you
+choose this solution.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html">Website Endpoints - Amazon Simple Storage Service</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-11-24</span>
+        <span title="last modification date" class="post-info">2017-11-24</span>
+        <span title="tags" class="post-info"><a href="/tags/serverless/">Serverless</a>, <a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
