@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 24 Nov 2017 17:04:31 CST</pubDate>
-    <lastBuildDate>Fri, 24 Nov 2017 17:04:31 CST</lastBuildDate>
+    <pubDate>Wed, 29 Nov 2017 14:04:35 CST</pubDate>
+    <lastBuildDate>Wed, 29 Nov 2017 14:04:35 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>AWS Lambda is what Microservices should be like</title>
+      <link>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</link>
+      <description><![CDATA[My thoughts on AWS Lambda and Microservices]]></description>
+      <pubDate>2017-11-29</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</guid>
+    </item>
+    <item>
       <title>Retrospect on Image Processing Using AWS Lambda</title>
       <link>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</link>
-      <description><![CDATA[Why I think AWS Lambda is not suitable for image processing. And why I think it's what microservices should be like.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-11-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-10-26</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</guid>
-    </item>
-    <item>
-      <title>Kingsman: The Goldren Circle Review</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/21/kingsman-the-goldren-circle-review</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-21</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/21/kingsman-the-goldren-circle-review</guid>
     </item>
   </channel>
 </rss>

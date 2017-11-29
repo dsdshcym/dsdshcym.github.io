@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>AWS Lambda is what Microservices should be like - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="My thoughts on AWS Lambda and Microservices" />
+  <meta name="keywords" content="Microservices, AWS, Lambda" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>AWS Lambda is what Microservices should be like</h1>
+            <p>
+This post is my third post about AWS Lambda. (You can check my
+previous posts about AWS Lambda <a href="http://dsdshcym.github.io/tags/lambda/">here</a>) This time, I think I should talk
+more about my user experiences through my whole journey of using AWS
+Lambda to build a image resizing Microservice.
+</p>
+
+<div id="outline-container-orgb44f77d" class="outline-2">
+<h2 id="orgb44f77d">TL;DR</h2>
+<div class="outline-text-2" id="text-orgb44f77d">
+<p>
+Building a Microservice with AWS Lambda and API Gateway is a great
+experience, especially in these aspects:
+</p>
+<ol class="org-ol">
+<li>Testing</li>
+<li>Deployment</li>
+<li>Microservice size</li>
+<li>Monitoring/Logging</li>
+<li>Web UI / CLI</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga055276" class="outline-2">
+<h2 id="orga055276">Microservice size</h2>
+<div class="outline-text-2" id="text-orga055276">
+<p>
+First of all, every Lambda function is pretty small. (My image
+processing module only has 200 LOC in total.)
+</p>
+
+<p>
+If a service only has ~100 lines of code, it would be super easy to
+develop/read/debug. (You can read more about small functions'
+advantages in my previous post <a href="http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/">Sandi Metz's Rules for OOP - dsdshome</a>)
+</p>
+</div>
+</div>
+<div id="outline-container-org384e2cf" class="outline-2">
+<h2 id="org384e2cf">Testing</h2>
+<div class="outline-text-2" id="text-org384e2cf">
+<p>
+Amazon has provided docker images for all its available Lambda
+environments: <a href="https://github.com/lambci/docker-lambda">lambci/docker-lambda: Docker images and test runners
+that replicate the live AWS Lambda environment</a>
+</p>
+
+<p>
+When I develop a Lambda function on local, I can just use these docker
+images to create containers that are almost identical to the
+production environments, and use them to test my function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">docker run \
+       -v "$PWD":/var/task \
+       lambci/lambda:nodejs6.10 index.handler '{"queryStringParameters": { "key": "100x100/test_image.jpg" }}'
+</pre>
+</div>
+
+<p>
+(Although in this project, my function need to manipulate images, so
+it's a bit hard to write unit/integration test for it.)
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa24f0f" class="outline-2">
+<h2 id="orgaa24f0f">Deployment</h2>
+<div class="outline-text-2" id="text-orgaa24f0f">
+<p>
+Amazon also provided a <a href="https://github.com/awslabs/serverless-image-resizing/blob/master/Makefile">Makefile</a> to build a lambda function zip file,
+and we can deploy this zip file via <code>aws-cli</code> easily.
+</p>
+<div class="org-src-container">
+<pre class="src src-makefile">.PHONY: all image package dist clean
+
+all: package
+
+image:
+  docker build --tag amazonlinux:nodejs .
+
+package: image
+  docker run --rm --volume ${PWD}/lambda:/build amazonlinux:nodejs npm install --production
+
+dist: package
+  cd lambda &amp;&amp; zip -FS -q -r ../dist/function.zip *
+
+clean:
+  rm -r lambda/node_modules
+  docker rmi --force amazonlinux:nodejs
+</pre>
+</div>
+
+<p>
+After the <code>function.zip</code> is generated, we can deploy it to AWS Lambda
+via <code>aws-cli</code>:
+</p>
+<ol class="org-ol">
+<li><p>
+Deploy it to an existing function:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">aws lambda update-function-code --function-name ServerlessImageResize-ResizeFunction-1CUW6FR1XJJEL --zip-file fileb://dist/function.zip
+</pre>
+</div></li>
+<li><p>
+Setup the whole Microservice architecture via <code>CloudFormation</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">aws cloudformation deploy \
+  --template-file=deploy/output.yaml \
+  --stack-name="${stack_name}" \
+  --capabilities=CAPABILITY_NAMED_IAM
+</pre>
+</div>
+
+<p>
+<code>CloudFormation</code> is like <code>docker-compose</code> for AWS services, it can
+setup AWS services like S3, API Gateway, etc. based on a YAML
+template file.
+</p>
+
+<p>
+For this image resizing lambda function's <code>CloudFormation</code>
+template, you can check it <a href="https://github.com/awslabs/serverless-image-resizing/blob/master/image-resize.yaml">here</a>.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9c71863" class="outline-2">
+<h2 id="org9c71863">Monitoring/Logging</h2>
+<div class="outline-text-2" id="text-org9c71863">
+<p>
+Amazon also provided builtin monitoring and logging support for
+Lambda.
+</p>
+
+<p>
+Every lambda function comes with a monitoring console like this:
+</p>
+
+<div class="figure">
+<p><img src="https://i.loli.net/2017/11/29/5a1e4afdd67c6.jpg" alt="5a1e4afdd67c6.jpg" width="75%" />
+</p>
+</div>
+
+<p>
+We can even go to the CloudWatch console for this Lambda function to
+see the logs.
+</p>
+</div>
+</div>
+<div id="outline-container-org42144be" class="outline-2">
+<h2 id="org42144be">Web UI / CLI</h2>
+<div class="outline-text-2" id="text-org42144be">
+<p>
+All the actions mentioned in this post, can all be done via AWS's web
+user interface or through AWS's command line tool <code>aws-cli</code>. This
+gives developers enough choices to choose the one that suits them the
+best.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc882759" class="outline-2">
+<h2 id="orgc882759">Summary</h2>
+<div class="outline-text-2" id="text-orgc882759">
+<p>
+So, what's the ideal Microservice development experience?
+</p>
+<ol class="org-ol">
+<li>The service codebase should be small enough.</li>
+<li>It has a way to reproduce the production environment on local.
+(e.g. Docker image)</li>
+<li>Developer can run tests in that environment by a single line of
+shell command (or a editor/IDE command)</li>
+<li>Developer can deploy changes using only a single command</li>
+<li>All the actions can be done via Web UI or CLI</li>
+</ol>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-11-28</span>
+        <span title="last modification date" class="post-info">2017-11-29</span>
+        <span title="tags" class="post-info"><a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a>, <a href="/tags/microservices/">Microservices</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
