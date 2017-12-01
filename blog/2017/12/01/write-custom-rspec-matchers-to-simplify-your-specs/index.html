@@ -51,14 +51,14 @@
 Recently, I write a lot of tests for our mobile devices push
 notifications feature (mainly for iOS and Android).
 </p>
-<div id="outline-container-org6e35c10" class="outline-2">
-<h2 id="org6e35c10">Before using a matcher</h2>
-<div class="outline-text-2" id="text-org6e35c10">
+<div id="outline-container-org266e76c" class="outline-2">
+<h2 id="org266e76c">Before using a matcher</h2>
+<div class="outline-text-2" id="text-org266e76c">
 <p>
-We use gem Rpush<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to wrap the logic for sending notifications to
+We use gem <code>Rpush</code><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to wrap the logic for sending notifications to
 iOS/Android devices and keeping a log for these notifications. And
 it's hard to test if an iOS/Android notification has been sent to the
-right device. So my specs only test if a Rpush notification object is
+right device. So my specs only test if a <code>Rpush</code> notification object is
 persisted correctly:
 </p>
 <div class="org-src-container">
@@ -83,9 +83,9 @@ example is really testing if you don't check the <code>it</code> description.)
 </p>
 </div>
 </div>
-<div id="outline-container-org9a2229e" class="outline-2">
-<h2 id="org9a2229e">Ruby Way to Refactor It</h2>
-<div class="outline-text-2" id="text-org9a2229e">
+<div id="outline-container-orgcce9053" class="outline-2">
+<h2 id="orgcce9053">Ruby Way to Refactor It</h2>
+<div class="outline-text-2" id="text-orgcce9053">
 <p>
 After I discovered this problem, I tried to solve it by extracting a
 Ruby method:
@@ -110,14 +110,97 @@ def assert_an_ios_notification_to_be_sent(app, device_token)
 end
 </pre>
 </div>
+</div>
+<div id="outline-container-orgfefb2ab" class="outline-3">
+<h3 id="orgfefb2ab">Higher Level of abstraction</h3>
+<div class="outline-text-3" id="text-orgfefb2ab">
 <p>
-This new helper gives us a new layer of abstraction for testing an iOS
-notification is sent correctly.
+This new helper method raises us to a new level of abstraction for
+testing an iOS notification is sent correctly.
+</p>
+
+<ul class="org-ul">
+<li><p>
+Readability
 </p>
 
 <p>
-If I'm using Minitest, I'll stop here. (But I'm using RSpec.)
-The problem with this solution for RSpec is that its language is not
+The reader can know for sure this function wants to send an
+iOS notification and do not need to care how to really test it.
+</p></li>
+<li><p>
+Better Interface Design
+</p>
+
+<p>
+Another benefit is that this helper method can guide us to a better
+interface.
+</p>
+
+<p>
+If we find that we constantly using this helper method, we may
+consider to
+</p>
+<ol class="org-ol">
+<li>create a new method for <code>Rpush</code> (<code>send_ios_notification</code> in this
+case).</li>
+<li>Then we can just test that message (<code>send_ios_notification</code>) was
+sent to <code>Rpush</code> (or our own wrapper for <code>Rpush</code>),</li>
+<li>and only test the real behavior in <code>Rpush</code>'s specs. (Which will
+speed up our test suites a lot while still provides the same
+reliability for us)</li>
+</ol></li>
+
+<li><p>
+Easier to update
+</p>
+
+<p>
+It's much easier to update code in a helper method than code
+scattered through the codebase.
+</p>
+
+<p>
+Say if we want to only test the <code>send_ios_notification</code> message was
+sent to <code>Rpush</code> instead of testing the notification is created, we
+just need to do that in this helper method.
+</p>
+
+<p>
+For example, at first, I only tested that correct messages were sent
+to <code>Rpush</code> classes:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def assert_an_ios_notification_to_be_sent(app, device_token)
+  notification_spy = instance_spy(Rpush::Apns::Notification)
+
+  allow(Rpush::Apns::Notification).to receive(:new).and_return(notification_spy)
+
+  yield
+
+  expect(notification_spy).to have_received(:app=).with(app)
+  expect(notification_spy).to have_received(:device_token=).with(device_token)
+  expect(notification_spy).to have_received(:save!)
+end
+</pre>
+</div>
+<p>
+Then I found that I could just test the <code>Notification</code> creation, I
+just changed this method and every tests were still passing.
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org68802b2" class="outline-2">
+<h2 id="org68802b2">RSpec Way to Refactor It</h2>
+<div class="outline-text-2" id="text-org68802b2">
+<p>
+If I'm using Minitest, I'll stop refactoring. (But I'm using RSpec.)
+</p>
+
+<p>
+The problem with last solution for RSpec is that its language is not
 very native.
 </p>
 <ol class="org-ol">
@@ -126,11 +209,7 @@ fails and how to fix it</li>
 <li>You cannot chain it with other RSpec matchers with <code>and</code></li>
 <li>it's using <code>assert</code> instead of <code>expect</code></li>
 </ol>
-</div>
-</div>
-<div id="outline-container-org5d92a95" class="outline-2">
-<h2 id="org5d92a95">RSpec Way to Refactor It</h2>
-<div class="outline-text-2" id="text-org5d92a95">
+
 <p>
 So, here comes the RSpec way to refactor our test:
 </p>
@@ -176,9 +255,9 @@ You can check more about how to write a custom RSpec Matcher <a href="https://re
 </p>
 </div>
 </div>
-<div id="outline-container-orgbff7797" class="outline-2">
-<h2 id="orgbff7797">My Ranting about RSpec v.s. Minitest</h2>
-<div class="outline-text-2" id="text-orgbff7797">
+<div id="outline-container-org0b44e53" class="outline-2">
+<h2 id="org0b44e53">My Ranting about RSpec v.s. Minitest</h2>
+<div class="outline-text-2" id="text-org0b44e53">
 <p>
 I really don't understand why RSpec is (or seems to be?) more popular
 than Minitest.
