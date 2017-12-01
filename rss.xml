@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 29 Nov 2017 14:04:35 CST</pubDate>
-    <lastBuildDate>Wed, 29 Nov 2017 14:04:35 CST</lastBuildDate>
+    <pubDate>Fri, 01 Dec 2017 14:28:47 CST</pubDate>
+    <lastBuildDate>Fri, 01 Dec 2017 14:28:47 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Write Custom RSpec Matchers to Simplify Your Specs</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</link>
+      <description><![CDATA[Use custom matcher to make your test's intention clear]]></description>
+      <pubDate>2017-12-01</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</guid>
+    </item>
+    <item>
       <title>AWS Lambda is what Microservices should be like</title>
       <link>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</link>
-      <description><![CDATA[My thoughts on AWS Lambda and Microservices]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-11-29</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-10-27</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared</guid>
-    </item>
-    <item>
-      <title>Thoughts on &quot;Implementing a Strong Code-Review Culture&quot;</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-26</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture</guid>
     </item>
   </channel>
 </rss>

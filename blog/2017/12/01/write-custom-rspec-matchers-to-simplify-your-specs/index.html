@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Write Custom RSpec Matchers to Simplify Your Specs - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Use custom matcher to make your test&#39;s intention clear" />
+  <meta name="keywords" content="RSpec, Custom Matcher, Ruby, Testing, TDD" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="/blog/">Blog</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Write Custom RSpec Matchers to Simplify Your Specs</h1>
+            <p>
+Recently, I write a lot of tests for our mobile devices push
+notifications feature (mainly for iOS and Android).
+</p>
+<div id="outline-container-org6e35c10" class="outline-2">
+<h2 id="org6e35c10">Before using a matcher</h2>
+<div class="outline-text-2" id="text-org6e35c10">
+<p>
+We use gem Rpush<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to wrap the logic for sending notifications to
+iOS/Android devices and keeping a log for these notifications. And
+it's hard to test if an iOS/Android notification has been sent to the
+right device. So my specs only test if a Rpush notification object is
+persisted correctly:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  expect { described_class.send_for(user) }
+    .to(change { Rpush::Apns::Notification.count }.by(1))
+
+  notification = Rpush::Apns::Notification.last
+  expect(notification.app).to eq app
+  expect(notification.device_token).to eq 'DeviceToken'
+end
+</pre>
+</div>
+
+<p>
+But there are multiple <code>expect</code> statements in this test, which makes
+this test's intention ambiguous. (You cannot tell what this test
+example is really testing if you don't check the <code>it</code> description.)
+</p>
+</div>
+</div>
+<div id="outline-container-org9a2229e" class="outline-2">
+<h2 id="org9a2229e">Ruby Way to Refactor It</h2>
+<div class="outline-text-2" id="text-org9a2229e">
+<p>
+After I discovered this problem, I tried to solve it by extracting a
+Ruby method:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  assert_an_ios_notification_to_be_sent(app, 'DeviceToken') do
+    described_class.send_for(user)
+  end
+end
+
+def assert_an_ios_notification_to_be_sent(app, device_token)
+  expect { yield }
+    .to(change { Rpush::Apns::Notification.count }.by(1))
+
+  notification = Rpush::Apns::Notification.last
+  expect(notification.app).to eq app
+  expect(notification.device_token).to eq device_token
+end
+</pre>
+</div>
+<p>
+This new helper gives us a new layer of abstraction for testing an iOS
+notification is sent correctly.
+</p>
+
+<p>
+If I'm using Minitest, I'll stop here. (But I'm using RSpec.)
+The problem with this solution for RSpec is that its language is not
+very native.
+</p>
+<ol class="org-ol">
+<li>You cannot customize the error message to explain why this method
+fails and how to fix it</li>
+<li>You cannot chain it with other RSpec matchers with <code>and</code></li>
+<li>it's using <code>assert</code> instead of <code>expect</code></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5d92a95" class="outline-2">
+<h2 id="org5d92a95">RSpec Way to Refactor It</h2>
+<div class="outline-text-2" id="text-org5d92a95">
+<p>
+So, here comes the RSpec way to refactor our test:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  expect { described_class.send_for(user) }
+    .to send_ios_notification(app, 'DeviceToken')
+  end
+end
+
+RSpec::Matchers.define(:send_ios_notification) do |app, device_token|
+  match(notify_expectation_failures: true) do |action|
+    expect { action.call }
+      .to(change { Rpush::Apns::Notification.count }.by(1))
+
+    notification = Rpush::Apns::Notification.last
+    expect(notification.app).to eq app
+    expect(notification.device_token).to eq device_token
+  end
+
+  supports_block_expectations
+end
+</pre>
+</div>
+<p>
+This solution reads more natural in RSpec's context.
+</p>
+
+<p>
+And better than that, you can even:
+</p>
+<ol class="org-ol">
+<li>customize the error message when the match fails</li>
+<li>chain several matchers together in another matcher to improve your
+test's readability to another level<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
+</ol>
+
+<p>
+You can check more about how to write a custom RSpec Matcher <a href="https://relishapp.com/rspec/rspec-expectations/v/3-7/docs/custom-matchers">here</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbff7797" class="outline-2">
+<h2 id="orgbff7797">My Ranting about RSpec v.s. Minitest</h2>
+<div class="outline-text-2" id="text-orgbff7797">
+<p>
+I really don't understand why RSpec is (or seems to be?) more popular
+than Minitest.
+</p>
+
+<p>
+To me, the second solution is good enough.
+</p>
+
+<p>
+If I'm using Minitest, I just need to
+</p>
+<ol class="org-ol">
+<li>pass the custom error message into <code>assert</code> to get the messages I
+want.</li>
+<li>wrap several <code>assert</code> in a single method to chain them together</li>
+</ol>
+
+<p>
+And the third solution is obviously longer and I need to put it in
+another file (because it's calling <code>RSpec::Matchers.define</code>, which
+seems to be a heavy method).
+</p>
+
+<p>
+Minitest is way faster than RSpec<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, and more importantly, it's
+just pure Ruby.
+</p>
+
+<p>
+I really don't understand what we can get from using RSpec.
+Sacrificing the test speed just to make our tests read like English?
+</p>
+
+<p>
+And what's worse, RSpec has a way higher learning curve than Minitest.
+There are 7 pages for "Custom matchers" and if you want to learn all
+the features RSpec provides, you need to read a lot more
+documentations than Minitest.
+</p>
+
+<p>
+What we really want for writing a great test/spec? Just a true/false
+checker with some message customization availability. (You can even
+write a test framework like this in less than 1 hour<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>) I think
+that's why XTest are successful. They just do this one thing and do
+this very well.
+</p>
+
+<p>
+For RSpec, it does have more features than minitest. But it's way
+slower than Minitest in exchange for these features. (Slower both for
+learning how to write specs and running your specs)
+</p>
+
+<p>
+I just think it's not worth it.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/rpush/rpush">rpush/rpush: The push notification service for Ruby.</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://robots.thoughtbot.com/chain-rspec-matchers-for-improved-test-readability">Chain RSpec Matchers for Improved Test Readability</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://speakerdeck.com/ahawkins/bow-before-minitest">Bow Before MiniTest // Speaker Deck</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=VPr5pmlAq20">RailsConf 2016 Writing a Test Framework from Scratch by Ryan Davis - YouTube</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-01</span>
+        <span title="last modification date" class="post-info">2017-12-01</span>
+        <span title="tags" class="post-info"><a href="/tags/tdd/">TDD</a>, <a href="/tags/rspec/">RSpec</a>, <a href="/tags/ruby/">Ruby</a>, <a href="/tags/minitest/">Minitest</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+<footer class="footer">
+    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+    <p>
+        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+        &nbsp;&nbsp;-&nbsp;&nbsp;
+        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+</footer>
+
+  </body>
+</html>
