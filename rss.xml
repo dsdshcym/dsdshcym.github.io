@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 01 Dec 2017 17:03:35 CST</pubDate>
-    <lastBuildDate>Fri, 01 Dec 2017 17:03:35 CST</lastBuildDate>
+    <pubDate>Tue, 05 Dec 2017 10:46:11 CST</pubDate>
+    <lastBuildDate>Tue, 05 Dec 2017 10:46:11 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>人生的意义</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</link>
+      <description><![CDATA[<TODO: insert your description here>]]></description>
+      <pubDate>2017-12-05</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</guid>
+    </item>
+    <item>
       <title>Write Custom RSpec Matchers to Simplify Your Specs</title>
       <link>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</link>
-      <description><![CDATA[Use custom matcher to make your test's intention clear]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-10-30</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly</guid>
-    </item>
-    <item>
-      <title>macOS High Sierra 下中文输入法突然消失</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-27</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared</guid>
     </item>
   </channel>
 </rss>
