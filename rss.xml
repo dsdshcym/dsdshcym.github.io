@@ -4,14 +4,21 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 05 Dec 2017 10:46:11 CST</pubDate>
-    <lastBuildDate>Tue, 05 Dec 2017 10:46:11 CST</lastBuildDate>
+    <pubDate>Tue, 05 Dec 2017 10:57:15 CST</pubDate>
+    <lastBuildDate>Tue, 05 Dec 2017 10:57:15 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>How to write deliberately unmaintainable code?</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/05/how-to-write-deliberately-unmaintainable-code</link>
+      <description><![CDATA[<TODO: insert your description here>]]></description>
+      <pubDate>2017-12-05</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/05/how-to-write-deliberately-unmaintainable-code</guid>
+    </item>
+    <item>
       <title>人生的意义</title>
       <link>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</link>
-      <description><![CDATA[<TODO: insert your description here>]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-11-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda</guid>
-    </item>
-    <item>
-      <title>How to do Code Review correctly</title>
-      <link>http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-10-30</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly</guid>
     </item>
   </channel>
 </rss>
