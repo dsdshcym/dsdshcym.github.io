@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -59,9 +60,9 @@ thing from this book: the point of TDD is all about <b>building a faster
 feedback loop</b>.
 </p>
 
-<div id="outline-container-org8ddc6ba" class="outline-2">
-<h2 id="org8ddc6ba">Why do we need a fast feedback loop?</h2>
-<div class="outline-text-2" id="text-org8ddc6ba">
+<div id="outline-container-org0e748dc" class="outline-2">
+<h2 id="org0e748dc">Why do we need a fast feedback loop?</h2>
+<div class="outline-text-2" id="text-org0e748dc">
 <p>
 I think in the reason for this was explained pretty well in <i>Chapter
 1: What Is the Point of Test-Driven Development?</i>:
@@ -101,17 +102,17 @@ than they have before</li>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgcf0ddf8" class="outline-2">
-<h2 id="orgcf0ddf8">How does TDD help us to build a faster feedback loop?</h2>
-<div class="outline-text-2" id="text-orgcf0ddf8">
+<div id="outline-container-orgd090093" class="outline-2">
+<h2 id="orgd090093">How does TDD help us to build a faster feedback loop?</h2>
+<div class="outline-text-2" id="text-orgd090093">
 <p>
 TDD requires us to have the following three things, and they all make
 the feedback loop in our development process faster.
 </p>
 </div>
-<div id="outline-container-org527295c" class="outline-3">
-<h3 id="org527295c">Different Levels of Testing</h3>
-<div class="outline-text-3" id="text-org527295c">
+<div id="outline-container-org4000e50" class="outline-3">
+<h3 id="org4000e50">Different Levels of Testing</h3>
+<div class="outline-text-3" id="text-org4000e50">
 <p>
 <b>We need to have at least two levels of tests</b>:
 </p>
@@ -160,9 +161,9 @@ software can embrace changes easily when it needs to.
 </dl>
 </div>
 </div>
-<div id="outline-container-org73f824d" class="outline-3">
-<h3 id="org73f824d">Constantly Automated Testing</h3>
-<div class="outline-text-3" id="text-org73f824d">
+<div id="outline-container-orgb4baa3b" class="outline-3">
+<h3 id="orgb4baa3b">Constantly Automated Testing</h3>
+<div class="outline-text-3" id="text-orgb4baa3b">
 <p>
 <b>We need to constantly run automated tests when we develop software</b>
 </p>
@@ -201,9 +202,9 @@ makes me feel a lot more unproductive.
 </p>
 </div>
 </div>
-<div id="outline-container-org74308ee" class="outline-3">
-<h3 id="org74308ee">Gather Feedback from Test Results</h3>
-<div class="outline-text-3" id="text-org74308ee">
+<div id="outline-container-org9a4cf38" class="outline-3">
+<h3 id="org9a4cf38">Gather Feedback from Test Results</h3>
+<div class="outline-text-3" id="text-org9a4cf38">
 <p>
 <b>We need to constantly check the test results</b>.
 </p>
@@ -237,6 +238,7 @@ cycle, the TDD cycle GOOS recommends is that:
 <li>Make the test pass (Green)</li>
 <li>Refactor (Refactor)</li>
 </ol>
+
 <p>
 This cycle makes sure error messages are a important part of the
 feedback our test. Because a good error message help us in three
@@ -256,9 +258,9 @@ side-effect)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orge0e28b4" class="outline-2">
-<h2 id="orge0e28b4">Build fast feedback loops in our whole project life cycle.</h2>
-<div class="outline-text-2" id="text-orge0e28b4">
+<div id="outline-container-orgca938dc" class="outline-2">
+<h2 id="orgca938dc">Build fast feedback loops in our whole project life cycle.</h2>
+<div class="outline-text-2" id="text-orgca938dc">
 <p>
 With these all said, I'm also thinking that we can apply this kind of
 thinking in our project life cycle: <b>build a feedback loop for
@@ -332,14 +334,32 @@ life</b>, blog posts, fitness goals, you name it.
         <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/tdd/">TDD</a>, <a href="/tags/agile/">Agile</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/10/18/build-a-faster-feed-back-loop";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

@@ -4,8 +4,8 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 06 Dec 2017 11:22:51 CST</pubDate>
-    <lastBuildDate>Wed, 06 Dec 2017 11:22:51 CST</lastBuildDate>
+    <pubDate>Wed, 06 Dec 2017 11:34:12 CST</pubDate>
+    <lastBuildDate>Wed, 06 Dec 2017 11:34:12 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -18,63 +18,63 @@
     <item>
       <title>人生的意义</title>
       <link>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<TODO: insert your description here>]]></description>
       <pubDate>2017-12-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</guid>
     </item>
     <item>
       <title>Write Custom RSpec Matchers to Simplify Your Specs</title>
       <link>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[Use custom matcher to make your test's intention clear]]></description>
       <pubDate>2017-12-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</guid>
     </item>
     <item>
       <title>AWS Lambda is what Microservices should be like</title>
       <link>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[My thoughts on AWS Lambda and Microservices]]></description>
       <pubDate>2017-11-29</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</guid>
     </item>
     <item>
       <title>Retrospect on Image Processing Using AWS Lambda</title>
       <link>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[Why I think AWS Lambda is not suitable for image processing. And why I think it's what microservices should be like.]]></description>
       <pubDate>2017-11-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</guid>
     </item>
     <item>
       <title>Sony WH-1000XM2 Review</title>
       <link>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[My Review for Sony WH-1000XM2 Noise Canceling Headphone]]></description>
       <pubDate>2017-11-22</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</guid>
     </item>
     <item>
       <title>Safari 11 CJK 伪粗体问题</title>
       <link>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[Safari 11 中的 CJK 伪粗体问题已经在 Safari Technology Preview 版本中修复了]]></description>
       <pubDate>2017-11-20</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</guid>
     </item>
     <item>
       <title>Enabling Font Ligatures in emacs-mac-port</title>
       <link>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[How to enable font ligatures in =emacs-mac-port=]]></description>
       <pubDate>2017-11-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</guid>
     </item>
     <item>
       <title>Migrate Surge using iMazing</title>
       <link>http://dsdshcym.github.io/blog/2017/11/08/migrate-surge-using-imazing</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[利用 iMazing 的备份功能恢复已下架的应用（如 Surge）]]></description>
       <pubDate>2017-11-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/08/migrate-surge-using-imazing</guid>
     </item>
     <item>
       <title>Build an Image Resizing Microservice on AWS Lambda</title>
       <link>http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[My journey through building an image resizing microservice on AWS Lambda]]></description>
       <pubDate>2017-11-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda</guid>
     </item>

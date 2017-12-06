@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -63,9 +64,9 @@ I basically followed the steps explained in AWS official blog<sup><a id="fnr.1" 
 create an image resizing lambda function. I thought it would be a easy
 task. But I still encountered some unexpected problems.
 </p>
-<div id="outline-container-org80013e8" class="outline-2">
-<h2 id="org80013e8">Outdated Instructions</h2>
-<div class="outline-text-2" id="text-org80013e8">
+<div id="outline-container-orgcd97402" class="outline-2">
+<h2 id="orgcd97402">Outdated Instructions</h2>
+<div class="outline-text-2" id="text-orgcd97402">
 <p>
 The instructions in that blog post<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup> is pretty clear, but I found
 AWS Lambda had changed some of their UI and setup process so that the
@@ -181,9 +182,9 @@ Edit Redirection Rules in Static Website Hosting
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd0ea25c" class="outline-2">
-<h2 id="orgd0ea25c">Script from Official Repo</h2>
-<div class="outline-text-2" id="text-orgd0ea25c">
+<div id="outline-container-org15f7a15" class="outline-2">
+<h2 id="org15f7a15">Script from Official Repo</h2>
+<div class="outline-text-2" id="text-org15f7a15">
 <p>
 Because the manual setup process is kind of On the other hand, the
 scripts in <a href="https://github.com/awslabs/serverless-image-resizing">awslabs/serverless-image-resizing</a> repo is working as
@@ -268,9 +269,9 @@ previous section, and I found it was very error-prone.
 </ol>
 </div>
 </div>
-<div id="outline-container-org2396479" class="outline-2">
-<h2 id="org2396479">Ambiguous Errors from API Gateway</h2>
-<div class="outline-text-2" id="text-org2396479">
+<div id="outline-container-org7db2104" class="outline-2">
+<h2 id="org7db2104">Ambiguous Errors from API Gateway</h2>
+<div class="outline-text-2" id="text-org7db2104">
 <p>
 When I setup a new lambda for an existing S3 bucket manually, I ran
 into several different errors from API Gateway:
@@ -309,6 +310,7 @@ for this error:
 calling this API needs to provide some kind of token)</li>
 <li>The invocation link for API Gateway you are using is wrong.</li>
 </ol>
+
 <p>
 It's easy to understand because it's a common decision we as web
 developers would do to return <code>401 Unauthorized</code> instead of <code>404
@@ -327,9 +329,9 @@ invocation endpoint is <code>/[lambda_name]</code>, but I was still using
 </ol>
 </div>
 </div>
-<div id="outline-container-org023b442" class="outline-2">
-<h2 id="org023b442">AWS Region Issue</h2>
-<div class="outline-text-2" id="text-org023b442">
+<div id="outline-container-org497dba4" class="outline-2">
+<h2 id="org497dba4">AWS Region Issue</h2>
+<div class="outline-text-2" id="text-org497dba4">
 <p>
 The final issue that cost me two days to debug was about AWS Regions.
 </p>
@@ -369,9 +371,9 @@ the same region as the S3 bucket. Then everything works fine.
 </p>
 </div>
 </div>
-<div id="outline-container-org27d7bde" class="outline-2">
-<h2 id="org27d7bde">Summary</h2>
-<div class="outline-text-2" id="text-org27d7bde">
+<div id="outline-container-orga440a8f" class="outline-2">
+<h2 id="orga440a8f">Summary</h2>
+<div class="outline-text-2" id="text-orga440a8f">
 <p>
 Building a microservice, like image processing, using AWS Lambda is
 really convenient:
@@ -457,14 +459,32 @@ API Gateway - AWS Compute Blog</a>
         <span title="tags" class="post-info"><a href="/tags/serverless/">Serverless</a>, <a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

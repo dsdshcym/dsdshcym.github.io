@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -66,9 +67,9 @@ achieve it.
 This article is a summary for my current understanding.
 </p>
 
-<div id="outline-container-org40d5685" class="outline-2">
-<h2 id="org40d5685">What is Object-Oriented Programming</h2>
-<div class="outline-text-2" id="text-org40d5685">
+<div id="outline-container-orge1af1f7" class="outline-2">
+<h2 id="orge1af1f7">What is Object-Oriented Programming</h2>
+<div class="outline-text-2" id="text-orge1af1f7">
 <p>
 A mind blown point for me to this problem is when I read what Alan Kay said
 about the meaning of Object-Oriented Programming<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>:
@@ -116,13 +117,13 @@ But what can late-binding help us in programming?
 </p>
 </div>
 </div>
-<div id="outline-container-org369eb39" class="outline-2">
-<h2 id="org369eb39">Why Object-Oriented Programming?</h2>
-<div class="outline-text-2" id="text-org369eb39">
+<div id="outline-container-org193c827" class="outline-2">
+<h2 id="org193c827">Why Object-Oriented Programming?</h2>
+<div class="outline-text-2" id="text-org193c827">
 </div>
-<div id="outline-container-orgea31dfb" class="outline-3">
-<h3 id="orgea31dfb">Embrace Change</h3>
-<div class="outline-text-3" id="text-orgea31dfb">
+<div id="outline-container-org1dd33e8" class="outline-3">
+<h3 id="org1dd33e8">Embrace Change</h3>
+<div class="outline-text-3" id="text-org1dd33e8">
 <p>
 Change is the biggest problem in software engineering.
 </p>
@@ -144,9 +145,9 @@ change and be prepared for them.
 </p>
 </div>
 </div>
-<div id="outline-container-org180c930" class="outline-3">
-<h3 id="org180c930">Code for Readability</h3>
-<div class="outline-text-3" id="text-org180c930">
+<div id="outline-container-orge45cf01" class="outline-3">
+<h3 id="orge45cf01">Code for Readability</h3>
+<div class="outline-text-3" id="text-orge45cf01">
 <p>
 I remembered this quote from SICP:
 </p>
@@ -168,9 +169,9 @@ programmer several months later, he will admit it is good code.
 </p>
 </div>
 </div>
-<div id="outline-container-org010ae36" class="outline-3">
-<h3 id="org010ae36">Late-binding to the rescue</h3>
-<div class="outline-text-3" id="text-org010ae36">
+<div id="outline-container-org2d77c9c" class="outline-3">
+<h3 id="org2d77c9c">Late-binding to the rescue</h3>
+<div class="outline-text-3" id="text-org2d77c9c">
 <p>
 Late-binding can help us to write readable code.
 </p>
@@ -193,9 +194,9 @@ a huge burden when we read the code.
 </div>
 </div>
 </div>
-<div id="outline-container-org114d9f8" class="outline-2">
-<h2 id="org114d9f8">How to design good Object-Oriented Program?</h2>
-<div class="outline-text-2" id="text-org114d9f8">
+<div id="outline-container-orga32f801" class="outline-2">
+<h2 id="orga32f801">How to design good Object-Oriented Program?</h2>
+<div class="outline-text-2" id="text-orga32f801">
 <p>
 Object-Oriented Programming is not a new idea. It've existed for more than half
 a century (Simula came out in 1967).
@@ -206,9 +207,9 @@ And I was suprised that most of the design problems in Object-Oriented
 Programming have already been solved/expained in 1980s<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 </p>
 </div>
-<div id="outline-container-org8d6b46a" class="outline-3">
-<h3 id="org8d6b46a">Know the principles</h3>
-<div class="outline-text-3" id="text-org8d6b46a">
+<div id="outline-container-org1b1476e" class="outline-3">
+<h3 id="org1b1476e">Know the principles</h3>
+<div class="outline-text-3" id="text-org1b1476e">
 <p>
 First, you need to know the design principles. Without them, you don't know what
 is a well designed application. Among all these principles, I found that SOLID
@@ -227,9 +228,9 @@ There are several greate resources for these principles:
 </ul>
 </div>
 </div>
-<div id="outline-container-org371149f" class="outline-3">
-<h3 id="org371149f">Refactor</h3>
-<div class="outline-text-3" id="text-org371149f">
+<div id="outline-container-org219ba87" class="outline-3">
+<h3 id="org219ba87">Refactor</h3>
+<div class="outline-text-3" id="text-org219ba87">
 <dl class="org-dl">
 <dt>After a feature is implemented</dt><dd><p>
      One thing I realize is that we cannot write a well designed program at the
@@ -260,9 +261,9 @@ stay clean much longer.
 </dl>
 </div>
 </div>
-<div id="outline-container-org611417b" class="outline-3">
-<h3 id="org611417b">UML</h3>
-<div class="outline-text-3" id="text-org611417b">
+<div id="outline-container-orgcb0f295" class="outline-3">
+<h3 id="orgcb0f295">UML</h3>
+<div class="outline-text-3" id="text-orgcb0f295">
 <p>
 When I first learned about UML, I was fully unaware about the power of these
 tools. "These are just simple diagrams, what a waste of time to draw these." But
@@ -309,14 +310,32 @@ apply this in my daily design works.
         <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/04/05/my-summary-for-object-oriented-programming";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

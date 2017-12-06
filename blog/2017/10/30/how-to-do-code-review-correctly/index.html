@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -65,9 +66,9 @@ So, in this post, I'll explain my current understanding of how to do
 Code Review correctly and efficiently.
 </p>
 
-<div id="outline-container-org2bee492" class="outline-2">
-<h2 id="org2bee492">Always submit a merge request for review</h2>
-<div class="outline-text-2" id="text-org2bee492">
+<div id="outline-container-orgf564868" class="outline-2">
+<h2 id="orgf564868">Always submit a merge request for review</h2>
+<div class="outline-text-2" id="text-orgf564868">
 <p>
 No matter you are senior or junior, you can always learn something
 from code review.
@@ -84,9 +85,9 @@ someone to review it.
 </p>
 </div>
 </div>
-<div id="outline-container-orge144d18" class="outline-2">
-<h2 id="orge144d18">Keep your build passing</h2>
-<div class="outline-text-2" id="text-orge144d18">
+<div id="outline-container-orga2e1663" class="outline-2">
+<h2 id="orga2e1663">Keep your build passing</h2>
+<div class="outline-text-2" id="text-orga2e1663">
 <p>
 Though the goal is code discussing, it's still important to keep your
 build passing.
@@ -119,9 +120,9 @@ not the case, update your CI settings)</li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org7577ec6" class="outline-3">
-<h3 id="org7577ec6">What if CI is failing for something else</h3>
-<div class="outline-text-3" id="text-org7577ec6">
+<div id="outline-container-org518091f" class="outline-3">
+<h3 id="org518091f">What if CI is failing for something else</h3>
+<div class="outline-text-3" id="text-org518091f">
 <p>
 For example, due to a third API failure, CI failed because of a
 non-related test.
@@ -151,9 +152,9 @@ this)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org2c0ce0e" class="outline-2">
-<h2 id="org2c0ce0e">Write reasons down</h2>
-<div class="outline-text-2" id="text-org2c0ce0e">
+<div id="outline-container-org1263522" class="outline-2">
+<h2 id="org1263522">Write reasons down</h2>
+<div class="outline-text-2" id="text-org1263522">
 <p>
 Don't let the reviewers guess the reasons behind your changes, so,
 </p>
@@ -177,6 +178,7 @@ important for a message. In another word, you should write down
 casuing xxx issue, removing it will still keep the behaviors the
 same, but prevent xxx issue from happenning again)</li>
 </ol>
+
 <p>
 You can also see a great example for commit message with enough
 contexts here: <a href="https://youtu.be/PJjmw9TRB7s?t=7m51s">RailsConf 2015 - Implementing a Strong Code-Review
@@ -258,9 +260,9 @@ several months.
 </ul>
 </div>
 </div>
-<div id="outline-container-org346c104" class="outline-2">
-<h2 id="org346c104">Keep your merge request small</h2>
-<div class="outline-text-2" id="text-org346c104">
+<div id="outline-container-org425c39f" class="outline-2">
+<h2 id="org425c39f">Keep your merge request small</h2>
+<div class="outline-text-2" id="text-org425c39f">
 <p>
 It's hard to review code that's over hundreds of lines long. So, keep
 your changes in a merge request small so that your reviewer will be
@@ -272,9 +274,9 @@ It's the best to keep your merge request small enough so that the
 reviewer can review it in <b>under 10 minutes</b>.
 </p>
 </div>
-<div id="outline-container-org33c2ba2" class="outline-3">
-<h3 id="org33c2ba2">Techniques to keep merge request small</h3>
-<div class="outline-text-3" id="text-org33c2ba2">
+<div id="outline-container-orgf847390" class="outline-3">
+<h3 id="orgf847390">Techniques to keep merge request small</h3>
+<div class="outline-text-3" id="text-orgf847390">
 <p>
 Since our merge requests are feature based now, sometimes it's hard to
 keep the whole merge request small. Here are some techniques that
@@ -306,6 +308,7 @@ Use a feature branch
 <li>Branch out a small feature branch</li>
 <li>Send merge request from small feature branch to feature branch.</li>
 </ul>
+
 <p>
 So that the reviewer can review one change at a time.
 </p></li>
@@ -337,18 +340,18 @@ a waste of time.
 </div>
 </div>
 </div>
-<div id="outline-container-orge5e803e" class="outline-2">
-<h2 id="orge5e803e">Review your own merge request</h2>
-<div class="outline-text-2" id="text-orge5e803e">
+<div id="outline-container-org2613d5b" class="outline-2">
+<h2 id="org2613d5b">Review your own merge request</h2>
+<div class="outline-text-2" id="text-org2613d5b">
 <p>
 To make things easier for reviewers, I highly recommend review your
 own merge request before sending it out to them.
 </p>
 </div>
 
-<div id="outline-container-org6d0e26c" class="outline-3">
-<h3 id="org6d0e26c">Fix silly mistakes</h3>
-<div class="outline-text-3" id="text-org6d0e26c">
+<div id="outline-container-orge17b745" class="outline-3">
+<h3 id="orge17b745">Fix silly mistakes</h3>
+<div class="outline-text-3" id="text-orge17b745">
 <p>
 We all make silly mistakes sometimes, like typos or forgetting to
 finish the descriptions.
@@ -361,9 +364,9 @@ fix these embarrassing mistakes.
 </div>
 </div>
 
-<div id="outline-container-orge5191eb" class="outline-3">
-<h3 id="orge5191eb">Review it as a reviewer</h3>
-<div class="outline-text-3" id="text-orge5191eb">
+<div id="outline-container-org490f855" class="outline-3">
+<h3 id="org490f855">Review it as a reviewer</h3>
+<div class="outline-text-3" id="text-org490f855">
 <p>
 After all, software development is all about empathy and how to make
 other developers understand your code better.
@@ -382,9 +385,9 @@ If not, we better fix the problem before we send it out to others.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc7f746e" class="outline-2">
-<h2 id="orgc7f746e">Keep server branches clean</h2>
-<div class="outline-text-2" id="text-orgc7f746e">
+<div id="outline-container-org399663a" class="outline-2">
+<h2 id="org399663a">Keep server branches clean</h2>
+<div class="outline-text-2" id="text-org399663a">
 <p>
 It's also important to keep the branches on our server as less as
 possible. It doesn't make sense to keep a merged branch on our server.
@@ -413,9 +416,9 @@ checked</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7ea3e4f" class="outline-2">
-<h2 id="org7ea3e4f">When to merge a merge request</h2>
-<div class="outline-text-2" id="text-org7ea3e4f">
+<div id="outline-container-org906ed29" class="outline-2">
+<h2 id="org906ed29">When to merge a merge request</h2>
+<div class="outline-text-2" id="text-org906ed29">
 <p>
 The base line is: <b>merge a merge request when another dev approves it</b>
 </p>
@@ -432,9 +435,9 @@ goes wrong, both reviewer and author need to take the responsibility
 to fix it.
 </p>
 </div>
-<div id="outline-container-org0425c4c" class="outline-3">
-<h3 id="org0425c4c">When to force merge</h3>
-<div class="outline-text-3" id="text-org0425c4c">
+<div id="outline-container-org965d70f" class="outline-3">
+<h3 id="org965d70f">When to force merge</h3>
+<div class="outline-text-3" id="text-org965d70f">
 <p>
 If there is still something unresolved (failing specs, style issues,
 etc.), and this merge request is kind of urgent, you can still merge
@@ -470,9 +473,9 @@ to them and what parts you'd like them to inspect.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org22219e0" class="outline-2">
-<h2 id="org22219e0">Summary</h2>
-<div class="outline-text-2" id="text-org22219e0">
+<div id="outline-container-org96a5ff4" class="outline-2">
+<h2 id="org96a5ff4">Summary</h2>
+<div class="outline-text-2" id="text-org96a5ff4">
 <p>
 Here are two lists for both author and reviewer when doing code
 reviews:
@@ -538,9 +541,9 @@ blog posts if you are interested!
 </p>
 </div>
 </div>
-<div id="outline-container-org0c66066" class="outline-2">
-<h2 id="org0c66066">Other resources for Code Review</h2>
-<div class="outline-text-2" id="text-org0c66066">
+<div id="outline-container-org06b4070" class="outline-2">
+<h2 id="org06b4070">Other resources for Code Review</h2>
+<div class="outline-text-2" id="text-org06b4070">
 <ul class="org-ul">
 <li><a href="https://webexpo.net/prague2016/talk/how-to-successfully-grow-a-code-review-culture/">How to Successfully Grow a Code Review Culture → WebExpo 2016</a></li>
 <li><a href="http://www.flickering.cn/uncategorized/2014/08/%E8%AE%A9-code-review%E6%88%90%E4%B8%BA%E4%B8%80%E7%A7%8D%E4%B9%A0%E6%83%AF/">让 Code Review 成为一种习惯 - 火光摇曳</a></li>
@@ -563,14 +566,32 @@ blog posts if you are interested!
         <span title="tags" class="post-info"><a href="/tags/code-review/">Code Review</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/10/30/how-to-do-code-review-correctly";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

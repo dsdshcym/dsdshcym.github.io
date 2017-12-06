@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -54,9 +55,9 @@ more about my user experiences through my whole journey of using AWS
 Lambda to build a image resizing Microservice.
 </p>
 
-<div id="outline-container-orgb44f77d" class="outline-2">
-<h2 id="orgb44f77d">TL;DR</h2>
-<div class="outline-text-2" id="text-orgb44f77d">
+<div id="outline-container-orgfffc0ab" class="outline-2">
+<h2 id="orgfffc0ab">TL;DR</h2>
+<div class="outline-text-2" id="text-orgfffc0ab">
 <p>
 Building a Microservice with AWS Lambda and API Gateway is a great
 experience, especially in these aspects:
@@ -70,9 +71,9 @@ experience, especially in these aspects:
 </ol>
 </div>
 </div>
-<div id="outline-container-orga055276" class="outline-2">
-<h2 id="orga055276">Microservice size</h2>
-<div class="outline-text-2" id="text-orga055276">
+<div id="outline-container-orgdbbd36f" class="outline-2">
+<h2 id="orgdbbd36f">Microservice size</h2>
+<div class="outline-text-2" id="text-orgdbbd36f">
 <p>
 First of all, every Lambda function is pretty small. (My image
 processing module only has 200 LOC in total.)
@@ -85,9 +86,9 @@ advantages in my previous post <a href="http://dsdshcym.github.io/blog/2017/08/2
 </p>
 </div>
 </div>
-<div id="outline-container-org384e2cf" class="outline-2">
-<h2 id="org384e2cf">Testing</h2>
-<div class="outline-text-2" id="text-org384e2cf">
+<div id="outline-container-org9a766cd" class="outline-2">
+<h2 id="org9a766cd">Testing</h2>
+<div class="outline-text-2" id="text-org9a766cd">
 <p>
 Amazon has provided docker images for all its available Lambda
 environments: <a href="https://github.com/lambci/docker-lambda">lambci/docker-lambda: Docker images and test runners
@@ -113,9 +114,9 @@ it's a bit hard to write unit/integration test for it.)
 </p>
 </div>
 </div>
-<div id="outline-container-orgaa24f0f" class="outline-2">
-<h2 id="orgaa24f0f">Deployment</h2>
-<div class="outline-text-2" id="text-orgaa24f0f">
+<div id="outline-container-org9ec9884" class="outline-2">
+<h2 id="org9ec9884">Deployment</h2>
+<div class="outline-text-2" id="text-org9ec9884">
 <p>
 Amazon also provided a <a href="https://github.com/awslabs/serverless-image-resizing/blob/master/Makefile">Makefile</a> to build a lambda function zip file,
 and we can deploy this zip file via <code>aws-cli</code> easily.
@@ -176,9 +177,9 @@ template, you can check it <a href="https://github.com/awslabs/serverless-image-
 </ol>
 </div>
 </div>
-<div id="outline-container-org9c71863" class="outline-2">
-<h2 id="org9c71863">Monitoring/Logging</h2>
-<div class="outline-text-2" id="text-org9c71863">
+<div id="outline-container-org7555b68" class="outline-2">
+<h2 id="org7555b68">Monitoring/Logging</h2>
+<div class="outline-text-2" id="text-org7555b68">
 <p>
 Amazon also provided builtin monitoring and logging support for
 Lambda.
@@ -199,9 +200,9 @@ see the logs.
 </p>
 </div>
 </div>
-<div id="outline-container-org42144be" class="outline-2">
-<h2 id="org42144be">Web UI / CLI</h2>
-<div class="outline-text-2" id="text-org42144be">
+<div id="outline-container-org0a2a0c4" class="outline-2">
+<h2 id="org0a2a0c4">Web UI / CLI</h2>
+<div class="outline-text-2" id="text-org0a2a0c4">
 <p>
 All the actions mentioned in this post, can all be done via AWS's web
 user interface or through AWS's command line tool <code>aws-cli</code>. This
@@ -210,9 +211,9 @@ best.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc882759" class="outline-2">
-<h2 id="orgc882759">Summary</h2>
-<div class="outline-text-2" id="text-orgc882759">
+<div id="outline-container-org0ab8f4f" class="outline-2">
+<h2 id="org0ab8f4f">Summary</h2>
+<div class="outline-text-2" id="text-org0ab8f4f">
 <p>
 So, what's the ideal Microservice development experience?
 </p>
@@ -238,14 +239,32 @@ shell command (or a editor/IDE command)</li>
         <span title="tags" class="post-info"><a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a>, <a href="/tags/microservices/">Microservices</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

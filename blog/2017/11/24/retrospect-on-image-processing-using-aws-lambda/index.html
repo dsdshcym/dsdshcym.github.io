@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -54,9 +55,9 @@ week, and I find that I have more to say on this topic. So, this post
 is basically a followup on my previous one.
 </p>
 
-<div id="outline-container-org8389b24" class="outline-2">
-<h2 id="org8389b24">TL;DR</h2>
-<div class="outline-text-2" id="text-org8389b24">
+<div id="outline-container-org97a214f" class="outline-2">
+<h2 id="org97a214f">TL;DR</h2>
+<div class="outline-text-2" id="text-org97a214f">
 <p>
 I <b>DO NOT</b> recommend using Lambda to process images in your S3 bucket
 and generate different versions for your applications.
@@ -74,9 +75,9 @@ when the requests come)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgcda45c5" class="outline-2">
-<h2 id="orgcda45c5">Drawbacks of using Lambda to processing images on S3</h2>
-<div class="outline-text-2" id="text-orgcda45c5">
+<div id="outline-container-org4dc4d66" class="outline-2">
+<h2 id="org4dc4d66">Drawbacks of using Lambda to processing images on S3</h2>
+<div class="outline-text-2" id="text-org4dc4d66">
 <p>
 An important step for setting up a image processing lambda in my
 previous post is to setup Static Website Hosting for the S3 bucket to
@@ -90,9 +91,9 @@ warning. Static Website Hosting, is it only for hosting static
 websites like blogs?
 </p>
 </div>
-<div id="outline-container-org21bf51e" class="outline-3">
-<h3 id="org21bf51e">Key Differences Between the Amazon Website and the REST API Endpoint</h3>
-<div class="outline-text-3" id="text-org21bf51e">
+<div id="outline-container-orgb639b6e" class="outline-3">
+<h3 id="orgb639b6e">Key Differences Between the Amazon Website and the REST API Endpoint</h3>
+<div class="outline-text-3" id="text-orgb639b6e">
 <p>
 Most of the time, when we use S3 as the storage solution for our
 application, we are using the REST API Endpoint to access the S3
@@ -169,9 +170,9 @@ explain them one by one:
 </p>
 </div>
 </div>
-<div id="outline-container-orgb2241da" class="outline-3">
-<h3 id="orgb2241da">Supports only publicly readable content</h3>
-<div class="outline-text-3" id="text-orgb2241da">
+<div id="outline-container-org599b97b" class="outline-3">
+<h3 id="org599b97b">Supports only publicly readable content</h3>
+<div class="outline-text-3" id="text-org599b97b">
 <p>
 A S3 bucket for Static Website Hosting only supports publicly readable
 content.
@@ -200,9 +201,9 @@ privacy control over user generated contents (images, videos, etc.).
 </p>
 </div>
 </div>
-<div id="outline-container-org72e95e3" class="outline-3">
-<h3 id="org72e95e3">Support only GET and HEAD requests on objects</h3>
-<div class="outline-text-3" id="text-org72e95e3">
+<div id="outline-container-orge842f17" class="outline-3">
+<h3 id="orge842f17">Support only GET and HEAD requests on objects</h3>
+<div class="outline-text-3" id="text-orge842f17">
 <p>
 This limit makes it impossible to use the same endpoint for image
 hosting and uploading.
@@ -243,9 +244,9 @@ not break anything.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb23414d" class="outline-3">
-<h3 id="orgb23414d">Does not support SSL connections</h3>
-<div class="outline-text-3" id="text-orgb23414d">
+<div id="outline-container-org3e30ec2" class="outline-3">
+<h3 id="org3e30ec2">Does not support SSL connections</h3>
+<div class="outline-text-3" id="text-org3e30ec2">
 <p>
 This is another unacceptable limitation because the whole web is
 migrating to HTTPS now.
@@ -253,9 +254,9 @@ migrating to HTTPS now.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb234047" class="outline-2">
-<h2 id="orgb234047">Summary</h2>
-<div class="outline-text-2" id="text-orgb234047">
+<div id="outline-container-org4aeeb8d" class="outline-2">
+<h2 id="org4aeeb8d">Summary</h2>
+<div class="outline-text-2" id="text-org4aeeb8d">
 <p>
 I think with even one drawback listed above, this solution will not be
 suitable for a modern web application. With all these limitations, I
@@ -297,14 +298,32 @@ choose this solution.
         <span title="tags" class="post-info"><a href="/tags/serverless/">Serverless</a>, <a href="/tags/aws/">AWS</a>, <a href="/tags/lambda/">Lambda</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>

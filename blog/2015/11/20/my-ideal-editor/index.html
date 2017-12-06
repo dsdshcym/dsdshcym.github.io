@@ -31,7 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="/blog/">Blog</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -51,62 +52,62 @@
 折腾编辑器也一年多了，也来谈谈我理想中的编辑器是什么样的。再用 Vim, Emacs 来和这些需求作个比较，看看我为什么选择了 Emacs
 </p>
 
-<div id="outline-container-orgdd258cd" class="outline-2">
-<h2 id="orgdd258cd">需求</h2>
-<div class="outline-text-2" id="text-orgdd258cd">
+<div id="outline-container-org46d6466" class="outline-2">
+<h2 id="org46d6466">需求</h2>
+<div class="outline-text-2" id="text-org46d6466">
 </div>
-<div id="outline-container-org29bec57" class="outline-3">
-<h3 id="org29bec57">Vim Mode</h3>
-<div class="outline-text-3" id="text-org29bec57">
+<div id="outline-container-org4555c36" class="outline-3">
+<h3 id="org4555c36">Vim Mode</h3>
+<div class="outline-text-3" id="text-org4555c36">
 <p>
 没有 Vim mode 的编辑器完全不能考虑，而且还得是一个足够优秀的 Vim mode ，不仅仅是 Insert Mode, Normal Mode, Visual Mode 这样简单的三种 Mode 实现，还包括了
 Expert Mode 等其他高阶的功能。总之就是越像 Vim 越好（这点上看，我是个原教旨主义者）
 </p>
 </div>
 </div>
-<div id="outline-container-org40600a3" class="outline-3">
-<h3 id="org40600a3">Org Mode</h3>
-<div class="outline-text-3" id="text-org40600a3">
+<div id="outline-container-org7f6d51e" class="outline-3">
+<h3 id="org7f6d51e">Org Mode</h3>
+<div class="outline-text-3" id="text-org7f6d51e">
 <p>
 Org-Mode 对我来说是和 Vim, Emacs 并列的工具，写代码没有 Emacs 我可以用 Vim ，但是没了 Org Mode 我就完全不知道该如何生活、学习、工作了。
 </p>
 </div>
 </div>
-<div id="outline-container-orgdee8d05" class="outline-3">
-<h3 id="orgdee8d05">性能</h3>
-<div class="outline-text-3" id="text-orgdee8d05">
+<div id="outline-container-orgee1b0a5" class="outline-3">
+<h3 id="orgee1b0a5">性能</h3>
+<div class="outline-text-3" id="text-orgee1b0a5">
 <p>
 天下武功，唯快不破。无论如何要求性能我觉得都是不为过的。不管文件的大小，都要能流畅地编辑才对。光标移动时的卡顿是绝对不能忍的。
 </p>
 </div>
 </div>
-<div id="outline-container-org6fb077b" class="outline-3">
-<h3 id="org6fb077b">稳定</h3>
-<div class="outline-text-3" id="text-org6fb077b">
+<div id="outline-container-org526fbeb" class="outline-3">
+<h3 id="org526fbeb">稳定</h3>
+<div class="outline-text-3" id="text-org526fbeb">
 <p>
 绝对，绝对，绝对不能崩溃丢失改动。当然不崩溃也不现实，至少要提供一定的恢复手段。
 </p>
 </div>
 </div>
-<div id="outline-container-org36c40ec" class="outline-3">
-<h3 id="org36c40ec">异步操作的支持</h3>
-<div class="outline-text-3" id="text-org36c40ec">
+<div id="outline-container-orgd9c5ae8" class="outline-3">
+<h3 id="orgd9c5ae8">异步操作的支持</h3>
+<div class="outline-text-3" id="text-orgd9c5ae8">
 <p>
 不能在执行某些操作的时候卡住，没有响应，这会让我很没安全感，不知道要不要强制关闭，更担心强制关闭后文件的恢复问题。
 </p>
 </div>
 </div>
-<div id="outline-container-org4d2d379" class="outline-3">
-<h3 id="org4d2d379">中文的支持</h3>
-<div class="outline-text-3" id="text-org4d2d379">
+<div id="outline-container-orge26c73c" class="outline-3">
+<h3 id="orge26c73c">中文的支持</h3>
+<div class="outline-text-3" id="text-orge26c73c">
 <p>
 足够优秀的中文支持，中英文字体分别设置是最基本的，如果能把中英文混排处理好就完美了。当然现在中文排版的方案也没什么统一的标准。最希望有的一个功能是自动在中文和其他字符之间加入空格。
 </p>
 </div>
 </div>
-<div id="outline-container-org3c20e1c" class="outline-3">
-<h3 id="org3c20e1c">丰富的插件/社区支持</h3>
-<div class="outline-text-3" id="text-org3c20e1c">
+<div id="outline-container-orgb5850ed" class="outline-3">
+<h3 id="orgb5850ed">丰富的插件/社区支持</h3>
+<div class="outline-text-3" id="text-orgb5850ed">
 <p>
 一个庞大的社区是一个优秀的编辑器必备的条件。光靠编辑器开发者本身是永远无法满足广大用户的需求的，只有靠社区的力量才能让编辑器的功能不断完善。
 </p>
@@ -117,9 +118,9 @@ Org-Mode 对我来说是和 Vim, Emacs 并列的工具，写代码没有 Emacs �
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa0521b" class="outline-2">
-<h2 id="orgfa0521b">Vim/NeoVim <code>[4/7]</code></h2>
-<div class="outline-text-2" id="text-orgfa0521b">
+<div id="outline-container-org21eb220" class="outline-2">
+<h2 id="org21eb220">Vim/NeoVim <code>[4/7]</code></h2>
+<div class="outline-text-2" id="text-org21eb220">
 <p>
 Vim 我持续用了半年， NeoVim 并没有怎么用过，在用 Vim 的时候它还不稳定，等它出
 0.1 版本，比较稳定了，我已经转用 Emacs 一年了。
@@ -135,9 +136,9 @@ Vim 我持续用了半年， NeoVim 并没有怎么用过，在用 Vim 的时候
 </dl>
 </div>
 </div>
-<div id="outline-container-org1d2a6cd" class="outline-2">
-<h2 id="org1d2a6cd">Emacs <code>[4/7]</code></h2>
-<div class="outline-text-2" id="text-org1d2a6cd">
+<div id="outline-container-org1f1eae3" class="outline-2">
+<h2 id="org1f1eae3">Emacs <code>[4/7]</code></h2>
+<div class="outline-text-2" id="text-org1f1eae3">
 <p>
 用 Spacemacs 已经快一年了，写这篇博客也主要想抱怨一下对 Spacemacs 的一些不满意的地方。
 </p>
@@ -180,9 +181,9 @@ Ruby 之后在假期里再花时间学习 Lisp 。</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-orgfe25a72" class="outline-2">
-<h2 id="orgfe25a72">Summary</h2>
-<div class="outline-text-2" id="text-orgfe25a72">
+<div id="outline-container-orgc7329b9" class="outline-2">
+<h2 id="orgc7329b9">Summary</h2>
+<div class="outline-text-2" id="text-orgc7329b9">
 <p>
 最后一看， Emacs 和 Vim 竟然 4:4 打平了，但是 Emacs 有 Org Mode ，获得了压倒性的胜利。（这么一说，结局好像一开始就注定了……）
 </p>
@@ -213,14 +214,32 @@ Ruby 之后在假期里再花时间学习 Lisp 。</dd>
         <span title="tags" class="post-info"><a href="/tags/editor/">Editor</a>, <a href="/tags/emacs/">Emacs</a>, <a href="/tags/vim/">Vim</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2015/11/20/my-ideal-editor";
+       var disqus_url = "http://dsdshcym.github.io/blog/2015/11/20/my-ideal-editor";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
 <footer class="footer">
-    <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
-    <p>
-        Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
-        &nbsp;&nbsp;-&nbsp;&nbsp;
-        Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-        <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-    </p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
 </footer>
 
   </body>
