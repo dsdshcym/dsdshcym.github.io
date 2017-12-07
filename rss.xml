@@ -4,10 +4,17 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 07 Dec 2017 15:12:03 CST</pubDate>
-    <lastBuildDate>Thu, 07 Dec 2017 15:12:03 CST</lastBuildDate>
+    <pubDate>Thu, 07 Dec 2017 23:31:43 CST</pubDate>
+    <lastBuildDate>Thu, 07 Dec 2017 23:31:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Add STI to a Legacy ActiveRecord Model</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model</link>
+      <description><![CDATA[How to use an existing column as inheritance column and use different class indicators.]]></description>
+      <pubDate>2017-12-07</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model</guid>
+    </item>
     <item>
       <title>给小白解释「面向对象」（问答体）</title>
       <link>http://dsdshcym.github.io/blog/2017/12/07/explain-OOP-to-a-novice</link>
@@ -18,7 +25,7 @@
     <item>
       <title>CRDT is used in both Teletype for Atom and Phoenix</title>
       <link>http://dsdshcym.github.io/blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix</link>
-      <description><![CDATA[Interesting Technology (CRDT) that's used in both Teletype for Atom and Phoenix]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-11-20</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/17/safari-11-bold-cjk-font-issue</guid>
-    </item>
-    <item>
-      <title>Enabling Font Ligatures in emacs-mac-port</title>
-      <link>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-11-10</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port</guid>
     </item>
   </channel>
 </rss>

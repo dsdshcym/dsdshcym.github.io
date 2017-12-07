@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Add STI to a Legacy ActiveRecord Model - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="How to use an existing column as inheritance column and use different class indicators." />
+  <meta name="keywords" content="STI, Legacy, ActiveRecord, Single Table Inheritance" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Add STI to a Legacy ActiveRecord Model</h1>
+            <p>
+Recently, I need to add STI (Single Table Inheritance<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>) to a
+long-existing table.
+</p>
+
+<p>
+This table already uses a column (<code>token_type</code>) to distinguish between
+two different types of data. And <code>token_type</code> can only be either <code>ios</code>
+(for <code>IosDevice</code>) or <code>android</code> (for <code>AndroidDevice</code>).
+</p>
+
+<p>
+I thought this would be a simple task but I could found few
+resources about how to do it. So I'll explain how I did this in this
+post.
+</p>
+
+<div id="outline-container-org1f85112" class="outline-2">
+<h2 id="org1f85112">Set <code>inheritance_column</code></h2>
+<div class="outline-text-2" id="text-org1f85112">
+<p>
+To change the column STI uses, we need to set <code>inheritance_column</code> in
+our Base Model like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Device::Base &lt; ActiveRecord::Base
+  self.inheritance_column = 'token_type'
+end
+</pre>
+</div>
+
+<p>
+This behavior is already documented in <code>ActiveRecord</code>'s <a href="http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-inheritance_column">documentation</a>:
+</p>
+<blockquote>
+<p>
+Defines the name of the table column which will store the class name
+on single-table inheritance situations.
+</p>
+
+<p>
+The default inheritance column name is type, which means it's a
+reserved word inside Active Record. To be able to use single-table
+inheritance with another column name, or to use the column type in
+your own model for something else, you can set inheritance_column:
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org69956b6" class="outline-2">
+<h2 id="org69956b6">Hack How ActiveRecord Finds the Sub-classes</h2>
+<div class="outline-text-2" id="text-org69956b6">
+<p>
+Then comes the most important part of our solution. We need to make
+<code>ActiveRecord</code> finds our sub-class based on the existing value
+</p>
+<ul class="org-ul">
+<li><code>ios</code> -&gt; <code>IosDevice</code></li>
+<li><code>android</code> -&gt; <code>AndroidDevice</code></li>
+</ul>
+
+<p>
+After reading <code>ActiveRecord</code>'s <a href="https://github.com/rails/rails/blob/633e9745f8eafb0d1d5523ec761fdee420bcbc91/activerecord/lib/active_record/inheritance.rb#L188">source code</a>, we need to follow these
+steps:
+</p>
+<ol class="org-ol">
+<li><p>
+Overwriting <code>self.find_sti_class</code> method in the base model:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Device::Base &lt; ActiveRecord::Base
+  def self.find_sti_class(type_name)
+    super("Device::#{type_name.classify}Device")
+  end
+end
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Originally, <code>find_sti_class</code> was expecting some <code>type_name</code> more
+like a class name (e.g. <code>Device::AndroidDevice</code>)</li>
+<li>Using our hacker, we can still find <code>Device::AndroidDevice</code> even
+if the type value is <code>android</code></li>
+</ul></li>
+<li><p>
+Setting <code>store_full_sti_class</code> to <code>false</code> in sub-classes (Optional)
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Device::AndroidDevice &lt; Device::Base
+  self.store_full_sti_class = false
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>store_full_sti_class</code> is a <code>class_attribute</code> in
+<code>ActiveRecord::Inheritance</code></li>
+<li>Setting it to <code>false</code> means that we are not storing the full
+class name in the type column</li>
+<li>But actually we don't need to do this because we've already
+extend it to the full class name in <code>find_sti_class</code></li>
+</ul></li>
+<li><p>
+Setting <code>sti_name</code> for sub-classes
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Device::AndroidDevice &lt; Device::Base
+  def self.sti_name
+    'android'
+  end
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>This <code>sti_name</code> will be used to construct <a href="https://github.com/rails/rails/blob/633e9745f8eafb0d1d5523ec761fdee420bcbc91/activerecord/lib/active_record/inheritance.rb#L209"><code>type_condition</code></a></li>
+<li>Then <code>type_condition</code> will be used in
+<a href="https://github.com/rails/rails/blob/eeaf9cf61c3cd14929583878785c31dab79e2196/activerecord/lib/active_record/core.rb#L279-L280"><code>ActiveRecord::Core#relation</code></a> to add constraints on
+<code>inheritance_column</code> when querying</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org714077a" class="outline-2">
+<h2 id="org714077a">Caveats</h2>
+<div class="outline-text-2" id="text-org714077a">
+<p>
+There are some caveats for using this hack. (That's why it's called a
+hack and there are few resources introducing this.)
+</p>
+
+<ol class="org-ol">
+<li><code>find_sti_class</code> is a private method
+<ul class="org-ul">
+<li>Which means it might be changed or even removed in the future</li>
+<li>This possibility makes our hack pretty unstable</li>
+<li>Fortunately, we are just calling super and giving it a different
+input.</li>
+<li>So that, as long as this method is not removed and it's still
+used to find a class to initialize the <code>ActiveRecord</code> object,
+this hack will continue to work.</li>
+</ul></li>
+<li><b><code>sti_name</code> is also a private method</b>
+<ul class="org-ul">
+<li>It's more unstable than <code>find_sti_class</code> because it's used in a
+place far from <code>ActiveRecord::Inheritance</code> and is more possible
+to be changed</li>
+<li>More importantly, we are overwriting the whole method instead of
+calling <code>super</code>, which means we will very likely break this code
+in a future upgrade</li>
+</ul></li>
+<li><code>token_type</code> is doing more than one thing
+<ul class="org-ul">
+<li>The reason I wanted to use <code>token_type</code> as the
+<code>inheritance_column</code> was that we've already been using it to
+distinguish <code>iOS</code> devices and <code>Android</code> devices.</li>
+<li>But still, after we add the responsibility of finding the STI
+class for this column. It's doing more than one thing.</li>
+<li>If we need to change the original values of <code>token_type</code>, it will
+affect the STI mechanism for these classes.</li>
+<li>It's definitely better to use a separate <code>type</code> column for STI.
+(Or remove the old responsibility to make it only responsible for
+STI)</li>
+<li>Again, fortunately, both <code>token_type</code> (<code>ios</code> and <code>android</code>) are
+both stable enough and won't be changed in any foreseeable
+future.</li>
+</ul></li>
+</ol>
+
+<p>
+So, think about these trade-offs before you try out my hack to STI.
+(I've made the decision to use this because I'm willing to take this
+risk for the convenience this quick STI hack brings to the project)
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://martinfowler.com/eaaCatalog/singleTableInheritance.html">P of EAA: Single Table Inheritance</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-07</span>
+        <span title="last modification date" class="post-info">2017-12-07</span>
+        <span title="tags" class="post-info"><a href="/tags/activerecord/">ActiveRecord</a>, <a href="/tags/rails/">Rails</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
