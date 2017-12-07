@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>给小白解释「面向对象」（问答体） - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="给不懂编程的同事解释「什么是面向对象编程」" />
+  <meta name="keywords" content="OOP, 面向对象, Object-Oriented" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>给小白解释「面向对象」（问答体）</h1>
+            <p>
+昨天有个不太懂编程的同事问我「什么是面向对象编程」，我觉得自己回答得蛮好，便厚着脸皮征得同意，把聊天记录稍加编辑发到这里。
+</p>
+
+<div id="outline-container-org38dc46a" class="outline-2">
+<h2 id="org38dc46a">什么叫面向对象编程？</h2>
+<div class="outline-text-2" id="text-org38dc46a">
+<ul class="org-ul">
+<li>面向对象就像小组做任务（比如发传单）
+<ol class="org-ol">
+<li>有 Object A, B, C, D 分别能做分配任务，打印传单，发传单，收传单这几件事</li>
+<li>然后计算机就负责把 A, B, C, D 生成好，并告诉他们怎么互相联络。程序开始运行时：
+<ol class="org-ol">
+<li>计算机告诉 A 去发 100 张传单</li>
+<li>A 就会叫 B 打印 100 张传单</li>
+<li>A 再拿着 100 张传单告诉 C 去发传单</li>
+<li>最后，A 再叫 D 去收传单</li>
+</ol></li>
+</ol></li>
+<li>面向对象的关注点就在 <b>各个对象之间怎么「互相联络」</b> 上</li>
+<li>每个对象自己的任务都是很小，很简单的，单独理解起来比纯过程式的容易</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org96504a9" class="outline-2">
+<h2 id="org96504a9"><code>C</code> 里面是没有对象的，后来的语言里有对象，这个对象怎么被创造出来的呢？</h2>
+<div class="outline-text-2" id="text-org96504a9">
+<ul class="org-ul">
+<li>所有程序都是对算法的抽象
+<ul class="org-ul">
+<li>「对象」也是一种抽象</li>
+<li><p>
+「对象」代表的抽象就是
+</p>
+<blockquote>
+<p>
+一个函数或者结构，它能接收很多不同的用来联络的 <b>消息</b> （Message），然后能根据这些消息做不同的任务或者返回不同的值
+</p>
+</blockquote></li>
+</ul></li>
+<li>因此 <code>C</code> 里面也可以有「对象」的
+<ul class="org-ul">
+<li>用 <code>C</code> 的函数和 <code>Struct</code> 就能做出「对象」了</li>
+</ul></li>
+<li><code>C</code> 之后的语言
+<ul class="org-ul">
+<li>比如 <code>Ruby</code> 就是基于 C 的，Ruby 里的对象就是 <code>C</code> 的 <code>Struct</code> 以及一堆函数组成的</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org835767b" class="outline-2">
+<h2 id="org835767b">「对象」像不像 PCB 上的芯片？</h2>
+<div class="outline-text-2" id="text-org835767b">
+<blockquote>
+<p>
+你们不用考虑这个芯片集成的，只需要知道它的属性就可以了，然后按照不同的需要放芯片（对象），然后 tada～功能就出来了，是这样吗？
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>差不多</li>
+<li>只要芯片的接口（能接收的消息）对了，就能换不同牌子的芯片用
+<ul class="org-ul">
+<li>接口是一个对象能接收的消息的集合</li>
+</ul></li>
+<li>属性也能用消息来传递的
+<ul class="org-ul">
+<li>对象的函数是叫它做事情的消息</li>
+<li>对象的属性是问它问题的消息</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a9882c" class="outline-2">
+<h2 id="org8a9882c">关键就是对象之间互通消息，对吧？</h2>
+<div class="outline-text-2" id="text-org8a9882c">
+<ul class="org-ul">
+<li>对的</li>
+<li>我现在的理解是，面向对象只要理解这一点就算掌握了</li>
+<li>其他的多态、继承、集合都是对怎么处理消息的不同实现</li>
+<li>本质都是要设计合理的接口</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1c2b468" class="outline-2">
+<h2 id="org1c2b468">这个合理的接口指什么呢？</h2>
+<div class="outline-text-2" id="text-org1c2b468">
+<ul class="org-ul">
+<li>就是一个对象的接口不能太大（能接收的消息太多）</li>
+<li>使用「对象」要实现的目标就是能「换不同牌子的芯片用」</li>
+<li>如果接口太大了，要做一个满足这个接口的对象就太难了，不够灵活</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaabea9b" class="outline-2">
+<h2 id="orgaabea9b">是不是里面的函数或者算法结构不能特别多？不然就能处理很多消息</h2>
+<div class="outline-text-2" id="text-orgaabea9b">
+<ul class="org-ul">
+<li>对，一个对象里的函数、算法结构不能太多</li>
+<li>一个对象只做一件事（发传单/分配任务/etc.）</li>
+</ul>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-07</span>
+        <span title="last modification date" class="post-info">2017-12-07</span>
+        <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/12/07/explain-OOP-to-a-novice";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/12/07/explain-OOP-to-a-novice";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
