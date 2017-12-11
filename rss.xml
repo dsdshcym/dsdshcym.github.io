@@ -4,52 +4,52 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 11 Dec 2017 12:18:18 CST</pubDate>
-    <lastBuildDate>Mon, 11 Dec 2017 12:18:18 CST</lastBuildDate>
+    <pubDate>Mon, 11 Dec 2017 18:04:56 CST</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2017 18:04:56 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>设计的能力边界</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</link>
+      <title>「鲸鱼」用户和 28 效应</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>设计的能力边界</h1>
-            <p>
-其实，代码/架构的设计和 UI/UX 的设计很大程度上是类似的。
+            <h1>「鲸鱼」用户和 28 效应</h1>
+            <blockquote>
+<p>
+以社交类休闲游戏开发商 Zynga 为例，在 2016 年 20% 的付费玩家平均花费
+571 美元，而其余 80% 的付费玩家平均一年花费只有 19 美元，而 1% 的付费玩家每人花费超过 4000 美元。
 </p>
-
-<ul class="org-ul">
-<li>设计只能锦上添花，不能雪中送炭</li>
-<li>设计是带有人文价值的技术性工作
-<ul class="org-ul">
-<li>设计的目标是在多项权衡（商业、技术）下找到最优解</li>
-<li>设计成果能不能解决商业问题，而不是单单解决技术问题</li>
-</ul></li>
-<li>eico 现在做的是用产品思维辅助创业公司解决创业过程中遇到的各种问题
-<ul class="org-ul">
-<li>发布会</li>
-<li>微信公众号</li>
-<li>宣传</li>
-<li>装修</li>
-</ul></li>
-<li>创业的四个问题
-<ul class="org-ul">
-<li>想法</li>
-<li>人才</li>
-<li>产品</li>
-<li>资金</li>
-</ul></li>
-<li>设计能帮助到「想法」和「产品」的核心部分</li>
-</ul>
+</blockquote>
 
 <p>
--- from <a href="http://uxcoffee.co/3127f6b0">#38：设计的能力边界（EICO 联合创始人 Rokey 张伟 - 上） | UX Coffee 设计咖</a>
+这应该也是 28 效应<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>的一个体现吧。
 </p>
 
+<p>
+-- from: <a href="http://www.solidot.org/story?sid=54798">很多公司的收入依赖于“鲸鱼”</a>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle - Wikipedia</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-11</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</guid>
+    </item>
+    <item>
+      <title>设计的能力边界</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</guid>
     </item>
@@ -108,13 +108,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-11-29</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</guid>
-    </item>
-    <item>
-      <title>Retrospect on Image Processing Using AWS Lambda</title>
-      <link>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-11-24</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</guid>
     </item>
   </channel>
 </rss>
