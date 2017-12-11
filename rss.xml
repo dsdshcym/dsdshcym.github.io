@@ -4,45 +4,43 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 11 Dec 2017 18:04:56 CST</pubDate>
-    <lastBuildDate>Mon, 11 Dec 2017 18:04:56 CST</lastBuildDate>
+    <pubDate>Mon, 11 Dec 2017 19:42:15 CST</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2017 19:42:15 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>「鲸鱼」用户和 28 效应</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</link>
+      <title>Write your code as if you&#39;re writing a letter</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>「鲸鱼」用户和 28 效应</h1>
+            <h1>Write your code as if you&#39;re writing a letter</h1>
             <blockquote>
 <p>
-以社交类休闲游戏开发商 Zynga 为例，在 2016 年 20% 的付费玩家平均花费
-571 美元，而其余 80% 的付费玩家平均一年花费只有 19 美元，而 1% 的付费玩家每人花费超过 4000 美元。
+Next time you have to write any significant amount of code, imagine
+that you are going to have to write a letter that teaches someone how
+to reproduce it. The only code you can show them are tests. It really
+changes how you approach the problem.
 </p>
 </blockquote>
 
 <p>
-这应该也是 28 效应<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>的一个体现吧。
+-- from <a href="https://twitter.com/jamis/status/939183075291947008">Jamis Buck on Twitter: "Next time you have to write any
+   significant amount of code, imagine that you are going to have to
+   write a letter that teaches someone how to…
+   https://t.co/vjk0Uh7Eya"</a>
 </p>
 
-<p>
--- from: <a href="http://www.solidot.org/story?sid=54798">很多公司的收入依赖于“鲸鱼”</a>
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle - Wikipedia</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-11</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
+    </item>
+    <item>
+      <title>「鲸鱼」用户和 28 效应</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</guid>
     </item>
@@ -101,13 +99,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-12-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</guid>
-    </item>
-    <item>
-      <title>AWS Lambda is what Microservices should be like</title>
-      <link>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-11-29</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like</guid>
     </item>
   </channel>
 </rss>
