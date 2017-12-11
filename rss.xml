@@ -4,361 +4,59 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 08 Dec 2017 19:00:58 CST</pubDate>
-    <lastBuildDate>Fri, 08 Dec 2017 19:00:58 CST</lastBuildDate>
+    <pubDate>Mon, 11 Dec 2017 12:18:18 CST</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2017 12:18:18 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: 99 Bottles of OOP</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</link>
+      <title>设计的能力边界</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: 99 Bottles of OOP</h1>
+            <h1>设计的能力边界</h1>
             <p>
-I bought <a href="https://www.sandimetz.com/99bottles/">99 Bottles of OOP</a> (99 Bottles) right after its first sale
-started (40% off until Dec 13th). Buy it now and I promise you that
-you won't regret it.
+其实，代码/架构的设计和 UI/UX 的设计很大程度上是类似的。
 </p>
-<div id="outline-container-org63294f1" class="outline-2">
-<h2 id="org63294f1">TL;DR</h2>
-<div class="outline-text-2" id="text-org63294f1">
-<p>
-This book taught me how to do <a href="#orgb711f32">step-by-step refactoring</a>.
-</p>
-</div>
-</div>
-<div id="outline-container-orge6580ea" class="outline-2">
-<h2 id="orge6580ea">Connections with earlier books</h2>
-<div class="outline-text-2" id="text-orge6580ea">
-</div>
-<div id="outline-container-org00cc906" class="outline-3">
-<h3 id="org00cc906"><a href="http://www.poodr.com/">Practical Object-Oriented Design in Ruby</a> (POODR)</h3>
-<div class="outline-text-3" id="text-org00cc906">
-<p>
-I wrote my review<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> for POODR several months ago and I said it was
-the best book about Object-Oriented Design. This comment may need to
-change since 99 Bottles comes out.
-</p>
-
-<p>
-POODR is truly a wonderful book and it opens my mind to the messages
-in the Object-Oriented world and helps me to finally switch my mindset
-from a procedural one to a more object-oriented one.
-</p>
-
-<p>
-What POODR lacks is a good example to demonstrate how to finally get
-to a well designed application step by step. It does provides some
-examples (like <code>Bicycle</code> and <code>Gear</code>), but it's still unclear how to
-get these results.
-</p>
-
-<p>
-99 Bottles basically takes most of the great ideas from POODR and puts
-them together into a great example: Printing out lyrics for a song
-(original requirement) and changing some parts of the lyrics (new
-feature requirement).
-</p>
-
-<p>
-In this example, the book explains how to do TDD and refactoring step
-by step, then finally get a well-designed application.
-</p>
-</div>
-</div>
-<div id="outline-container-org8a14cbd" class="outline-3">
-<h3 id="org8a14cbd"><a href="https://martinfowler.com/books/refactoring.html">Refactoring: Improving the Design of Existing Code</a></h3>
-<div class="outline-text-3" id="text-org8a14cbd">
-<p>
-(I also wrote my review for Refactoring<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>)
-</p>
-
-<p>
-In 99 Bottles, they directly mention a lot of Code Smell names and
-Refactoring Techniques from the Refactoring book.
-</p>
-
-<p>
-That's why I felt very familiar when reading this book. Because I had
-already known the techniques from the Refactoring book. And 99 Bottles
-provided more specific example (in Ruby) for these code smells and
-refactoring techniques.
-</p>
-
-<p>
-And more importantly, 99 Bottles taught me how to really apply the
-step-by-step refactoring idea from the Refactoring book to my daily
-work.
-</p>
-
-<p>
-I used to think the step-by-step refactoring idea is too
-time-consuming and not worth it. But 99 Bottles tells me that it's
-important to land on a stable point every time when refactoring and
-shows that it's easier to refactor in this way. So I tried this style
-of refactoring and now I find I'm doing more tiny step refactorings in
-my daily work.
-</p>
-</div>
-</div>
-<div id="outline-container-org336b67a" class="outline-3">
-<h3 id="org336b67a"><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a></h3>
-<div class="outline-text-3" id="text-org336b67a">
-<p>
-(I wrote my review for GOOS<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> as well)
-</p>
-
-<p>
-GOOS taught me how to build a faster feedback loop via TDD. And it's
-invaluable.
-</p>
-
-<p>
-The problem with GOOS is that its example is a Java application and
-seems to be pretty old.
-</p>
-
-<p>
-99 Bottles provides this simple Ruby application example for us. And
-it shows me how to do TDD in Ruby correctly.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgcdb3be0" class="outline-2">
-<h2 id="orgcdb3be0">Simplicity Matters</h2>
-<div class="outline-text-2" id="text-orgcdb3be0">
-<p>
-First of all, 99 Bottles defines what is the best code:
-</p>
-<blockquote>
-<p>
-The best solution lies at <b>the sweet spot that represents the perfect
-compromise between comprehension and changeability</b>
-</p>
-</blockquote>
-<p>
-So, the best solution needs to be
-</p>
-<ul class="org-ul">
-<li>Concrete enough to be understood</li>
-<li>Abstract enough to allow for change</li>
-</ul>
-<p>
-We can then call this kind of solutions "simple". (which reminds me of
-the talk about Simplicity given by Rich Hickey<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>)
-</p>
-
-<p>
-Guided by this thinking, we can get the simplest code (Shameless
-Green) to solve our current problem using TDD.
-</p>
-
-<p>
-(Thanks to my previous reading on POODR, I wrote a similar solution to
-Shameless Green in 30 mins)
-</p>
-</div>
-<div id="outline-container-orgb314545" class="outline-3">
-<h3 id="orgb314545">Test Driven Shameless Green</h3>
-<div class="outline-text-3" id="text-orgb314545">
-<p>
-So how to TDD the Shameless Green solution? Of course, we need to
-follow the red/green/refactor cycle.
-</p>
-<ol class="org-ol">
-<li>Write a failing test</li>
-<li>Make Transformations<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> to production code to make it more
-generic, thus pass the test</li>
-<li>Refactor</li>
-</ol>
-
-<p>
-When making the test pass, we need to use simplest transformation to
-pass the tests.
-</p>
-
-<p>
-Since
-</p>
-<ol class="org-ol">
-<li>We start our production code as concrete as possible (e.g.
-returning <code>nil</code> at first)</li>
-<li>Every transformation is making our production code more generic
-(abstract)</li>
-<li>We choose the simplest transformation every time (which make our
-code more generic, but as less as possible to just pass the test)</li>
-</ol>
-
-<p>
-The result we get would be both concrete enough and abstract enough.
-(Shameless Green)
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgda0804a" class="outline-2">
-<h2 id="orgda0804a">Make the change easy first</h2>
-<div class="outline-text-2" id="text-orgda0804a">
-<p>
-Then comes the most important part of this book: How to embrace
-changes?
-</p>
-
-<p>
-When a new feature requirement comes, all we need to do is to "make
-the change easy first, then make the easy change" (by Kent Beck<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>)
-</p>
-
-<p>
-This is the exact strategy 99 bottles follows:
-</p>
-<ol class="org-ol">
-<li>Refactor the code first based on the feature requirement</li>
-<li>Make the easy change to achieve the new feature</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgb711f32" class="outline-2">
-<h2 id="orgb711f32"><a id="ID-9C9E9765-E74E-4E4D-9D6D-EBA38DF94947"></a>Step-by-step Refactoring</h2>
-<div class="outline-text-2" id="text-orgb711f32">
-<p>
-But how to refactor the code? 99 Bottles shows some great examples on
-how to refactor our code confidently.
-</p>
-
-<p>
-We need to:
-</p>
-<ol class="org-ol">
-<li>Take small steps</li>
-<li>Refactor under green</li>
-<li>Seek stable landing points</li>
-</ol>
-
-<p>
-A great exercise I learned from this book is that:
-</p>
-<blockquote>
-<p>
-<b>Only change 1 line of your code/test at a time, and keep your tests
-passing.</b>
-</p>
-</blockquote>
 
 <ul class="org-ul">
-<li>1 line of code is the smallest possible step when changing our code
-(if you can only change a word or a character, that would better)</li>
-<li>There are some useful tips to keep your tests green while only
-changing 1 line of your code, like
-<ol class="org-ol">
-<li>Returning a new value at the end of the method while still
-keeping the old code untouched</li>
-<li>Adding a new argument with a default value that lead to the old
-conditional path.
+<li>设计只能锦上添花，不能雪中送炭</li>
+<li>设计是带有人文价值的技术性工作
 <ul class="org-ul">
-<li>We can pass in the new argument in the new test.</li>
-<li>And the default value will keep the old tests passing.</li>
-<li>Choose meaningful defaults like <code>:FIXME</code> when no other better
-defaults can use.</li>
+<li>设计的目标是在多项权衡（商业、技术）下找到最优解</li>
+<li>设计成果能不能解决商业问题，而不是单单解决技术问题</li>
 </ul></li>
-</ol></li>
+<li>eico 现在做的是用产品思维辅助创业公司解决创业过程中遇到的各种问题
+<ul class="org-ul">
+<li>发布会</li>
+<li>微信公众号</li>
+<li>宣传</li>
+<li>装修</li>
+</ul></li>
+<li>创业的四个问题
+<ul class="org-ul">
+<li>想法</li>
+<li>人才</li>
+<li>产品</li>
+<li>资金</li>
+</ul></li>
+<li>设计能帮助到「想法」和「产品」的核心部分</li>
 </ul>
 
 <p>
-Doing all this will make sure we are <b>only one <code>Undo</code> away from the
-green code</b>. This makes the refactoring process no longer that
-stressful and I think I can take any refactoring project down applying
-this strategy.
+-- from <a href="http://uxcoffee.co/3127f6b0">#38：设计的能力边界（EICO 联合创始人 Rokey 张伟 - 上） | UX Coffee 设计咖</a>
 </p>
 
-<p>
-I then take bigger steps after I'm more familiar with this style of
-refactoring. But I'll always make sure that I can go back to green in
-one step (by leveraging <code>git</code>).
-</p>
-</div>
-</div>
-<div id="outline-container-org21074d9" class="outline-2">
-<h2 id="org21074d9">Fix the easy problems first</h2>
-<div class="outline-text-2" id="text-org21074d9">
-<p>
-Another important lesson I learned from this book is to <b>focus on the
-easy problems first</b>.
-</p>
-
-<p>
-Sometimes, a refactoring looks scary only because we are thinking too
-many small refactorings at the same time.
-</p>
-
-<p>
-All we need to do is to focus on the horizontal refactoring<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> at our
-hand and ignore the vertical refactorings we discover (or maybe take
-notes down so that we can still remember them later).
-</p>
-
-<p>
-After all the horizontal refactorings are done, the easy path will
-appear by itself automatically.
-</p>
-</div>
-</div>
-<div id="outline-container-org706d6ee" class="outline-2">
-<h2 id="org706d6ee">Summary</h2>
-<div class="outline-text-2" id="text-org706d6ee">
-<p>
-There are still many topics discussed in this book that I didn't
-mention in this post but they are all useful advice for developing
-enjoyable software. They all help you write a better story with your
-code.
-</p>
-
-<p>
-More importantly, you'll fall in love with polymorphism after you read
-this book. (I know I did.)
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/05/12/my-review-of-POODR/">My Review of Practical Object-Oriented Design in Ruby - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">Review of Refactoring: Improving the Design of Existing Code - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://8thlight.com/blog/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html">The Transformation Priority Premise - 8th Light</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://twitter.com/KentBeck/status/250733358307500032">Kent Beck on Twitter: "for each desired change, make the change easy (warning: this may be hard), then make the easy change"</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.facebook.com/notes/kent-beck/dont-cross-the-beams-avoiding-interference-between-horizontal-and-vertical-refac/260531380646400/">Don't Cross the Beams: Avoiding Interference Between Horizontal and Vertical Refactorings</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-11</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</guid>
+    </item>
+    <item>
+      <title>Book Review: 99 Bottles of OOP</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</guid>
     </item>
@@ -417,13 +115,6 @@ this book. (I know I did.)
       <description><![CDATA[]]></description>
       <pubDate>2017-11-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda</guid>
-    </item>
-    <item>
-      <title>Sony WH-1000XM2 Review</title>
-      <link>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-11-22</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/11/16/sony-wh-1000xm2-review</guid>
     </item>
   </channel>
 </rss>
