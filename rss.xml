@@ -4,38 +4,51 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 11 Dec 2017 19:42:15 CST</pubDate>
-    <lastBuildDate>Mon, 11 Dec 2017 19:42:15 CST</lastBuildDate>
+    <pubDate>Tue, 12 Dec 2017 14:53:43 CST</pubDate>
+    <lastBuildDate>Tue, 12 Dec 2017 14:53:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Write your code as if you&#39;re writing a letter</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</link>
+      <title>Turn a long letter into a short one</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Write your code as if you&#39;re writing a letter</h1>
-            <blockquote>
-<p>
-Next time you have to write any significant amount of code, imagine
-that you are going to have to write a letter that teaches someone how
-to reproduce it. The only code you can show them are tests. It really
-changes how you approach the problem.
+            <h1>Turn a long letter into a short one</h1>
+            <p>
+<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/">Writing code is just like writing a letter to other developers or your
+future self</a>.
 </p>
-</blockquote>
 
 <p>
--- from <a href="https://twitter.com/jamis/status/939183075291947008">Jamis Buck on Twitter: "Next time you have to write any
-   significant amount of code, imagine that you are going to have to
-   write a letter that teaches someone how to…
-   https://t.co/vjk0Uh7Eya"</a>
+It takes time to write this letter short and abstract so it can be
+read easily.
+</p>
+
+<blockquote>
+<p>
+Take the time to turn a long letter into a short one.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://m.signalvnoise.com/the-majestic-monolith-29166d022228">The Majestic Monolith – Signal v. Noise</a>
+</p>
+
+<blockquote>
+<p>
+I didn't have time to write a short letter, so I wrote a long one
+instead.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so">Quote by Mark Twain: “I didn't have time to write a short letter, so ...”</a>
 </p>
 
     </div>
 </section>
 ]]></description>
-      <pubDate>2017-12-11</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
+      <pubDate>2017-12-12</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</guid>
     </item>
     <item>
       <title>「鲸鱼」用户和 28 效应</title>
@@ -50,6 +63,13 @@ changes how you approach the problem.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</guid>
+    </item>
+    <item>
+      <title>Write your code as if you&#39;re writing a letter</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2017-12-11</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
     </item>
     <item>
       <title>Book Review: 99 Bottles of OOP</title>
@@ -92,13 +112,6 @@ changes how you approach the problem.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</guid>
-    </item>
-    <item>
-      <title>Write Custom RSpec Matchers to Simplify Your Specs</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-01</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs</guid>
     </item>
   </channel>
 </rss>
