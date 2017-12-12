@@ -4,49 +4,65 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 12 Dec 2017 14:53:43 CST</pubDate>
-    <lastBuildDate>Tue, 12 Dec 2017 14:53:43 CST</lastBuildDate>
+    <pubDate>Tue, 12 Dec 2017 21:49:55 CST</pubDate>
+    <lastBuildDate>Tue, 12 Dec 2017 21:49:55 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Turn a long letter into a short one</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</link>
+      <title>Imperative Shell around the Functional Core</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Turn a long letter into a short one</h1>
+            <h1>Imperative Shell around the Functional Core</h1>
             <p>
-<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/">Writing code is just like writing a letter to other developers or your
-future self</a>.
+Elixir is the perfect language to build upon the methodology from this talk:
 </p>
-
-<p>
-It takes time to write this letter short and abstract so it can be
-read easily.
-</p>
-
 <blockquote>
 <p>
-Take the time to turn a long letter into a short one.
+Imperative Shell around the Functional Core
 </p>
 </blockquote>
 <p>
--- from <a href="https://m.signalvnoise.com/the-majestic-monolith-29166d022228">The Majestic Monolith – Signal v. Noise</a>
+-- from <a href="https://www.youtube.com/watch?v=yTkzNHF6rMs">RubyConf 12 - Boundaries by Gary Bernhardt - YouTube</a>
 </p>
 
-<blockquote>
 <p>
-I didn't have time to write a short letter, so I wrote a long one
-instead.
+Elixir data structures are obviously immutable, and the code and data
+are combined within the same <code>Module</code>. (The <code>FauxO</code> style programming
+from this talk.)
 </p>
-</blockquote>
+
 <p>
--- from <a href="https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so">Quote by Mark Twain: “I didn't have time to write a short letter, so ...”</a>
+And Gary even introduced Actor Model which is the concurrency model
+used by Elixir/Erlang.
 </p>
+
+<p>
+In Ruby, we need some self-disciplines to force ourselves to write an
+imperative shell around the functional core. But in Elixir, the
+language is already encouraging us to write code in this style. I
+think that's why I feel so excited about Elixir.
+</p>
+
+<p>
+This talk was also mentioned in:
+</p>
+<ol class="org-ol">
+<li><a href="http://www.fullstackradio.com/78">78: Ben Orenstein - Our All-Time Favorite Refactorings | Full Stack Radio</a></li>
+<li><a href="https://www.youtube.com/watch?v=9TmJZSBYPQA&amp;index=14&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">14 - 刘常洋 - Functional Programming Concepts - YouTube</a></li>
+</ol>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-12</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</guid>
+    </item>
+    <item>
+      <title>Turn a long letter into a short one</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-12</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</guid>
     </item>
@@ -105,13 +121,6 @@ instead.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-05</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/05/how-to-write-deliberately-unmaintainable-code</guid>
-    </item>
-    <item>
-      <title>人生的意义</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-05</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life</guid>
     </item>
   </channel>
 </rss>
