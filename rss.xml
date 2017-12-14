@@ -4,58 +4,82 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 12 Dec 2017 21:49:55 CST</pubDate>
-    <lastBuildDate>Tue, 12 Dec 2017 21:49:55 CST</lastBuildDate>
+    <pubDate>Thu, 14 Dec 2017 17:38:52 CST</pubDate>
+    <lastBuildDate>Thu, 14 Dec 2017 17:38:52 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Imperative Shell around the Functional Core</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</link>
+      <title>Use git bisect run to automatically find the first bad commit</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Imperative Shell around the Functional Core</h1>
-            <p>
-Elixir is the perfect language to build upon the methodology from this talk:
-</p>
-<blockquote>
+            <h1>Use git bisect run to automatically find the first bad commit</h1>
+            <blockquote>
 <p>
-Imperative Shell around the Functional Core
+Use <code>git bisect</code> to find the first bad commit.
 </p>
 </blockquote>
 <p>
--- from <a href="https://www.youtube.com/watch?v=yTkzNHF6rMs">RubyConf 12 - Boundaries by Gary Bernhardt - YouTube</a>
+-- from <a href="https://www.youtube.com/watch?v=VMcMqrpjAjU">RubyConf 2017: "RSpec no longer works with ActiveRecord" by Sam Phippen - YouTube</a>
 </p>
 
 <p>
-Elixir data structures are obviously immutable, and the code and data
-are combined within the same <code>Module</code>. (The <code>FauxO</code> style programming
-from this talk.)
+In this talk, Sam showed us how he debugged a rspec issue using <code>git bisect</code>.
 </p>
 
 <p>
-And Gary even introduced Actor Model which is the concurrency model
-used by Elixir/Erlang.
+But he is just manually using <code>git bisect good</code> and <code>git bisect bad</code>
+to mark a commit as good/bad.
 </p>
 
 <p>
-In Ruby, we need some self-disciplines to force ourselves to write an
-imperative shell around the functional core. But in Elixir, the
-language is already encouraging us to write code in this style. I
-think that's why I feel so excited about Elixir.
-</p>
-
-<p>
-This talk was also mentioned in:
+Actually, <code>git bisect</code> can run the script automatically:
 </p>
 <ol class="org-ol">
-<li><a href="http://www.fullstackradio.com/78">78: Ben Orenstein - Our All-Time Favorite Refactorings | Full Stack Radio</a></li>
-<li><a href="https://www.youtube.com/watch?v=9TmJZSBYPQA&amp;index=14&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">14 - 刘常洋 - Functional Programming Concepts - YouTube</a></li>
+<li><code>git bisect start</code></li>
+<li><code>git bisect good HEAD~4</code> (for example)</li>
+<li><code>git bisect bad HEAD</code></li>
+<li><code>git bisect run rspec spec/services/some_spec.rb</code></li>
 </ol>
+<p>
+Then <code>git bisect</code> will automatically run the script and find the first
+commit from which this spec started to fail.
+</p>
+
+<p>
+But in this talk's case, we need to run the script in another git
+directory. We can use shell script to switch to that directory first
+and then run the test suite:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git bisect run sh -c 'cd another/project/; rspec spec/in/that/project'
+</pre>
+</div>
+
+<p>
+Of course, there are more complicated issues in real life projects,
+like <code>gem</code> dependency issue in the talk. We can always fallback to
+manually tagging a commit as good/bad if we find something unexpected
+from the log of <code>git bisect run</code>.
+</p>
+
+<p>
+You can also read more about <code>git bisect</code>, <code>rspec bisect</code> in my
+previous post: <a href="http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale/">RSpec failures caused by I18n.locale - dsdshome</a>
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-14</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</guid>
+    </item>
+    <item>
+      <title>Imperative Shell around the Functional Core</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-12</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</guid>
     </item>
@@ -114,13 +138,6 @@ This talk was also mentioned in:
       <description><![CDATA[]]></description>
       <pubDate>2017-12-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix</guid>
-    </item>
-    <item>
-      <title>How to write deliberately unmaintainable code?</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/05/how-to-write-deliberately-unmaintainable-code</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-05</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/05/how-to-write-deliberately-unmaintainable-code</guid>
     </item>
   </channel>
 </rss>

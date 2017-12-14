@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Use git bisect run to automatically find the first bad commit - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Git, git bisect, debug, automation, script, Shell" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use git bisect run to automatically find the first bad commit</h1>
+            <blockquote>
+<p>
+Use <code>git bisect</code> to find the first bad commit.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=VMcMqrpjAjU">RubyConf 2017: "RSpec no longer works with ActiveRecord" by Sam Phippen - YouTube</a>
+</p>
+
+<p>
+In this talk, Sam showed us how he debugged a rspec issue using <code>git bisect</code>.
+</p>
+
+<p>
+But he is just manually using <code>git bisect good</code> and <code>git bisect bad</code>
+to mark a commit as good/bad.
+</p>
+
+<p>
+Actually, <code>git bisect</code> can run the script automatically:
+</p>
+<ol class="org-ol">
+<li><code>git bisect start</code></li>
+<li><code>git bisect good HEAD~4</code> (for example)</li>
+<li><code>git bisect bad HEAD</code></li>
+<li><code>git bisect run rspec spec/services/some_spec.rb</code></li>
+</ol>
+<p>
+Then <code>git bisect</code> will automatically run the script and find the first
+commit from which this spec started to fail.
+</p>
+
+<p>
+But in this talk's case, we need to run the script in another git
+directory. We can use shell script to switch to that directory first
+and then run the test suite:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git bisect run sh -c 'cd another/project/; rspec spec/in/that/project'
+</pre>
+</div>
+
+<p>
+Of course, there are more complicated issues in real life projects,
+like <code>gem</code> dependency issue in the talk. We can always fallback to
+manually tagging a commit as good/bad if we find something unexpected
+from the log of <code>git bisect run</code>.
+</p>
+
+<p>
+You can also read more about <code>git bisect</code>, <code>rspec bisect</code> in my
+previous post: <a href="http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale/">RSpec failures caused by I18n.locale - dsdshome</a>
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-14</span>
+        <span title="last modification date" class="post-info">2017-12-14</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/git/">Git</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
