@@ -4,75 +4,63 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 14 Dec 2017 17:38:52 CST</pubDate>
-    <lastBuildDate>Thu, 14 Dec 2017 17:38:52 CST</lastBuildDate>
+    <pubDate>Thu, 14 Dec 2017 22:49:50 CST</pubDate>
+    <lastBuildDate>Thu, 14 Dec 2017 22:49:50 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Use git bisect run to automatically find the first bad commit</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
+      <title>How to keep Ruby Relevant?</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Use git bisect run to automatically find the first bad commit</h1>
+            <h1>How to keep Ruby Relevant?</h1>
             <blockquote>
-<p>
-Use <code>git bisect</code> to find the first bad commit.
-</p>
+<ul class="org-ul">
+<li>How to keep Ruby Relevant?
+<ol class="org-ol">
+<li>Talk about Ruby More</li>
+<li>Learn new ideas</li>
+<li>Help maintain abandoned libraries</li>
+<li>Build new libraries</li>
+<li>Build new products with Ruby</li>
+<li>Teach people Ruby</li>
+</ol></li>
+<li>Ruby literally changed my life</li>
+</ul>
 </blockquote>
 <p>
--- from <a href="https://www.youtube.com/watch?v=VMcMqrpjAjU">RubyConf 2017: "RSpec no longer works with ActiveRecord" by Sam Phippen - YouTube</a>
+-- from <a href="https://www.youtube.com/watch?v=PiT2XEWae1c&amp;list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt&amp;index=20">RubyConf 2017: Saving Ruby from the Apocalypse by Jason Charnes - YouTube</a>
 </p>
 
 <p>
-In this talk, Sam showed us how he debugged a rspec issue using <code>git bisect</code>.
+Ruby literally changed my life, too.
+</p>
+<ul class="org-ul">
+<li>It brought me to Strikingly (An extremely awesome team)</li>
+<li>It taught me how to write real Object-Oriented world (with TDD).</li>
+<li>It made me know programming can be so much enjoyable.</li>
+</ul>
+
+<p>
+This talk was also mentioned in <a href="https://overcast.fm/+DuavCGVqo">134: Fastributes — The Bike Shed — Overcast</a>
 </p>
 
 <p>
-But he is just manually using <code>git bisect good</code> and <code>git bisect bad</code>
-to mark a commit as good/bad.
-</p>
-
-<p>
-Actually, <code>git bisect</code> can run the script automatically:
-</p>
-<ol class="org-ol">
-<li><code>git bisect start</code></li>
-<li><code>git bisect good HEAD~4</code> (for example)</li>
-<li><code>git bisect bad HEAD</code></li>
-<li><code>git bisect run rspec spec/services/some_spec.rb</code></li>
-</ol>
-<p>
-Then <code>git bisect</code> will automatically run the script and find the first
-commit from which this spec started to fail.
-</p>
-
-<p>
-But in this talk's case, we need to run the script in another git
-directory. We can use shell script to switch to that directory first
-and then run the test suite:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh">git bisect run sh -c 'cd another/project/; rspec spec/in/that/project'
-</pre>
-</div>
-
-<p>
-Of course, there are more complicated issues in real life projects,
-like <code>gem</code> dependency issue in the talk. We can always fallback to
-manually tagging a commit as good/bad if we find something unexpected
-from the log of <code>git bisect run</code>.
-</p>
-
-<p>
-You can also read more about <code>git bisect</code>, <code>rspec bisect</code> in my
-previous post: <a href="http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale/">RSpec failures caused by I18n.locale - dsdshome</a>
+P.S. The speaker deals with the false fire alarm pretty well. "Is this
+(the Apocalypse) really happening?"
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-14</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</guid>
+    </item>
+    <item>
+      <title>Use git bisect run to automatically find the first bad commit</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-14</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</guid>
     </item>
@@ -131,13 +119,6 @@ previous post: <a href="http://dsdshcym.github.io/blog/2017/09/17/rspec-failures
       <description><![CDATA[]]></description>
       <pubDate>2017-12-07</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/07/explain-OOP-to-a-novice</guid>
-    </item>
-    <item>
-      <title>CRDT is used in both Teletype for Atom and Phoenix</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-07</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix</guid>
     </item>
   </channel>
 </rss>
