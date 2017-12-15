@@ -4,56 +4,61 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 14 Dec 2017 22:49:50 CST</pubDate>
-    <lastBuildDate>Thu, 14 Dec 2017 22:49:50 CST</lastBuildDate>
+    <pubDate>Fri, 15 Dec 2017 23:20:54 CST</pubDate>
+    <lastBuildDate>Fri, 15 Dec 2017 23:20:54 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>How to keep Ruby Relevant?</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</link>
+      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>How to keep Ruby Relevant?</h1>
+            <h1>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</h1>
             <blockquote>
 <ul class="org-ul">
-<li>How to keep Ruby Relevant?
+<li>在 Microsoft 可以用 Mac 开发</li>
+<li>评价编辑器好坏的几个方面
 <ol class="org-ol">
-<li>Talk about Ruby More</li>
-<li>Learn new ideas</li>
-<li>Help maintain abandoned libraries</li>
-<li>Build new libraries</li>
-<li>Build new products with Ruby</li>
-<li>Teach people Ruby</li>
+<li>足够快
+<ul class="org-ul">
+<li>打开文件</li>
+<li>搜索</li>
+</ul></li>
+<li>语法高亮</li>
+<li>提高生产力
+<ul class="org-ul">
+<li>keybinding</li>
+</ul></li>
+<li>项目契合度</li>
 </ol></li>
-<li>Ruby literally changed my life</li>
+<li>Atom 比 VSCode 先进的地方
+<ul class="org-ul">
+<li>能改动界面（VSC 注重 Performance，不提供 UI API）</li>
+<li>但造成性能问题</li>
+</ul></li>
+<li>Text Data Structure 对编辑器性能的影响很大
+<ul class="org-ul">
+<li>Array vs Red/Black Tree</li>
+</ul></li>
+<li>Electron is the new Flash</li>
 </ul>
 </blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=PiT2XEWae1c&amp;list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt&amp;index=20">RubyConf 2017: Saving Ruby from the Apocalypse by Jason Charnes - YouTube</a>
-</p>
 
 <p>
-Ruby literally changed my life, too.
-</p>
-<ul class="org-ul">
-<li>It brought me to Strikingly (An extremely awesome team)</li>
-<li>It taught me how to write real Object-Oriented world (with TDD).</li>
-<li>It made me know programming can be so much enjoyable.</li>
-</ul>
-
-<p>
-This talk was also mentioned in <a href="https://overcast.fm/+DuavCGVqo">134: Fastributes — The Bike Shed — Overcast</a>
-</p>
-
-<p>
-P.S. The speaker deals with the false fire alarm pretty well. "Is this
-(the Apocalypse) really happening?"
+-- from <a href="http://teahour.fm/2017/12/12/why-vscode-is-better-than-atom.html">Why VSCode is better than Atom? - Teahour.fm</a>
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-15</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
+    </item>
+    <item>
+      <title>How to keep Ruby Relevant?</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-14</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</guid>
     </item>
@@ -112,13 +117,6 @@ P.S. The speaker deals with the false fire alarm pretty well. "Is this
       <description><![CDATA[]]></description>
       <pubDate>2017-12-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model</guid>
-    </item>
-    <item>
-      <title>给小白解释「面向对象」（问答体）</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/07/explain-OOP-to-a-novice</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-07</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/07/explain-OOP-to-a-novice</guid>
     </item>
   </channel>
 </rss>
