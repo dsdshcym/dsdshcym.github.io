@@ -4,54 +4,62 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 15 Dec 2017 23:20:54 CST</pubDate>
-    <lastBuildDate>Fri, 15 Dec 2017 23:20:54 CST</lastBuildDate>
+    <pubDate>Sat, 16 Dec 2017 18:05:44 CST</pubDate>
+    <lastBuildDate>Sat, 16 Dec 2017 18:05:44 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
+      <title>Global Find Clipboard on macOS</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</h1>
-            <blockquote>
-<ul class="org-ul">
-<li>在 Microsoft 可以用 Mac 开发</li>
-<li>评价编辑器好坏的几个方面
-<ol class="org-ol">
-<li>足够快
-<ul class="org-ul">
-<li>打开文件</li>
-<li>搜索</li>
-</ul></li>
-<li>语法高亮</li>
-<li>提高生产力
-<ul class="org-ul">
-<li>keybinding</li>
-</ul></li>
-<li>项目契合度</li>
-</ol></li>
-<li>Atom 比 VSCode 先进的地方
-<ul class="org-ul">
-<li>能改动界面（VSC 注重 Performance，不提供 UI API）</li>
-<li>但造成性能问题</li>
-</ul></li>
-<li>Text Data Structure 对编辑器性能的影响很大
-<ul class="org-ul">
-<li>Array vs Red/Black Tree</li>
-</ul></li>
-<li>Electron is the new Flash</li>
-</ul>
-</blockquote>
+            <h1>Global Find Clipboard on macOS</h1>
+            <p>
+Turns out that macOS not only has Universal Clipboard to sync the
+clipboard content between your Mac and your iOS devices, but also has
+a feature called Global Find Clipboard to sync the content between the
+Find inputs in different applications.
+</p>
 
 <p>
--- from <a href="http://teahour.fm/2017/12/12/why-vscode-is-better-than-atom.html">Why VSCode is better than Atom? - Teahour.fm</a>
+You can try this feature in Safari and Terminal:
+</p>
+<ol class="org-ol">
+<li>Open Safari</li>
+<li>Use <code>Cmd-F</code> to search anything (<code>keyword</code> for example)</li>
+<li>Open Terminal</li>
+<li>Press <code>Cmd-F</code> to see the content in the search bar (it should be
+<code>keyword</code> as well)</li>
+<li>If you update the content in the Terminal search bar and go back to
+Safari, the search content in Safari is updated automatically</li>
+</ol>
+
+<p>
+-- from
+</p>
+<ol class="org-ol">
+<li><a href="https://twitter.com/njukidreborn/status/941393059337531392">rebornix on Twitter: \"Thanks to @melvinphilips8 for bringing us
+Global Find Clipboard on macOS https://t.co/1K1hpkL3C0
+https://t.co/xdP3IatLhi\"</a></li>
+<li><a href="https://github.com/Microsoft/vscode/issues/39585">Test macOS Global Find Clipboard · Issue #39585 · Microsoft/vscode</a></li>
+</ol>
+
+<p>
+(Though, it is a nice-to-have feature, but I cannot think of a use
+case for it, searching the same word in both Preview and Safari?)
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-16</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</guid>
+    </item>
+    <item>
+      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-15</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
     </item>
@@ -110,13 +118,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-12-08</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</guid>
-    </item>
-    <item>
-      <title>Add STI to a Legacy ActiveRecord Model</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-08</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/07/add-sti-to-a-legacy-activerecord-model</guid>
     </item>
   </channel>
 </rss>
