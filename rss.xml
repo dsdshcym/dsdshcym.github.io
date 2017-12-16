@@ -4,57 +4,169 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 16 Dec 2017 18:05:44 CST</pubDate>
-    <lastBuildDate>Sat, 16 Dec 2017 18:05:44 CST</lastBuildDate>
+    <pubDate>Sat, 16 Dec 2017 22:55:53 CST</pubDate>
+    <lastBuildDate>Sat, 16 Dec 2017 22:55:53 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>Global Find Clipboard on macOS</title>
       <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2017-12-16</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</guid>
+    </item>
+    <item>
+      <title>What&#39;s Next For Phoenix</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Global Find Clipboard on macOS</h1>
+            <h1>What&#39;s Next For Phoenix</h1>
             <p>
-Turns out that macOS not only has Universal Clipboard to sync the
-clipboard content between your Mac and your iOS devices, but also has
-a feature called Global Find Clipboard to sync the content between the
-Find inputs in different applications.
+I just watched this another great talk from Chris McCord (creator of
+Phoenix).
 </p>
 
 <p>
-You can try this feature in Safari and Terminal:
+The part explaining Contexts was super awesome. <code>Context</code> really is
+the way to write good code:
 </p>
-<ol class="org-ol">
-<li>Open Safari</li>
-<li>Use <code>Cmd-F</code> to search anything (<code>keyword</code> for example)</li>
-<li>Open Terminal</li>
-<li>Press <code>Cmd-F</code> to see the content in the search bar (it should be
-<code>keyword</code> as well)</li>
-<li>If you update the content in the Terminal search bar and go back to
-Safari, the search content in Safari is updated automatically</li>
-</ol>
+<blockquote>
+<p>
+Write dedicated modules that expose and group related functionality.
+</p>
+</blockquote>
 
 <p>
--- from
+And Chris also talked about what new features would come in Phoenix
+1.4. Definitely worth check out.
 </p>
-<ol class="org-ol">
-<li><a href="https://twitter.com/njukidreborn/status/941393059337531392">rebornix on Twitter: \"Thanks to @melvinphilips8 for bringing us
-Global Find Clipboard on macOS https://t.co/1K1hpkL3C0
-https://t.co/xdP3IatLhi\"</a></li>
-<li><a href="https://github.com/Microsoft/vscode/issues/39585">Test macOS Global Find Clipboard · Issue #39585 · Microsoft/vscode</a></li>
-</ol>
+
+<div id="outline-container-org06c3033" class="outline-2">
+<h2 id="org06c3033">Notes</h2>
+<div class="outline-text-2" id="text-org06c3033">
+<ul class="org-ul">
+<li>What makes a good Elixir Program? -&gt; What makes a good Program?
+<ul class="org-ul">
+<li>Easy to write</li>
+<li>Easy to understand</li>
+<li>Easy to change</li>
+</ul></li>
+<li>Programming is hard. Teaching programming is harder.</li>
+<li>OOP -&gt; FP
+<ul class="org-ul">
+<li>Design Patterns are baggage in FP world</li>
+<li><code>Mod.fun/arity</code> is not quite enough</li>
+</ul></li>
+<li>Contexts
+<ul class="org-ul">
+<li>Dedicated modules that expose and group related functionality</li>
+<li>Don't be afraid to make decisions (context names)</li>
+<li><p>
+New comers are affected by Context thinking (explain Social
+Reaction to a new comer)
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Reaction do
+  alias CommunityContent.Post
+
+  def add_like(user, %Post{} = post)
+
+  def get_stats(post)
+end
+
+defmodule Reaction.PostReaction do
+  schema "post_reactions" do
+    field :user_id, :id
+    field :post_id, :id
+    field :sentiment, :string
+  end
+end
+</pre>
+</div></li>
+<li>Experienced Erlang/Elixir developers are affected too
+<ul class="org-ul">
+<li>With Phoenix 1.1 =&gt; interleaved code</li>
+<li>Clean up =&gt; "service" modules (like contexts)</li>
+<li><b>It's important to have generators that encourages clean
+boundaries</b></li>
+</ul></li>
+</ul></li>
+<li>Phoenix 1.4: <b>Monitoring &amp; Metrics</b>
+<ul class="org-ul">
+<li>Application Performance Monitor (APM)
+<ul class="org-ul">
+<li>Common Interface for
+<ul class="org-ul">
+<li>elixir monitoring</li>
+<li>Monitoring services (Datadog, NewRelic, etc.)</li>
+</ul></li>
+<li>Goals
+<dl class="org-dl">
+<dt>Efficiency</dt><dd>Data collection must not take out the application under load</dd>
+<dt>Insights</dt><dd>Metrics should provide actionable insights for <i>non-experts</i></dd>
+</dl></li>
+<li>Available Metrics
+<dl class="org-dl">
+<dt>Gauge</dt><dd>instantaneous measurement
+<ul class="org-ul">
+<li>CPU usage</li>
+<li>Memory usage</li>
+</ul></dd>
+<dt>Meter/Timer</dt><dd>rate of events over time with statistical distribution
+<ul class="org-ul">
+<li>requests per second</li>
+</ul></dd>
+<dt>Instrumenter</dt><dd>compile-time hooks into application events</dd>
+</dl></li>
+</ul></li>
+<li>Breakpoint Debugger</li>
+<li>Developer Dashboard</li>
+<li>End-to-End Testing
+<ul class="org-ul">
+<li>Concurrent</li>
+<li>Transactional</li>
+<li><p>
+JavaScript tests:
+</p>
 
 <p>
-(Though, it is a nice-to-have feature, but I cannot think of a use
-case for it, searching the same word in both Preview and Safari?)
+Call Phoenix endpoints to check-out/check-in Ecto Sandbox
+connection
 </p>
+<div class="org-src-container">
+<pre class="src src-elixir">def checkout(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkout(conn)
+end
+
+def checkin(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkin(conn)
+end
+</pre>
+</div></li>
+</ul></li>
+<li>Easier Contribution
+<ul class="org-ul">
+<li>1st Contribution Sprint</li>
+<li>Phoenix Guides are merged</li>
+</ul></li>
+</ul></li>
+<li>Phoenix/Elixir have enabled many people building many useful stuffs
+<ul class="org-ul">
+<li>Make the previously unachievable, achievable</li>
+</ul></li>
+</ul>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=zbbK0WOvWII">ElixirConf 2017 - Closing Keynote - Chris McCord - YouTube</a>
+</p>
+</div>
+</div>
 
     </div>
 </section>
 ]]></description>
       <pubDate>2017-12-16</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</guid>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</guid>
     </item>
     <item>
       <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
@@ -111,13 +223,6 @@ case for it, searching the same word in both Preview and Safari?)
       <description><![CDATA[]]></description>
       <pubDate>2017-12-11</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
-    </item>
-    <item>
-      <title>Book Review: 99 Bottles of OOP</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-08</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop</guid>
     </item>
   </channel>
 </rss>
