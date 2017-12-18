@@ -4,10 +4,76 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 16 Dec 2017 22:55:53 CST</pubDate>
-    <lastBuildDate>Sat, 16 Dec 2017 22:55:53 CST</lastBuildDate>
+    <pubDate>Mon, 18 Dec 2017 13:44:16 CST</pubDate>
+    <lastBuildDate>Mon, 18 Dec 2017 13:44:16 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Teahour: PingCAP 数据库及编程语言</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/18/teahour-pingcap-数据库及编程语言/teahour-ping-cap</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Teahour: PingCAP 数据库及编程语言</h1>
+            <p>
+一期长达3小时的 Teahour。
+</p>
+
+<p>
+比较震惊的一点是 PingCAP 为了跑测试还另外搭建了分布式的测试系统，将原来两个多小时的 CI 时间缩短到7分钟。
+</p>
+
+<p>
+感觉干货颇多，放一个简要的摘要在这里，如果有兴趣请务必去 Teahour 上听。
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>测试是数据库的命脉</li>
+<li>pg 是更学院派，更先进的数据库</li>
+<li>mysql 更接地气</li>
+<li>mongodb 营销做得好，技术上需要加强</li>
+<li>企业级技术栈在经历从闭源到开源的变革</li>
+<li>Gifey (goggle infrastructure for everyone else)</li>
+<li>C++ 越来越像 Rust
+<ul class="org-ul">
+<li>C++17</li>
+</ul></li>
+<li>所有不会写代码的 CTO 都是忽悠
+<ul class="org-ul">
+<li>必须热爱写代码</li>
+</ul></li>
+<li>代码风格要跟着社区走</li>
+<li>数据库在未来会越来越去中心化
+<ul class="org-ul">
+<li>像区块链</li>
+<li>所有人用同一个数据库（分布式）</li>
+</ul></li>
+<li>Picks
+<ul class="org-ul">
+<li>大教堂与集市 开源圣经</li>
+<li>Unix 编程艺术</li>
+<li>Code Rush</li>
+<li>操作系统革命</li>
+<li>硅谷海盗</li>
+<li>Dynamo</li>
+<li>GFS</li>
+<li>Big Table</li>
+<li>Finding a needle in Haystack: Facebook's photo storage</li>
+<li>Introducing mcrouter: A memcached protocol router</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="http://teahour.fm/2017/11/22/new-database-go-and-rust-with-cto-of-pingcap.html">和 PingCAP CTO 畅谈数据库和编程语言 - Teahour.fm</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-18</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/18/teahour-pingcap-数据库及编程语言/teahour-ping-cap</guid>
+    </item>
     <item>
       <title>Global Find Clipboard on macOS</title>
       <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</link>
@@ -18,153 +84,7 @@
     <item>
       <title>What&#39;s Next For Phoenix</title>
       <link>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>What&#39;s Next For Phoenix</h1>
-            <p>
-I just watched this another great talk from Chris McCord (creator of
-Phoenix).
-</p>
-
-<p>
-The part explaining Contexts was super awesome. <code>Context</code> really is
-the way to write good code:
-</p>
-<blockquote>
-<p>
-Write dedicated modules that expose and group related functionality.
-</p>
-</blockquote>
-
-<p>
-And Chris also talked about what new features would come in Phoenix
-1.4. Definitely worth check out.
-</p>
-
-<div id="outline-container-org06c3033" class="outline-2">
-<h2 id="org06c3033">Notes</h2>
-<div class="outline-text-2" id="text-org06c3033">
-<ul class="org-ul">
-<li>What makes a good Elixir Program? -&gt; What makes a good Program?
-<ul class="org-ul">
-<li>Easy to write</li>
-<li>Easy to understand</li>
-<li>Easy to change</li>
-</ul></li>
-<li>Programming is hard. Teaching programming is harder.</li>
-<li>OOP -&gt; FP
-<ul class="org-ul">
-<li>Design Patterns are baggage in FP world</li>
-<li><code>Mod.fun/arity</code> is not quite enough</li>
-</ul></li>
-<li>Contexts
-<ul class="org-ul">
-<li>Dedicated modules that expose and group related functionality</li>
-<li>Don't be afraid to make decisions (context names)</li>
-<li><p>
-New comers are affected by Context thinking (explain Social
-Reaction to a new comer)
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">defmodule Reaction do
-  alias CommunityContent.Post
-
-  def add_like(user, %Post{} = post)
-
-  def get_stats(post)
-end
-
-defmodule Reaction.PostReaction do
-  schema "post_reactions" do
-    field :user_id, :id
-    field :post_id, :id
-    field :sentiment, :string
-  end
-end
-</pre>
-</div></li>
-<li>Experienced Erlang/Elixir developers are affected too
-<ul class="org-ul">
-<li>With Phoenix 1.1 =&gt; interleaved code</li>
-<li>Clean up =&gt; "service" modules (like contexts)</li>
-<li><b>It's important to have generators that encourages clean
-boundaries</b></li>
-</ul></li>
-</ul></li>
-<li>Phoenix 1.4: <b>Monitoring &amp; Metrics</b>
-<ul class="org-ul">
-<li>Application Performance Monitor (APM)
-<ul class="org-ul">
-<li>Common Interface for
-<ul class="org-ul">
-<li>elixir monitoring</li>
-<li>Monitoring services (Datadog, NewRelic, etc.)</li>
-</ul></li>
-<li>Goals
-<dl class="org-dl">
-<dt>Efficiency</dt><dd>Data collection must not take out the application under load</dd>
-<dt>Insights</dt><dd>Metrics should provide actionable insights for <i>non-experts</i></dd>
-</dl></li>
-<li>Available Metrics
-<dl class="org-dl">
-<dt>Gauge</dt><dd>instantaneous measurement
-<ul class="org-ul">
-<li>CPU usage</li>
-<li>Memory usage</li>
-</ul></dd>
-<dt>Meter/Timer</dt><dd>rate of events over time with statistical distribution
-<ul class="org-ul">
-<li>requests per second</li>
-</ul></dd>
-<dt>Instrumenter</dt><dd>compile-time hooks into application events</dd>
-</dl></li>
-</ul></li>
-<li>Breakpoint Debugger</li>
-<li>Developer Dashboard</li>
-<li>End-to-End Testing
-<ul class="org-ul">
-<li>Concurrent</li>
-<li>Transactional</li>
-<li><p>
-JavaScript tests:
-</p>
-
-<p>
-Call Phoenix endpoints to check-out/check-in Ecto Sandbox
-connection
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">def checkout(conn, _params) do
-  Phoenix.Ecto.Sandbox.checkout(conn)
-end
-
-def checkin(conn, _params) do
-  Phoenix.Ecto.Sandbox.checkin(conn)
-end
-</pre>
-</div></li>
-</ul></li>
-<li>Easier Contribution
-<ul class="org-ul">
-<li>1st Contribution Sprint</li>
-<li>Phoenix Guides are merged</li>
-</ul></li>
-</ul></li>
-<li>Phoenix/Elixir have enabled many people building many useful stuffs
-<ul class="org-ul">
-<li>Make the previously unachievable, achievable</li>
-</ul></li>
-</ul>
-<p>
--- from <a href="https://www.youtube.com/watch?v=zbbK0WOvWII">ElixirConf 2017 - Closing Keynote - Chris McCord - YouTube</a>
-</p>
-</div>
-</div>
-
-    </div>
-</section>
-]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-16</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</guid>
     </item>
@@ -216,13 +136,6 @@ end
       <description><![CDATA[]]></description>
       <pubDate>2017-12-11</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/11/ux-coffee-eico-rockey</guid>
-    </item>
-    <item>
-      <title>Write your code as if you&#39;re writing a letter</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-11</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
     </item>
   </channel>
 </rss>
