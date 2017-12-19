@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>As the tests get more specific, the code gets more generic - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="TDD, Kata, DRY" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>As the tests get more specific, the code gets more generic</h1>
+            <blockquote>
+<ul class="org-ul">
+<li><a href="http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata">Prime Factors Kata</a></li>
+<li>Test code and production code <b>do not grow at the same rate</b> (The
+test code grows faster)
+<ol class="org-ol">
+<li>Sometimes the production code stays the same as the test code grows
+<ul class="org-ul">
+<li>You are done with the code but you still write the tests because
+they are part of the specifications</li>
+</ul></li>
+<li>Sometimes the production code shrinks as the test code grows
+<ul class="org-ul">
+<li>Because the programmers moves a load of functionality out of the
+code and into the data</li>
+<li>Or comes up with some kind of more general algorithm that
+satisfies the tests without looking anything like them.</li>
+</ul></li>
+</ol></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://sites.google.com/site/unclebobconsultingllc/home/articles/as-the-tests-get-more-specific-the-code-gets-more-generic">As the Tests get more Specific, the Code gets more Generic - Clean Coder</a>
+</p>
+
+<div id="outline-container-org05adc8b" class="outline-2">
+<h2 id="org05adc8b">FizzBuzz Kata</h2>
+<div class="outline-text-2" id="text-org05adc8b">
+<p>
+I started practicing Coding Katas<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to sharp my TDD/OOD skills
+several days ago.
+</p>
+
+<p>
+When I was doing this first Kata, one of my colleagues
+(non-programmer) was watching me. So I explained TDD to her.
+</p>
+
+<p>
+She asked this question later: "But your tests cannot cover all the
+cases (all the integers), how can you ensure your code is absolutely
+right?"
+</p>
+
+<p>
+"As the tests get more specific, the code gets more generic" is a part
+of my answer. (For other reasons, like programmer confidence stuffs, I
+may talk about them in another post.)
+</p>
+</div>
+<div id="outline-container-orgc266742" class="outline-3">
+<h3 id="orgc266742">Case #1</h3>
+<div class="outline-text-3" id="text-orgc266742">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_1_is_1
+  assert_equal '1', FizzBuzz.for(1)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(_number)
+  '1'
+end
+</pre>
+</div></li>
+</ul>
+<p>
+At this point, we only have one specification, so the code is pretty
+simple. (We are following TDD here, so this silly code is completely
+acceptable because it's green code.)
+</p>
+</div>
+</div>
+<div id="outline-container-orge794097" class="outline-3">
+<h3 id="orge794097">Case #2</h3>
+<div class="outline-text-3" id="text-orge794097">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_2_is_2
+  assert_equal '2', FizzBuzz.for(2)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(number)
+  if number == 2
+    '2'
+  else
+    '1'
+  end
+end
+</pre>
+</div></li>
+</ul>
+<p>
+We are able to see a pattern here (<code>number</code> -&gt; <code>number.to_s</code>). But I
+chose to using <code>if</code> and wait for the next test. Because the next test
+seems to be very different.
+</p>
+</div>
+</div>
+<div id="outline-container-org4a9af6e" class="outline-3">
+<h3 id="org4a9af6e">Case #3</h3>
+<div class="outline-text-3" id="text-org4a9af6e">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_3_is_Fizz
+  assert_equal 'Fizz', FizzBuzz.for(3)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(number)
+  if number == 3
+    'Fizz'
+  elsif number == 2
+    '2'
+  else
+    '1'
+  end
+end
+</pre>
+</div></li>
+</ul>
+<p>
+The code starts to look ugly now, but fortunately it's still green.
+Let's move to our next test.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd058195" class="outline-3">
+<h3 id="orgd058195">Case #4</h3>
+<div class="outline-text-3" id="text-orgd058195">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_4_is_4
+  assert_equal '4', FizzBuzz.for(4)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(number)
+  if number == 3
+    'Fizz'
+  else
+    number.to_s
+  end
+end
+</pre>
+</div></li>
+</ul>
+<p>
+We got our third case for <code>number.to_s</code> and at this point I decide to
+refactor it this way (Because of the magic number <code>3</code>).
+</p>
+
+<p>
+We can see here that <b>the code gets more generic</b> (it handles more
+cases), while <b>the test gets more specific</b> (it adds a new
+specification for input <code>4</code>).
+</p>
+</div>
+</div>
+<div id="outline-container-org8b3e398" class="outline-3">
+<h3 id="org8b3e398">Case #5</h3>
+<div class="outline-text-3" id="text-org8b3e398">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_5_is_Buzz
+  assert_equal 'Buzz', FizzBuzz.for(5)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(number)
+  if number == 3
+    'Fizz'
+  elsif number == 5
+    'Buzz'
+  else
+    number.to_s
+  end
+end
+</pre>
+</div></li>
+</ul>
+<p>
+The same things goes with <code>5, Buzz</code> pairs as <code>3, Fizz</code> pairs. The code
+starts from being very specific (only deals with <code>3</code> or <code>5</code>), as the
+test gets more specific (case <code>6</code> or <code>10</code> are added), it gets more
+generic (deals with numbers have factor <code>3</code> or <code>5</code>).
+</p>
+</div>
+</div>
+<div id="outline-container-org154cd26" class="outline-3">
+<h3 id="org154cd26">Case #6</h3>
+<div class="outline-text-3" id="text-org154cd26">
+<ul class="org-ul">
+<li><p>
+Test
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def test_sound_for_6_is_Fizz
+  assert_equal 'Fizz', FizzBuzz.for(6)
+end
+</pre>
+</div></li>
+<li><p>
+Code
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def self.for(number)
+  if number % 3 == 0
+    'Fizz'
+  elsif number == 5
+    'Buzz'
+  else
+    number.to_s
+  end
+end
+</pre>
+</div></li>
+</ul>
+<p>
+Again, <b>the code gets more generic while the test gets more specific</b>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge347814" class="outline-2">
+<h2 id="orge347814">Extracting logic to other classes</h2>
+<div class="outline-text-2" id="text-orge347814">
+<p>
+Later, when the logic for <code>FizzBuzz</code> gets more and more complicated, I
+decided to push logic out of <code>FizzBuzz</code> class and extract some new
+concepts in our app.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">class FizzBuzz
+  def initialize(sounds)
+    @sounds = sounds
+  end
+
+  def for(number)
+    sounds
+      .detect { |sound| sound.convertable?(number) }
+      .for(number)
+  end
+
+  private
+
+  attr_reader :sounds
+end
+</pre>
+</div>
+
+<p>
+I'll explain more about this refactoring in another post. But the
+basic idea is letting sounds to deal with different conversion rules
+(<code>Factor3Sound</code> for converting number to <code>Fizz</code>, <code>StringSound</code> for
+converting number to <code>number.to_s</code>, etc.)
+</p>
+
+<p>
+Again, the <code>FizzBuzz</code> code gets more and more generic. Because it's
+now a <code>sound</code> rules chain, delegating conversion rules to <code>sound</code>
+objects, and just returning the result from the first <code>sound</code> that can
+handle the input <code>number</code>.
+</p>
+
+<p>
+I'll stop our <code>FizzBuzz</code> journey here as it has taken us so long. And
+I will talk about "what I learned after I played with <code>FizzBuzz</code> for 3
+days" (Chain of Responsibility, and Elixir solution, etc.) in a future
+blog post.
+</p>
+</div>
+</div>
+<div id="outline-container-org92226a2" class="outline-2">
+<h2 id="org92226a2">DRY is not that important for tests</h2>
+<div class="outline-text-2" id="text-org92226a2">
+<p>
+We programmers often says that our code needs to be <b>DRY (Don't Repeat
+Yourself)</b>. And I think we can also say "as the tests get more
+specific, the code gets more generic" in this way:
+</p>
+<blockquote>
+<p>
+<b>DRY up your code as your tests repeat more times.</b>
+</p>
+</blockquote>
+
+<p>
+When we dry up our code, we are actually making our code more
+generic/abstract. This is good because it lets us handle as many
+possible cases on production as possible.
+</p>
+
+<p>
+But our test doesn't need to be as DRY as our production code. After
+all, a test case should be as specific as possible, because it should
+be a specification for a case.
+</p>
+
+<p>
+The most important thing we need to think about when we write a test
+should be <b>making this test as clear as possible</b>. I should be able to
+understand what this <i>specification</i> is talking about by <b>only looking
+at this test itself</b>.
+</p>
+
+<p>
+If we try to DRY our test cases as well (like using <code>let</code> or <code>before</code>
+in RSpec), we may introduce too many <code>Mystery Guests</code><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> and making
+these tests unreadable.
+</p>
+
+<p>
+However, this doesn't mean we should not DRY our tests at all. It's
+still necessary to extract common assertions/matchers<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> to make
+your tests more readable. <b>Our tests need to be DRY as well, but in a
+different way from the production DRY.</b>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb6d7fd2" class="outline-2">
+<h2 id="orgb6d7fd2">A healthy Test-to-Code Ratio</h2>
+<div class="outline-text-2" id="text-orgb6d7fd2">
+<p>
+With this principle being said, I think the Test-to-Code ratio can be
+a pretty good guide for us to decide when to refactor our code.
+(Alongside with <a href="http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/">Sandi Metz's Rules</a>)
+</p>
+
+<p>
+IMHO, a good Test-to-Code ratio for a Rails project should be between
+1:1 to 2:1. But the ratio definitely differ between different
+languages/frameworks/test tools.
+</p>
+</div>
+<div id="outline-container-org0e004cb" class="outline-3">
+<h3 id="org0e004cb">Use Test-to-Code Ratio to guide your TDD cycle</h3>
+<div class="outline-text-3" id="text-org0e004cb">
+<p>
+(I'll use 1:1 to 2:1 in the following explanations.)
+</p>
+<ul class="org-ul">
+<li>When Test-to-Code Ratio is lower than 1:1
+<ol class="org-ol">
+<li>Consider to add more test cases.</li>
+<li>Consider if the production code is too DRY.</li>
+</ol></li>
+<li>When Test-to-Code Ratio is higher than 2:1
+<ol class="org-ol">
+<li>Consider to DRY the production code by.</li>
+<li>Consider if the production code has too many responsibilities
+and needs to be split.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org334b044" class="outline-3">
+<h3 id="org334b044">TDD is a process guided by this thinking</h3>
+<div class="outline-text-3" id="text-org334b044">
+<p>
+As I wrote in <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP</a>, we can only achieve
+Shameless Green by following the TDD cycle and make our code a step
+more abstract (generic) in each cycle.
+</p>
+
+<p>
+I think this thinking explained this methodology pretty well.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://leanpub.com/codingdojohandbook">The Coding Dojo Handbook by Emily Bache {Leanpub PDF/iPad/Kindle}</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://robots.thoughtbot.com/mystery-guest">Mystery Guest</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs/">Write Custom RSpec Matchers to Simplify Your Specs - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-18</span>
+        <span title="last modification date" class="post-info">2017-12-19</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/tdd/">TDD</a>, <a href="/tags/clean-code/">Clean Code</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic";
+       var disqus_url = "http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

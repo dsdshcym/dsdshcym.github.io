@@ -4,7 +4,6 @@
   <title>Add STI to a Legacy ActiveRecord Model - dsdshome</title>
   <meta charset="utf-8" />
   <meta name="author" content="Yiming Chen" />
-  <meta name="description" content="How to use an existing column as inheritance column and use different class indicators." />
   <meta name="keywords" content="STI, Legacy, ActiveRecord, Single Table Inheritance" />
 
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
@@ -65,9 +64,9 @@ resources about how to do it. So I'll explain how I did this in this
 post.
 </p>
 
-<div id="outline-container-org1f85112" class="outline-2">
-<h2 id="org1f85112">Set <code>inheritance_column</code></h2>
-<div class="outline-text-2" id="text-org1f85112">
+<div id="outline-container-orgd2371cb" class="outline-2">
+<h2 id="orgd2371cb">Set <code>inheritance_column</code></h2>
+<div class="outline-text-2" id="text-orgd2371cb">
 <p>
 To change the column STI uses, we need to set <code>inheritance_column</code> in
 our Base Model like this:
@@ -97,9 +96,9 @@ your own model for something else, you can set inheritance_column:
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org69956b6" class="outline-2">
-<h2 id="org69956b6">Hack How ActiveRecord Finds the Sub-classes</h2>
-<div class="outline-text-2" id="text-org69956b6">
+<div id="outline-container-orgf5ecd06" class="outline-2">
+<h2 id="orgf5ecd06">Hack How ActiveRecord Finds the Sub-classes</h2>
+<div class="outline-text-2" id="text-orgf5ecd06">
 <p>
 Then comes the most important part of our solution. We need to make
 <code>ActiveRecord</code> finds our sub-class based on the existing value
@@ -169,9 +168,9 @@ end
 </ol>
 </div>
 </div>
-<div id="outline-container-org714077a" class="outline-2">
-<h2 id="org714077a">Caveats</h2>
-<div class="outline-text-2" id="text-org714077a">
+<div id="outline-container-orge17cae9" class="outline-2">
+<h2 id="orge17cae9">Caveats</h2>
+<div class="outline-text-2" id="text-orge17cae9">
 <p>
 There are some caveats for using this hack. (That's why it's called a
 hack and there are few resources introducing this.)
@@ -239,7 +238,7 @@ risk for the convenience this quick STI hack brings to the project)
 
     <div class="post-meta">
         <span title="post date" class="post-info">2017-12-07</span>
-        <span title="last modification date" class="post-info">2017-12-07</span>
+        <span title="last modification date" class="post-info">2017-12-08</span>
         <span title="tags" class="post-info"><a href="/tags/activerecord/">ActiveRecord</a>, <a href="/tags/rails/">Rails</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>

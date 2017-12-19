@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>What&#39;s Next For Phoenix - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Phoenix, Elixir" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>What&#39;s Next For Phoenix</h1>
+            <p>
+I just watched this another great talk from Chris McCord (creator of
+Phoenix).
+</p>
+
+<p>
+The part explaining Contexts was super awesome. <code>Context</code> really is
+the way to write good code:
+</p>
+<blockquote>
+<p>
+Write dedicated modules that expose and group related functionality.
+</p>
+</blockquote>
+
+<p>
+And Chris also talked about what new features would come in Phoenix
+1.4. Definitely worth check out.
+</p>
+
+<div id="outline-container-org2269402" class="outline-2">
+<h2 id="org2269402">Notes</h2>
+<div class="outline-text-2" id="text-org2269402">
+<ul class="org-ul">
+<li>What makes a good Elixir Program? -&gt; What makes a good Program?
+<ul class="org-ul">
+<li>Easy to write</li>
+<li>Easy to understand</li>
+<li>Easy to change</li>
+</ul></li>
+<li>Programming is hard. Teaching programming is harder.</li>
+<li>OOP -&gt; FP
+<ul class="org-ul">
+<li>Design Patterns are baggage in FP world</li>
+<li><code>Mod.fun/arity</code> is not quite enough</li>
+</ul></li>
+<li>Contexts
+<ul class="org-ul">
+<li>Dedicated modules that expose and group related functionality</li>
+<li>Don't be afraid to make decisions (context names)</li>
+<li><p>
+New comers are affected by Context thinking (explain Social
+Reaction to a new comer)
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Reaction do
+  alias CommunityContent.Post
+
+  def add_like(user, %Post{} = post)
+
+  def get_stats(post)
+end
+
+defmodule Reaction.PostReaction do
+  schema "post_reactions" do
+    field :user_id, :id
+    field :post_id, :id
+    field :sentiment, :string
+  end
+end
+</pre>
+</div></li>
+<li>Experienced Erlang/Elixir developers are affected too
+<ul class="org-ul">
+<li>With Phoenix 1.1 =&gt; interleaved code</li>
+<li>Clean up =&gt; "service" modules (like contexts)</li>
+<li><b>It's important to have generators that encourages clean
+boundaries</b></li>
+</ul></li>
+</ul></li>
+<li>Phoenix 1.4: <b>Monitoring &amp; Metrics</b>
+<ul class="org-ul">
+<li>Application Performance Monitor (APM)
+<ul class="org-ul">
+<li>Common Interface for
+<ul class="org-ul">
+<li>elixir monitoring</li>
+<li>Monitoring services (Datadog, NewRelic, etc.)</li>
+</ul></li>
+<li>Goals
+<dl class="org-dl">
+<dt>Efficiency</dt><dd>Data collection must not take out the application under load</dd>
+<dt>Insights</dt><dd>Metrics should provide actionable insights for <i>non-experts</i></dd>
+</dl></li>
+<li>Available Metrics
+<dl class="org-dl">
+<dt>Gauge</dt><dd>instantaneous measurement
+<ul class="org-ul">
+<li>CPU usage</li>
+<li>Memory usage</li>
+</ul></dd>
+<dt>Meter/Timer</dt><dd>rate of events over time with statistical distribution
+<ul class="org-ul">
+<li>requests per second</li>
+</ul></dd>
+<dt>Instrumenter</dt><dd>compile-time hooks into application events</dd>
+</dl></li>
+</ul></li>
+<li>Breakpoint Debugger</li>
+<li>Developer Dashboard</li>
+<li>End-to-End Testing
+<ul class="org-ul">
+<li>Concurrent</li>
+<li>Transactional</li>
+<li><p>
+JavaScript tests:
+</p>
+
+<p>
+Call Phoenix endpoints to check-out/check-in Ecto Sandbox
+connection
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def checkout(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkout(conn)
+end
+
+def checkin(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkin(conn)
+end
+</pre>
+</div></li>
+</ul></li>
+<li>Easier Contribution
+<ul class="org-ul">
+<li>1st Contribution Sprint</li>
+<li>Phoenix Guides are merged</li>
+</ul></li>
+</ul></li>
+<li>Phoenix/Elixir have enabled many people building many useful stuffs
+<ul class="org-ul">
+<li>Make the previously unachievable, achievable</li>
+</ul></li>
+</ul>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=zbbK0WOvWII">ElixirConf 2017 - Closing Keynote - Chris McCord - YouTube</a>
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-16</span>
+        <span title="last modification date" class="post-info">2017-12-19</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/conf/">Conf</a>, <a href="/tags/elixir/">Elixir</a>, <a href="/tags/phoenix/">Phoenix</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2017/12/16/whats-next-for-phoenix";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

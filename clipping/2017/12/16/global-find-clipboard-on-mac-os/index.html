@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Global Find Clipboard on macOS - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="macOS, Search, Editor" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Global Find Clipboard on macOS</h1>
+            <p>
+Turns out that macOS not only has Universal Clipboard to sync the
+clipboard content between your Mac and your iOS devices, but also has
+a feature called Global Find Clipboard to sync the content between the
+Find inputs in different applications.
+</p>
+
+<p>
+You can try this feature in Safari and Terminal:
+</p>
+<ol class="org-ol">
+<li>Open Safari</li>
+<li>Use <code>Cmd-F</code> to search anything (<code>keyword</code> for example)</li>
+<li>Open Terminal</li>
+<li>Press <code>Cmd-F</code> to see the content in the search bar (it should be
+<code>keyword</code> as well)</li>
+<li>If you update the content in the Terminal search bar and go back to
+Safari, the search content in Safari is updated automatically</li>
+</ol>
+
+<p>
+-- from
+</p>
+<ol class="org-ol">
+<li><a href="https://twitter.com/njukidreborn/status/941393059337531392">rebornix on Twitter: \"Thanks to @melvinphilips8 for bringing us
+Global Find Clipboard on macOS https://t.co/1K1hpkL3C0
+https://t.co/xdP3IatLhi\"</a></li>
+<li><a href="https://github.com/Microsoft/vscode/issues/39585">Test macOS Global Find Clipboard · Issue #39585 · Microsoft/vscode</a></li>
+</ol>
+
+<p>
+(Though, it is a nice-to-have feature, but I cannot think of a use
+case for it, searching the same word in both Preview and Safari?)
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-16</span>
+        <span title="last modification date" class="post-info">2017-12-19</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/macos/">macOS</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2017/12/16/global-find-clipboard-on-mac-os";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

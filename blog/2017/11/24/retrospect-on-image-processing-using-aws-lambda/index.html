@@ -31,8 +31,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/blog/">Blog</a></li>
-                            <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
                         <li><a href="/tags/">Tags</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="https://github.com/dsdshcym">GitHub</a></li>
@@ -55,9 +55,9 @@ week, and I find that I have more to say on this topic. So, this post
 is basically a followup on my previous one.
 </p>
 
-<div id="outline-container-org97a214f" class="outline-2">
-<h2 id="org97a214f">TL;DR</h2>
-<div class="outline-text-2" id="text-org97a214f">
+<div id="outline-container-org65c3df9" class="outline-2">
+<h2 id="org65c3df9">TL;DR</h2>
+<div class="outline-text-2" id="text-org65c3df9">
 <p>
 I <b>DO NOT</b> recommend using Lambda to process images in your S3 bucket
 and generate different versions for your applications.
@@ -75,9 +75,9 @@ when the requests come)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org4dc4d66" class="outline-2">
-<h2 id="org4dc4d66">Drawbacks of using Lambda to processing images on S3</h2>
-<div class="outline-text-2" id="text-org4dc4d66">
+<div id="outline-container-org8dac9bc" class="outline-2">
+<h2 id="org8dac9bc">Drawbacks of using Lambda to processing images on S3</h2>
+<div class="outline-text-2" id="text-org8dac9bc">
 <p>
 An important step for setting up a image processing lambda in my
 previous post is to setup Static Website Hosting for the S3 bucket to
@@ -91,9 +91,9 @@ warning. Static Website Hosting, is it only for hosting static
 websites like blogs?
 </p>
 </div>
-<div id="outline-container-orgb639b6e" class="outline-3">
-<h3 id="orgb639b6e">Key Differences Between the Amazon Website and the REST API Endpoint</h3>
-<div class="outline-text-3" id="text-orgb639b6e">
+<div id="outline-container-org5b24b5e" class="outline-3">
+<h3 id="org5b24b5e">Key Differences Between the Amazon Website and the REST API Endpoint</h3>
+<div class="outline-text-3" id="text-org5b24b5e">
 <p>
 Most of the time, when we use S3 as the storage solution for our
 application, we are using the REST API Endpoint to access the S3
@@ -170,9 +170,9 @@ explain them one by one:
 </p>
 </div>
 </div>
-<div id="outline-container-org599b97b" class="outline-3">
-<h3 id="org599b97b">Supports only publicly readable content</h3>
-<div class="outline-text-3" id="text-org599b97b">
+<div id="outline-container-org5d28a17" class="outline-3">
+<h3 id="org5d28a17">Supports only publicly readable content</h3>
+<div class="outline-text-3" id="text-org5d28a17">
 <p>
 A S3 bucket for Static Website Hosting only supports publicly readable
 content.
@@ -201,9 +201,9 @@ privacy control over user generated contents (images, videos, etc.).
 </p>
 </div>
 </div>
-<div id="outline-container-orge842f17" class="outline-3">
-<h3 id="orge842f17">Support only GET and HEAD requests on objects</h3>
-<div class="outline-text-3" id="text-orge842f17">
+<div id="outline-container-org5b37e26" class="outline-3">
+<h3 id="org5b37e26">Support only GET and HEAD requests on objects</h3>
+<div class="outline-text-3" id="text-org5b37e26">
 <p>
 This limit makes it impossible to use the same endpoint for image
 hosting and uploading.
@@ -244,9 +244,9 @@ not break anything.
 </p>
 </div>
 </div>
-<div id="outline-container-org3e30ec2" class="outline-3">
-<h3 id="org3e30ec2">Does not support SSL connections</h3>
-<div class="outline-text-3" id="text-org3e30ec2">
+<div id="outline-container-org401d145" class="outline-3">
+<h3 id="org401d145">Does not support SSL connections</h3>
+<div class="outline-text-3" id="text-org401d145">
 <p>
 This is another unacceptable limitation because the whole web is
 migrating to HTTPS now.
@@ -254,9 +254,9 @@ migrating to HTTPS now.
 </div>
 </div>
 </div>
-<div id="outline-container-org4aeeb8d" class="outline-2">
-<h2 id="org4aeeb8d">Summary</h2>
-<div class="outline-text-2" id="text-org4aeeb8d">
+<div id="outline-container-orga54e308" class="outline-2">
+<h2 id="orga54e308">Summary</h2>
+<div class="outline-text-2" id="text-orga54e308">
 <p>
 I think with even one drawback listed above, this solution will not be
 suitable for a modern web application. With all these limitations, I

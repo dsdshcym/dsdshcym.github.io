@@ -4,13 +4,13 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 19 Dec 2017 18:26:00 CST</pubDate>
-    <lastBuildDate>Tue, 19 Dec 2017 18:26:00 CST</lastBuildDate>
+    <pubDate>Tue, 19 Dec 2017 20:06:15 CST</pubDate>
+    <lastBuildDate>Tue, 19 Dec 2017 20:06:15 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>As the tests get more specific, the code gets more generic</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/as-the-tests-get-more-specific-the-code-gets-more-generic</link>
+      <link>http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
@@ -40,9 +40,9 @@ satisfies the tests without looking anything like them.</li>
 -- from <a href="https://sites.google.com/site/unclebobconsultingllc/home/articles/as-the-tests-get-more-specific-the-code-gets-more-generic">As the Tests get more Specific, the Code gets more Generic - Clean Coder</a>
 </p>
 
-<div id="outline-container-org59a9f34" class="outline-2">
-<h2 id="org59a9f34">FizzBuzz Kata</h2>
-<div class="outline-text-2" id="text-org59a9f34">
+<div id="outline-container-org05adc8b" class="outline-2">
+<h2 id="org05adc8b">FizzBuzz Kata</h2>
+<div class="outline-text-2" id="text-org05adc8b">
 <p>
 I started practicing Coding Katas<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to sharp my TDD/OOD skills
 several days ago.
@@ -65,9 +65,9 @@ of my answer. (For other reasons, like programmer confidence stuffs, I
 may talk about them in another post.)
 </p>
 </div>
-<div id="outline-container-orgca4d493" class="outline-3">
-<h3 id="orgca4d493">Case #1</h3>
-<div class="outline-text-3" id="text-orgca4d493">
+<div id="outline-container-orgc266742" class="outline-3">
+<h3 id="orgc266742">Case #1</h3>
+<div class="outline-text-3" id="text-orgc266742">
 <ul class="org-ul">
 <li><p>
 Test
@@ -95,9 +95,9 @@ acceptable because it's green code.)
 </p>
 </div>
 </div>
-<div id="outline-container-orgd274eb2" class="outline-3">
-<h3 id="orgd274eb2">Case #2</h3>
-<div class="outline-text-3" id="text-orgd274eb2">
+<div id="outline-container-orge794097" class="outline-3">
+<h3 id="orge794097">Case #2</h3>
+<div class="outline-text-3" id="text-orge794097">
 <ul class="org-ul">
 <li><p>
 Test
@@ -129,9 +129,9 @@ seems to be very different.
 </p>
 </div>
 </div>
-<div id="outline-container-org3f95072" class="outline-3">
-<h3 id="org3f95072">Case #3</h3>
-<div class="outline-text-3" id="text-org3f95072">
+<div id="outline-container-org4a9af6e" class="outline-3">
+<h3 id="org4a9af6e">Case #3</h3>
+<div class="outline-text-3" id="text-org4a9af6e">
 <ul class="org-ul">
 <li><p>
 Test
@@ -164,9 +164,9 @@ Let's move to our next test.
 </p>
 </div>
 </div>
-<div id="outline-container-orgaf3231f" class="outline-3">
-<h3 id="orgaf3231f">Case #4</h3>
-<div class="outline-text-3" id="text-orgaf3231f">
+<div id="outline-container-orgd058195" class="outline-3">
+<h3 id="orgd058195">Case #4</h3>
+<div class="outline-text-3" id="text-orgd058195">
 <ul class="org-ul">
 <li><p>
 Test
@@ -203,9 +203,9 @@ specification for input <code>4</code>).
 </p>
 </div>
 </div>
-<div id="outline-container-org0d6fad3" class="outline-3">
-<h3 id="org0d6fad3">Case #5</h3>
-<div class="outline-text-3" id="text-org0d6fad3">
+<div id="outline-container-org8b3e398" class="outline-3">
+<h3 id="org8b3e398">Case #5</h3>
+<div class="outline-text-3" id="text-org8b3e398">
 <ul class="org-ul">
 <li><p>
 Test
@@ -240,9 +240,9 @@ generic (deals with numbers have factor <code>3</code> or <code>5</code>).
 </p>
 </div>
 </div>
-<div id="outline-container-orgda3e962" class="outline-3">
-<h3 id="orgda3e962">Case #6</h3>
-<div class="outline-text-3" id="text-orgda3e962">
+<div id="outline-container-org154cd26" class="outline-3">
+<h3 id="org154cd26">Case #6</h3>
+<div class="outline-text-3" id="text-org154cd26">
 <ul class="org-ul">
 <li><p>
 Test
@@ -275,9 +275,9 @@ Again, <b>the code gets more generic while the test gets more specific</b>.
 </div>
 </div>
 </div>
-<div id="outline-container-org550bc66" class="outline-2">
-<h2 id="org550bc66">Extracting logic to other classes</h2>
-<div class="outline-text-2" id="text-org550bc66">
+<div id="outline-container-orge347814" class="outline-2">
+<h2 id="orge347814">Extracting logic to other classes</h2>
+<div class="outline-text-2" id="text-orge347814">
 <p>
 Later, when the logic for <code>FizzBuzz</code> gets more and more complicated, I
 decided to push logic out of <code>FizzBuzz</code> class and extract some new
@@ -325,9 +325,9 @@ blog post.
 </p>
 </div>
 </div>
-<div id="outline-container-org024f7b7" class="outline-2">
-<h2 id="org024f7b7">DRY is not that important for tests</h2>
-<div class="outline-text-2" id="text-org024f7b7">
+<div id="outline-container-org92226a2" class="outline-2">
+<h2 id="org92226a2">DRY is not that important for tests</h2>
+<div class="outline-text-2" id="text-org92226a2">
 <p>
 We programmers often says that our code needs to be <b>DRY (Don't Repeat
 Yourself)</b>. And I think we can also say "as the tests get more
@@ -372,9 +372,9 @@ different way from the production DRY.</b>
 </p>
 </div>
 </div>
-<div id="outline-container-orge6d0c36" class="outline-2">
-<h2 id="orge6d0c36">A healthy Test-to-Code Ratio</h2>
-<div class="outline-text-2" id="text-orge6d0c36">
+<div id="outline-container-orgb6d7fd2" class="outline-2">
+<h2 id="orgb6d7fd2">A healthy Test-to-Code Ratio</h2>
+<div class="outline-text-2" id="text-orgb6d7fd2">
 <p>
 With this principle being said, I think the Test-to-Code ratio can be
 a pretty good guide for us to decide when to refactor our code.
@@ -387,9 +387,9 @@ IMHO, a good Test-to-Code ratio for a Rails project should be between
 languages/frameworks/test tools.
 </p>
 </div>
-<div id="outline-container-org958275d" class="outline-3">
-<h3 id="org958275d">Use Test-to-Code Ratio to guide your TDD cycle</h3>
-<div class="outline-text-3" id="text-org958275d">
+<div id="outline-container-org0e004cb" class="outline-3">
+<h3 id="org0e004cb">Use Test-to-Code Ratio to guide your TDD cycle</h3>
+<div class="outline-text-3" id="text-org0e004cb">
 <p>
 (I'll use 1:1 to 2:1 in the following explanations.)
 </p>
@@ -408,9 +408,9 @@ and needs to be split.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb340454" class="outline-3">
-<h3 id="orgb340454">TDD is a process guided by this thinking</h3>
-<div class="outline-text-3" id="text-orgb340454">
+<div id="outline-container-org334b044" class="outline-3">
+<h3 id="org334b044">TDD is a process guided by this thinking</h3>
+<div class="outline-text-3" id="text-org334b044">
 <p>
 As I wrote in <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP</a>, we can only achieve
 Shameless Green by following the TDD cycle and make our code a step
@@ -446,70 +446,560 @@ I think this thinking explained this methodology pretty well.
 </section>
 ]]></description>
       <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/as-the-tests-get-more-specific-the-code-gets-more-generic</guid>
-    </item>
-    <item>
-      <title>Teahour: PingCAP 数据库及编程语言</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/18/teahour-pingcap-数据库及编程语言/teahour-ping-cap</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-18</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/18/teahour-pingcap-数据库及编程语言/teahour-ping-cap</guid>
+      <guid>http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic</guid>
     </item>
     <item>
       <title>Global Find Clipboard on macOS</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-16</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-macos/global-find-clipboard-on-mac-os</guid>
-    </item>
-    <item>
-      <title>What&#39;s Next For Phoenix</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-16</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix/whats-next-for-phoenix</guid>
-    </item>
-    <item>
-      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-15</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom---teahourfm/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
+      <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Global Find Clipboard on macOS</h1>
+            <p>
+Turns out that macOS not only has Universal Clipboard to sync the
+clipboard content between your Mac and your iOS devices, but also has
+a feature called Global Find Clipboard to sync the content between the
+Find inputs in different applications.
+</p>
+
+<p>
+You can try this feature in Safari and Terminal:
+</p>
+<ol class="org-ol">
+<li>Open Safari</li>
+<li>Use <code>Cmd-F</code> to search anything (<code>keyword</code> for example)</li>
+<li>Open Terminal</li>
+<li>Press <code>Cmd-F</code> to see the content in the search bar (it should be
+<code>keyword</code> as well)</li>
+<li>If you update the content in the Terminal search bar and go back to
+Safari, the search content in Safari is updated automatically</li>
+</ol>
+
+<p>
+-- from
+</p>
+<ol class="org-ol">
+<li><a href="https://twitter.com/njukidreborn/status/941393059337531392">rebornix on Twitter: \"Thanks to @melvinphilips8 for bringing us
+Global Find Clipboard on macOS https://t.co/1K1hpkL3C0
+https://t.co/xdP3IatLhi\"</a></li>
+<li><a href="https://github.com/Microsoft/vscode/issues/39585">Test macOS Global Find Clipboard · Issue #39585 · Microsoft/vscode</a></li>
+</ol>
+
+<p>
+(Though, it is a nice-to-have feature, but I cannot think of a use
+case for it, searching the same word in both Preview and Safari?)
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os</guid>
     </item>
     <item>
       <title>How to keep Ruby Relevant?</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-14</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant/how-to-keep-ruby-relevant</guid>
-    </item>
-    <item>
-      <title>Use git bisect run to automatically find the first bad commit</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-14</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit/use-git-bisect-run-to-automatically-find-the-first-bad-commit</guid>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>How to keep Ruby Relevant?</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>How to keep Ruby Relevant?
+<ol class="org-ol">
+<li>Talk about Ruby More</li>
+<li>Learn new ideas</li>
+<li>Help maintain abandoned libraries</li>
+<li>Build new libraries</li>
+<li>Build new products with Ruby</li>
+<li>Teach people Ruby</li>
+</ol></li>
+<li>Ruby literally changed my life</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=PiT2XEWae1c&amp;list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt&amp;index=20">RubyConf 2017: Saving Ruby from the Apocalypse by Jason Charnes - YouTube</a>
+</p>
+
+<p>
+Ruby literally changed my life, too.
+</p>
+<ul class="org-ul">
+<li>It brought me to Strikingly (An extremely awesome team)</li>
+<li>It taught me how to write real Object-Oriented world (with TDD).</li>
+<li>It made me know programming can be so much enjoyable.</li>
+</ul>
+
+<p>
+This talk was also mentioned in <a href="https://overcast.fm/+DuavCGVqo">134: Fastributes — The Bike Shed — Overcast</a>
+</p>
+
+<p>
+P.S. The speaker deals with the false fire alarm pretty well. "Is this
+(the Apocalypse) really happening?"
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant</guid>
     </item>
     <item>
       <title>Imperative Shell around the Functional Core</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-12</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core</guid>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Imperative Shell around the Functional Core</h1>
+            <p>
+Elixir is the perfect language to build upon the methodology from this talk:
+</p>
+<blockquote>
+<p>
+Imperative Shell around the Functional Core
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=yTkzNHF6rMs">RubyConf 12 - Boundaries by Gary Bernhardt - YouTube</a>
+</p>
+
+<p>
+Elixir data structures are obviously immutable, and the code and data
+are combined within the same <code>Module</code>. (The <code>FauxO</code> style programming
+from this talk.)
+</p>
+
+<p>
+And Gary even introduced Actor Model which is the concurrency model
+used by Elixir/Erlang.
+</p>
+
+<p>
+In Ruby, we need some self-disciplines to force ourselves to write an
+imperative shell around the functional core. But in Elixir, the
+language is already encouraging us to write code in this style. I
+think that's why I feel so excited about Elixir.
+</p>
+
+<p>
+This talk was also mentioned in:
+</p>
+<ol class="org-ol">
+<li><a href="http://www.fullstackradio.com/78">78: Ben Orenstein - Our All-Time Favorite Refactorings | Full Stack Radio</a></li>
+<li><a href="https://www.youtube.com/watch?v=9TmJZSBYPQA&amp;index=14&amp;list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS">14 - 刘常洋 - Functional Programming Concepts - YouTube</a></li>
+</ol>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core</guid>
+    </item>
+    <item>
+      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>在 Microsoft 可以用 Mac 开发</li>
+<li>评价编辑器好坏的几个方面
+<ol class="org-ol">
+<li>足够快
+<ul class="org-ul">
+<li>打开文件</li>
+<li>搜索</li>
+</ul></li>
+<li>语法高亮</li>
+<li>提高生产力
+<ul class="org-ul">
+<li>keybinding</li>
+</ul></li>
+<li>项目契合度</li>
+</ol></li>
+<li>Atom 比 VSCode 先进的地方
+<ul class="org-ul">
+<li>能改动界面（VSC 注重 Performance，不提供 UI API）</li>
+<li>但造成性能问题</li>
+</ul></li>
+<li>Text Data Structure 对编辑器性能的影响很大
+<ul class="org-ul">
+<li>Array vs Red/Black Tree</li>
+</ul></li>
+<li>Electron is the new Flash</li>
+</ul>
+</blockquote>
+
+<p>
+-- from <a href="http://teahour.fm/2017/12/12/why-vscode-is-better-than-atom.html">Why VSCode is better than Atom? - Teahour.fm</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
+    </item>
+    <item>
+      <title>Teahour: PingCAP 数据库及编程语言</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/18/teahour-ping-cap</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Teahour: PingCAP 数据库及编程语言</h1>
+            <p>
+一期长达 3 小时的 Teahour。
+</p>
+
+<p>
+比较震惊的一点是 PingCAP 为了跑测试还另外搭建了分布式的测试系统，将原来两个多小时的 CI 时间缩短到 7 分钟。
+</p>
+
+<p>
+感觉干货颇多，放一个简要的摘要在这里，如果有兴趣请务必去 Teahour 上听。
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>测试是数据库的命脉</li>
+<li>pg 是更学院派，更先进的数据库</li>
+<li>mysql 更接地气</li>
+<li>mongodb 营销做得好，技术上需要加强</li>
+<li>企业级技术栈在经历从闭源到开源的变革</li>
+<li>Gifey (goggle infrastructure for everyone else)</li>
+<li>C++ 越来越像 Rust
+<ul class="org-ul">
+<li>C++17</li>
+</ul></li>
+<li>所有不会写代码的 CTO 都是忽悠
+<ul class="org-ul">
+<li>必须热爱写代码</li>
+</ul></li>
+<li>代码风格要跟着社区走</li>
+<li>数据库在未来会越来越去中心化
+<ul class="org-ul">
+<li>像区块链</li>
+<li>所有人用同一个数据库（分布式）</li>
+</ul></li>
+<li>Picks
+<ul class="org-ul">
+<li>大教堂与集市 开源圣经</li>
+<li>Unix 编程艺术</li>
+<li>Code Rush</li>
+<li>操作系统革命</li>
+<li>硅谷海盗</li>
+<li>Dynamo</li>
+<li>GFS</li>
+<li>Big Table</li>
+<li>Finding a needle in Haystack: Facebook's photo storage</li>
+<li>Introducing mcrouter: A memcached protocol router</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="http://teahour.fm/2017/11/22/new-database-go-and-rust-with-cto-of-pingcap.html">和 PingCAP CTO 畅谈数据库和编程语言 - Teahour.fm</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/18/teahour-ping-cap</guid>
     </item>
     <item>
       <title>Turn a long letter into a short one</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-12</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one/turn-a-long-letter-into-a-short-one</guid>
+      <link>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Turn a long letter into a short one</h1>
+            <p>
+<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/">Writing code is just like writing a letter to other developers or your
+future self</a>.
+</p>
+
+<p>
+It takes time to write this letter short and abstract so it can be
+read easily.
+</p>
+
+<blockquote>
+<p>
+Take the time to turn a long letter into a short one.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://m.signalvnoise.com/the-majestic-monolith-29166d022228">The Majestic Monolith – Signal v. Noise</a>
+</p>
+
+<blockquote>
+<p>
+I didn't have time to write a short letter, so I wrote a long one
+instead.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so">Quote by Mark Twain: “I didn't have time to write a short letter, so ...”</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one</guid>
     </item>
     <item>
-      <title>「鲸鱼」用户和 28 效应</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-11</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/11/28-effect-and-whale-watching</guid>
+      <title>Use git bisect run to automatically find the first bad commit</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use git bisect run to automatically find the first bad commit</h1>
+            <blockquote>
+<p>
+Use <code>git bisect</code> to find the first bad commit.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=VMcMqrpjAjU">RubyConf 2017: "RSpec no longer works with ActiveRecord" by Sam Phippen - YouTube</a>
+</p>
+
+<p>
+In this talk, Sam showed us how he debugged a rspec issue using <code>git bisect</code>.
+</p>
+
+<p>
+But he is just manually using <code>git bisect good</code> and <code>git bisect bad</code>
+to mark a commit as good/bad.
+</p>
+
+<p>
+Actually, <code>git bisect</code> can run the script automatically:
+</p>
+<ol class="org-ol">
+<li><code>git bisect start</code></li>
+<li><code>git bisect good HEAD~4</code> (for example)</li>
+<li><code>git bisect bad HEAD</code></li>
+<li><code>git bisect run rspec spec/services/some_spec.rb</code></li>
+</ol>
+<p>
+Then <code>git bisect</code> will automatically run the script and find the first
+commit from which this spec started to fail.
+</p>
+
+<p>
+But in this talk's case, we need to run the script in another git
+directory. We can use shell script to switch to that directory first
+and then run the test suite:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">git bisect run sh -c 'cd another/project/; rspec spec/in/that/project'
+</pre>
+</div>
+
+<p>
+Of course, there are more complicated issues in real life projects,
+like <code>gem</code> dependency issue in the talk. We can always fallback to
+manually tagging a commit as good/bad if we find something unexpected
+from the log of <code>git bisect run</code>.
+</p>
+
+<p>
+You can also read more about <code>git bisect</code>, <code>rspec bisect</code> in my
+previous post: <a href="http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale/">RSpec failures caused by I18n.locale - dsdshome</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit</guid>
+    </item>
+    <item>
+      <title>What&#39;s Next For Phoenix</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>What&#39;s Next For Phoenix</h1>
+            <p>
+I just watched this another great talk from Chris McCord (creator of
+Phoenix).
+</p>
+
+<p>
+The part explaining Contexts was super awesome. <code>Context</code> really is
+the way to write good code:
+</p>
+<blockquote>
+<p>
+Write dedicated modules that expose and group related functionality.
+</p>
+</blockquote>
+
+<p>
+And Chris also talked about what new features would come in Phoenix
+1.4. Definitely worth check out.
+</p>
+
+<div id="outline-container-org2269402" class="outline-2">
+<h2 id="org2269402">Notes</h2>
+<div class="outline-text-2" id="text-org2269402">
+<ul class="org-ul">
+<li>What makes a good Elixir Program? -&gt; What makes a good Program?
+<ul class="org-ul">
+<li>Easy to write</li>
+<li>Easy to understand</li>
+<li>Easy to change</li>
+</ul></li>
+<li>Programming is hard. Teaching programming is harder.</li>
+<li>OOP -&gt; FP
+<ul class="org-ul">
+<li>Design Patterns are baggage in FP world</li>
+<li><code>Mod.fun/arity</code> is not quite enough</li>
+</ul></li>
+<li>Contexts
+<ul class="org-ul">
+<li>Dedicated modules that expose and group related functionality</li>
+<li>Don't be afraid to make decisions (context names)</li>
+<li><p>
+New comers are affected by Context thinking (explain Social
+Reaction to a new comer)
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Reaction do
+  alias CommunityContent.Post
+
+  def add_like(user, %Post{} = post)
+
+  def get_stats(post)
+end
+
+defmodule Reaction.PostReaction do
+  schema "post_reactions" do
+    field :user_id, :id
+    field :post_id, :id
+    field :sentiment, :string
+  end
+end
+</pre>
+</div></li>
+<li>Experienced Erlang/Elixir developers are affected too
+<ul class="org-ul">
+<li>With Phoenix 1.1 =&gt; interleaved code</li>
+<li>Clean up =&gt; "service" modules (like contexts)</li>
+<li><b>It's important to have generators that encourages clean
+boundaries</b></li>
+</ul></li>
+</ul></li>
+<li>Phoenix 1.4: <b>Monitoring &amp; Metrics</b>
+<ul class="org-ul">
+<li>Application Performance Monitor (APM)
+<ul class="org-ul">
+<li>Common Interface for
+<ul class="org-ul">
+<li>elixir monitoring</li>
+<li>Monitoring services (Datadog, NewRelic, etc.)</li>
+</ul></li>
+<li>Goals
+<dl class="org-dl">
+<dt>Efficiency</dt><dd>Data collection must not take out the application under load</dd>
+<dt>Insights</dt><dd>Metrics should provide actionable insights for <i>non-experts</i></dd>
+</dl></li>
+<li>Available Metrics
+<dl class="org-dl">
+<dt>Gauge</dt><dd>instantaneous measurement
+<ul class="org-ul">
+<li>CPU usage</li>
+<li>Memory usage</li>
+</ul></dd>
+<dt>Meter/Timer</dt><dd>rate of events over time with statistical distribution
+<ul class="org-ul">
+<li>requests per second</li>
+</ul></dd>
+<dt>Instrumenter</dt><dd>compile-time hooks into application events</dd>
+</dl></li>
+</ul></li>
+<li>Breakpoint Debugger</li>
+<li>Developer Dashboard</li>
+<li>End-to-End Testing
+<ul class="org-ul">
+<li>Concurrent</li>
+<li>Transactional</li>
+<li><p>
+JavaScript tests:
+</p>
+
+<p>
+Call Phoenix endpoints to check-out/check-in Ecto Sandbox
+connection
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def checkout(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkout(conn)
+end
+
+def checkin(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkin(conn)
+end
+</pre>
+</div></li>
+</ul></li>
+<li>Easier Contribution
+<ul class="org-ul">
+<li>1st Contribution Sprint</li>
+<li>Phoenix Guides are merged</li>
+</ul></li>
+</ul></li>
+<li>Phoenix/Elixir have enabled many people building many useful stuffs
+<ul class="org-ul">
+<li>Make the previously unachievable, achievable</li>
+</ul></li>
+</ul>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=zbbK0WOvWII">ElixirConf 2017 - Closing Keynote - Chris McCord - YouTube</a>
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/16/whats-next-for-phoenix</guid>
+    </item>
+    <item>
+      <title>Write your code as if you&#39;re writing a letter</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-you&#39;re-writing-a-letter</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Write your code as if you&#39;re writing a letter</h1>
+            <blockquote>
+<p>
+Next time you have to write any significant amount of code, imagine
+that you are going to have to write a letter that teaches someone how
+to reproduce it. The only code you can show them are tests. It really
+changes how you approach the problem.
+</p>
+</blockquote>
+
+<p>
+-- from <a href="https://twitter.com/jamis/status/939183075291947008">Jamis Buck on Twitter: "Next time you have to write any
+   significant amount of code, imagine that you are going to have to
+   write a letter that teaches someone how to…
+   https://t.co/vjk0Uh7Eya"</a>
+</p>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2017-12-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-you&#39;re-writing-a-letter</guid>
     </item>
   </channel>
 </rss>
