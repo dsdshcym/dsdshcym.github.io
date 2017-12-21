@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Code style consistency matters - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Code Style, Clean Code, Code Format" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Code style consistency matters</h1>
+            <blockquote>
+<p>
+Consistency in formatting is easy; consistency in system design is
+hard. I'm skeptical that anyone can reliably do the latter without
+reliably doing the former.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://twitter.com/garybernhardt/status/943194907807686657">Gary Bernhardt on Twitter: "Consistency in formatting is easy;
+   consistency in system design is hard. I'm skeptical that anyone can
+   reliably do the latter without reliab… https://t.co/iYTpefdYK6"</a>
+</p>
+
+<div id="outline-container-orgf2fbcf4" class="outline-2">
+<h2 id="orgf2fbcf4">Code style consistency matters</h2>
+<div class="outline-text-2" id="text-orgf2fbcf4">
+</div>
+<div id="outline-container-org4c6dd1b" class="outline-3">
+<h3 id="org4c6dd1b">It reads better</h3>
+<div class="outline-text-3" id="text-org4c6dd1b">
+<p>
+Writing code is like writing a letter to your future self (or other
+developers) to make them understand what you want to express
+now.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+A good code style can help a lot on the readability level of this
+"letter".
+</p>
+</div>
+</div>
+<div id="outline-container-orgbb99fc4" class="outline-3">
+<h3 id="orgbb99fc4">It makes it easier to find potential refactor points</h3>
+<div class="outline-text-3" id="text-orgbb99fc4">
+<p>
+Many times when we refactor our code, we need to find the common
+qualities first so that we can extract them.
+</p>
+
+<p>
+As it's mentioned in <i>99 Bottles of OOP</i><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>:
+</p>
+<blockquote>
+<p>
+Various conditional forms will disguise the common shape.
+</p>
+</blockquote>
+<ul class="org-ul">
+<li><p>
+A bad example is like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"># Verbose conditional
+def container(number)
+  if number == 1
+    "bottle"
+  else
+    "bottles"
+  end
+end
+
+# Guard clause
+def quantity(number)
+  return "no more" if number == 0
+  number.to_s
+end
+
+# Ternary expression
+def pronoun(number)
+  number == 1 ? "it" : "one"
+end
+</pre>
+</div>
+<p>
+In this example, it uses 3 different forms of conditional
+expressions. It's really hard to find out the commonality between
+these methods. (At least not possible on your first glance)
+</p></li>
+<li><p>
+A better one would be:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def container(number)
+  if number == 1
+    "bottle"
+  else
+    "bottles"
+  end
+end
+
+def quantity(number)
+  if number == 0
+    "no more"
+  else
+    number.to_s
+  end
+end
+
+def pronoun(number)
+  if number == 1
+    "it"
+  else
+    "one"
+  end
+end
+</pre>
+</div>
+<p>
+In this example, we can easily tell that these 3 methods are sharing
+some logic in common. Because their shapes are so similar that we
+can hardly miss it.
+</p>
+
+<p>
+This can enable so many possible refactorings.
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3db5048" class="outline-3">
+<h3 id="org3db5048">It shows that you really care about your code</h3>
+<div class="outline-text-3" id="text-org3db5048">
+<p>
+If a developer really cares the shape of the code, he/she would
+definitely care more about the core of the code. (which is said in the
+twitter I clipped above)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org64e7cf0" class="outline-2">
+<h2 id="org64e7cf0">Elixir formatter is coming in Elixir 1.6</h2>
+<div class="outline-text-2" id="text-org64e7cf0">
+<p>
+Another thing that excites me is that an official formatter is coming
+to Elixir in Elixir 1.6 (Maybe in Jan 2018?)
+</p>
+
+<p>
+If you are interested, go and check it out:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/uohzxela/ex_format">uohzxela/ex_format: ExFormat formats Elixir source code according to a standard set of rules</a></li>
+<li><a href="https://www.youtube.com/watch?v=Wa7_I_pc0yo">ElixirConf 2017 - Day 2 Morning Keynote - José Valim - YouTube</a></li>
+<li><a href="https://soundcloud.com/elixirtalk/episode-106-chat-with-jose-valim">Episode 106 - Chat with José Valim by ElixirTalk | Elixir Talk | Free Listening on SoundCloud</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-you're-writing-a-letter/">Write your code as if you're writing a letter - dsdshome</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/">Book Review: 99 Bottles of OOP - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2017-12-21</span>
+        <span title="last modification date" class="post-info">2017-12-21</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/clean-code/">Clean Code</a>, <a href="/tags/code-style/">Code Style</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2017/12/21/code-style-consistency-matters/code-style-consistency-matters";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters/code-style-consistency-matters";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
