@@ -4,186 +4,39 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 21 Dec 2017 21:38:14 CST</pubDate>
-    <lastBuildDate>Thu, 21 Dec 2017 21:38:14 CST</lastBuildDate>
+    <pubDate>Thu, 21 Dec 2017 21:41:01 CST</pubDate>
+    <lastBuildDate>Thu, 21 Dec 2017 21:41:01 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>Code style consistency matters</title>
       <link>http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2017-12-21</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters</guid>
+    </item>
+    <item>
+      <title>现代人的崩溃，是默不作声的崩溃</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/21/现代人的崩溃，是默不作声的崩溃</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Code style consistency matters</h1>
+            <h1>现代人的崩溃，是默不作声的崩溃</h1>
             <blockquote>
 <p>
-Consistency in formatting is easy; consistency in system design is
-hard. I'm skeptical that anyone can reliably do the latter without
-reliably doing the former.
+在什么事都喜欢诉诸简单粗暴的今天，试图让别人理解，比买爱马仕还要奢侈。
 </p>
 </blockquote>
-<p>
--- from <a href="https://twitter.com/garybernhardt/status/943194907807686657">Gary Bernhardt on Twitter: "Consistency in formatting is easy;
-   consistency in system design is hard. I'm skeptical that anyone can
-   reliably do the latter without reliab… https://t.co/iYTpefdYK6"</a>
-</p>
-
-<div id="outline-container-org23ab14a" class="outline-2">
-<h2 id="org23ab14a">Code style consistency matters</h2>
-<div class="outline-text-2" id="text-org23ab14a">
-</div>
-<div id="outline-container-org2a59b6a" class="outline-3">
-<h3 id="org2a59b6a">It reads better</h3>
-<div class="outline-text-3" id="text-org2a59b6a">
-<p>
-Writing code is like writing a letter to your future self (or other
-developers) to make them understand what you want to express
-now.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
-</p>
 
 <p>
-A good code style can help a lot on the readability level of this
-"letter".
-</p>
-</div>
-</div>
-<div id="outline-container-org31d09b6" class="outline-3">
-<h3 id="org31d09b6">It makes it easier to find potential refactor points</h3>
-<div class="outline-text-3" id="text-org31d09b6">
-<p>
-Many times when we refactor our code, we need to find the common
-qualities first so that we can extract them.
+-- from <a href="https://zhuanlan.zhihu.com/p/32183982">现代人的崩溃，是默不作声的崩溃 - 文学歪史 - 知乎专栏</a>
 </p>
 
-<p>
-As it's mentioned in <i>99 Bottles of OOP</i><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>:
-</p>
-<blockquote>
-<p>
-Various conditional forms will disguise the common shape.
-</p>
-</blockquote>
-<ul class="org-ul">
-<li><p>
-A bad example is like this:
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby"># Verbose conditional
-def container(number)
-  if number == 1
-    "bottle"
-  else
-    "bottles"
-  end
-end
-
-# Guard clause
-def quantity(number)
-  return "no more" if number == 0
-  number.to_s
-end
-
-# Ternary expression
-def pronoun(number)
-  number == 1 ? "it" : "one"
-end
-</pre>
-</div>
-<p>
-In this example, it uses 3 different forms of conditional
-expressions. It's really hard to find out the commonality between
-these methods. (At least not possible on your first glance)
-</p></li>
-<li><p>
-A better one would be:
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">def container(number)
-  if number == 1
-    "bottle"
-  else
-    "bottles"
-  end
-end
-
-def quantity(number)
-  if number == 0
-    "no more"
-  else
-    number.to_s
-  end
-end
-
-def pronoun(number)
-  if number == 1
-    "it"
-  else
-    "one"
-  end
-end
-</pre>
-</div>
-<p>
-In this example, we can easily tell that these 3 methods are sharing
-some logic in common. Because their shapes are so similar that we
-can hardly miss it.
-</p>
-
-<p>
-This can enable so many possible refactorings.
-</p></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgcf21078" class="outline-3">
-<h3 id="orgcf21078">It shows that you really care about your code</h3>
-<div class="outline-text-3" id="text-orgcf21078">
-<p>
-If a developer really cares the shape of the code, he/she would
-definitely care more about the core of the code. (which is said in the
-twitter I clipped above)
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org5505015" class="outline-2">
-<h2 id="org5505015">Elixir formatter is coming in Elixir 1.6</h2>
-<div class="outline-text-2" id="text-org5505015">
-<p>
-Another thing that excites me is that an official formatter is coming
-to Elixir in Elixir 1.6 (Maybe in Jan 2018?)
-</p>
-
-<p>
-If you are interested, go and check it out:
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/uohzxela/ex_format">uohzxela/ex_format: ExFormat formats Elixir source code according to a standard set of rules</a></li>
-<li><a href="https://www.youtube.com/watch?v=Wa7_I_pc0yo">ElixirConf 2017 - Day 2 Morning Keynote - José Valim - YouTube</a></li>
-<li><a href="https://soundcloud.com/elixirtalk/episode-106-chat-with-jose-valim">Episode 106 - Chat with José Valim by ElixirTalk | Elixir Talk | Free Listening on SoundCloud</a></li>
-</ul>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-you're-writing-a-letter/">Write your code as if you're writing a letter - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/">Book Review: 99 Bottles of OOP - dsdshome</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
       <pubDate>2017-12-21</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters</guid>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/21/现代人的崩溃，是默不作声的崩溃</guid>
     </item>
     <item>
       <title>Error Message Really Matters</title>
@@ -240,13 +93,6 @@ If you are interested, go and check it out:
       <description><![CDATA[]]></description>
       <pubDate>2017-12-19</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/12/turn-a-long-letter-into-a-short-one</guid>
-    </item>
-    <item>
-      <title>Use git bisect run to automatically find the first bad commit</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/14/use-git-bisect-run-to-automatically-find-the-first-bad-commit</guid>
     </item>
   </channel>
 </rss>
