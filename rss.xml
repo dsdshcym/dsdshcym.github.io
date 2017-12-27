@@ -4,382 +4,44 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 23 Dec 2017 21:15:38 CST</pubDate>
-    <lastBuildDate>Sat, 23 Dec 2017 21:15:38 CST</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2017 15:41:01 CST</pubDate>
+    <lastBuildDate>Wed, 27 Dec 2017 15:41:01 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Learnings from playing with FizzBuzz for 3 days</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/22/learnings-from-playing-with-fizz-buzz-for-3-days</link>
+      <title>Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Learnings from playing with FizzBuzz for 3 days</h1>
+            <h1>Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots</h1>
             <p>
-As I wrote in a previous post<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, I've been playing with Coding
-Katas to practice my TDD/Object-Oriented Design/Functional Programming
-skills.
+It's important to celebrate after finishing a task/sub-task, it's easier to
+tackle down the whole task if we get enough power in this celebration process.
 </p>
-
-<p>
-And I write several solutions for a very simple Kata (<code>FizzBuzz</code>) in 3
-days, here is what I got:
-</p>
-<div id="outline-container-orgdf378cc" class="outline-2">
-<h2 id="orgdf378cc">Elixir: Data transformation pipeline</h2>
-<div class="outline-text-2" id="text-orgdf378cc">
-<p>
-This is my Elixir solution for <code>FizzBuzz</code>:
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">defmodule FizzBuzz do
-  def convert(number) do
-    ""
-    |&gt; maybe_concat(rem(number, 3) == 0, "Fizz")
-    |&gt; maybe_concat(rem(number, 5) == 0, "Buzz")
-    |&gt; fallback_if_empty(to_string(number))
-  end
-
-  defp maybe_concat(result, true, sound), do: result &lt;&gt; sound
-  defp maybe_concat(result, false, _sound), do: result
-
-  defp fallback_if_empty("", sound), do: sound
-  defp fallback_if_empty(result, _sound), do: result
-end
-</pre>
-</div>
-
-<p>
-Actually, this is my last attempt for <code>FizzBuzz</code> problem. I put it at
-the first because it's so simple and it literally blew my mind<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
-</p>
-
-<p>
-And I think this solution also is a great example for explaining
-Elixir's core: <b>Data Transformation</b>.
-</p>
-
-<p>
-As Dave Thomas said in <i>Programming Elixir</i>:
-</p>
+<blockquote>
 <ol class="org-ol">
-<li><p>
-The goal of Elixir is data-transforming.
-</p>
-
-<p>
-<code>FizzBuzz.convert/1</code> is just converting a string (<code>""</code>) into
-another string (<code>"Fizz"</code> or <code>""</code>), and another string , and so on.
-</p></li>
-
-<li><p>
-<code>|&gt;</code> operator makes data transformations explicit.
-</p>
-
-<p>
-All these transformations were put together using the "pipe
-operator" (<code>|&gt;</code>), which is the perfect match for
-data-transformation: <b>data pipes in, new data pipes out</b>.
-</p></li>
-
-<li><p>
-<b>Elixir code tries to be declarative, not imperative</b>
-</p>
-
-<p>
-Finally, if we look at the private methods, they are all
-declarative:
-</p>
-<ol class="org-ol">
-<li>First, do pattern matching on the inputs</li>
-<li>Then, based on the inputs value, generate some new data as the
-output</li>
+<li>Break it down</li>
+<li>Finish the next thing</li>
+<li><b>Celebrate</b> (Say "Yay!")</li>
+<li>Go on to the next thing</li>
 </ol>
+</blockquote>
 
 <p>
-In Ruby, I always find myself to push the logic out of the code and
-into the data, something like:
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">SOUNDS = {
-  3: 'Fizz',
-  5: 'Buzz'
-}
-
-def sound(factor)
-  SOUNDS[factor]
-end
-</pre>
-</div>
-<p>
-But with pattern matching, I can do this directly in the function
-declaration level and don't need to do this by myself anymore. And
-I find that I use Map in Elixir way less than I would use Hash in
-Ruby.
+-- from <a href="http://giantrobots.fm/255">255: Solving the Whole Problem (Maria Parker) - Giant Robots Smashing Into Other Giant Robots</a>
 </p>
 
-<p>
-(<i>And I'm also curious if it's still necessary to do that in
-Elixir.</i> Please leave your thoughts in the comment.)
-</p>
-
-<p>
-If we think a little bit further, in Ruby, we often initialize
-different classes based on the input and provides different
-behavior by leveraging the message dispatching (I call this <code>Class
-   Level Dispatch</code>).
-</p>
-
-<p>
-But with pattern matching, we can send messages to different
-methods based on the input value (I call this <code>Method Level
-   Dispatch</code>).
-</p>
-
-<p>
-Apparently, <code>Method Level Dispatch</code> has smaller granularity than
-<code>Class Level Dispatch</code>, so that we can write shorter code with it
-because we can push more message dispatching work to the
-programming language itself<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
-</p></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org9430374" class="outline-2">
-<h2 id="org9430374">Ruby: Data Transformation by Hand</h2>
-<div class="outline-text-2" id="text-org9430374">
-<p>
-Of course, we can implement the same algorithm in Ruby:
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class FizzBuzz
-  def convert(number)
-    result = ""
-    result = maybe_concate(result, number % 3 == 0, "Fizz")
-    result = maybe_concate(result, number % 5 == 0, "Buzz")
-    result = fallback_if_empty(result, number.to_s)
-    result
-  end
-
-  def maybe_concate(result, concate?, sound)
-    if concate?
-      result &lt;&gt; sound
-    else
-      result
-    end
-  end
-
-  def fallback_if_empty(result, fallback)
-    if result.empty?
-      fallback
-    else
-      result
-    end
-  end
-end
-</pre>
-</div>
-<p>
-But it's not as clear as the Elixir solution:
-</p>
-<ol class="org-ol">
-<li>Ruby doesn't have Pattern Matching yet<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
-So we need to handle different execution paths by conditional
-statements.</li>
-<li>Ruby doesn't have the pipe operator.
-So we need a temporary variable to manually manage this state.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgb1fef4a" class="outline-2">
-<h2 id="orgb1fef4a">Ruby: Chain of Responsibility</h2>
-<div class="outline-text-2" id="text-orgb1fef4a">
-<p>
-I also wrote a more complex solution in Ruby. (Because I want to try
-the Chain of Responsibility pattern and <code>FizzBuzz</code> seems to be a good
-fit.)
-</p>
-<ul class="org-ul">
-<li><p>
-<code>SoundsChain</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class SoundsChain
-  def initialize(sound, fallback)
-    @sound = sound
-    @fallback = fallback
-  end
-
-  def for(number)
-    if sound.convertable?
-      sound.for(number)
-    else
-      fallback.for(number)
-    end
-  end
-
-  private
-
-  attr_reader :sound
-end
-</pre>
-</div></li>
-<li><p>
-<code>ConcatenatableSound</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class ConcatenatableSound
-  def initialize(sounds)
-    @sounds = sounds
-  end
-
-  def convertable?(number)
-    sounds.any? { |sound| sound.convertable?(number) }
-  end
-
-  def for(number)
-    sounds(number).join
-  end
-
-  private
-
-  attr_reader :sounds
-
-  def sounds(number)
-    sounds.map { |sound| sound.for(number) }
-  end
-end
-</pre>
-</div></li>
-<li><p>
-<code>FactorSound</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class FactorSound
-  def initialize(factor, sound)
-    @factor = factor
-    @sound = sound
-  end
-
-  def convertable?(number)
-    number % sound == 0
-  end
-
-  def for(number)
-    if convertable?(number)
-      sound
-    else
-      ''
-    end
-  end
-
-  private
-
-  attr_reader :sound
-end
-</pre>
-</div></li>
-<li><p>
-<code>StringSound</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class StringSound
-  def convertable?(_number)
-    true
-  end
-
-  def for(number)
-    number.to_s
-  end
-end
-</pre>
-</div></li>
-</ul>
-<p>
-We have 2 chains here:
-</p>
-<dl class="org-dl">
-<dt><code>SoundsChain</code></dt><dd>It will return the sound if this number is
-convertable by current sound, otherwise it will ask
-fallback sound to convert the number.</dd>
-<dt><code>ConcatenatableSound</code></dt><dd>This class is not strictly a Chain of Responsibility, since the
-<code>#for</code> method is concatenating all the converted results in this
-chain.</dd>
-</dl>
-
-<p>
-It is a complex solution. But we can see a absolutely clean interface
-here:
-</p>
-<dl class="org-dl">
-<dt><code>convertable?</code></dt><dd>Test if this <code>number</code> can be convert by this
-object.</dd>
-<dt><code>for</code></dt><dd>Return the converted sound for this number if possible.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-org0b334e7" class="outline-2">
-<h2 id="org0b334e7">Summary</h2>
-<div class="outline-text-2" id="text-org0b334e7">
-<p>
-<code>FizzBuzz</code> is a pretty simple problem that can be solved in many
-different ways, like:
-</p>
-<ol class="org-ol">
-<li>Pass in <code>Proc</code> as <code>#for</code> and <code>#convertable?</code></li>
-<li>Use instance variable as the internal state to convert sounds</li>
-<li>etc.</li>
-</ol>
-
-<p>
-I'm not saying that Elixir's solution is better than Ruby's solution.
-It's just that <code>FizzBuzz</code> is a perfect data transforming question
-that's a perfect fit for Elixir.
-</p>
-
-<p>
-I'm also not saying that Chain of Responsibility is a better solution
-for <code>FizzBuzz</code>. We can see that it's more complex and needs more lines
-of code to implement.
-</p>
-
-<p>
-It's pretty interesting to do coding katas in these ways to explore
-different solutions. Give it a try and maybe you can find more useful
-things from a simple problem.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/">As the tests get more specific, the code gets more generic - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://twitter.com/dsdshcym/status/941681020042018818">Yiming Chen on Twitter: \"How Pattern Matching literally blows
-my mind #elixir #elixirlang https://t.co/EdPOZIzORr\"</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-I also mentioned this idea in <a href="http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/#org3a82c79">我看程序语言的历史、现在与将来 -
-dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-Pattern Matching might be added in Ruby 3 -- from <a href="https://www.youtube.com/watch?v=1-A9eRzCBL0&amp;list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt">RubyConf
-2017: Opening Keynote - Good Change, Bad Change by Yukihiro
-Matsumoto - YouTube</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-27</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots</guid>
+    </item>
+    <item>
+      <title>Learnings from playing with FizzBuzz for 3 days</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/22/learnings-from-playing-with-fizz-buzz-for-3-days</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-23</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/22/learnings-from-playing-with-fizz-buzz-for-3-days</guid>
     </item>
@@ -438,13 +100,6 @@ Matsumoto - YouTube</a>
       <description><![CDATA[]]></description>
       <pubDate>2017-12-19</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
-    </item>
-    <item>
-      <title>Teahour: PingCAP 数据库及编程语言</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/18/teahour-ping-cap</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/18/teahour-ping-cap</guid>
     </item>
   </channel>
 </rss>
