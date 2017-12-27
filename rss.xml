@@ -4,37 +4,61 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 27 Dec 2017 15:41:01 CST</pubDate>
-    <lastBuildDate>Wed, 27 Dec 2017 15:41:01 CST</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2017 23:01:40 CST</pubDate>
+    <lastBuildDate>Wed, 27 Dec 2017 23:01:40 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots</link>
+      <title>Be a Better Story Teller</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/27/be-a-better-story-teller</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots</h1>
-            <p>
-It's important to celebrate after finishing a task/sub-task, it's easier to
-tackle down the whole task if we get enough power in this celebration process.
-</p>
-<blockquote>
+            <h1>Be a Better Story Teller</h1>
+            <blockquote>
 <ol class="org-ol">
-<li>Break it down</li>
-<li>Finish the next thing</li>
-<li><b>Celebrate</b> (Say "Yay!")</li>
-<li>Go on to the next thing</li>
+<li>Observe conflict (An issue that needs to be solved)</li>
+<li>Find shared language (Core concepts)</li>
+<li>Tell a story (Define goals and reach them)</li>
+<li>Create news (Release notes)</li>
 </ol>
 </blockquote>
+<p>
+-- from <a href="https://www.deconstructconf.com/2017/evan-czaplicki-on-storytelling">On Storytelling - by Evan Czaplicki - Deconstruct</a>
+</p>
 
 <p>
--- from <a href="http://giantrobots.fm/255">255: Solving the Whole Problem (Maria Parker) - Giant Robots Smashing Into Other Giant Robots</a>
+Great talk by Elm's creator! Learned a lot.
+</p>
+
+<p>
+Writing software, no matter it's open-sourced or not, is always more than a
+technical problem. Or worse, it's the easiest part of the whole project.
+</p>
+
+<p>
+Here are some more critical parts:
+</p>
+<ol class="org-ol">
+<li>Communication</li>
+<li><i>Communication</i></li>
+<li><b>Communication</b></li>
+</ol>
+
+<p>
+So, try to be a better story teller to be a better programmer.
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-27</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/27/be-a-better-story-teller</guid>
+    </item>
+    <item>
+      <title>Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots</guid>
     </item>
@@ -93,13 +117,6 @@ tackle down the whole task if we get enough power in this celebration process.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-19</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core</guid>
-    </item>
-    <item>
-      <title>Notes from &quot;Why VSCode is better than Atom? - Teahour.fm&quot;</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom-teahour-fm</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/15/notes-from-why-vscode-is-better-than-atom-teahour-fm</guid>
     </item>
   </channel>
 </rss>
