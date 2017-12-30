@@ -4,179 +4,56 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 28 Dec 2017 16:06:35 CST</pubDate>
-    <lastBuildDate>Thu, 28 Dec 2017 16:06:35 CST</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2017 21:22:33 CST</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2017 21:22:33 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: Programming Phoenix</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix</link>
+      <title>Coping with Complexity</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: Programming Phoenix</h1>
-            <p>
-Phoenix is basically the official web framework for Elixir now (As José Valim,
-the Elixir creator, is also the core maintainer of Phoenix). And I'm really
-excited by the ideas Elixir/Phoenix brought to the web development community.
-I'll explain some of them in this blog post.
-</p>
-
-<div id="outline-container-org18585b0" class="outline-2">
-<h2 id="org18585b0">Caveats</h2>
-<div class="outline-text-2" id="text-org18585b0">
-<p>
-<i>Programming Phoenix 1.3</i> is <b>NOT</b> released yet. (Not until Feb/Mar 2018)
-</p>
-
-<p>
-So I also spent some time to learn about Context (which is a breaking change in
-Phoenix 1.3).
-</p>
+            <h1>Coping with Complexity</h1>
+            <blockquote>
+<ol class="org-ol">
+<li>If the tests fails in a predictable way (e.g. NoMethodError), it's almost as
+good as passing</li>
+<li>Complexoty Lumper vs Complexity Splitter
 <ul class="org-ul">
-<li><a href="https://hexdocs.pm/phoenix/contexts.html">Contexts – Phoenix v1.3.0</a></li>
-<li><a href="https://elixirforum.com/t/contexts-a-barrier-too-high-for-newbies/5929/19">Contexts - a barrier too high for newbies? - Phoenix Forum / Phoenix Chat - Elixir Forum</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgdbde6c7" class="outline-2">
-<h2 id="orgdbde6c7">Functional MVC</h2>
-<div class="outline-text-2" id="text-orgdbde6c7">
+<li>Kent Beck is a Splitter
+<ul class="org-ul">
+<li>logically simpler</li>
+<li>emotionally easier</li>
+</ul></li>
+</ul></li>
+<li>Storytelling is the fundamental skill for a change
+<ul class="org-ul">
+<li>The human part of the problem is far more difficult than the software part</li>
+</ul></li>
+</ol>
+</blockquote>
 <p>
-<b>A web server is a natural problem for a functional language to solve.</b>
+-- from <a href="http://www.greaterthancode.com/podcast/060-coping-with-complexity-with-kent-beck/">060: Coping with Complexity with Kent Beck – Greater Than Code</a>
 </p>
 
 <p>
-We can think of any web server as a huge function collections:
-</p>
-<dl class="org-dl">
-<dt>Function Name</dt><dd>URL</dd>
-<dt>Function Input</dt><dd>Request Payload</dd>
-<dt>Function Output</dt><dd>Response</dd>
-</dl>
-
-<p>
-The whole job of our web server is to provide these different functions and deal
-with user input.
+P.S.
+Sometimes I would have this feeling: right after I first learned something new,
+I'd hear/read about this again in the next few days.
 </p>
 
 <p>
-This makes functional programming languages (like Elixir) a perfect fit for web
-development.
+Like this time, I just wrote about storytelling<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, then I listened to this
+episode (which is not from a podcast I subscribed) and they are talking
+basically the similar idea. It's amazing how things come together sometimes.
 </p>
-
-<p>
-And a whole trip of a request in a Phoenix application can be expressed in
-Elixir's data pipeline like this:
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">connection
-|&gt; endpoint
-|&gt; router # directs a request into the appropriate controller
-|&gt; pipelines # groups functions together to handle common tasks
-|&gt; controller
-</pre>
-</div>
-
-<p>
-This data flow is super neat because we can then break down each steps (like
-<code>endpoint</code>, <code>router</code>) even further into different pipelines (which is <b>the basic
-abstraction model</b> in Elixir). And this is the idea behind Phoenix (or Plug, the
-connection adapter behind Phoenix)
-</p>
-</div>
-</div>
-<div id="outline-container-orga1f2406" class="outline-2">
-<h2 id="orga1f2406">Ecto: Your Functional Data Source</h2>
-<div class="outline-text-2" id="text-orga1f2406">
-</div>
-<div id="outline-container-org1898f1d" class="outline-3">
-<h3 id="org1898f1d">Ecto.Repo is not using Repository Pattern</h3>
-<div class="outline-text-3" id="text-org1898f1d">
-<p>
-Ecto.Repo is not a Repository<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> (defined by P of EEA), but more like a Data
-Mapper<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
-</p>
-
-<p>
-You can see the discussion <a href="https://groups.google.com/forum/#!topic/elixir-ecto/CSC3ZRbJ9cU">here</a><sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
-</p>
-</div>
-</div>
-<div id="outline-container-org1ccefe3" class="outline-3">
-<h3 id="org1ccefe3">More Explicit</h3>
-<div class="outline-text-3" id="text-org1ccefe3">
-<p>
-Compared to ActiveRecord<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>, Ecto (or even Phoenix and Elixir) values explicity
-higher than implicity.
-</p>
-
-<p>
-Things like <code>associations</code>
-It's been talked many times in the community. So I'll skip this part.
-</p>
-</div>
-</div>
-<div id="outline-container-orgdbbbc20" class="outline-3">
-<h3 id="orgdbbbc20">SQL Sandbox is awesome</h3>
-<div class="outline-text-3" id="text-orgdbbbc20">
-<p>
-Being explicit gives us more control over the db connections.
-</p>
-
-<p>
-<code>Ecto.Adapters.SQL.Sandbox.checkout</code> guarantees that connection runs in a
-transaction and automatically rolls back the db at the end of every test.
-</p>
-
-<p>
-So we can run our system tests concurrently, which is super hard in the
-Ruby/Rails world.
-</p>
-</div>
-</div>
-<div id="outline-container-org1af0788" class="outline-3">
-<h3 id="org1af0788">Ecto 2.1</h3>
-<div class="outline-text-3" id="text-org1af0788">
-<p>
-If you want to know more about Ecto, <i>What's New in Ecto 2.1</i><sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> is a book you
-cannot miss.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orge63d4ff" class="outline-2">
-<h2 id="orge63d4ff">Summary</h2>
-<div class="outline-text-2" id="text-orge63d4ff">
-<p>
-I'm really excited to learn Phoenix and the functional way to build a web
-application. I'll definitely try to build an app in Phoenix in the near future.
-</p>
-</div>
-</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://martinfowler.com/eaaCatalog/repository.html">P of EAA: Repository</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://martinfowler.com/eaaCatalog/dataMapper.html">P of EAA: Data Mapper</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://groups.google.com/forum/#!topic/elixir-ecto/CSC3ZRbJ9cU">Ecto is not using repository pattern - Consider renaming Ecto.Repo to
-something else - Google Groups</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.amberbit.com/blog/2016/2/24/how-elixirs-ecto-differs-from-rubys-activerecord/">How Elixir’s Ecto differs from Ruby’s ActiveRecord</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0">What's new in Ecto 2.1 (Free eBook)</a>
+<a href="http://dsdshcym.github.io/clipping/2017/12/27/be-a-better-story-teller/">Be a Better Story Teller - dsdshome</a>
 </p></div></div>
 
 
@@ -185,6 +62,13 @@ something else - Google Groups</a>
     </div>
 </section>
 ]]></description>
+      <pubDate>2017-12-30</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</guid>
+    </item>
+    <item>
+      <title>Book Review: Programming Phoenix</title>
+      <link>http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix</guid>
     </item>
@@ -243,13 +127,6 @@ something else - Google Groups</a>
       <description><![CDATA[]]></description>
       <pubDate>2017-12-19</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os</guid>
-    </item>
-    <item>
-      <title>How to keep Ruby Relevant?</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/14/how-to-keep-ruby-relevant</guid>
     </item>
   </channel>
 </rss>
