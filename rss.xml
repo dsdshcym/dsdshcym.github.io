@@ -4,56 +4,132 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 30 Dec 2017 21:22:33 CST</pubDate>
-    <lastBuildDate>Sat, 30 Dec 2017 21:22:33 CST</lastBuildDate>
+    <pubDate>Mon, 01 Jan 2018 16:31:47 CST</pubDate>
+    <lastBuildDate>Mon, 01 Jan 2018 16:31:47 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Coping with Complexity</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</link>
+      <title>Build Data-Oriented Applications with WulinMaster</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/01/build-data-oriented-applications-with-wulin-master</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Coping with Complexity</h1>
-            <blockquote>
+            <h1>Build Data-Oriented Applications with WulinMaster</h1>
+            <p>
+WulinMaster is a Gem built on top on rails to let you build Data-Oriented
+Applications faster.
+</p>
+
+<p>
+Its most valuable feature is generating grid-like views for your models whilst
+still providing enough customization possibilities.
+</p>
+
+<p>
+We all know that Rails has this great scaffolding feature to let you build a
+pure CRUD application in 15 mins<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. But the default templates are focused on
+more general data.
+</p>
+
+<p>
+WulinMaster instead focuses on large data sets that need to be shown in grids.
+It's still CRUD, but optimized for larger data sets.
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>History
+<ul class="org-ul">
+<li>World Cup</li>
+<li>Mission
+<ul class="org-ul">
+<li>Build 2 large software suites
 <ol class="org-ol">
-<li>If the tests fails in a predictable way (e.g. NoMethodError), it's almost as
-good as passing</li>
-<li>Complexoty Lumper vs Complexity Splitter
+<li>booking</li>
+<li>logistic</li>
+</ol></li>
+<li>5 accompanying web applications
 <ul class="org-ul">
-<li>Kent Beck is a Splitter
-<ul class="org-ul">
-<li>logically simpler</li>
-<li>emotionally easier</li>
+<li>Data grids</li>
+<li>Keyboard friendly</li>
+<li>Excel</li>
+<li>PDF</li>
+<li>Auditing</li>
 </ul></li>
 </ul></li>
-<li>Storytelling is the fundamental skill for a change
+<li>Challenges
 <ul class="org-ul">
-<li>The human part of the problem is far more difficult than the software part</li>
+<li>~60 screens</li>
+<li>~20 user roles</li>
+<li>Complex model and machines</li>
+<li>Limited resources</li>
 </ul></li>
-</ol>
+</ul></li>
+<li><a href="https://github.com/ekohe/wulin_master"><code>wulin_master</code></a>
+<ul class="org-ul">
+<li>Framework to develop enterprise applications built on top of
+Ruby on Rails</li>
+<li>Extensible and Reusable
+<ul class="org-ul">
+<li><p>
+Grid
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class CountryGrid &lt; WulinMaster::Grid
+  title 'Countries'
+
+  model Country
+
+  column :code
+  column :name
+
+  load_default_actions
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>Sorting*</li>
+<li>Multi-column Filtering</li>
+<li>Creation and Updating</li>
+</ul></li>
+<li>Screen
+<ul class="org-ul">
+<li>Composed by multiple grids</li>
+</ul></li>
+<li>Actions
+<ul class="org-ul">
+<li>Extend a grid (add a button)</li>
+</ul></li>
+<li>Behaviors
+<ul class="org-ul">
+<li>Callbacks</li>
+</ul></li>
+</ul></li>
+<li><a href="https://github.com/ekohe/wulin_oauth"><code>wulin_oauth</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_permits"><code>wulin_permits</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_excel"><code>wulin_excel</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_audit"><code>wulin_audit</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_wiki"><code>wulin_wiki</code></a></li>
+</ul></li>
+<li>Future
+<ul class="org-ul">
+<li>test suite</li>
+<li>stability</li>
+<li>marketing site</li>
+<li>import tool</li>
+<li>rails generator</li>
+</ul></li>
+</ul>
 </blockquote>
 <p>
--- from <a href="http://www.greaterthancode.com/podcast/060-coping-with-complexity-with-kent-beck/">060: Coping with Complexity with Kent Beck – Greater Than Code</a>
-</p>
-
-<p>
-P.S.
-Sometimes I would have this feeling: right after I first learned something new,
-I'd hear/read about this again in the next few days.
-</p>
-
-<p>
-Like this time, I just wrote about storytelling<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, then I listened to this
-episode (which is not from a podcast I subscribed) and they are talking
-basically the similar idea. It's amazing how things come together sometimes.
+-- from an Ekohe internal tech sharing (<a href="https://github.com/ekohe/wulin_master">ekohe/wulin_master: Wulin Master fight for enterprise problem</a>)
 </p>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/27/be-a-better-story-teller/">Be a Better Story Teller - dsdshome</a>
+<a href="https://www.youtube.com/watch?v=Gzj723LkRJY&amp;feature=youtu.be">How to create a blog engine in 15 minutes - Ruby on Rails demo - YouTube</a>
 </p></div></div>
 
 
@@ -62,6 +138,13 @@ basically the similar idea. It's amazing how things come together sometimes.
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-01</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/01/build-data-oriented-applications-with-wulin-master</guid>
+    </item>
+    <item>
+      <title>Coping with Complexity</title>
+      <link>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</link>
+      <description><![CDATA[]]></description>
       <pubDate>2017-12-30</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</guid>
     </item>
@@ -120,13 +203,6 @@ basically the similar idea. It's amazing how things come together sometimes.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic</guid>
-    </item>
-    <item>
-      <title>Global Find Clipboard on macOS</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/16/global-find-clipboard-on-mac-os</guid>
     </item>
   </channel>
 </rss>

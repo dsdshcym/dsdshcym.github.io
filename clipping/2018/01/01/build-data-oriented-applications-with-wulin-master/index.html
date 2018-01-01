@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Build Data-Oriented Applications with WulinMaster - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Rails, Gem, Data, Grid, CRUD" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Build Data-Oriented Applications with WulinMaster</h1>
+            <p>
+WulinMaster is a Gem built on top on rails to let you build Data-Oriented
+Applications faster.
+</p>
+
+<p>
+Its most valuable feature is generating grid-like views for your models whilst
+still providing enough customization possibilities.
+</p>
+
+<p>
+We all know that Rails has this great scaffolding feature to let you build a
+pure CRUD application in 15 mins<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. But the default templates are focused on
+more general data.
+</p>
+
+<p>
+WulinMaster instead focuses on large data sets that need to be shown in grids.
+It's still CRUD, but optimized for larger data sets.
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>History
+<ul class="org-ul">
+<li>World Cup</li>
+<li>Mission
+<ul class="org-ul">
+<li>Build 2 large software suites
+<ol class="org-ol">
+<li>booking</li>
+<li>logistic</li>
+</ol></li>
+<li>5 accompanying web applications
+<ul class="org-ul">
+<li>Data grids</li>
+<li>Keyboard friendly</li>
+<li>Excel</li>
+<li>PDF</li>
+<li>Auditing</li>
+</ul></li>
+</ul></li>
+<li>Challenges
+<ul class="org-ul">
+<li>~60 screens</li>
+<li>~20 user roles</li>
+<li>Complex model and machines</li>
+<li>Limited resources</li>
+</ul></li>
+</ul></li>
+<li><a href="https://github.com/ekohe/wulin_master"><code>wulin_master</code></a>
+<ul class="org-ul">
+<li>Framework to develop enterprise applications built on top of
+Ruby on Rails</li>
+<li>Extensible and Reusable
+<ul class="org-ul">
+<li><p>
+Grid
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class CountryGrid &lt; WulinMaster::Grid
+  title 'Countries'
+
+  model Country
+
+  column :code
+  column :name
+
+  load_default_actions
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li>Sorting*</li>
+<li>Multi-column Filtering</li>
+<li>Creation and Updating</li>
+</ul></li>
+<li>Screen
+<ul class="org-ul">
+<li>Composed by multiple grids</li>
+</ul></li>
+<li>Actions
+<ul class="org-ul">
+<li>Extend a grid (add a button)</li>
+</ul></li>
+<li>Behaviors
+<ul class="org-ul">
+<li>Callbacks</li>
+</ul></li>
+</ul></li>
+<li><a href="https://github.com/ekohe/wulin_oauth"><code>wulin_oauth</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_permits"><code>wulin_permits</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_excel"><code>wulin_excel</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_audit"><code>wulin_audit</code></a></li>
+<li><a href="https://github.com/ekohe/wulin_wiki"><code>wulin_wiki</code></a></li>
+</ul></li>
+<li>Future
+<ul class="org-ul">
+<li>test suite</li>
+<li>stability</li>
+<li>marketing site</li>
+<li>import tool</li>
+<li>rails generator</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from an Ekohe internal tech sharing (<a href="https://github.com/ekohe/wulin_master">ekohe/wulin_master: Wulin Master fight for enterprise problem</a>)
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.youtube.com/watch?v=Gzj723LkRJY&amp;feature=youtu.be">How to create a blog engine in 15 minutes - Ruby on Rails demo - YouTube</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2018-01-01</span>
+        <span title="last modification date" class="post-info">2018-01-01</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/rails/">Rails</a>, <a href="/tags/gem/">Gem</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2018/01/01/build-data-oriented-applications-with-wulin-master";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2018/01/01/build-data-oriented-applications-with-wulin-master";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
