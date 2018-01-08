@@ -4,291 +4,59 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 02 Jan 2018 17:26:01 CST</pubDate>
-    <lastBuildDate>Tue, 02 Jan 2018 17:26:01 CST</lastBuildDate>
+    <pubDate>Mon, 08 Jan 2018 10:21:03 CST</pubDate>
+    <lastBuildDate>Mon, 08 Jan 2018 10:21:03 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: Crafting Rails 4 Applications</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications</link>
+      <title>How to know a book is good before reading it</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: Crafting Rails 4 Applications</h1>
-            <div id="outline-container-org644fff9" class="outline-2">
-<h2 id="org644fff9">TL;DR</h2>
-<div class="outline-text-2" id="text-org644fff9">
+            <h1>How to know a book is good before reading it</h1>
+            <div id="outline-container-org8775540" class="outline-2">
+<h2 id="org8775540">TL;DR</h2>
+<div class="outline-text-2" id="text-org8775540">
 <p>
-<i>Crafting Rails 4 Applications</i> is a great book to:
-</p>
-<ol class="org-ol">
-<li>Learn how to write a Rails plugin</li>
-<li>Learn some interesting history of Rails (like <code>responder</code>)</li>
-<li>Learn how Rails affect other web frameworks (especially Phoenix)</li>
-</ol>
-<p>
-But it might <b>not</b> be a good book to learn how to write a better rails
-application nowadays.
+<b>Time will tell.</b>
 </p>
 </div>
 </div>
-<div id="outline-container-orgf4c4178" class="outline-2">
-<h2 id="orgf4c4178">Rails plugin techniques</h2>
-<div class="outline-text-2" id="text-orgf4c4178">
+<div id="outline-container-org0d6f232" class="outline-2">
+<h2 id="org0d6f232">Clipping</h2>
+<div class="outline-text-2" id="text-org0d6f232">
 <p>
-In this book, José Valim introduced several techniques to write a Rails plugin:
+I listened 2 podcasts given by DHH and he mentioned this similar idea in both
+episodes.
 </p>
-<ol class="org-ol">
-<li>Add specific formats renderer to <code>ActionController::Renderers</code></li>
-<li>Include <code>ActiveModel::Model</code> to build an <code>ActiveRecord</code> alike object</li>
-<li>Use <code>prepend_view_path</code> to add custom view resolver to get view templates
-from other sources (like database)</li>
-<li>Inherit from <code>ActionController::Metal</code> to build a thin controller</li>
-<li>Use <code>ActionView::Template.register_template_handler</code> to add template handler
-for parsing view templates</li>
-<li>Add custom Generator to generate code from a custom template</li>
-<li>Include <code>Rails::Railtie</code> to configure your plugin</li>
-<li>Add plugin's own controllers, models, helpers, etc., by inheriting from
-<code>Rails::Engine</code></li>
-<li>How Rails eager loads the code</li>
-<li>How <code>responder</code> works</li>
-<li>Use <code>ActiveSupport::Notifications</code> to publish/subscribe to an event</li>
-<li>What is Rack, Rack Middleware, and how to write a middleware</li>
-<li>Add a new I18n backend (to use Redis as the data store)</li>
-</ol>
-</div>
-<div id="outline-container-org9f75a17" class="outline-3">
-<h3 id="org9f75a17">What can we learn from them</h3>
-<div class="outline-text-3" id="text-org9f75a17">
-<ol class="org-ol">
-<li><p>
-How to write a Gem works for Rails applications
+<blockquote>
+<p>
+<i>How to tell a book is good?</i>
 </p>
 
 <p>
-If we want to write a Gem for Rails (something like <code>wulin_master</code><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>).
-These techniques are pretty useful and we definitely need them.
-</p></li>
-
-<li><p>
-A good start point to learn Rails structure
+See how old it is. A book published years ago and still gets printed is always
+better.
 </p>
-
+</blockquote>
 <p>
-Some of these techniques are not only useful for writing Rails plugins, but
-also used in the internal structure of Rails. For example,
-<code>ActiveModel::Model</code> is used by <code>ActiveRecord</code> heavily since it was extracted
-from <code>ActiveRecord</code> for providing <code>ActiveRecord</code> alike functionalities for
-other Ruby classes.
-</p></li>
-
-<li><p>
-Rails is not only a great framework for writing applications, but also a
-great framework for writing plugins
-</p>
-
-<p>
-With all these techniques, writing a Rails plugin is almost as easy as
-writing a Rails application. No wonder that we have so many Rails related
-gems in the community and <i>Rails programmers always want to solve their
-problems by installing a gem</i> (which is quite controversial).
-</p></li>
-</ol>
-</div>
-</div>
-</div>
-<div id="outline-container-org2105054" class="outline-2">
-<h2 id="org2105054">Tests are important, even for plugins</h2>
-<div class="outline-text-2" id="text-org2105054">
-<p>
-Another thing that I found interesting was that José used TDD for all the
-plugins in this book.
-</p>
-
-<p>
-Thanks to the Rails framework, testing a plugin is just as easy as testing an
-Rails application. You just need to create a dummy app and use your plugin in
-this app, then you can write tests for this app to test your plugin's behaviors.
+-- from <a href="https://devchat.tv/ruby-rogues/rr-342-rails-development-david-heinemeier-hansson">RR 342 Rails, Development, and More with David Heinemeier Hansson -
+   Devchat.tv</a> and <a href="https://rework.fm/mailbag-1-2/">Rework Mailbag 1 - Part 2</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orge19ce61" class="outline-2">
-<h2 id="orge19ce61">The history of responder (<code>respond_with</code>)</h2>
-<div class="outline-text-2" id="text-orge19ce61">
-<p>
-When I started learning Rails, Rails 5 was already out. So, I was confused when
-I saw some calls to <code>respond_with</code> in some Rails 4 applications (since I could
-not find it in the latest doc and found it was deprecated.)
-</p>
 
-<p>
-This book has a full chapter about the idea behind <code>responder</code> and how it works.
-</p>
-
-<p>
-This is how/when <code>respond_with</code> got removed from Rails 4.2 and moved into the
-<code>responder</code> gem:
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/rails/rails/pull/12136#issuecomment-50216483">Respond to PUT/PATCH API request with :ok by claudiob · Pull Request #12136 · rails/rails</a></li>
-<li><a href="https://github.com/rails/rails/commit/ee77770d57de9da87b05a2fe84b9d46ec6852c62#diff-5d503f0ed7c0ad22bf25db932d6e3ff3">Move respond_with to the responders gem · rails/rails@ee77770</a></li>
-<li><a href="https://github.com/plataformatec/responders">plataformatec/responders: A set of Rails responders to dry up your application</a></li>
-</ul>
-
-<p>
-I totally agree with this removal. Because <code>respond_with</code> made the controller
-actions harder to read/extend. It's totally unclear to a new developer how a
-response gets rendered and how different formats are treated differently.
-</p>
-
-<p>
-I guess even in a <i>convention-over-configuration</i> framework like Rails, we still
-need some <b>explicity</b> sometimes.
-</p>
-</div>
-</div>
-<div id="outline-container-orgfe0a6c9" class="outline-2">
-<h2 id="orgfe0a6c9">Things that remind me of Phoenix</h2>
-<div class="outline-text-2" id="text-orgfe0a6c9">
-<p>
-Since José is also the creator of Elixir and one of the maintainers of Phoenix,
-I found many ideas from this book that remind me of some similar ideas from
-Phoenix.
-</p>
-
-<p>
-These similarities might be a natural results due to that Phoenix is a
-Rails-like framework in the Elixir world, and the creator of Phoenix (Chris
-McCord) has a strong Rails background.
-</p>
-
-<p>
-But it's still interesting to compare these similarities and see how they are
-useful in both worlds.
-</p>
-</div>
-<div id="outline-container-org4ae5a58" class="outline-3">
-<h3 id="org4ae5a58">Customizable Generators</h3>
-<div class="outline-text-3" id="text-org4ae5a58">
-<p>
-Phoenix also has the ability to customize the generators. Just create some
-templates files under the <code>priv/templates</code> directory and use the same folder
-structure as the default <a href="https://github.com/phoenixframework/phoenix/tree/master/priv/templates">structure</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
-</p>
-
-<p>
-But Phoenix won't allow dependencies to overwrite default templates<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
-Because Phoenix always prefers explicitness over implicitness. All the custom
-templates are under <code>priv/templates</code> directory so that users won't need to dive
-into the application dependencies to see which line is generated by which
-dependency (they have full control what will get generated and what won't).
-</p>
-</div>
-</div>
-<div id="outline-container-org508f964" class="outline-3">
-<h3 id="org508f964">Live-Reloading</h3>
-<div class="outline-text-3" id="text-org508f964">
-<p>
-It's really interesting because when I read the chapter about assets
-live-reloading, I think this is the same idea behind Phoenix's assets live
-reloading.
-</p>
-<ol class="org-ol">
-<li>Use some server-client events system to connect frontend/backend</li>
-<li>Use some file system plugin to detect file changes</li>
-<li>Use a separated thread to run file system watcher (in Phoenix is an Elixir
-thread, in Rails is a Ruby Thread which simulates the Actor model in Elixir)</li>
-<li>Send a notification to client side that some files had changed, and client
-side updates the page</li>
-</ol>
-
-<p>
-The only difference between the Phoenix implementation and the implementation
-from this book is that
-</p>
-<ul class="org-ul">
-<li>Phoenix uses WebSocket</li>
-<li>This book uses Server Sent Events (SSE)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org832ba57" class="outline-3">
-<h3 id="org832ba57">Rack and Plug</h3>
-<div class="outline-text-3" id="text-org832ba57">
-<p>
-When I read about Plug in <i>Programming Phoenix</i><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>, I immediately recognized
-that it's just like Rack. These are things that make them very alike:
-</p>
-<ol class="org-ol">
-<li>All the middlewares only need to be compatible with a pretty simple API</li>
-<li>Almost anything can become a middleware thanks to the simple API
-<ul class="org-ul">
-<li>Rack
-<ul class="org-ul">
-<li>Controller Actions</li>
-<li>A Rails/Sinatra Applications</li>
-</ul></li>
-<li>Phoenix
-<ul class="org-ul">
-<li>Router</li>
-<li>Controller</li>
-<li>View</li>
-</ul></li>
-</ul></li>
-<li>Middlewares can be easily composed together to build a pipeline</li>
-</ol>
-
-<p>
-But I feel that <code>Plug</code> is taking this abstraction to the next level because its
-API specification is much simpler (<code>Plug.Conn</code> in, <code>Plug.Conn</code> out) than Rack
-(<code>env</code> in, a 3-elements <code>Array</code> out). And with this more powerful abstraction,
-many things in the Phoenix world can be expressed in the <code>Plug</code> way (especially
-things like <code>before_action</code>) and the <code>Plug</code> pipeline abstraction is more natural
-and easier to understand.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org678697d" class="outline-2">
-<h2 id="org678697d">Summary</h2>
-<div class="outline-text-2" id="text-org678697d">
-<p>
-It's a great book to start learning some intermediate Rails techniques, even
-with some outdated contents like <code>responder</code>.
-</p>
-
-<p>
-And what's more interesting? Connecting the dots between Rails and Phoenix in
-this book.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2018/01/01/build-data-oriented-applications-with-wulin-master/">Build Data-Oriented Applications with WulinMaster - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/phoenixframework/phoenix/tree/master/priv/templates">phoenix/priv/templates at master · phoenixframework/phoenix</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/phoenixframework/phoenix/issues/1115">Allow dependencies to provide templates for generators · Issue #1115 · phoenixframework/phoenix</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="personal.html#ID-4C73A51B-667B-4A7E-961B-3D0A6E0210D6">Book Review: Programming Phoenix - dsdshome</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-08</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</guid>
+    </item>
+    <item>
+      <title>Book Review: Crafting Rails 4 Applications</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-02</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications</guid>
     </item>
@@ -347,13 +115,6 @@ this book.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-21</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/21/现代人的崩溃，是默不作声的崩溃</guid>
-    </item>
-    <item>
-      <title>Error Message Really Matters</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/20/error-message-really-matters/error-message-really-matters</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-20</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/20/error-message-really-matters/error-message-really-matters</guid>
     </item>
   </channel>
 </rss>
