@@ -4,52 +4,71 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 08 Jan 2018 10:21:03 CST</pubDate>
-    <lastBuildDate>Mon, 08 Jan 2018 10:21:03 CST</lastBuildDate>
+    <pubDate>Tue, 09 Jan 2018 22:59:09 CST</pubDate>
+    <lastBuildDate>Tue, 09 Jan 2018 22:59:09 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>How to know a book is good before reading it</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</link>
+      <title>Your editor configuration is the biggest project in your life</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/09/your-editor-configuration-is-the-biggest-project-in-your-life</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>How to know a book is good before reading it</h1>
-            <div id="outline-container-org8775540" class="outline-2">
-<h2 id="org8775540">TL;DR</h2>
-<div class="outline-text-2" id="text-org8775540">
-<p>
-<b>Time will tell.</b>
+            <h1>Your editor configuration is the biggest project in your life</h1>
+            <p>
+I've been thinking about whether to use a distribution (like
+<a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, <a href="https://github.com/hlissner/doom-emacs">doom-emacs</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>) or to use my own configurations
+(<a href="https://github.com/dsdshcym/.emacs.d">dsdshcym/.emacs.d</a>).
 </p>
-</div>
-</div>
-<div id="outline-container-org0d6f232" class="outline-2">
-<h2 id="org0d6f232">Clipping</h2>
-<div class="outline-text-2" id="text-org0d6f232">
+
 <p>
-I listened 2 podcasts given by DHH and he mentioned this similar idea in both
-episodes.
+Watch this talk if you are facing the similar problem as I'm.
 </p>
 <blockquote>
-<p>
-<i>How to tell a book is good?</i>
-</p>
-
-<p>
-See how old it is. A book published years ago and still gets printed is always
-better.
-</p>
+<ul class="org-ul">
+<li>What are the attributes of a good editor?
+<ol class="org-ol">
+<li>Community</li>
+<li>Extensibility</li>
+<li>Portability</li>
+</ol></li>
+<li>How to spot a bad editor?
+<ol class="org-ol">
+<li>Close sourced</li>
+<li>Bad plugins</li>
+<li>Bad docs</li>
+</ol></li>
+<li><b>Your editor configuration is the biggest project in your life</b></li>
+</ul>
 </blockquote>
 <p>
--- from <a href="https://devchat.tv/ruby-rogues/rr-342-rails-development-david-heinemeier-hansson">RR 342 Rails, Development, and More with David Heinemeier Hansson -
-   Devchat.tv</a> and <a href="https://rework.fm/mailbag-1-2/">Rework Mailbag 1 - Part 2</a>
+-- from <a href="https://www.youtube.com/watch?v=aWa0S60f530">LinuxDays 2017 - Why good editors refuse to die - David Bečvařík - YouTube</a>
 </p>
-</div>
-</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/syl20bnr/spacemacs">syl20bnr/spacemacs: A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it's Emacs <b>and</b> Vim!</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/hlissner/doom-emacs">hlissner/doom-emacs: An Emacs configuration for the stubborn martian vimmer</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-09</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/09/your-editor-configuration-is-the-biggest-project-in-your-life</guid>
+    </item>
+    <item>
+      <title>How to know a book is good before reading it</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-08</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</guid>
     </item>
@@ -108,13 +127,6 @@ better.
       <description><![CDATA[]]></description>
       <pubDate>2017-12-21</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters</guid>
-    </item>
-    <item>
-      <title>现代人的崩溃，是默不作声的崩溃</title>
-      <link>http://dsdshcym.github.io/clipping/2017/12/21/现代人的崩溃，是默不作声的崩溃</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-21</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2017/12/21/现代人的崩溃，是默不作声的崩溃</guid>
     </item>
   </channel>
 </rss>
