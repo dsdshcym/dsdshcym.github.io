@@ -4,8 +4,8 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 18 Jan 2018 10:13:28 CST</pubDate>
-    <lastBuildDate>Thu, 18 Jan 2018 10:13:28 CST</lastBuildDate>
+    <pubDate>Fri, 19 Jan 2018 12:56:19 CST</pubDate>
+    <lastBuildDate>Fri, 19 Jan 2018 12:56:19 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -27,7 +27,7 @@ yourself</li>
 </p>
 
 <p>
-It reminds me of the book <i>Are your lights on?</i>.
+It reminds me of the book <i>Are your lights on?</i>.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
 
 <p>
@@ -38,11 +38,21 @@ start thinking about writing the first line of code.
 <p>
 Most of the time, no code is better than hundreds of lines of code.
 </p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on/">Review of <i>Are your lights on?</i> - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
-      <pubDate>2018-01-18</pubDate>
+      <pubDate>2018-01-19</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/18/understand-the-problem-first</guid>
     </item>
     <item>
