@@ -4,150 +4,63 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 19 Jan 2018 17:30:09 CST</pubDate>
-    <lastBuildDate>Fri, 19 Jan 2018 17:30:09 CST</lastBuildDate>
+    <pubDate>Sat, 20 Jan 2018 11:03:53 CST</pubDate>
+    <lastBuildDate>Sat, 20 Jan 2018 11:03:53 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: 奇特的一生</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/19/book-review-奇特的一生</link>
+      <title>Secret Superstar</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/20/secret-superstar</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: 奇特的一生</h1>
-            <p>
-我去年（2017 年 1 月）看完了这本书，并且坚定了用 org-mode<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 记录我的生活的决心。这篇回顾也是去年整理的，忘记发到博客上，现在发出来。
+            <h1>Secret Superstar</h1>
+            <blockquote>
+<p>
+醒来的意义是什么：实现梦想。如果人不能做梦，那醒着和睡着有什么区别，死了和活着又有什么区别。做梦是人的基本权利。
+</p>
+</blockquote>
+<p>
+-- from <i>Secret Superstar</i>
 </p>
 
-<ul class="org-ul">
-<li>时间管理的最高境界就是
-<ul class="org-ul">
-<li>你总是可以浪费一些时间做没有什么目的的事情，并且没有负罪感</li>
-</ul></li>
-<li>使用时间统计法的前提是 <b>要有伟大的目标</b>
-<ul class="org-ul">
-<li>一旦你真正想征服或者彻底融入这个世界，你就不得不反思你的资源瓶颈。除了时间，几乎所有的资源都可以去争取去创造，但是时间一旦流逝，就无法弥补。</li>
-<li>时间统计法是为了这个目标而服务的</li>
-</ul></li>
-<li>时间统计法 -&gt; <b>如何生活得更好</b>
-<ul class="org-ul">
-<li>保证自律性
-<ul class="org-ul">
-<li>一个人放弃了自己，往往是从生活上失去了自律性开始的。</li>
-</ul></li>
-<li>提供有效工作时间的记录
-<ul class="org-ul">
-<li>第一个调整是他非常明确找到自己时间管理的目标——那就是统计每天有效工作的时间长度。</li>
-</ul></li>
-<li>发现并利用碎片时间
-<ul class="org-ul">
-<li>柳比歇夫通过时间清单发现了自己工作中大量的时间碎片，他利用这些碎片时间安排了其他的种种用途。</li>
-</ul></li>
-<li>劳逸结合
-<ul class="org-ul">
-<li>越是紧张的工作，越是压力大，越需要工作之外的活动来排解压力，让自己获得能量继续投入工作。</li>
-<li>人不能老是每天工作十四五个小时，应当正确利用工作时间，从时间中去找时间。</li>
-<li>每个人每天都要睡觉，都要吃饭。换句话说，每个人都有一定的时间用在标准活动上。</li>
-</ul></li>
-<li>进行真实的自我认知
-<ul class="org-ul">
-<li>不管你是谁，有什么梦想，只要看看你的时间花在哪儿了，就知道你是什么样的人，时间是没办法作假的。</li>
-</ul></li>
-<li>将伟大目标分为一系列步骤
-<ul class="org-ul">
-<li>所有伟大的目标，必须分解成一系列可以看到的步骤，你每天推进一点点，就会离目标近一点点，这种不断推进的感觉会让你更好地坚持你的目标。</li>
-</ul></li>
-<li>节约时间（提高时间使用的质量）
-<ul class="org-ul">
-<li>时间统计法是一种让人超越自身可能性的方法，柳比歇夫的时间比别人多了一倍。</li>
-<li>时间统计法可以节约时间，但不能增加额外的时间。它的关键不在时间的数量上，而在于时间的质量。</li>
-<li>人类的各种发明都是为了节省时间
-<ul class="org-ul">
-<li>各种发明
-<ul class="org-ul">
-<li>马车 -&gt; 火车 -&gt; 飞机</li>
-<li>书信 -&gt; 电报和电话</li>
-<li>电视 -&gt; 剧院</li>
-<li>拉链 -&gt; 扣子</li>
-<li>圆珠笔 -&gt; 鹅翎</li>
-<li>电梯</li>
-<li>计算机</li>
-<li>百货公司</li>
-<li>电传打字机</li>
-<li>电动剃刀</li>
-</ul></li>
-<li>不知道为什么，人越来越感到时间不够用。
-<ul class="org-ul">
-<li>时间比过去少了，时间的价格比过去高了。</li>
-<li>想方设法利用每一分钟，利用任何所谓的“时间下脚料”：乘电车、坐火车、开会、排队……</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>时间统计法的注意事项
-<ul class="org-ul">
-<li>学会计算一切时间
-<ul class="org-ul">
-<li>要采用这种方法，必须知道一切有效时间，</li>
-<li>每个小时都是生命的一部分。这个小时和那个小时都是平等的，每个小时都要结算。</li>
-<li>除了工作，休息、看报、散步等所有活动花费的时间，柳比歇夫都记录在日记中。</li>
-</ul></li>
-<li>定期制定计划、结算
-<ul class="org-ul">
-<li>计划的复杂性在于如何安排一天的时间。
-<ul class="org-ul">
-<li>计划就是挑选时间、规定节律，使一切都各得其所。头脑清醒的时候应当钻研数学，累了便看书。</li>
-<li>通过时间统计法，柳比歇夫能准确估算出完成一项任务所需的时间，从而合理安排工作计划。</li>
-<li>这个方法之所以能够存在，是依靠 <b>经常的计算和检查</b> 。没有计算的计划是盲目的计划。</li>
-</ul></li>
-<li>结算同时也是对计划的总结。一总结马上提出下个月的计划。
-<ul class="org-ul">
-<li>参考以往的经验，把时间大致安排好</li>
-<li>柳比歇夫以总结为镜，检查自己的工作效率。</li>
-</ul></li>
-<li>每日小结/计划
-<ul class="org-ul">
-<li>柳比歇夫把一天中有效工作时间定为 10 个小时，分成 3 个单位，对应在三类工作任务上。每项活动占据的时间必须与其重要性相称。
-<ul class="org-ul">
-<li>第一类包括写作、研究和例行工作；</li>
-<li>第二类包括非科研性的活动；</li>
-<li>第三类则是需要创造力的任务。</li>
-</ul></li>
-</ul></li>
-<li>月度小结/计划</li>
-<li>年度小结/计划
-<ul class="org-ul">
-<li>做年度总结，要求进行自我分析、自我研究：效率有什么变化，什么没有完成，为什么</li>
-</ul></li>
-<li>五年小结/计划
-<ul class="org-ul">
-<li>每过五年，他就把度过的时间和干过的事分析一通，可以说是做个总的鉴定。</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>如何读书
-<ul class="org-ul">
-<li>我在一天之内是怎么安排读书时间的？清早，头脑清醒，我看严肃的书籍（哲学、数学方面的）。钻研一个半到两个小时以后，看比较轻松的读物——历史或生物学方面的著作。脑子累了，就看文艺作品。</li>
-<li>如果一本书谈的是我不大了解的新东西，我就尽量做摘要。</li>
-<li>凡是比较重要的书，我都尽量写一份评论性的简介。</li>
-<li>从年度总结中可以了解到看了多少书，都是什么书；</li>
-<li>是他光看书还不够。他的渴望求知的天性必定要这样那样地去消化品味，按照他的需要去吸收。他看了康德的作品，便写了一篇论文，分析康德的主要著作，批判地选择他合意的东西。他需要找到他自己的东西。</li>
-</ul></li>
-</ul>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+<p>
+<i>神秘巨星</i> 这部电影在梦想这一大主题下，又混合了母爱、姐弟情、初恋、对家庭暴力的探讨等种种元素，可以说是一碗精心调制的浓汤了。
+</p>
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://orgmode.org/">Org mode for Emacs – Your Life in Plain Text</a>
-</p></div></div>
+<p>
+虽然有些转折有点生硬，比如第一次上传的视频突然就爆红了，过气巨星突然就被主角勾起
+10 年前的歌曲回忆，但是总体来说瑕不掩瑜，值得一看。
+</p>
 
+<div id="outline-container-orgbd4f77e" class="outline-2">
+<h2 id="orgbd4f77e">「精心设计」感</h2>
+<div class="outline-text-2" id="text-orgbd4f77e">
+<p>
+之前在知乎上看到一个对 <i>羞羞的铁拳</i> 的评论，说是「笑点是精心设计过的，太工业化」，
+<i>神秘巨星</i> 也给了我同样的感觉：笑点、泪点都是精心设计过的。
+</p>
 
+<p>
+但是电影不正是设计的产物么，精心设计一部电影，正是电影人的职责所在。耐心打磨笑点、泪点，才能打造出一部优秀的电影。或许我们已经看过太多的套路，从而能感觉到这种「设计感」，但是这依然阻止不了我们在这些套路面前乖乖大笑或者流泪。
+</p>
+
+<p>
+「浑然天成」固然是最高境界，但在达到这个境界之前，请用心设计你的产品。
+</p>
 </div>
 </div>
+
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-20</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/20/secret-superstar</guid>
+    </item>
+    <item>
+      <title>Book Review: 奇特的一生</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/19/book-review-奇特的一生</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/19/book-review-奇特的一生</guid>
     </item>
@@ -206,13 +119,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2017-12-30</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2017/12/30/coping-with-complexity</guid>
-    </item>
-    <item>
-      <title>Book Review: Programming Phoenix</title>
-      <link>http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2017-12-28</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix</guid>
     </item>
   </channel>
 </rss>
