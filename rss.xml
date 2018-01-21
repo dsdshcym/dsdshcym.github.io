@@ -4,492 +4,57 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 20 Jan 2018 21:48:04 CST</pubDate>
-    <lastBuildDate>Sat, 20 Jan 2018 21:48:04 CST</lastBuildDate>
+    <pubDate>Sun, 21 Jan 2018 19:06:55 CST</pubDate>
+    <lastBuildDate>Sun, 21 Jan 2018 19:06:55 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Books I read in 2017</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/19/books-i-read-in-2017</link>
+      <title>Thoughts/Summary for Writing Documentations</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Books I read in 2017</h1>
-            <div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org933cdc8">Technical</a>
-<ul>
-<li><a href="#orgbede263">General</a>
-<ul>
-<li><a href="#org1b5fec2">Clean Code</a></li>
-<li><a href="#org762707c">Refactoring: Improving the Design of Existing Code</a></li>
-<li><a href="#org61ec7a9">Playbook for software design and development - By thoughtbot</a></li>
-<li><a href="#org119bf85">Hackers and Painters</a></li>
-</ul>
-</li>
-<li><a href="#org37eb7cf">Ruby</a>
-<ul>
-<li><a href="#org63c1a8f">Metaprogramming Ruby</a></li>
-<li><a href="#org874f431">Objects on Rails</a></li>
-<li><a href="#org5f37ea8">Mastering Exceptions in Ruby</a></li>
-<li><a href="#orgf8d4510">99 Bottles of OOP</a></li>
-<li><a href="#org38757e3">Crafting Rails 4 Applications</a></li>
-<li><a href="#orgdd3863b">Practical Object-Oriented Design in Ruby</a></li>
-<li><a href="#orgcf60e52">Fearless Rails Refactoring</a></li>
-</ul>
-</li>
-<li><a href="#org7c11af4">Elixir</a>
-<ul>
-<li><a href="#orgd689886">What's New in Ecto 2.1</a></li>
-<li><a href="#org134d1d0">Programming Elixir</a></li>
-<li><a href="#orga40f3be">Programming Phoenix</a></li>
-</ul>
-</li>
-<li><a href="#org47ec401">Frontend</a>
-<ul>
-<li><a href="#orgf2ac50e">Learn CSS Layout</a></li>
-</ul>
-</li>
-<li><a href="#org4c0e90a">TDD</a>
-<ul>
-<li><a href="#orgc87914f">Growing Object-Oriented Software Guided by Tests</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgf2cf2a1">Novel</a>
-<ul>
-<li><a href="#org24206a8">Harry Potter and The Philosopher Stone</a></li>
-</ul>
-</li>
-<li><a href="#org50684e0">Others</a>
-<ul>
-<li><a href="#orgcd61675">最好的告别 Being Mortal</a></li>
-<li><a href="#orgda5d972">How to Read a Book</a></li>
-<li><a href="#org6fe2185">奇特的一生</a></li>
-<li><a href="#org1c09cfe">GTD for Hackers</a></li>
-<li><a href="#org30ad874">Are your lights on?</a></li>
-<li><a href="#org79c455b">Ledger: Command-Line Accounting</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>
-2017 is the year I found the joy of reading and blogging. I really regret I
-didn't start doing both earlier. In an information exploding era, books which
-have passed the test of time are really worth reading.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+            <h1>Thoughts/Summary for Writing Documentations</h1>
+            <p>
+Just another day, another developer asked me for some advice on writing
+documentations. Here were the four tips I gave him:
 </p>
 
-<p>
-My original plan was to write at least one review/summary post for every book I
-read. But 2017 has already gone so I decided to put a summary here for all the
-books I read in the past year.
-</p>
-<ul class="org-ul">
-<li>For books that I've reviewed, I'll just put a link to the post I wrote.</li>
-<li>For others, I'll put a short summary here and may write a review post later
-this year.</li>
-</ul>
-
-<p>
-I've read 23 books in 2017 and finished 17 of them. This number is not large but
-it's a good start. I will definitely read more books in 2018 (30 books maybe?,
-still working on setting a goal here).
-</p>
-
-<div id="outline-container-org933cdc8" class="outline-2">
-<h2 id="org933cdc8">Technical</h2>
-<div class="outline-text-2" id="text-org933cdc8">
-</div>
-<div id="outline-container-orgbede263" class="outline-3">
-<h3 id="orgbede263">General</h3>
-<div class="outline-text-3" id="text-orgbede263">
-</div>
-<div id="outline-container-org1b5fec2" class="outline-4">
-<h4 id="org1b5fec2">Clean Code</h4>
-<div class="outline-text-4" id="text-org1b5fec2">
-<p>
-It taught me a lot about how to write clean code. I thought I've written a
-review for it but turns out I haven't.
-</p>
-
-<p>
-The most important take away for me is <b>the only way to write clean code is to
-write short code</b>. Short methods, short classes, short files, these are the
-things that make our code easier to read and clean. (I explained this in <a href="http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/">Sandi
-Metz's Rules for OOP - dsdshome</a>)
-</p>
-
-<p>
-And of course, there are more useful tips in this book that are worth reading.
-So go check out this one if you haven't yet. (I may not write a review for it
-since it's becoming an old topic in this site.)
-</p>
-</div>
-</div>
-<div id="outline-container-org762707c" class="outline-4">
-<h4 id="org762707c">Refactoring: Improving the Design of Existing Code</h4>
-<div class="outline-text-4" id="text-org762707c">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">Review of Refactoring: Improving the Design of Existing Code - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org61ec7a9" class="outline-4">
-<h4 id="org61ec7a9">Playbook for software design and development - By thoughtbot</h4>
-<div class="outline-text-4" id="text-org61ec7a9">
-<p>
-Thoughtbot is a company that I look up to. I started learning Vim because of
-some thoughtbot videos. And I learned Ruby and Rails also because of the work
-they are doing. Basically, thoughtbot introduced me into this web development
-world and I'm still listening to their podcasts (<i>Giant Robots Smashing into
-other Giant Robots</i> and <i>The Bike Shed</i>).
-</p>
-
-<p>
-This playbook explains how thoughtbot builds products for their customers, runs
-their company. Some interesting facts that I noticed:
-</p>
 <ol class="org-ol">
-<li>They truly embraces TDD in their product development cycle, making their
-feedback cycle as short as possible.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
-<li><b>Most of our designers use Vim as their primary text editor.</b> (I really want
-to see how a designer works in Vim.)</li>
-<li><b>They are building their company using the same methodology they used to
-build their products</b>. (Use a GitHub repo for the company itself and open
-issues, track bugs in there.)</li>
+<li>Try to extract the code you want to document on to a method/class, use the
+method name /class name as the documentation.</li>
+<li>Add comments for hacks or other things that cannot be applied by 1, also add
+the comments into the commit message for this change.</li>
+<li>Use test/spec examples as usage explanations if you want examples on how to
+use your code.</li>
+<li>Use yard/rdoc if you want to export your documentations to other formats
+(e.g. html).</li>
 </ol>
-</div>
-</div>
-<div id="outline-container-org119bf85" class="outline-4">
-<h4 id="org119bf85">Hackers and Painters</h4>
-<div class="outline-text-4" id="text-org119bf85">
+<div id="outline-container-org3f5396b" class="outline-2">
+<h2 id="org3f5396b">Doctest</h2>
+<div class="outline-text-2" id="text-org3f5396b">
 <p>
-I've read this book before. And I read it again for my graduate thesis<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
-It's basically a Lisp evangelism book. And I'm pretty happy to use elisp in my
-daily life.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org37eb7cf" class="outline-3">
-<h3 id="org37eb7cf">Ruby</h3>
-<div class="outline-text-3" id="text-org37eb7cf">
-</div>
-<div id="outline-container-org63c1a8f" class="outline-4">
-<h4 id="org63c1a8f">Metaprogramming Ruby</h4>
-<div class="outline-text-4" id="text-org63c1a8f">
-<p>
-This is the <b>best</b> book for learning Metaprogramming in Ruby.
+Some modern languages like Rust and Elixir have native support for doctest
+(running test examples written in the code documentations).
 </p>
 
 <p>
-But after all you don't need to learn Metaprogramming to use Ruby. IMHO, The
-most important skills for writing Ruby are still testing and Object-Oriented
-Design.
-</p>
-
-<p>
-Metaprogramming is a abstract technique that's too powerful to be used to solve
-problems that can be solved easily by OOD.
-</p>
-
-<p>
-So read this book to know how to write/read metaprogramming code and use them
-when you <b>truly</b> need this kind of power.
+For Ruby, I only found this Gem for Yard: <a href="../../../Org/notes/ruby.html#ID-C918B5B8-3ECF-47D4-A888-04036000C208">p0deje/yard-doctest: Doctests from
+YARD examples</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-org874f431" class="outline-4">
-<h4 id="org874f431">Objects on Rails</h4>
-<div class="outline-text-4" id="text-org874f431">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/04/07/review-of-objects-on-rails/">My review of <i>Objects on Rails</i></a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5f37ea8" class="outline-4">
-<h4 id="org5f37ea8">Mastering Exceptions in Ruby</h4>
-<div class="outline-text-4" id="text-org5f37ea8">
-<p>
-Detailed explanations for Ruby Exceptions. Another useful resource on this topic
-is <a href="../../../Org/refile.html#ID-54736BF7-B7EB-4060-A299-32D9AAAF4F65">a talk from Avdi Grimm</a><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
-</p>
-</div>
-</div>
-<div id="outline-container-orgf8d4510" class="outline-4">
-<h4 id="orgf8d4510">99 Bottles of OOP</h4>
-<div class="outline-text-4" id="text-orgf8d4510">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org38757e3" class="outline-4">
-<h4 id="org38757e3">Crafting Rails 4 Applications</h4>
-<div class="outline-text-4" id="text-org38757e3">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications/">Book Review: Crafting Rails 4 Applications - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgdd3863b" class="outline-4">
-<h4 id="orgdd3863b">Practical Object-Oriented Design in Ruby</h4>
-<div class="outline-text-4" id="text-orgdd3863b">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/05/12/my-review-of-POODR/">My Review of Practical Object-Oriented Design in Ruby</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgcf60e52" class="outline-4">
-<h4 id="orgcf60e52">Fearless Rails Refactoring</h4>
-<div class="outline-text-4" id="text-orgcf60e52">
-<p>
-I started reading this book in December. But it definitely is a great book on
-Service Object. I'll write a review post for this book after I finish it.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org7c11af4" class="outline-3">
-<h3 id="org7c11af4">Elixir</h3>
-<div class="outline-text-3" id="text-org7c11af4">
-</div>
-<div id="outline-container-orgd689886" class="outline-4">
-<h4 id="orgd689886">What's New in Ecto 2.1</h4>
-<div class="outline-text-4" id="text-orgd689886">
-<p>
-It's not only a book for introducing new ideas in Ecto 2.1, but also a book on
-Ecto itself.
-</p>
 
-<p>
-It makes clear that why Ecto is not an ORM, but a data-wrapper and can be used
-not only for relational databases, but also other data sources like Nosql, S3,
-etc.
-</p>
-
-<p>
-The most exciting Ecto 2.1 feature is running database tests concurrently using
-SQL Sandbox. (Rails will not support this until 6.0) I tested with feature tests
-(Wallaby<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>) and model tests, it worked pretty well and can speed up the
-whole test suite further (given that Elixir/Erlang is a faster functional
-language compared to Ruby).
-</p>
-</div>
-</div>
-<div id="outline-container-org134d1d0" class="outline-4">
-<h4 id="org134d1d0">Programming Elixir</h4>
-<div class="outline-text-4" id="text-org134d1d0">
-<p>
-I now believe that the best way to learn a language is using it to solve a real
-problem instead of reading books talking about its features. (I learned Ruby and
-Rails by working on real projects. And I need to implement the ideas from a book
-(Refactoring/TDD) by myself to fully understand it.)
-</p>
-
-<p>
-So I didn't finish this book and I won't regret it. I believe the official guide
-is good enough. Just read that and start working on an application.
-</p>
-</div>
-</div>
-<div id="outline-container-orga40f3be" class="outline-4">
-<h4 id="orga40f3be">Programming Phoenix</h4>
-<div class="outline-text-4" id="text-orga40f3be">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix/">Book Review: Programming Phoenix - dsdshome</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org47ec401" class="outline-3">
-<h3 id="org47ec401">Frontend</h3>
-<div class="outline-text-3" id="text-org47ec401">
-</div>
-<div id="outline-container-orgf2ac50e" class="outline-4">
-<h4 id="orgf2ac50e">Learn CSS Layout</h4>
-<div class="outline-text-4" id="text-orgf2ac50e">
-<p>
-I realized that pure JS and CSS are so powerful these days<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> and I really
-need to understand them well to become a better web developer. So I started
-going out of my comfort zone (backend) to the wild world (frontend).
-</p>
-
-<p>
-This book is a short handbook for CSS layout. It starts with the most naive way
-to set the layout (<code>display</code> property) to the more modern way (<code>flex</code> layout).
-</p>
-
-<p>
-And I even used it in my work to center items after read it. It's really useful.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org4c0e90a" class="outline-3">
-<h3 id="org4c0e90a">TDD</h3>
-<div class="outline-text-3" id="text-org4c0e90a">
-</div>
-<div id="outline-container-orgc87914f" class="outline-4">
-<h4 id="orgc87914f">Growing Object-Oriented Software Guided by Tests</h4>
-<div class="outline-text-4" id="text-orgc87914f">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop - dsdshome</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf2cf2a1" class="outline-2">
-<h2 id="orgf2cf2a1">Novel</h2>
-<div class="outline-text-2" id="text-orgf2cf2a1">
-</div>
-<div id="outline-container-org24206a8" class="outline-3">
-<h3 id="org24206a8">Harry Potter and The Philosopher Stone</h3>
-<div class="outline-text-3" id="text-org24206a8">
-<p>
-I need some books to read on my iPhone to spend my time and I chose Harry Potter
-as a start point.
-</p>
-
-<p>
-I also watched the movie after I finished the book. And I was really amazed how
-the movie reproduced the whole story. It's like almost details are all reflected
-by the movie (with some minor changes). No wonder it could become one of the
-most successful movie series.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org50684e0" class="outline-2">
-<h2 id="org50684e0">Others</h2>
-<div class="outline-text-2" id="text-org50684e0">
-</div>
-<div id="outline-container-orgcd61675" class="outline-3">
-<h3 id="orgcd61675">最好的告别 Being Mortal</h3>
-<div class="outline-text-3" id="text-orgcd61675">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2018/01/08/book-review-being-mortal/">Book Review: Being Mortal - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgda5d972" class="outline-3">
-<h3 id="orgda5d972">How to Read a Book</h3>
-<div class="outline-text-3" id="text-orgda5d972">
-<p>
-I read this book first to start my reading journey last year. I'll write a
-review for it. (<i>How to read a book</i> is a good book to guide us writing code)
-</p>
-</div>
-</div>
-<div id="outline-container-org6fe2185" class="outline-3">
-<h3 id="org6fe2185">奇特的一生</h3>
-<div class="outline-text-3" id="text-org6fe2185">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2018/01/19/book-review-%E5%A5%87%E7%89%B9%E7%9A%84%E4%B8%80%E7%94%9F/">Book Review: 奇特的一生 - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1c09cfe" class="outline-3">
-<h3 id="org1c09cfe">GTD for Hackers</h3>
-<div class="outline-text-3" id="text-org1c09cfe">
-<ul class="org-ul">
-<li>Actually, I'm already doing almost the same thing using org-mode as it said.</li>
-<li>I'm still trying to find out the best way to manage different projects.</li>
-<li>I might have used NEXT for a long time, but actually I'm not sure what it
-means to me.</li>
-<li>And I'm also working on the review part recently.
-<ul class="org-ul">
-<li>Daily/Monthly/Yearly Review seems too heavy to me.</li>
-<li>Maybe I should try Daily/Weekly/Monthly Review first, then try out yearly
-review.</li>
-</ul></li>
-<li>About reading
-<ul class="org-ul">
-<li>I should stick to FIFO, since there are many things staying in my Read Later
-queue for a long time.</li>
-<li>And I should cancel some of them if they are blocking the queue.</li>
-<li>Just read them later if they appear in my sight again.</li>
-</ul></li>
-<li>About the goal of GTD
-<ul class="org-ul">
-<li>The goal should still be actually doing useful things.</li>
-<li>Not the GTD itself.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org30ad874" class="outline-3">
-<h3 id="org30ad874">Are your lights on?</h3>
-<div class="outline-text-3" id="text-org30ad874">
-<ul class="org-ul">
-<li><a href="http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on/">Review of <i>Are your lights on?</i> - dsdshome</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org79c455b" class="outline-3">
-<h3 id="org79c455b">Ledger: Command-Line Accounting</h3>
-<div class="outline-text-3" id="text-org79c455b">
-<p>
-I started using ledger<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> to record my finance in 2017. This is the manual
-for this command line tool. But it's a book more than a manual. It's a great
-tutorial on <b>double-entry accounting</b> and I learned a lot from reading this book
-and using ledger.
-</p>
-
-<p>
-You can check out this talk if you are interested in ledger: <a href="https://www.youtube.com/watch?v=cjoCNRpLanY">Conquering Your
-Finances with Emacs and Ledger from thoughtbot</a><sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>
-</p>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it/">How to know a book is good before reading it - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/">我看程序语言的历史、现在与将来 - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://avdi.org/talks/rockymtnruby-2011/things-you-didnt-know-about-exceptions.html">Things You Didn't Know About Exceptions</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/keathley/wallaby">keathley/wallaby: Concurrent browser tests with elixir</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2018/01/20/cropping-image-using-pure-css/">Cropping image using pure CSS - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://www.ledger-cli.org">Ledger</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.youtube.com/watch?v=cjoCNRpLanY">Conquering Your Finances with Emacs and Ledger - YouTube</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-21</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</guid>
+    </item>
+    <item>
+      <title>Books I read in 2017</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/19/books-i-read-in-2017</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-20</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/19/books-i-read-in-2017</guid>
     </item>
@@ -548,13 +113,6 @@ Finances with Emacs and Ledger from thoughtbot</a><sup><a id="fnr.8" class="foot
       <description><![CDATA[]]></description>
       <pubDate>2018-01-08</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</guid>
-    </item>
-    <item>
-      <title>Book Review: Crafting Rails 4 Applications</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-02</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/01/01/book-review-crafting-rails-4-applications</guid>
     </item>
   </channel>
 </rss>
