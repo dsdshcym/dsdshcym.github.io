@@ -4,50 +4,87 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 21 Jan 2018 19:06:55 CST</pubDate>
-    <lastBuildDate>Sun, 21 Jan 2018 19:06:55 CST</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2018 09:54:40 CST</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2018 09:54:40 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Thoughts/Summary for Writing Documentations</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</link>
+      <title>I don&#39;t know how to code without TDD</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/22/i-don&#39;t-know-how-to-code-without-tdd</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Thoughts/Summary for Writing Documentations</h1>
-            <p>
-Just another day, another developer asked me for some advice on writing
-documentations. Here were the four tips I gave him:
-</p>
-
+            <h1>I don&#39;t know how to code without TDD</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>I don't know how to work effectively in other ways, because I don't know when
+I'm done</li>
+<li>Rails has done many heavy lifting so that it skips many TDD cycles for you
+(which may not be a good thing)</li>
+<li>Commit when a test fails as expected and use it as the todo reminder</li>
+<li>Approaching your work with a process is important
+<ul class="org-ul">
+<li>TDD is one of the best processes to work
 <ol class="org-ol">
-<li>Try to extract the code you want to document on to a method/class, use the
-method name /class name as the documentation.</li>
-<li>Add comments for hacks or other things that cannot be applied by 1, also add
-the comments into the commit message for this change.</li>
-<li>Use test/spec examples as usage explanations if you want examples on how to
-use your code.</li>
-<li>Use yard/rdoc if you want to export your documentations to other formats
-(e.g. html).</li>
-</ol>
-<div id="outline-container-org3f5396b" class="outline-2">
-<h2 id="org3f5396b">Doctest</h2>
-<div class="outline-text-2" id="text-org3f5396b">
+<li>It's repeatable</li>
+<li>It's a habit you can get into</li>
+</ol></li>
+</ul></li>
+</ul>
+</blockquote>
 <p>
-Some modern languages like Rust and Elixir have native support for doctest
-(running test examples written in the code documentations).
+-- from <a href="http://bikeshed.fm/139">139: Red, Green, Refactor (Alex Clark &amp; Sean Doyle) - The Bike Shed</a>
 </p>
 
 <p>
-For Ruby, I only found this Gem for Yard: <a href="../../../Org/notes/ruby.html#ID-C918B5B8-3ECF-47D4-A888-04036000C208">p0deje/yard-doctest: Doctests from
-YARD examples</a>.
+I have the similar feeling for TDD as well, if I don't code in TDD, I would be
+lost pretty quickly without the fast feedback loop and the clear goal set by
+my tests.
 </p>
-</div>
-</div>
+
+<p>
+It might be hard to imagine if you haven't tried TDD, yet. This quick talk might
+help you to understand that a little bit.
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>5 underplayed premises
+<dl class="org-dl">
+<dt>Money</dt><dd>We're in this for the money
+TDD is about <b>Ship More Value Faster</b></dd>
+<dt>Judgement</dt><dd>We reply on human judgment</dd>
+<dt>Correlation</dt><dd><b><i>Internal Quality</i> and <i>Productivity</i> Correlate</b></dd>
+<dt>Chaining</dt><dd>Test a chain by testing links
+Chain (Mock-style) tests are the cheapest tests</dd>
+<dt>Steering</dt><dd>Testability helps steer our designs
+<ol class="org-ol">
+<li>Is this testable?</li>
+<li>Is the test cheap?</li>
+<li>Can we make it cheaper?</li>
+</ol></dd>
+</dl></li>
+<li>Underplayed? <b>Visible outside, Invisible Inside</b>
+<ul class="org-ul">
+<li>Inside TDD, they’re almost invisible to us. They’re the air we breathe.</li>
+<li>That means they don’t pay a lot of attention to explaining to them.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="http://geepawhill.org/five-underplayed-premises-of-tdd-2/">Five Underplayed Premises Of TDD - GeePawHill.Org</a>
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-22</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/22/i-don&#39;t-know-how-to-code-without-tdd</guid>
+    </item>
+    <item>
+      <title>Thoughts/Summary for Writing Documentations</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-21</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</guid>
     </item>
@@ -106,13 +143,6 @@ YARD examples</a>.
       <description><![CDATA[]]></description>
       <pubDate>2018-01-09</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/09/your-editor-configuration-is-the-biggest-project-in-your-life</guid>
-    </item>
-    <item>
-      <title>How to know a book is good before reading it</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/08/how-to-know-a-book-is-good-before-reading-it</guid>
     </item>
   </channel>
 </rss>
