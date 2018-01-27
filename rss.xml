@@ -4,140 +4,55 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 26 Jan 2018 21:30:18 CST</pubDate>
-    <lastBuildDate>Fri, 26 Jan 2018 21:30:18 CST</lastBuildDate>
+    <pubDate>Sat, 27 Jan 2018 21:12:26 CST</pubDate>
+    <lastBuildDate>Sat, 27 Jan 2018 21:12:26 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>A code formatter is a must-have tool in my workflow</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/26/a-code-formatter-is-a-must-have-tool-in-my-workflow</link>
+      <title>elm-package diff</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/27/elm-package-diff</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>A code formatter is a must-have tool in my workflow</h1>
+            <h1>elm-package diff</h1>
             <p>
-I'm a very opinionated developer when things come to how to write code. I think
-code consistency really matters a lot when we write code<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. This time I want
-to talk about some of my experiences after using <code>mix format</code> (the official code
-formatter shipped with Elixir 1.6) for several weeks.
-</p>
-
-<div id="outline-container-orgd0d8232" class="outline-2">
-<h2 id="orgd0d8232">Code formatter can be a great learning tool</h2>
-<div class="outline-text-2" id="text-orgd0d8232">
-<p>
-When I first started learning Elixir, I tried to find some style guides<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> because
-I think they can help me learn how to write more idiomatic Elixir code.
+I was listening to <a href="http://bikeshed.fm/140">140: A Sign of... Stability? - The Bike Shed</a> today and they
+mentioned there are few package management tools out there that can show you or
+direct you to a changelog page.
 </p>
 
 <p>
-With the help of <code>mix format</code>, I can get instance feedback<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> on how this
-code should be formatted and I know it would be the same even if another
-developer come and implements it again.
+I think Elm has a great solution for that, which I saw just days ago from <a href="../../../Org/notes/programming.html#ID-E9552FDE-142D-4B89-907F-D0F2A33BC5EF">Evan
+Czaplicki - Let's be mainstream! User focused design in Elm - Curry On -
+YouTube</a>:
 </p>
+
+<div class="org-src-container">
+<pre class="src src-sh">elm-package diff elm-lang/core 3.0.0 4.0.0
+</pre>
 </div>
-</div>
-<div id="outline-container-org77fd183" class="outline-2">
-<h2 id="org77fd183">Code formatter can be a real-time reviewer of your code</h2>
-<div class="outline-text-2" id="text-org77fd183">
 <p>
-I've also been a rubocop user for a long time. I always think rubocop as a
-reviewer of my code.
-</p>
-<ol class="org-ol">
-<li><p>
-rubocop gives me a <a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">feedback loop</a><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> that no other developers can give me.
+-- see also <a href="https://github.com/elm-lang/elm-package#updating-dependencies">elm-lang/elm-package - Updating Dependencies</a>
 </p>
 
 <p>
-Using rubocop (with flycheck in emacs) is like having a pair of eyes watching
-me writing code all the time. It provides suggestions on how well my code is
-written and helps me write better code.
-</p></li>
-
-<li><p>
-rubocop teaches me how to write cleaner code
+It's a great feature and can really encourage people to update their
+dependencies more often. I think one of the reasons for why other tools didn't
+implement this is most libraries/gems/whatever don't have a Changelog that can
+be easily parsed. I really wish hex/bundler can also have this feature (which
+seems to be impossible for bundler).
 </p>
 
-<p>
-For example, rubocop will use <a href="http://wiki.c2.com/?AbcMetric">Abc Metric</a><sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> to check if your method is too
-complicated. And if I follow its direction, I can almost always find a better
-way to reorganize my code.
-</p></li>
-</ol>
-
-<p>
-<code>mix format</code> improves this guidance to another level.
-</p>
-<ul class="org-ul">
-<li>I can see my code automatically updated after I save a file (I use
-<a href="https://github.com/anildigital/mix-format.el">mix-format</a><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> in emacs). And it <b>really feels different</b>. It's like not
-only a person reviews your code in real-time, but also corrects it for you.</li>
-<li>But I have to say that , since <code>mix format</code> is still in its early stage, it
-has less features than rubocop. And <code>mix format</code> cannot change your code's
-logic (but only its style). Elixir may still need a linter that can provide
-suggestions on how well this code is written (like using Abc Metric to compute
-a method's complexity)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1fc748f" class="outline-2">
-<h2 id="org1fc748f">Focus on the things that really matter</h2>
-<div class="outline-text-2" id="text-org1fc748f">
-<p>
-Since <code>mix format</code> automatically formats my code when I save a file, I can
-actually focus on things that really matter to me.
-</p>
-<ul class="org-ul">
-<li>Before using <code>mix format</code>, I spent some part of my time formatting my code
-manually (Adding spaces here and there, indenting lines, splitting lines into
-shorter ones to fit the screen size, etc.). Even with emacs/vim's help, it's
-still a lot work to do.</li>
-<li>After using <code>mix format</code>, I can be more forgivable on how I struct my code.
-Missing a space in a curly braces pair? No problem, just save the file and
-it's fixed. It's a huge relax on how I write my code (and I didn't even
-realize it before I used a formatter).</li>
-<li>Maybe I'll also try to let rubocop automatically format my code when I save my
-files.</li>
-</ul>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters/">Code style consistency matters - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-Like <a href="https://github.com/rrrene/elixir-style-guide">rrrene/elixir-style-guide: Style Guide for the Elixir language,
-implemented by Credo</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-行为主义学派认为学习的两大要点是 self-pacing 和 immediate feedback --
-from <a href="https://twitter.com/ConanChou/status/956004158741667842">https://twitter.com/ConanChou/status/956004158741667842</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="../../../Org/notes/software_engineering.html#ID-320D5AB4-52D7-45B4-B6AE-C43C03B68E1F">Abc Metric</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/anildigital/mix-format.el">anildigital/mix-format.el: Emacs package to format Elixir code in Emacs with elixir-mode</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-27</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/27/elm-package-diff</guid>
+    </item>
+    <item>
+      <title>A code formatter is a must-have tool in my workflow</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/26/a-code-formatter-is-a-must-have-tool-in-my-workflow</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-26</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/26/a-code-formatter-is-a-must-have-tool-in-my-workflow</guid>
     </item>
@@ -196,13 +111,6 @@ from <a href="https://twitter.com/ConanChou/status/956004158741667842">https://t
       <description><![CDATA[]]></description>
       <pubDate>2018-01-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/19/book-review-奇特的一生</guid>
-    </item>
-    <item>
-      <title>Understand the problem first</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/18/understand-the-problem-first</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/18/understand-the-problem-first</guid>
     </item>
   </channel>
 </rss>
