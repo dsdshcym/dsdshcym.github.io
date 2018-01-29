@@ -4,210 +4,66 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 28 Jan 2018 21:59:29 CST</pubDate>
-    <lastBuildDate>Sun, 28 Jan 2018 21:59:29 CST</lastBuildDate>
+    <pubDate>Mon, 29 Jan 2018 20:58:57 CST</pubDate>
+    <lastBuildDate>Mon, 29 Jan 2018 20:58:57 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Using Vim/Emacs is like a refactoring process</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</link>
+      <title>Searching Files in Finder using Natural Language</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Using Vim/Emacs is like a refactoring process</h1>
+            <h1>Searching Files in Finder using Natural Language</h1>
             <p>
-This is an idea I got when I was still using vim, and I think this feeling got
-stronger after I switched to Emacs. It's a bit hard to find out if anyone had
-similar idea before, because googling "Vim/Emacs Refactoring" would only show
-some refactoring plugins or packages. So I decided to write it down and share
-it.
+Yet another day, I wanted to find some images for testing our image uploading
+feature. I found that Finder/Spotlight can accept queries in natural language:
+<code>images smaller than 2MB</code>.
 </p>
 
-<div id="outline-container-orgbe2fbd3" class="outline-2">
-<h2 id="orgbe2fbd3">Refactoring what?</h2>
-<div class="outline-text-2" id="text-orgbe2fbd3">
-<p>
-The definition of refactoring is:
-</p>
-<blockquote>
-<p>
-Restructuring the existing code without changing its behavior.
-</p>
-</blockquote>
-<p>
-So what are we restructuring here by using Vim/Emacs? I think it's our <b>text
-editing skills</b>.
-</p>
 
-<p>
-It's kind of obvious since they are both text editors. But they are so powerful
-that:
+<div class="figure">
+<p><img src="https://i.loli.net/2018/01/29/5a6f19bca9323.jpg" alt="5a6f19bca9323.jpg" width="75%" />
 </p>
-<ol class="org-ol">
-<li>They can abstract text editing to a higher level.</li>
-<li>We can then think of the editing process as a piece of code.</li>
-<li>After that, we can refactor this code to make it more efficient.</li>
-</ol>
-</div>
 </div>
 
-<div id="outline-container-orgab48e13" class="outline-2">
-<h2 id="orgab48e13">Minimize key strokes in vim</h2>
-<div class="outline-text-2" id="text-orgab48e13">
-</div>
-<div id="outline-container-org11313d9" class="outline-3">
-<h3 id="org11313d9">Find more efficient keys</h3>
-<div class="outline-text-3" id="text-org11313d9">
 <p>
-In vim, we do most of our text editing in the normal mode thanks to its powerful
-modal editing. Each key is bound to an action, e.g. h/j/k/l is
-left/down/up/right.
-</p>
-
-<p>
-I believe most people just uses hjkl to move around the cursor when they just
-starts learning Vim. But it's not that efficient and it's still thinking in the
-normal text editor's way.
-</p>
-
-<p>
-Turns out you can move your cursor by using other keys<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>:
+Of course we can also use <code>find</code> in command line to filter files as well:
 </p>
 <ul class="org-ul">
-<li>Use <code>w</code>, <code>b</code>, <code>e</code>, and <code>ge</code> to move between words</li>
-<li>Use <code>f</code>, <code>F</code>, <code>t</code>, <code>T</code>, <code>;</code> to move within the same line</li>
-<li>Use <code>{</code>, <code>}</code>, <code>(</code>, <code>)</code> to jump between paragraphs, sentences</li>
-<li>Use <code>/</code>, <code>n</code>, <code>N</code> to search texts directly</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5274ccc" class="outline-3">
-<h3 id="org5274ccc">Operate on text objects</h3>
-<div class="outline-text-3" id="text-org5274ccc">
-<p>
-Keys can be combined together to define the action target (text objects), e.g.
-<code>d</code> is for deletion, <code>i</code> is for inner, <code>p</code> is for paragraph, <code>dip</code> is deleting
-all texts inner this paragraph.
+<li><p>
+Find files equals to a specific size
 </p>
-
-<p>
-These habits changes are like replacing a <code>for-loop</code> with a more efficient
-native function. After you get familiar with it, your text editing will
-definitely be more efficient.
-</p>
-</div>
-</div>
-<div id="outline-container-org21f1242" class="outline-3">
-<h3 id="org21f1242">Recording keystrokes in macros</h3>
-<div class="outline-text-3" id="text-org21f1242">
-<p>
-Macro is one of the most powerful things provided by Vim. You can define a macro
-and save you hundreds and thousands of keystrokes.
-</p>
-
-<p>
-But the more powerful feature is that you can edit an macro like editing a piece
-of code<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
-</p>
-<ul class="org-ul">
-<li>Macros are also saved in (paste) registers.</li>
-<li>So you can paste a macro into a buffer then edit it and save it into the
-register.</li>
-<li>Furthermore, you can save this macro as a function in your rc file and use it
-in the future.</li>
-</ul>
-
-<p>
-This makes using macro more like refactoring, because once you find a way to
-generalize your operations on texts, you can record it as a macro and even edit
-it as editing your code.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org949d7b3" class="outline-2">
-<h2 id="org949d7b3">Minimize function calls in Emacs</h2>
-<div class="outline-text-2" id="text-org949d7b3">
-</div>
-<div id="outline-container-org3d9a50e" class="outline-3">
-<h3 id="org3d9a50e">Everything is a function</h3>
-<div class="outline-text-3" id="text-org3d9a50e">
-<p>
-This was a mind-blown point to me: <b>in Emacs, every operation is a function.</b>
-Even typing a key and inserting the character on it is also a function called
-<code>self-insert-command</code>.
-</p>
-
-<p>
-This turns your text editing process into a coding process: you are writing a
-code to write the code you want to write. (Meta-Programming!)
-</p>
-</div>
-</div>
-<div id="outline-container-orgb0778a0" class="outline-3">
-<h3 id="orgb0778a0">Macro can be turned into function</h3>
-<div class="outline-text-3" id="text-orgb0778a0">
-<p>
-Native Emacs records a keyboard macro like Vim does: just saving the keystrokes.
-But it provides a better editing environment for keyboard macros and you can
-even see which function each key represents:
-</p>
-<pre class="example">
-;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
-;; Original keys: SPC w l SPC w h SPC w s SPC w k
-
-Command: last-kbd-macro
-Key: none
-
-Macro:
-
-SPC w l			;; evil-window-right
-SPC w h			;; evil-window-left
-SPC w s			;; evil-window-split
-SPC w k			;; evil-window-up
+<div class="org-src-container">
+<pre class="src src-sh">find . -size 2M
 </pre>
-
-<p>
-And there is a package elmacro<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> that allows you to translate a keyboard macro directly
-into elisp function.
+</div></li>
+<li><p>
+Find files larger than a specific size
 </p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgd1b9477" class="outline-2">
-<h2 id="orgd1b9477">Summary</h2>
-<div class="outline-text-2" id="text-orgd1b9477">
-<ol class="org-ol">
-<li>Find a more efficient native function to do the work</li>
-<li>Automate things by keyboard macros</li>
-<li>Persist macros into functions in your config file</li>
-</ol>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+<div class="org-src-container">
+<pre class="src src-sh">find . -size +2M
+</pre>
+</div></li>
+<li><p>
+Find files smaller than a specific size
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">find . -size -2M
+</pre>
+</div></li>
+</ul>
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-These tips are mostly collected from <a href="http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/">Habit breaking, habit making</a> and
-some of them are
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://robots.thoughtbot.com/how-to-edit-an-existing-vim-macro">How to Edit an Existing Vim Macro</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/Silex/elmacro">Silex/elmacro: Package to display keyboard macros or latest interactive
-commands as emacs lisp.</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-29</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</guid>
+    </item>
+    <item>
+      <title>Using Vim/Emacs is like a refactoring process</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</guid>
     </item>
@@ -266,13 +122,6 @@ commands as emacs lisp.</a>
       <description><![CDATA[]]></description>
       <pubDate>2018-01-20</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/20/cropping-image-using-pure-css</guid>
-    </item>
-    <item>
-      <title>Secret Superstar</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/20/secret-superstar</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-20</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/20/secret-superstar</guid>
     </item>
   </channel>
 </rss>
