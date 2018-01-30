@@ -4,59 +4,65 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 29 Jan 2018 20:58:57 CST</pubDate>
-    <lastBuildDate>Mon, 29 Jan 2018 20:58:57 CST</lastBuildDate>
+    <pubDate>Tue, 30 Jan 2018 18:35:34 CST</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2018 18:35:34 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Searching Files in Finder using Natural Language</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</link>
+      <title>Following the crowd is easy</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/30/following-the-crowd-is-easy</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Searching Files in Finder using Natural Language</h1>
-            <p>
-Yet another day, I wanted to find some images for testing our image uploading
-feature. I found that Finder/Spotlight can accept queries in natural language:
-<code>images smaller than 2MB</code>.
+            <h1>Following the crowd is easy</h1>
+            <blockquote>
+<p>
+<b>Following the crowd is easy, but it's often a shortcut to the wrong place.</b>
 </p>
-
-
-<div class="figure">
-<p><img src="https://i.loli.net/2018/01/29/5a6f19bca9323.jpg" alt="5a6f19bca9323.jpg" width="75%" />
+</blockquote>
+<p>
+-- from <a href="http://soveran.com/popularity.html">Popularity — soveran</a>
 </p>
-</div>
 
 <p>
-Of course we can also use <code>find</code> in command line to filter files as well:
+My <a href="http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/">last post about Spacemacs v.s. Doom-emacs</a><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> also reminds me of Rails v.s.
+Cuba/Sinatra. <a href="http://soveran.com/popularity.html">Popularity by soveran</a> is a great post on this topic.
 </p>
-<ul class="org-ul">
-<li><p>
-Find files equals to a specific size
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">find . -size 2M
-</pre>
-</div></li>
-<li><p>
-Find files larger than a specific size
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">find . -size +2M
-</pre>
-</div></li>
-<li><p>
-Find files smaller than a specific size
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">find . -size -2M
-</pre>
-</div></li>
-</ul>
 
+<p>
+People will recommend whatever works for them, but we must trust our instincts
+and abilities to choose the way that suits us the most.
+</p>
+
+<blockquote>
+<p>
+If I find too many people adopting a certain idea I'd probably think it's wrong
+</p>
+</blockquote>
+<p>
+-- from <a href="https://youtu.be/75Ju0eM5T2c?t=30s">Donald Knuth - My advice to young people (93/97) - YouTube</a>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/">Compare Doom-emacs, Spacemacs, and vanilla Emacs - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-01-30</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/01/30/following-the-crowd-is-easy</guid>
+    </item>
+    <item>
+      <title>Searching Files in Finder using Natural Language</title>
+      <link>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-29</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</guid>
     </item>
@@ -115,13 +121,6 @@ Find files smaller than a specific size
       <description><![CDATA[]]></description>
       <pubDate>2018-01-21</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</guid>
-    </item>
-    <item>
-      <title>Cropping image using pure CSS</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/20/cropping-image-using-pure-css</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-20</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/20/cropping-image-using-pure-css</guid>
     </item>
   </channel>
 </rss>
