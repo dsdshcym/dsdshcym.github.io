@@ -4,58 +4,51 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 30 Jan 2018 18:35:34 CST</pubDate>
-    <lastBuildDate>Tue, 30 Jan 2018 18:35:34 CST</lastBuildDate>
+    <pubDate>Thu, 08 Feb 2018 15:16:03 CST</pubDate>
+    <lastBuildDate>Thu, 08 Feb 2018 15:16:03 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Following the crowd is easy</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/30/following-the-crowd-is-easy</link>
+      <title>Adding more code is a code smell</title>
+      <link>http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Following the crowd is easy</h1>
-            <blockquote>
-<p>
-<b>Following the crowd is easy, but it's often a shortcut to the wrong place.</b>
-</p>
-</blockquote>
-<p>
--- from <a href="http://soveran.com/popularity.html">Popularity — soveran</a>
-</p>
+            <h1>Adding more code is a code smell</h1>
+            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">software would be better if diff tools showed insertions as red and deletions as green</p>&mdash; Steve Losh (@stevelosh) <a href="https://twitter.com/stevelosh/status/960622797096566784?ref_src=twsrc%5Etfw">February 5, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <p>
-My <a href="http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/">last post about Spacemacs v.s. Doom-emacs</a><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> also reminds me of Rails v.s.
-Cuba/Sinatra. <a href="http://soveran.com/popularity.html">Popularity by soveran</a> is a great post on this topic.
+This tweet reminds me of another episode of The Bike Shed, in which they said:
 </p>
-
-<p>
-People will recommend whatever works for them, but we must trust our instincts
-and abilities to choose the way that suits us the most.
-</p>
-
 <blockquote>
-<p>
-If I find too many people adopting a certain idea I'd probably think it's wrong
-</p>
+<ul class="org-ul">
+<li>It's a smell that adding more code (green number in a PR) than code that's
+deleted (red number in a PR) when <i>maintaining</i> (not developing) a project.
+<ul class="org-ul">
+<li>Because this may indicate that not enough refactoring were made.</li>
+</ul></li>
+</ul>
 </blockquote>
 <p>
--- from <a href="https://youtu.be/75Ju0eM5T2c?t=30s">Donald Knuth - My advice to young people (93/97) - YouTube</a>
+-- from <a href="https://player.fm/1mjmHB">127: Bike Shed: Discovery by The Bike Shed</a>
 </p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/">Compare Doom-emacs, Spacemacs, and vanilla Emacs - dsdshome</a>
-</p></div></div>
+<p>
+I always feels happier when deleting code than adding code. Most of the times,
+less code is always better.
+</p>
 
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-02-08</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell</guid>
+    </item>
+    <item>
+      <title>Following the crowd is easy</title>
+      <link>http://dsdshcym.github.io/clipping/2018/01/30/following-the-crowd-is-easy</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-01-30</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/30/following-the-crowd-is-easy</guid>
     </item>
@@ -114,13 +107,6 @@ If I find too many people adopting a certain idea I'd probably think it's wrong
       <description><![CDATA[]]></description>
       <pubDate>2018-01-22</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/01/22/i-don&#39;t-know-how-to-code-without-tdd</guid>
-    </item>
-    <item>
-      <title>Thoughts/Summary for Writing Documentations</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-21</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/01/21/thoughts-summary-for-writing-documentations</guid>
     </item>
   </channel>
 </rss>
