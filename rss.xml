@@ -4,46 +4,76 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 08 Feb 2018 15:16:03 CST</pubDate>
-    <lastBuildDate>Thu, 08 Feb 2018 15:16:03 CST</lastBuildDate>
+    <pubDate>Thu, 08 Feb 2018 15:38:20 CST</pubDate>
+    <lastBuildDate>Thu, 08 Feb 2018 15:38:20 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>Adding more code is a code smell</title>
       <link>http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2018-02-08</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell</guid>
+    </item>
+    <item>
+      <title>You may implicitly and strongly believe something wrong</title>
+      <link>http://dsdshcym.github.io/clipping/2018/02/08/you_may_implicitly_and_strongly_believe_something_wrong</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Adding more code is a code smell</h1>
-            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">software would be better if diff tools showed insertions as red and deletions as green</p>&mdash; Steve Losh (@stevelosh) <a href="https://twitter.com/stevelosh/status/960622797096566784?ref_src=twsrc%5Etfw">February 5, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>
-This tweet reminds me of another episode of The Bike Shed, in which they said:
-</p>
-<blockquote>
+            <h1>You may implicitly and strongly believe something wrong</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>It's a smell that adding more code (green number in a PR) than code that's
-deleted (red number in a PR) when <i>maintaining</i> (not developing) a project.
+<li>Ideology
 <ul class="org-ul">
-<li>Because this may indicate that not enough refactoring were made.</li>
+<li>Unknown Known</li>
+<li><b>You don't know you are implicitly and strongly believe something wrong</b></li>
 </ul></li>
+<li>Types &amp; Tests
+<ul class="org-ul">
+<li>Static
+<ul class="org-ul">
+<li>Haskell</li>
+<li>Rust</li>
+</ul></li>
+</ul></li>
+<li>Dynamic Languages
+<ul class="org-ul">
+<li>Tests are examples</li>
+<li>Extreme (but real) Belief: <b>Correctness comes exclusively from examples</b></li>
+</ul></li>
+<li>Static Languages
+<ul class="org-ul">
+<li>Make undefined behavior impossible (compilation error)</li>
+<li>Types are categories</li>
+<li>Extreme (but real) Belief: <b>Correctness comes exclusively from categories</b></li>
+</ul></li>
+<li>"Null"
+<dl class="org-dl">
+<dt>2015</dt><dd>"But I need Null" -&gt; to represent absence -&gt; "Null is the only way
+to represent absence"</dd>
+<dt>2010</dt><dd>"FP is slow!" -&gt; Operations on Immutable Data are slow -&gt; "No faster
+immutable types exist"</dd>
+<dt>2000</dt><dd>"GC is impractical" -&gt; "No better GC algorithms exist."</dd>
+</dl></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://player.fm/1mjmHB">127: Bike Shed: Discovery by The Bike Shed</a>
+-- from <a href="https://www.destroyallsoftware.com/talks/ideology">Ideology (Strange Loop 2015) - Destroy All Software</a>
 </p>
 
 <p>
-I always feels happier when deleting code than adding code. Most of the times,
-less code is always better.
+Sometimes, our conclusion may based on a completely false presumption, but we
+may not even notice this wrong presumption exists. I think this is what Gary
+called the <i>Unknown Known</i>. And we all need to learn more (languages, patterns,
+etc.) to jump out of this mental set and think out of the box.
 </p>
 
     </div>
 </section>
 ]]></description>
       <pubDate>2018-02-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell</guid>
+      <guid>http://dsdshcym.github.io/clipping/2018/02/08/you_may_implicitly_and_strongly_believe_something_wrong</guid>
     </item>
     <item>
       <title>Following the crowd is easy</title>
@@ -100,13 +130,6 @@ less code is always better.
       <description><![CDATA[]]></description>
       <pubDate>2018-01-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/19/books-i-read-in-2017</guid>
-    </item>
-    <item>
-      <title>I don&#39;t know how to code without TDD</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/22/i-don&#39;t-know-how-to-code-without-tdd</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-22</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/22/i-don&#39;t-know-how-to-code-without-tdd</guid>
     </item>
   </channel>
 </rss>
