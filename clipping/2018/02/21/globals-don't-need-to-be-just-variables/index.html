@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Globals don&#39;t need to be just variables - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="global variables, On Writing Software Well, DHH" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Globals don&#39;t need to be just variables</h1>
+            <blockquote>
+<ul class="org-ul">
+<li><p>
+Wrap global variables in <code>Current</code> class
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class Current &lt; ActiveSurpport::CurrentAttributes
+  attribute :account, :person
+  attribute :request_id, :user_agent, :ip_address
+
+  delegate :user, :integration, to: :person, allow_nil: true
+  delegate :identity, to: :user, allow_nil: true
+
+  resets { Time.zone = nil }
+
+  def person=(person)
+    super
+
+    self.account = person.try(:account)
+    Time.zone = person.try(:time_zone)
+  end
+end
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+<code>module SetCurrentRequestDetails</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">module SetCurrentRequestDetails
+  extend ActiveSupport::Concern
+
+  included do
+    before_action do
+      Current.request_id = request.uuid
+      Current.user_agent = request.user_agent
+      Current.ip_address = request.ip
+    end
+  end
+end
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=D7zUOtlpUPw">On Writing Software Well: Using globals when the price is right - YouTube</a>
+</p>
+
+<p>
+I was watching DHH's <i>On Writing Software Well</i> screencasts series<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, where
+he explained the trade offs they've made in the Basecamp codebase.
+</p>
+
+<p>
+And this idea of using a class <code>Current</code> to wrap all the global variables really
+hit me and made me realize that <b>globals don't need to be just variables</b> like
+<code>redis_client</code> or something like that.
+</p>
+
+<p>
+Wrapping these variables in a cohesive class is really a great idea and I really
+like it. If you are also interested, you can check out the <code>CurrentAttributes</code>
+class<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> which supports this style of programming in Rails.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://m.signalvnoise.com/on-writing-software-well-aee3780767a6">On Writing Software Well – Signal v. Noise</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/rails/rails/blob/c476969b449fe7dc9e54ebe8b5ee20da7a0518e7/activesupport/lib/active_support/current_attributes.rb">rails/current_attributes.rb at c476969b449fe7dc9e54ebe8b5ee20da7a0518e7 · rails/rails</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2018-02-21</span>
+        <span title="last modification date" class="post-info">2018-02-21</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/clean-code/">Clean Code</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

@@ -4,497 +4,92 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 19 Feb 2018 16:52:11 CST</pubDate>
-    <lastBuildDate>Mon, 19 Feb 2018 16:52:11 CST</lastBuildDate>
+    <pubDate>Wed, 21 Feb 2018 12:01:39 CST</pubDate>
+    <lastBuildDate>Wed, 21 Feb 2018 12:01:39 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>My 2017 Review</title>
-      <link>http://dsdshcym.github.io/blog/2018/02/17/my-2017-review</link>
+      <title>Globals don&#39;t need to be just variables</title>
+      <link>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>My 2017 Review</h1>
-            <p>
-2017 年已经正式过去了，在此用一篇博客简单回顾一下自己的 2017.
-</p>
-
-<div id="outline-container-org84911cb" class="outline-2">
-<h2 id="org84911cb">Daily Review</h2>
-<div class="outline-text-2" id="text-org84911cb">
-<p>
-我从 2015 年开始用 org-mode 记录自己的时间花销<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>，但是一直觉得自己 review 的部分做的不够到位。
-</p>
-
-<p>
-因为 org-mode 记录时间太过自动化了，即使完整地记录了一天的时间都用到哪了，不及时回顾、做出相应的调整，对当天时间的分配也没有很清楚的概念。导致这个记录时间的习惯对我的帮助也有限。
-</p>
-
-<p>
-因此，我从 2017 年的第一天开始给自己订下几个小目标：
-</p>
-<ol class="org-ol">
-<li>每天都进行一次 Daily Review
+            <h1>Globals don&#39;t need to be just variables</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>用 Org Agenda 浏览回顾当天的时间分配</li>
-<li>选出当天发生的三件积极的事，和三件有待提高的事</li>
-<li>P.S. 这个方法来自于 <a href="https://alexdenning.com/five-minute-journal/">Five minute journal: how could today have been even
-better?</a></li>
-</ul></li>
-<li>每月进行一次 Monthly Review
-<ul class="org-ul">
-<li>用 Org Clock Report 分析当月的时间分配</li>
-</ul></li>
-<li>每年进行一次 Yearly Review
-<ul class="org-ul">
-<li>同样用 Org Clock Report 分析当年的时间分配</li>
-<li>清理 journal.org 并 archive</li>
-</ul></li>
-</ol>
-
-<p>
-以下是简单的成果小结：
-</p>
-<ol class="org-ol">
-<li>Daily Review
-<ul class="org-ul">
-<li>前 6 个月没有做到每天都 Review，平均每个月只有 20 天被覆盖到</li>
-<li>在 6 个月以后终于养成了每天打卡的习惯，保证了下半年每一天都有一定的小结</li>
-<li>因为 Org Agenda 记录的存在，Daily Review 可以不用在当天的固定时间进行，实在没有时间的话可以推迟几天</li>
-<li>每日的时间分析可以借助番茄工作法（org-pomodoro<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>）进行
-<ul class="org-ul">
-<li>给自己的目标是一天花在学习、Coding 的番茄至少要有 8 个</li>
-<li>P.S. 这个 Idea 来自于 <i>Soft Skills: The software developer's life manual</i></li>
-</ul></li>
-</ul></li>
-<li>Monthly Review
-<ul class="org-ul">
-<li>因为分析一个月的 Org Clock Report 比较耗时，Monthly Review 算是个比较艰巨的任务，总是会从月初拖到月中才完成</li>
-<li>另外，单纯的时间分析比较没有目的性，即使做了回顾，也很难得出结论要如何改进</li>
 <li><p>
-最后一个月，决定抛弃每月时间分析（毕竟已经有每日时间分析 cover 到），改用目标系统进行简化，以下是我 2017 年 12 月的目标（及总结）
+Wrap global variables in <code>Current</code> class
 </p>
-<blockquote>
+<div class="org-src-container">
+<pre class="src src-ruby">class Current &lt; ActiveSurpport::CurrentAttributes
+  attribute :account, :person
+  attribute :request_id, :user_agent, :ip_address
+
+  delegate :user, :integration, to: :person, allow_nil: true
+  delegate :identity, to: :user, allow_nil: true
+
+  resets { Time.zone = nil }
+
+  def person=(person)
+    super
+
+    self.account = person.try(:account)
+    Time.zone = person.try(:time_zone)
+  end
+end
+</pre>
+</div>
 <ul class="org-ul">
-<li>Exercise <code>[1/2]</code>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> 去 8 次健身房</li>
-<li class="off"><code>[&#xa0;]</code> 72kg
-<ul class="org-ul">
-<li>73kg</li>
-</ul></li>
-</ul></li>
-<li>Books <code>[0/3]</code>
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Smalltalk Best Practice Patterns - Kent Beck</li>
-<li class="off"><code>[&#xa0;]</code> Fearless Rails Refactoring</li>
-<li class="off"><code>[&#xa0;]</code> Harry Potter and The Philosopher Stone</li>
-</ul></li>
-<li>Conferences <code>[0/2]</code>
-<ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> ElixirConf 2017</li>
-<li class="off"><code>[&#xa0;]</code> RubyConf 2017 - YouTube - YouTube</li>
-</ul></li>
-<li>Blog Posts <code>[8/10]</code>
-<ul class="org-ul">
-<li class="on"><code>[X]</code> Write Custom RSpec Matchers to Simplify Your Specs - dsdshome</li>
-<li class="on"><code>[X]</code> 给小白解释「面向对象」（问答体） - dsdshome</li>
-<li class="on"><code>[X]</code> Add STI to a Legacy ActiveRecord Model - dsdshome</li>
-<li class="on"><code>[X]</code> Book Review: 99 Bottles of OOP - dsdshome</li>
-<li class="on"><code>[X]</code> As the tests get more specific, the code gets more generic - dsdshome</li>
-<li class="on"><code>[X]</code> Error message really matters</li>
-<li class="on"><code>[X]</code> Leanings from playing with FizzBuzz for 3 days</li>
-<li class="on"><code>[X]</code> Notes from Programming Phoenix</li>
-<li class="off"><code>[&#xa0;]</code> Notes from Crafting Rails 4 Applications</li>
-<li class="off"><code>[&#xa0;]</code> Notes from 最好的告别</li>
-</ul></li>
-<li>Clippings
-<ul class="org-ul">
-<li>20 clippings</li>
-</ul></li>
-<li>Side Projects
-<ul class="org-ul">
-<li>exercism.io
-<ul class="org-ul">
-<li>16 days</li>
-<li>~30 exercises</li>
-</ul></li>
+<li><p>
+<code>module SetCurrentRequestDetails</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">module SetCurrentRequestDetails
+  extend ActiveSupport::Concern
+
+  included do
+    before_action do
+      Current.request_id = request.uuid
+      Current.user_agent = request.user_agent
+      Current.ip_address = request.ip
+    end
+  end
+end
+</pre>
+</div></li>
 </ul></li>
 </ul>
-</blockquote></li>
-</ul></li>
-<li>Yearly Review
-<ul class="org-ul">
-<li>在 17 年初对 16 年进行了一次 Org Clock Report Review</li>
-<li>效果也不是很理想</li>
-<li>18 年我打算同 Monthly Review 一样，对 Yearly Review 采取目标制，年初制定目标，年末回顾总结</li>
-</ul></li>
-</ol>
-</div>
-<div id="outline-container-orgf51b0f5" class="outline-3">
-<h3 id="orgf51b0f5">Ledger</h3>
-<div class="outline-text-3" id="text-orgf51b0f5">
+</blockquote>
 <p>
-另外，在 17 年 7 月份时我开始用 Ledger<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 记账，和 Daily Review 一起每天固定时间把支付宝、微信、银行卡的花销同步到一个文本文件中，用 ledger-mode<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> 进行分析。
+-- from <a href="https://www.youtube.com/watch?v=D7zUOtlpUPw">On Writing Software Well: Using globals when the price is right - YouTube</a>
 </p>
 
 <p>
-经过一些探索，目前基本能使这个账本与各个账户中的余额、花销保持同步。
+I was watching DHH's <i>On Writing Software Well</i> screencasts series<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, where
+he explained the trade offs they've made in the Basecamp codebase.
 </p>
 
 <p>
-同时间一样，18 年我也希望能引入预算（目标）系统，对记账这件事进行更好的优化。
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org61bc49e" class="outline-2">
-<h2 id="org61bc49e">Graduated from Fudan University</h2>
-<div class="outline-text-2" id="text-org61bc49e">
-<p>
-6 月份从复旦正式毕业了。
+And this idea of using a class <code>Current</code> to wrap all the global variables really
+hit me and made me realize that <b>globals don't need to be just variables</b> like
+<code>redis_client</code> or something like that.
 </p>
 
 <p>
-水了一份毕业论文<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>，算是对大学四年自己学到的、读到的程序语言关于「抽象」这一概念的小结。
+Wrapping these variables in a cohesive class is really a great idea and I really
+like it. If you are also interested, you can check out the <code>CurrentAttributes</code>
+class<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> which supports this style of programming in Rails.
 </p>
-
-<p>
-原本打算毕业后写的大学总结，也因为任务量看上去比较繁重迟迟没有动笔，希望能在 2018
-年写掉。
-</p>
-
-<p>
-因为性格的原因，加上转专业降级的关系，大学里交到的朋友很少，毕业后还在联系的大学同学只有一位一起在 Strikingly 实习的 Data Science 大佬<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>，其他一直有联系的朋友都是高中的室友、同学。
-</p>
-</div>
-</div>
-<div id="outline-container-org1dbe93f" class="outline-2">
-<h2 id="org1dbe93f">Career</h2>
-<div class="outline-text-2" id="text-org1dbe93f">
-<p>
-毕业后因为种种原因没有继续在 Strikingly 工作，来到了 Ekohe 工作。
-</p>
-
-<p>
-在 Ekohe 工作还算顺利，收获可以说得上颇丰，不过主要是在 Knowledge Sharing 这一块：
-</p>
-<ol class="org-ol">
-<li><p>
-Creative Friday Sharing
-</p>
-
-<p>
-Ekohe 每周五有组织一次分享，每个人都可以上台分享自己的知识、见闻。我也鼓起勇气做了两次分享：
-</p>
-<ol class="org-ol">
-<li><a href="http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/">Sandi Metz's Rules for OOP - dsdshome</a></li>
-<li><a href="http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture/">Thoughts on "Implementing a Strong Code-Review Culture" - dsdshome</a></li>
-</ol></li>
-<li><p>
-Web Team Meeting
-</p>
-
-<p>
-每两周会组织一次 Web Team Meeting，形式上有点类似 Creative Friday，不过每个
-web developer 都可以分享自己这两周学到的技术、踩到的坑。
-</p>
-
-<p>
-以下是我做的几次分享：
-</p>
-<ol class="org-ol">
-<li><a href="http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/">Build an Image Resizing Microservice on AWS Lambda - dsdshome</a></li>
-<li><a href="http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs/">Write Custom RSpec Matchers to Simplify Your Specs - dsdshome</a></li>
-<li><a href="http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/as-the-tests-get-more-specific-the-code-gets-more-generic/">As the tests get more specific, the code gets more generic - dsdshome</a></li>
-</ol></li>
-<li><p>
-Blogging
-</p>
-
-<p>
-因为 Creative Friday Sharing 的分享也有写成博客，同事觉得不错就分享到 Ekohe 自己的 Medium Publication 上了：
-</p>
-<ol class="org-ol">
-<li><a href="https://medium.com/ekohe/how-to-write-good-code-an-introduction-to-sandi-metz-s-rules-89bb3d749d53">How to Write Good Code — An Introduction to Sandi Metz’ s Rules</a></li>
-<li><a href="https://medium.com/ekohe/the-secret-to-object-oriented-programming-3f68c5553565">The Secret to Object-Oriented Programming – Ekohe – Medium</a></li>
-</ol></li>
-</ol>
-
-<p>
-总的来说，在 Ekohe 的这些经历让我发现了更多和别人分享自己知识的喜悦，这也可以说是我现在维护这个博客的动力之一吧。
-</p>
-
-<p>
-希望 2018 年能有更多、更好的分享，去更大的舞台演讲、写出更好的博客。
-</p>
-</div>
-</div>
-<div id="outline-container-org553106a" class="outline-2">
-<h2 id="org553106a">Fitness</h2>
-<div class="outline-text-2" id="text-org553106a">
-<p>
-2017 年依然在坚持健身（平均每月 9 次左右），并且使用 <i>StrongLifts 5x5</i> 和 <i>nsuns
-5/3/1</i> 这类 App 来系统化自己的健身计划，虽然体重上并没有什么变化，但是力量增长很明显，可以说总算是入了健身的门。
-</p>
-<ul class="org-ul">
-<li><p>
-第一次 StrongLifts 5x5
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-left">Squat</th>
-<th scope="col" class="org-left">Bench Press</th>
-<th scope="col" class="org-left">Barbell Row</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2017-03-17 Fri]</span></span></td>
-<td class="org-left">5x5 40kg</td>
-<td class="org-left">5x5 40kg</td>
-<td class="org-left">5x5 40kg</td>
-</tr>
-</tbody>
-</table></li>
-<li>最后一次 nsuns 5/3/1
-<ul class="org-ul">
-<li>Bench Press
-<ul class="org-ul">
-<li>8 x 50kg</li>
-<li>6 x 60kg</li>
-<li>4 x 70kg</li>
-<li>4 x 70kg</li>
-<li>3 x 70kg</li>
-<li>4 x 65kg</li>
-<li>4 x 60kg</li>
-<li>7 x 55kg</li>
-<li>7 x 50kg</li>
-</ul></li>
-<li>Overhead press
-<ul class="org-ul">
-<li>6 x 20kg</li>
-<li>5 x 20kg</li>
-<li>3 x 25kg</li>
-<li>5 x 25kg</li>
-<li>7 x 25kg</li>
-<li>4 x 25kg</li>
-<li>6 x 25kg</li>
-<li>8 x 25kg</li>
-</ul></li>
-<li>Ab Crunch Machine
-<ul class="org-ul">
-<li>8 x 52.5kg</li>
-<li>8 x 52.5kg</li>
-<li>8 x 55kg</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>
-可以说，现在健身已经成为我生活中的一个重要的部分了吧（几天不去健身房会有点焦虑）。
-</p>
-
-<p>
-另外，还在年底体会了一次健身房跑路<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>的心酸。
-</p>
-</div>
-</div>
-<div id="outline-container-orgc8fa711" class="outline-2">
-<h2 id="orgc8fa711">Linux -&gt; macOS</h2>
-<div class="outline-text-2" id="text-orgc8fa711">
-<p>
-上半年（<span class="timestamp-wrapper"><span class="timestamp">[2017-01-24 Tue]&#x2013;[2017-04-24 Mon]</span></span>）使用了三个月 openSUSE 作为主力操作系统，最终还是回到了 macOS 的怀抱。
-</p>
-
-<ul class="org-ul">
-<li>Linux 吸引我的点<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>
-<ol class="org-ol">
-<li><p>
-Emacs Performance
-</p>
-
-<p>
-Linux 毕竟是 Emacs 的大本营，Emacs 在 Linux 上的性能表现远远超过在 macOS
-上的表现。使用过 Linux 上的 Emacs 再切换回 macOS 会有很明显的延迟感。
-</p>
-
-<p>
-而我一开始切换到 Linux 也主要是为了这一点性能的优势。毕竟我只要有 Emacs 这个操作系统就可以了，Linux/macOS 只是不同的 bootloader 罢了（当然，后面发现纯用 Emacs 这个操作系统还是不太现实）。
-</p></li>
-<li><p>
-(Tiling) Window Manager
-</p>
-
-<p>
-之前一直想在 macOS 上达到类似 Tiling Window Manager 的效果，在 Linux 上只要使用 i3 就能很稳定地实现了，而且没有 macOS 拖拖拉拉的动画效果，干净简洁。
-</p></li>
-</ol></li>
-<li>回到 macOS 的原因
-<ol class="org-ol">
-<li><p>
-<b>不想折腾</b>
-</p>
-
-<p>
-Linux 相比 macOS 还是更需要用户去花更多的时间调教的。而我则更希望节省一些时间以花在读书、写代码、陪家人这些更重要的事情上（毕竟已经有个 Emacs 够我折腾了），而不是花在学习打印机的配置、字体的配置等等不太重要的、操作系统理应处理好的事情上。
-</p></li>
-
-<li><p>
-Emacs 和 Window Manager 以外的体验
-</p>
-
-<p>
-可以说在 Emacs 和 Window Manager 之外，Linux 的体验还是比不上 macOS。
-</p>
-<ol class="org-ol">
-<li><p>
-文本编辑快捷键
-</p>
-
-<p>
-macOS 下几乎所有的 Cocoa 文本编辑区域都提供有内置的类 Emacs 快捷键位（C-a,
-C-d, etc.），而在 Linux 下由于 GTK2, GTK3, QT 等不同框架的存在，以及 Ctrl
-键已经被大量占用，很难提供类似的体验。
-</p></li>
-<li><p>
-字体渲染、回退
-</p>
-
-<p>
-在 Linux 下花费我比较多时间的是字体渲染和回退的机制。
-</p>
-
-<p>
-困扰我比较久的一个 issue 是在 Chrome 等 GUI app 下的中文简体字会使用日文字体渲染，虽然最终得以解决，但至今我还未完全搞清楚 fontconfig 的配置原理。
-</p>
-
-<p>
-另外，Linux 的渲染效果也不如 macOS 的柔和、好看（当然，有可能是我习惯了
-macOS 的效果）
-</p></li>
-<li><p>
-App 生态
-</p>
-
-<p>
-生活中不可避免的要用到编辑器以外的 App，以聊天 App 为例，Telegram, Slack
-等 App 对 Linux 的支持比较糟糕，像 WeChat 则干脆没有提供官方支持。
-</p>
-
-<p>
-而 macOS 下各个 App 的质量都有一定的保证，而且有 Dash 这类优秀的 App。
-</p></li>
-<li><p>
-操作系统的完整性
-</p>
-
-<p>
-这一点可能与我选择的发行版比较追求简单有关（Archlinux, openSUSE
-Tumbleweed）。但是 macOS 总有一些基本的功能让用户不用太操心就能用得很舒服，而在 Linux 上则需要自己找第三方的 App 来实现。比如：
-</p>
-<ul class="org-ul">
-<li>Night Shift</li>
-<li>Spotlight</li>
-<li>Do Not Disturb</li>
-</ul></li>
-<li><p>
-和 iPhone 的协作
-</p>
-
-<p>
-虽然我切换回 macOS 时还没切换到 iPhone，但不得不说，Handoff, Airdrop,
-Messages 同步等确实是能够锦上添花的功能（当然，不 Work 的时候也很让人恼火）。
-</p></li>
-</ol></li>
-</ol></li>
-</ul>
-<p>
-然而 macOS 在下半年爆出了好多 bug<sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup>，而且使用时总是有种延迟的感觉（即使换了高配 15 寸还是一样），还是不能说得上完美。
-</p>
-
-<p>
-接下来有机会的话，希望能尝试 PixelBook + Crouton 的方案吧（当然，本着不折腾的原则，可能还是会继续用 MacBook）。
-</p>
-</div>
-</div>
-<div id="outline-container-org8a57274" class="outline-2">
-<h2 id="org8a57274">Android -&gt; iOS</h2>
-<div class="outline-text-2" id="text-org8a57274">
-<p>
-作为一个铁杆的 Android 粉丝，同样出于「不折腾」的思想以及受到 Face ID 的蛊惑，入手了 iPhone X。
-</p>
-
-<p>
-<span class="timestamp-wrapper"><span class="timestamp">[2017-10-27 Fri] </span></span> 抢到了 iPhone X 的首发订单，<span class="timestamp-wrapper"><span class="timestamp">[2017-11-03 Fri] </span></span> 如愿收到了 iPhone
-X。亮点和槽点颇多，限于篇幅，此处就不做 Review 了，放在以后的博客吧。
-</p>
-</div>
-</div>
-<div id="outline-container-org3899b23" class="outline-2">
-<h2 id="org3899b23">Goals for 2018</h2>
-<div class="outline-text-2" id="text-org3899b23">
-<p>
-2018，简单来说，要更加「目标驱动」，在此列下 2018 年的目标，供年末回顾。
-</p>
-<dl class="org-dl">
-<dt>Coding (Side Project)</dt><dd>Deploy at least one web application (Phoenix + Elm)</dd>
-<dt>Fitness</dt><dd>减重到 70kg</dd>
-<dt>Blogging</dt><dd>平均一个月 8 篇（维持目前的水准）</dd>
-</dl>
-</div>
-</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-起因是《奇特的一生》这本书，见 <a href="http://dsdshcym.github.io/blog/2018/01/19/book-review-%E5%A5%87%E7%89%B9%E7%9A%84%E4%B8%80%E7%94%9F/">Book Review: 奇特的一生 - dsdshome</a>
+<a href="https://m.signalvnoise.com/on-writing-software-well-aee3780767a6">On Writing Software Well – Signal v. Noise</a>
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/lolownia/org-pomodoro">lolownia/org-pomodoro: pomodoro technique for org-mode</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://www.ledger-cli.org">Ledger</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/ledger/ledger-mode">ledger/ledger-mode: Emacs Lisp files for interacting with the C++Ledger accounting system</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/">我看程序语言的历史、现在与将来 - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
-他目前在 CMU 读 Master，已经拿到 Google Offer，这是他的博客：<a href="https://dnc1994.com/">Wille</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.zhihu.com/question/263491132">如何看待奥森健身老板跑路？ - 知乎</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux/">Why did I switch to Arch Linux - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <div class="footpara"><p class="footpara">
-比如 <a href="https://www.theverge.com/2017/11/28/16711782/apple-macos-high-sierra-critical-password-security-flaw">Major Apple security flaw grants admin access on macOS High Sierra
-without password - The Verge</a>
+<a href="https://github.com/rails/rails/blob/c476969b449fe7dc9e54ebe8b5ee20da7a0518e7/activesupport/lib/active_support/current_attributes.rb">rails/current_attributes.rb at c476969b449fe7dc9e54ebe8b5ee20da7a0518e7 · rails/rails</a>
 </p></div></div>
 
 
@@ -503,6 +98,13 @@ without password - The Verge</a>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-02-21</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</guid>
+    </item>
+    <item>
+      <title>My 2017 Review</title>
+      <link>http://dsdshcym.github.io/blog/2018/02/17/my-2017-review</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-02-19</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/02/17/my-2017-review</guid>
     </item>
@@ -561,13 +163,6 @@ without password - The Verge</a>
       <description><![CDATA[]]></description>
       <pubDate>2018-01-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</guid>
-    </item>
-    <item>
-      <title>elm-package diff</title>
-      <link>http://dsdshcym.github.io/clipping/2018/01/27/elm-package-diff</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-27</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/01/27/elm-package-diff</guid>
     </item>
   </channel>
 </rss>
