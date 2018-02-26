@@ -4,92 +4,59 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 21 Feb 2018 12:01:39 CST</pubDate>
-    <lastBuildDate>Wed, 21 Feb 2018 12:01:39 CST</lastBuildDate>
+    <pubDate>Mon, 26 Feb 2018 10:24:42 CST</pubDate>
+    <lastBuildDate>Mon, 26 Feb 2018 10:24:42 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Globals don&#39;t need to be just variables</title>
-      <link>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</link>
+      <title>Book Review: Smalltalk Best Practice Patterns</title>
+      <link>http://dsdshcym.github.io/blog/2018/02/24/book-review-smalltalk-best-practice-patterns</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Globals don&#39;t need to be just variables</h1>
-            <blockquote>
-<ul class="org-ul">
-<li><p>
-Wrap global variables in <code>Current</code> class
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">class Current &lt; ActiveSurpport::CurrentAttributes
-  attribute :account, :person
-  attribute :request_id, :user_agent, :ip_address
-
-  delegate :user, :integration, to: :person, allow_nil: true
-  delegate :identity, to: :user, allow_nil: true
-
-  resets { Time.zone = nil }
-
-  def person=(person)
-    super
-
-    self.account = person.try(:account)
-    Time.zone = person.try(:time_zone)
-  end
-end
-</pre>
-</div>
-<ul class="org-ul">
-<li><p>
-<code>module SetCurrentRequestDetails</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">module SetCurrentRequestDetails
-  extend ActiveSupport::Concern
-
-  included do
-    before_action do
-      Current.request_id = request.uuid
-      Current.user_agent = request.user_agent
-      Current.ip_address = request.ip
-    end
-  end
-end
-</pre>
-</div></li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=D7zUOtlpUPw">On Writing Software Well: Using globals when the price is right - YouTube</a>
+            <h1>Book Review: Smalltalk Best Practice Patterns</h1>
+            <p>
+This is my short review for the book <i>Smalltalk Best Practice Patterns</i>. You can
+check the notes I took at <a href="http://dsdshcym.github.io/clipping/2018/02/10/clippings-from-smalltalk-best-practice-patterns/">Clippings from Smalltalk Best Practice Patterns -
+dsdshome</a>.
 </p>
 
 <p>
-I was watching DHH's <i>On Writing Software Well</i> screencasts series<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, where
-he explained the trade offs they've made in the Basecamp codebase.
+To me (a Ruby/Elixir developer), this book reads more like a guide about how to
+write cleaner code (like <i>Clean Code</i> by Robert Cecil Martin).
 </p>
 
 <p>
-And this idea of using a class <code>Current</code> to wrap all the global variables really
-hit me and made me realize that <b>globals don't need to be just variables</b> like
-<code>redis_client</code> or something like that.
+But it's not a magic book like DHH promoted<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
 </p>
 
 <p>
-Wrapping these variables in a cohesive class is really a great idea and I really
-like it. If you are also interested, you can check out the <code>CurrentAttributes</code>
-class<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> which supports this style of programming in Rails.
+I think the best way to use this book<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> is to:
+</p>
+<ol class="org-ol">
+<li>Do a quick <i>Inspectional Reading</i> to know these patterns exist and when you
+need to use them.</li>
+<li>Write your code as usual.</li>
+<li>Check the specific pattern when you need to use it.</li>
+</ol>
+
+<p>
+These books are like dictionaries, you can't just read them, you need to
+reference it when you are practicing. And only in this way, you can understand
+these patterns better.
 </p>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://m.signalvnoise.com/on-writing-software-well-aee3780767a6">On Writing Software Well – Signal v. Noise</a>
+<i>Smalltalk Best Practice Patterns</i> was listed <a href="https://signalvnoise.com/posts/3375-the-five-programming-books-that-meant-most-to-me">The five programming books
+that meant most to me (DHH) – Signal v. Noise</a>
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/rails/rails/blob/c476969b449fe7dc9e54ebe8b5ee20da7a0518e7/activesupport/lib/active_support/current_attributes.rb">rails/current_attributes.rb at c476969b449fe7dc9e54ebe8b5ee20da7a0518e7 · rails/rails</a>
+And other reference books like this, e.g. <a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">Refactoring: Improving the
+Design of Existing Code</a>
 </p></div></div>
 
 
@@ -98,6 +65,13 @@ class<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> which supports 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-02-24</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/02/24/book-review-smalltalk-best-practice-patterns</guid>
+    </item>
+    <item>
+      <title>Globals don&#39;t need to be just variables</title>
+      <link>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-02-21</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</guid>
     </item>
@@ -156,13 +130,6 @@ class<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> which supports 
       <description><![CDATA[]]></description>
       <pubDate>2018-01-29</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/01/29/searching-files-in-finder-using-natural-language</guid>
-    </item>
-    <item>
-      <title>Using Vim/Emacs is like a refactoring process</title>
-      <link>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-01-28</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process</guid>
     </item>
   </channel>
 </rss>
