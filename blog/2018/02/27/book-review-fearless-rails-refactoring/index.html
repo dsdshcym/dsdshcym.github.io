@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Book Review: Fearless Rails Refactoring - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Rails, Service Object, Refactor" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Book Review: Fearless Rails Refactoring</h1>
+            <p>
+This is my short review of the book <i><a href="http://rails-refactoring.com/">Fearless Rails Refactoring</a></i>, you can also
+check my notes taken from it here: <a href="http://dsdshcym.github.io/clipping/2018/02/11/clippings-from-fearless-rails-refactoring/">Clippings from Fearless Rails Refactoring -
+dsdshome</a>.
+</p>
+
+<div id="outline-container-org6d78b90" class="outline-2">
+<h2 id="org6d78b90">It's all about Single Responsibility</h2>
+<div class="outline-text-2" id="text-org6d78b90">
+<p>
+When I first started working as a Rails developer, a senior developer told me
+this idea of Service Object (and also Form Object, Query Object). And I was
+really really confusing about it. I spent a lot of time searching for this
+name<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> and got few tutorials about it (apparently, it's not in the official
+guidelines).
+</p>
+
+<p>
+After about a year of struggling, I think I finally understand it now:
+<b>Service Object</b> is just <i>Pure Old Ruby Object</i> (PORO).
+</p>
+<ul class="org-ul">
+<li>Put and only put your model related logic in your <code>ActiveRecord</code> classes</li>
+<li>Put and only put your request related logic in your <code>ActionController</code> classes</li>
+<li>Put everything else in pure old ruby objects (service objects, form objects,
+you name it)</li>
+</ul>
+
+<p>
+From this pattern, we can also see that the idea of Service Object is actually
+only about Single Responsibility Principle (SRP).
+</p>
+<ul class="org-ul">
+<li>You need to define your class's responsibility.</li>
+<li>No matter if it's inherited from <code>ActiveRecord</code> or <code>ActionController</code>, this
+inheritance is just an implementation detail.</li>
+</ul>
+
+<p>
+And I think this book explained this idea pretty well. This book also provides
+many real-world examples to help your understand this idea better.
+</p>
+
+<p>
+Although I think some of the examples can still be refactored, it's still a
+great book about Service Object.
+</p>
+
+<p>
+If you are like me (one-year-ago), wondering what's Service Object and how to
+write them, please do read this book.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Here is what I got:
+</p>
+<ul class="org-ul">
+<li><a href="https://ruby-china.org/topics/23892">Service Object 整理和小结 · Ruby China</a></li>
+<li><a href="http://brewhouse.io/blog/2014/04/30/gourmet-service-objects.html">Gourmet Service Objects</a></li>
+<li><a href="https://www.netguru.co/blog/service-objects-in-rails-will-help">Service objects in Rails will help you design clean and maintainable code. Here's how.</a></li>
+<li><a href="https://blog.pivotal.io/pivotal-labs/labs/object-oriented-rails-writing-better-controllers">Object Oriented Rails – Writing better controllers - Pivotal</a></li>
+</ul></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2018-02-27</span>
+        <span title="last modification date" class="post-info">2018-02-27</span>
+        <span title="tags" class="post-info"><a href="/tags/rails/">Rails</a>, <a href="/tags/service-object/">Service Object</a>, <a href="/tags/refactor/">Refactor</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2018/02/27/book-review-fearless-rails-refactoring";
+       var disqus_url = "http://dsdshcym.github.io/blog/2018/02/27/book-review-fearless-rails-refactoring";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
