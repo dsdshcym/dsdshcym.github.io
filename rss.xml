@@ -4,41 +4,117 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 05 Mar 2018 12:32:15 CST</pubDate>
-    <lastBuildDate>Mon, 05 Mar 2018 12:32:15 CST</lastBuildDate>
+    <pubDate>Mon, 05 Mar 2018 16:25:08 CST</pubDate>
+    <lastBuildDate>Mon, 05 Mar 2018 16:25:08 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>主观上填充不了焦灼的饥饿感</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/05/主观上填充不了焦灼的饥饿感</link>
+      <title>Use prettify-symbols-mode to enable Iosevka ligatures for GNU Emacs</title>
+      <link>http://dsdshcym.github.io/blog/2018/03/05/use_prettify-symbols-mode_to_enable_iosevka_ligatures_for_gnu_emacs</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>主观上填充不了焦灼的饥饿感</h1>
-            <blockquote>
-<p>
-没法静下心来吸收东西，有一种需要狼吞虎咽、囫囵吞枣来填满的焦虑。
-</p>
-</blockquote>
-<p>
--- from <a href="http://hardimage.pro/57">硬影像 Episode 57: 妖猫传：主观上填充不了焦灼的饥饿感</a>
-</p>
-
-<p>
-不知道是用 Org-Mode 践行 GTD 的 Side Effect 还是功利心比较重的缘故，我现在做事情时能切实地感受到这种「没法静下心来吸收东西」的焦虑感。
-</p>
-
-<p>
-比如：
+            <h1>Use prettify-symbols-mode to enable Iosevka ligatures for GNU Emacs</h1>
+            <p>
+Recently, I switched back to GNU Emacs from emacs-mac-port<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> for better
+performance. And there are 3 things that are missing from GNU Emacs
+but are supported by emacs-mac-port:
 </p>
 <ol class="org-ol">
-<li>在 The Legend of Zelda: Breath of the Wild 里探索的时候有一种查攻略，快点看完剧情的冲动，需要压制一下才能继续自己探索。</li>
-<li>看电影、看书都想要学到些什么，不然就觉得有点浪费时间。</li>
+<li>Font Ligatures</li>
+<li>Emoji support</li>
+<li><code>org-protocol://</code>, <code>mailto://</code> link handling</li>
 </ol>
 
+<p>
+This post is a summary for the way I used to enable font ligatures for
+GNU Emacs, based on the <a href="https://gist.github.com/mrkgnao/49c7480e1df42405a36b7ab09fe87f3d">scripts</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> provided by @mrkgnao.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Install haskell if you haven't done it.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">brew cask install haskell-platform
+</pre>
+</div></li>
+<li><p>
+Run haskell repl
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">ghci
+</pre>
+</div></li>
+<li><p>
+Generate <code>parameters.toml</code> and <code>prettify-symbols-alist</code> for latter
+Emacs configurations
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell">:load IosevkaConfigGen
+toToml
+toElisp
+</pre>
+</div></li>
+<li>Get/Clone Iosevka<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> source code</li>
+<li>Append the contents in <code>parameters.toml</code> to <code>Iosevka/parameters.toml</code></li>
+<li><p>
+Install Iosevka's dependencies
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">brew install nodejs ttfautohint otfcc-mac64
+</pre>
+</div></li>
+<li><p>
+Build custom Iosevka
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">npm install
+make custom-config
+make custom
+</pre>
+</div></li>
+<li>Set <code>prettify-symbols-alist</code> in your Emacs init files</li>
+<li><p>
+Enable <code>prettify-symbols-mode</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq prettify-symbols-unprettify-at-point t)
+(global-prettify-symbols-mode +1)
+</pre>
+</div></li>
+</ol>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+For the way to enable font ligatures for emacs-mac-port, you
+can check this post: <a href="http://dsdshcym.github.io/blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port/">Enabling Font Ligatures in emacs-mac-port -
+dsdshome</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://gist.github.com/mrkgnao/49c7480e1df42405a36b7ab09fe87f3d">Render Iosevka ligatures to Private Use Area glyphs, for Emacs</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/be5invis/Iosevka">be5invis/Iosevka: Slender typeface for code, from code.</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-03-05</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/03/05/use_prettify-symbols-mode_to_enable_iosevka_ligatures_for_gnu_emacs</guid>
+    </item>
+    <item>
+      <title>主观上填充不了焦灼的饥饿感</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/05/主观上填充不了焦灼的饥饿感</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-03-05</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/05/主观上填充不了焦灼的饥饿感</guid>
     </item>
@@ -97,13 +173,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2018-02-11</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/02/11/clippings-from-fearless-rails-refactoring</guid>
-    </item>
-    <item>
-      <title>Clippings from Smalltalk Best Practice Patterns</title>
-      <link>http://dsdshcym.github.io/clipping/2018/02/10/clippings-from-smalltalk-best-practice-patterns</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-02-10</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/02/10/clippings-from-smalltalk-best-practice-patterns</guid>
     </item>
   </channel>
 </rss>
