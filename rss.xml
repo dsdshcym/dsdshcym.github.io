@@ -4,151 +4,91 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 08 Mar 2018 18:32:46 CST</pubDate>
-    <lastBuildDate>Thu, 08 Mar 2018 18:32:46 CST</lastBuildDate>
+    <pubDate>Thu, 15 Mar 2018 15:50:17 CST</pubDate>
+    <lastBuildDate>Thu, 15 Mar 2018 15:50:17 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Design Tests to Fail</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</link>
+      <title>Reason is the only thing that&#39;s important</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Design Tests to Fail</h1>
+            <h1>Reason is the only thing that&#39;s important</h1>
             <blockquote>
-<p>
-Tests are supposed to fail.
-</p>
-
-<p>
-If a test never, ever fails in the thousands of times that you run it,
-that test has told you effectively nothing.
-</p>
-</blockquote>
-<p>
--- from <a href="http://blog.testdouble.com/posts/2018-03-06-please-dont-mock-me">Test Double - Our Thinking - Please don't mock me</a>
-</p>
-
-<p>
-This statement is very counterintuitive but I think it totally makes
-sense.
-</p>
-<ol class="org-ol">
-<li>If the test's purpose is to prevent the code to do the wrong thing
-(regression test), it is supposed to fail when the code is doing
-the wrong thing. (If it does not fail, then it's a false positive
-test.)</li>
-<li>If the test's purpose is to drive your design, it's supposed to
-fail before you write your code and guide you through the whole
-development cycle.</li>
-</ol>
-
-<p>
-In either of these two cases, we should both <b>design our failure
-messages well</b>, so that the message can guide us:
-</p>
-<ol class="org-ol">
-<li>To find the defect faster.</li>
-<li>To decide what to write next faster.</li>
-</ol>
-
-<div id="outline-container-orge134c73" class="outline-2">
-<h2 id="orge134c73">Notes from that talk</h2>
-<div class="outline-text-2" id="text-orge134c73">
 <ul class="org-ul">
-<li>9 abuses of mocks
-<ol class="org-ol">
-<li><b>Design tests to fail</b>
+<li>Reasons are always important
 <ul class="org-ul">
-<li>Don't fake parts of the thing being tested</li>
-</ul></li>
-<li><p>
-Realistic vs Mockist
-</p>
-<blockquote>
-<p>
-Instead of treating 'realness' as a virtue to be maximized, we
-should clarify what <b>our test is trying to prove</b> and then use all
-of our tools, mocks included, to ensure we have sufficient
-experimental control
-</p>
-</blockquote></li>
-<li><b>Hard to mock code is hard to use code</b> -&gt; Wrap 3rd party code</li>
-<li><b>Tests are not going to make change safe</b>
-<ul class="org-ul">
-<li>Purposes of tests
-<dl class="org-dl">
-<dt>Test logic functions (pure functions) without mocked dependencies</dt><dd>test specifies logic rules</dd>
-<dt>Test with mocked dependencies</dt><dd>test specifies relationships</dd>
-</dl></li>
-<li>Mixed levels of abstraction are bad -&gt; <b>Functions should do or
-delegate, never both</b></li>
-</ul></li>
-<li>Don't mock intermediate data providers (when there are many layers)
-<ul class="org-ul">
-<li>Mock direct dependencies in isolated unit tests</li>
-<li>Mock external system (be as real as possible) in regression tests</li>
-</ul></li>
-<li><b>If isolated unit tests won't inform your design, don't bother with
-them</b>
-<ul class="org-ul">
-<li>Mock dependencies, but pass real values</li>
-<li>Don't write unit test for a system you know has design problems
-<ul class="org-ul">
-<li>If you know it has design problems, what can unit test tell you</li>
-</ul></li>
-<li>Write integration/feature tests for the safety net</li>
-</ul></li>
-<li><b>Layering != Abstraction</b>
-<ul class="org-ul">
-<li>Make <b>meaningfully</b> small things</li>
-</ul></li>
-<li>Tools save time by reducing our thoughts and actions, but <b>beware
-when tools reduce necessary thoughts</b>
-<ul class="org-ul">
-<li>Many users abuse snapshot tests</li>
-<li>Being able to verify calls may discourage pure functions
-<ul class="org-ul">
-<li><b>Only verify calls to the outside world</b></li>
-</ul></li>
-</ul></li>
-<li>Don't neglect tests' design feedback</li>
-<li>Mocks are there for giving you design feedback</li>
-<li>Hard to test code is hard to use code</li>
-</ol></li>
-<li><b>The only good way to of mocks</b>
-<ul class="org-ul">
-<li>Growing Object-Oriented Software Guided by Tests
-<ul class="org-ul">
-<li>Ease</li>
-<li>Confidence</li>
-<li>Doubt</li>
-</ul></li>
-<li>Outside-in Steps
-<ol class="org-ol">
-<li>Write the code you wish you had (in your tests)
-<ol class="org-ol">
-<li>Design messages to guide your actions</li>
-</ol></li>
-<li>Follow the errors</li>
-</ol></li>
-<li>Benefits
-<ol class="org-ol">
-<li><b>Reliable incremental progress</b></li>
-<li><b>Single-responsibility units</b></li>
-<li><b>Intention-revealing names</b></li>
-<li><b>Discoverable organization</b></li>
-<li><b>Separate values and logic</b></li>
-<li><b>Mostly sync pure functions</b></li>
-</ol></li>
+<li>Git commits (reasons for code changing)</li>
+<li>Business reasons</li>
+<li>Infrastructure reasons</li>
 </ul></li>
 </ul>
-</div>
-</div>
+</blockquote>
+<p>
+-- from <a href="https://player.fm/1lLXBP">254: Deploying Changelog.com with Gerhard Lazu by The Changelog</a>
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>So many technologies only presented just the how, but not the why
+<ul class="org-ul">
+<li>So that people are hard to see why they choose this solution over
+another one</li>
+<li>"Why this concept makes sense?"</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://changelog.com/podcast/286">The Changelog #286: JavaScript sprinkles in Basecamp turned Stimulus - News and podcasts for developers - Changelog</a>
+</p>
+
+<p>
+This is an important lesson I learned from my several years of product
+making experiences:
+</p>
+
+<p>
+<b>The reason behind a change is more important than this change itself</b>.
+</p>
+<ul class="org-ul">
+<li>Thinking about <i>Why do I make this code change?</i> guides me to write
+better commit messages
+<ol class="org-ol">
+<li>What issue led to this change?
+<ul class="org-ul">
+<li>Preferably attached with a GitHub/GitLab issue link or
+reference</li>
+</ul></li>
+<li>Why this change can fix this issue?
+<ul class="org-ul">
+<li>Preferably attached with a StackOverflow link or other
+references</li>
+</ul></li>
+<li>What's the reason behind this refactoring?
+<ul class="org-ul">
+<li>Preferably attached with a comparison between the code before
+this refactoring and after</li>
+</ul></li>
+</ol></li>
+<li>Thinking about <i>Why do I make this deployment process change?</i>
+forces me to follow <b>Infrastructure as code</b> principle
+<ul class="org-ul">
+<li>So that the infrastructure of a project can be versioned and
+reasoned about as our code</li>
+</ul></li>
+</ul>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-03-15</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</guid>
+    </item>
+    <item>
+      <title>Design Tests to Fail</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-03-08</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</guid>
     </item>
@@ -207,13 +147,6 @@ when tools reduce necessary thoughts</b>
       <description><![CDATA[]]></description>
       <pubDate>2018-02-21</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</guid>
-    </item>
-    <item>
-      <title>My 2017 Review</title>
-      <link>http://dsdshcym.github.io/blog/2018/02/17/my-2017-review</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-02-19</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/02/17/my-2017-review</guid>
     </item>
   </channel>
 </rss>
