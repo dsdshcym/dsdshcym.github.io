@@ -4,84 +4,81 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 15 Mar 2018 15:50:17 CST</pubDate>
-    <lastBuildDate>Thu, 15 Mar 2018 15:50:17 CST</lastBuildDate>
+    <pubDate>Wed, 21 Mar 2018 15:26:26 CST</pubDate>
+    <lastBuildDate>Wed, 21 Mar 2018 15:26:26 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Reason is the only thing that&#39;s important</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</link>
+      <title>Elixir/Erlang provide a great way to develop incrementally</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Reason is the only thing that&#39;s important</h1>
+            <h1>Elixir/Erlang provide a great way to develop incrementally</h1>
             <blockquote>
 <ul class="org-ul">
-<li>Reasons are always important
+<li>BEAM excels due the fact that it offers the foundational concepts
+needed for any server-side system, baked directly into the runtime
 <ul class="org-ul">
-<li>Git commits (reasons for code changing)</li>
-<li>Business reasons</li>
-<li>Infrastructure reasons</li>
+<li>in general with a BEAM powered solution there's less need to step
+outside the main language and run multiple OS processes</li>
 </ul></li>
+<li>BEAM offers a proper foundation for building arbitrary complex
+system with the least amount of technical complexity.</li>
+<li>Elixir is a great tool which allows you to start simple, move
+forward at a steady pace, and have the technology which can take you
+a very long way and help you deal with complex problems at a very
+large scale, without forcing you to step outside and use a bunch of
+3rd party products, but still allowing you to interact with such
+tools and even write parts of your system in other languages.</li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://player.fm/1lLXBP">254: Deploying Changelog.com with Gerhard Lazu by The Changelog</a>
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>So many technologies only presented just the how, but not the why
-<ul class="org-ul">
-<li>So that people are hard to see why they choose this solution over
-another one</li>
-<li>"Why this concept makes sense?"</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://changelog.com/podcast/286">The Changelog #286: JavaScript sprinkles in Basecamp turned Stimulus - News and podcasts for developers - Changelog</a>
+-- from <a href="https://www.reddit.com/r/elixir/comments/84167c/is_elixir_really_worth_it/dvmcp4o/">sasajuric comments on Is Elixir really worth it?</a> (You can also
+   watch <a href="https://www.youtube.com/watch?v=5SbWapbXhKo">ElixirDaze 2017- Solid Ground by Saša Juric - YouTube</a>)
 </p>
 
 <p>
-This is an important lesson I learned from my several years of product
-making experiences:
+This is one of the main reasons why I believe Elixir is a great
+language for web development.
 </p>
 
 <p>
-<b>The reason behind a change is more important than this change itself</b>.
+It allows developers to
 </p>
-<ul class="org-ul">
-<li>Thinking about <i>Why do I make this code change?</i> guides me to write
-better commit messages
 <ol class="org-ol">
-<li>What issue led to this change?
-<ul class="org-ul">
-<li>Preferably attached with a GitHub/GitLab issue link or
-reference</li>
-</ul></li>
-<li>Why this change can fix this issue?
-<ul class="org-ul">
-<li>Preferably attached with a StackOverflow link or other
-references</li>
-</ul></li>
-<li>What's the reason behind this refactoring?
-<ul class="org-ul">
-<li>Preferably attached with a comparison between the code before
-this refactoring and after</li>
-</ul></li>
-</ol></li>
-<li>Thinking about <i>Why do I make this deployment process change?</i>
-forces me to follow <b>Infrastructure as code</b> principle
-<ul class="org-ul">
-<li>So that the infrastructure of a project can be versioned and
-reasoned about as our code</li>
-</ul></li>
-</ul>
+<li>start small, maybe just a simple Phoenix (Rails-like) monolith app.</li>
+<li>then extracting Contexts and exploring your app's boundaries (with
+enough guidance from the community)</li>
+<li>and if you have scaling problems, you can easily turn a Context
+into an OTP app and transform your monolith app to an umbrella app</li>
+<li>finally you can deploy this umbrella app to a distributed system so
+that they can scale differently.</li>
+</ol>
+
+<p>
+Note that these steps are all done in purely Elixir/Erlang, and they
+are just like some simple refactoring processes which can take you to
+a pretty decent result.
+</p>
+
+<p>
+You can obviously do all these things with Docker and all other
+languages, but it's much harder to extract logic from an old monolith
+app to a microservice (especially if you are rewriting it in another
+language).
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-03-21</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally</guid>
+    </item>
+    <item>
+      <title>Reason is the only thing that&#39;s important</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-03-15</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</guid>
     </item>
@@ -140,13 +137,6 @@ reasoned about as our code</li>
       <description><![CDATA[]]></description>
       <pubDate>2018-02-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/02/24/book-review-smalltalk-best-practice-patterns</guid>
-    </item>
-    <item>
-      <title>Globals don&#39;t need to be just variables</title>
-      <link>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-02-21</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/02/21/globals-don&#39;t-need-to-be-just-variables</guid>
     </item>
   </channel>
 </rss>
