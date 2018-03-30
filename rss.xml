@@ -4,333 +4,84 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 28 Mar 2018 15:59:24 CST</pubDate>
-    <lastBuildDate>Wed, 28 Mar 2018 15:59:24 CST</lastBuildDate>
+    <pubDate>Fri, 30 Mar 2018 12:03:04 CST</pubDate>
+    <lastBuildDate>Fri, 30 Mar 2018 12:03:04 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Learn Incremental Deployment the Hard Way</title>
-      <link>http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way</link>
+      <title>What Agility Really Means</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Learn Incremental Deployment the Hard Way</h1>
-            <p>
-I failed to deploy two big features in the past two years. I want to
-discuss why I failed them and what I think the best way to finish
-them.
-</p>
-
-<div id="outline-container-orgda22ff0" class="outline-2">
-<h2 id="orgda22ff0">2 Failed Features</h2>
-<div class="outline-text-2" id="text-orgda22ff0">
-</div>
-<div id="outline-container-org2583b60" class="outline-3">
-<h3 id="org2583b60"><a id="ID-F918D834-B7FA-42D4-8A9A-6453F52AC0A9"></a>Extract App Configurations to Environment Variables</h3>
-<div class="outline-text-3" id="text-org2583b60">
-</div>
-<div id="outline-container-org0d81684" class="outline-4">
-<h4 id="org0d81684">Context</h4>
-<div class="outline-text-4" id="text-org0d81684">
-<p>
-We have many app configurations (e.g. 3-rd party service
-configurations like AWS S3, app behavior configurations like host
-name). We were storing these configurations in files (like a normal
-Rails app would normally do). In the config files, we have different
-values for different environment (development/staging/production).
-</p>
-</div>
-</div>
-<div id="outline-container-org0b504c3" class="outline-4">
-<h4 id="org0b504c3">Reason for refactoring</h4>
-<div class="outline-text-4" id="text-org0b504c3">
-<p>
-And then we migrated to using Docker/Kubernetes for deployments. We
-want to setup more staging environments for different teams to test
-independent features.
-</p>
-</div>
-</div>
-<div id="outline-container-orgf832745" class="outline-4">
-<h4 id="orgf832745">The Plan</h4>
-<div class="outline-text-4" id="text-orgf832745">
-<p>
-So we decided to extract these configuration values into environment
-variables.
-</p>
-
-<p>
-I thought this was an easy change so I kept all the changes in a
-single feature branch. But it turned out to be a silly decision.
-</p>
-</div>
-</div>
-<div id="outline-container-org1c0a140" class="outline-4">
-<h4 id="org1c0a140">Issues</h4>
-<div class="outline-text-4" id="text-org1c0a140">
+            <h1>What Agility Really Means</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>What to Do
 <ol class="org-ol">
-<li>It's a ton of work to review. Although it's almost just replacing
-the hard-coded value with a call to <code>ENV</code> , it's the most hard to
-review type of merge requests because it needs reviewer to verify
-if there are any typos instead of logic defects.</li>
-<li>We don't have any tests coverage for most of the features. So
-it's harder to know if these actually working or not. We have to
-deploy them to staging or even production to know that.</li>
-<li>I took two-month vacation when I finished the code changes. But
-other developers didn't deploy these changes nor tested
-them. After I got back, I had to rebase the feature branch to
-catch the newest changes and deal with newly added
-configurations.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgb5eaeb3" class="outline-4">
-<h4 id="orgb5eaeb3">Results</h4>
-<div class="outline-text-4" id="text-orgb5eaeb3">
-<p>
-Of course things went completely wrong after I merged this branch
-and tested them on staging. Even the homepage had some issues. We
-had to go back and forth to find the issue and fix it, test it
-again. Finally, it took us almost 3 months to finish this
-refactoring.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orga616fc2" class="outline-3">
-<h3 id="orga616fc2">Merge an API service into the main App</h3>
-<div class="outline-text-3" id="text-orga616fc2">
-</div>
-<div id="outline-container-org874f004" class="outline-4">
-<h4 id="org874f004">Context</h4>
-<div class="outline-text-4" id="text-org874f004">
-<p>
-We have two apps running, one of them is the web interface (responds
-to HTML requests), another one is the API interface (responds to
-JSON requests).
-</p>
-</div>
-</div>
-<div id="outline-container-orgfeb99f5" class="outline-4">
-<h4 id="orgfeb99f5">Reason for refactoring</h4>
-<div class="outline-text-4" id="text-orgfeb99f5">
-<p>
-They share almost the same behaviour, except the view templates are
-different. Whenever we need to add or modify a piece of logic, we
-need to do it twice.
-</p>
-</div>
-</div>
-<div id="outline-container-orgda1be30" class="outline-4">
-<h4 id="orgda1be30">The Plan</h4>
-<div class="outline-text-4" id="text-orgda1be30">
-<p>
-So we decided to merge these two apps and leverage Rails' powerful
-<code>respond_to</code> method.
-</p>
-
-<p>
-Since I have the experience from last time (<a href="#org2583b60">Extract Feature Toggles
-to Environment Variables</a>), I decided to do it one controller by one
-controller.
-</p>
-
-<p>
-It started pretty well: I separated them into different branches, so
-that they can be tested and merged independently. I planed to test
-and deploy migrated APIs and migrate other APIs at the same time.
-</p>
-</div>
-</div>
-<div id="outline-container-org56ead95" class="outline-4">
-<h4 id="org56ead95">Issues</h4>
-<div class="outline-text-4" id="text-org56ead95">
-<p>
-But then bad things happened in our process:
-</p>
-<ol class="org-ol">
-<li>My manager took several weeks off for vacation. And I took
-several weeks off for vacation after he got back. We didn't
-merge/deploy any of these changes in these weeks.</li>
-<li>Another developer was still developing new features in the
-meantime. So that when I got back from the vacation, I had more
-things to sync.</li>
-<li>We didn't have any integration tests for our APIs. Which meant I
-also needed to add them when I migrated them into the web
-app. (But I was not sure if these tests were even correct at
-all.)</li>
-<li><p>
-The client (mobile apps) for this API is maintained by our
-clients in a different timezone (Yes, we are only responsible for
-the web part and the API). They didn't provide any test apps for
-us to test the migrated API until I migrated all of them.
-</p>
-
-<p>
-Of course things went wrong when all these bad things came together.
-</p>
-<ol class="org-ol">
-<li>Since my manager was off, I finished all the APIs without
-deploying anything. (Things started to go off the rails from this
-decision.)</li>
-<li>The client team moved really slow. I received the test app weeks
-after I finished the APIs. And another dev had already added new
-features to existing old APIs.</li>
-<li>In our old API App, we had handlers for both <code>.api</code> and <code>.json</code>
-formats. Since I didn't have any integration tests nor an test
-app. I had to re-implement both of them, which actually added
-some garbage code to our web app.</li>
-<li>The newly added tests didn't provide me with enough confidence so
-I had to test the new APIs with a staging app. But then the
-controllers had dependencies on each other due to the business
-logic on the client side. (I had to login to test all the other
-controllers.)</li>
-<li>Since the client team was in a different timezone, I had to wait
-for a day for their feedback on the API specifications, which
-made things much harder.</li>
+<li>Find out where you are</li>
+<li>Take a small step towards your goal</li>
+<li>Adjust your understanding based on what you learned</li>
+<li>Repeat</li>
 </ol></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org3ce0e85" class="outline-4">
-<h4 id="org3ce0e85">Results</h4>
-<div class="outline-text-4" id="text-org3ce0e85">
+<li>How to Do It
+<ul class="org-ul">
+<li>When faced with two of more alternatives that deliver roughly
+the same value, take the path that makes future change easier</li>
+</ul></li>
+</ul>
+</blockquote>
 <p>
-Finally, I had to merge all the changes into one branch and handed
-over the testing phase to my manage (who's in the same timezone as
-the client team), and let them test the new APIs. This means my plan
-to incrementally deploy these new APIs completely failed.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf489f55" class="outline-3">
-<h3 id="orgf489f55">Common Issues</h3>
-<div class="outline-text-3" id="text-orgf489f55">
-</div>
-<div id="outline-container-org9efd278" class="outline-4">
-<h4 id="org9efd278">No Tests</h4>
-<div class="outline-text-4" id="text-org9efd278">
-<p>
-These two refactorings both started without any integration test
-coverage. And testing them on staging/production took a lot of
-time. Without the confidence provided by integration tests, I was
-always afraid that some changes would break something when deploy.
-</p>
-</div>
-</div>
-<div id="outline-container-org292fe5e" class="outline-4">
-<h4 id="org292fe5e">Vocations</h4>
-<div class="outline-text-4" id="text-org292fe5e">
-<p>
-I both took vocation during the development of these two
-refactorings. I should've at least deployed what I'd finished and
-tested them out. So that the changes wouldn't get outdated after my
-vocation.
-</p>
-</div>
-</div>
-<div id="outline-container-org90b2971" class="outline-4">
-<h4 id="org90b2971">Huge Steps</h4>
-<div class="outline-text-4" id="text-org90b2971">
-<p>
-And the most important issue was that I wanted to take a huge step to
-finish these tasks once and for all, instead of breaking down them
-into smaller tasks (while these two tasks could be easily separated
-into sub-tasks by nature). This is against the spirit of Agile and
-kind of like waterfall.
+-- from <a href="https://www.youtube.com/watch?v=a-BOSpxYJ9M">GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas - YouTube</a>
+   and <a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html">Agile is Dead (Long Live Agility)</a>
 </p>
 
 <p>
-I ran into many unexpected problems when I deployed the huge
-changesets. I would gain more experiences dealing with these problems
-if I took smaller steps and tried to learn from each steps.
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org26e37ca" class="outline-2">
-<h2 id="org26e37ca">Incremental Deployment: the Only Way to Deploy Large Feature Changes</h2>
-<div class="outline-text-2" id="text-org26e37ca">
-<p>
-I think the only way to deploy this kind of large changesets is
-breaking them down into smaller changesets and deploy them
-incrementally. Even if I have a better test coverage, I would still
-choose this incremental strategy. I think <b>taking small steps</b> and
-<b>getting feedback from each step</b> are the core idea of Agile and
-Continuous Integration. If I always keep the system deployable and
-runnable, add small refactorings step by step, any huge tasks can be
-taken down easily.
+I think this can be the summary of my current understanding of
+Agility.
 </p>
 
 <p>
-I'll take the above two examples and explain how I would deploy them,
-and also give a template for this kind of changes.
+<b>Only by taking steps as small as possible, can we embrace the changes
+this interesting world presents us without losing any sanity.</b><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
-</div>
-<div id="outline-container-org21325b0" class="outline-3">
-<h3 id="org21325b0">Environment Variables</h3>
-<div class="outline-text-3" id="text-org21325b0">
-<ol class="org-ol">
-<li>Find out all the environment variables that need to be extracted</li>
-<li>Create a separate branch for one variable</li>
-<li>Extract it to environment variable and update the deploy settings</li>
-<li>Test and deploy it</li>
-<li>Repeat 2-4 for every variable</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orga936da2" class="outline-3">
-<h3 id="orga936da2">API rewriting</h3>
-<div class="outline-text-3" id="text-orga936da2">
-<ol class="org-ol">
-<li>List all the APIs that needs to be rewritten</li>
-<li>Figure out the dependencies between controllers to decide the order
-of controllers to be rewritten</li>
-<li>Create a separate branch for one controller (or even one controller
-action)</li>
-<li>Rewrite it in the web app and direct client to use this new
-endpoint<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
-<li>Test and deploy it</li>
-<li>Repeat 3-5 for every controller</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org8433e2c" class="outline-3">
-<h3 id="org8433e2c">Template</h3>
-<div class="outline-text-3" id="text-org8433e2c">
-<ol class="org-ol">
-<li>Break down the task and list every separate task that needs to be
-done</li>
-<li>Figure out the dependencies if there are any</li>
-<li>Start working on the first sub-task</li>
-<li>Test and deploy it</li>
-<li>Repeat it until all the tasks are done</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf480f37" class="outline-2">
-<h2 id="orgf480f37">Summary</h2>
-<div class="outline-text-2" id="text-orgf480f37">
+
 <p>
-The final template is super simple and I think this was what I was
-doing when I tried to implemented the mentioned refactorings. But due
-to many complex reasons, I was doing it completely wrong. I guess I
-just learned this idea of incremental deployment the hard way from
-these real cases.
+And this agility thinking can absolutely be adopted to all the things
+we are doing at work or even in our daily life:
 </p>
-</div>
-</div>
+<ol class="org-ol">
+<li>TDD</li>
+<li>Issue Solving</li>
+<li>Feature Management</li>
+<li>Company Management</li>
+<li>Skill Learning</li>
+</ol>
+
+<p>
+Also, this methodology reflects TDD perfectly:
+</p>
+<dl class="org-dl">
+<dt>Find out where you are</dt><dd>Write a failing test</dd>
+<dt>Take a small step towards your goal</dt><dd>Fix this failing test</dd>
+<dt>Adjust your understanding based on what you learned</dt><dd>Refactor or Start considering next test</dd>
+<dt>(no term)</dt><dd>Repeat</dd>
+</dl>
+
+<p>
+I first learned this idea from <a href="https://www.sandimetz.com/99bottles/">99 Bottles - Sandi Metz</a>. (You can also
+read my review of this book <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">here</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>)
+</p>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-Things get trickier when you have to deal with a separate team that
-controls the client app and calling different endpoints in the same
-app.
+<a href="http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way/">Learn Incremental Deployment the Hard Way - dsdshome</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP - dsdshome</a>
 </p></div></div>
 
 
@@ -339,6 +90,13 @@ app.
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-03-30</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</guid>
+    </item>
+    <item>
+      <title>Learn Incremental Deployment the Hard Way</title>
+      <link>http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-03-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way</guid>
     </item>
@@ -397,13 +155,6 @@ app.
       <description><![CDATA[]]></description>
       <pubDate>2018-03-05</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/05/主观上填充不了焦灼的饥饿感</guid>
-    </item>
-    <item>
-      <title>My org-refile workflow</title>
-      <link>http://dsdshcym.github.io/blog/2018/03/02/my-org-refile-workflow</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-02</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/03/02/my-org-refile-workflow</guid>
     </item>
   </channel>
 </rss>
