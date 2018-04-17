@@ -4,212 +4,59 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 10 Apr 2018 17:31:34 CST</pubDate>
-    <lastBuildDate>Tue, 10 Apr 2018 17:31:34 CST</lastBuildDate>
+    <pubDate>Tue, 17 Apr 2018 16:56:38 CST</pubDate>
+    <lastBuildDate>Tue, 17 Apr 2018 16:56:38 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: The Mythical Man-Month</title>
-      <link>http://dsdshcym.github.io/blog/2018/04/09/book-review-the-mythical-man-month</link>
+      <title>做产品要有探索精神</title>
+      <link>http://dsdshcym.github.io/clipping/2018/04/17/the-spirit-of-exploration</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: The Mythical Man-Month</h1>
+            <h1>做产品要有探索精神</h1>
             <blockquote>
-<p>
-It (<i>The Mythical Man-Month</i>) is the only book you need to read about
-software management.
-</p>
-</blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=-I_jE0l7sYQ&amp;feature=youtu.be">Joe Armstrong - Keynote: The Forgotten Ideas in Computer
-   Science - Code BEAM SF 2018 - YouTube</a>
-</p>
-
-<p>
-I truly believe this assertion after reading this book (of course, it
-might because of my small sample size of software management
-books).
-</p>
-
-<p>
-This book reflects my current thinking that Agility is all about
-gathering fast feedback<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> so well. And it amazed me from time to
-time when I read this book that this kind of thinking was already
-there 20, or even 40 years ago.
-</p>
-
-<p>
-What amazed me more is that after 40 years, we are struggling with
-some basic problems that could've been solved using the ideas from
-this book. I guess this fact is also a strong proof for <b>No Silver
-Bullets</b>, at least it shows that there is none yet.
-</p>
-
-<p>
-I'll write down some amazed moment down below:
-</p>
-<div id="outline-container-orgf2b7058" class="outline-2">
-<h2 id="orgf2b7058">Mockist style TDD</h2>
-<div class="outline-text-2" id="text-orgf2b7058">
-<p>
-In <a href="http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgeaf2d50">Chapter 13. The Whole and the Parts</a>, it mentioned <b>top-down design</b>
-and <b>dummy component</b>. They all remind me of the <b>mockist-style TDD</b>
-I'm current learning and using.
-</p>
+<ul class="org-ul">
+<li>中美员工的两个差异点
 <ol class="org-ol">
-<li>Top-down design is basically what mockist-style TDD is doing.</li>
-<li>Dummy component is what we call mocks/stubs/fakes today.</li>
-</ol>
-
-<p>
-It always surprises me how early this style of development were used
-in the history of software development. Even without tests as
-automated as today, people in the early ages were still trying their
-best to use the most tight feedback loop they could get.
-</p>
-
-<p>
-In <a href="http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d">Chapter 19. The Mythical Man-Month: after 20 years</a>, it also
-introduces <i>Building an end-to-end skeleton system</i>, which is
-basically what <i>Growing Object-Oriented Software Guided by
-Tests</i><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> is doing.
-</p>
-</div>
-</div>
-<div id="outline-container-orgb55e9a3" class="outline-2">
-<h2 id="orgb55e9a3">Readable Code</h2>
-<div class="outline-text-2" id="text-orgb55e9a3">
-<p>
-In <a href="http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgb12aa9d">Chapter 15. The Other Face</a>, it talked about the importance of
-readability<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>:
-</p>
-<blockquote>
-<p>
-<b>a written program has another face, that which tells its story to the
-human user.</b>
-</p>
-</blockquote>
-
-<p>
-I truly believe that <b>the only way to make our code maintainable is to
-write self-documenting programs</b> as described in this book.
-</p>
-<dl class="org-dl">
-<dt>Class/Function/Variable Naming</dt><dd>Use the parts of the program that have to be there anyway (symbol
-names), for programming language reasons, to carry as much of the
-documentation as possible</dd>
-<dt>Style matters<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></dt><dd>Use space and format as much as possible to improve
-readability and show subordination and nesting</dd>
-<dt>Comments</dt><dd>Insert the necessary prose documentation as paragraphs of
-comment</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-org43470e6" class="outline-2">
-<h2 id="org43470e6">Open Source v.s. Buy v.s. Build</h2>
-<div class="outline-text-2" id="text-org43470e6">
-<p>
-If there was anything close to a Silver Bullet, I guess that must be
-Open Source Software Movement<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>.
-</p>
-
-<p>
-With the rising of open source software hosting platform like GitHub,
-one can easily build its own software upon these countless open source
-libraries/frameworks without any cost.
-</p>
-
-<p>
-And one can continue get free security patches and performant
-improvements if he/she continues updating these dependencies.
-</p>
-
-<p>
-Indeed, Open Source made a great leap forward from buying software,
-but we are still facing the same issue as "buy v.s. build":
-<b>applicability</b>.
-</p>
-
-<p>
-It's still hard to find an off-the-shelf package to perform my own
-task and suit my own needs perfectly. (I'll talk more about this in a
-future post.) Because of this, I still cannot believe Open Source is
-the Silver Bullet.
-</p>
-</div>
-</div>
-<div id="outline-container-orgac1094b" class="outline-2">
-<h2 id="orgac1094b">Continuous Integration / Continuous Deployment (CI/CD)</h2>
-<div class="outline-text-2" id="text-orgac1094b">
-<p>
-In <a href="http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d">Chapter 19. The Mythical Man-Month: after 20 years</a>, this book shows
-how Microsoft did CI/CD in the early days. They called it "Build Every
-Night" Approach, which is basically what Continuous Integration /
-Continuous Deployment means.
-</p>
-
-<p>
-And as you might have known, we've learned a lot about this CI/CD
-practices in the last 20 years.
-</p>
-</div>
-</div>
-<div id="outline-container-orgbfaa47e" class="outline-2">
-<h2 id="orgbfaa47e">Summary</h2>
-<div class="outline-text-2" id="text-orgbfaa47e">
-<p>
-As it was said in <a href="http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d">Chapter 19. The Mythical Man-Month: after 20 years</a>:
-</p>
-<blockquote>
-<p>
-<b>Software engineering is merely immature as chemical engineering was
-in 1945</b>
-</p>
+<li>探索精神
+<ul class="org-ul">
+<li>国人对工作工具（如 Workday）不会自己探索学习，以更好地使用</li>
+<li>用户很懒，不想自己找信息</li>
+</ul></li>
+<li>男女平等（gender stereotyping）</li>
+</ol></li>
+</ul>
 </blockquote>
 <p>
-I think we as the whole software development community are still
-learning and gaining more experience in this area in 2018. And we've
-also improved a lot in the last 20 years.
+-- from <a href="http://www.uxcoffee.com/9cb18cf4">#44：Airbnb 进中国，不只是「汉化」这么简单（Airbnb China 设计经理 Vivian Wang - 下） - UX Coffee 设计咖</a>
 </p>
 
-<p>
-<b>The beauty of continuous learning and discovering in this immature
-industry is what intrigues me the most from this industry.</b>
+
+<ul class="org-ul">
+<li>Takeaways
+<ol class="org-ol">
+<li><p>
+作为 Developer, Designer, Maker 等角色，做产品时自己要具备足够的探索精神，Master your tools。
 </p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+<pre class="example">
+1. 折腾 Emacs 等编辑器
+2. 研究如何改善 Workflow 提高自己的效率
+</pre></li>
+<li>为用户做产品时可能需要更迁就客户，考虑到不同用户的特点，为自己的目标用户设计合适的探索难度。</li>
+</ol></li>
+</ul>
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means/">What Agility Really Means - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/">GOOS: Build a Faster Feedback Loop - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/">Write your code as if you're writing a letter - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters/">Code style consistency matters - dsdshome</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://www.cs.colostate.edu/~bieman/Pubs/Editorials/EditorialV14N4.pdf">Editorial: Free/Open Source Software, Silver Bullets, and
-Mythical Months.</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-04-17</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/04/17/the-spirit-of-exploration</guid>
+    </item>
+    <item>
+      <title>Book Review: The Mythical Man-Month</title>
+      <link>http://dsdshcym.github.io/blog/2018/04/09/book-review-the-mythical-man-month</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-04-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/04/09/book-review-the-mythical-man-month</guid>
     </item>
@@ -268,13 +115,6 @@ Mythical Months.</a>
       <description><![CDATA[]]></description>
       <pubDate>2018-03-06</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/03/06/book-review-extreme-programming-explained-embrace-change</guid>
-    </item>
-    <item>
-      <title>Use prettify-symbols-mode to enable Iosevka ligatures for GNU Emacs</title>
-      <link>http://dsdshcym.github.io/blog/2018/03/05/use_prettify-symbols-mode_to_enable_iosevka_ligatures_for_gnu_emacs</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-05</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/03/05/use_prettify-symbols-mode_to_enable_iosevka_ligatures_for_gnu_emacs</guid>
     </item>
   </channel>
 </rss>
