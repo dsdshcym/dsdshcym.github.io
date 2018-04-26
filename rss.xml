@@ -4,52 +4,96 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 17 Apr 2018 16:56:38 CST</pubDate>
-    <lastBuildDate>Tue, 17 Apr 2018 16:56:38 CST</lastBuildDate>
+    <pubDate>Thu, 26 Apr 2018 12:14:38 CST</pubDate>
+    <lastBuildDate>Thu, 26 Apr 2018 12:14:38 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>做产品要有探索精神</title>
-      <link>http://dsdshcym.github.io/clipping/2018/04/17/the-spirit-of-exploration</link>
+      <title>FP and OOP are compatible (and should be)</title>
+      <link>http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>做产品要有探索精神</h1>
+            <h1>FP and OOP are compatible (and should be)</h1>
             <blockquote>
+<p>
+Both OOP and functional computation can be completely compatible
+(and should be!). There is no reason to munge state in objects, and
+there is no reason to invent "monads" in FP. We just have to realize
+that "computers are simulators" and figure out what to simulate.
+</p>
+</blockquote>
+<p>
+-- from <a href="https://www.quora.com/Why-is-functional-programming-seen-as-the-opposite-of-OOP-rather-than-an-addition-to-it/answer/Alan-Kay-11">Alan Kay's answer to Why is functional programming seen as the
+   opposite of OOP rather than an addition to it? - Quora</a>
+</p>
+
+<blockquote>
 <ul class="org-ul">
-<li>中美员工的两个差异点
-<ol class="org-ol">
-<li>探索精神
-<ul class="org-ul">
-<li>国人对工作工具（如 Workday）不会自己探索学习，以更好地使用</li>
-<li>用户很懒，不想自己找信息</li>
-</ul></li>
-<li>男女平等（gender stereotyping）</li>
-</ol></li>
+<li><b>FP and OO are completely orthogonal</b> (based on their reductive
+definitions)
+<dl class="org-dl">
+<dt>OO</dt><dd>The technique of using dynamic polymorphism to call
+functions without the source code of the caller depending
+upon the source code of the callee.</dd>
+<dt>FP</dt><dd>Referential Transparency – no reassignment of values.</dd>
+</dl></li>
+<li><b>Orthogonality does not imply <i>mutual exclusion</i> (just ask James
+Clerk Maxwell)</b></li>
+<li>It's desirable to <b>build a system that employs both <i>dynamic
+polymorphism</i> and <i>referential transparency</i>.</b>
+<dl class="org-dl">
+<dt>Dynamic polymorphism</dt><dd>strongly decoupled</dd>
+<dt>Referential transparency</dt><dd>predictable</dd>
+</dl></li>
+<li>A system that is built on both OO and FP principles will maximize
+flexibility, maintainability, testability, simplicity, and
+robustness.</li>
 </ul>
 </blockquote>
 <p>
--- from <a href="http://www.uxcoffee.com/9cb18cf4">#44：Airbnb 进中国，不只是「汉化」这么简单（Airbnb China 设计经理 Vivian Wang - 下） - UX Coffee 设计咖</a>
+-- from <a href="http://blog.cleancoder.com/uncle-bob/2018/04/13/FPvsOO.html">FP vs. OO - Clean Coder Blog</a>
 </p>
 
+<p>
+I've started trying to write more functional objects after learned
+about Imperative Shell around the Functional Core<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. And I can
+really feel the benefits of predictable code brought by the functional
+paradigm to my Ruby (Object-Oriented) code.
+</p>
 
-<ul class="org-ul">
-<li>Takeaways
+<p>
+And I'm also switching to Elixir as my main language these days. One
+of the reasons behind this decision is that I think Elixir is a
+language that can provide both benefits of OOP and FP.
+</p>
+
 <ol class="org-ol">
-<li><p>
-作为 Developer, Designer, Maker 等角色，做产品时自己要具备足够的探索精神，Master your tools。
-</p>
-<pre class="example">
-1. 折腾 Emacs 等编辑器
-2. 研究如何改善 Workflow 提高自己的效率
-</pre></li>
-<li>为用户做产品时可能需要更迁就客户，考虑到不同用户的特点，为自己的目标用户设计合适的探索难度。</li>
-</ol></li>
-</ul>
+<li>Elixir is a functional programming language in its heart.</li>
+<li>But it can still achieve polymorphism by writing Protocols or
+using Pattern Matching.</li>
+</ol>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core/">Imperative Shell around the Functional Core - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-04-26</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be</guid>
+    </item>
+    <item>
+      <title>做产品要有探索精神</title>
+      <link>http://dsdshcym.github.io/clipping/2018/04/17/the-spirit-of-exploration</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-04-17</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/04/17/the-spirit-of-exploration</guid>
     </item>
@@ -108,13 +152,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2018-03-08</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</guid>
-    </item>
-    <item>
-      <title>Book Review: Extreme Programming Explained: Embrace Change</title>
-      <link>http://dsdshcym.github.io/blog/2018/03/06/book-review-extreme-programming-explained-embrace-change</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-06</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2018/03/06/book-review-extreme-programming-explained-embrace-change</guid>
     </item>
   </channel>
 </rss>
