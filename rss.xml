@@ -4,81 +4,71 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 26 Apr 2018 12:14:38 CST</pubDate>
-    <lastBuildDate>Thu, 26 Apr 2018 12:14:38 CST</lastBuildDate>
+    <pubDate>Mon, 28 May 2018 20:55:14 CST</pubDate>
+    <lastBuildDate>Mon, 28 May 2018 20:55:14 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>FP and OOP are compatible (and should be)</title>
-      <link>http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be</link>
+      <title>Conceptual Compression</title>
+      <link>http://dsdshcym.github.io/clipping/2018/05/28/conceptual-compression</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>FP and OOP are compatible (and should be)</h1>
+            <h1>Conceptual Compression</h1>
             <blockquote>
 <p>
-Both OOP and functional computation can be completely compatible
-(and should be!). There is no reason to munge state in objects, and
-there is no reason to invent "monads" in FP. We just have to realize
-that "computers are simulators" and figure out what to simulate.
+The more effectively we compress the concepts of yesterday, the
+lower the barriers to entry become.
 </p>
 </blockquote>
 <p>
--- from <a href="https://www.quora.com/Why-is-functional-programming-seen-as-the-opposite-of-OOP-rather-than-an-addition-to-it/answer/Alan-Kay-11">Alan Kay's answer to Why is functional programming seen as the
-   opposite of OOP rather than an addition to it? - Quora</a>
+-- from <a href="../../../Org/rss_feed.html#ID-4DB5015D-3F41-469B-A24A-0EF591B92594">Conceptual compression means beginners don’t need to know SQL
+   — hallelujah!</a>
+</p>
+
+<p>
+DHH raised this "new" idea of conceptual compression on this year's
+RailsConf<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+I quoted "new" because, to me, conceptual compression is just a fancy
+name for abstractions.
+</p>
+
+<p>
+I always believe that extracting abstractions is what we do as
+software developers.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> Like DHH said, abstractions help us
+compress things we ought to know, so that we can have more free mind
+asset to think about things that's more important for us now. This is
+exactly how we build large projects:
 </p>
 
 <blockquote>
 <ul class="org-ul">
-<li><b>FP and OO are completely orthogonal</b> (based on their reductive
-definitions)
-<dl class="org-dl">
-<dt>OO</dt><dd>The technique of using dynamic polymorphism to call
-functions without the source code of the caller depending
-upon the source code of the callee.</dd>
-<dt>FP</dt><dd>Referential Transparency – no reassignment of values.</dd>
-</dl></li>
-<li><b>Orthogonality does not imply <i>mutual exclusion</i> (just ask James
-Clerk Maxwell)</b></li>
-<li>It's desirable to <b>build a system that employs both <i>dynamic
-polymorphism</i> and <i>referential transparency</i>.</b>
-<dl class="org-dl">
-<dt>Dynamic polymorphism</dt><dd>strongly decoupled</dd>
-<dt>Referential transparency</dt><dd>predictable</dd>
-</dl></li>
-<li>A system that is built on both OO and FP principles will maximize
-flexibility, maintainability, testability, simplicity, and
-robustness.</li>
+<li>We've always known how to do big projects.
+<ul class="org-ul">
+<li>You do big projects by <b>breaking them up into a bunch of small
+projects</b>.</li>
+<li>Agile solved the small part of that.</li>
+<li>Agile really has nothing to do with the big part.</li>
+</ul></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="http://blog.cleancoder.com/uncle-bob/2018/04/13/FPvsOO.html">FP vs. OO - Clean Coder Blog</a>
+-- from <a href="http://blog.cleancoder.com/uncle-bob/2018/04/02/InTheLarge.html">(Agile) In The Large - Clean Coder Blog</a>
 </p>
-
-<p>
-I've started trying to write more functional objects after learned
-about Imperative Shell around the Functional Core<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. And I can
-really feel the benefits of predictable code brought by the functional
-paradigm to my Ruby (Object-Oriented) code.
-</p>
-
-<p>
-And I'm also switching to Elixir as my main language these days. One
-of the reasons behind this decision is that I think Elixir is a
-language that can provide both benefits of OOP and FP.
-</p>
-
-<ol class="org-ol">
-<li>Elixir is a functional programming language in its heart.</li>
-<li>But it can still achieve polymorphism by writing Protocols or
-using Pattern Matching.</li>
-</ol>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core/">Imperative Shell around the Functional Core - dsdshome</a>
+<a href="https://www.youtube.com/watch?v=zKyv-IGvgGE&amp;feature=youtu.be">RailsConf 2018: Opening Keynote: FIXME by David Heinemeier
+Hansson - YouTube</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/#outline-container-orgf1a9ec2">我看程序语言的历史、现在与将来 - dsdshome</a>
 </p></div></div>
 
 
@@ -87,6 +77,13 @@ using Pattern Matching.</li>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-05-28</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/05/28/conceptual-compression</guid>
+    </item>
+    <item>
+      <title>FP and OOP are compatible (and should be)</title>
+      <link>http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-04-26</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be</guid>
     </item>
@@ -145,13 +142,6 @@ using Pattern Matching.</li>
       <description><![CDATA[]]></description>
       <pubDate>2018-03-15</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/15/reason-is-the-only-thing-thats-important</guid>
-    </item>
-    <item>
-      <title>Design Tests to Fail</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/03/08/design-tests-to-fail</guid>
     </item>
   </channel>
 </rss>
