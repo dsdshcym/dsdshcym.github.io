@@ -4,98 +4,52 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 07 Jun 2018 21:23:50 CST</pubDate>
-    <lastBuildDate>Thu, 07 Jun 2018 21:23:50 CST</lastBuildDate>
+    <pubDate>Thu, 14 Jun 2018 22:24:55 CST</pubDate>
+    <lastBuildDate>Thu, 14 Jun 2018 22:24:55 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Livable and Disposable Code</title>
-      <link>http://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code</link>
+      <title>Elixir Pattern Matching on Struct Module</title>
+      <link>http://dsdshcym.github.io/blog/2018/06/14/elixir_pattern_matching_on_struct_module</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Livable and Disposable Code</h1>
-            <blockquote>
-<ul class="org-ul">
-<li>3 basic principles make good software:
-<ol class="org-ol">
-<li>Reusability</li>
-<li>Composability</li>
-<li>Disposability</li>
-</ol></li>
-<li>Building truly disposable software makes it comfortable for
-engineers to work on the project overtime.
-<ul class="org-ul">
-<li>Building softwares isn't just about making sure that your code base
-passes some unit or integration test but it is also about how
-comfortable engineers would feel while working on the same software
-overtime.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://kunyora.github.io/kunyora/blog/2018/05/05/rethinking-disposability.html">Rethinking - Disposability · Kunyora</a>
+            <h1>Elixir Pattern Matching on Struct Module</h1>
+            <p>
+TIL:
 </p>
 
 <p>
-This idea of <i>disposable code</i> reminded me of
+Elixir's Pattern Matching can also match on the Struct Module:
 </p>
+<div class="org-src-container">
+<pre class="src src-elixir">%struct_module{} = %User{}
 
-<ol class="org-ol">
-<li><p>
-The idea of <i>livable code</i>:
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>Our software is a place for us to live -&gt; it needs to be livable
-<ul class="org-ul">
-<li>Livable
-<ul class="org-ul">
-<li>We can do what we want easily</li>
-<li>Livable means differently to different people</li>
-<li>Livable is an on-going process</li>
-</ul></li>
-<li>Things (House/codebase) get messy one small decision at a time</li>
-<li>Hoarder
-<ul class="org-ul">
-<li>Hoarders whose house got refurnished got back to a hoarded house
-every time</li>
-<li>It's the habits that decide if we can get to a clean codebase -&gt;
-everyone should do every day cleanup</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=lI77oMKr5EY">RailsConf 2018: Keynote - Livable Code by Sarah Mei - YouTube</a>
-</p></li>
-
-<li><p>
-The Boy Scout Rule
-</p>
-
-<blockquote>
-<p>
-Leave the campground cleaner than you found it.
-</p>
-</blockquote>
-<p>
--- from <a href="http://www.informit.com/articles/article.aspx?p=1235624&amp;seqNum=6">The Boy Scout Rule - What Is Clean Code? - InformIT</a>
-</p></li>
-</ol>
+struct_module # =&gt; User
+</pre>
+</div>
 
 <p>
-I think the idea of disposable code and livable code is the perfect
-explanation of the boy scout rule. If we can make our code base
-cleaner everyday (like what <a href="https://www.codequalitychallenge.com/">The 30-Day Code Quality Challenge</a> did),
-our code base will definitely become a place everyone feels
-comfortable to work on.
+Elixir just keeps doing these things that blows my mind. This kind of
+features is completely surprising when I discovered them but after
+some thoughts, it completely makes sense.
+</p>
+
+<p>
+I guess this is why I love Elixir and its Pattern Matching feature so
+much.
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-06-14</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/06/14/elixir_pattern_matching_on_struct_module</guid>
+    </item>
+    <item>
+      <title>Livable and Disposable Code</title>
+      <link>http://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-06-07</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code</guid>
     </item>
@@ -154,13 +108,6 @@ comfortable to work on.
       <description><![CDATA[]]></description>
       <pubDate>2018-03-24</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month</guid>
-    </item>
-    <item>
-      <title>Elixir/Erlang provide a great way to develop incrementally</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-21</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally</guid>
     </item>
   </channel>
 </rss>
