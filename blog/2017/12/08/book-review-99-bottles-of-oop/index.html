@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -52,21 +56,21 @@ I bought <a href="https://www.sandimetz.com/99bottles/">99 Bottles of OOP</a> (9
 started (40% off until Dec 13th). Buy it now and I promise you that
 you won't regret it.
 </p>
-<div id="outline-container-orgc15dacd" class="outline-2">
-<h2 id="orgc15dacd">TL;DR</h2>
-<div class="outline-text-2" id="text-orgc15dacd">
+<div id="outline-container-org7bca411" class="outline-2">
+<h2 id="org7bca411">TL;DR</h2>
+<div class="outline-text-2" id="text-org7bca411">
 <p>
-This book taught me how to do <a href="#org6bfe969">step-by-step refactoring</a>.
+This book taught me how to do <a href="#org9b1dd67">step-by-step refactoring</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-orga7be3b8" class="outline-2">
-<h2 id="orga7be3b8">Connections with earlier books</h2>
-<div class="outline-text-2" id="text-orga7be3b8">
+<div id="outline-container-orged9bcdf" class="outline-2">
+<h2 id="orged9bcdf">Connections with earlier books</h2>
+<div class="outline-text-2" id="text-orged9bcdf">
 </div>
-<div id="outline-container-org0602c9c" class="outline-3">
-<h3 id="org0602c9c"><a href="http://www.poodr.com/">Practical Object-Oriented Design in Ruby</a> (POODR)</h3>
-<div class="outline-text-3" id="text-org0602c9c">
+<div id="outline-container-org1ac9b6b" class="outline-3">
+<h3 id="org1ac9b6b"><a href="http://www.poodr.com/">Practical Object-Oriented Design in Ruby</a> (POODR)</h3>
+<div class="outline-text-3" id="text-org1ac9b6b">
 <p>
 I wrote my review<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> for POODR several months ago and I said it was
 the best book about Object-Oriented Design. This comment may need to
@@ -99,9 +103,9 @@ by step, then finally get a well-designed application.
 </p>
 </div>
 </div>
-<div id="outline-container-org5bea3c3" class="outline-3">
-<h3 id="org5bea3c3"><a href="https://martinfowler.com/books/refactoring.html">Refactoring: Improving the Design of Existing Code</a></h3>
-<div class="outline-text-3" id="text-org5bea3c3">
+<div id="outline-container-orgcdc5d3b" class="outline-3">
+<h3 id="orgcdc5d3b"><a href="https://martinfowler.com/books/refactoring.html">Refactoring: Improving the Design of Existing Code</a></h3>
+<div class="outline-text-3" id="text-orgcdc5d3b">
 <p>
 (I also wrote my review for Refactoring<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>)
 </p>
@@ -134,9 +138,9 @@ my daily work.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd27cb80" class="outline-3">
-<h3 id="orgd27cb80"><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a></h3>
-<div class="outline-text-3" id="text-orgd27cb80">
+<div id="outline-container-org61f28d4" class="outline-3">
+<h3 id="org61f28d4"><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a></h3>
+<div class="outline-text-3" id="text-org61f28d4">
 <p>
 (I wrote my review for GOOS<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> as well)
 </p>
@@ -158,9 +162,9 @@ it shows me how to do TDD in Ruby correctly.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd2e56f7" class="outline-2">
-<h2 id="orgd2e56f7">Simplicity Matters</h2>
-<div class="outline-text-2" id="text-orgd2e56f7">
+<div id="outline-container-org2409c53" class="outline-2">
+<h2 id="org2409c53">Simplicity Matters</h2>
+<div class="outline-text-2" id="text-org2409c53">
 <p>
 First of all, 99 Bottles defines what is the best code:
 </p>
@@ -192,9 +196,9 @@ Green) to solve our current problem using TDD.
 Shameless Green in 30 mins)
 </p>
 </div>
-<div id="outline-container-orgb90293a" class="outline-3">
-<h3 id="orgb90293a">Test Driven Shameless Green</h3>
-<div class="outline-text-3" id="text-orgb90293a">
+<div id="outline-container-org1bf1145" class="outline-3">
+<h3 id="org1bf1145">Test Driven Shameless Green</h3>
+<div class="outline-text-3" id="text-org1bf1145">
 <p>
 So how to TDD the Shameless Green solution? Of course, we need to
 follow the red/green/refactor cycle.
@@ -230,9 +234,9 @@ The result we get would be both concrete enough and abstract enough.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcad1cb7" class="outline-2">
-<h2 id="orgcad1cb7">Make the change easy first</h2>
-<div class="outline-text-2" id="text-orgcad1cb7">
+<div id="outline-container-orgd15852c" class="outline-2">
+<h2 id="orgd15852c">Make the change easy first</h2>
+<div class="outline-text-2" id="text-orgd15852c">
 <p>
 Then comes the most important part of this book: How to embrace
 changes?
@@ -252,9 +256,9 @@ This is the exact strategy 99 bottles follows:
 </ol>
 </div>
 </div>
-<div id="outline-container-org6bfe969" class="outline-2">
-<h2 id="org6bfe969"><a id="ID-9C9E9765-E74E-4E4D-9D6D-EBA38DF94947"></a>Step-by-step Refactoring</h2>
-<div class="outline-text-2" id="text-org6bfe969">
+<div id="outline-container-org9b1dd67" class="outline-2">
+<h2 id="org9b1dd67"><a id="ID-9C9E9765-E74E-4E4D-9D6D-EBA38DF94947"></a>Step-by-step Refactoring</h2>
+<div class="outline-text-2" id="text-org9b1dd67">
 <p>
 But how to refactor the code? 99 Bottles shows some great examples on
 how to refactor our code confidently.
@@ -312,9 +316,9 @@ one step (by leveraging <code>git</code>).
 </p>
 </div>
 </div>
-<div id="outline-container-orga604471" class="outline-2">
-<h2 id="orga604471">Fix the easy problems first</h2>
-<div class="outline-text-2" id="text-orga604471">
+<div id="outline-container-org7133b4b" class="outline-2">
+<h2 id="org7133b4b">Fix the easy problems first</h2>
+<div class="outline-text-2" id="text-org7133b4b">
 <p>
 Another important lesson I learned from this book is to <b>focus on the
 easy problems first</b>.
@@ -337,9 +341,9 @@ appear by itself automatically.
 </p>
 </div>
 </div>
-<div id="outline-container-org3224716" class="outline-2">
-<h2 id="org3224716">Summary</h2>
-<div class="outline-text-2" id="text-org3224716">
+<div id="outline-container-orgb9abdd8" class="outline-2">
+<h2 id="orgb9abdd8">Summary</h2>
+<div class="outline-text-2" id="text-orgb9abdd8">
 <p>
 There are still many topics discussed in this book that I didn't
 mention in this post but they are all useful advice for developing

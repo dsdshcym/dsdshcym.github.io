@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -47,9 +51,9 @@
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
             <h1>Book Review: Crafting Rails 4 Applications</h1>
-            <div id="outline-container-org644fff9" class="outline-2">
-<h2 id="org644fff9">TL;DR</h2>
-<div class="outline-text-2" id="text-org644fff9">
+            <div id="outline-container-org67dd3dc" class="outline-2">
+<h2 id="org67dd3dc">TL;DR</h2>
+<div class="outline-text-2" id="text-org67dd3dc">
 <p>
 <i>Crafting Rails 4 Applications</i> is a great book to:
 </p>
@@ -64,9 +68,9 @@ application nowadays.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf4c4178" class="outline-2">
-<h2 id="orgf4c4178">Rails plugin techniques</h2>
-<div class="outline-text-2" id="text-orgf4c4178">
+<div id="outline-container-orgabbf0dd" class="outline-2">
+<h2 id="orgabbf0dd">Rails plugin techniques</h2>
+<div class="outline-text-2" id="text-orgabbf0dd">
 <p>
 In this book, José Valim introduced several techniques to write a Rails plugin:
 </p>
@@ -89,9 +93,9 @@ for parsing view templates</li>
 <li>Add a new I18n backend (to use Redis as the data store)</li>
 </ol>
 </div>
-<div id="outline-container-org9f75a17" class="outline-3">
-<h3 id="org9f75a17">What can we learn from them</h3>
-<div class="outline-text-3" id="text-org9f75a17">
+<div id="outline-container-orgbde9ef9" class="outline-3">
+<h3 id="orgbde9ef9">What can we learn from them</h3>
+<div class="outline-text-3" id="text-orgbde9ef9">
 <ol class="org-ol">
 <li><p>
 How to write a Gem works for Rails applications
@@ -129,9 +133,9 @@ problems by installing a gem</i> (which is quite controversial).
 </div>
 </div>
 </div>
-<div id="outline-container-org2105054" class="outline-2">
-<h2 id="org2105054">Tests are important, even for plugins</h2>
-<div class="outline-text-2" id="text-org2105054">
+<div id="outline-container-orgefb0132" class="outline-2">
+<h2 id="orgefb0132">Tests are important, even for plugins</h2>
+<div class="outline-text-2" id="text-orgefb0132">
 <p>
 Another thing that I found interesting was that José used TDD for all the
 plugins in this book.
@@ -144,9 +148,9 @@ this app, then you can write tests for this app to test your plugin's behaviors.
 </p>
 </div>
 </div>
-<div id="outline-container-orge19ce61" class="outline-2">
-<h2 id="orge19ce61">The history of responder (<code>respond_with</code>)</h2>
-<div class="outline-text-2" id="text-orge19ce61">
+<div id="outline-container-org6bb6050" class="outline-2">
+<h2 id="org6bb6050">The history of responder (<code>respond_with</code>)</h2>
+<div class="outline-text-2" id="text-org6bb6050">
 <p>
 When I started learning Rails, Rails 5 was already out. So, I was confused when
 I saw some calls to <code>respond_with</code> in some Rails 4 applications (since I could
@@ -179,9 +183,9 @@ need some <b>explicity</b> sometimes.
 </p>
 </div>
 </div>
-<div id="outline-container-orgfe0a6c9" class="outline-2">
-<h2 id="orgfe0a6c9">Things that remind me of Phoenix</h2>
-<div class="outline-text-2" id="text-orgfe0a6c9">
+<div id="outline-container-org1ab1c2a" class="outline-2">
+<h2 id="org1ab1c2a">Things that remind me of Phoenix</h2>
+<div class="outline-text-2" id="text-org1ab1c2a">
 <p>
 Since José is also the creator of Elixir and one of the maintainers of Phoenix,
 I found many ideas from this book that remind me of some similar ideas from
@@ -199,9 +203,9 @@ But it's still interesting to compare these similarities and see how they are
 useful in both worlds.
 </p>
 </div>
-<div id="outline-container-org4ae5a58" class="outline-3">
-<h3 id="org4ae5a58">Customizable Generators</h3>
-<div class="outline-text-3" id="text-org4ae5a58">
+<div id="outline-container-orga66a483" class="outline-3">
+<h3 id="orga66a483">Customizable Generators</h3>
+<div class="outline-text-3" id="text-orga66a483">
 <p>
 Phoenix also has the ability to customize the generators. Just create some
 templates files under the <code>priv/templates</code> directory and use the same folder
@@ -217,9 +221,9 @@ dependency (they have full control what will get generated and what won't).
 </p>
 </div>
 </div>
-<div id="outline-container-org508f964" class="outline-3">
-<h3 id="org508f964">Live-Reloading</h3>
-<div class="outline-text-3" id="text-org508f964">
+<div id="outline-container-orge55cf52" class="outline-3">
+<h3 id="orge55cf52">Live-Reloading</h3>
+<div class="outline-text-3" id="text-orge55cf52">
 <p>
 It's really interesting because when I read the chapter about assets
 live-reloading, I think this is the same idea behind Phoenix's assets live
@@ -244,9 +248,9 @@ from this book is that
 </ul>
 </div>
 </div>
-<div id="outline-container-org832ba57" class="outline-3">
-<h3 id="org832ba57">Rack and Plug</h3>
-<div class="outline-text-3" id="text-org832ba57">
+<div id="outline-container-orgef2f0d7" class="outline-3">
+<h3 id="orgef2f0d7">Rack and Plug</h3>
+<div class="outline-text-3" id="text-orgef2f0d7">
 <p>
 When I read about Plug in <i>Programming Phoenix</i><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>, I immediately recognized
 that it's just like Rack. These are things that make them very alike:
@@ -281,9 +285,9 @@ and easier to understand.
 </div>
 </div>
 </div>
-<div id="outline-container-org678697d" class="outline-2">
-<h2 id="org678697d">Summary</h2>
-<div class="outline-text-2" id="text-org678697d">
+<div id="outline-container-orgca01fb3" class="outline-2">
+<h2 id="orgca01fb3">Summary</h2>
+<div class="outline-text-2" id="text-orgca01fb3">
 <p>
 It's a great book to start learning some intermediate Rails techniques, even
 with some outdated contents like <code>responder</code>.
@@ -312,7 +316,7 @@ this book.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="personal.html#ID-4C73A51B-667B-4A7E-961B-3D0A6E0210D6">Book Review: Programming Phoenix - dsdshome</a>
+<a href="../../../../../Org/blogs.html#ID-4C73A51B-667B-4A7E-961B-3D0A6E0210D6">Book Review: Programming Phoenix - dsdshome</a>
 </p></div></div>
 
 

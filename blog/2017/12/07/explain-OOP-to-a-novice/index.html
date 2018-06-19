@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -52,9 +56,9 @@
 昨天有个不太懂编程的同事问我「什么是面向对象编程」，我觉得自己回答得蛮好，便厚着脸皮征得同意，把聊天记录稍加编辑发到这里。
 </p>
 
-<div id="outline-container-org650d47b" class="outline-2">
-<h2 id="org650d47b">什么叫面向对象编程？</h2>
-<div class="outline-text-2" id="text-org650d47b">
+<div id="outline-container-org1688115" class="outline-2">
+<h2 id="org1688115">什么叫面向对象编程？</h2>
+<div class="outline-text-2" id="text-org1688115">
 <ul class="org-ul">
 <li>面向对象就像小组做任务（比如发传单）
 <ol class="org-ol">
@@ -72,9 +76,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdfe0391" class="outline-2">
-<h2 id="orgdfe0391"><code>C</code> 里面是没有对象的，后来的语言里有对象，这个对象怎么被创造出来的呢？</h2>
-<div class="outline-text-2" id="text-orgdfe0391">
+<div id="outline-container-orgfaad4e5" class="outline-2">
+<h2 id="orgfaad4e5"><code>C</code> 里面是没有对象的，后来的语言里有对象，这个对象怎么被创造出来的呢？</h2>
+<div class="outline-text-2" id="text-orgfaad4e5">
 <ul class="org-ul">
 <li>所有程序都是对算法的抽象
 <ul class="org-ul">
@@ -99,9 +103,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgab58160" class="outline-2">
-<h2 id="orgab58160">「对象」像不像 PCB 上的芯片？</h2>
-<div class="outline-text-2" id="text-orgab58160">
+<div id="outline-container-org365ac85" class="outline-2">
+<h2 id="org365ac85">「对象」像不像 PCB 上的芯片？</h2>
+<div class="outline-text-2" id="text-org365ac85">
 <blockquote>
 <p>
 你们不用考虑这个芯片集成的，只需要知道它的属性就可以了，然后按照不同的需要放芯片（对象），然后 tada～功能就出来了，是这样吗？
@@ -121,9 +125,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4bbca8b" class="outline-2">
-<h2 id="org4bbca8b">关键就是对象之间互通消息，对吧？</h2>
-<div class="outline-text-2" id="text-org4bbca8b">
+<div id="outline-container-org3d4fa28" class="outline-2">
+<h2 id="org3d4fa28">关键就是对象之间互通消息，对吧？</h2>
+<div class="outline-text-2" id="text-org3d4fa28">
 <ul class="org-ul">
 <li>对的</li>
 <li>我现在的理解是，面向对象只要理解这一点就算掌握了</li>
@@ -132,9 +136,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org73a7227" class="outline-2">
-<h2 id="org73a7227">这个合理的接口指什么呢？</h2>
-<div class="outline-text-2" id="text-org73a7227">
+<div id="outline-container-orgdbbd76e" class="outline-2">
+<h2 id="orgdbbd76e">这个合理的接口指什么呢？</h2>
+<div class="outline-text-2" id="text-orgdbbd76e">
 <ul class="org-ul">
 <li>就是一个对象的接口不能太大（能接收的消息太多）</li>
 <li>使用「对象」要实现的目标就是能「换不同牌子的芯片用」</li>
@@ -142,9 +146,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f5432e" class="outline-2">
-<h2 id="org4f5432e">是不是里面的函数或者算法结构不能特别多？不然就能处理很多消息</h2>
-<div class="outline-text-2" id="text-org4f5432e">
+<div id="outline-container-orgaf98b7c" class="outline-2">
+<h2 id="orgaf98b7c">是不是里面的函数或者算法结构不能特别多？不然就能处理很多消息</h2>
+<div class="outline-text-2" id="text-orgaf98b7c">
 <ul class="org-ul">
 <li>对，一个对象里的函数、算法结构不能太多</li>
 <li>一个对象只做一件事（发传单/分配任务/etc.）</li>

@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -54,9 +58,9 @@ excited by the ideas Elixir/Phoenix brought to the web development community.
 I'll explain some of them in this blog post.
 </p>
 
-<div id="outline-container-org18585b0" class="outline-2">
-<h2 id="org18585b0">Caveats</h2>
-<div class="outline-text-2" id="text-org18585b0">
+<div id="outline-container-orgad4d875" class="outline-2">
+<h2 id="orgad4d875">Caveats</h2>
+<div class="outline-text-2" id="text-orgad4d875">
 <p>
 <i>Programming Phoenix 1.3</i> is <b>NOT</b> released yet. (Not until Feb/Mar 2018)
 </p>
@@ -71,9 +75,9 @@ Phoenix 1.3).
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdbde6c7" class="outline-2">
-<h2 id="orgdbde6c7">Functional MVC</h2>
-<div class="outline-text-2" id="text-orgdbde6c7">
+<div id="outline-container-org4f2a157" class="outline-2">
+<h2 id="org4f2a157">Functional MVC</h2>
+<div class="outline-text-2" id="text-org4f2a157">
 <p>
 <b>A web server is a natural problem for a functional language to solve.</b>
 </p>
@@ -118,13 +122,13 @@ connection adapter behind Phoenix)
 </p>
 </div>
 </div>
-<div id="outline-container-orga1f2406" class="outline-2">
-<h2 id="orga1f2406">Ecto: Your Functional Data Source</h2>
-<div class="outline-text-2" id="text-orga1f2406">
+<div id="outline-container-orgcd25f3d" class="outline-2">
+<h2 id="orgcd25f3d">Ecto: Your Functional Data Source</h2>
+<div class="outline-text-2" id="text-orgcd25f3d">
 </div>
-<div id="outline-container-org1898f1d" class="outline-3">
-<h3 id="org1898f1d">Ecto.Repo is not using Repository Pattern</h3>
-<div class="outline-text-3" id="text-org1898f1d">
+<div id="outline-container-org78cbb0e" class="outline-3">
+<h3 id="org78cbb0e">Ecto.Repo is not using Repository Pattern</h3>
+<div class="outline-text-3" id="text-org78cbb0e">
 <p>
 Ecto.Repo is not a Repository<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> (defined by P of EEA), but more like a Data
 Mapper<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
@@ -135,9 +139,9 @@ You can see the discussion <a href="https://groups.google.com/forum/#!topic/elix
 </p>
 </div>
 </div>
-<div id="outline-container-org1ccefe3" class="outline-3">
-<h3 id="org1ccefe3">More Explicit</h3>
-<div class="outline-text-3" id="text-org1ccefe3">
+<div id="outline-container-org11a5c64" class="outline-3">
+<h3 id="org11a5c64">More Explicit</h3>
+<div class="outline-text-3" id="text-org11a5c64">
 <p>
 Compared to ActiveRecord<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>, Ecto (or even Phoenix and Elixir) values explicity
 higher than implicity.
@@ -149,9 +153,9 @@ It's been talked many times in the community. So I'll skip this part.
 </p>
 </div>
 </div>
-<div id="outline-container-orgdbbbc20" class="outline-3">
-<h3 id="orgdbbbc20">SQL Sandbox is awesome</h3>
-<div class="outline-text-3" id="text-orgdbbbc20">
+<div id="outline-container-orgfdbf299" class="outline-3">
+<h3 id="orgfdbf299">SQL Sandbox is awesome</h3>
+<div class="outline-text-3" id="text-orgfdbf299">
 <p>
 Being explicit gives us more control over the db connections.
 </p>
@@ -167,9 +171,9 @@ Ruby/Rails world.
 </p>
 </div>
 </div>
-<div id="outline-container-org1af0788" class="outline-3">
-<h3 id="org1af0788">Ecto 2.1</h3>
-<div class="outline-text-3" id="text-org1af0788">
+<div id="outline-container-org213b78d" class="outline-3">
+<h3 id="org213b78d">Ecto 2.1</h3>
+<div class="outline-text-3" id="text-org213b78d">
 <p>
 If you want to know more about Ecto, <i>What's New in Ecto 2.1</i><sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> is a book you
 cannot miss.
@@ -177,9 +181,9 @@ cannot miss.
 </div>
 </div>
 </div>
-<div id="outline-container-orge63d4ff" class="outline-2">
-<h2 id="orge63d4ff">Summary</h2>
-<div class="outline-text-2" id="text-orge63d4ff">
+<div id="outline-container-org26d5213" class="outline-2">
+<h2 id="org26d5213">Summary</h2>
+<div class="outline-text-2" id="text-org26d5213">
 <p>
 I'm really excited to learn Phoenix and the functional way to build a web
 application. I'll definitely try to build an app in Phoenix in the near future.

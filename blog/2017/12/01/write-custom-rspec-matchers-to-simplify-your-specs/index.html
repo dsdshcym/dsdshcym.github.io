@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -52,9 +56,9 @@
 Recently, I write a lot of tests for our mobile devices push
 notifications feature (mainly for iOS and Android).
 </p>
-<div id="outline-container-org50f3515" class="outline-2">
-<h2 id="org50f3515">Before using a matcher</h2>
-<div class="outline-text-2" id="text-org50f3515">
+<div id="outline-container-orgf122178" class="outline-2">
+<h2 id="orgf122178">Before using a matcher</h2>
+<div class="outline-text-2" id="text-orgf122178">
 <p>
 We use gem <code>Rpush</code><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to wrap the logic for sending notifications to
 iOS/Android devices and keeping a log for these notifications. And
@@ -84,9 +88,9 @@ example is really testing if you don't check the <code>it</code> description.)
 </p>
 </div>
 </div>
-<div id="outline-container-orgd44c100" class="outline-2">
-<h2 id="orgd44c100">Ruby Way to Refactor It</h2>
-<div class="outline-text-2" id="text-orgd44c100">
+<div id="outline-container-org93d29ae" class="outline-2">
+<h2 id="org93d29ae">Ruby Way to Refactor It</h2>
+<div class="outline-text-2" id="text-org93d29ae">
 <p>
 After I discovered this problem, I tried to solve it by extracting a
 Ruby method:
@@ -112,9 +116,9 @@ end
 </pre>
 </div>
 </div>
-<div id="outline-container-orgf3d102e" class="outline-3">
-<h3 id="orgf3d102e">Higher Level of abstraction</h3>
-<div class="outline-text-3" id="text-orgf3d102e">
+<div id="outline-container-org68aa567" class="outline-3">
+<h3 id="org68aa567">Higher Level of abstraction</h3>
+<div class="outline-text-3" id="text-org68aa567">
 <p>
 This new helper method raises us to a new level of abstraction for
 testing an iOS notification is sent correctly.
@@ -193,9 +197,9 @@ just changed this method and every tests were still passing.
 </div>
 </div>
 </div>
-<div id="outline-container-org878755c" class="outline-2">
-<h2 id="org878755c">RSpec Way to Refactor It</h2>
-<div class="outline-text-2" id="text-org878755c">
+<div id="outline-container-org28df19f" class="outline-2">
+<h2 id="org28df19f">RSpec Way to Refactor It</h2>
+<div class="outline-text-2" id="text-org28df19f">
 <p>
 If I'm using Minitest, I'll stop refactoring. (But I'm using RSpec.)
 </p>
@@ -256,9 +260,9 @@ You can check more about how to write a custom RSpec Matcher <a href="https://re
 </p>
 </div>
 </div>
-<div id="outline-container-org3a9487e" class="outline-2">
-<h2 id="org3a9487e">My Ranting about RSpec v.s. Minitest</h2>
-<div class="outline-text-2" id="text-org3a9487e">
+<div id="outline-container-orgc327dbf" class="outline-2">
+<h2 id="orgc327dbf">My Ranting about RSpec v.s. Minitest</h2>
+<div class="outline-text-2" id="text-orgc327dbf">
 <p>
 I really don't understand why RSpec is (or seems to be?) more popular
 than Minitest.

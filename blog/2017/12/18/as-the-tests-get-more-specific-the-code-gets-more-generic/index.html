@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -72,9 +76,9 @@ satisfies the tests without looking anything like them.</li>
 -- from <a href="https://sites.google.com/site/unclebobconsultingllc/home/articles/as-the-tests-get-more-specific-the-code-gets-more-generic">As the Tests get more Specific, the Code gets more Generic - Clean Coder</a>
 </p>
 
-<div id="outline-container-org05adc8b" class="outline-2">
-<h2 id="org05adc8b">FizzBuzz Kata</h2>
-<div class="outline-text-2" id="text-org05adc8b">
+<div id="outline-container-org52efd7f" class="outline-2">
+<h2 id="org52efd7f">FizzBuzz Kata</h2>
+<div class="outline-text-2" id="text-org52efd7f">
 <p>
 I started practicing Coding Katas<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to sharp my TDD/OOD skills
 several days ago.
@@ -97,9 +101,9 @@ of my answer. (For other reasons, like programmer confidence stuffs, I
 may talk about them in another post.)
 </p>
 </div>
-<div id="outline-container-orgc266742" class="outline-3">
-<h3 id="orgc266742">Case #1</h3>
-<div class="outline-text-3" id="text-orgc266742">
+<div id="outline-container-orge629795" class="outline-3">
+<h3 id="orge629795">Case #1</h3>
+<div class="outline-text-3" id="text-orge629795">
 <ul class="org-ul">
 <li><p>
 Test
@@ -127,9 +131,9 @@ acceptable because it's green code.)
 </p>
 </div>
 </div>
-<div id="outline-container-orge794097" class="outline-3">
-<h3 id="orge794097">Case #2</h3>
-<div class="outline-text-3" id="text-orge794097">
+<div id="outline-container-orged9f3bc" class="outline-3">
+<h3 id="orged9f3bc">Case #2</h3>
+<div class="outline-text-3" id="text-orged9f3bc">
 <ul class="org-ul">
 <li><p>
 Test
@@ -161,9 +165,9 @@ seems to be very different.
 </p>
 </div>
 </div>
-<div id="outline-container-org4a9af6e" class="outline-3">
-<h3 id="org4a9af6e">Case #3</h3>
-<div class="outline-text-3" id="text-org4a9af6e">
+<div id="outline-container-orgee8d422" class="outline-3">
+<h3 id="orgee8d422">Case #3</h3>
+<div class="outline-text-3" id="text-orgee8d422">
 <ul class="org-ul">
 <li><p>
 Test
@@ -196,9 +200,9 @@ Let's move to our next test.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd058195" class="outline-3">
-<h3 id="orgd058195">Case #4</h3>
-<div class="outline-text-3" id="text-orgd058195">
+<div id="outline-container-orgb2e67e7" class="outline-3">
+<h3 id="orgb2e67e7">Case #4</h3>
+<div class="outline-text-3" id="text-orgb2e67e7">
 <ul class="org-ul">
 <li><p>
 Test
@@ -235,9 +239,9 @@ specification for input <code>4</code>).
 </p>
 </div>
 </div>
-<div id="outline-container-org8b3e398" class="outline-3">
-<h3 id="org8b3e398">Case #5</h3>
-<div class="outline-text-3" id="text-org8b3e398">
+<div id="outline-container-org2675488" class="outline-3">
+<h3 id="org2675488">Case #5</h3>
+<div class="outline-text-3" id="text-org2675488">
 <ul class="org-ul">
 <li><p>
 Test
@@ -272,9 +276,9 @@ generic (deals with numbers have factor <code>3</code> or <code>5</code>).
 </p>
 </div>
 </div>
-<div id="outline-container-org154cd26" class="outline-3">
-<h3 id="org154cd26">Case #6</h3>
-<div class="outline-text-3" id="text-org154cd26">
+<div id="outline-container-org4135f53" class="outline-3">
+<h3 id="org4135f53">Case #6</h3>
+<div class="outline-text-3" id="text-org4135f53">
 <ul class="org-ul">
 <li><p>
 Test
@@ -307,9 +311,9 @@ Again, <b>the code gets more generic while the test gets more specific</b>.
 </div>
 </div>
 </div>
-<div id="outline-container-orge347814" class="outline-2">
-<h2 id="orge347814">Extracting logic to other classes</h2>
-<div class="outline-text-2" id="text-orge347814">
+<div id="outline-container-orgc7bf4dd" class="outline-2">
+<h2 id="orgc7bf4dd">Extracting logic to other classes</h2>
+<div class="outline-text-2" id="text-orgc7bf4dd">
 <p>
 Later, when the logic for <code>FizzBuzz</code> gets more and more complicated, I
 decided to push logic out of <code>FizzBuzz</code> class and extract some new
@@ -357,9 +361,9 @@ blog post.
 </p>
 </div>
 </div>
-<div id="outline-container-org92226a2" class="outline-2">
-<h2 id="org92226a2">DRY is not that important for tests</h2>
-<div class="outline-text-2" id="text-org92226a2">
+<div id="outline-container-orgecdda2b" class="outline-2">
+<h2 id="orgecdda2b">DRY is not that important for tests</h2>
+<div class="outline-text-2" id="text-orgecdda2b">
 <p>
 We programmers often says that our code needs to be <b>DRY (Don't Repeat
 Yourself)</b>. And I think we can also say "as the tests get more
@@ -404,9 +408,9 @@ different way from the production DRY.</b>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb6d7fd2" class="outline-2">
-<h2 id="orgb6d7fd2">A healthy Test-to-Code Ratio</h2>
-<div class="outline-text-2" id="text-orgb6d7fd2">
+<div id="outline-container-org54cb031" class="outline-2">
+<h2 id="org54cb031">A healthy Test-to-Code Ratio</h2>
+<div class="outline-text-2" id="text-org54cb031">
 <p>
 With this principle being said, I think the Test-to-Code ratio can be
 a pretty good guide for us to decide when to refactor our code.
@@ -419,9 +423,9 @@ IMHO, a good Test-to-Code ratio for a Rails project should be between
 languages/frameworks/test tools.
 </p>
 </div>
-<div id="outline-container-org0e004cb" class="outline-3">
-<h3 id="org0e004cb">Use Test-to-Code Ratio to guide your TDD cycle</h3>
-<div class="outline-text-3" id="text-org0e004cb">
+<div id="outline-container-org1f9c970" class="outline-3">
+<h3 id="org1f9c970">Use Test-to-Code Ratio to guide your TDD cycle</h3>
+<div class="outline-text-3" id="text-org1f9c970">
 <p>
 (I'll use 1:1 to 2:1 in the following explanations.)
 </p>
@@ -440,9 +444,9 @@ and needs to be split.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org334b044" class="outline-3">
-<h3 id="org334b044">TDD is a process guided by this thinking</h3>
-<div class="outline-text-3" id="text-org334b044">
+<div id="outline-container-orgb1ce41e" class="outline-3">
+<h3 id="orgb1ce41e">TDD is a process guided by this thinking</h3>
+<div class="outline-text-3" id="text-orgb1ce41e">
 <p>
 As I wrote in <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP</a>, we can only achieve
 Shameless Green by following the TDD cycle and make our code a step

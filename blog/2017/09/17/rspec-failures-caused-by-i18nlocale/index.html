@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -62,9 +66,9 @@ found this interesting RSpec failure caused by I18n.
 This blog post is a note about how I found the issue and how I solved
 it.
 </p>
-<div id="outline-container-orgf66b776" class="outline-2">
-<h2 id="orgf66b776">Find the order dependent failures</h2>
-<div class="outline-text-2" id="text-orgf66b776">
+<div id="outline-container-org3e602f6" class="outline-2">
+<h2 id="org3e602f6">Find the order dependent failures</h2>
+<div class="outline-text-2" id="text-org3e602f6">
 <p>
 Since there were not many tests in this project, and they were not
 running randomly, it was easy for me to find the test <i>files</i> that
@@ -76,9 +80,9 @@ But during my research, I also found that RSpec has a more elegant way
 to find the order dependent failures: <code>rspec --bisect</code>
 </p>
 </div>
-<div id="outline-container-orgae30340" class="outline-3">
-<h3 id="orgae30340"><code>rspec --bisect</code></h3>
-<div class="outline-text-3" id="text-orgae30340">
+<div id="outline-container-org3590d20" class="outline-3">
+<h3 id="org3590d20"><code>rspec --bisect</code></h3>
+<div class="outline-text-3" id="text-org3590d20">
 <p>
 When we run <code>rspec --bisect</code>, RSpec will:
 </p>
@@ -111,9 +115,9 @@ It's way faster than testing it by hand.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd35539f" class="outline-3">
-<h3 id="orgd35539f"><code>minitest-bisect</code></h3>
-<div class="outline-text-3" id="text-orgd35539f">
+<div id="outline-container-orgef87137" class="outline-3">
+<h3 id="orgef87137"><code>minitest-bisect</code></h3>
+<div class="outline-text-3" id="text-orgef87137">
 <p>
 Turns out minitest also provides an extra package that does the same
 thing: <a href="https://github.com/seattlerb/minitest-bisect">seattlerb/minitest-bisect</a>. Check it out if you are using
@@ -122,9 +126,9 @@ minitest.
 </div>
 </div>
 </div>
-<div id="outline-container-org8791e73" class="outline-2">
-<h2 id="org8791e73">Failing examples caused by <code>i18n.locale</code></h2>
-<div class="outline-text-2" id="text-org8791e73">
+<div id="outline-container-org8f2d1c4" class="outline-2">
+<h2 id="org8f2d1c4">Failing examples caused by <code>i18n.locale</code></h2>
+<div class="outline-text-2" id="text-org8f2d1c4">
 <p>
 After I found the example that caused my feature spec to fail, I
 started debugging the issue. Turns out, it's pretty simple:
@@ -151,9 +155,9 @@ setting it directly or setting <code>account</code> fixture's default language t
 </p>
 </div>
 </div>
-<div id="outline-container-org8e416a6" class="outline-2">
-<h2 id="org8e416a6">One More Thing: <code>git bisect</code></h2>
-<div class="outline-text-2" id="text-org8e416a6">
+<div id="outline-container-org48f8096" class="outline-2">
+<h2 id="org48f8096">One More Thing: <code>git bisect</code></h2>
+<div class="outline-text-2" id="text-org48f8096">
 <p>
 Since the <code>i18n.locale</code> behavior in our controller was introduced long
 time ago, I didn't get the chance to use <code>git bisect</code>, which can help

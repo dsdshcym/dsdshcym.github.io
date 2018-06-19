@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -55,9 +59,9 @@ more about my user experiences through my whole journey of using AWS
 Lambda to build a image resizing Microservice.
 </p>
 
-<div id="outline-container-orgb6973b1" class="outline-2">
-<h2 id="orgb6973b1">TL;DR</h2>
-<div class="outline-text-2" id="text-orgb6973b1">
+<div id="outline-container-org0f66699" class="outline-2">
+<h2 id="org0f66699">TL;DR</h2>
+<div class="outline-text-2" id="text-org0f66699">
 <p>
 Building a Microservice with AWS Lambda and API Gateway is a great
 experience, especially in these aspects:
@@ -71,9 +75,9 @@ experience, especially in these aspects:
 </ol>
 </div>
 </div>
-<div id="outline-container-orgf7eda4e" class="outline-2">
-<h2 id="orgf7eda4e">Microservice size</h2>
-<div class="outline-text-2" id="text-orgf7eda4e">
+<div id="outline-container-org2273f29" class="outline-2">
+<h2 id="org2273f29">Microservice size</h2>
+<div class="outline-text-2" id="text-org2273f29">
 <p>
 First of all, every Lambda function is pretty small. (My image
 processing module only has 200 LOC in total.)
@@ -86,9 +90,9 @@ advantages in my previous post <a href="http://dsdshcym.github.io/blog/2017/08/2
 </p>
 </div>
 </div>
-<div id="outline-container-orgc5dd295" class="outline-2">
-<h2 id="orgc5dd295">Testing</h2>
-<div class="outline-text-2" id="text-orgc5dd295">
+<div id="outline-container-org795b2a7" class="outline-2">
+<h2 id="org795b2a7">Testing</h2>
+<div class="outline-text-2" id="text-org795b2a7">
 <p>
 Amazon has provided docker images for all its available Lambda
 environments: <a href="https://github.com/lambci/docker-lambda">lambci/docker-lambda: Docker images and test runners
@@ -114,9 +118,9 @@ it's a bit hard to write unit/integration test for it.)
 </p>
 </div>
 </div>
-<div id="outline-container-org5934d31" class="outline-2">
-<h2 id="org5934d31">Deployment</h2>
-<div class="outline-text-2" id="text-org5934d31">
+<div id="outline-container-org829e26e" class="outline-2">
+<h2 id="org829e26e">Deployment</h2>
+<div class="outline-text-2" id="text-org829e26e">
 <p>
 Amazon also provided a <a href="https://github.com/awslabs/serverless-image-resizing/blob/master/Makefile">Makefile</a> to build a lambda function zip file,
 and we can deploy this zip file via <code>aws-cli</code> easily.
@@ -177,9 +181,9 @@ template, you can check it <a href="https://github.com/awslabs/serverless-image-
 </ol>
 </div>
 </div>
-<div id="outline-container-org44fecca" class="outline-2">
-<h2 id="org44fecca">Monitoring/Logging</h2>
-<div class="outline-text-2" id="text-org44fecca">
+<div id="outline-container-org73d0984" class="outline-2">
+<h2 id="org73d0984">Monitoring/Logging</h2>
+<div class="outline-text-2" id="text-org73d0984">
 <p>
 Amazon also provided builtin monitoring and logging support for
 Lambda.
@@ -200,9 +204,9 @@ see the logs.
 </p>
 </div>
 </div>
-<div id="outline-container-org2f9cbc6" class="outline-2">
-<h2 id="org2f9cbc6">Web UI / CLI</h2>
-<div class="outline-text-2" id="text-org2f9cbc6">
+<div id="outline-container-org8f3d9f4" class="outline-2">
+<h2 id="org8f3d9f4">Web UI / CLI</h2>
+<div class="outline-text-2" id="text-org8f3d9f4">
 <p>
 All the actions mentioned in this post, can all be done via AWS's web
 user interface or through AWS's command line tool <code>aws-cli</code>. This
@@ -211,9 +215,9 @@ best.
 </p>
 </div>
 </div>
-<div id="outline-container-org26d0e66" class="outline-2">
-<h2 id="org26d0e66">Summary</h2>
-<div class="outline-text-2" id="text-org26d0e66">
+<div id="outline-container-org7893172" class="outline-2">
+<h2 id="org7893172">Summary</h2>
+<div class="outline-text-2" id="text-org7893172">
 <p>
 So, what's the ideal Microservice development experience?
 </p>

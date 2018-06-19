@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -53,17 +57,17 @@ discuss why I failed them and what I think the best way to finish
 them.
 </p>
 
-<div id="outline-container-orgda22ff0" class="outline-2">
-<h2 id="orgda22ff0">2 Failed Features</h2>
-<div class="outline-text-2" id="text-orgda22ff0">
+<div id="outline-container-org9a8de14" class="outline-2">
+<h2 id="org9a8de14">2 Failed Features</h2>
+<div class="outline-text-2" id="text-org9a8de14">
 </div>
-<div id="outline-container-org2583b60" class="outline-3">
-<h3 id="org2583b60"><a id="ID-F918D834-B7FA-42D4-8A9A-6453F52AC0A9"></a>Extract App Configurations to Environment Variables</h3>
-<div class="outline-text-3" id="text-org2583b60">
+<div id="outline-container-orgd9aba66" class="outline-3">
+<h3 id="orgd9aba66"><a id="ID-F918D834-B7FA-42D4-8A9A-6453F52AC0A9"></a>Extract App Configurations to Environment Variables</h3>
+<div class="outline-text-3" id="text-orgd9aba66">
 </div>
-<div id="outline-container-org0d81684" class="outline-4">
-<h4 id="org0d81684">Context</h4>
-<div class="outline-text-4" id="text-org0d81684">
+<div id="outline-container-org608ae39" class="outline-4">
+<h4 id="org608ae39">Context</h4>
+<div class="outline-text-4" id="text-org608ae39">
 <p>
 We have many app configurations (e.g. 3-rd party service
 configurations like AWS S3, app behavior configurations like host
@@ -73,9 +77,9 @@ values for different environment (development/staging/production).
 </p>
 </div>
 </div>
-<div id="outline-container-org0b504c3" class="outline-4">
-<h4 id="org0b504c3">Reason for refactoring</h4>
-<div class="outline-text-4" id="text-org0b504c3">
+<div id="outline-container-orgf10f52c" class="outline-4">
+<h4 id="orgf10f52c">Reason for refactoring</h4>
+<div class="outline-text-4" id="text-orgf10f52c">
 <p>
 And then we migrated to using Docker/Kubernetes for deployments. We
 want to setup more staging environments for different teams to test
@@ -83,9 +87,9 @@ independent features.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf832745" class="outline-4">
-<h4 id="orgf832745">The Plan</h4>
-<div class="outline-text-4" id="text-orgf832745">
+<div id="outline-container-orgf3db39e" class="outline-4">
+<h4 id="orgf3db39e">The Plan</h4>
+<div class="outline-text-4" id="text-orgf3db39e">
 <p>
 So we decided to extract these configuration values into environment
 variables.
@@ -97,9 +101,9 @@ single feature branch. But it turned out to be a silly decision.
 </p>
 </div>
 </div>
-<div id="outline-container-org1c0a140" class="outline-4">
-<h4 id="org1c0a140">Issues</h4>
-<div class="outline-text-4" id="text-org1c0a140">
+<div id="outline-container-org17a54f8" class="outline-4">
+<h4 id="org17a54f8">Issues</h4>
+<div class="outline-text-4" id="text-org17a54f8">
 <ol class="org-ol">
 <li>It's a ton of work to review. Although it's almost just replacing
 the hard-coded value with a call to <code>ENV</code> , it's the most hard to
@@ -116,9 +120,9 @@ configurations.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb5eaeb3" class="outline-4">
-<h4 id="orgb5eaeb3">Results</h4>
-<div class="outline-text-4" id="text-orgb5eaeb3">
+<div id="outline-container-orgee414ce" class="outline-4">
+<h4 id="orgee414ce">Results</h4>
+<div class="outline-text-4" id="text-orgee414ce">
 <p>
 Of course things went completely wrong after I merged this branch
 and tested them on staging. Even the homepage had some issues. We
@@ -129,13 +133,13 @@ refactoring.
 </div>
 </div>
 </div>
-<div id="outline-container-orga616fc2" class="outline-3">
-<h3 id="orga616fc2">Merge an API service into the main App</h3>
-<div class="outline-text-3" id="text-orga616fc2">
+<div id="outline-container-orge09279b" class="outline-3">
+<h3 id="orge09279b">Merge an API service into the main App</h3>
+<div class="outline-text-3" id="text-orge09279b">
 </div>
-<div id="outline-container-org874f004" class="outline-4">
-<h4 id="org874f004">Context</h4>
-<div class="outline-text-4" id="text-org874f004">
+<div id="outline-container-orgeb076c5" class="outline-4">
+<h4 id="orgeb076c5">Context</h4>
+<div class="outline-text-4" id="text-orgeb076c5">
 <p>
 We have two apps running, one of them is the web interface (responds
 to HTML requests), another one is the API interface (responds to
@@ -143,9 +147,9 @@ JSON requests).
 </p>
 </div>
 </div>
-<div id="outline-container-orgfeb99f5" class="outline-4">
-<h4 id="orgfeb99f5">Reason for refactoring</h4>
-<div class="outline-text-4" id="text-orgfeb99f5">
+<div id="outline-container-org0e4ac95" class="outline-4">
+<h4 id="org0e4ac95">Reason for refactoring</h4>
+<div class="outline-text-4" id="text-org0e4ac95">
 <p>
 They share almost the same behaviour, except the view templates are
 different. Whenever we need to add or modify a piece of logic, we
@@ -153,16 +157,16 @@ need to do it twice.
 </p>
 </div>
 </div>
-<div id="outline-container-orgda1be30" class="outline-4">
-<h4 id="orgda1be30">The Plan</h4>
-<div class="outline-text-4" id="text-orgda1be30">
+<div id="outline-container-org5256f75" class="outline-4">
+<h4 id="org5256f75">The Plan</h4>
+<div class="outline-text-4" id="text-org5256f75">
 <p>
 So we decided to merge these two apps and leverage Rails' powerful
 <code>respond_to</code> method.
 </p>
 
 <p>
-Since I have the experience from last time (<a href="#org2583b60">Extract Feature Toggles
+Since I have the experience from last time (<a href="#orgd9aba66">Extract Feature Toggles
 to Environment Variables</a>), I decided to do it one controller by one
 controller.
 </p>
@@ -174,9 +178,9 @@ and deploy migrated APIs and migrate other APIs at the same time.
 </p>
 </div>
 </div>
-<div id="outline-container-org56ead95" class="outline-4">
-<h4 id="org56ead95">Issues</h4>
-<div class="outline-text-4" id="text-org56ead95">
+<div id="outline-container-org8fced45" class="outline-4">
+<h4 id="org8fced45">Issues</h4>
+<div class="outline-text-4" id="text-org8fced45">
 <p>
 But then bad things happened in our process:
 </p>
@@ -224,9 +228,9 @@ made things much harder.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org3ce0e85" class="outline-4">
-<h4 id="org3ce0e85">Results</h4>
-<div class="outline-text-4" id="text-org3ce0e85">
+<div id="outline-container-org9690855" class="outline-4">
+<h4 id="org9690855">Results</h4>
+<div class="outline-text-4" id="text-org9690855">
 <p>
 Finally, I had to merge all the changes into one branch and handed
 over the testing phase to my manage (who's in the same timezone as
@@ -236,13 +240,13 @@ to incrementally deploy these new APIs completely failed.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf489f55" class="outline-3">
-<h3 id="orgf489f55">Common Issues</h3>
-<div class="outline-text-3" id="text-orgf489f55">
+<div id="outline-container-org36d2bbd" class="outline-3">
+<h3 id="org36d2bbd">Common Issues</h3>
+<div class="outline-text-3" id="text-org36d2bbd">
 </div>
-<div id="outline-container-org9efd278" class="outline-4">
-<h4 id="org9efd278">No Tests</h4>
-<div class="outline-text-4" id="text-org9efd278">
+<div id="outline-container-orgf06fa43" class="outline-4">
+<h4 id="orgf06fa43">No Tests</h4>
+<div class="outline-text-4" id="text-orgf06fa43">
 <p>
 These two refactorings both started without any integration test
 coverage. And testing them on staging/production took a lot of
@@ -251,9 +255,9 @@ always afraid that some changes would break something when deploy.
 </p>
 </div>
 </div>
-<div id="outline-container-org292fe5e" class="outline-4">
-<h4 id="org292fe5e">Vocations</h4>
-<div class="outline-text-4" id="text-org292fe5e">
+<div id="outline-container-org9082d56" class="outline-4">
+<h4 id="org9082d56">Vocations</h4>
+<div class="outline-text-4" id="text-org9082d56">
 <p>
 I both took vocation during the development of these two
 refactorings. I should've at least deployed what I'd finished and
@@ -262,9 +266,9 @@ vocation.
 </p>
 </div>
 </div>
-<div id="outline-container-org90b2971" class="outline-4">
-<h4 id="org90b2971">Huge Steps</h4>
-<div class="outline-text-4" id="text-org90b2971">
+<div id="outline-container-org37d3617" class="outline-4">
+<h4 id="org37d3617">Huge Steps</h4>
+<div class="outline-text-4" id="text-org37d3617">
 <p>
 And the most important issue was that I wanted to take a huge step to
 finish these tasks once and for all, instead of breaking down them
@@ -282,9 +286,9 @@ if I took smaller steps and tried to learn from each steps.
 </div>
 </div>
 </div>
-<div id="outline-container-org26e37ca" class="outline-2">
-<h2 id="org26e37ca">Incremental Deployment: the Only Way to Deploy Large Feature Changes</h2>
-<div class="outline-text-2" id="text-org26e37ca">
+<div id="outline-container-orgb146fc8" class="outline-2">
+<h2 id="orgb146fc8">Incremental Deployment: the Only Way to Deploy Large Feature Changes</h2>
+<div class="outline-text-2" id="text-orgb146fc8">
 <p>
 I think the only way to deploy this kind of large changesets is
 breaking them down into smaller changesets and deploy them
@@ -301,9 +305,9 @@ I'll take the above two examples and explain how I would deploy them,
 and also give a template for this kind of changes.
 </p>
 </div>
-<div id="outline-container-org21325b0" class="outline-3">
-<h3 id="org21325b0">Environment Variables</h3>
-<div class="outline-text-3" id="text-org21325b0">
+<div id="outline-container-org61a593d" class="outline-3">
+<h3 id="org61a593d">Environment Variables</h3>
+<div class="outline-text-3" id="text-org61a593d">
 <ol class="org-ol">
 <li>Find out all the environment variables that need to be extracted</li>
 <li>Create a separate branch for one variable</li>
@@ -313,9 +317,9 @@ and also give a template for this kind of changes.
 </ol>
 </div>
 </div>
-<div id="outline-container-orga936da2" class="outline-3">
-<h3 id="orga936da2">API rewriting</h3>
-<div class="outline-text-3" id="text-orga936da2">
+<div id="outline-container-org1deb48b" class="outline-3">
+<h3 id="org1deb48b">API rewriting</h3>
+<div class="outline-text-3" id="text-org1deb48b">
 <ol class="org-ol">
 <li>List all the APIs that needs to be rewritten</li>
 <li>Figure out the dependencies between controllers to decide the order
@@ -329,9 +333,9 @@ endpoint<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8433e2c" class="outline-3">
-<h3 id="org8433e2c">Template</h3>
-<div class="outline-text-3" id="text-org8433e2c">
+<div id="outline-container-org1a67511" class="outline-3">
+<h3 id="org1a67511">Template</h3>
+<div class="outline-text-3" id="text-org1a67511">
 <ol class="org-ol">
 <li>Break down the task and list every separate task that needs to be
 done</li>
@@ -343,9 +347,9 @@ done</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf480f37" class="outline-2">
-<h2 id="orgf480f37">Summary</h2>
-<div class="outline-text-2" id="text-orgf480f37">
+<div id="outline-container-org1896ab4" class="outline-2">
+<h2 id="org1896ab4">Summary</h2>
+<div class="outline-text-2" id="text-org1896ab4">
 <p>
 The final template is super simple and I think this was what I was
 doing when I tried to implemented the mentioned refactorings. But due

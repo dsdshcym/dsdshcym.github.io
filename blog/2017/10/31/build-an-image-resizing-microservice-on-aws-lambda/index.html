@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -64,9 +68,9 @@ I basically followed the steps explained in AWS official blog<sup><a id="fnr.1" 
 create an image resizing lambda function. I thought it would be a easy
 task. But I still encountered some unexpected problems.
 </p>
-<div id="outline-container-orgeb0ae1f" class="outline-2">
-<h2 id="orgeb0ae1f">Outdated Instructions</h2>
-<div class="outline-text-2" id="text-orgeb0ae1f">
+<div id="outline-container-orga81724b" class="outline-2">
+<h2 id="orga81724b">Outdated Instructions</h2>
+<div class="outline-text-2" id="text-orga81724b">
 <p>
 The instructions in that blog post<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup> is pretty clear, but I found
 AWS Lambda had changed some of their UI and setup process so that the
@@ -182,9 +186,9 @@ Edit Redirection Rules in Static Website Hosting
 </ol>
 </div>
 </div>
-<div id="outline-container-org3dbb6b3" class="outline-2">
-<h2 id="org3dbb6b3">Script from Official Repo</h2>
-<div class="outline-text-2" id="text-org3dbb6b3">
+<div id="outline-container-org4a3f5ec" class="outline-2">
+<h2 id="org4a3f5ec">Script from Official Repo</h2>
+<div class="outline-text-2" id="text-org4a3f5ec">
 <p>
 Because the manual setup process is kind of On the other hand, the
 scripts in <a href="https://github.com/awslabs/serverless-image-resizing">awslabs/serverless-image-resizing</a> repo is working as
@@ -269,9 +273,9 @@ previous section, and I found it was very error-prone.
 </ol>
 </div>
 </div>
-<div id="outline-container-org838ee70" class="outline-2">
-<h2 id="org838ee70">Ambiguous Errors from API Gateway</h2>
-<div class="outline-text-2" id="text-org838ee70">
+<div id="outline-container-org1805fc9" class="outline-2">
+<h2 id="org1805fc9">Ambiguous Errors from API Gateway</h2>
+<div class="outline-text-2" id="text-org1805fc9">
 <p>
 When I setup a new lambda for an existing S3 bucket manually, I ran
 into several different errors from API Gateway:
@@ -329,9 +333,9 @@ invocation endpoint is <code>/[lambda_name]</code>, but I was still using
 </ol>
 </div>
 </div>
-<div id="outline-container-org7d6e7b1" class="outline-2">
-<h2 id="org7d6e7b1">AWS Region Issue</h2>
-<div class="outline-text-2" id="text-org7d6e7b1">
+<div id="outline-container-org4a2f6bd" class="outline-2">
+<h2 id="org4a2f6bd">AWS Region Issue</h2>
+<div class="outline-text-2" id="text-org4a2f6bd">
 <p>
 The final issue that cost me two days to debug was about AWS Regions.
 </p>
@@ -371,9 +375,9 @@ the same region as the S3 bucket. Then everything works fine.
 </p>
 </div>
 </div>
-<div id="outline-container-org2727ad6" class="outline-2">
-<h2 id="org2727ad6">Summary</h2>
-<div class="outline-text-2" id="text-org2727ad6">
+<div id="outline-container-org38597c4" class="outline-2">
+<h2 id="org38597c4">Summary</h2>
+<div class="outline-text-2" id="text-org38597c4">
 <p>
 Building a microservice, like image processing, using AWS Lambda is
 really convenient:

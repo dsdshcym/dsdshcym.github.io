@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -52,9 +56,9 @@
 输入法是每个中文用户日常使用中避不开的一个工具。中英文输入法的共存带来的一个麻烦就是在两个（甚至多个）输入法之间的切换，对程序员这样有大量英文输入的职业来说，一天可能要切换输入法上百次。如果能更自动化地切换到当前应用场景下的输入法，能够帮我们减轻记住当前是哪个输入法的心理负担，也能让我们输入更加快捷。
 </p>
 
-<div id="outline-container-orgd8f6358" class="outline-2">
-<h2 id="orgd8f6358">macOS 上的输入法切换</h2>
-<div class="outline-text-2" id="text-orgd8f6358">
+<div id="outline-container-org24a6ce4" class="outline-2">
+<h2 id="org24a6ce4">macOS 上的输入法切换</h2>
+<div class="outline-text-2" id="text-org24a6ce4">
 <p>
 在 macOS 上的输入法切换有两种模式：
 </p>
@@ -118,9 +122,9 @@ All app share a same input method
 </ol>
 </div>
 </div>
-<div id="outline-container-org8c096fb" class="outline-2">
-<h2 id="org8c096fb">GhostSKB<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-org8c096fb">
+<div id="outline-container-org7f3d837" class="outline-2">
+<h2 id="org7f3d837">GhostSKB<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-org7f3d837">
 <p>
 因此，第三种方案出现了：为每个 App 设置一个默认输入法，每次切换 App 时都切换到对应的默认输入法。
 </p>
@@ -170,9 +174,9 @@ UI 比较简陋
 </ol>
 </div>
 </div>
-<div id="outline-container-org248906e" class="outline-2">
-<h2 id="org248906e">Hammerspoon<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> + fcitx-remote-for-osx<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
-<div class="outline-text-2" id="text-org248906e">
+<div id="outline-container-orgba7b932" class="outline-2">
+<h2 id="orgba7b932">Hammerspoon<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> + fcitx-remote-for-osx<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
+<div class="outline-text-2" id="text-orgba7b932">
 <p>
 基于以上几个痒点，我又开始寻找其他的解决方案，正好之前通过 Hammerspoon
 代替了 Slate 的窗口管理功能，又有 fcitx-remote-for-osx 在 Emacs 中的
@@ -233,9 +237,9 @@ set_app_input_method('Telegram', Chinese)
 </ol>
 </div>
 </div>
-<div id="outline-container-orgcd88076" class="outline-2">
-<h2 id="orgcd88076">Pure Hammerspoon</h2>
-<div class="outline-text-2" id="text-orgcd88076">
+<div id="outline-container-orgd3a3b6f" class="outline-2">
+<h2 id="orgd3a3b6f">Pure Hammerspoon</h2>
+<div class="outline-text-2" id="text-orgd3a3b6f">
 <p>
 今天发现 Hammerspoon 自身就带有输入法相关的模块 <code>hs.keycodes</code> ，便用它重写了上述功能：
 </p>

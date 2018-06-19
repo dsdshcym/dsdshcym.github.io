@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -48,18 +52,18 @@
         <div class="col-md-2"></div>
             <h1>A Simple Introduction to Docker I</h1>
             
-<div id="outline-container-org575ad1b" class="outline-2">
-<h2 id="org575ad1b">Why do we need Virtualization?</h2>
-<div class="outline-text-2" id="text-org575ad1b">
+<div id="outline-container-org71c811c" class="outline-2">
+<h2 id="org71c811c">Why do we need Virtualization?</h2>
+<div class="outline-text-2" id="text-org71c811c">
 <p>
 I believe everyone have used a virtual machine before. And I think you know how
 convenient a virtual machine is under a personal usage sceanario. Here, we
 mainly focus on the power of virtualization on the server side.
 </p>
 </div>
-<div id="outline-container-org14b792b" class="outline-3">
-<h3 id="org14b792b">Snapshots</h3>
-<div class="outline-text-3" id="text-org14b792b">
+<div id="outline-container-orgb7a2b1f" class="outline-3">
+<h3 id="orgb7a2b1f">Snapshots</h3>
+<div class="outline-text-3" id="text-orgb7a2b1f">
 <p>
 Imagine how much work you need to do to backup a physical machine.
 </p>
@@ -80,9 +84,9 @@ another host.
 </p>
 </div>
 </div>
-<div id="outline-container-org8f5ddc2" class="outline-3">
-<h3 id="org8f5ddc2">Isolation</h3>
-<div class="outline-text-3" id="text-org8f5ddc2">
+<div id="outline-container-org6bbfa5f" class="outline-3">
+<h3 id="org6bbfa5f">Isolation</h3>
+<div class="outline-text-3" id="text-org6bbfa5f">
 <p>
 In the real world, we often isolate apps that we want to run to provide more
 reliabilities. If an app fails, it won't cause any effect to any other apps,
@@ -100,9 +104,9 @@ virtual machines.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb6930eb" class="outline-3">
-<h3 id="orgb6930eb">Cost/Energy Saving</h3>
-<div class="outline-text-3" id="text-orgb6930eb">
+<div id="outline-container-org2d50c6a" class="outline-3">
+<h3 id="org2d50c6a">Cost/Energy Saving</h3>
+<div class="outline-text-3" id="text-org2d50c6a">
 <p>
 Since we can provide isolation via virtualization, we can use a single machine
 to provide same functionality as hundreds physical machines thanks to the
@@ -115,13 +119,13 @@ Thus we can save our unneeded cost on these physical machines.
 </div>
 </div>
 </div>
-<div id="outline-container-orge89447b" class="outline-2">
-<h2 id="orge89447b">What's the Container?</h2>
-<div class="outline-text-2" id="text-orge89447b">
+<div id="outline-container-org2221a7b" class="outline-2">
+<h2 id="org2221a7b">What's the Container?</h2>
+<div class="outline-text-2" id="text-org2221a7b">
 </div>
-<div id="outline-container-orgae34203" class="outline-3">
-<h3 id="orgae34203">Operating-system-level virtualization</h3>
-<div class="outline-text-3" id="text-orgae34203">
+<div id="outline-container-org363365a" class="outline-3">
+<h3 id="org363365a">Operating-system-level virtualization</h3>
+<div class="outline-text-3" id="text-org363365a">
 <p>
 Container, also called operating-system-level virtualization, is a
 server-virtualization method where the kernel of an operating system allows
@@ -137,9 +141,9 @@ Virtualization</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org57c1f4c" class="outline-3">
-<h3 id="org57c1f4c">Compare with VM</h3>
-<div class="outline-text-3" id="text-org57c1f4c">
+<div id="outline-container-org02f050d" class="outline-3">
+<h3 id="org02f050d">Compare with VM</h3>
+<div class="outline-text-3" id="text-org02f050d">
 <p>
 Basically, a container is way more lightweight than a virtual machine. Thus, it
 can boot more quickly, use CPU and RAM more efficiently and have smaller image
@@ -258,9 +262,9 @@ this table below:
 </table></li>
 </ul>
 </div>
-<div id="outline-container-org0e9e7aa" class="outline-4">
-<h4 id="org0e9e7aa">Why can a container be so lightweight?</h4>
-<div class="outline-text-4" id="text-org0e9e7aa">
+<div id="outline-container-org9e1eb18" class="outline-4">
+<h4 id="org9e1eb18">Why can a container be so lightweight?</h4>
+<div class="outline-text-4" id="text-org9e1eb18">
 <p>
 Containers include the application and all of its dependencies, but share the
 kernel with other containers. They run as an isolated process in userspace on
@@ -281,13 +285,13 @@ GBs in size.
 </div>
 </div>
 </div>
-<div id="outline-container-org00c145f" class="outline-3">
-<h3 id="org00c145f">How does container help you build better software?</h3>
-<div class="outline-text-3" id="text-org00c145f">
+<div id="outline-container-org5998b70" class="outline-3">
+<h3 id="org5998b70">How does container help you build better software?</h3>
+<div class="outline-text-3" id="text-org5998b70">
 </div>
-<div id="outline-container-orgc1f8731" class="outline-4">
-<h4 id="orgc1f8731">Eliminate Environment Inconsistencies</h4>
-<div class="outline-text-4" id="text-orgc1f8731">
+<div id="outline-container-org37bd4ca" class="outline-4">
+<h4 id="org37bd4ca">Eliminate Environment Inconsistencies</h4>
+<div class="outline-text-4" id="text-org37bd4ca">
 <p>
 You can package your container into one little config file. And it can run on
 another machine as the way you want it to. So you don't need to spend extra time
@@ -295,18 +299,18 @@ to install package A, B, C, D... in your test machine or even working machine.
 </p>
 </div>
 </div>
-<div id="outline-container-org5b38ff8" class="outline-4">
-<h4 id="org5b38ff8">Accelerate Developer Onboarding</h4>
-<div class="outline-text-4" id="text-org5b38ff8">
+<div id="outline-container-org8efe670" class="outline-4">
+<h4 id="org8efe670">Accelerate Developer Onboarding</h4>
+<div class="outline-text-4" id="text-org8efe670">
 <p>
 You can just give your new partner a container config file. And he can run it on
 his machine without any problems. Then he can start to work. It just works.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9b41fa" class="outline-4">
-<h4 id="orgc9b41fa">Empower Developer Creativity</h4>
-<div class="outline-text-4" id="text-orgc9b41fa">
+<div id="outline-container-org4aa0825" class="outline-4">
+<h4 id="org4aa0825">Empower Developer Creativity</h4>
+<div class="outline-text-4" id="text-org4aa0825">
 <p>
 You don't need to worry about what language you should use. You can use any
 language you want in a container, as long as you provide a simple API through

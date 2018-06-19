@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -58,13 +62,13 @@ I think this chapter can be applied to technical debts perfectly and help us
 manage our technical finance status better.
 </p>
 
-<div id="outline-container-org7eff231" class="outline-2">
-<h2 id="org7eff231">Some common debt follies</h2>
-<div class="outline-text-2" id="text-org7eff231">
+<div id="outline-container-org469b8d7" class="outline-2">
+<h2 id="org469b8d7">Some common debt follies</h2>
+<div class="outline-text-2" id="text-org469b8d7">
 </div>
-<div id="outline-container-org484a790" class="outline-3">
-<h3 id="org484a790">Saving money while holding debt</h3>
-<div class="outline-text-3" id="text-org484a790">
+<div id="outline-container-org0602b83" class="outline-3">
+<h3 id="org0602b83">Saving money while holding debt</h3>
+<div class="outline-text-3" id="text-org0602b83">
 <p>
 It doesn't make any sense on paper but actually many people are doing this both
 financially and technically.
@@ -90,9 +94,9 @@ feature easy), then make the easy change to add this feature.<sup><a id="fnr.1" 
 </p>
 </div>
 </div>
-<div id="outline-container-org5e8c0c0" class="outline-3">
-<h3 id="org5e8c0c0">Paying off debt in the wrong order</h3>
-<div class="outline-text-3" id="text-org5e8c0c0">
+<div id="outline-container-org176e20e" class="outline-3">
+<h3 id="org176e20e">Paying off debt in the wrong order</h3>
+<div class="outline-text-3" id="text-org176e20e">
 <p>
 I've actually made many of this kind of mistakes before.
 </p>
@@ -109,9 +113,9 @@ know they are there. (I'll explain more about this later.)
 </p>
 </div>
 </div>
-<div id="outline-container-org19dfcfd" class="outline-3">
-<h3 id="org19dfcfd">Unnecessary debt</h3>
-<div class="outline-text-3" id="text-org19dfcfd">
+<div id="outline-container-org9b50a7e" class="outline-3">
+<h3 id="org9b50a7e">Unnecessary debt</h3>
+<div class="outline-text-3" id="text-org9b50a7e">
 <p>
 Technical debts are necessary or inevitable because we need to ship our product
 and we need to borrow some time from here and there.
@@ -130,9 +134,9 @@ later.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </div>
 </div>
 </div>
-<div id="outline-container-org78904f1" class="outline-2">
-<h2 id="org78904f1">Differences between Tech Debts and Financial Debts</h2>
-<div class="outline-text-2" id="text-org78904f1">
+<div id="outline-container-orgc2d8b58" class="outline-2">
+<h2 id="orgc2d8b58">Differences between Tech Debts and Financial Debts</h2>
+<div class="outline-text-2" id="text-orgc2d8b58">
 <p>
 Of course, Tech Debts and Financial Debts are not completely the same. I think
 Tech Debts are much harder to deal with, otherwise, there would not be so many
@@ -143,9 +147,9 @@ teams that are still struggling with it.
 Here are some differences that I can think of:
 </p>
 </div>
-<div id="outline-container-org9af53c5" class="outline-3">
-<h3 id="org9af53c5">Tech Debts are highly context dependent</h3>
-<div class="outline-text-3" id="text-org9af53c5">
+<div id="outline-container-org4ac524f" class="outline-3">
+<h3 id="org4ac524f">Tech Debts are highly context dependent</h3>
+<div class="outline-text-3" id="text-org4ac524f">
 <p>
 One of the important differences is that tech debts are highly <b>context
 dependent</b>. Unlike financial debts (a debt is always a negative number in your
@@ -153,9 +157,9 @@ ledger), a tech debt in a code base may not be a debt in another code base.
 </p>
 </div>
 </div>
-<div id="outline-container-orge67c192" class="outline-3">
-<h3 id="orge67c192">Tech Debts will not cost you immediately</h3>
-<div class="outline-text-3" id="text-orge67c192">
+<div id="outline-container-org48f5ac9" class="outline-3">
+<h3 id="org48f5ac9">Tech Debts will not cost you immediately</h3>
+<div class="outline-text-3" id="text-org48f5ac9">
 <p>
 Another difference I can think of is that tech debts will not cost you
 immediately (like a credit card debt), but it will accumulate or propagate other
@@ -168,9 +172,9 @@ to fix it. Until you notice it, it might already be too late.
 </p>
 </div>
 </div>
-<div id="outline-container-org0071cfc" class="outline-3">
-<h3 id="org0071cfc">Tech Debts are hard to measure or quantify</h3>
-<div class="outline-text-3" id="text-org0071cfc">
+<div id="outline-container-org512fdf8" class="outline-3">
+<h3 id="org512fdf8">Tech Debts are hard to measure or quantify</h3>
+<div class="outline-text-3" id="text-org512fdf8">
 <p>
 The last and the biggest difference I think is that tech debts are really hard
 to measure. Unlike financial debts, it's nearly impossible to say that this
@@ -203,7 +207,7 @@ It's also called <a href="http://www.informit.com/articles/article.aspx?p=123562
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-Like <a href="../../Org/notes/notes.html#ID-84054942-41B9-4373-82E8-E4CE9F972055">Code Climate</a>, if you are interested, you can also check out <a href="https://www.youtube.com/watch?v=vcH0RBe4Eew">GORUCO
+Like <a href="../../../../../Org/notes/notes.html#ID-84054942-41B9-4373-82E8-E4CE9F972055">Code Climate</a>, if you are interested, you can also check out <a href="https://www.youtube.com/watch?v=vcH0RBe4Eew">GORUCO
 2016 - Keynote: Code Quality Lessons Learned Bryan Helmkamp - YouTube</a>
 </p></div></div>
 

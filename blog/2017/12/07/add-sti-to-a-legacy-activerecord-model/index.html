@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -64,9 +68,9 @@ resources about how to do it. So I'll explain how I did this in this
 post.
 </p>
 
-<div id="outline-container-orgd2371cb" class="outline-2">
-<h2 id="orgd2371cb">Set <code>inheritance_column</code></h2>
-<div class="outline-text-2" id="text-orgd2371cb">
+<div id="outline-container-org352cf7a" class="outline-2">
+<h2 id="org352cf7a">Set <code>inheritance_column</code></h2>
+<div class="outline-text-2" id="text-org352cf7a">
 <p>
 To change the column STI uses, we need to set <code>inheritance_column</code> in
 our Base Model like this:
@@ -96,9 +100,9 @@ your own model for something else, you can set inheritance_column:
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgf5ecd06" class="outline-2">
-<h2 id="orgf5ecd06">Hack How ActiveRecord Finds the Sub-classes</h2>
-<div class="outline-text-2" id="text-orgf5ecd06">
+<div id="outline-container-orgfdfdb0e" class="outline-2">
+<h2 id="orgfdfdb0e">Hack How ActiveRecord Finds the Sub-classes</h2>
+<div class="outline-text-2" id="text-orgfdfdb0e">
 <p>
 Then comes the most important part of our solution. We need to make
 <code>ActiveRecord</code> finds our sub-class based on the existing value
@@ -168,9 +172,9 @@ end
 </ol>
 </div>
 </div>
-<div id="outline-container-orge17cae9" class="outline-2">
-<h2 id="orge17cae9">Caveats</h2>
-<div class="outline-text-2" id="text-orge17cae9">
+<div id="outline-container-org7fb7546" class="outline-2">
+<h2 id="org7fb7546">Caveats</h2>
+<div class="outline-text-2" id="text-org7fb7546">
 <p>
 There are some caveats for using this hack. (That's why it's called a
 hack and there are few resources introducing this.)

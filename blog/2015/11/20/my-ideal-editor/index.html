@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -52,62 +56,62 @@
 折腾编辑器也一年多了，也来谈谈我理想中的编辑器是什么样的。再用 Vim, Emacs 来和这些需求作个比较，看看我为什么选择了 Emacs
 </p>
 
-<div id="outline-container-org060913f" class="outline-2">
-<h2 id="org060913f">需求</h2>
-<div class="outline-text-2" id="text-org060913f">
+<div id="outline-container-org654a0e4" class="outline-2">
+<h2 id="org654a0e4">需求</h2>
+<div class="outline-text-2" id="text-org654a0e4">
 </div>
-<div id="outline-container-org629b114" class="outline-3">
-<h3 id="org629b114">Vim Mode</h3>
-<div class="outline-text-3" id="text-org629b114">
+<div id="outline-container-org5151e91" class="outline-3">
+<h3 id="org5151e91">Vim Mode</h3>
+<div class="outline-text-3" id="text-org5151e91">
 <p>
 没有 Vim mode 的编辑器完全不能考虑，而且还得是一个足够优秀的 Vim mode ，不仅仅是 Insert Mode, Normal Mode, Visual Mode 这样简单的三种 Mode 实现，还包括了
 Expert Mode 等其他高阶的功能。总之就是越像 Vim 越好（这点上看，我是个原教旨主义者）
 </p>
 </div>
 </div>
-<div id="outline-container-org0ff0a79" class="outline-3">
-<h3 id="org0ff0a79">Org Mode</h3>
-<div class="outline-text-3" id="text-org0ff0a79">
+<div id="outline-container-org25139fe" class="outline-3">
+<h3 id="org25139fe">Org Mode</h3>
+<div class="outline-text-3" id="text-org25139fe">
 <p>
 Org-Mode 对我来说是和 Vim, Emacs 并列的工具，写代码没有 Emacs 我可以用 Vim ，但是没了 Org Mode 我就完全不知道该如何生活、学习、工作了。
 </p>
 </div>
 </div>
-<div id="outline-container-org8ea2ac8" class="outline-3">
-<h3 id="org8ea2ac8">性能</h3>
-<div class="outline-text-3" id="text-org8ea2ac8">
+<div id="outline-container-orga1b8458" class="outline-3">
+<h3 id="orga1b8458">性能</h3>
+<div class="outline-text-3" id="text-orga1b8458">
 <p>
 天下武功，唯快不破。无论如何要求性能我觉得都是不为过的。不管文件的大小，都要能流畅地编辑才对。光标移动时的卡顿是绝对不能忍的。
 </p>
 </div>
 </div>
-<div id="outline-container-org58c0879" class="outline-3">
-<h3 id="org58c0879">稳定</h3>
-<div class="outline-text-3" id="text-org58c0879">
+<div id="outline-container-orgc4a1baf" class="outline-3">
+<h3 id="orgc4a1baf">稳定</h3>
+<div class="outline-text-3" id="text-orgc4a1baf">
 <p>
 绝对，绝对，绝对不能崩溃丢失改动。当然不崩溃也不现实，至少要提供一定的恢复手段。
 </p>
 </div>
 </div>
-<div id="outline-container-orgad01a7b" class="outline-3">
-<h3 id="orgad01a7b">异步操作的支持</h3>
-<div class="outline-text-3" id="text-orgad01a7b">
+<div id="outline-container-org2fe500d" class="outline-3">
+<h3 id="org2fe500d">异步操作的支持</h3>
+<div class="outline-text-3" id="text-org2fe500d">
 <p>
 不能在执行某些操作的时候卡住，没有响应，这会让我很没安全感，不知道要不要强制关闭，更担心强制关闭后文件的恢复问题。
 </p>
 </div>
 </div>
-<div id="outline-container-org8b3118d" class="outline-3">
-<h3 id="org8b3118d">中文的支持</h3>
-<div class="outline-text-3" id="text-org8b3118d">
+<div id="outline-container-org08833f1" class="outline-3">
+<h3 id="org08833f1">中文的支持</h3>
+<div class="outline-text-3" id="text-org08833f1">
 <p>
 足够优秀的中文支持，中英文字体分别设置是最基本的，如果能把中英文混排处理好就完美了。当然现在中文排版的方案也没什么统一的标准。最希望有的一个功能是自动在中文和其他字符之间加入空格。
 </p>
 </div>
 </div>
-<div id="outline-container-org3594b7a" class="outline-3">
-<h3 id="org3594b7a">丰富的插件/社区支持</h3>
-<div class="outline-text-3" id="text-org3594b7a">
+<div id="outline-container-orgc9dc72d" class="outline-3">
+<h3 id="orgc9dc72d">丰富的插件/社区支持</h3>
+<div class="outline-text-3" id="text-orgc9dc72d">
 <p>
 一个庞大的社区是一个优秀的编辑器必备的条件。光靠编辑器开发者本身是永远无法满足广大用户的需求的，只有靠社区的力量才能让编辑器的功能不断完善。
 </p>
@@ -118,9 +122,9 @@ Org-Mode 对我来说是和 Vim, Emacs 并列的工具，写代码没有 Emacs �
 </div>
 </div>
 </div>
-<div id="outline-container-orga6ea8a4" class="outline-2">
-<h2 id="orga6ea8a4">Vim/NeoVim <code>[4/7]</code></h2>
-<div class="outline-text-2" id="text-orga6ea8a4">
+<div id="outline-container-org1e8153b" class="outline-2">
+<h2 id="org1e8153b">Vim/NeoVim <code>[4/7]</code></h2>
+<div class="outline-text-2" id="text-org1e8153b">
 <p>
 Vim 我持续用了半年， NeoVim 并没有怎么用过，在用 Vim 的时候它还不稳定，等它出
 0.1 版本，比较稳定了，我已经转用 Emacs 一年了。
@@ -136,9 +140,9 @@ Vim 我持续用了半年， NeoVim 并没有怎么用过，在用 Vim 的时候
 </dl>
 </div>
 </div>
-<div id="outline-container-orgb00842b" class="outline-2">
-<h2 id="orgb00842b">Emacs <code>[4/7]</code></h2>
-<div class="outline-text-2" id="text-orgb00842b">
+<div id="outline-container-orgba61eeb" class="outline-2">
+<h2 id="orgba61eeb">Emacs <code>[4/7]</code></h2>
+<div class="outline-text-2" id="text-orgba61eeb">
 <p>
 用 Spacemacs 已经快一年了，写这篇博客也主要想抱怨一下对 Spacemacs 的一些不满意的地方。
 </p>
@@ -181,9 +185,9 @@ Ruby 之后在假期里再花时间学习 Lisp 。</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-org425a33a" class="outline-2">
-<h2 id="org425a33a">Summary</h2>
-<div class="outline-text-2" id="text-org425a33a">
+<div id="outline-container-org2387ff7" class="outline-2">
+<h2 id="org2387ff7">Summary</h2>
+<div class="outline-text-2" id="text-org2387ff7">
 <p>
 最后一看， Emacs 和 Vim 竟然 4:4 打平了，但是 Emacs 有 Org Mode ，获得了压倒性的胜利。（这么一说，结局好像一开始就注定了……）
 </p>

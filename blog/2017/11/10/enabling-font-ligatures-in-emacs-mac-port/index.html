@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -49,9 +53,9 @@
         <div class="col-md-2"></div>
             <h1>Enabling Font Ligatures in emacs-mac-port</h1>
             
-<div id="outline-container-org2b7f0a4" class="outline-2">
-<h2 id="org2b7f0a4">Iosevka</h2>
-<div class="outline-text-2" id="text-org2b7f0a4">
+<div id="outline-container-orgb61f5f9" class="outline-2">
+<h2 id="orgb61f5f9">Iosevka</h2>
+<div class="outline-text-2" id="text-orgb61f5f9">
 <p>
 Several months ago, I switched to using Iosevka<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> as my main font
 for both editor and terminal.
@@ -68,9 +72,9 @@ removed its support for ligatures in its latest version<sup><a id="fnr.4" class=
 </p>
 </div>
 </div>
-<div id="outline-container-orge6ba5e1" class="outline-2">
-<h2 id="orge6ba5e1">Cause</h2>
-<div class="outline-text-2" id="text-orge6ba5e1">
+<div id="outline-container-orgdae048e" class="outline-2">
+<h2 id="orgdae048e">Cause</h2>
+<div class="outline-text-2" id="text-orgdae048e">
 <p>
 I first noticed this feature in a talk given by Dave Thomas<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>. In
 this talk, his Elixir code looked better in Emacs with the font
@@ -89,9 +93,9 @@ So I tried to get the same effect in my Emacs.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbb48dc6" class="outline-2">
-<h2 id="orgbb48dc6">How</h2>
-<div class="outline-text-2" id="text-orgbb48dc6">
+<div id="outline-container-org91cca3f" class="outline-2">
+<h2 id="org91cca3f">How</h2>
+<div class="outline-text-2" id="text-org91cca3f">
 <p>
 Then I found this simple function to enable this feature for
 <code>emacs-mac-port</code><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>:

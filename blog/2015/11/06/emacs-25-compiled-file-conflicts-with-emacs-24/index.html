@@ -10,9 +10,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -48,9 +52,9 @@
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
             <h1>Emacs 25 compiled file conflicts with Emacs 24</h1>
-            <div id="outline-container-org3413a6c" class="outline-2">
-<h2 id="org3413a6c">Issue</h2>
-<div class="outline-text-2" id="text-org3413a6c">
+            <div id="outline-container-org9e70b8d" class="outline-2">
+<h2 id="org9e70b8d">Issue</h2>
+<div class="outline-text-2" id="text-org9e70b8d">
 <p>
 上周日，我看到评论说 Emacs 25 调用了 Mac 原生的图形接口，性能得到了大幅提高，便也在自己的 Mac 上装了最新的 Emacs 25 。性能的确有很大提高。但是，因为还不是稳定版本，总还是有点问题，比如颜色不准确之类的。在这里讲一下折腾了我好久的一个问题。
 </p>
@@ -80,13 +84,13 @@ Symbol's function definition is void: eieio-make-class-predicate
 </p>
 </div>
 </div>
-<div id="outline-container-org05fdd8f" class="outline-2">
-<h2 id="org05fdd8f">Solution</h2>
-<div class="outline-text-2" id="text-org05fdd8f">
+<div id="outline-container-org50ed3a2" class="outline-2">
+<h2 id="org50ed3a2">Solution</h2>
+<div class="outline-text-2" id="text-org50ed3a2">
 </div>
-<div id="outline-container-org14c7d44" class="outline-3">
-<h3 id="org14c7d44">eieio</h3>
-<div class="outline-text-3" id="text-org14c7d44">
+<div id="outline-container-org6c84905" class="outline-3">
+<h3 id="org6c84905">eieio</h3>
+<div class="outline-text-3" id="text-org6c84905">
 <ol class="org-ol">
 <li><p>
 Remove all .elc files
@@ -102,18 +106,18 @@ Remove all .elc files
 </ol>
 </div>
 </div>
-<div id="outline-container-orgcf86906" class="outline-3">
-<h3 id="orgcf86906">gh.el</h3>
-<div class="outline-text-3" id="text-orgcf86906">
+<div id="outline-container-org71dc1d2" class="outline-3">
+<h3 id="org71dc1d2">gh.el</h3>
+<div class="outline-text-3" id="text-org71dc1d2">
 <p>
 移除和 Github 相关的库就能正常使用 Emacs 25 了。虽然还有一些小问题，比如更容易崩溃，不会传 ESC 键给系统（迷之 bug ，没有这个都无法让 Rime 在退出
 evil-insert-mode 时切换成 Normal mode 了），但是性能的提升摆在那里，我还是选择了继续使用 Emacs 25
 </p>
 </div>
 </div>
-<div id="outline-container-org620f1ad" class="outline-3">
-<h3 id="org620f1ad">附寻找 bug 源的方法</h3>
-<div class="outline-text-3" id="text-org620f1ad">
+<div id="outline-container-orgdb888e0" class="outline-3">
+<h3 id="orgdb888e0">附寻找 bug 源的方法</h3>
+<div class="outline-text-3" id="text-orgdb888e0">
 <p>
 使用 ag 在第三方库代码文件夹中找出错的函数
 </p>

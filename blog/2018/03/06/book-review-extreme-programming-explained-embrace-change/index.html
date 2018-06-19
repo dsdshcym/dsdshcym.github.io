@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -51,21 +55,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8e7bf73">Embrace Change</a>
+<li><a href="#orge53c95b">Embrace Change</a>
 <ul>
-<li><a href="#orgb13b2f9">Change is inevitable in software development</a></li>
-<li><a href="#org12b1a1e">XP is about how to embrace change well</a></li>
+<li><a href="#org78ad7e8">Change is inevitable in software development</a></li>
+<li><a href="#orgc8f41ff">XP is about how to embrace change well</a></li>
 </ul>
 </li>
-<li><a href="#orgafd9841">Practices resonate with my experiences</a>
+<li><a href="#org55bab51">Practices resonate with my experiences</a>
 <ul>
-<li><a href="#org9f7ab95">Incremental Deployment</a></li>
-<li><a href="#org1529bce">Root Cause Analysis</a></li>
-<li><a href="#org27dd71d">Single Code Base</a></li>
-<li><a href="#org3a9ad44">Testing: Early, Often, and Automated</a>
+<li><a href="#org08b691c">Incremental Deployment</a></li>
+<li><a href="#orga83e7fa">Root Cause Analysis</a></li>
+<li><a href="#orgd7f4c81">Single Code Base</a></li>
+<li><a href="#orge389f3f">Testing: Early, Often, and Automated</a>
 <ul>
-<li><a href="#org5a487f7">Tests give you trust</a></li>
-<li><a href="#org8fb6208">Staging/Beta testing is not good</a></li>
+<li><a href="#org0f0f8cf">Tests give you trust</a></li>
+<li><a href="#orgd816832">Staging/Beta testing is not good</a></li>
 </ul>
 </li>
 </ul>
@@ -78,13 +82,13 @@ This is my review of <i><a href="https://www.amazon.com/Extreme-Programming-Expl
 Change</a></i><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, you can read my notes <a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/">here</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 </p>
 
-<div id="outline-container-org8e7bf73" class="outline-2">
-<h2 id="org8e7bf73">Embrace Change</h2>
-<div class="outline-text-2" id="text-org8e7bf73">
+<div id="outline-container-orge53c95b" class="outline-2">
+<h2 id="orge53c95b">Embrace Change</h2>
+<div class="outline-text-2" id="text-orge53c95b">
 </div>
-<div id="outline-container-orgb13b2f9" class="outline-3">
-<h3 id="orgb13b2f9"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org6c07dd7">Change is inevitable in software development</a></h3>
-<div class="outline-text-3" id="text-orgb13b2f9">
+<div id="outline-container-org78ad7e8" class="outline-3">
+<h3 id="org78ad7e8"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org6c07dd7">Change is inevitable in software development</a></h3>
+<div class="outline-text-3" id="text-org78ad7e8">
 <p>
 Because of the nature of the software building activity, change is
 inevitable.
@@ -109,9 +113,9 @@ developing the same system for the second time.</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-org12b1a1e" class="outline-3">
-<h3 id="org12b1a1e"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#outline-container-orgef6807f">XP is about how to embrace change well</a></h3>
-<div class="outline-text-3" id="text-org12b1a1e">
+<div id="outline-container-orgc8f41ff" class="outline-3">
+<h3 id="orgc8f41ff"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#outline-container-orgef6807f">XP is about how to embrace change well</a></h3>
+<div class="outline-text-3" id="text-orgc8f41ff">
 <p>
 Since change is inevitable, how to embrace change is one of the
 biggest problems we are facing in software development.
@@ -145,18 +149,18 @@ we can
 </div>
 </div>
 </div>
-<div id="outline-container-orgafd9841" class="outline-2">
-<h2 id="orgafd9841">Practices resonate with my experiences</h2>
-<div class="outline-text-2" id="text-orgafd9841">
+<div id="outline-container-org55bab51" class="outline-2">
+<h2 id="org55bab51">Practices resonate with my experiences</h2>
+<div class="outline-text-2" id="text-org55bab51">
 <p>
 I'll not talk about values and principles in this post, because you
 really should read this book to fully understand them. I'll just put
 several practices that resonate with my past development experiences.
 </p>
 </div>
-<div id="outline-container-org9f7ab95" class="outline-3">
-<h3 id="org9f7ab95"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Incremental Deployment</a></h3>
-<div class="outline-text-3" id="text-org9f7ab95">
+<div id="outline-container-org08b691c" class="outline-3">
+<h3 id="org08b691c"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Incremental Deployment</a></h3>
+<div class="outline-text-3" id="text-org08b691c">
 <p>
 I've failed<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> to deploy several refactoring projects smoothly because I
 didn't deploy the change incrementally.
@@ -170,9 +174,9 @@ step.
 </p>
 </div>
 </div>
-<div id="outline-container-org1529bce" class="outline-3">
-<h3 id="org1529bce"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Root Cause Analysis</a></h3>
-<div class="outline-text-3" id="text-org1529bce">
+<div id="outline-container-orga83e7fa" class="outline-3">
+<h3 id="orga83e7fa"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Root Cause Analysis</a></h3>
+<div class="outline-text-3" id="text-orga83e7fa">
 <p>
 Postmortem meetings are really important for collecting feedback and
 learning from failures.
@@ -184,9 +188,9 @@ failures before and I'll try to dig deeper the next time I fail.
 </p>
 </div>
 </div>
-<div id="outline-container-org27dd71d" class="outline-3">
-<h3 id="org27dd71d"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Single Code Base</a></h3>
-<div class="outline-text-3" id="text-org27dd71d">
+<div id="outline-container-orgd7f4c81" class="outline-3">
+<h3 id="orgd7f4c81"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c">Single Code Base</a></h3>
+<div class="outline-text-3" id="text-orgd7f4c81">
 <p>
 Unfortunately, most projects I've worked on all have this kind of
 problem: not having a single code base.
@@ -214,13 +218,13 @@ that encourages people to split a single code base into several ones.
 </p>
 </div>
 </div>
-<div id="outline-container-org3a9ad44" class="outline-3">
-<h3 id="org3a9ad44"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org4469005">Testing: Early, Often, and Automated</a></h3>
-<div class="outline-text-3" id="text-org3a9ad44">
+<div id="outline-container-orge389f3f" class="outline-3">
+<h3 id="orge389f3f"><a href="http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org4469005">Testing: Early, Often, and Automated</a></h3>
+<div class="outline-text-3" id="text-orge389f3f">
 </div>
-<div id="outline-container-org5a487f7" class="outline-4">
-<h4 id="org5a487f7">Tests give you trust</h4>
-<div class="outline-text-4" id="text-org5a487f7">
+<div id="outline-container-org0f0f8cf" class="outline-4">
+<h4 id="org0f0f8cf">Tests give you trust</h4>
+<div class="outline-text-4" id="text-org0f0f8cf">
 <blockquote>
 <p>
 Without trust, people spend much of their time defending themselves against
@@ -252,9 +256,9 @@ base and your colleagues.
 </p>
 </div>
 </div>
-<div id="outline-container-org8fb6208" class="outline-4">
-<h4 id="org8fb6208">Staging/Beta testing is not good</h4>
-<div class="outline-text-4" id="text-org8fb6208">
+<div id="outline-container-orgd816832" class="outline-4">
+<h4 id="orgd816832">Staging/Beta testing is not good</h4>
+<div class="outline-text-4" id="text-orgd816832">
 <blockquote>
 <p>
 Beta testing is a symptom of weak testing practices and poor

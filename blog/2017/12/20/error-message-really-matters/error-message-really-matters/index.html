@@ -9,9 +9,13 @@
   <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
   <link rel="stylesheet" href="/media/css/main.css" type="text/css">
   <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
 </head>
 
   <body class="container">
@@ -59,9 +63,9 @@ This is what I learned after spending 2 days on an iOS push
 notification issue.
 </p>
 
-<div id="outline-container-orgfd951b4" class="outline-2">
-<h2 id="orgfd951b4">The iOS push notification issue</h2>
-<div class="outline-text-2" id="text-orgfd951b4">
+<div id="outline-container-orgdb5071b" class="outline-2">
+<h2 id="orgdb5071b">The iOS push notification issue</h2>
+<div class="outline-text-2" id="text-orgdb5071b">
 <ol class="org-ol">
 <li>We use Rpush<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> to send notifications to mobile devices
 (Android/iOS).</li>
@@ -80,9 +84,9 @@ Lost connection to gateway.push.apple.com:2195 (Errno::EPIPE)
 <li>But the Android notifications could be sent successfully.</li>
 </ol>
 </div>
-<div id="outline-container-orgb15a4dd" class="outline-3">
-<h3 id="orgb15a4dd">Try to fix the wrong problem (App configurations)</h3>
-<div class="outline-text-3" id="text-orgb15a4dd">
+<div id="outline-container-orgf76925f" class="outline-3">
+<h3 id="orgf76925f">Try to fix the wrong problem (App configurations)</h3>
+<div class="outline-text-3" id="text-orgf76925f">
 <ul class="org-ul">
 <li>I thought this must be due to some wrong configurations in our
 <code>Rpush::Apns::App</code>.</li>
@@ -94,9 +98,9 @@ the same error.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4039605" class="outline-3">
-<h3 id="org4039605">The real issue (Invalid Device Token)</h3>
-<div class="outline-text-3" id="text-org4039605">
+<div id="outline-container-org787d979" class="outline-3">
+<h3 id="org787d979">The real issue (Invalid Device Token)</h3>
+<div class="outline-text-3" id="text-org787d979">
 <ul class="org-ul">
 <li>One thing I noticed was that we could still send notifications
 within the Google Firebase<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> console.
@@ -139,9 +143,9 @@ pushed as normal</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org2f9e5e4" class="outline-2">
-<h2 id="org2f9e5e4">Good error message really matters</h2>
-<div class="outline-text-2" id="text-org2f9e5e4">
+<div id="outline-container-org8350890" class="outline-2">
+<h2 id="org8350890">Good error message really matters</h2>
+<div class="outline-text-2" id="text-org8350890">
 <p>
 In retrospect, I think if I can get a more meaningful error message
 from either Rpush or APNs, I can definitely fix this issue much
@@ -154,9 +158,9 @@ to the invalid token issue, but both Rpush and APNs have failed to
 provided me this kind of error.
 </p>
 </div>
-<div id="outline-container-org1be26cc" class="outline-3">
-<h3 id="org1be26cc">Better error message from Rpush (Library)</h3>
-<div class="outline-text-3" id="text-org1be26cc">
+<div id="outline-container-org45d0c3d" class="outline-3">
+<h3 id="org45d0c3d">Better error message from Rpush (Library)</h3>
+<div class="outline-text-3" id="text-org45d0c3d">
 <p>
 There's only one possible error for this case from Rpush<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>:
 </p>
@@ -185,9 +189,9 @@ and provide more meaningful error messages for developers.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb7b0d65" class="outline-3">
-<h3 id="orgb7b0d65">Better error message from APNs (API responses)</h3>
-<div class="outline-text-3" id="text-orgb7b0d65">
+<div id="outline-container-org2dfd70a" class="outline-3">
+<h3 id="org2dfd70a">Better error message from APNs (API responses)</h3>
+<div class="outline-text-3" id="text-org2dfd70a">
 <p>
 I didn't check the error message from APNs in the debugging process.
 But this reminds me of the error message from AWS<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>.
@@ -216,9 +220,9 @@ user authentication</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org0c95146" class="outline-2">
-<h2 id="org0c95146">Learn from programming language error messages</h2>
-<div class="outline-text-2" id="text-org0c95146">
+<div id="outline-container-orgc7acf9a" class="outline-2">
+<h2 id="orgc7acf9a">Learn from programming language error messages</h2>
+<div class="outline-text-2" id="text-orgc7acf9a">
 <p>
 More and more attentions are paying to good error messages.
 </p>
