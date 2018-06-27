@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>TDD is All About Reducing Accidental Complication - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="TDD, The Mythical Man-Month, Accidental Complication, Agile, XP" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>TDD is All About Reducing Accidental Complication</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>The Mythical Man-Month</li>
+<li>Complication, not complexity</li>
+<li>The cost of a feature is dominated by the accidental complication</li>
+<li>Your design sucks -&gt; TDD to the rescue
+<ol class="org-ol">
+<li><b>Think about what you want to do</b></li>
+<li>Write a test</li>
+<li>Ask yourself "How much does this test suck?"
+<ul class="org-ul">
+<li>simpler tests</li>
+<li>smaller tests</li>
+</ul></li>
+<li>Run the test and watch it fail
+<ul class="org-ul">
+<li>Stop writing too much code</li>
+</ul></li>
+<li>Write just enough code to make it pass</li>
+<li>Refactor a bit now</li>
+</ol></li>
+<li>Refactoring is how you reduce accidental complication</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=WSes_PexXcA">7 minutes, 26 seconds, and the Fundamental Theorem of Agile
+   Software Development - YouTube</a>
+</p>
+
+<p>
+I think this is the best explanation for why TDD can help with
+designing better software:
+</p>
+<ol class="org-ol">
+<li>TDD is never about writing some tests to prove our application is
+running correctly.</li>
+<li>Instead, TDD is all about <b>reducing the accidental complication</b>
+we add to our application.
+<ol class="org-ol">
+<li>Thinking about what you want to do and writing a test for that
+help you think deeply about your design decisions.</li>
+<li>Rethinking about the tests helps you rethink about that.</li>
+<li>Running the test and watching it fail makes sure we are not
+writing meaningless code.</li>
+<li>Writing just enough code to make it pass is the hardest
+part. Because we as developers tend to show off our intelligence
+and always try to solve multiple problems at once. And sometimes
+finding the minimum code to pass a test is much harder than
+the obvious solution.</li>
+<li>Refactoring makes sure we will think again about our design
+after learning more knowledge about our domain from the previous
+phases.</li>
+</ol></li>
+</ol>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2018-06-27</span>
+        <span title="last modification date" class="post-info">2018-06-27</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/tdd/">TDD</a>, <a href="/tags/agile/">Agile</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication";
+       var disqus_url = "http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

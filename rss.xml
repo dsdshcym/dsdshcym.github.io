@@ -4,48 +4,82 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 20 Jun 2018 22:10:14 CST</pubDate>
-    <lastBuildDate>Wed, 20 Jun 2018 22:10:14 CST</lastBuildDate>
+    <pubDate>Wed, 27 Jun 2018 21:33:45 CST</pubDate>
+    <lastBuildDate>Wed, 27 Jun 2018 21:33:45 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>人类已经过了最后的匮乏时代</title>
-      <link>http://dsdshcym.github.io/clipping/2018/06/20/人类已经过了最后的匮乏时代</link>
+      <title>TDD is All About Reducing Accidental Complication</title>
+      <link>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>人类已经过了最后的匮乏时代</h1>
+            <h1>TDD is All About Reducing Accidental Complication</h1>
             <blockquote>
 <ul class="org-ul">
-<li><b>人类已经过了最后的匮乏时代</b>
+<li>The Mythical Man-Month</li>
+<li>Complication, not complexity</li>
+<li>The cost of a feature is dominated by the accidental complication</li>
+<li>Your design sucks -&gt; TDD to the rescue
+<ol class="org-ol">
+<li><b>Think about what you want to do</b></li>
+<li>Write a test</li>
+<li>Ask yourself "How much does this test suck?"
 <ul class="org-ul">
-<li>无论多么冷门的内容，都有无穷的资源供消费</li>
-<li>只能挑部分感兴趣的内容看</li>
+<li>simpler tests</li>
+<li>smaller tests</li>
 </ul></li>
-<li>大脑停转的负罪感是根植在人类的起源中的</li>
-<li>寻求意义的难度是指数增长的</li>
-<li>游戏、抖音、小资都是为了解决温饱之后的如何赋予人意义的问题</li>
+<li>Run the test and watch it fail
+<ul class="org-ul">
+<li>Stop writing too much code</li>
+</ul></li>
+<li>Write just enough code to make it pass</li>
+<li>Refactor a bit now</li>
+</ol></li>
+<li>Refactoring is how you reduce accidental complication</li>
 </ul>
 </blockquote>
 <p>
--- from <a href="http://hardimage.pro/64">硬影像 Episode 64: 编织有意义的网：从杂志到《底特律：变人》（有剧透）</a>
+-- from <a href="https://www.youtube.com/watch?v=WSes_PexXcA">7 minutes, 26 seconds, and the Fundamental Theorem of Agile
+   Software Development - YouTube</a>
 </p>
 
 <p>
-关于「最后的匮乏时代」这一点，我个人的感受是很强烈的：无论是编程、动漫，还是 Emacs，随便一样中的一小部分都足够我研究一辈子了，信息增长的速度远远超过了我消费的速度，而我只能勉强挑取其中一部分罢了。
+I think this is the best explanation for why TDD can help with
+designing better software:
 </p>
-
-<p>
-这些消费又帮我填补了大脑停转的负罪感，以此来维系我存在的意义，这是我现在的想法。
-</p>
-
-<p>
-P.S. 硬影像这档播客关于游戏的讨论我都很喜欢，值得推荐。
-</p>
+<ol class="org-ol">
+<li>TDD is never about writing some tests to prove our application is
+running correctly.</li>
+<li>Instead, TDD is all about <b>reducing the accidental complication</b>
+we add to our application.
+<ol class="org-ol">
+<li>Thinking about what you want to do and writing a test for that
+help you think deeply about your design decisions.</li>
+<li>Rethinking about the tests helps you rethink about that.</li>
+<li>Running the test and watching it fail makes sure we are not
+writing meaningless code.</li>
+<li>Writing just enough code to make it pass is the hardest
+part. Because we as developers tend to show off our intelligence
+and always try to solve multiple problems at once. And sometimes
+finding the minimum code to pass a test is much harder than
+the obvious solution.</li>
+<li>Refactoring makes sure we will think again about our design
+after learning more knowledge about our domain from the previous
+phases.</li>
+</ol></li>
+</ol>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-06-27</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</guid>
+    </item>
+    <item>
+      <title>人类已经过了最后的匮乏时代</title>
+      <link>http://dsdshcym.github.io/clipping/2018/06/20/人类已经过了最后的匮乏时代</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-06-20</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/06/20/人类已经过了最后的匮乏时代</guid>
     </item>
@@ -104,13 +138,6 @@ P.S. 硬影像这档播客关于游戏的讨论我都很喜欢，值得推荐。
       <description><![CDATA[]]></description>
       <pubDate>2018-03-28</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way</guid>
-    </item>
-    <item>
-      <title>UI/UX design and software/code design are very alike</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/26/ui-ux-design-and-software-code-design-are-very-alike</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-26</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/03/26/ui-ux-design-and-software-code-design-are-very-alike</guid>
     </item>
   </channel>
 </rss>
