@@ -4,147 +4,63 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 10 Jul 2018 09:41:15 CST</pubDate>
-    <lastBuildDate>Tue, 10 Jul 2018 09:41:15 CST</lastBuildDate>
+    <pubDate>Thu, 12 Jul 2018 10:21:13 CST</pubDate>
+    <lastBuildDate>Thu, 12 Jul 2018 10:21:13 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>TIL: mix test --stale</title>
-      <link>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</link>
+      <title>Five minute journal</title>
+      <link>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>TIL: mix test --stale</h1>
-            
-<div id="outline-container-org5506aed" class="outline-2">
-<h2 id="org5506aed">Meet mix test --stale</h2>
-<div class="outline-text-2" id="text-org5506aed">
-<p>
-Recently, I joined the mentor program on Exercism<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. When we
-practiced mentoring, I chose Elm as my test language as a student. And
-I discovered this useful feature from <code>elm-test</code><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>:
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">elm test --watch
-</pre>
-</div>
-<p>
-It's like guard-rspec<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, which will automatically rerun all your
-tests after you change a file. And <code>elm-test</code> has great Emacs
-support<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
-</p>
-
-<p>
-It really helps since I don't need to manually hit the same keystrokes
-again and again to rerun my tests, which speeds up my TDD workflow.
-</p>
-
-<p>
-Then I started looking for something similar in Elixir. And there is
-one called mix-test.watch<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>. But it's not bundled with the
-official ExUnit package and we need to add it as a dependency to our
-project, which I don't want to do. And it doesn't have nice Emacs
-support. Though I still found something useful from its README file:
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">mix test --stale
-</pre>
-</div>
-<p>
-This command will attempt to run only those tests which reference
-modules that have changed since the last time you ran <code>mix test
---stale</code>.
-</p>
-
-<p>
-Documentation from <code>mix help test</code>:
-</p>
-<blockquote>
-<p>
-• --stale - runs only tests which reference modules that changed since
-  the last test --stale. You can read more about this option in the "Stale"
-  section below.
-</p>
-
-<p>
-## "Stale"
-</p>
-
-<p>
-The --stale command line option attempts to run only those test files which
-reference modules that have changed since the last time you ran this task with
---stale.
-</p>
-
-<p>
-The first time this task is run with --stale, all tests are run and a manifest
-is generated. On subsequent runs, a test file is marked "stale" if any modules
-it references (and any modules those modules reference, recursively) were
-modified since the last run with --stale. A test file is also marked "stale" if
-it has been changed since the last run with --stale.
-</p>
+            <h1>Five minute journal</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>5-Minute Journal: I’m grateful for, what would make today great, and
+I am…; and 3 amazing things that happened today and how could I have
+made today even better</li>
+</ul>
 </blockquote>
-
 <p>
-And alchemist.el also supports this command via <code>alchemist-mix-test-stale</code>.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org8e6b9a8" class="outline-2">
-<h2 id="org8e6b9a8">Usages</h2>
-<div class="outline-text-2" id="text-org8e6b9a8">
-<p>
-It's very useful to run this command when I'm changing a feature which
-I don't know how many clients are there. So that I can make sure every
-change I make won't break any client and I don't need to run the whole
-test suite.
+-- from <a href="../../Org/lists/podcasts.html#ID-70BC3BA1-BAB5-45B6-A9B4-44B359EAF289">The Art of Product: 47: Pacing Yourself When Starting Up</a>
 </p>
 
 <p>
-But when I'm TDD a feature, I think it's not as that useful. Since
-when I TDDing, I always know (or try to predict) what test would
-fail/success for some changes I make. Running stale tests sometimes
-would break this workflow because it would run more tests than I
-expected.
+I've been writing my own 5-Minute Journal for almost 2 years now. I
+learned this technique from <a href="https://alexdenning.com/five-minute-journal/">Five minute journal: how could today have
+been even better?</a> on <span class="timestamp-wrapper"><span class="timestamp">[2016-12-31 Sat]</span></span>, then I added a capture template to
+my Org mode config and started writing it everyday.
 </p>
 
 <p>
-Anyway, it's a useful tool to add to your toolbox. And it again shows
-that Elixir has a great development tooling ecosystem.
+Before using this technique, I was just looking at my time log and
+write random stuffs, then call it for a day.
 </p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://mentoring.exercism.io/">Mentoring on Exercism</a>
-</p></div></div>
+<p>
+This technique helps me focus more on both good things and bad things
+happened today. Sometimes there would be more than 3 amazing things or
+more than 3 things that could be improved and it's totally fine to me.
+This journal is basically my highlights for my daily life.
+</p>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/elm-community/elm-test">elm-community/elm-test: Write unit and fuzz tests for your Elm code, in Elm.</a>
-</p></div></div>
+<p>
+What I want to do better is to be more goal-driven, write down my
+goals at the beginning of a month, then check if I'm going in the
+right direction everyday.
+</p>
 
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-<a href="../../../Org/refile.html#ID-D2F1DD88-9CA8-41D0-9B2C-79184F16620F">guard/guard-rspec: Guard::RSpec automatically run your specs (much like autotest)</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/juanedi/elm-test-el">juanedi/elm-test-el: elm-test integration for Emacs!</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://github.com/lpil/mix-test.watch">lpil/mix-test.watch: 🎁 Because TDD is awesome.</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-07-12</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</guid>
+    </item>
+    <item>
+      <title>TIL: mix test --stale</title>
+      <link>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-07-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</guid>
     </item>
@@ -203,13 +119,6 @@ that Elixir has a great development tooling ecosystem.
       <description><![CDATA[]]></description>
       <pubDate>2018-04-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/04/09/book-review-the-mythical-man-month</guid>
-    </item>
-    <item>
-      <title>What Agility Really Means</title>
-      <link>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-03-30</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</guid>
     </item>
   </channel>
 </rss>
