@@ -52,18 +52,18 @@
         <div class="col-md-2"></div>
             <h1>A Simple Introduction to Docker I</h1>
             
-<div id="outline-container-org71c811c" class="outline-2">
-<h2 id="org71c811c">Why do we need Virtualization?</h2>
-<div class="outline-text-2" id="text-org71c811c">
+<div id="outline-container-org9397fe1" class="outline-2">
+<h2 id="org9397fe1">Why do we need Virtualization?</h2>
+<div class="outline-text-2" id="text-org9397fe1">
 <p>
 I believe everyone have used a virtual machine before. And I think you know how
 convenient a virtual machine is under a personal usage sceanario. Here, we
 mainly focus on the power of virtualization on the server side.
 </p>
 </div>
-<div id="outline-container-orgb7a2b1f" class="outline-3">
-<h3 id="orgb7a2b1f">Snapshots</h3>
-<div class="outline-text-3" id="text-orgb7a2b1f">
+<div id="outline-container-org57b8b64" class="outline-3">
+<h3 id="org57b8b64">Snapshots</h3>
+<div class="outline-text-3" id="text-org57b8b64">
 <p>
 Imagine how much work you need to do to backup a physical machine.
 </p>
@@ -84,9 +84,9 @@ another host.
 </p>
 </div>
 </div>
-<div id="outline-container-org6bbfa5f" class="outline-3">
-<h3 id="org6bbfa5f">Isolation</h3>
-<div class="outline-text-3" id="text-org6bbfa5f">
+<div id="outline-container-orgd0dae00" class="outline-3">
+<h3 id="orgd0dae00">Isolation</h3>
+<div class="outline-text-3" id="text-orgd0dae00">
 <p>
 In the real world, we often isolate apps that we want to run to provide more
 reliabilities. If an app fails, it won't cause any effect to any other apps,
@@ -104,9 +104,9 @@ virtual machines.
 </p>
 </div>
 </div>
-<div id="outline-container-org2d50c6a" class="outline-3">
-<h3 id="org2d50c6a">Cost/Energy Saving</h3>
-<div class="outline-text-3" id="text-org2d50c6a">
+<div id="outline-container-org0ffacf2" class="outline-3">
+<h3 id="org0ffacf2">Cost/Energy Saving</h3>
+<div class="outline-text-3" id="text-org0ffacf2">
 <p>
 Since we can provide isolation via virtualization, we can use a single machine
 to provide same functionality as hundreds physical machines thanks to the
@@ -119,13 +119,13 @@ Thus we can save our unneeded cost on these physical machines.
 </div>
 </div>
 </div>
-<div id="outline-container-org2221a7b" class="outline-2">
-<h2 id="org2221a7b">What's the Container?</h2>
-<div class="outline-text-2" id="text-org2221a7b">
+<div id="outline-container-org1edccbd" class="outline-2">
+<h2 id="org1edccbd">What's the Container?</h2>
+<div class="outline-text-2" id="text-org1edccbd">
 </div>
-<div id="outline-container-org363365a" class="outline-3">
-<h3 id="org363365a">Operating-system-level virtualization</h3>
-<div class="outline-text-3" id="text-org363365a">
+<div id="outline-container-org610c6b4" class="outline-3">
+<h3 id="org610c6b4">Operating-system-level virtualization</h3>
+<div class="outline-text-3" id="text-org610c6b4">
 <p>
 Container, also called operating-system-level virtualization, is a
 server-virtualization method where the kernel of an operating system allows
@@ -141,9 +141,9 @@ Virtualization</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org02f050d" class="outline-3">
-<h3 id="org02f050d">Compare with VM</h3>
-<div class="outline-text-3" id="text-org02f050d">
+<div id="outline-container-orgd3e6628" class="outline-3">
+<h3 id="orgd3e6628">Compare with VM</h3>
+<div class="outline-text-3" id="text-orgd3e6628">
 <p>
 Basically, a container is way more lightweight than a virtual machine. Thus, it
 can boot more quickly, use CPU and RAM more efficiently and have smaller image
@@ -262,9 +262,9 @@ this table below:
 </table></li>
 </ul>
 </div>
-<div id="outline-container-org9e1eb18" class="outline-4">
-<h4 id="org9e1eb18">Why can a container be so lightweight?</h4>
-<div class="outline-text-4" id="text-org9e1eb18">
+<div id="outline-container-org9296cf9" class="outline-4">
+<h4 id="org9296cf9">Why can a container be so lightweight?</h4>
+<div class="outline-text-4" id="text-org9296cf9">
 <p>
 Containers include the application and all of its dependencies, but share the
 kernel with other containers. They run as an isolated process in userspace on
@@ -285,13 +285,13 @@ GBs in size.
 </div>
 </div>
 </div>
-<div id="outline-container-org5998b70" class="outline-3">
-<h3 id="org5998b70">How does container help you build better software?</h3>
-<div class="outline-text-3" id="text-org5998b70">
+<div id="outline-container-orgbbe7aad" class="outline-3">
+<h3 id="orgbbe7aad">How does container help you build better software?</h3>
+<div class="outline-text-3" id="text-orgbbe7aad">
 </div>
-<div id="outline-container-org37bd4ca" class="outline-4">
-<h4 id="org37bd4ca">Eliminate Environment Inconsistencies</h4>
-<div class="outline-text-4" id="text-org37bd4ca">
+<div id="outline-container-org304be81" class="outline-4">
+<h4 id="org304be81">Eliminate Environment Inconsistencies</h4>
+<div class="outline-text-4" id="text-org304be81">
 <p>
 You can package your container into one little config file. And it can run on
 another machine as the way you want it to. So you don't need to spend extra time
@@ -299,18 +299,18 @@ to install package A, B, C, D... in your test machine or even working machine.
 </p>
 </div>
 </div>
-<div id="outline-container-org8efe670" class="outline-4">
-<h4 id="org8efe670">Accelerate Developer Onboarding</h4>
-<div class="outline-text-4" id="text-org8efe670">
+<div id="outline-container-orga8a2dbf" class="outline-4">
+<h4 id="orga8a2dbf">Accelerate Developer Onboarding</h4>
+<div class="outline-text-4" id="text-orga8a2dbf">
 <p>
 You can just give your new partner a container config file. And he can run it on
 his machine without any problems. Then he can start to work. It just works.
 </p>
 </div>
 </div>
-<div id="outline-container-org4aa0825" class="outline-4">
-<h4 id="org4aa0825">Empower Developer Creativity</h4>
-<div class="outline-text-4" id="text-org4aa0825">
+<div id="outline-container-orge91e6b4" class="outline-4">
+<h4 id="orge91e6b4">Empower Developer Creativity</h4>
+<div class="outline-text-4" id="text-orge91e6b4">
 <p>
 You don't need to worry about what language you should use. You can use any
 language you want in a container, as long as you provide a simple API through
@@ -360,7 +360,7 @@ this container. And this will not cause any conflicts.
       <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
 <footer class="footer">
-  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
   <p>
     Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
     &nbsp;&nbsp;-&nbsp;&nbsp;

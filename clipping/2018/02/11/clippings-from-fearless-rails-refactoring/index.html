@@ -55,97 +55,97 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf7a1abd">Rails controllers</a>
+<li><a href="#orgc480f17">Rails controllers</a>
 <ul>
-<li><a href="#orgeaeb61d">What is the problem with Rails controllers?</a></li>
-<li><a href="#org8ab5855">Why service objects?</a></li>
-<li><a href="#org5826a94">What is a Rails service object?</a></li>
-<li><a href="#orgf1dc61c">Refactoring</a></li>
-<li><a href="#orgd2b87e7">Refactoring and the human factor</a></li>
-<li><a href="#orgc1ff0b7">Tools</a></li>
-<li><a href="#orge52df57">How to use this book</a></li>
+<li><a href="#orgdcfce70">What is the problem with Rails controllers?</a></li>
+<li><a href="#org89691fb">Why service objects?</a></li>
+<li><a href="#orgfc51f58">What is a Rails service object?</a></li>
+<li><a href="#org2f78e9b">Refactoring</a></li>
+<li><a href="#orgbcf55da">Refactoring and the human factor</a></li>
+<li><a href="#org473c624">Tools</a></li>
+<li><a href="#orgfbeb513">How to use this book</a></li>
 </ul>
 </li>
-<li><a href="#org56311dc">Refactoring recipes</a>
+<li><a href="#orgbac93e2">Refactoring recipes</a>
 <ul>
-<li><a href="#org66059c1">Inline controller filters</a></li>
-<li><a href="#org4dd23ac">Explicitly render views with locals</a></li>
-<li><a href="#org76896c6">Extract render/redirect methods</a></li>
-<li><a href="#org904c00e">Extract a Single Action Controller class</a></li>
-<li><a href="#org8318687">Extract routing constraint&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SRP">SRP</span></span></a></li>
-<li><a href="#org781feed">Extract an adapter object</a></li>
-<li><a href="#org118c6db">Extract a repository object</a></li>
-<li><a href="#org6aee7ba">Extract a service object using the SimpleDelegator</a></li>
-<li><a href="#org9295a9f">Extract conditional validation into Service Object</a></li>
-<li><a href="#org4de0f71">Extract a form object</a></li>
+<li><a href="#org9b6bfdd">Inline controller filters</a></li>
+<li><a href="#org4d651b9">Explicitly render views with locals</a></li>
+<li><a href="#org3ac436d">Extract render/redirect methods</a></li>
+<li><a href="#orgc422506">Extract a Single Action Controller class</a></li>
+<li><a href="#orgc44bda9">Extract routing constraint&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SRP">SRP</span></span></a></li>
+<li><a href="#orgf39c68d">Extract an adapter object</a></li>
+<li><a href="#orge6f5169">Extract a repository object</a></li>
+<li><a href="#orgca04592">Extract a service object using the SimpleDelegator</a></li>
+<li><a href="#org157ae87">Extract conditional validation into Service Object</a></li>
+<li><a href="#org6a5b0e0">Extract a form object</a></li>
 </ul>
 </li>
-<li><a href="#orgeaf8104">Example: TripReservationsController#create</a></li>
-<li><a href="#orge44457d">Example: logging time</a></li>
-<li><a href="#org5a03843">Patterns</a>
+<li><a href="#orgfd7c1a3">Example: TripReservationsController#create</a></li>
+<li><a href="#org1ccd622">Example: logging time</a></li>
+<li><a href="#org1081a04">Patterns</a>
 <ul>
-<li><a href="#org64f8a93">Instantiating service objects</a>
+<li><a href="#org6308081">Instantiating service objects</a>
 <ul>
-<li><a href="#org5d7c386">Boring Style</a></li>
-<li><a href="#org816f44c">Modules</a></li>
-<li><a href="#org5fbb10f">Dependor</a></li>
+<li><a href="#orga428a37">Boring Style</a></li>
+<li><a href="#org0f8213b">Modules</a></li>
+<li><a href="#orgdf0fa2b">Dependor</a></li>
 </ul>
 </li>
-<li><a href="#org5fee871">The repository pattern</a>
+<li><a href="#org33a4ce1">The repository pattern</a>
 <ul>
-<li><a href="#orga83edd3">ActiveRecord class as a repository</a></li>
-<li><a href="#orgbf20249">Explicit repository object</a></li>
-<li><a href="#org4b9093f">No logic in repos</a></li>
-<li><a href="#orgaa6a6cf">Transactions</a></li>
-<li><a href="#org9584e19">The danger of too small repositories</a></li>
-<li><a href="#org263f261">In-memory repository</a></li>
+<li><a href="#org132acea">ActiveRecord class as a repository</a></li>
+<li><a href="#org3511aca">Explicit repository object</a></li>
+<li><a href="#org97664e2">No logic in repos</a></li>
+<li><a href="#org51f0129">Transactions</a></li>
+<li><a href="#org4915534">The danger of too small repositories</a></li>
+<li><a href="#orga36b46d">In-memory repository</a></li>
 </ul>
 </li>
-<li><a href="#org4ab7be2">Wrap external API with an adapter</a></li>
-<li><a href="#org8929a9d">In-Memory Fake Adapters</a></li>
-<li><a href="#org8a7257f">4 ways to early return from a rails controller</a></li>
-<li><a href="#org66e0245">Service::Input</a></li>
-<li><a href="#orge3c266b">Validations: Contexts</a></li>
-<li><a href="#org6412bfa">Validations: Objectify</a></li>
+<li><a href="#org9cedbad">Wrap external API with an adapter</a></li>
+<li><a href="#org8469304">In-Memory Fake Adapters</a></li>
+<li><a href="#org93aa59b">4 ways to early return from a rails controller</a></li>
+<li><a href="#org0dbf680">Service::Input</a></li>
+<li><a href="#org6235db0">Validations: Contexts</a></li>
+<li><a href="#org128796f">Validations: Objectify</a></li>
 </ul>
 </li>
-<li><a href="#orgdaee1a2">Testing</a>
+<li><a href="#org7e811da">Testing</a>
 <ul>
-<li><a href="#orga9127df">Introduction</a></li>
-<li><a href="#orgeaa8122">Good test tells a story</a></li>
-<li><a href="#orge9d221d">Unit tests vs class tests</a></li>
-<li><a href="#org6d6522e">Techniques</a>
+<li><a href="#org98bdb95">Introduction</a></li>
+<li><a href="#org0d58a75">Good test tells a story</a></li>
+<li><a href="#orgafbef5e">Unit tests vs class tests</a></li>
+<li><a href="#org5969081">Techniques</a>
 <ul>
-<li><a href="#orgeb6a59e">Service objects as a way of testing Rails apps (without factory_girl)</a></li>
+<li><a href="#org02f16c0">Service objects as a way of testing Rails apps (without factory_girl)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org60a859b">Related topics</a>
+<li><a href="#orgc7a8b2f">Related topics</a>
 <ul>
-<li><a href="#orgf629b82">Service controller communication</a></li>
-<li><a href="#orgb51ef5e">Naming Conventions</a></li>
-<li><a href="#orgb9e81fc">Where to keep services</a></li>
-<li><a href="#org4cde6a8">Routing constraints</a></li>
-<li><a href="#orgb067103">Rails controller - the lifecycle</a></li>
+<li><a href="#org8fd233b">Service controller communication</a></li>
+<li><a href="#org462a57e">Naming Conventions</a></li>
+<li><a href="#orge0b7e25">Where to keep services</a></li>
+<li><a href="#org7fa996c">Routing constraints</a></li>
+<li><a href="#org528560a">Rails controller - the lifecycle</a></li>
 </ul>
 </li>
-<li><a href="#orgae5cd8c">Bonus</a>
+<li><a href="#org4aaa211">Bonus</a>
 <ul>
-<li><a href="#org5512462">Thanks to repositories</a></li>
+<li><a href="#org7cdac35">Thanks to repositories</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf7a1abd" class="outline-2">
-<h2 id="orgf7a1abd">Rails controllers</h2>
-<div class="outline-text-2" id="text-orgf7a1abd">
+<div id="outline-container-orgc480f17" class="outline-2">
+<h2 id="orgc480f17">Rails controllers</h2>
+<div class="outline-text-2" id="text-orgc480f17">
 </div>
-<div id="outline-container-orgeaeb61d" class="outline-3">
-<h3 id="orgeaeb61d">What is the problem with Rails controllers?</h3>
-<div class="outline-text-3" id="text-orgeaeb61d">
+<div id="outline-container-orgdcfce70" class="outline-3">
+<h3 id="orgdcfce70">What is the problem with Rails controllers?</h3>
+<div class="outline-text-3" id="text-orgdcfce70">
 <ul class="org-ul">
 <li>The problem with Rails controllers:
 <ul class="org-ul">
@@ -185,9 +185,9 @@ isolation between the controller and your application
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ab5855" class="outline-3">
-<h3 id="org8ab5855">Why service objects?</h3>
-<div class="outline-text-3" id="text-org8ab5855">
+<div id="outline-container-org89691fb" class="outline-3">
+<h3 id="org89691fb">Why service objects?</h3>
+<div class="outline-text-3" id="text-org89691fb">
 <ul class="org-ul">
 <li>Rails is fast at the beginning, but starts to slow down later:
 <ol class="org-ol">
@@ -223,9 +223,9 @@ integrated components</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5826a94" class="outline-3">
-<h3 id="org5826a94">What is a Rails service object?</h3>
-<div class="outline-text-3" id="text-org5826a94">
+<div id="outline-container-orgfc51f58" class="outline-3">
+<h3 id="orgfc51f58">What is a Rails service object?</h3>
+<div class="outline-text-3" id="text-orgfc51f58">
 <ul class="org-ul">
 <li>P of EAA: Service Layer</li>
 <li>7 Patterns to Refactor Fat ActiveRecord Models - Code Climate Blog</li>
@@ -250,9 +250,9 @@ HTTP-related stuff (params, render, redirect)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf1dc61c" class="outline-3">
-<h3 id="orgf1dc61c">Refactoring</h3>
-<div class="outline-text-3" id="text-orgf1dc61c">
+<div id="outline-container-org2f78e9b" class="outline-3">
+<h3 id="org2f78e9b">Refactoring</h3>
+<div class="outline-text-3" id="text-org2f78e9b">
 <ul class="org-ul">
 <li><b>The real skill of refactoring is in balancing the delivery with
 maintainability</b></li>
@@ -268,9 +268,9 @@ maintainability</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd2b87e7" class="outline-3">
-<h3 id="orgd2b87e7">Refactoring and the human factor</h3>
-<div class="outline-text-3" id="text-orgd2b87e7">
+<div id="outline-container-orgbcf55da" class="outline-3">
+<h3 id="orgbcf55da">Refactoring and the human factor</h3>
+<div class="outline-text-3" id="text-orgbcf55da">
 <ul class="org-ul">
 <li>A project is a team work
 <ul class="org-ul">
@@ -295,17 +295,17 @@ leads to this goal</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1ff0b7" class="outline-3">
-<h3 id="orgc1ff0b7">Tools</h3>
-<div class="outline-text-3" id="text-orgc1ff0b7">
+<div id="outline-container-org473c624" class="outline-3">
+<h3 id="org473c624">Tools</h3>
+<div class="outline-text-3" id="text-org473c624">
 <ul class="org-ul">
 <li>Recommend RubyMine for Refactoring/Reviewing Ruby code</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge52df57" class="outline-3">
-<h3 id="orge52df57">How to use this book</h3>
-<div class="outline-text-3" id="text-orge52df57">
+<div id="outline-container-orgfbeb513" class="outline-3">
+<h3 id="orgfbeb513">How to use this book</h3>
+<div class="outline-text-3" id="text-orgfbeb513">
 <ul class="org-ul">
 <li>Recipes
 <ul class="org-ul">
@@ -329,13 +329,13 @@ leads to this goal</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org56311dc" class="outline-2">
-<h2 id="org56311dc">Refactoring recipes</h2>
-<div class="outline-text-2" id="text-org56311dc">
+<div id="outline-container-orgbac93e2" class="outline-2">
+<h2 id="orgbac93e2">Refactoring recipes</h2>
+<div class="outline-text-2" id="text-orgbac93e2">
 </div>
-<div id="outline-container-org66059c1" class="outline-3">
-<h3 id="org66059c1">Inline controller filters</h3>
-<div class="outline-text-3" id="text-org66059c1">
+<div id="outline-container-org9b6bfdd" class="outline-3">
+<h3 id="org9b6bfdd">Inline controller filters</h3>
+<div class="outline-text-3" id="text-org9b6bfdd">
 <ul class="org-ul">
 <li>The filters introduce coupling between the controller action and the
 result of the filters.
@@ -358,9 +358,9 @@ result of the filters.
 </ul>
 </div>
 </div>
-<div id="outline-container-org4dd23ac" class="outline-3">
-<h3 id="org4dd23ac">Explicitly render views with locals</h3>
-<div class="outline-text-3" id="text-org4dd23ac">
+<div id="outline-container-org4d651b9" class="outline-3">
+<h3 id="org4d651b9">Explicitly render views with locals</h3>
+<div class="outline-text-3" id="text-org4d651b9">
 <ul class="org-ul">
 <li>The Rails way is to call <code>render</code> implicitly (by following
 conventions)
@@ -400,9 +400,9 @@ view, layout</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org76896c6" class="outline-3">
-<h3 id="org76896c6">Extract render/redirect methods</h3>
-<div class="outline-text-3" id="text-org76896c6">
+<div id="outline-container-org3ac436d" class="outline-3">
+<h3 id="org3ac436d">Extract render/redirect methods</h3>
+<div class="outline-text-3" id="text-org3ac436d">
 <ul class="org-ul">
 <li>Calls to <code>render</code> and <code>redirect</code> are usually very verbose</li>
 <li>Explicitly show your intention with method names</li>
@@ -439,9 +439,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org904c00e" class="outline-3">
-<h3 id="org904c00e">Extract a Single Action Controller class</h3>
-<div class="outline-text-3" id="text-org904c00e">
+<div id="outline-container-orgc422506" class="outline-3">
+<h3 id="orgc422506">Extract a Single Action Controller class</h3>
+<div class="outline-text-3" id="text-orgc422506">
 <ul class="org-ul">
 <li>Each action is usually a separate responsibility</li>
 <li>Breaking down huge controllers</li>
@@ -449,9 +449,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org8318687" class="outline-3">
-<h3 id="org8318687">Extract routing constraint&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SRP">SRP</span></span></h3>
-<div class="outline-text-3" id="text-org8318687">
+<div id="outline-container-orgc44bda9" class="outline-3">
+<h3 id="orgc44bda9">Extract routing constraint&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SRP">SRP</span></span></h3>
+<div class="outline-text-3" id="text-orgc44bda9">
 <ul class="org-ul">
 <li>One controller action may grow to do more than one thing</li>
 <li>Prerequisites
@@ -464,9 +464,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org781feed" class="outline-3">
-<h3 id="org781feed">Extract an adapter object</h3>
-<div class="outline-text-3" id="text-org781feed">
+<div id="outline-container-orgf39c68d" class="outline-3">
+<h3 id="orgf39c68d">Extract an adapter object</h3>
+<div class="outline-text-3" id="text-orgf39c68d">
 <ul class="org-ul">
 <li>Wrap external API with an adapter</li>
 <li>A layer of abstraction around your external libraries</li>
@@ -475,9 +475,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org118c6db" class="outline-3">
-<h3 id="org118c6db">Extract a repository object</h3>
-<div class="outline-text-3" id="text-org118c6db">
+<div id="outline-container-orge6f5169" class="outline-3">
+<h3 id="orge6f5169">Extract a repository object</h3>
+<div class="outline-text-3" id="text-orge6f5169">
 <ul class="org-ul">
 <li>Prerequisites:
 <ul class="org-ul">
@@ -492,9 +492,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org6aee7ba" class="outline-3">
-<h3 id="org6aee7ba">Extract a service object using the SimpleDelegator</h3>
-<div class="outline-text-3" id="text-org6aee7ba">
+<div id="outline-container-orgca04592" class="outline-3">
+<h3 id="orgca04592">Extract a service object using the SimpleDelegator</h3>
+<div class="outline-text-3" id="text-orgca04592">
 <ul class="org-ul">
 <li>New features tend to be added to controllers
 <ol class="org-ol">
@@ -556,9 +556,9 @@ compared to one simple SQL statement.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9295a9f" class="outline-3">
-<h3 id="org9295a9f">Extract conditional validation into Service Object</h3>
-<div class="outline-text-3" id="text-org9295a9f">
+<div id="outline-container-org157ae87" class="outline-3">
+<h3 id="org157ae87">Extract conditional validation into Service Object</h3>
+<div class="outline-text-3" id="text-org157ae87">
 <ul class="org-ul">
 <li>Introduction (Conditions)
 <ol class="org-ol">
@@ -607,9 +607,9 @@ this with the <code>save</code> transaction</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4de0f71" class="outline-3">
-<h3 id="org4de0f71">Extract a form object</h3>
-<div class="outline-text-3" id="text-org4de0f71">
+<div id="outline-container-org6a5b0e0" class="outline-3">
+<h3 id="org6a5b0e0">Extract a form object</h3>
+<div class="outline-text-3" id="text-org6a5b0e0">
 <ul class="org-ul">
 <li>Introduction
 <ul class="org-ul">
@@ -665,9 +665,9 @@ object) should take care of that</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgeaf8104" class="outline-2">
-<h2 id="orgeaf8104">Example: TripReservationsController#create</h2>
-<div class="outline-text-2" id="text-orgeaf8104">
+<div id="outline-container-orgfd7c1a3" class="outline-2">
+<h2 id="orgfd7c1a3">Example: TripReservationsController#create</h2>
+<div class="outline-text-2" id="text-orgfd7c1a3">
 <ul class="org-ul">
 <li>Extract a service object
 <ul class="org-ul">
@@ -719,25 +719,25 @@ the controller</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge44457d" class="outline-2">
-<h2 id="orge44457d">Example: logging time</h2>
-<div class="outline-text-2" id="text-orge44457d">
+<div id="outline-container-org1ccd622" class="outline-2">
+<h2 id="org1ccd622">Example: logging time</h2>
+<div class="outline-text-2" id="text-org1ccd622">
 <ul class="org-ul">
 <li>Change CRUD name to the domain one (CreateTimeEntry -&gt; LogTime)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5a03843" class="outline-2">
-<h2 id="org5a03843">Patterns</h2>
-<div class="outline-text-2" id="text-org5a03843">
+<div id="outline-container-org1081a04" class="outline-2">
+<h2 id="org1081a04">Patterns</h2>
+<div class="outline-text-2" id="text-org1081a04">
 </div>
-<div id="outline-container-org64f8a93" class="outline-3">
-<h3 id="org64f8a93">Instantiating service objects</h3>
-<div class="outline-text-3" id="text-org64f8a93">
+<div id="outline-container-org6308081" class="outline-3">
+<h3 id="org6308081">Instantiating service objects</h3>
+<div class="outline-text-3" id="text-org6308081">
 </div>
-<div id="outline-container-org5d7c386" class="outline-4">
-<h4 id="org5d7c386">Boring Style</h4>
-<div class="outline-text-4" id="text-org5d7c386">
+<div id="outline-container-orga428a37" class="outline-4">
+<h4 id="orga428a37">Boring Style</h4>
+<div class="outline-text-4" id="text-orga428a37">
 <ul class="org-ul">
 <li>Controller
 <ul class="org-ul">
@@ -811,9 +811,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org816f44c" class="outline-4">
-<h4 id="org816f44c">Modules</h4>
-<div class="outline-text-4" id="text-org816f44c">
+<div id="outline-container-org0f8213b" class="outline-4">
+<h4 id="org0f8213b">Modules</h4>
+<div class="outline-text-4" id="text-org0f8213b">
 <ul class="org-ul">
 <li>Extract the process of creating the full object into an <code>injector</code> <b>when
 instantiating becomes more complicated</b>
@@ -855,18 +855,18 @@ It doesn't care how to setup services
 </ul>
 </div>
 </div>
-<div id="outline-container-org5fbb10f" class="outline-4">
-<h4 id="org5fbb10f">Dependor</h4>
-<div class="outline-text-4" id="text-org5fbb10f">
+<div id="outline-container-orgdf0fa2b" class="outline-4">
+<h4 id="orgdf0fa2b">Dependor</h4>
+<div class="outline-text-4" id="text-orgdf0fa2b">
 <ul class="org-ul">
 <li><a href="https://github.com/psyho/dependor">psyho/dependor: Simple Dependency Injection/Service Locator framework for Rails-like applications.</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org5fee871" class="outline-3">
-<h3 id="org5fee871">The repository pattern</h3>
-<div class="outline-text-3" id="text-org5fee871">
+<div id="outline-container-org33a4ce1" class="outline-3">
+<h3 id="org33a4ce1">The repository pattern</h3>
+<div class="outline-text-3" id="text-org33a4ce1">
 <p>
 <b>Very similar to Ecto.Repo</b>
 </p>
@@ -875,9 +875,9 @@ It doesn't care how to setup services
 move business logic into other places after our application grows</b></li>
 </ul>
 </div>
-<div id="outline-container-orga83edd3" class="outline-4">
-<h4 id="orga83edd3">ActiveRecord class as a repository</h4>
-<div class="outline-text-4" id="text-orga83edd3">
+<div id="outline-container-org132acea" class="outline-4">
+<h4 id="org132acea">ActiveRecord class as a repository</h4>
+<div class="outline-text-4" id="text-org132acea">
 <ul class="org-ul">
 <li>ActiveRecord classes are already repositories</li>
 <li><p>
@@ -908,9 +908,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbf20249" class="outline-4">
-<h4 id="orgbf20249">Explicit repository object</h4>
-<div class="outline-text-4" id="text-orgbf20249">
+<div id="outline-container-org3511aca" class="outline-4">
+<h4 id="org3511aca">Explicit repository object</h4>
+<div class="outline-text-4" id="text-org3511aca">
 <div class="org-src-container">
 <pre class="src src-ruby">class PostsRepository
   def index
@@ -933,9 +933,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org4b9093f" class="outline-4">
-<h4 id="org4b9093f">No logic in repos</h4>
-<div class="outline-text-4" id="text-org4b9093f">
+<div id="outline-container-org97664e2" class="outline-4">
+<h4 id="org97664e2">No logic in repos</h4>
+<div class="outline-text-4" id="text-org97664e2">
 <ul class="org-ul">
 <li>Repository objects should have no logic at all
 <dl class="org-dl">
@@ -952,9 +952,9 @@ operations)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaa6a6cf" class="outline-4">
-<h4 id="orgaa6a6cf">Transactions</h4>
-<div class="outline-text-4" id="text-orgaa6a6cf">
+<div id="outline-container-org51f0129" class="outline-4">
+<h4 id="org51f0129">Transactions</h4>
+<div class="outline-text-4" id="text-org51f0129">
 <ul class="org-ul">
 <li>It's not the job of the repo object to build transactions (it's service
 objects' job)</li>
@@ -963,17 +963,17 @@ about the boundary</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9584e19" class="outline-4">
-<h4 id="org9584e19">The danger of too small repositories</h4>
-<div class="outline-text-4" id="text-org9584e19">
+<div id="outline-container-org4915534" class="outline-4">
+<h4 id="org4915534">The danger of too small repositories</h4>
+<div class="outline-text-4" id="text-org4915534">
 <ul class="org-ul">
 <li>Service objects taking multiple repositories is a common code smell</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org263f261" class="outline-4">
-<h4 id="org263f261">In-memory repository</h4>
-<div class="outline-text-4" id="text-org263f261">
+<div id="outline-container-orga36b46d" class="outline-4">
+<h4 id="orga36b46d">In-memory repository</h4>
+<div class="outline-text-4" id="text-orga36b46d">
 <ul class="org-ul">
 <li><p>
 Replace a real repo with stubs:
@@ -998,9 +998,9 @@ end
 </div>
 </div>
 </div>
-<div id="outline-container-org4ab7be2" class="outline-3">
-<h3 id="org4ab7be2">Wrap external API with an adapter</h3>
-<div class="outline-text-3" id="text-org4ab7be2">
+<div id="outline-container-org9cedbad" class="outline-3">
+<h3 id="org9cedbad">Wrap external API with an adapter</h3>
+<div class="outline-text-3" id="text-org9cedbad">
 <ul class="org-ul">
 <li>Your app is built upon APIs
 <ol class="org-ol">
@@ -1060,9 +1060,9 @@ whatever reason you have.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8929a9d" class="outline-3">
-<h3 id="org8929a9d">In-Memory Fake Adapters</h3>
-<div class="outline-text-3" id="text-org8929a9d">
+<div id="outline-container-org8469304" class="outline-3">
+<h3 id="org8469304">In-Memory Fake Adapters</h3>
+<div class="outline-text-3" id="text-org8469304">
 <ul class="org-ul">
 <li>3 techniques for specifying in a test the behavior of a 3rd party system
 <ol class="org-ol">
@@ -1089,9 +1089,9 @@ the state of the external system.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8a7257f" class="outline-3">
-<h3 id="org8a7257f">4 ways to early return from a rails controller</h3>
-<div class="outline-text-3" id="text-org8a7257f">
+<div id="outline-container-org93aa59b" class="outline-3">
+<h3 id="org93aa59b">4 ways to early return from a rails controller</h3>
+<div class="outline-text-3" id="text-org93aa59b">
 <p>
 Why not <code>before_filter</code>? Because you may need to extract service objects out of
 it.
@@ -1137,9 +1137,9 @@ redirect already happened</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org66e0245" class="outline-3">
-<h3 id="org66e0245">Service::Input</h3>
-<div class="outline-text-3" id="text-org66e0245">
+<div id="outline-container-org0dbf680" class="outline-3">
+<h3 id="org0dbf680">Service::Input</h3>
+<div class="outline-text-3" id="text-org0dbf680">
 <ul class="org-ul">
 <li>The Issue
 <ul class="org-ul">
@@ -1165,9 +1165,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-orge3c266b" class="outline-3">
-<h3 id="orge3c266b">Validations: Contexts</h3>
-<div class="outline-text-3" id="text-orge3c266b">
+<div id="outline-container-org6235db0" class="outline-3">
+<h3 id="org6235db0">Validations: Contexts</h3>
+<div class="outline-text-3" id="text-org6235db0">
 <ul class="org-ul">
 <li><p>
 Use context to control when to call a validation
@@ -1209,9 +1209,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-org6412bfa" class="outline-3">
-<h3 id="org6412bfa">Validations: Objectify</h3>
-<div class="outline-text-3" id="text-org6412bfa">
+<div id="outline-container-org128796f" class="outline-3">
+<h3 id="org128796f">Validations: Objectify</h3>
+<div class="outline-text-3" id="text-org128796f">
 <ol class="org-ol">
 <li><p>
 Using <code>SimpleDelegator</code> to create a Validator
@@ -1268,13 +1268,13 @@ end
 </div>
 </div>
 </div>
-<div id="outline-container-orgdaee1a2" class="outline-2">
-<h2 id="orgdaee1a2">Testing</h2>
-<div class="outline-text-2" id="text-orgdaee1a2">
+<div id="outline-container-org7e811da" class="outline-2">
+<h2 id="org7e811da">Testing</h2>
+<div class="outline-text-2" id="text-org7e811da">
 </div>
-<div id="outline-container-orga9127df" class="outline-3">
-<h3 id="orga9127df">Introduction</h3>
-<div class="outline-text-3" id="text-orga9127df">
+<div id="outline-container-org98bdb95" class="outline-3">
+<h3 id="org98bdb95">Introduction</h3>
+<div class="outline-text-3" id="text-org98bdb95">
 <p>
 <b>Distinguish tests by its stability</b>
 </p>
@@ -1284,9 +1284,9 @@ end
 </dl>
 </div>
 </div>
-<div id="outline-container-orgeaa8122" class="outline-3">
-<h3 id="orgeaa8122">Good test tells a story</h3>
-<div class="outline-text-3" id="text-orgeaa8122">
+<div id="outline-container-org0d58a75" class="outline-3">
+<h3 id="org0d58a75">Good test tells a story</h3>
+<div class="outline-text-3" id="text-org0d58a75">
 <ol class="org-ol">
 <li>User adds a product to the cart</li>
 <li>User looks at the cart to see the current total amount</li>
@@ -1295,9 +1295,9 @@ end
 </ol>
 </div>
 </div>
-<div id="outline-container-orge9d221d" class="outline-3">
-<h3 id="orge9d221d">Unit tests vs class tests</h3>
-<div class="outline-text-3" id="text-orge9d221d">
+<div id="outline-container-orgafbef5e" class="outline-3">
+<h3 id="orgafbef5e">Unit tests vs class tests</h3>
+<div class="outline-text-3" id="text-orgafbef5e">
 <ul class="org-ul">
 <li>Test units, not classes
 <ul class="org-ul">
@@ -1318,13 +1318,13 @@ classes that is interesting.</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6d6522e" class="outline-3">
-<h3 id="org6d6522e">Techniques</h3>
-<div class="outline-text-3" id="text-org6d6522e">
+<div id="outline-container-org5969081" class="outline-3">
+<h3 id="org5969081">Techniques</h3>
+<div class="outline-text-3" id="text-org5969081">
 </div>
-<div id="outline-container-orgeb6a59e" class="outline-4">
-<h4 id="orgeb6a59e">Service objects as a way of testing Rails apps (without factory_girl)</h4>
-<div class="outline-text-4" id="text-orgeb6a59e">
+<div id="outline-container-org02f16c0" class="outline-4">
+<h4 id="org02f16c0">Service objects as a way of testing Rails apps (without factory_girl)</h4>
+<div class="outline-text-4" id="text-org02f16c0">
 <ul class="org-ul">
 <li>Misuse of factories
 <ul class="org-ul">
@@ -1342,13 +1342,13 @@ classes that is interesting.</b></li>
 </div>
 </div>
 </div>
-<div id="outline-container-org60a859b" class="outline-2">
-<h2 id="org60a859b">Related topics</h2>
-<div class="outline-text-2" id="text-org60a859b">
+<div id="outline-container-orgc7a8b2f" class="outline-2">
+<h2 id="orgc7a8b2f">Related topics</h2>
+<div class="outline-text-2" id="text-orgc7a8b2f">
 </div>
-<div id="outline-container-orgf629b82" class="outline-3">
-<h3 id="orgf629b82">Service controller communication</h3>
-<div class="outline-text-3" id="text-orgf629b82">
+<div id="outline-container-org8fd233b" class="outline-3">
+<h3 id="org8fd233b">Service controller communication</h3>
+<div class="outline-text-3" id="text-org8fd233b">
 <ol class="org-ol">
 <li><code>true=/=false</code>
 <ul class="org-ul">
@@ -1372,9 +1372,9 @@ classes that is interesting.</b></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb51ef5e" class="outline-3">
-<h3 id="orgb51ef5e">Naming Conventions</h3>
-<div class="outline-text-3" id="text-orgb51ef5e">
+<div id="outline-container-org462a57e" class="outline-3">
+<h3 id="org462a57e">Naming Conventions</h3>
+<div class="outline-text-3" id="text-org462a57e">
 <ul class="org-ul">
 <li>Class
 <ul class="org-ul">
@@ -1404,9 +1404,9 @@ RegisterUser.new.(foo, bar)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb9e81fc" class="outline-3">
-<h3 id="orgb9e81fc">Where to keep services</h3>
-<div class="outline-text-3" id="text-orgb9e81fc">
+<div id="outline-container-orge0b7e25" class="outline-3">
+<h3 id="orge0b7e25">Where to keep services</h3>
+<div class="outline-text-3" id="text-orge0b7e25">
 <ul class="org-ul">
 <li>Physical location
 <ol class="org-ol">
@@ -1436,9 +1436,9 @@ RegisterUser.new.(foo, bar)
 </ul>
 </div>
 </div>
-<div id="outline-container-org4cde6a8" class="outline-3">
-<h3 id="org4cde6a8">Routing constraints</h3>
-<div class="outline-text-3" id="text-org4cde6a8">
+<div id="outline-container-org7fa996c" class="outline-3">
+<h3 id="org7fa996c">Routing constraints</h3>
+<div class="outline-text-3" id="text-org7fa996c">
 <ul class="org-ul">
 <li>Use routing constraints for situations where you need to choose different
 actions based on some params</li>
@@ -1450,21 +1450,21 @@ actions based on some params</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb067103" class="outline-3">
-<h3 id="orgb067103">Rails controller - the lifecycle</h3>
-<div class="outline-text-3" id="text-orgb067103">
+<div id="outline-container-org528560a" class="outline-3">
+<h3 id="org528560a">Rails controller - the lifecycle</h3>
+<div class="outline-text-3" id="text-org528560a">
 <ul class="org-ul">
 <li><a href="http://andrewberls.com/blog/post/rails-from-request-to-response-part-1--introduction">Rails from Request to Response: Part 1 - Introduction - Andrew Berls</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgae5cd8c" class="outline-2">
-<h2 id="orgae5cd8c">Bonus</h2>
-<div class="outline-text-2" id="text-orgae5cd8c">
+<div id="outline-container-org4aaa211" class="outline-2">
+<h2 id="org4aaa211">Bonus</h2>
+<div class="outline-text-2" id="text-org4aaa211">
 </div>
-<div id="outline-container-org5512462" class="outline-3">
-<h3 id="org5512462">Thanks to repositories</h3>
+<div id="outline-container-org7cdac35" class="outline-3">
+<h3 id="org7cdac35">Thanks to repositories</h3>
 </div>
 </div>
 
@@ -1497,7 +1497,7 @@ actions based on some params</li>
       <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
 <footer class="footer">
-  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
   <p>
     Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
     &nbsp;&nbsp;-&nbsp;&nbsp;

@@ -52,9 +52,9 @@
         <div class="col-md-2"></div>
             <h1>A Simple Introduction to Docker II</h1>
             
-<div id="outline-container-orgdc2009d" class="outline-2">
-<h2 id="orgdc2009d">What is Docker?</h2>
-<div class="outline-text-2" id="text-orgdc2009d">
+<div id="outline-container-org43e6689" class="outline-2">
+<h2 id="org43e6689">What is Docker?</h2>
+<div class="outline-text-2" id="text-org43e6689">
 <ul class="org-ul">
 <li>Docker is a container implementation written in Go language.</li>
 <li>It's the most popular container implementations nowadays.</li>
@@ -66,9 +66,9 @@ which means you can find the best documentations here.</li>
 We now use docker as a example to illustrate how container works.
 </p>
 </div>
-<div id="outline-container-org7402eaf" class="outline-3">
-<h3 id="org7402eaf">Typical Use Cases</h3>
-<div class="outline-text-3" id="text-org7402eaf">
+<div id="outline-container-org22a458d" class="outline-3">
+<h3 id="org22a458d">Typical Use Cases</h3>
+<div class="outline-text-3" id="text-org22a458d">
 <ul class="org-ul">
 <li>Development Environments Configuration</li>
 <li>Build Microservices</li>
@@ -121,16 +121,16 @@ and it keeps on scheduling containers in less than half a second.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcc3cb93" class="outline-3">
-<h3 id="orgcc3cb93">How popular is Docker?</h3>
-<div class="outline-text-3" id="text-orgcc3cb93">
+<div id="outline-container-org2a2bf36" class="outline-3">
+<h3 id="org2a2bf36">How popular is Docker?</h3>
+<div class="outline-text-3" id="text-org2a2bf36">
 <p>
 First of all, let's see how popular is docker nowadays.
 </p>
 </div>
-<div id="outline-container-orgedeadd0" class="outline-4">
-<h4 id="orgedeadd0">A Quick Peek at Real Docker Adoption</h4>
-<div class="outline-text-4" id="text-orgedeadd0">
+<div id="outline-container-org0750626" class="outline-4">
+<h4 id="org0750626">A Quick Peek at Real Docker Adoption</h4>
+<div class="outline-text-4" id="text-org0750626">
 <p>
 Here are the results of a survey from a monitoring startup Datadog.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
@@ -152,9 +152,9 @@ year. And it's widely used to provide web services.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd013403" class="outline-4">
-<h4 id="orgd013403">Real World Applications</h4>
-<div class="outline-text-4" id="text-orgd013403">
+<div id="outline-container-orgaf78075" class="outline-4">
+<h4 id="orgaf78075">Real World Applications</h4>
+<div class="outline-text-4" id="text-orgaf78075">
 <ul class="org-ul">
 <li>Used widely in productions
 <ul class="org-ul">
@@ -189,27 +189,27 @@ container.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga7684a7" class="outline-4">
-<h4 id="orga7684a7">Docker can even run on ARM platforms</h4>
-<div class="outline-text-4" id="text-orga7684a7">
+<div id="outline-container-orga03cd4d" class="outline-4">
+<h4 id="orga03cd4d">Docker can even run on ARM platforms</h4>
+<div class="outline-text-4" id="text-orga03cd4d">
 <ul class="org-ul">
 <li><a href="http://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/">Getting started with Docker on your Raspberry Pi</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org0980d36" class="outline-3">
-<h3 id="org0980d36">How to use Docker?</h3>
-<div class="outline-text-3" id="text-org0980d36">
+<div id="outline-container-orgc3ea3f4" class="outline-3">
+<h3 id="orgc3ea3f4">How to use Docker?</h3>
+<div class="outline-text-3" id="text-orgc3ea3f4">
 <p>
 Docker has a really good documentation. You can find almost anything you need to
 know about how to use Docker at <a href="http://docs.docker.com/">Docker Docs</a>. Here, we will use a example from
 this doc to show you some basic Docker commands.
 </p>
 </div>
-<div id="outline-container-orgf96037e" class="outline-4">
-<h4 id="orgf96037e">Using Docker in China</h4>
-<div class="outline-text-4" id="text-orgf96037e">
+<div id="outline-container-org856a7f1" class="outline-4">
+<h4 id="org856a7f1">Using Docker in China</h4>
+<div class="outline-text-4" id="text-org856a7f1">
 <p>
 I suggest to use a docker hub mirror in china to download docker images.
 Otherwise you can hardly download an image file. You can find some information
@@ -217,9 +217,9 @@ about the docker hub mirror <a href="http://dockone.io/article/160">here</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-org5ccfb58" class="outline-4">
-<h4 id="org5ccfb58">Download and Run a Image</h4>
-<div class="outline-text-4" id="text-org5ccfb58">
+<div id="outline-container-orgf0a1a27" class="outline-4">
+<h4 id="orgf0a1a27">Download and Run a Image</h4>
+<div class="outline-text-4" id="text-orgf0a1a27">
 <div class="org-src-container">
 <pre class="src src-sh">docker run docker/whalesay cowsay foo bar
 </pre>
@@ -243,9 +243,9 @@ about the docker hub mirror <a href="http://dockone.io/article/160">here</a>.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgcf3ee73" class="outline-4">
-<h4 id="orgcf3ee73">Build a Custom Image</h4>
-<div class="outline-text-4" id="text-orgcf3ee73">
+<div id="outline-container-org307f324" class="outline-4">
+<h4 id="org307f324">Build a Custom Image</h4>
+<div class="outline-text-4" id="text-org307f324">
 <ul class="org-ul">
 <li>Dockerfile Docker can build images automatically by reading the instructions
 from a <code>Dockerfile</code>, a text file that contains all the commands, in order,
@@ -278,9 +278,9 @@ Use this image
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac2ccfc" class="outline-4">
-<h4 id="orgac2ccfc">Bonus</h4>
-<div class="outline-text-4" id="text-orgac2ccfc">
+<div id="outline-container-orge9a9a9a" class="outline-4">
+<h4 id="orge9a9a9a">Bonus</h4>
+<div class="outline-text-4" id="text-orge9a9a9a">
 <ul class="org-ul">
 <li><a href="https://github.com/docker/dockercraft">docker/dockercraft</a></li>
 </ul>
@@ -336,7 +336,7 @@ Use this image
       <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
 <footer class="footer">
-  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
   <p>
     Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
     &nbsp;&nbsp;-&nbsp;&nbsp;

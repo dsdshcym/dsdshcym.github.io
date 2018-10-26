@@ -4,8 +4,8 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 07 Aug 2018 09:22:30 CST</pubDate>
-    <lastBuildDate>Tue, 07 Aug 2018 09:22:30 CST</lastBuildDate>
+    <pubDate>Fri, 26 Oct 2018 15:08:22 CST</pubDate>
+    <lastBuildDate>Fri, 26 Oct 2018 15:08:22 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -16,9 +16,9 @@
         <div class="col-md-2"></div>
             <h1>Clippings from Domain-Driven Design</h1>
             
-<div id="outline-container-org82aa88f" class="outline-2">
-<h2 id="org82aa88f">Foreword</h2>
-<div class="outline-text-2" id="text-org82aa88f">
+<div id="outline-container-org1e56b99" class="outline-2">
+<h2 id="org1e56b99">Foreword</h2>
+<div class="outline-text-2" id="text-org1e56b99">
 <ul class="org-ul">
 <li>The key to controlling complexity is a good domain model,
 <ul class="org-ul">
@@ -43,9 +43,9 @@ ideas after the initial releases of a system.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org478fc70" class="outline-2">
-<h2 id="org478fc70">Preface</h2>
-<div class="outline-text-2" id="text-org478fc70">
+<div id="outline-container-orgf1d0c80" class="outline-2">
+<h2 id="orgf1d0c80">Preface</h2>
+<div class="outline-text-2" id="text-orgf1d0c80">
 <ul class="org-ul">
 <li>This book provides a framework for making design decisions and a
 technical vocabulary for discussing domain design.
@@ -57,9 +57,9 @@ framework to approach domain-driven design systematically.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org97b7882" class="outline-3">
-<h3 id="org97b7882">Contrasting Three Projects</h3>
-<div class="outline-text-3" id="text-org97b7882">
+<div id="outline-container-org96b12e0" class="outline-3">
+<h3 id="org96b12e0">Contrasting Three Projects</h3>
+<div class="outline-text-3" id="text-org96b12e0">
 <dl class="org-dl">
 <dt>A project lacking a domain model</dt><dd>over-came by business logic</dd>
 <dt>A project emphasizing domain design</dt><dd>The design became easier to modify and extend</dd>
@@ -67,9 +67,9 @@ framework to approach domain-driven design systematically.</li>
 </dl>
 </div>
 </div>
-<div id="outline-container-org4437782" class="outline-3">
-<h3 id="org4437782">The Challenge of Complexity</h3>
-<div class="outline-text-3" id="text-org4437782">
+<div id="outline-container-org97b2589" class="outline-3">
+<h3 id="org97b2589">The Challenge of Complexity</h3>
+<div class="outline-text-3" id="text-org97b2589">
 <ul class="org-ul">
 <li><b>The approach to design largely determines how complex software can
 become</b></li>
@@ -91,9 +91,9 @@ deal with complicated domains, is both
 </ul>
 </div>
 </div>
-<div id="outline-container-org66f251c" class="outline-3">
-<h3 id="org66f251c">Design Versus Development Process</h3>
-<div class="outline-text-3" id="text-org66f251c">
+<div id="outline-container-orgd3ca068" class="outline-3">
+<h3 id="orgd3ca068">Design Versus Development Process</h3>
+<div class="outline-text-3" id="text-orgd3ca068">
 <ul class="org-ul">
 <li>Design and process are inextricable
 <ul class="org-ul">
@@ -138,12 +138,12 @@ harder</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcac6db2" class="outline-3">
-<h3 id="orgcac6db2">The Structure of This Book</h3>
+<div id="outline-container-org9710efb" class="outline-3">
+<h3 id="org9710efb">The Structure of This Book</h3>
 </div>
-<div id="outline-container-orgca6687f" class="outline-3">
-<h3 id="orgca6687f">Who Should Read This Book</h3>
-<div class="outline-text-3" id="text-orgca6687f">
+<div id="outline-container-org92c4b8d" class="outline-3">
+<h3 id="org92c4b8d">Who Should Read This Book</h3>
+<div class="outline-text-3" id="text-org92c4b8d">
 <ul class="org-ul">
 <li>this book will fill in gaps and provide perspective on how object
 modeling fits into real life on a software project</li>
@@ -152,9 +152,9 @@ problems.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge014034" class="outline-3">
-<h3 id="orge014034">A Domain-Driven Team</h3>
-<div class="outline-text-3" id="text-orge014034">
+<div id="outline-container-orgde58519" class="outline-3">
+<h3 id="orgde58519">A Domain-Driven Team</h3>
+<div class="outline-text-3" id="text-orgde58519">
 <ul class="org-ul">
 <li>Domain-driven design is a difficult technical challenge that can pay
 off big, opening opportunities just when most software projects
@@ -176,9 +176,9 @@ organization.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org0051222" class="outline-2">
-<h2 id="org0051222">Part I: Putting the Domain Model to Work</h2>
-<div class="outline-text-2" id="text-org0051222">
+<div id="outline-container-org5244839" class="outline-2">
+<h2 id="org5244839">Part I: Putting the Domain Model to Work</h2>
+<div class="outline-text-2" id="text-org5244839">
 <ul class="org-ul">
 <li><p>
 What is a Model?
@@ -217,9 +217,9 @@ to search for insight and produce effective models.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org7eb7ec3" class="outline-3">
-<h3 id="org7eb7ec3">Chapter One. Crunching Knowledge</h3>
-<div class="outline-text-3" id="text-org7eb7ec3">
+<div id="outline-container-orgbb12b51" class="outline-3">
+<h3 id="orgbb12b51">Chapter One. Crunching Knowledge</h3>
+<div class="outline-text-3" id="text-orgbb12b51">
 <ul class="org-ul">
 <li>A Real-world Example (PCB)
 <ol class="org-ol">
@@ -253,9 +253,9 @@ solving a complex problem.</li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org5393b73" class="outline-4">
-<h4 id="org5393b73">Knowledge Crunching</h4>
-<div class="outline-text-4" id="text-org5393b73">
+<div id="outline-container-orga9e5759" class="outline-4">
+<h4 id="orga9e5759">Knowledge Crunching</h4>
+<div class="outline-text-4" id="text-orga9e5759">
 <ul class="org-ul">
 <li><b>Effective domain modelers are knowledge crunchers.</b></li>
 <li>Knowledge crunching is not a solitary activity.
@@ -301,9 +301,9 @@ information that continues to flow through the project</b>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge231961" class="outline-4">
-<h4 id="orge231961">Continuous Learning</h4>
-<div class="outline-text-4" id="text-orge231961">
+<div id="outline-container-org6b1c7f5" class="outline-4">
+<h4 id="org6b1c7f5">Continuous Learning</h4>
+<div class="outline-text-4" id="text-org6b1c7f5">
 <ul class="org-ul">
 <li>When we set out to write software, we never know enough.
 <ul class="org-ul">
@@ -334,9 +334,9 @@ knowledge is lost.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf56a858" class="outline-4">
-<h4 id="orgf56a858">Knowledge-Rich Design</h4>
-<div class="outline-text-4" id="text-orgf56a858">
+<div id="outline-container-org47d8058" class="outline-4">
+<h4 id="org47d8058">Knowledge-Rich Design</h4>
+<div class="outline-text-4" id="text-org47d8058">
 <ul class="org-ul">
 <li>Business <b>activities</b> and <b>rules</b> are as central to a domain as are
 the entities involved (<i>the nouns</i>)</li>
@@ -368,9 +368,9 @@ guidance), thereby closing the feedback loop.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8b037fc" class="outline-4">
-<h4 id="org8b037fc">Deep Models</h4>
-<div class="outline-text-4" id="text-org8b037fc">
+<div id="outline-container-org2d6cce1" class="outline-4">
+<h4 id="org2d6cce1">Deep Models</h4>
+<div class="outline-text-4" id="text-org2d6cce1">
 <ul class="org-ul">
 <li>Useful models seldom lie on the surface.
 <ul class="org-ul">
@@ -385,9 +385,9 @@ will end up.</b></li>
 </div>
 </div>
 </div>
-<div id="outline-container-org63e85d5" class="outline-3">
-<h3 id="org63e85d5">Chapter Two. Communication and the Use of Language</h3>
-<div class="outline-text-3" id="text-org63e85d5">
+<div id="outline-container-orgbfa0aa9" class="outline-3">
+<h3 id="orgbfa0aa9">Chapter Two. Communication and the Use of Language</h3>
+<div class="outline-text-3" id="text-orgbfa0aa9">
 <ul class="org-ul">
 <li>To make most effective use of a model, <b>it needs to pervade every
 medium of communication</b>.
@@ -400,9 +400,9 @@ medium of communication</b>.
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org373bbb2" class="outline-4">
-<h4 id="org373bbb2">Ubiquitous Language</h4>
-<div class="outline-text-4" id="text-org373bbb2">
+<div id="outline-container-orga0d6509" class="outline-4">
+<h4 id="orga0d6509">Ubiquitous Language</h4>
+<div class="outline-text-4" id="text-orga0d6509">
 <ul class="org-ul">
 <li>On a project without a common language
 <ol class="org-ol">
@@ -435,9 +435,9 @@ trip up design.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1e69043" class="outline-4">
-<h4 id="org1e69043">Modeling Out Loud</h4>
-<div class="outline-text-4" id="text-org1e69043">
+<div id="outline-container-orgcdd40a8" class="outline-4">
+<h4 id="orgcdd40a8">Modeling Out Loud</h4>
+<div class="outline-text-4" id="text-orgcdd40a8">
 <ul class="org-ul">
 <li><b>One of the best ways to refine a model is to explore with speech</b>,
 trying out loud various constructs from possible model variations.
@@ -468,9 +468,9 @@ of the model, combining concepts in ways allowed by the model</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org44208d8" class="outline-4">
-<h4 id="org44208d8">One Team, One Language</h4>
-<div class="outline-text-4" id="text-org44208d8">
+<div id="outline-container-org48a6c04" class="outline-4">
+<h4 id="org48a6c04">One Team, One Language</h4>
+<div class="outline-text-4" id="text-org48a6c04">
 <ul class="org-ul">
 <li><b>If sophisticated domain experts don't understand the model, there
 is something wrong with the model</b></li>
@@ -499,9 +499,9 @@ is something wrong with the model</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgece6e0d" class="outline-4">
-<h4 id="orgece6e0d">Documents and Diagrams</h4>
-<div class="outline-text-4" id="text-orgece6e0d">
+<div id="outline-container-orgac2ad22" class="outline-4">
+<h4 id="orgac2ad22">Documents and Diagrams</h4>
+<div class="outline-text-4" id="text-orgac2ad22">
 <ul class="org-ul">
 <li>UML diagrams
 <ol class="org-ol">
@@ -593,9 +593,9 @@ right thing but also <i>says</i> the right thing.</b></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge38f556" class="outline-4">
-<h4 id="orge38f556">Explanatory Models</h4>
-<div class="outline-text-4" id="text-orge38f556">
+<div id="outline-container-org1198751" class="outline-4">
+<h4 id="org1198751">Explanatory Models</h4>
+<div class="outline-text-4" id="text-org1198751">
 <ul class="org-ul">
 <li><b>One model should underlie implementation, design, and team
 communication.</b></li>
@@ -613,16 +613,16 @@ communicative styles tailored to a particular topic</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org01ccf8c" class="outline-3">
-<h3 id="org01ccf8c">Chapter Three. Binding Model and Implementation</h3>
-<div class="outline-text-3" id="text-org01ccf8c">
+<div id="outline-container-org9b12e76" class="outline-3">
+<h3 id="org9b12e76">Chapter Three. Binding Model and Implementation</h3>
+<div class="outline-text-3" id="text-org9b12e76">
 <p>
 <b>DDD requires a different approach to modeling</b>
 </p>
 </div>
-<div id="outline-container-orgc813419" class="outline-4">
-<h4 id="orgc813419">Model-Driven Design</h4>
-<div class="outline-text-4" id="text-orgc813419">
+<div id="outline-container-orge2dc46d" class="outline-4">
+<h4 id="orge2dc46d">Model-Driven Design</h4>
+<div class="outline-text-4" id="text-orge2dc46d">
 <ul class="org-ul">
 <li>Bad Examples
 <ol class="org-ol">
@@ -651,9 +651,9 @@ other</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org21460b7" class="outline-4">
-<h4 id="org21460b7">Modeling Paradigms and Tool Support</h4>
-<div class="outline-text-4" id="text-org21460b7">
+<div id="outline-container-org09e8ec7" class="outline-4">
+<h4 id="org09e8ec7">Modeling Paradigms and Tool Support</h4>
+<div class="outline-text-4" id="text-org09e8ec7">
 <ul class="org-ul">
 <li>Different modeling paradigms
 <dl class="org-dl">
@@ -676,9 +676,9 @@ other enhancements</dd>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc34050c" class="outline-4">
-<h4 id="orgc34050c">Letting the Bones Show: Why Models Matter to Users</h4>
-<div class="outline-text-4" id="text-orgc34050c">
+<div id="outline-container-org60271a5" class="outline-4">
+<h4 id="org60271a5">Letting the Bones Show: Why Models Matter to Users</h4>
+<div class="outline-text-4" id="text-org60271a5">
 <ul class="org-ul">
 <li>Trying to create in the UI an illusion of a model other than the
 domain model will cause confusion unless the illusion is perfect.</li>
@@ -687,9 +687,9 @@ application would increase and become clearer.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org472cd5e" class="outline-4">
-<h4 id="org472cd5e">Hands-On Modelers</h4>
-<div class="outline-text-4" id="text-org472cd5e">
+<div id="outline-container-orgf09235b" class="outline-4">
+<h4 id="orgf09235b">Hands-On Modelers</h4>
+<div class="outline-text-4" id="text-orgf09235b">
 <ul class="org-ul">
 <li>Software development is <b>all</b> design.</li>
 <li>That model (highly skilled engineers design; less skilled laborers
@@ -728,9 +728,9 @@ project.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org34ee222" class="outline-2">
-<h2 id="org34ee222">Part II: The Building Blocks of a Model-Driven Design</h2>
-<div class="outline-text-2" id="text-org34ee222">
+<div id="outline-container-org85a92ae" class="outline-2">
+<h2 id="org85a92ae">Part II: The Building Blocks of a Model-Driven Design</h2>
+<div class="outline-text-2" id="text-org85a92ae">
 <ul class="org-ul">
 <li>Previous work
 <ol class="org-ol">
@@ -739,16 +739,16 @@ project.</li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org9452926" class="outline-3">
-<h3 id="org9452926">Chapter Four. Isolating the Domain</h3>
-<div class="outline-text-3" id="text-org9452926">
+<div id="outline-container-orgfdc7797" class="outline-3">
+<h3 id="orgfdc7797">Chapter Four. Isolating the Domain</h3>
+<div class="outline-text-3" id="text-orgfdc7797">
 <p>
 <b>Decouple the domain objects from other functions of the system</b>
 </p>
 </div>
-<div id="outline-container-orgb244594" class="outline-4">
-<h4 id="orgb244594">Layered Architecture</h4>
-<div class="outline-text-4" id="text-orgb244594">
+<div id="outline-container-org89d68c0" class="outline-4">
+<h4 id="org89d68c0">Layered Architecture</h4>
+<div class="outline-text-4" id="text-org89d68c0">
 <ul class="org-ul">
 <li><p>
 Without Layers
@@ -812,18 +812,18 @@ a one-size-fits-all solution.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6d05479" class="outline-4">
-<h4 id="org6d05479">The Domain Layer Is Where the Model Lives</h4>
-<div class="outline-text-4" id="text-org6d05479">
+<div id="outline-container-org1568671" class="outline-4">
+<h4 id="org1568671">The Domain Layer Is Where the Model Lives</h4>
+<div class="outline-text-4" id="text-org1568671">
 <ul class="org-ul">
 <li>Isolating the domain implementation is a prerequisite for
 domain-driven design.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org15638fe" class="outline-4">
-<h4 id="org15638fe">The Smart UI "Anti-Pattern"</h4>
-<div class="outline-text-4" id="text-org15638fe">
+<div id="outline-container-org58369f2" class="outline-4">
+<h4 id="org58369f2">The Smart UI "Anti-Pattern"</h4>
+<div class="outline-text-4" id="text-org58369f2">
 <ul class="org-ul">
 <li>SMART UI is an alternate, mutually exclusive fork in the road,
 incompatible with the approach of domain-driven design</li>
@@ -897,13 +897,13 @@ design.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge74dc50" class="outline-4">
-<h4 id="orge74dc50">Other Kinds of Isolation</h4>
+<div id="outline-container-orgcdfa981" class="outline-4">
+<h4 id="orgcdfa981">Other Kinds of Isolation</h4>
 </div>
 </div>
-<div id="outline-container-org42f773c" class="outline-3">
-<h3 id="org42f773c">Chapter Five. A Model Expressed in Software</h3>
-<div class="outline-text-3" id="text-org42f773c">
+<div id="outline-container-org4d3cdca" class="outline-3">
+<h3 id="org4d3cdca">Chapter Five. A Model Expressed in Software</h3>
+<div class="outline-text-3" id="text-org4d3cdca">
 <ul class="org-ul">
 <li>3 patterns of model elements that express the model
 <ul class="org-ul">
@@ -915,9 +915,9 @@ design.</li>
 into the domain</b></li>
 </ul>
 </div>
-<div id="outline-container-org439e659" class="outline-4">
-<h4 id="org439e659">Associations</h4>
-<div class="outline-text-4" id="text-org439e659">
+<div id="outline-container-orgda8d49c" class="outline-4">
+<h4 id="orgda8d49c">Associations</h4>
+<div class="outline-text-4" id="text-orgda8d49c">
 <ul class="org-ul">
 <li><b>For every traversable association in the model, there is a mechanism
 in the software with the same properties</b>.</li>
@@ -961,9 +961,9 @@ BrokerageAccount + Stock -&gt; 1 Investment
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ff2f3e" class="outline-4">
-<h4 id="org0ff2f3e">Entities (a.k.a. Reference Objects)</h4>
-<div class="outline-text-4" id="text-org0ff2f3e">
+<div id="outline-container-org65c1294" class="outline-4">
+<h4 id="org65c1294">Entities (a.k.a. Reference Objects)</h4>
+<div class="outline-text-4" id="text-org65c1294">
 <ul class="org-ul">
 <li><b>Many objects are not fundamentally defined by their attributes, but
 rather by a thread of continuity and identity.</b></li>
@@ -974,9 +974,9 @@ turned over to the automatic features of the language.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org65e5308" class="outline-4">
-<h4 id="org65e5308">Value Objects</h4>
-<div class="outline-text-4" id="text-org65e5308">
+<div id="outline-container-org9ab5c44" class="outline-4">
+<h4 id="org9ab5c44">Value Objects</h4>
+<div class="outline-text-4" id="text-org9ab5c44">
 <ul class="org-ul">
 <li>Many objects have no conceptual identity. These objects describe
 some characteristic of a thing.</li>
@@ -992,8 +992,8 @@ whole</b></li>
 </ul>
 </div>
 <ul class="org-ul">
-<li><a id="org1b6d833"></a>Designing VALUE OBJECTS<br />
-<div class="outline-text-5" id="text-org1b6d833">
+<li><a id="org2b1d79c"></a>Designing VALUE OBJECTS<br />
+<div class="outline-text-5" id="text-org2b1d79c">
 <ul class="org-ul">
 <li>In order for a <i>value object</i> to be shared safely, it must be
 <i>immutable</i>
@@ -1011,8 +1011,8 @@ server)</li>
 </ul>
 </div>
 </li>
-<li><a id="org9bc9074"></a>Designing Associations That Involve VALUE OBJECTS<br />
-<div class="outline-text-5" id="text-org9bc9074">
+<li><a id="org75d8b13"></a>Designing Associations That Involve VALUE OBJECTS<br />
+<div class="outline-text-5" id="text-org75d8b13">
 <ul class="org-ul">
 <li>Associations</li>
 <li>The fewer and simpler the associations in the model, the better.</li>
@@ -1023,9 +1023,9 @@ OBJECTS.</li>
 </li>
 </ul>
 </div>
-<div id="outline-container-orgb8e67a7" class="outline-4">
-<h4 id="orgb8e67a7">Services</h4>
-<div class="outline-text-4" id="text-orgb8e67a7">
+<div id="outline-container-orgc5ab5c5" class="outline-4">
+<h4 id="orgc5ab5c5">Services</h4>
+<div class="outline-text-4" id="text-orgc5ab5c5">
 <ul class="org-ul">
 <li>A SERVICE is <b>an operation offered as an interface that stands alone
 in the model</b>, without encapsulating state, as ENTITIES and VALUE
@@ -1049,8 +1049,8 @@ without regard to the instance's individual history.</b></li>
 </ul>
 </div>
 <ul class="org-ul">
-<li><a id="org0395ba7"></a>SERVICES and the Isolated Domain Layer<br />
-<div class="outline-text-5" id="text-org0395ba7">
+<li><a id="org4fbfde4"></a>SERVICES and the Isolated Domain Layer<br />
+<div class="outline-text-5" id="text-org4fbfde4">
 <ul class="org-ul">
 <li>Services can be in different layers
 <dl class="org-dl">
@@ -1077,8 +1077,8 @@ the application.</li>
 </ul>
 </div>
 </li>
-<li><a id="orgeb25554"></a>Granularity<br />
-<div class="outline-text-5" id="text-orgeb25554">
+<li><a id="org9761c0b"></a>Granularity<br />
+<div class="outline-text-5" id="text-org9761c0b">
 <ul class="org-ul">
 <li>Services are expressive (explained as above)</li>
 <li>Services are also valuable as a means of <b>controlling granularity</b> in
@@ -1095,8 +1095,8 @@ versatility</b></li>
 </ul>
 </div>
 </li>
-<li><a id="org7b030c2"></a>Access to Services<br />
-<div class="outline-text-5" id="text-org7b030c2">
+<li><a id="org14b4442"></a>Access to Services<br />
+<div class="outline-text-5" id="text-org14b4442">
 <ul class="org-ul">
 <li>Singleton</li>
 </ul>
@@ -1104,9 +1104,9 @@ versatility</b></li>
 </li>
 </ul>
 </div>
-<div id="outline-container-org3abc44f" class="outline-4">
-<h4 id="org3abc44f">Modules (a.k.a Packages)</h4>
-<div class="outline-text-4" id="text-org3abc44f">
+<div id="outline-container-orgfa0f3f3" class="outline-4">
+<h4 id="orgfa0f3f3">Modules (a.k.a Packages)</h4>
+<div class="outline-text-4" id="text-orgfa0f3f3">
 <ul class="org-ul">
 <li><b>Cognitive overload is the primary motivation for modularity</b></li>
 <li>Modules give people two views of the model
@@ -1148,8 +1148,8 @@ on, we need to look for ways of
 </ul>
 </div>
 <ul class="org-ul">
-<li><a id="orgd86c7bc"></a>The Pitfalls of Infrastructure-Driven Packaging<br />
-<div class="outline-text-5" id="text-orgd86c7bc">
+<li><a id="org2262171"></a>The Pitfalls of Infrastructure-Driven Packaging<br />
+<div class="outline-text-5" id="text-org2262171">
 <ul class="org-ul">
 <li>Strong forces on our packaging decisions come from technical
 frameworks. (Rails/Phoenix)</li>
@@ -1177,13 +1177,13 @@ model and design choices.</li>
 </li>
 </ul>
 </div>
-<div id="outline-container-org3124ebb" class="outline-4">
-<h4 id="org3124ebb">Modeling Paradigms</h4>
-<div class="outline-text-4" id="text-org3124ebb">
+<div id="outline-container-org263d48b" class="outline-4">
+<h4 id="org263d48b">Modeling Paradigms</h4>
+<div class="outline-text-4" id="text-org263d48b">
 </div>
 <ul class="org-ul">
-<li><a id="org1eb2839"></a>Why the Object Paradigm Predominates<br />
-<div class="outline-text-5" id="text-org1eb2839">
+<li><a id="orge5ec5e6"></a>Why the Object Paradigm Predominates<br />
+<div class="outline-text-5" id="text-orge5ec5e6">
 <ul class="org-ul">
 <li>Object modeling does strike <b>a nice balance of simplicity and
 sophistication</b>
@@ -1206,8 +1206,8 @@ the design culture itself.</li>
 </ul>
 </div>
 </li>
-<li><a id="org99a54f4"></a>Nonobjects in an Object World<br />
-<div class="outline-text-5" id="text-org99a54f4">
+<li><a id="org9d6d479"></a>Nonobjects in an Object World<br />
+<div class="outline-text-5" id="text-org9d6d479">
 <ul class="org-ul">
 <li>A domain model does not have to be an object model.</li>
 <li>Whatever the dominant model paradigm may be on a project, there are
@@ -1218,8 +1218,8 @@ the style that fits best.</li>
 </ul>
 </div>
 </li>
-<li><a id="org5417189"></a>Sticking with MODEL-DRIVEN DESIGN When Mixing Paradigms<br />
-<div class="outline-text-5" id="text-org5417189">
+<li><a id="org1d06c6c"></a>Sticking with MODEL-DRIVEN DESIGN When Mixing Paradigms<br />
+<div class="outline-text-5" id="text-org1d06c6c">
 <ul class="org-ul">
 <li>Without a seamless environment, it falls on the developers to
 distill a model made up of clear, fundamental concepts to hold the
@@ -1255,9 +1255,9 @@ within the dominant paradigm should be exhausted</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org48b83ee" class="outline-3">
-<h3 id="org48b83ee">Chapter Six. The Life Cycle of a Domain Object</h3>
-<div class="outline-text-3" id="text-org48b83ee">
+<div id="outline-container-orga5b9f53" class="outline-3">
+<h3 id="orga5b9f53">Chapter Six. The Life Cycle of a Domain Object</h3>
+<div class="outline-text-3" id="text-orga5b9f53">
 <ul class="org-ul">
 <li>2 Challenges
 <ol class="org-ol">
@@ -1273,9 +1273,9 @@ managing the life cycle</li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org0879ad5" class="outline-4">
-<h4 id="org0879ad5">Aggregates</h4>
-<div class="outline-text-4" id="text-org0879ad5">
+<div id="outline-container-orgd96c4de" class="outline-4">
+<h4 id="orgd96c4de">Aggregates</h4>
+<div class="outline-text-4" id="text-orgd96c4de">
 <ul class="org-ul">
 <li>It is difficult to guarantee the consistency of changes to objects
 in a model with complex associations.
@@ -1317,9 +1317,9 @@ maintained at every stage of the life cycle.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga54939e" class="outline-4">
-<h4 id="orga54939e">Factories</h4>
-<div class="outline-text-4" id="text-orga54939e">
+<div id="outline-container-org8b8fda8" class="outline-4">
+<h4 id="org8b8fda8">Factories</h4>
+<div class="outline-text-4" id="text-org8b8fda8">
 <ul class="org-ul">
 <li>When creation of an object, or an entire AGGREGATE, becomes
 complicated or reveals too much of the internal structure, FACTORIES
@@ -1367,9 +1367,9 @@ polymorphism.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6a2e942" class="outline-4">
-<h4 id="org6a2e942">Repositories</h4>
-<div class="outline-text-4" id="text-org6a2e942">
+<div id="outline-container-org3e05c18" class="outline-4">
+<h4 id="org3e05c18">Repositories</h4>
+<div class="outline-text-4" id="text-org3e05c18">
 <ul class="org-ul">
 <li><b>A starting point for a traversal to an ENTITY or VALUE in the
 middle of its life cycle</b></li>
@@ -1423,9 +1423,9 @@ access) and bring back our model focus</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org01e435e" class="outline-4">
-<h4 id="org01e435e">Designing Objects for Relational Databases</h4>
-<div class="outline-text-4" id="text-org01e435e">
+<div id="outline-container-org4fcdb34" class="outline-4">
+<h4 id="org4fcdb34">Designing Objects for Relational Databases</h4>
+<div class="outline-text-4" id="text-org4fcdb34">
 <ul class="org-ul">
 <li>When the database is being viewed as an object store, don't let the
 data model and the object model diverge far, regardless of the
@@ -1436,9 +1436,9 @@ store.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orged66ddf" class="outline-3">
-<h3 id="orged66ddf">Chapter Seven. Using the Language: An Extended Example</h3>
-<div class="outline-text-3" id="text-orged66ddf">
+<div id="outline-container-org86401ed" class="outline-3">
+<h3 id="org86401ed">Chapter Seven. Using the Language: An Extended Example</h3>
+<div class="outline-text-3" id="text-org86401ed">
 <ol class="org-ol">
 <li>Isolating the domain</li>
 <li>Distinguishing ENTITIES and VALUE OBJECTS</li>
@@ -1468,9 +1468,9 @@ have reduced the impact of such design changes.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org6aee296" class="outline-2">
-<h2 id="org6aee296">Part III: Refactoring Toward Deeper Insight</h2>
-<div class="outline-text-2" id="text-org6aee296">
+<div id="outline-container-org6a437c7" class="outline-2">
+<h2 id="org6a437c7">Part III: Refactoring Toward Deeper Insight</h2>
+<div class="outline-text-2" id="text-org6a437c7">
 <ul class="org-ul">
 <li>We hope to develop a model that captures a deep understanding of the
 domain.
@@ -1526,9 +1526,9 @@ happening</li>
 <li>The Discovery Process (Chapter 9)</li>
 </ul>
 </div>
-<div id="outline-container-org3d4f954" class="outline-3">
-<h3 id="org3d4f954">Chapter Eight. Breakthrough</h3>
-<div class="outline-text-3" id="text-org3d4f954">
+<div id="outline-container-orgfa3d650" class="outline-3">
+<h3 id="orgfa3d650">Chapter Eight. Breakthrough</h3>
+<div class="outline-text-3" id="text-orgfa3d650">
 <ul class="org-ul">
 <li>The returns from refactoring are not linear.
 <ul class="org-ul">
@@ -1569,9 +1569,9 @@ led to yet another modeling breakthrough.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbb5c36f" class="outline-3">
-<h3 id="orgbb5c36f">Chapter Nine. Making Implicit Concepts Explicit</h3>
-<div class="outline-text-3" id="text-orgbb5c36f">
+<div id="outline-container-org5fec023" class="outline-3">
+<h3 id="org5fec023">Chapter Nine. Making Implicit Concepts Explicit</h3>
+<div class="outline-text-3" id="text-org5fec023">
 <ul class="org-ul">
 <li>A deep model has power because it contains the central concepts and
 abstractions that can succinctly and flexibly express essential
@@ -1700,9 +1700,9 @@ operators.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org56fbba4" class="outline-3">
-<h3 id="org56fbba4">Chapter Ten. Supple Design</h3>
-<div class="outline-text-3" id="text-org56fbba4">
+<div id="outline-container-org5d23e35" class="outline-3">
+<h3 id="org5d23e35">Chapter Ten. Supple Design</h3>
+<div class="outline-text-3" id="text-org5d23e35">
 <ul class="org-ul">
 <li>This Chapter:
 <ol class="org-ol">
@@ -1873,9 +1873,9 @@ distilled over centuries.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b5a569" class="outline-3">
-<h3 id="org1b5a569">Chapter Eleven. Applying Analysis Patterns</h3>
-<div class="outline-text-3" id="text-org1b5a569">
+<div id="outline-container-orgc1f660b" class="outline-3">
+<h3 id="orgc1f660b">Chapter Eleven. Applying Analysis Patterns</h3>
+<div class="outline-text-3" id="text-orgc1f660b">
 <ul class="org-ul">
 <li><p>
 <i>Analysis Patterns: Reusable Object Models</i> by Martin Fowler
@@ -1889,13 +1889,13 @@ construction in business modeling.
 <li>Analysis Patterns Are Knowledge to Draw On</li>
 </ul>
 </div>
-<div id="outline-container-org3d6d4db" class="outline-4">
-<h4 id="org3d6d4db">Example Earning Interest with Accounts</h4>
+<div id="outline-container-orgd62031b" class="outline-4">
+<h4 id="orgd62031b">Example Earning Interest with Accounts</h4>
 </div>
 </div>
-<div id="outline-container-org6a30053" class="outline-3">
-<h3 id="org6a30053">Chapter Twelve. Relating Design Patterns to the Model</h3>
-<div class="outline-text-3" id="text-org6a30053">
+<div id="outline-container-orgdb9b7cd" class="outline-3">
+<h3 id="orgdb9b7cd">Chapter Twelve. Relating Design Patterns to the Model</h3>
+<div class="outline-text-3" id="text-orgdb9b7cd">
 <ul class="org-ul">
 <li>Design Patterns presents a catalog of design elements that have
 solved problems commonly encountered in a variety of contexts.</li>
@@ -1913,9 +1913,9 @@ domain concept.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgad441ca" class="outline-3">
-<h3 id="orgad441ca">Chapter Thirteen. Refactoring Toward Deeper Insight</h3>
-<div class="outline-text-3" id="text-orgad441ca">
+<div id="outline-container-orgff2916c" class="outline-3">
+<h3 id="orgff2916c">Chapter Thirteen. Refactoring Toward Deeper Insight</h3>
+<div class="outline-text-3" id="text-orgff2916c">
 <ul class="org-ul">
 <li>three things you have to focus on.
 <ol class="org-ol">
@@ -1990,9 +1990,9 @@ zone in the direction of favoring refactoring.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org7f17e6a" class="outline-2">
-<h2 id="org7f17e6a">Part IV: Strategic Design</h2>
-<div class="outline-text-2" id="text-org7f17e6a">
+<div id="outline-container-orgeaf615d" class="outline-2">
+<h2 id="orgeaf615d">Part IV: Strategic Design</h2>
+<div class="outline-text-2" id="text-orgeaf615d">
 <ul class="org-ul">
 <li>These are the decisions where design and politics often intersect.</li>
 <li>The challenge is to <b>accomplish modularity without losing the
@@ -2002,9 +2002,9 @@ operations.</li>
 <li>context, distillation, and large-scale structure.</li>
 </ul>
 </div>
-<div id="outline-container-org769a9bb" class="outline-3">
-<h3 id="org769a9bb">Chapter Fourteen. Maintaining Model Integrity</h3>
-<div class="outline-text-3" id="text-org769a9bb">
+<div id="outline-container-orgb239535" class="outline-3">
+<h3 id="orgb239535">Chapter Fourteen. Maintaining Model Integrity</h3>
+<div class="outline-text-3" id="text-orgb239535">
 <ul class="org-ul">
 <li>The most fundamental requirement of a model is that it be
 <b>internally consistent</b> -&gt; <b>unification</b>
@@ -2029,9 +2029,9 @@ may lead to complex options that make the model difficult to use.</li>
 choosing the limits of a model and its relationships to others</b>.</li>
 </ul>
 </div>
-<div id="outline-container-orgc329e40" class="outline-4">
-<h4 id="orgc329e40">Bounded Context</h4>
-<div class="outline-text-4" id="text-orgc329e40">
+<div id="outline-container-org5b834a8" class="outline-4">
+<h4 id="org5b834a8">Bounded Context</h4>
+<div class="outline-text-4" id="text-org5b834a8">
 <blockquote>
 <p>
 Cells can exist because their membranes define what is in and out and
@@ -2071,9 +2071,9 @@ but really are not</dd>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba2bb88" class="outline-4">
-<h4 id="orgba2bb88">Continuous Integration</h4>
-<div class="outline-text-4" id="text-orgba2bb88">
+<div id="outline-container-org29f19e0" class="outline-4">
+<h4 id="org29f19e0">Continuous Integration</h4>
+<div class="outline-text-4" id="text-org29f19e0">
 <ul class="org-ul">
 <li>We need ways of increasing communication and reducing complexity.</li>
 <li>We also need safety nets that prevent overcautious behavior, such as
@@ -2110,9 +2110,9 @@ life time of unintegrated changes</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org65845d6" class="outline-4">
-<h4 id="org65845d6">Context Map</h4>
-<div class="outline-text-4" id="text-org65845d6">
+<div id="outline-container-org08d4d8f" class="outline-4">
+<h4 id="org08d4d8f">Context Map</h4>
+<div class="outline-text-4" id="text-org08d4d8f">
 <ul class="org-ul">
 <li>When connections must be made between different contexts, they tend
 to bleed into each other.</li>
@@ -2145,15 +2145,15 @@ recognize the CONTEXT of any piece of code or any situation.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf816801" class="outline-4">
-<h4 id="orgf816801">Relationships Between BOUNDED CONTEXTS</h4>
-<div class="outline-text-4" id="text-orgf816801">
+<div id="outline-container-orgdddb48c" class="outline-4">
+<h4 id="orgdddb48c">Relationships Between BOUNDED CONTEXTS</h4>
+<div class="outline-text-4" id="text-orgdddb48c">
 </div>
 <ul class="org-ul">
-<li><a id="org1aa1733"></a>More cooperative relationships<br />
+<li><a id="orgfcdbadd"></a>More cooperative relationships<br />
 <ul class="org-ul">
-<li><a id="org905fc58"></a>Shared Kernel<br />
-<div class="outline-text-6" id="text-org905fc58">
+<li><a id="org11c1965"></a>Shared Kernel<br />
+<div class="outline-text-6" id="text-org11c1965">
 <ul class="org-ul">
 <li>The SHARED KERNEL is often the CORE DOMAIN, some set of GENERIC
 SUBDOMAINS, or both</li>
@@ -2165,8 +2165,8 @@ SUBDOMAINS, or both</li>
 </ul>
 </div>
 </li>
-<li><a id="orge94279b"></a>Customer/Supplier Development Teams<br />
-<div class="outline-text-6" id="text-orge94279b">
+<li><a id="org7d18e24"></a>Customer/Supplier Development Teams<br />
+<div class="outline-text-6" id="text-org7d18e24">
 <ul class="org-ul">
 <li>Problems can emerge, depending on the political relationship of the
 two teams.</li>
@@ -2191,8 +2191,8 @@ goals</li>
 </ul>
 </div>
 </li>
-<li><a id="orgfcc4ab7"></a>Conformist<br />
-<div class="outline-text-6" id="text-orgfcc4ab7">
+<li><a id="org4cfbb07"></a>Conformist<br />
+<div class="outline-text-6" id="text-org4cfbb07">
 <ul class="org-ul">
 <li>When two development teams have an upstream/downstream relationship
 in which the upstream has no motivation to provide for the
@@ -2210,8 +2210,8 @@ by slavishly adhering to the model of the upstream team.</li>
 </ul>
 </div>
 </li>
-<li><a id="org4bd3849"></a>Anticorruption Layer<br />
-<div class="outline-text-6" id="text-org4bd3849">
+<li><a id="orgfa4431a"></a>Anticorruption Layer<br />
+<div class="outline-text-6" id="text-orgfa4431a">
 <ul class="org-ul">
 <li>When a new system is being built that must have a large interface
 with another, the difficulty of relating the two models can
@@ -2232,8 +2232,8 @@ a combination of FACADES, ADAPTERS, and translators</li>
 </ul>
 </div>
 </li>
-<li><a id="org6c3b263"></a>Separate Ways<br />
-<div class="outline-text-6" id="text-org6c3b263">
+<li><a id="org3adfda8"></a>Separate Ways<br />
+<div class="outline-text-6" id="text-org3adfda8">
 <ul class="org-ul">
 <li>Integration is always expensive. Sometimes the benefit is small.</li>
 <li><b>Just because features are related in a use case does not mean they
@@ -2249,10 +2249,10 @@ within this small scope.</li>
 </li>
 </ul>
 </li>
-<li><a id="org79c09c5"></a>Scale up integration<br />
+<li><a id="org581c5a1"></a>Scale up integration<br />
 <ul class="org-ul">
-<li><a id="org55ac8a9"></a>Open Host Service<br />
-<div class="outline-text-6" id="text-org55ac8a9">
+<li><a id="orgd5fd61a"></a>Open Host Service<br />
+<div class="outline-text-6" id="text-orgd5fd61a">
 <ul class="org-ul">
 <li>When a subsystem has to be integrated with many others, customizing
 a translator for each can bog down the team.
@@ -2268,8 +2268,8 @@ SERVICES.</b></li>
 </ul>
 </div>
 </li>
-<li><a id="org8954a0e"></a>Published Language<br />
-<div class="outline-text-6" id="text-org8954a0e">
+<li><a id="org2572439"></a>Published Language<br />
+<div class="outline-text-6" id="text-org2572439">
 <ul class="org-ul">
 <li>Direct translation to and from the existing domain models may not be
 a good solution.</li>
@@ -2280,8 +2280,8 @@ language.</li>
 </ul>
 </div>
 </li>
-<li><a id="orge1c424e"></a>Unifying an Elephant（盲人摸象）<br />
-<div class="outline-text-6" id="text-orge1c424e">
+<li><a id="orgecb990b"></a>Unifying an Elephant（盲人摸象）<br />
+<div class="outline-text-6" id="text-orgecb990b">
 <ul class="org-ul">
 <li>If no integration is required, then it doesn't matter that the
 models are not unified.</li>
@@ -2298,9 +2298,9 @@ reach full maturity in the first version.</li>
 </li>
 </ul>
 </div>
-<div id="outline-container-orgd894291" class="outline-4">
-<h4 id="orgd894291">Choosing Your Model Context Strategy</h4>
-<div class="outline-text-4" id="text-orgd894291">
+<div id="outline-container-org51a0f37" class="outline-4">
+<h4 id="org51a0f37">Choosing Your Model Context Strategy</h4>
+<div class="outline-text-4" id="text-org51a0f37">
 <ol class="org-ol">
 <li>Team Decision or Higher
 <ul class="org-ul">
@@ -2347,9 +2347,9 @@ Systems
 </ol>
 </div>
 </div>
-<div id="outline-container-org9f70b81" class="outline-4">
-<h4 id="org9f70b81">Transformations</h4>
-<div class="outline-text-4" id="text-org9f70b81">
+<div id="outline-container-org056a7d3" class="outline-4">
+<h4 id="org056a7d3">Transformations</h4>
+<div class="outline-text-4" id="text-org056a7d3">
 <ul class="org-ul">
 <li>Merging CONTEXTS: SEPARATE WAYS   SHARED KERNEL</li>
 <li>Merging CONTEXTS: SHARED KERNEL   CONTINUOUS INTEGRATION</li>
@@ -2359,9 +2359,9 @@ Systems
 </div>
 </div>
 </div>
-<div id="outline-container-org5f2a434" class="outline-3">
-<h3 id="org5f2a434">Chapter Fifteen. Distillation</h3>
-<div class="outline-text-3" id="text-org5f2a434">
+<div id="outline-container-org3597f62" class="outline-3">
+<h3 id="org3597f62">Chapter Fifteen. Distillation</h3>
+<div class="outline-text-3" id="text-org3597f62">
 <p>
 Patterns to make the CORE DOMAIN easier to see and use and change.
 </p>
@@ -2403,9 +2403,9 @@ decisions about assignments</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgf991d3d" class="outline-4">
-<h4 id="orgf991d3d">Core Domain</h4>
-<div class="outline-text-4" id="text-orgf991d3d">
+<div id="outline-container-orgfa34580" class="outline-4">
+<h4 id="orgfa34580">Core Domain</h4>
+<div class="outline-text-4" id="text-orgfa34580">
 <ul class="org-ul">
 <li>Reasons
 <ul class="org-ul">
@@ -2446,18 +2446,18 @@ into a rich model</b>. No shortcuts. No magic bullets.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org683cb87" class="outline-4">
-<h4 id="org683cb87">An Escalation of Distillations</h4>
-<div class="outline-text-4" id="text-org683cb87">
+<div id="outline-container-orgbfae4bf" class="outline-4">
+<h4 id="orgbfae4bf">An Escalation of Distillations</h4>
+<div class="outline-text-4" id="text-orgbfae4bf">
 <ul class="org-ul">
 <li>Successive distillation of a domain model produces an asset that
 gives the project speed, agility, and precision of execution.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge881ca8" class="outline-4">
-<h4 id="orge881ca8">Generic Subdomains</h4>
-<div class="outline-text-4" id="text-orge881ca8">
+<div id="outline-container-orgbe2370e" class="outline-4">
+<h4 id="orgbe2370e">Generic Subdomains</h4>
+<div class="outline-text-4" id="text-orgbe2370e">
 <ul class="org-ul">
 <li>Therefore
 <ol class="org-ol">
@@ -2616,9 +2616,9 @@ focus development effort</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4c18e9c" class="outline-4">
-<h4 id="org4c18e9c">Domain Vision Statement</h4>
-<div class="outline-text-4" id="text-org4c18e9c">
+<div id="outline-container-orgc529786" class="outline-4">
+<h4 id="orgc529786">Domain Vision Statement</h4>
+<div class="outline-text-4" id="text-orgc529786">
 <ul class="org-ul">
 <li>A DOMAIN VISION STATEMENT is modeled after such documents ("vision
 statements", layu out the specific value the application will bring
@@ -2668,9 +2668,9 @@ and support better decision making.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb8659c2" class="outline-4">
-<h4 id="orgb8659c2">Highlighted Core</h4>
-<div class="outline-text-4" id="text-orgb8659c2">
+<div id="outline-container-org3f797be" class="outline-4">
+<h4 id="org3f797be">Highlighted Core</h4>
+<div class="outline-text-4" id="text-org3f797be">
 <ul class="org-ul">
 <li>The CORE DOMAIN must be made easier to see.
 <ul class="org-ul">
@@ -2726,9 +2726,9 @@ document.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org93ac216" class="outline-4">
-<h4 id="org93ac216">Cohesive Mechanisms</h4>
-<div class="outline-text-4" id="text-org93ac216">
+<div id="outline-container-org0c06292" class="outline-4">
+<h4 id="org0c06292">Cohesive Mechanisms</h4>
+<div class="outline-text-4" id="text-org0c06292">
 <ul class="org-ul">
 <li>Computations sometimes reach a level of complexity that begins to
 bloat the design.
@@ -2778,9 +2778,9 @@ words are combined into sentences.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga137ff6" class="outline-4">
-<h4 id="orga137ff6">Segregated Core</h4>
-<div class="outline-text-4" id="text-orga137ff6">
+<div id="outline-container-org479fde1" class="outline-4">
+<h4 id="org479fde1">Segregated Core</h4>
+<div class="outline-text-4" id="text-org479fde1">
 <ul class="org-ul">
 <li>Therefore
 <ul class="org-ul">
@@ -2839,9 +2839,9 @@ in one view of the CORE.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8a26ba2" class="outline-4">
-<h4 id="org8a26ba2">Abstract Core</h4>
-<div class="outline-text-4" id="text-org8a26ba2">
+<div id="outline-container-org8f3561a" class="outline-4">
+<h4 id="org8f3561a">Abstract Core</h4>
+<div class="outline-text-4" id="text-org8f3561a">
 <ul class="org-ul">
 <li>Even the CORE DOMAIN model usually has so much detail that
 communicating the big picture can be difficult.</li>
@@ -2857,9 +2857,9 @@ document</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga22c8e7" class="outline-4">
-<h4 id="orga22c8e7">Deep Models Distill</h4>
-<div class="outline-text-4" id="text-orga22c8e7">
+<div id="outline-container-org5d3bc62" class="outline-4">
+<h4 id="org5d3bc62">Deep Models Distill</h4>
+<div class="outline-text-4" id="text-org5d3bc62">
 <ul class="org-ul">
 <li>Although a breakthrough to a deep model provides value anywhere it
 happens, it is in the CORE DOMAIN that it can change the trajectory
@@ -2867,9 +2867,9 @@ of an entire project.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea03b22" class="outline-4">
-<h4 id="orgea03b22">Choosing Refactoring Targets</h4>
-<div class="outline-text-4" id="text-orgea03b22">
+<div id="outline-container-org5017c85" class="outline-4">
+<h4 id="org5017c85">Choosing Refactoring Targets</h4>
+<div class="outline-text-4" id="text-org5017c85">
 <ul class="org-ul">
 <li>Where do you start?
 <ol class="org-ol">
@@ -2897,9 +2897,9 @@ that first.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org93fa952" class="outline-3">
-<h3 id="org93fa952">Chapter Sixteen. Large-Scale Structure</h3>
-<div class="outline-text-3" id="text-org93fa952">
+<div id="outline-container-orgeb3bdf0" class="outline-3">
+<h3 id="orgeb3bdf0">Chapter Sixteen. Large-Scale Structure</h3>
+<div class="outline-text-3" id="text-orgeb3bdf0">
 <ul class="org-ul">
 <li><i>Layers would outline their story of the system.</i></li>
 <li>The strict segregation imposed by BOUNDED CONTEXTS prevents
@@ -2938,9 +2938,9 @@ design</b> at this level.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org3b7b47a" class="outline-4">
-<h4 id="org3b7b47a">Evolving Order</h4>
-<div class="outline-text-4" id="text-org3b7b47a">
+<div id="outline-container-org50b6ab7" class="outline-4">
+<h4 id="org50b6ab7">Evolving Order</h4>
+<div class="outline-text-4" id="text-org50b6ab7">
 <ul class="org-ul">
 <li>Architectures can straitjacket a project with up-front design
 assumptions and take too much power away from the
@@ -2968,9 +2968,9 @@ development.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org737d46b" class="outline-4">
-<h4 id="org737d46b">System Metaphor</h4>
-<div class="outline-text-4" id="text-org737d46b">
+<div id="outline-container-org8be8464" class="outline-4">
+<h4 id="org8be8464">System Metaphor</h4>
+<div class="outline-text-4" id="text-org8be8464">
 <ul class="org-ul">
 <li>Software designs tend to be very abstract and hard to grasp.</li>
 <li>SYSTEM METAPHOR has become a popular approach because it is one of
@@ -2988,9 +2988,9 @@ direction, adopt it as a large-scale structure.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org02bbb06" class="outline-4">
-<h4 id="org02bbb06">Responsibility Layers</h4>
-<div class="outline-text-4" id="text-org02bbb06">
+<div id="outline-container-orga95cda3" class="outline-4">
+<h4 id="orga95cda3">Responsibility Layers</h4>
+<div class="outline-text-4" id="text-orga95cda3">
 <ul class="org-ul">
 <li>Layers are partitions of a system in which the members of each
 partition are aware of and are able to use the services of the
@@ -3030,9 +3030,9 @@ accommodates the shearing between them.</dd>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgadbf605" class="outline-4">
-<h4 id="orgadbf605">Knowledge Level</h4>
-<div class="outline-text-4" id="text-orgadbf605">
+<div id="outline-container-orgd160400" class="outline-4">
+<h4 id="orgd160400">Knowledge Level</h4>
+<div class="outline-text-4" id="text-orgd160400">
 <ul class="org-ul">
 <li>A KNOWLEDGE LEVEL is a group of objects that <b>describes how another
 group of objects should behave</b>.</li>
@@ -3055,9 +3055,9 @@ superuser is able to customize.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org73c3e0a" class="outline-4">
-<h4 id="org73c3e0a">Pluggable Component Framework</h4>
-<div class="outline-text-4" id="text-org73c3e0a">
+<div id="outline-container-org0a82174" class="outline-4">
+<h4 id="org0a82174">Pluggable Component Framework</h4>
+<div class="outline-text-4" id="text-org0a82174">
 <ul class="org-ul">
 <li>Therefore:
 <ul class="org-ul">
@@ -3080,9 +3080,9 @@ DOMAIN, the structure will get in the way.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec2a8bf" class="outline-4">
-<h4 id="orgec2a8bf">How Restrictive Should a Structure Be?</h4>
-<div class="outline-text-4" id="text-orgec2a8bf">
+<div id="outline-container-org59c7a90" class="outline-4">
+<h4 id="org59c7a90">How Restrictive Should a Structure Be?</h4>
+<div class="outline-text-4" id="text-org59c7a90">
 <ul class="org-ul">
 <li>The most important contribution of the large-scale structure is
 conceptual coherence, and giving insight into the domain.</li>
@@ -3090,9 +3090,9 @@ conceptual coherence, and giving insight into the domain.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec7b01f" class="outline-4">
-<h4 id="orgec7b01f">Refactoring Toward a Fitting Structure</h4>
-<div class="outline-text-4" id="text-orgec7b01f">
+<div id="outline-container-orgdd1c455" class="outline-4">
+<h4 id="orgdd1c455">Refactoring Toward a Fitting Structure</h4>
+<div class="outline-text-4" id="text-orgdd1c455">
 <ul class="org-ul">
 <li>The only way a useful structure can be found is from <b>a very deep
 understanding of the domain and the problem</b>,</li>
@@ -3125,19 +3125,19 @@ insight apply even to the large-scale structure itself.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdf00b8e" class="outline-3">
-<h3 id="orgdf00b8e">Chapter Seventeen. Bringing the Strategy Together</h3>
-<div class="outline-text-3" id="text-orgdf00b8e">
+<div id="outline-container-orgcc718ad" class="outline-3">
+<h3 id="orgcc718ad">Chapter Seventeen. Bringing the Strategy Together</h3>
+<div class="outline-text-3" id="text-orgcc718ad">
 </div>
-<div id="outline-container-orgdecebed" class="outline-4">
-<h4 id="orgdecebed">Combining Large-Scale Structures and BOUNDED CONTEXTS</h4>
+<div id="outline-container-orgd36574b" class="outline-4">
+<h4 id="orgd36574b">Combining Large-Scale Structures and BOUNDED CONTEXTS</h4>
 </div>
-<div id="outline-container-org7b9827e" class="outline-4">
-<h4 id="org7b9827e">Combining Large-Scale Structures and Distillation</h4>
+<div id="outline-container-org2b80804" class="outline-4">
+<h4 id="org2b80804">Combining Large-Scale Structures and Distillation</h4>
 </div>
-<div id="outline-container-org5159d84" class="outline-4">
-<h4 id="org5159d84">Assessment First</h4>
-<div class="outline-text-4" id="text-org5159d84">
+<div id="outline-container-org9eefc3c" class="outline-4">
+<h4 id="org9eefc3c">Assessment First</h4>
+<div class="outline-text-4" id="text-org9eefc3c">
 <ul class="org-ul">
 <li>start from a clear assessment of the current situation.
 <ol class="org-ol">
@@ -3154,18 +3154,18 @@ Are they <i>interested</i> in the domain?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org65d99fb" class="outline-4">
-<h4 id="org65d99fb">Who Sets the Strategy?</h4>
-<div class="outline-text-4" id="text-org65d99fb">
+<div id="outline-container-orgd7767fd" class="outline-4">
+<h4 id="orgd7767fd">Who Sets the Strategy?</h4>
+<div class="outline-text-4" id="text-orgd7767fd">
 <ol class="org-ol">
 <li>Emergent Structure from Application Development</li>
 <li>A Customer Focused Architecture Team</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org9f080df" class="outline-4">
-<h4 id="org9f080df">Six Essentials for Strategic Design Decision Making</h4>
-<div class="outline-text-4" id="text-org9f080df">
+<div id="outline-container-org785017c" class="outline-4">
+<h4 id="org785017c">Six Essentials for Strategic Design Decision Making</h4>
+<div class="outline-text-4" id="text-org785017c">
 <ul class="org-ul">
 <li>6 essentials
 <ol class="org-ol">
@@ -3204,13 +3204,13 @@ only put up barriers between them and the tools they need.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org7dd3346" class="outline-3">
-<h3 id="org7dd3346">Conclusion</h3>
-<div class="outline-text-3" id="text-org7dd3346">
+<div id="outline-container-orgd185930" class="outline-3">
+<h3 id="orgd185930">Conclusion</h3>
+<div class="outline-text-3" id="text-orgd185930">
 </div>
-<div id="outline-container-org69fb64b" class="outline-4">
-<h4 id="org69fb64b">Epilogues</h4>
-<div class="outline-text-4" id="text-org69fb64b">
+<div id="outline-container-orga0ca5d7" class="outline-4">
+<h4 id="orga0ca5d7">Epilogues</h4>
+<div class="outline-text-4" id="text-orga0ca5d7">
 <ul class="org-ul">
 <li><b>The true test of success is how the software serves over a period of
 time.</b></li>
@@ -3235,9 +3235,9 @@ as they pick themselves up and continue forward.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org47bab4e" class="outline-4">
-<h4 id="org47bab4e">Looking Forward</h4>
-<div class="outline-text-4" id="text-org47bab4e">
+<div id="outline-container-org9b289e1" class="outline-4">
+<h4 id="org9b289e1">Looking Forward</h4>
+<div class="outline-text-4" id="text-org9b289e1">
 <ul class="org-ul">
 <li>Although purely technological tasks have generally seemed most
 interesting and challenging to talented software engineers,
@@ -3262,67 +3262,2365 @@ and counterproductive.</li>
       <guid>http://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design</guid>
     </item>
     <item>
+      <title>Clippings from Extreme Programming Explained</title>
+      <link>http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Clippings from Extreme Programming Explained</h1>
+            
+<div id="outline-container-org0f6c3f7" class="outline-2">
+<h2 id="org0f6c3f7">Chapter 1. What is XP?</h2>
+<div class="outline-text-2" id="text-org0f6c3f7">
+<ul class="org-ul">
+<li>XP addresses both technique and good relationships for you to be successful
+<ul class="org-ul">
+<li>Good relationships
+<ul class="org-ul">
+<li>The more humanely I treated myself and others, the more productive we all
+became</li>
+<li>XP is an attempt to reconcile humanity and productivity</li>
+</ul></li>
+<li>Technique
+<ul class="org-ul">
+<li>Technique supports trust relationships
+<ul class="org-ul">
+<li>If you can accurately estimate your work, deliver quality the first
+time, and create rapid feedback loops; then you can be a trustworthy
+partner.</li>
+</ul></li>
+<li>XP demands that participants learn a high level of technique in service of
+the team's goals</li>
+</ul></li>
+</ul></li>
+<li>XP can be described this way
+<dl class="org-dl">
+<dt>Lightweight</dt><dd>only do what you need to do to creat value for the customer</dd>
+<dt>A methodology based on addressing constraints in software development</dt><dd>but different team does XP differently</dd>
+<dt>Can work with teams of any size</dt><dd>the values and principles behind XP are applicable at any scale</dd>
+<dt>Adapts to vague or rapidly changing requirements</dt><dd></dd>
+</dl></li>
+<li>XP is a software development discipline that addresses risk at all levels of
+the development process.</li>
+<li>What is XP?
+<ul class="org-ul">
+<li>XP is giving up old, ineffective technical and social habits in favor of new
+ones that work.</li>
+<li>XP is fully appreciating yourself for total effort today.</li>
+<li>XP is striving to do better tomorrow.</li>
+<li>XP is evaluating yourself by your contribution to the team's shared goals.</li>
+<li>XP is asking to get some of your human needs met through software
+development.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org16b0671" class="outline-2">
+<h2 id="org16b0671">Section 1: Exploring XP <code>[12/15]</code></h2>
+<div class="outline-text-2" id="text-org16b0671">
+</div>
+<div id="outline-container-orgb16f2c5" class="outline-3">
+<h3 id="orgb16f2c5">Chapter 2. Learning to Drive</h3>
+<div class="outline-text-3" id="text-orgb16f2c5">
+<blockquote>
+<p>
+"Driving is not about getting the car going in the right direction. Driving is
+about constantly paying attention, making a little correction this way, a little
+correction that way."
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>The paradigm for XP
+<ol class="org-ol">
+<li>Stay aware</li>
+<li>Adapt</li>
+<li>Change</li>
+</ol></li>
+<li>The problem isn't change, because change is going to happen; the problem,
+rather, is our inability to cope with change.</li>
+<li>driving metaphor
+<ol class="org-ol">
+<li>Customers <i>drive</i> the content of the system
+<ul class="org-ul">
+<li>But customers don't usually know exactly what the software should do</li>
+</ul></li>
+<li>The whole team <i>drives</i> the development process
+<ul class="org-ul">
+<li>As development continues, the team becomes aware of which of their
+practices enhance and which of their practices detract from their goals.</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf020d8d" class="outline-3">
+<h3 id="orgf020d8d">Chapter 3. Values, Principles, and Practices</h3>
+<div class="outline-text-3" id="text-orgf020d8d">
+<ul class="org-ul">
+<li>Values, Principles, and Practices
+<ol class="org-ol">
+<li>Knowledge and understanding <i>practices</i>
+<ul class="org-ul">
+<li>Practices are clear and objective</li>
+<li>Practices give you a place to start (before you understand software
+development in a deeper way)</li>
+</ul></li>
+<li>Knowledge and understanding <i>values</i>
+<ul class="org-ul">
+<li>Values are the roots of the things we like and don't like in a situation</li>
+<li>Values are the large-scale criteria we use to judge what we see, think, and
+do</li>
+<li>Values bring purpose to practices.</li>
+<li>Practices are evidence of values.
+<ul class="org-ul">
+<li>Communicating in the most effective way I can shows I value communication</li>
+</ul></li>
+<li>Practices bring accountability to values
+<ul class="org-ul">
+<li>Practices are clear</li>
+<li>Values are fuzzy</li>
+</ul></li>
+</ul></li>
+<li>Principles bridge the gap between values and practices</li>
+</ol></li>
+<li>How to be an extreme programmer
+<ol class="org-ol">
+<li>Program in the extreme style</li>
+<li>Participate in the community of people who share these values and at least
+some of your practices</li>
+<li>Share what you know with others</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeef0aac" class="outline-3">
+<h3 id="orgeef0aac">Chapter 4. Values</h3>
+<div class="outline-text-3" id="text-orgeef0aac">
+<ul class="org-ul">
+<li>different people values different things</li>
+<li>XP embraces 5 values to guide development
+<ol class="org-ol">
+<li>Communication
+<ul class="org-ul">
+<li>matters the most</li>
+<li>motion without communicating is not progress</li>
+<li>ask if the problem was caused by a lack of communication</li>
+<li>communication is important for creating a sense of team and effective cooperation</li>
+</ul></li>
+<li>Simplicity
+<ul class="org-ul">
+<li>Ask "What is the simplest thing that could possibly work?"</li>
+<li>Simplicity only makes sense in context</li>
+<li>The values balance and support each other
+<ul class="org-ul">
+<li>Improving communication helps achieve simplicity by eliminating unneeded or deferrable requirements from today's concerns</li>
+<li>Achieving simplicity gives you that much less to communicate about</li>
+</ul></li>
+</ul></li>
+<li>Feedback
+<ul class="org-ul">
+<li>"Wouldn't it be easier just to do it right in the first place?"
+-&gt; <b>Being satisfied with improvement rather than expecting instant perfection</b>
+<ol class="org-ol">
+<li>We may not know how to do it "right".</li>
+<li>What's right for today may be wrong for tomorrow.</li>
+<li>Doing everything "right" today might take so long that changing
+circumstances tomorrow invalidate today's solution before it is even
+finished.</li>
+</ol></li>
+<li>Feedback forms
+<ul class="org-ul">
+<li>Opinions about an idea, yours or your teammates'</li>
+<li>How the code looks when you implement the idea</li>
+<li>Whether the tests were easy to write</li>
+<li>Whether the tests run</li>
+<li>How the idea works once it has been deployed</li>
+</ul></li>
+<li><b>The sooner you know, the sooner you can adapt.</b></li>
+<li>Too much feedback
+<ul class="org-ul">
+<li>If the team is ignoring important feedback; it needs to slow down</li>
+</ul></li>
+<li>Connections with other values
+<ul class="org-ul">
+<li>Feedback is a critical part of communication.</li>
+<li>Feedback also contributes to simplicity.</li>
+<li>The simpler the system, the easier it is to get feedback about it.</li>
+</ul></li>
+</ul></li>
+<li>Courage
+<ul class="org-ul">
+<li>Courage is effective action in the face of fear.</li>
+<li>Connections with other values
+Courage as a primary value without counterbalancing values is dangerous.
+<ul class="org-ul">
+<li>The courage to speak truths, pleasant or unpleasant, fosters
+communication and trust.</li>
+<li>The courage to discard failing solutions and seek new ones encourages
+simplicity.</li>
+<li>The courage to seek real, concrete answers creates feedback.</li>
+</ul></li>
+</ul></li>
+<li>Respect
+<ul class="org-ul">
+<li>Respect each other</li>
+<li>Respect the project</li>
+<li>No one is intrinsically worth more than anyone else.</li>
+</ul></li>
+</ol></li>
+<li>Others
+<ul class="org-ul">
+<li>Your organization, your team, and you yourself may choose other values</li>
+<li>What is most important is <b>aligning team behavior to team values.</b></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6707ff" class="outline-3">
+<h3 id="orgf6707ff">Chapter 5. Principles</h3>
+<div class="outline-text-3" id="text-orgf6707ff">
+<ul class="org-ul">
+<li>Why do we need principles?
+<ul class="org-ul">
+<li>Values are too abstract to directly guide behavior</li>
+</ul></li>
+<li>Principles that guide XP
+<ol class="org-ol">
+<li>Humanity
+<ul class="org-ul">
+<li>What do people need to be good developers?
+<dl class="org-dl">
+<dt>Basic safety</dt><dd>freedom from hunger, physical harm, and threats to loved
+ones. Fear of job loss threatens this need.</dd>
+<dt>Accomplishment</dt><dd>the opportunity and ability to contribute to their
+society.</dd>
+<dt>Belonging</dt><dd>the ability to identify with a group from which they receive
+validation and accountability and contribute to its shared
+goals.</dd>
+<dt>Growth</dt><dd>the opportunity to expand their skills and perspective.</dd>
+<dt>Intimacy</dt><dd>the ability to understand and be understood deeply by others.</dd>
+</dl></li>
+<li>Part of the challenge of team software development is <i>balancing the needs
+of the individual with the needs of the team</i>
+<ul class="org-ul">
+<li>The magic of great teams is that after the team members develop trust
+they find that <b>they are free to be <i>more</i> themselves as a result of
+their work together</b></li>
+</ul></li>
+</ul></li>
+<li>Economics
+<ul class="org-ul">
+<li><b>Make sure what you are doing has business value, meets business goals,
+and serves business needs</b></li>
+<li>2 aspects of economics that affect software development
+<ol class="org-ol">
+<li>The time value of money
+<ul class="org-ul">
+<li>A dollar today is worth more than a dollar tomorrow (Development is
+more valuable when it <b>earns money sooner and spends money later</b>)</li>
+<li>Incremental design explicitly <b>defers design investment until the
+last responsible moment</b> in an effort to spend money later</li>
+<li><i>Pay-per-use</i> provides a way of realizing revenue from features as
+soon as they are deployed</li>
+</ul></li>
+<li>The option value of systems and teams
+<ul class="org-ul">
+<li>Reusable software is more valuable than non-reusable software</li>
+<li>Keep in mind the time value of money by <b>not investing in speculative
+flexibility</b></li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li>Mutual Benefit
+<ul class="org-ul">
+<li><b>The computer business is really a people business</b> and maintaining
+working relationships is important</li>
+<li>Communication-with-the-future problem
+<ul class="org-ul">
+<li>Extensive internal documentation is an example of violating mutual
+benefit</li>
+<li>XP solves it in mutually beneficial ways:
+<ol class="org-ol">
+<li>Automated tests</li>
+<li>Refactor to remove accidental complexity</li>
+<li>Choose names from a coherent and explicit set of metaphors</li>
+</ol></li>
+</ul></li>
+<li>Mutual benefit in XP is searching for practices that <b>benefit me now, me
+later, and my customer as well</b></li>
+</ul></li>
+<li>Self-Similarity
+<ul class="org-ul">
+<li>Try copying the structure of one solution into a new context, even at
+different scales
+<ul class="org-ul">
+<li>TDD at different scales</li>
+</ul></li>
+<li>Just because you copy a structure that works in one context doesn't mean
+it will work in another. It is a good place to start, though.</li>
+</ul></li>
+<li>Improvement
+<ul class="org-ul">
+<li>In software development, "perfect" is a verb, not an adjective
+<ul class="org-ul">
+<li>No perfect process -&gt; Perfect your process</li>
+<li>No perfect design -&gt; Perfect your design</li>
+<li>No perfect stories -&gt; Perfect your stories</li>
+</ul></li>
+<li>XP doesn't mean waiting for perfection in order to begin
+<ol class="org-ol">
+<li>Do the best you can today</li>
+<li>Striving for awareness and understanding necessary to do better
+tomorrow</li>
+</ol></li>
+<li><b>The key to improvement is using newfound technological efficiency to
+enable new, more effective social relationships</b></li>
+</ul></li>
+<li>Diversity
+<ul class="org-ul">
+<li>How do you choose between two solutions?
+<ul class="org-ul">
+<li>Two ideas about a design present an opportunity, not a problem.
+<ol class="org-ol">
+<li>work together on the problem</li>
+<li>both opinions should be valued</li>
+</ol></li>
+<li>Resolve conflicts productively
+<ul class="org-ul">
+<li>respecting others and maintaining myself smooths communication in
+times of stress</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Reflection
+<ul class="org-ul">
+<li>Good teams think about
+<ol class="org-ol">
+<li><i>how</i> they are working</li>
+<li><i>why</i> they are working</li>
+</ol></li>
+<li>Reflection should not be limited to "official" opportunities</li>
+<li>Reflection isn't a purely intellectual exercise
+<ol class="org-ol">
+<li>Analyze data</li>
+<li>Learn from your gut ("negative" emotions)</li>
+</ol></li>
+<li>Reflection comes after action
+<ul class="org-ul">
+<li>Don't take reflection too far</li>
+<li>Software development has a long tradition of people so busy thinking
+about software development they don't have time to develop software.</li>
+</ul></li>
+</ul></li>
+<li>Flow (CI/CD)
+<ul class="org-ul">
+<li>Deliver a steady flow of valuable software by engaging in all the
+activities of development simultaneously.</li>
+<li>XP is biased towards <b>a continuous flow of activities</b> rather than
+discrete phases.</li>
+<li>The more things are deferred, the larger the chunk, the higher the risk.</li>
+<li>Resolve the problems that disrupted your flow and get back to weekly deployment as soon as you can.</li>
+</ul></li>
+<li>Opportunity
+<ul class="org-ul">
+<li>See problems as opportunities for change.</li>
+<li>Part of being extreme is consciously choosing to transform each problem
+into an opportunity: <b>an opportunity for personal growth, deepening
+relationships, and improved software.</b></li>
+</ul></li>
+<li>Redundancy
+<ul class="org-ul">
+<li>The critical, difficult problems in software development should be
+solved several different ways.</li>
+<li>While redundancy can be wasteful, be careful not to remove redundancy
+that serves a valid purpose.</li>
+</ul></li>
+<li>Failure
+<ul class="org-ul">
+<li>Failure may not be avoidable waste.
+<ul class="org-ul">
+<li>Failure can impart knowledge</li>
+<li>Knowledge is valuable and sometimes hard to come by.</li>
+</ul></li>
+<li>Fail instead of talk</li>
+<li><b>When you don't know what to do though, risking failure can be the
+shortest, surest road to success.</b></li>
+</ul></li>
+<li>Quality
+<ul class="org-ul">
+<li>Sacrificing quality is not effective as a means of control.
+<ul class="org-ul">
+<li>Projects don't go faster by accepting lower quality. -&gt; lowering
+quality standards often results in later, less predictable delivery.</li>
+<li>Projects don't go slower by demanding higher quality. -&gt; Pushing
+quality higher often results in faster delivery</li>
+</ul></li>
+<li>Quality isn't a purely economic factor. (but also a humanity factor)
+<ul class="org-ul">
+<li>People need to do work they are proud of.</li>
+</ul></li>
+<li>XP chooses <b>scope</b> (instead of quality) as the primary means of
+planning, tracking, and steering projects.</li>
+<li>A concern for quality is no excuse for inaction.</li>
+</ul></li>
+<li>Baby Steps
+<ul class="org-ul">
+<li>"What's the least you could do that is recognizably in the right
+direction?"</li>
+<li>The overhead of small steps is much less than when a team wastefully
+recoils from aborted big changes.</li>
+<li>Practices
+<ul class="org-ul">
+<li>TDD</li>
+<li>CI/CD</li>
+</ul></li>
+</ul></li>
+<li>Accepted Responsibility
+<ul class="org-ul">
+<li>Responsibility cannot be assigned; it can only be accepted.</li>
+</ul></li>
+</ol></li>
+<li>Conclusion
+<ul class="org-ul">
+<li>The principles give you a better idea of what the practice is intended to
+accomplish.</li>
+<li>Understanding the principles gives you the opportunity to create practices
+that work in harmony with your existing practices and your overall goals.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org71836a6" class="outline-3">
+<h3 id="org71836a6">Chapter 6. Practices</h3>
+<div class="outline-text-3" id="text-org71836a6">
+<ul class="org-ul">
+<li>Practices need to be guided by values
+<ul class="org-ul">
+<li>Practices should not be just a <i>thing to do to check off a checkbox</i></li>
+</ul></li>
+<li>Practices are situation dependent</li>
+<li>Practices are stated as absolutes
+<ul class="org-ul">
+<li>Make progress towards this ideal state of effective development</li>
+</ul></li>
+<li>Applying a practice is a choice</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2b94684" class="outline-3">
+<h3 id="org2b94684">Chapter 7. Primary Practices</h3>
+<div class="outline-text-3" id="text-org2b94684">
+<ol class="org-ol">
+<li>Sit Together
+<ul class="org-ul">
+<li>Open Space</li>
+<li><b>It's always a people problem</b></li>
+<li>Sit together -&gt; Communicate with all our senses</li>
+</ul></li>
+<li>Whole Team
+<ul class="org-ul">
+<li>Include on the team people with all the skills and perspectives necessary
+for the project to succeed.</li>
+<li>People need a sense of "team"
+<ul class="org-ul">
+<li>We belong</li>
+<li>We are in this together</li>
+<li>We support each others' work, growth, and learning</li>
+</ul></li>
+<li>The ideal team size from <i>The Tipping Point</i>
+<dl class="org-dl">
+<dt>12</dt><dd>the number of people who can comfortably interact with each other in
+a day</dd>
+<dt>150</dt><dd>with more than 150 people on a team, you can no longer recognize
+the faces of everyone on your team</dd>
+</dl></li>
+<li>Fractional people (multiple projects per developer)
+<ul class="org-ul">
+<li>Much time is wasted on task-switching</li>
+<li>Fractured thinking destroys the sense of "team"
+<ul class="org-ul">
+<li>People need acceptance and belonging</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Informative Workspace
+<ul class="org-ul">
+<li><p>
+Make your workspace about your work
+</p>
+<pre class="example">
+Put story cards on a wall
+</pre></li>
+<li>Provide for other human needs</li>
+<li>Big, visible charts.
+<ul class="org-ul">
+<li>For issues that require steady progress</li>
+<li>Take the chart down if the issue is resolved</li>
+</ul></li>
+</ul></li>
+<li>Energized Work
+<ul class="org-ul">
+<li>Work only as many hours as you can sustain and be productive</li>
+<li>Software development is a game of insight
+<ul class="org-ul">
+<li>Insight comes to the prepared, rested, relaxed mind</li>
+</ul></li>
+<li>It's easy to remove value from a software project
+<ul class="org-ul">
+<li>When you are tired, it's hard to recognize you're removing value</li>
+</ul></li>
+</ul></li>
+<li>Pair Programming
+<ul class="org-ul">
+<li>Pair programming is a dialog between two people simultaneously programming
+(analyzing, designing, testing) and trying to program better</li>
+<li>Pair programmers
+<ol class="org-ol">
+<li>Keep each other on task</li>
+<li>Brainstorm refinements to the system</li>
+<li>Clarify ideas</li>
+<li>Take initiative when their partner is stuck</li>
+<li>Hold each other accountable to the team's practices</li>
+</ol></li>
+<li>Tiring but satisfying</li>
+<li>Rotate pairs frequently</li>
+<li>Pairing and Personal Space
+<ul class="org-ul">
+<li>Personal space must be respected</li>
+<li>Individual differences must be respected</li>
+</ul></li>
+</ul></li>
+<li>Stories
+<ul class="org-ul">
+<li>Plan using units of customer-visible functionality</li>
+<li>Give stories short names in addition to a short prose or graphical description</li>
+<li>Estimate stories very early in their life
+<ul class="org-ul">
+<li>Gets everyone thinking about how to get the greatest return from the
+smallest investment</li>
+<li>Know your constraints
+<ol class="org-ol">
+<li>Cost</li>
+<li>Intended use</li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li>Weekly Cycle
+<ul class="org-ul">
+<li>Weekly Meeting
+<ol class="org-ol">
+<li>Review last week</li>
+<li>Plan stories for this week</li>
+<li>Break the stories into tasks</li>
+</ol></li>
+<li>Write system test for this week's stories first</li>
+<li>Planning is a form of <i>necessary waste</i>
+<ul class="org-ul">
+<li>Gradually reduce the percentage of time you spend planning (1 day -&gt; 1
+hour)</li>
+</ul></li>
+</ul></li>
+<li>Quarterly Cycle
+<ul class="org-ul">
+<li>Quarterly planning
+<ol class="org-ol">
+<li>Identify bottlenecks</li>
+<li>Initiate repairs</li>
+<li>Plan the theme or themes for the quarter</li>
+<li>Pick a quarter's worth of stories to address those themes</li>
+<li>Focus on the big picture, where the project fits within the organization</li>
+</ol></li>
+</ul></li>
+<li>Slack
+<ul class="org-ul">
+<li>In any plan, include some minor tasks that can be dropped if you get behind</li>
+<li>A few met commitments go a long way toward rebuilding relationships</li>
+<li>Clear, honest communication relieves tension and improves credibility</li>
+<li>Different ways of slack
+<ol class="org-ol">
+<li>Geek Week</li>
+<li>20%</li>
+</ol></li>
+</ul></li>
+<li>10-minute Build
+<ul class="org-ul">
+<li>10 minutes includes running all of the tests</li>
+<li>Any guess about what parts of the system <i>need</i> to be built and what parts
+<i>need</i> to be tested introduces the risk of error</li>
+<li><b>Practices should lower stress</b></li>
+</ul></li>
+<li>Continuous Integration
+<ul class="org-ul">
+<li><b>Team programming is a divide, conquer, and integrate program</b></li>
+<li>Waiting for the compiler and the tests is a natural time to communication
+<ol class="org-ol">
+<li>What we've just done</li>
+<li>How we might have done it better</li>
+</ol></li>
+<li>Integration and build a complete product
+<ul class="org-ul">
+<li>Continuous integration should be complete enough that the eventual first
+deployment of the system is no big deal.</li>
+</ul></li>
+</ul></li>
+<li>Test-First Programming
+<ul class="org-ul">
+<li>Problems TDD solves
+<ol class="org-ol">
+<li>Scope creep</li>
+<li>Coupling and cohesion</li>
+<li>Trust</li>
+<li>Rhythm (Get lost for hours when coding)</li>
+</ol></li>
+<li>Continuous testing (run tests on every program change)</li>
+</ul></li>
+<li>Incremental Design
+<ul class="org-ul">
+<li>XP teams work hard to create conditions under which <i>the cost of changing
+the software doesn't rise catastrophically</i></li>
+<li>XP teams are confident in their ability to adapt the design to future
+requirements</li>
+<li>Keep the design investment in proportion to the needs of the system so far</li>
+<li>Incremental Design -&gt; <b>The most effective time to design is in the light of
+experience</b> (design as close to when it is used as possible)</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1f51abe" class="outline-3">
+<h3 id="org1f51abe">Chapter 8. Getting Started</h3>
+<div class="outline-text-3" id="text-org1f51abe">
+<ul class="org-ul">
+<li>How to adapt XP?
+<ul class="org-ul">
+<li>Change begins with awareness</li>
+<li>Metrics can lead to awareness</li>
+<li>Change always starts at home
+<ul class="org-ul">
+<li><b>The only person you can actually change is yourself</b></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org90c1dd9" class="outline-3">
+<h3 id="org90c1dd9">Chapter 9. Corollary Practices</h3>
+<div class="outline-text-3" id="text-org90c1dd9">
+<p>
+Corollary Practices are difficult or dangerous to implement before completing
+the preliminary work of the primary practices.
+</p>
+<ol class="org-ol">
+<li>Real Customer Involvement
+<ul class="org-ul">
+<li><b>Software reflects the organization that builds it</b></li>
+</ul></li>
+<li>Incremental Deployment
+<ul class="org-ul">
+<li><b>When replacing a legacy system, gradually take over its workload beginning
+very early in the project</b>
+<ol class="org-ol">
+<li>Find a little piece of functionality or a limited data set you can
+handle right away</li>
+<li>Deploy it</li>
+<li>Run both programs in parallel (price you pay for insurance)</li>
+</ol></li>
+</ul></li>
+<li>Team Continuity
+<ul class="org-ul">
+<li>Keep effective teams together</li>
+<li>Value in software is created not just by what people know and do, but also
+by <b>their relationships and what they accomplish together</b></li>
+<li>Also encourage a reasonable amount of rotation -&gt; consistently spread
+knowledge and experience</li>
+</ul></li>
+<li>Shrinking Teams
+<ul class="org-ul">
+<li>Keep the workload constant but gradually reduce team's size (as the team
+grows in capability)</li>
+</ul></li>
+<li>Root-Cause Analysis
+<ul class="org-ul">
+<li>Process for responding to a defect in XP:
+<ol class="org-ol">
+<li>Write an automated system-level test that demonstrates the defect,
+including the desired behaviour</li>
+<li>Write a unit test with the smallest possible scope that also reproduces
+the defect</li>
+<li>Fix the system so the unit test works
+<ul class="org-ul">
+<li>This should fix the system test also</li>
+<li>If not, return to 2</li>
+</ul></li>
+<li>Figure out why the defect was created and wasn't caught. Initiate the
+necessary changes to prevent this kind of defect in the future
+<ul class="org-ul">
+<li><p>
+The Five Whys from Taiichi Ohno: <b>Ask five times why a problem
+occured</b>
+</p>
+<pre class="example">
+1. Why did we miss this defect?
+2. Why didn't we know?
+3. Why isn't she part of the team?
+4. Why doesn't anyone else know how?
+5. Why isn't it a management priority?
+</pre></li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li>Shared Code
+<ul class="org-ul">
+<li>Anyone on the team can improve any part of the system at any time</li>
+</ul></li>
+<li>Code and Tests (generated documentations)
+<ul class="org-ul">
+<li>Maintain only the code and the tests as permanent artifacts</li>
+<li><b>Customers pay for the what the system does today and what the team can
+make the system do tomorrow.</b></li>
+<li><b>The valuable decisions in software development</b> are
+<ul class="org-ul">
+<li>What are we going to do?</li>
+<li>What aren't we going to do?</li>
+<li>How are we going to do what we do?</li>
+</ul></li>
+</ul></li>
+<li>Single Code Base
+<ul class="org-ul">
+<li>Single branch
+<ul class="org-ul">
+<li>Temporary branch never lives longer than a few hours</li>
+</ul></li>
+<li>Single repo
+<ul class="org-ul">
+<li><b>Move the variation into configuration files</b></li>
+<li><b>Fix the underlying design problem that is preventing you from running
+from a single code base</b></li>
+</ul></li>
+</ul></li>
+<li>Daily Deployment
+<ul class="org-ul">
+<li><b>Any gap between what is on a programmer's desk and what is in production
+is a risk</b></li>
+<li>Whatever the barrier (technical, psychological, social, or business
+related), working to remove it and then letting more frequent deployment
+come as a natural consequence will help you improve development.</li>
+</ul></li>
+<li>Negotiated Scope Contract
+<ul class="org-ul">
+<li>Write contracts for software development that fix time, costs, and quality
+but call for an ongoing negotiation of the precise scope of the system.</li>
+</ul></li>
+<li>Pay-Per-Use
+<ul class="org-ul">
+<li>charge for every time the system is used.</li>
+<li>Even if you can't implement pay-per-use, you might be able to go to a
+<b>subscription model</b></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga834c85" class="outline-3">
+<h3 id="orga834c85">Chapter 10. The Whole XP Team</h3>
+</div>
+<div id="outline-container-org9f170bd" class="outline-3">
+<h3 id="org9f170bd">Chapter 11. The Theory of Constraints</h3>
+<div class="outline-text-3" id="text-org9f170bd">
+<ul class="org-ul">
+<li>Find opportunities for improvement in software development by first figuring
+out which problems are development problems.
+<ul class="org-ul">
+<li>XP isn't intended to solve marketing, sales, or management problems.</li>
+<li><b>XP is a coherent body of values, principles, and practices for addressing
+software development problems.</b></li>
+</ul></li>
+<li><p>
+The Theory of Constraints: One approach to looking at the throughput of entire
+systems
+</p>
+<blockquote>
+<p>
+<b>In any system there is one constraint at a time (occasionally two).</b>
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>Looking for work piling up to find the bottleneck</li>
+</ul></li>
+<li>Pull model vs Push model
+<ul class="org-ul">
+<li>XP uses a "pull" model
+<ol class="org-ol">
+<li>Stories are specified in detail immediately before they are implemented.</li>
+<li>The tests are pulled from the specifications.</li>
+<li>The programming interface is designed to match the needs of the test.</li>
+<li>The code is written to match the tests and the interface.</li>
+<li>The design is refined to match the needs of the code as written.</li>
+<li>This leads to a decision about which story to specify next.</li>
+</ol></li>
+</ul></li>
+<li>Work is pulled through the system based on actual demand, not pushed through
+the system based on projected demand.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6341972" class="outline-3">
+<h3 id="org6341972">Chapter 12. Planning: Managing Scope</h3>
+<div class="outline-text-3" id="text-org6341972">
+<ul class="org-ul">
+<li>Planning makes goals and directions clear and explicit</li>
+<li>Plans are not predictions of the future
+<ul class="org-ul">
+<li>At best, they express everything you know today about what might happen tomorrow</li>
+</ul></li>
+<li><b>4 variables by which to manage projects</b>
+<ol class="org-ol">
+<li>Speed</li>
+<li>Quality</li>
+<li>Price</li>
+<li><b>Scope</b></li>
+</ol></li>
+<li><b>Make scope explicit</b>
+<ul class="org-ul">
+<li>We have a safe way to adapt</li>
+<li>We have a way to negotiate</li>
+<li>We have a limit to ridiculous and unnecessary demands</li>
+</ul></li>
+<li>How to plan
+<ol class="org-ol">
+<li>List the items of work that may need to be done</li>
+<li>Estimate the items</li>
+<li>Set a budget for the planning cycle</li>
+<li>Agree on the work that needs to be done within the budget.
+(As you negotiate, don't change the estimates or the budget)</li>
+</ol></li>
+<li>How to estimate
+<ul class="org-ul">
+<li>Imagine, given everything you know about similar stories, how many hours or
+days it will take a pair to complete the story.</li>
+<li>Estimates based on experience are more accurate.</li>
+<li>Adjust estimations when you get more feedback</li>
+<li>More time at the desk does not equal increased productivity for creative
+work.</li>
+<li><p>
+"yesterday's weather" by Martin Fowler
+</p>
+<blockquote>
+<p>
+Plan in any given week for exactly as much work as you actually accomplished
+in the previous week.
+</p>
+</blockquote></li>
+</ul></li>
+<li><b>Write stories on index cards and put the cards on a prominent wall.</b>
+<ul class="org-ul">
+<li>Nobody believes stories more because they are on a computer.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc0ecace" class="outline-3">
+<h3 id="orgc0ecace">Chapter 13. Testing: Early, Often, and Automated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TDD">TDD</span></span></h3>
+<div class="outline-text-3" id="text-orgc0ecace">
+<ul class="org-ul">
+<li>Defects destroy the trust required for effective software development
+<ul class="org-ul">
+<li><b>Without trust, people spend much of their time defending themselves against
+the possibility that someone else may have made a mistake</b></li>
+</ul></li>
+<li>Defects are unavoidable</li>
+<li>Two goals of reducing the occurrence of defects
+<ol class="org-ol">
+<li>Reduce it to an economically sustainable level</li>
+<li>Reduce it to a level where trust can reasonably grow on the team</li>
+</ol></li>
+<li>Two principles to increase the cost-effectiveness of testing
+<ol class="org-ol">
+<li>Double-checking
+<ul class="org-ul">
+<li>Software testing</li>
+</ul></li>
+<li>The Defect Cost Increase (DCI)
+<ul class="org-ul">
+<li><b>the sooner you find a defect, the cheaper it is to fix</b></li>
+<li>DCI -&gt; Software development styles with long feedback loops will be
+expensive and have many residual defects</li>
+<li>Automated testing helps fix defects sooner and more cheaply</li>
+</ul></li>
+</ol></li>
+<li>Several implications to more frequent testing
+<ol class="org-ol">
+<li>The same people who make the mistakes have to write the tests
+<ul class="org-ul">
+<li>If the time interval between creating and detecting a defect is months,
+it's possible that those two activities belong to different people</li>
+<li>If the gap is minutes, the communication cost is much lower</li>
+</ul></li>
+<li>Tests must be automated
+<ul class="org-ul">
+<li>Automated tests break the stress cycle
+<dl class="org-dl">
+<dt>With manual testing</dt><dd>the more stressed the team, the more mistakes the team members make
+in both coding and testing</dd>
+<dt>With automated testing</dt><dd>running the tests themselves is a stress-reliever</dd>
+</dl></li>
+</ul></li>
+</ol></li>
+<li>Different perspectives
+<ul class="org-ul">
+<li>Double-checking works best when two distinct thought processes arrive at the
+same answer
+(-&gt; it's dangerous to copy the results of a calculation as its expected value)</li>
+<li>Two sets of tests in XP
+<ul class="org-ul">
+<li>System tests
+<ul class="org-ul">
+<li>written from the perspective of the programmers</li>
+<li>Testing the operation of the system as a whole</li>
+</ul></li>
+<li>Unit tests
+<ul class="org-ul">
+<li>written from the perspective of the customers or users</li>
+<li>Testing the system's components exhaustively</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><b>Beta testing is a symptom of weak testing practices and poor communication
+with customers</b></li>
+<li><b>The physical metaphor behind the word "testing" is misleading</b>
+<ul class="org-ul">
+<li>Because software is a virtual world, <b>"testing" before or after makes equal
+sense</b></li>
+</ul></li>
+<li>Tests can provide a measure of progress</li>
+<li>Testing is as important as programming
+<ol class="org-ol">
+<li>Writing and running the tests gives the team a chance to do work it can be
+proud of</li>
+<li>Running tests gives the team a valid basis for confidence as it moves
+quickly in unanticipated directions</li>
+</ol></li>
+</ul>
+<p>
+e.g.  3. Tests contribute value to development by strengthening the trust
+     relationships within the team and with customers.
+</p>
+</div>
+</div>
+<div id="outline-container-org1f9e720" class="outline-3">
+<h3 id="org1f9e720">Chapter 14. Designing: The Value of Time</h3>
+<div class="outline-text-3" id="text-org1f9e720">
+<p>
+<b>Technical, Economic, and human reasons for embracing incremental design</b>
+</p>
+<ul class="org-ul">
+<li>Incremental Design
+<ul class="org-ul">
+<li>XP pushes incrementalism of design to its limit</li>
+<li><p>
+Software elements can be replicated endlessly at no cost
+</p>
+<blockquote>
+<p>
+In ten years the pendulum has swung from 'design everything' to 'design
+nothing.' But the alternative to BDUF [Big Design Up Front] isn't no design up
+front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF).
+</p>
+</blockquote></li>
+<li>We are often writing applications for the first time
+<ul class="org-ul">
+<li>There is always a better way to design the software</li>
+<li>There is an art to designing just enough to get feedback, and then using
+that feed back to improve the design enough to get the next round of
+feedback</li>
+</ul></li>
+<li>There are usually many designs that are good enough for the software to be
+successful.
+<ul class="org-ul">
+<li>Design quality doesn't ensure success,</li>
+<li>But design failure can ensure failure.</li>
+</ul></li>
+</ul></li>
+<li>Permaculture
+<ul class="org-ul">
+<li>Think of design as <b>a system of beneficially related elements</b>
+<dl class="org-dl">
+<dt>Elements</dt><dd>systems can't be comprehended only as wholes</dd>
+<dt>Related</dt><dd>elements in a design don't stand alone but rather come together
+in relation to each other</dd>
+<dt>Beneficially</dt><dd>the relationships can strengthen the elements, making each
+more powerful than it would be alone</dd>
+</dl></li>
+</ul></li>
+<li>Once and only Once (DRY)</li>
+<li>As you modify code, clean up a little. (The Boy Scout Rule - What Is Clean Code? - InformIT)</li>
+<li><b>The shift to XP-style design is a shift in the timing of design decisions.</b>
+<ul class="org-ul">
+<li><b>Design is deferred until it can be made in the light of experience and the
+decisions can be used immediately.</b> (Carlo Pescio: Delaying Decisions)</li>
+<li>Allows team to
+<ul class="org-ul">
+<li>Deploy software sooner.</li>
+<li>Make decisions with certainty.</li>
+<li>Avoid living with bad decisions.</li>
+<li>Maintain the pace of development as the original design assumptions are
+superseded.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org1f6d867" class="outline-4">
+<h4 id="org1f6d867">Simplicity</h4>
+<div class="outline-text-4" id="text-org1f6d867">
+<dl class="org-dl">
+<dt>Appropriate for the intended audience.</dt><dd>Readability</dd>
+<dt>Communicative</dt><dd>Readability</dd>
+<dt>Factored</dt><dd>DRY</dd>
+<dt>Minimal</dt><dd>Fewest elements possible</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org6bf548c" class="outline-3">
+<h3 id="org6bf548c">Chapter 15. Scaling XP</h3>
+</div>
+<div id="outline-container-org7a6f44e" class="outline-3">
+<h3 id="org7a6f44e">Chapter 16. Interview</h3>
+</div>
+</div>
+<div id="outline-container-orgaa2f3b4" class="outline-2">
+<h2 id="orgaa2f3b4">Section 2: Philosophy of XP <code>[5/7]</code></h2>
+<div class="outline-text-2" id="text-orgaa2f3b4">
+<p>
+How I see some of the ideas from other domains that connect to XP
+</p>
+</div>
+<div id="outline-container-org8d27856" class="outline-3">
+<h3 id="org8d27856">Chapter 17. Creation Story</h3>
+<div class="outline-text-3" id="text-org8d27856">
+<ul class="org-ul">
+<li><p>
+The basics of XP
+</p>
+<blockquote>
+<p>
+An always deployable system to which features, chosen by the customer, are
+added and automatically tested on a fixed heartbeat
+</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org88b075b" class="outline-3">
+<h3 id="org88b075b">Chapter 18. Taylorism and Software</h3>
+</div>
+<div id="outline-container-org7e0795a" class="outline-3">
+<h3 id="org7e0795a">Chapter 21. Purity</h3>
+<div class="outline-text-3" id="text-org7e0795a">
+<ul class="org-ul">
+<li><b>Are the team members doing all the things that make sense to them in a
+sustainable way?</b></li>
+<li>Saying that your team is extreme sets other people's expectations for your
+style of communication, your development practices, and the speed and quality
+of your results.</li>
+</ul>
+</div>
+<div id="outline-container-org2fce35e" class="outline-4">
+<h4 id="org2fce35e">Certification and Accreditation</h4>
+</div>
+</div>
+<div id="outline-container-org2ec1a7d" class="outline-3">
+<h3 id="org2ec1a7d">Chapter 22. Offshore Development</h3>
+</div>
+<div id="outline-container-org23bdeb5" class="outline-3">
+<h3 id="org23bdeb5">Chapter 23. The Timeless Way of Programming</h3>
+<div class="outline-text-3" id="text-org23bdeb5">
+<ul class="org-ul">
+<li><b>Software development can't be "the programmers and a bunch of other people"
+if the goal is excellence.</b></li>
+<li>Harmony and balance are the aims of XP.</li>
+<li>XP relies on the growth of powerful programmers; able to quickly estimate,
+implement, and deploy reliable software.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c9084c" class="outline-3">
+<h3 id="org0c9084c">Chapter 24. Community and XP</h3>
+<div class="outline-text-3" id="text-org0c9084c">
+<ul class="org-ul">
+<li>Community is important because everyone needs support sometimes.</li>
+<li>Communities can also be a place to study together.</li>
+<li>Communities also provide accountability, a place to be held to your word.</li>
+<li>Communities are a place for questioning and doubt.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc09f45b" class="outline-3">
+<h3 id="orgc09f45b">Chapter 25. Conclusion</h3>
+<div class="outline-text-3" id="text-orgc09f45b">
+<ul class="org-ul">
+<li><b>There is no improvement without first improving myself.</b></li>
+<li>The key to XP is integrity, acting in harmony with my true values.</li>
+<li>With XP, I work to become worthy of respect and offer respect to others.</li>
+<li><b>XP values are worth putting into practice in the business world.</b></li>
+<li>If you are looking for a world in which you can be comfortable, live in
+balance and do good business; XP is a way of thinking about and acting on your
+ideals.</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </div>
+</section>
+]]></description>
+      <pubDate>2018-08-07</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained</guid>
+    </item>
+    <item>
+      <title>What Agility Really Means</title>
+      <link>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</link>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>What Agility Really Means</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>What to Do
+<ol class="org-ol">
+<li>Find out where you are</li>
+<li>Take a small step towards your goal</li>
+<li>Adjust your understanding based on what you learned</li>
+<li>Repeat</li>
+</ol></li>
+<li>How to Do It
+<ul class="org-ul">
+<li>When faced with two of more alternatives that deliver roughly
+the same value, take the path that makes future change easier</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=a-BOSpxYJ9M">GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas - YouTube</a>
+   and <a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html">Agile is Dead (Long Live Agility)</a>
+</p>
+
+<p>
+I think this can be the summary of my current understanding of
+Agility.
+</p>
+
+<p>
+<b>Only by taking steps as small as possible, can we embrace the changes
+this interesting world presents us without losing any sanity.</b><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+And this agility thinking can absolutely be adopted to all the things
+we are doing at work or even in our daily life:
+</p>
+<ol class="org-ol">
+<li>TDD</li>
+<li>Issue Solving</li>
+<li>Feature Management</li>
+<li>Company Management</li>
+<li>Skill Learning</li>
+</ol>
+
+<p>
+Also, this methodology reflects TDD perfectly:
+</p>
+<dl class="org-dl">
+<dt>Find out where you are</dt><dd>Write a failing test</dd>
+<dt>Take a small step towards your goal</dt><dd>Fix this failing test</dd>
+<dt>Adjust your understanding based on what you learned</dt><dd>Refactor or Start considering next test</dd>
+<dt>Repeat</dt><dd></dd>
+</dl>
+
+<p>
+I first learned this idea from <a href="https://www.sandimetz.com/99bottles/">99 Bottles - Sandi Metz</a>. (You can also
+read my review of this book <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">here</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>)
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way/">Learn Incremental Deployment the Hard Way - dsdshome</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">Book Review: 99 Bottles of OOP - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+]]></description>
+      <pubDate>2018-08-07</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means</guid>
+    </item>
+    <item>
       <title>How to do Outside-In TDD with Phoenix</title>
       <link>http://dsdshcym.github.io/blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>How to do Outside-In TDD with Phoenix</h1>
+            <p>
+As an Outside-In style TDD (Mockist-style TDD, London-school TDD,
+whatever you call it) advocate, I started learning Phoenix with this
+question in mind: <b>How to do Outside-In TDD in a Phoenix App?</b>
+</p>
+
+<p>
+I thought there would be enough resources about this in the Phoenix
+world. Because Elixir/Phoenix is pure functional compare to
+Ruby/Rails, the basic building blocks (Plugs) are just functions,
+which would be super easy to unit test. Though there were some blog
+posts demonstrating how to mock Context in Controller test using Mox,
+there were almost no resources teaching how to unit test a Phoenix
+controller.
+</p>
+
+<p>
+This post's main purpose is to <b>fill the gap on unit testing a
+controller action</b> and explain the full TDD cycle, you can find tons
+of resources on the other details.
+</p>
+
+<p>
+After several attempts in the past 6 months or so, I think I've gained
+enough experiences to answer this question now, and I'm super excited
+to share this workflow with you.
+</p>
+
+<div id="outline-container-org4d3fe31" class="outline-2">
+<h2 id="org4d3fe31">5 Steps to Outside-In a new feature</h2>
+<div class="outline-text-2" id="text-org4d3fe31">
+<p>
+Here are the basic summary of this workflow.
+</p>
+
+<p>
+I try to follow the testing philosophy from the book <i>Growing
+Object-Oriented Software Guided by Tests</i>.
+</p>
+
+<ol class="org-ol">
+<li>Write a feature test</li>
+<li>Write unit tests for your new controller action</li>
+<li>Write unit tests for your context functions</li>
+<li>Write unit tests for your view rendering</li>
+<li>Add the routing rule to connect everything together and pass the
+feature test</li>
+</ol>
+
+<p>
+I would not talk about why I'd like to follow this complicated
+workflow in this blog post. I'll just focus on the "How" part and hope
+you would find it useful anyway.
+</p>
+</div>
+</div>
+<div id="outline-container-org884db5b" class="outline-2">
+<h2 id="org884db5b">Write a feature test</h2>
+<div class="outline-text-2" id="text-org884db5b">
+<p>
+There are several different options to write a feature test in the
+Phoenix world, depends on the app you are writing:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Option</th>
+<th scope="col" class="org-left">Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Browser Test</td>
+<td class="org-left">Front-end (JS) heavy application</td>
+</tr>
+
+<tr>
+<td class="org-left">phoenix_integration</td>
+<td class="org-left">Server-side rendered application</td>
+</tr>
+
+<tr>
+<td class="org-left">Phoenix.ConnTest</td>
+<td class="org-left">JSON API</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We use feature tests to demonstrate to our client that a feature is
+completed as they requested, instead of driving our design decisions.
+</p>
+</div>
+<div id="outline-container-orga876a7f" class="outline-3">
+<h3 id="orga876a7f">Browser Test</h3>
+<div class="outline-text-3" id="text-orga876a7f">
+<p>
+Browser test would fire up a browser for every test cases you write,
+and follow the test script you write to navigate through it, then
+listen to certain DOM events.
+</p>
+
+<p>
+It's the most end-to-end test within all the test methods mentioned in
+this post (which means it's the slowest as well). It can even test
+your app's front-end behaviour.
+</p>
+
+<p>
+There are two popular browser test libraries for Phoenix web development:
+</p>
+<ol class="org-ol">
+<li><a href="https://github.com/HashNuke/hound">HashNuke/hound</a></li>
+<li><a href="https://github.com/keathley/wallaby">keathley/wallaby</a></li>
+</ol>
+
+<p>
+I personally prefer wallaby because it provides a nice API that allows
+developers to easily chain browser actions and assertions using Pipe.
+</p>
+
+<p>
+For a great example on how to write a browser test like a user story,
+definitely check out <a href="https://github.com/hashrocket/tilex/blob/9b3a2ba/test/features/developer_edits_post_test.exs">tilex/developer_edits_post_test.exs</a>. It's the
+best feature test I've ever seen and I wish every web developer can
+write feature tests like this.
+</p>
+</div>
+</div>
+<div id="outline-container-org874efc6" class="outline-3">
+<h3 id="org874efc6">phoenix_integration</h3>
+<div class="outline-text-3" id="text-org874efc6">
+<p>
+<a href="../../Org/notes/elixir.html#ID-84C4A999-9B39-4CB0-8F60-5E02A976EB7B">phoenix_integration</a> is a lightweight server side integration test
+(feature test) library for Phoenix.
+</p>
+
+<p>
+IMHO, it's suitable when your app doesn't have any front-end logic and
+you don't want to waste your develop/test time on the browser testing.
+</p>
+
+<p>
+Though I think this library does have several drawbacks, like:
+</p>
+<ol class="org-ol">
+<li>It couples itself to Phoenix's view helpers too much.</li>
+<li>It doesn't provide enough APIs to interact with the HTML responses.</li>
+</ol>
+
+<p>
+I think the best option to fill this gap is to add a browser driver
+which doesn't have a JS runtime to the browser test libraries I
+mentioned before. (like what Capybara's default driver RackTest<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+does)
+</p>
+
+<p>
+Or we can just choose the Browser Test way for server side rendering
+applications. Since Phoenix supports concurrent database accesses in
+the testing environment by default, it won't slow down your test suit
+much.
+</p>
+</div>
+</div>
+<div id="outline-container-orge350b64" class="outline-3">
+<h3 id="orge350b64">Phoenix.ConnTest</h3>
+<div class="outline-text-3" id="text-orge350b64">
+<p>
+For a JSON API endpoint, the default <code>Phoenix.ConnTest</code> is integrated
+enough to cover the full request cycle.
+</p>
+
+<p>
+It still would be better to separate these ConnTests from the unit
+ConnTests, like setting up a <code>/test/features</code> directory to save these
+feature test files.
+</p>
+
+<p>
+Here is an example for a simple <code>POST</code> API:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">describe "POST /teams" do
+  test "authorized user can creates teams" do
+    user = insert(:user)
+
+    conn =
+      build_conn
+      |&gt; login_with(user)
+      |&gt; post("/teams", name: "New Team")
+
+    assert %{
+             "data" =&gt; %{
+               "id" =&gt; _id,
+               "name" =&gt; "New Team"
+             }
+           } = json_response(conn, 201)
+  end
+end
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgedb19d3" class="outline-2">
+<h2 id="orgedb19d3">Unit test a controller action</h2>
+<div class="outline-text-2" id="text-orgedb19d3">
+<p>
+Everything in Elixir/Phoenix is a function, including a Controller
+action. Controller actions are just some functions that receive a
+<code>Plug.Conn</code> struct with the parameters parsed by Phoenix framework,
+and return a <code>Plug.Conn</code>.
+</p>
+</div>
+<div id="outline-container-org8dbe401" class="outline-3">
+<h3 id="org8dbe401">Controller Responsibility</h3>
+<div class="outline-text-3" id="text-org8dbe401">
+<p>
+To understand how to unit test a controller action, we need to figure
+out what is the responsibility of a controller.
+</p>
+
+<p>
+IMHO, I think a controller is the glue between <i>the request</i>, <i>our
+business logic</i> (Context), and <i>our presenting logic</i> (View).
+</p>
+
+<p>
+Put this in another way, our controller needs to do following stuffs
+correctly:
+</p>
+<ol class="org-ol">
+<li>Parse the parameters from the request</li>
+<li>Pass the correct parameters to a Context module (via function
+calls), and
+<ul class="org-ul">
+<li>Ask Context to give back the data our user needs to see</li>
+<li>Ask Context to update some user states</li>
+</ul></li>
+<li>Repeat 2 until it has all the data it needs to build the response
+for the client</li>
+<li>Set the HTTP status code</li>
+<li>Pass all the data the client needs, and ask the View module to
+render it (via <code>Phoenix.Controller.render/3</code> and <code>assign</code>)</li>
+<li>If something bad happens, this function can choose to return some
+data structures that's not a <code>Plug.Conn</code> struct, so that the
+Fallback Controller can kick in and take care the rest.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
+</ol>
+
+<p>
+Now we can clearly see what we need to test our controller as a unit:
+</p>
+<ol class="org-ol">
+<li>The correct Context function got called
+<ol class="org-ol">
+<li><code>stub</code> it when Controller is just asking for data</li>
+<li><code>expect</code> it when Controller wants to change some states</li>
+</ol></li>
+<li>The correct HTTP status code were set (given certain Context
+results)</li>
+<li>The correct View got rendered with correct assigns (given certain
+Context results)</li>
+<li><p>
+The correct data structure got returned (given certain Context
+results)
+</p>
+<blockquote>
+<p>
+We need to cover these error cases in our controller unit tests,
+because we don't want to duplicate our tests for these common error
+cases that are handled by our Fallback Controller.
+</p>
+
+<p>
+In this way, we only need to cover these cases once in our Fallback
+Controller tests, and our normal Controller can return correct data
+structures. And leave everything else to our framework.
+</p>
+</blockquote></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1ef7c97" class="outline-3">
+<h3 id="org1ef7c97">Inject Context dependencies with Mox</h3>
+<div class="outline-text-3" id="text-org1ef7c97">
+<p>
+All these 4 cases depend on one setup: mocking our Context module.
+</p>
+
+<p>
+We choose Mox<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> to do that because it can ensure us won't break
+the syntax contracts between our Controller and our Context.
+</p>
+
+<p>
+Here is a simple example how I do it:
+</p>
+<ul class="org-ul">
+<li><p>
+<code>teams.ex</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyApp.Teams do
+  use MyApp, :context
+
+  defmodule Behaviour do
+    @callback get_team(id :: integer()) :: Team.t()
+
+    @callback create_team(params :: map()) :: %{:ok, Team.t()} | %{:error, Ecto.Changeset.t()}
+  end
+
+  @behaviour __MODULE__.Behaviour
+  @behaviour Bodyguard.Policy
+end
+</pre>
+</div></li>
+<li><p>
+<code>test_helper.exs</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">Mox.defmock(MyApp.TeamsMock, for: [MyApp.Teams.Behaviour, Bodyguard.Policy])
+</pre>
+</div></li>
+<li><p>
+<code>team_controller.ex</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamController do
+  use MyAppWeb, :controller
+
+  def create(conn, params, teams_mod \\ MyApp.Teams) do
+    user = conn.assigns.current_user
+
+    with :ok &lt;- Bodyguard.permit(teams_mod, :create_team, user, %{}),
+         {:ok, team} &lt;- teams_mod.create_team(params) do
+      render(conn, "create.json", %{team: team})
+    else
+      {:error, %Ecto.Changeset{} = changeset} -&gt;
+        ...
+      {:error, :unauthorized} -&gt;
+        {:error, :unauthorized}
+    end
+  end
+end
+</pre>
+</div></li>
+<li><p>
+<code>team_controller_test.exs</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+
+  alias MyAppWeb.TeamController
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    test "calls teams_mod.create_team/1" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |&gt; assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -&gt; true end)
+      expect(TeamsMock, :create_team, fn %{"name" =&gt; "Test Team"} -&gt; {:ok, %{}} end)
+
+      # 2. Act
+      TeamController.create(conn, %{"name" =&gt; "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      verify!(TeamsMock)
+    end
+
+    test "sets status to 201 after teams_mod.create_team/1 returns :ok" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |&gt; assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -&gt; true end)
+      stub(TeamsMock, :create_team, fn %{"name" =&gt; "Test Team"} -&gt; {:ok, %{}} end)
+
+      # 2. Act
+      conn = TeamController.create(conn, %{"name" =&gt; "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert conn.status == 201
+    end
+
+    test "renders view with correct template and assigns" do
+      # I'll explain this in the next section
+    end
+
+    test "returns {:error, :unauthorized} when user is not authorized" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |&gt; assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -&gt; false end)
+
+      # 2. Act
+      result = TeamController.create(conn, %{"name" =&gt; "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert result == {:error, :unauthorized}
+    end
+  end
+end
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org955e97a" class="outline-3">
+<h3 id="org955e97a">Set View to a ViewMock</h3>
+<div class="outline-text-3" id="text-org955e97a">
+<p>
+I left out the trickiest test case in my last example: test <code>render</code>
+calls.
+</p>
+
+<p>
+I tried 3 different ways to test it and I now believe the best way is
+to use <code>put_view/2</code> to pass a mocked view and expect on that:
+</p>
+<ol class="org-ol">
+<li>Put a <code>ViewMock</code>
+<ul class="org-ul">
+<li><p>
+<code>view_behaviour.ex</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.ViewBehaviour do
+  @callback render(template :: string, assign :: map) :: any
+end
+</pre>
+</div>
+<p>
+Because Phoenix doesn't define a behaviour for our View module, we
+need to define it ourselves.
+</p>
+
+<p>
+(I really wish Phoenix can define this behaviour for us.)
+</p></li>
+<li><p>
+<code>test_helper.exs</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmock(MyAppWeb.ViewMock, for: MyAppWeb.ViewBehaviour)
+</pre>
+</div></li>
+<li><p>
+<code>team_controller_test.exs</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+  import Phoenix.Controller, only: [put_view: 2, put_format: 2]
+
+  alias MyAppWeb.TeamController
+  alias MyAppWeb.ViewMock
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    ...
+
+    test "renders view with correct template and assigns" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |&gt; assign(:current_user, user) |&gt; put_view(ViewMock)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -&gt; true end)
+      stub(TeamsMock, :create_team, fn %{"name" =&gt; "Test Team"} -&gt; {:ok, %{name: "Test Team"}} end)
+      expect(ViewMock, :render, fn "create.json", %{team: %{name: "Test Team"}} end)
+
+      # 2. Act
+      conn
+      |&gt; put_format("json")
+      |&gt; TeamController.create(%{"name" =&gt; "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      verify!(ViewMock)
+    end
+
+    ...
+  end
+end
+</pre>
+</div></li>
+</ul></li>
+<li>Assert on <code>conn.private</code>
+<ul class="org-ul">
+<li><p>
+<code>team_controller_test.exs</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+  import Phoenix.Controller, only: [put_view: 2, put_format: 2]
+
+  alias MyAppWeb.TeamController
+  alias MyAppWeb.ViewMock
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    ...
+
+    test "renders view with correct template and assigns" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |&gt; assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -&gt; true end)
+      stub(TeamsMock, :create_team, fn %{"name" =&gt; "Test Team"} -&gt; {:ok, %{name: "Test Team"}} end)
+
+      # 2. Act
+      conn
+      |&gt; put_format("json")
+      |&gt; TeamController.create(%{"name" =&gt; "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert %{
+               phoenix_view: MyAppWeb.TeamView,
+               phoenix_template: "create.json"
+             } = conn.private
+    end
+
+    ...
+  end
+end
+</pre>
+</div></li>
+<li><p>
+<code>team_controller.ex</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamController do
+  use MyAppWeb, :controller
+
+  def create(conn, params, teams_mod \\ MyApp.Teams) do
+    # ...
+    render(MyAppWeb.TeamView, conn, "create.json", %{team: team})
+    # ...
+  end
+end
+</pre>
+</div></li>
+<li>Drawbacks
+<ol class="org-ol">
+<li>Because we didn't call <code>put_view</code> on the <code>conn</code> we passed into
+this function, we need to call <code>Phoenix.Controller.render/3</code>
+with a View module explicitly.</li>
+<li>We rely on the private fields (<code>phoenix_view</code> and
+<code>phoenix_template</code>) under <code>Plug.Conn</code> struct, which might be
+broken during a Phoenix update in the future.</li>
+<li><b>We called <code>render</code> on a real View module</b>. If this View
+rendering logic depends on some complex assigns, we need to
+manage these complex setups in our controller unit tests.</li>
+</ol></li>
+</ul></li>
+<li>Inject view as a dependency
+<ul class="org-ul">
+<li>Similar to our contexts, we inject our view module to our
+controller functions.</li>
+<li>Drawbacks
+<ol class="org-ol">
+<li>It seems to be an overkill, compared to <code>put_view/2</code></li>
+<li>It's a burden for a more classic Phoenix developer</li>
+<li>We still need to pass the <code>view_mod</code> to <code>render/3</code> function.</li>
+</ol></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5375095" class="outline-2">
+<h2 id="org5375095">Unit test a context function</h2>
+<div class="outline-text-2" id="text-org5375095">
+<p>
+After finishing the Controller part, we can apply the same methodology
+to our Context. You can find tons of code snippets about how to unit
+test it online.
+</p>
+
+<p>
+The only problem I think is about <i>to mock our <code>Repo</code> module or not</i>.
+</p>
+
+<p>
+Since this post is getting too long, I decide to discuss this question
+in a future blog post.
+</p>
+</div>
+</div>
+<div id="outline-container-org9558c1e" class="outline-2">
+<h2 id="org9558c1e">Unit test a view rendering function</h2>
+<div class="outline-text-2" id="text-org9558c1e">
+<p>
+Unit testing the view becomes so much easier with our controller unit
+tests. Because we don't need to test our view behaviour through
+<code>ConnTest</code>.
+</p>
+
+<p>
+The View test would be super easy to setup and verify:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MyAppWeb.TeamViewTest do
+  describe "render/2 show.json" do
+    test "extracts id and name" do
+      team = %Team{name: "Test Team", id: 23548}
+
+      result = MyAppWeb.TeamView.render("show.json", %{team: team})
+
+      assert result == %{
+        data: %{
+          id: 23548,
+          name: "Test Team"
+        }
+      }
+    end
+  end
+end
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org229f123" class="outline-2">
+<h2 id="org229f123">Connect the dots (add the routing rule)</h2>
+<div class="outline-text-2" id="text-org229f123">
+<p>
+Finally, we just need to add the routing rule to our <code>router.ex</code> file
+to route the <code>POST /teams</code> endpoint to our <code>TeamController.create/2</code>
+function, then we can pass the feature test and deliver this feature.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">resources "/teams", TeamController, only: [:create]
+</pre>
+</div>
+
+<p>
+I also thought about whether or not we need to test our router
+specifications. I guess I'll write another post discuss about
+it. (Spoiler alert: don't unit test your router)
+</p>
+</div>
+</div>
+<div id="outline-container-org9232c17" class="outline-2">
+<h2 id="org9232c17">Eliminate dependencies</h2>
+<div class="outline-text-2" id="text-org9232c17">
+<p>
+As it's said in <i>Test-Driven Development By Example</i> by Kent Beck:
+</p>
+
+<blockquote>
+<p>
+Dependency is the key problem in software development at all scales.
+</p>
+</blockquote>
+
+<p>
+All I did above is to eliminate as many dependencies as possible from
+our Controller, Context, and View. I believe this is also the main
+purpose of the original MVC architecture, and organizing our code in
+this way would lead us to a more maintainable codebase.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/teamcapybara/capybara#racktest">RackTest</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://hexdocs.pm/phoenix/Phoenix.Controller.html#action_fallback/1">action_fallback/1 - Phoenix.Controller – Phoenix v1.3.3</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/plataformatec/mox">plataformatec/mox: Mocks and explicit contracts in Elixir</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+]]></description>
       <pubDate>2018-08-04</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix</guid>
     </item>
     <item>
       <title>记一个由 Surge 更新发现的 Bug</title>
       <link>http://dsdshcym.github.io/blog/2018/07/24/a-bug-discovered-via-upgrading-Surge</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>记一个由 Surge 更新发现的 Bug</h1>
+            <div id="outline-container-orgaad3f0f" class="outline-2">
+<h2 id="orgaad3f0f">缘起</h2>
+<div class="outline-text-2" id="text-orgaad3f0f">
+<p>
+我最近在做一个 Phoenix 项目，这个项目在我加入之前就有了不错的测试覆盖率。但是在我开始不久后，其中一个测试用例在我的机器上变得会一直超时（之前则没问题），在 CI 环境和其他开发的机器上都没问题，而我也没有改过相关代码或者测试。
+</p>
+
+<p>
+这就让我非常疑惑（但是兴奋？）了，立马开始了调查。
+</p>
+</div>
+</div>
+<div id="outline-container-orge5ae91f" class="outline-2">
+<h2 id="orge5ae91f">调查</h2>
+<div class="outline-text-2" id="text-orge5ae91f">
+<p>
+经过一番调查后发现，被测试的代码会使用 <code>curl</code> 从一个外链尝试下载，成功后则解析返回的结果并更新数据库。
+</p>
+
+<p>
+而我和同事网络环境上唯一的不同是我使用了 Surge<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 作为代理， <b>而把
+Surge 关闭之后再次尝试，这个测试就不再超时了。</b>
+</p>
+
+<p>
+最终发现引发这个问题的原因是：
+</p>
+<ol class="org-ol">
+<li>为了不在测试环境中使用 <code>curl</code> 对外部环境发起请求，之前在写这个测试时将 <code>curl</code> 用一个私有函数 <code>downloader/2</code> 包装了一下，并当作公共函数的依赖注入进去，在测试时则注入一个构造好的 <code>failure_downloader/2</code>
+Stub 失败时的行为。</li>
+<li>而同事在写 Stub 部分时忘记了将 <code>failure_downloader/2</code> 注入进去了，即在测试时依然会正常发起 <code>curl</code> 请求。</li>
+<li>同事又按照测试环境下 <code>curl</code> 对 <code>example.org</code> 的请求返回，写了
+<code>assertion</code> 。因此这个测试在 CI 和其他同事的机器上都能正常通过。</li>
+<li>而 Surge 在某一次更新后，对 <code>example.org</code> 的处理与正常情况下并不一致，导致了这个测试在我的机器上正常了一段时间后失败。</li>
+</ol>
+
+<p>
+种种巧合导致了这个问题，我觉得也算一件趣事。
+</p>
+
+<p>
+P.S. 最后，我又好奇问同事这个 Module 在线上有没有出问题，结果他说线上环境还没有用到这个 Module。（YAGNI<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> 的又一体现）
+</p>
+</div>
+</div>
+<div id="outline-container-org1ee8332" class="outline-2">
+<h2 id="org1ee8332">False Negative</h2>
+<div class="outline-text-2" id="text-org1ee8332">
+<p>
+其实这个问题在使用 Mock/Stub/Fake 的测试中非常常见，又被称作 <b>False
+Negative Error</b><sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>。即：
+</p>
+<blockquote>
+<p>
+测试结果表示一个模块没有正常工作，而实际上这个模块的行为是正常的。
+</p>
+</blockquote>
+
+<p>
+这个问题说明我们的测试代码写得不够完善。
+</p>
+
+<p>
+而解决这个问题最好的办法就是： <b>Watch the test fail</b> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>。
+</p>
+
+<p>
+每次写测试时，都确保这个测试能按照我们预想的方式失败：
+</p>
+
+<ul class="org-ul">
+<li>TDD 的时候，每次写完测试/代码都运行一遍，并能得到预想的失败信息。</li>
+<li>即使写出了一个通过了的测试（为了增加覆盖率），也要对被测试的代码做出修改，保证这个测试覆盖的部分被注释后，这个测试能按我们预想的方式失败，并给出合适的失败信息。</li>
+</ul>
+
+<p>
+关于 False Negative，我最初是在 <a href="http://blog.testdouble.com/posts/2015-11-16-how-to-stop-hating-your-tests">How to stop hating your tests.</a><sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> 这个
+Talk 中学到的，其中还有更多写 Test 的技巧，值得一看。
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="../../Org/notes/notes.html#ID-90DBD636-224B-44BA-B418-13BE0AB400E8">Surge Mac - Advanced Web Debugging Proxy for Mac &amp; iOS</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">You aren't gonna need it - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives">False positives and false negatives - Wikipedia</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/#org270c3ba">We need to constantly check the test results. - Growing
+Object-Oriented Software Guided by Tests</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://blog.testdouble.com/posts/2015-11-16-how-to-stop-hating-your-tests">Test Double - Our Thinking - How to stop hating your tests.</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+]]></description>
       <pubDate>2018-07-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/07/24/a-bug-discovered-via-upgrading-Surge</guid>
     </item>
     <item>
       <title>Five minute journal</title>
       <link>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Five minute journal</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>5-Minute Journal: I’m grateful for, what would make today great, and
+I am…; and 3 amazing things that happened today and how could I have
+made today even better</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="../../Org/lists/podcasts.html#ID-70BC3BA1-BAB5-45B6-A9B4-44B359EAF289">The Art of Product: 47: Pacing Yourself When Starting Up</a>
+</p>
+
+<p>
+I've been writing my own 5-Minute Journal for almost 2 years now. I
+learned this technique from <a href="https://alexdenning.com/five-minute-journal/">Five minute journal: how could today have
+been even better?</a> on <span class="timestamp-wrapper"><span class="timestamp">[2016-12-31 Sat]</span></span>, then I added a capture template to
+my Org mode config and started writing it everyday.
+</p>
+
+<p>
+Before using this technique, I was just looking at my time log and
+write random stuffs, then call it for a day.
+</p>
+
+<p>
+This technique helps me focus more on both good things and bad things
+happened today. Sometimes there would be more than 3 amazing things or
+more than 3 things that could be improved and it's totally fine to me.
+This journal is basically my highlights for my daily life.
+</p>
+
+<p>
+What I want to do better is to be more goal-driven, write down my
+goals at the beginning of a month, then check if I'm going in the
+right direction everyday.
+</p>
+
+    </div>
+</section>
+]]></description>
       <pubDate>2018-07-12</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</guid>
     </item>
     <item>
       <title>TIL: mix test --stale</title>
       <link>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>TIL: mix test --stale</h1>
+            
+<div id="outline-container-orga838110" class="outline-2">
+<h2 id="orga838110">Meet mix test --stale</h2>
+<div class="outline-text-2" id="text-orga838110">
+<p>
+Recently, I joined the mentor program on Exercism<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. When we
+practiced mentoring, I chose Elm as my test language as a student. And
+I discovered this useful feature from <code>elm-test</code><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">elm test --watch
+</pre>
+</div>
+<p>
+It's like guard-rspec<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, which will automatically rerun all your
+tests after you change a file. And <code>elm-test</code> has great Emacs
+support<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
+</p>
+
+<p>
+It really helps since I don't need to manually hit the same keystrokes
+again and again to rerun my tests, which speeds up my TDD workflow.
+</p>
+
+<p>
+Then I started looking for something similar in Elixir. And there is
+one called mix-test.watch<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>. But it's not bundled with the
+official ExUnit package and we need to add it as a dependency to our
+project, which I don't want to do. And it doesn't have nice Emacs
+support. Though I still found something useful from its README file:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">mix test --stale
+</pre>
+</div>
+<p>
+This command will attempt to run only those tests which reference
+modules that have changed since the last time you ran <code>mix test
+--stale</code>.
+</p>
+
+<p>
+Documentation from <code>mix help test</code>:
+</p>
+<blockquote>
+<p>
+• --stale - runs only tests which reference modules that changed since
+  the last test --stale. You can read more about this option in the "Stale"
+  section below.
+</p>
+
+<p>
+## "Stale"
+</p>
+
+<p>
+The --stale command line option attempts to run only those test files which
+reference modules that have changed since the last time you ran this task with
+--stale.
+</p>
+
+<p>
+The first time this task is run with --stale, all tests are run and a manifest
+is generated. On subsequent runs, a test file is marked "stale" if any modules
+it references (and any modules those modules reference, recursively) were
+modified since the last run with --stale. A test file is also marked "stale" if
+it has been changed since the last run with --stale.
+</p>
+</blockquote>
+
+<p>
+And alchemist.el also supports this command via <code>alchemist-mix-test-stale</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4eff3d8" class="outline-2">
+<h2 id="org4eff3d8">Usages</h2>
+<div class="outline-text-2" id="text-org4eff3d8">
+<p>
+It's very useful to run this command when I'm changing a feature which
+I don't know how many clients are there. So that I can make sure every
+change I make won't break any client and I don't need to run the whole
+test suite.
+</p>
+
+<p>
+But when I'm TDD a feature, I think it's not as that useful. Since
+when I TDDing, I always know (or try to predict) what test would
+fail/success for some changes I make. Running stale tests sometimes
+would break this workflow because it would run more tests than I
+expected.
+</p>
+
+<p>
+Anyway, it's a useful tool to add to your toolbox. And it again shows
+that Elixir has a great development tooling ecosystem.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="http://mentoring.exercism.io/">Mentoring on Exercism</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/elm-community/elm-test">elm-community/elm-test: Write unit and fuzz tests for your Elm code, in Elm.</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<a href="../../Org/notes/ruby.html#ID-D2F1DD88-9CA8-41D0-9B2C-79184F16620F">guard/guard-rspec: Guard::RSpec automatically run your specs (much like autotest)</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/juanedi/elm-test-el">juanedi/elm-test-el: elm-test integration for Emacs!</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/lpil/mix-test.watch">lpil/mix-test.watch: 🎁 Because TDD is awesome.</a>
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+]]></description>
       <pubDate>2018-07-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</guid>
     </item>
     <item>
       <title>TDD is All About Reducing Accidental Complication</title>
       <link>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>TDD is All About Reducing Accidental Complication</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>The Mythical Man-Month</li>
+<li>Complication, not complexity</li>
+<li>The cost of a feature is dominated by the accidental complication</li>
+<li>Your design sucks -&gt; TDD to the rescue
+<ol class="org-ol">
+<li><b>Think about what you want to do</b></li>
+<li>Write a test</li>
+<li>Ask yourself "How much does this test suck?"
+<ul class="org-ul">
+<li>simpler tests</li>
+<li>smaller tests</li>
+</ul></li>
+<li>Run the test and watch it fail
+<ul class="org-ul">
+<li>Stop writing too much code</li>
+</ul></li>
+<li>Write just enough code to make it pass</li>
+<li>Refactor a bit now</li>
+</ol></li>
+<li>Refactoring is how you reduce accidental complication</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://www.youtube.com/watch?v=WSes_PexXcA">7 minutes, 26 seconds, and the Fundamental Theorem of Agile
+   Software Development - YouTube</a>
+</p>
+
+<p>
+I think this is the best explanation for why TDD can help with
+designing better software:
+</p>
+<ol class="org-ol">
+<li>TDD is never about writing some tests to prove our application is
+running correctly.</li>
+<li>Instead, TDD is all about <b>reducing the accidental complication</b>
+we add to our application.
+<ol class="org-ol">
+<li>Thinking about what you want to do and writing a test for that
+help you think deeply about your design decisions.</li>
+<li>Rethinking about the tests helps you rethink about that.</li>
+<li>Running the test and watching it fail makes sure we are not
+writing meaningless code.</li>
+<li>Writing just enough code to make it pass is the hardest
+part. Because we as developers tend to show off our intelligence
+and always try to solve multiple problems at once. And sometimes
+finding the minimum code to pass a test is much harder than
+the obvious solution.</li>
+<li>Refactoring makes sure we will think again about our design
+after learning more knowledge about our domain from the previous
+phases.</li>
+</ol></li>
+</ol>
+
+    </div>
+</section>
+]]></description>
       <pubDate>2018-06-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</guid>
     </item>
     <item>
       <title>人类已经过了最后的匮乏时代</title>
       <link>http://dsdshcym.github.io/clipping/2018/06/20/人类已经过了最后的匮乏时代</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>人类已经过了最后的匮乏时代</h1>
+            <blockquote>
+<ul class="org-ul">
+<li><b>人类已经过了最后的匮乏时代</b>
+<ul class="org-ul">
+<li>无论多么冷门的内容，都有无穷的资源供消费</li>
+<li>只能挑部分感兴趣的内容看</li>
+</ul></li>
+<li>大脑停转的负罪感是根植在人类的起源中的</li>
+<li>寻求意义的难度是指数增长的</li>
+<li>游戏、抖音、小资都是为了解决温饱之后的如何赋予人意义的问题</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="http://hardimage.pro/64">硬影像 Episode 64: 编织有意义的网：从杂志到《底特律：变人》（有剧透）</a>
+</p>
+
+<p>
+关于「最后的匮乏时代」这一点，我个人的感受是很强烈的：无论是编程、动漫，还是 Emacs，随便一样中的一小部分都足够我研究一辈子了，信息增长的速度远远超过了我消费的速度，而我只能勉强挑取其中一部分罢了。
+</p>
+
+<p>
+这些消费又帮我填补了大脑停转的负罪感，以此来维系我存在的意义，这是我现在的想法。
+</p>
+
+<p>
+P.S. 硬影像这档播客关于游戏的讨论我都很喜欢，值得推荐。
+</p>
+
+    </div>
+</section>
+]]></description>
       <pubDate>2018-06-20</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/06/20/人类已经过了最后的匮乏时代</guid>
     </item>
     <item>
       <title>Elixir Pattern Matching on Struct Module</title>
       <link>http://dsdshcym.github.io/blog/2018/06/14/elixir_pattern_matching_on_struct_module</link>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Elixir Pattern Matching on Struct Module</h1>
+            <p>
+TIL:
+</p>
+
+<p>
+Elixir's Pattern Matching can also match on the Struct Module:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">%struct_module{} = %User{}
+
+struct_module # =&gt; User
+</pre>
+</div>
+
+<p>
+Elixir just keeps doing these things that blows my mind. This kind of
+features is completely surprising when I discovered them but after
+some thoughts, it completely makes sense.
+</p>
+
+<p>
+I guess this is why I love Elixir and its Pattern Matching feature so
+much.
+</p>
+
+    </div>
+</section>
+]]></description>
       <pubDate>2018-06-14</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/06/14/elixir_pattern_matching_on_struct_module</guid>
-    </item>
-    <item>
-      <title>Livable and Disposable Code</title>
-      <link>http://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-06-07</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code</guid>
-    </item>
-    <item>
-      <title>Conceptual Compression</title>
-      <link>http://dsdshcym.github.io/clipping/2018/05/28/conceptual-compression</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-05-28</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/05/28/conceptual-compression</guid>
     </item>
   </channel>
 </rss>

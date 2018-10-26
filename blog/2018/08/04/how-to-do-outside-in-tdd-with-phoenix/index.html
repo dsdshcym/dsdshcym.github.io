@@ -79,9 +79,9 @@ enough experiences to answer this question now, and I'm super excited
 to share this workflow with you.
 </p>
 
-<div id="outline-container-orgcfcef36" class="outline-2">
-<h2 id="orgcfcef36">5 Steps to Outside-In a new feature</h2>
-<div class="outline-text-2" id="text-orgcfcef36">
+<div id="outline-container-org4d3fe31" class="outline-2">
+<h2 id="org4d3fe31">5 Steps to Outside-In a new feature</h2>
+<div class="outline-text-2" id="text-org4d3fe31">
 <p>
 Here are the basic summary of this workflow.
 </p>
@@ -107,9 +107,9 @@ you would find it useful anyway.
 </p>
 </div>
 </div>
-<div id="outline-container-org99cc5b3" class="outline-2">
-<h2 id="org99cc5b3">Write a feature test</h2>
-<div class="outline-text-2" id="text-org99cc5b3">
+<div id="outline-container-org884db5b" class="outline-2">
+<h2 id="org884db5b">Write a feature test</h2>
+<div class="outline-text-2" id="text-org884db5b">
 <p>
 There are several different options to write a feature test in the
 Phoenix world, depends on the app you are writing:
@@ -151,9 +151,9 @@ We use feature tests to demonstrate to our client that a feature is
 completed as they requested, instead of driving our design decisions.
 </p>
 </div>
-<div id="outline-container-org68baec7" class="outline-3">
-<h3 id="org68baec7">Browser Test</h3>
-<div class="outline-text-3" id="text-org68baec7">
+<div id="outline-container-orga876a7f" class="outline-3">
+<h3 id="orga876a7f">Browser Test</h3>
+<div class="outline-text-3" id="text-orga876a7f">
 <p>
 Browser test would fire up a browser for every test cases you write,
 and follow the test script you write to navigate through it, then
@@ -187,11 +187,11 @@ write feature tests like this.
 </p>
 </div>
 </div>
-<div id="outline-container-orga94f61e" class="outline-3">
-<h3 id="orga94f61e">phoenix_integration</h3>
-<div class="outline-text-3" id="text-orga94f61e">
+<div id="outline-container-org874efc6" class="outline-3">
+<h3 id="org874efc6">phoenix_integration</h3>
+<div class="outline-text-3" id="text-org874efc6">
 <p>
-<a href="../../../Org/notes/elixir.html#ID-84C4A999-9B39-4CB0-8F60-5E02A976EB7B">phoenix_integration</a> is a lightweight server side integration test
+<a href="../../Org/notes/elixir.html#ID-84C4A999-9B39-4CB0-8F60-5E02A976EB7B">phoenix_integration</a> is a lightweight server side integration test
 (feature test) library for Phoenix.
 </p>
 
@@ -223,9 +223,9 @@ much.
 </p>
 </div>
 </div>
-<div id="outline-container-org5c2724f" class="outline-3">
-<h3 id="org5c2724f">Phoenix.ConnTest</h3>
-<div class="outline-text-3" id="text-org5c2724f">
+<div id="outline-container-orge350b64" class="outline-3">
+<h3 id="orge350b64">Phoenix.ConnTest</h3>
+<div class="outline-text-3" id="text-orge350b64">
 <p>
 For a JSON API endpoint, the default <code>Phoenix.ConnTest</code> is integrated
 enough to cover the full request cycle.
@@ -263,9 +263,9 @@ end
 </div>
 </div>
 </div>
-<div id="outline-container-orge0c1aa5" class="outline-2">
-<h2 id="orge0c1aa5">Unit test a controller action</h2>
-<div class="outline-text-2" id="text-orge0c1aa5">
+<div id="outline-container-orgedb19d3" class="outline-2">
+<h2 id="orgedb19d3">Unit test a controller action</h2>
+<div class="outline-text-2" id="text-orgedb19d3">
 <p>
 Everything in Elixir/Phoenix is a function, including a Controller
 action. Controller actions are just some functions that receive a
@@ -273,9 +273,9 @@ action. Controller actions are just some functions that receive a
 and return a <code>Plug.Conn</code>.
 </p>
 </div>
-<div id="outline-container-orgc01358a" class="outline-3">
-<h3 id="orgc01358a">Controller Responsibility</h3>
-<div class="outline-text-3" id="text-orgc01358a">
+<div id="outline-container-org8dbe401" class="outline-3">
+<h3 id="org8dbe401">Controller Responsibility</h3>
+<div class="outline-text-3" id="text-org8dbe401">
 <p>
 To understand how to unit test a controller action, we need to figure
 out what is the responsibility of a controller.
@@ -341,9 +341,9 @@ structures. And leave everything else to our framework.
 </ol>
 </div>
 </div>
-<div id="outline-container-org7e72a41" class="outline-3">
-<h3 id="org7e72a41">Inject Context dependencies with Mox</h3>
-<div class="outline-text-3" id="text-org7e72a41">
+<div id="outline-container-org1ef7c97" class="outline-3">
+<h3 id="org1ef7c97">Inject Context dependencies with Mox</h3>
+<div class="outline-text-3" id="text-org1ef7c97">
 <p>
 All these 4 cases depend on one setup: mocking our Context module.
 </p>
@@ -467,9 +467,9 @@ end
 </ul>
 </div>
 </div>
-<div id="outline-container-orge1f23d9" class="outline-3">
-<h3 id="orge1f23d9">Set View to a ViewMock</h3>
-<div class="outline-text-3" id="text-orge1f23d9">
+<div id="outline-container-org955e97a" class="outline-3">
+<h3 id="org955e97a">Set View to a ViewMock</h3>
+<div class="outline-text-3" id="text-org955e97a">
 <p>
 I left out the trickiest test case in my last example: test <code>render</code>
 calls.
@@ -628,9 +628,9 @@ controller functions.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdd08c13" class="outline-2">
-<h2 id="orgdd08c13">Unit test a context function</h2>
-<div class="outline-text-2" id="text-orgdd08c13">
+<div id="outline-container-org5375095" class="outline-2">
+<h2 id="org5375095">Unit test a context function</h2>
+<div class="outline-text-2" id="text-org5375095">
 <p>
 After finishing the Controller part, we can apply the same methodology
 to our Context. You can find tons of code snippets about how to unit
@@ -647,9 +647,9 @@ in a future blog post.
 </p>
 </div>
 </div>
-<div id="outline-container-org658a2fd" class="outline-2">
-<h2 id="org658a2fd">Unit test a view rendering function</h2>
-<div class="outline-text-2" id="text-org658a2fd">
+<div id="outline-container-org9558c1e" class="outline-2">
+<h2 id="org9558c1e">Unit test a view rendering function</h2>
+<div class="outline-text-2" id="text-org9558c1e">
 <p>
 Unit testing the view becomes so much easier with our controller unit
 tests. Because we don't need to test our view behaviour through
@@ -680,9 +680,9 @@ end
 </div>
 </div>
 </div>
-<div id="outline-container-org7d0cf65" class="outline-2">
-<h2 id="org7d0cf65">Connect the dots (add the routing rule)</h2>
-<div class="outline-text-2" id="text-org7d0cf65">
+<div id="outline-container-org229f123" class="outline-2">
+<h2 id="org229f123">Connect the dots (add the routing rule)</h2>
+<div class="outline-text-2" id="text-org229f123">
 <p>
 Finally, we just need to add the routing rule to our <code>router.ex</code> file
 to route the <code>POST /teams</code> endpoint to our <code>TeamController.create/2</code>
@@ -701,9 +701,9 @@ it. (Spoiler alert: don't unit test your router)
 </p>
 </div>
 </div>
-<div id="outline-container-org7b6bd26" class="outline-2">
-<h2 id="org7b6bd26">Eliminate dependencies</h2>
-<div class="outline-text-2" id="text-org7b6bd26">
+<div id="outline-container-org9232c17" class="outline-2">
+<h2 id="org9232c17">Eliminate dependencies</h2>
+<div class="outline-text-2" id="text-org9232c17">
 <p>
 As it's said in <i>Test-Driven Development By Example</i> by Kent Beck:
 </p>
@@ -770,7 +770,7 @@ this way would lead us to a more maintainable codebase.
       <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
 <footer class="footer">
-  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 26.x (<a href="http://orgmode.org">Org mode</a> 9.x)</p>
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
   <p>
     Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
     &nbsp;&nbsp;-&nbsp;&nbsp;
