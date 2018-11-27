@@ -4,287 +4,139 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 27 Nov 2018 16:23:42 CST</pubDate>
-    <lastBuildDate>Tue, 27 Nov 2018 16:23:42 CST</lastBuildDate>
+    <pubDate>Tue, 27 Nov 2018 17:09:20 CST</pubDate>
+    <lastBuildDate>Tue, 27 Nov 2018 17:09:20 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Similarities between TDD and Management</title>
-      <link>http://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management</link>
+      <title>$handle_undefined_function in Elixir/Erlang</title>
+      <link>http://dsdshcym.github.io/blog/2018/11/27/$handle-undefined-function-in-elixir-erlang</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Similarities between TDD and Management</h1>
+            <h1>$handle_undefined_function in Elixir/Erlang</h1>
             <p>
-Recently, I started transitioning into more of a management role (more
-code review, hiring, and team building related work). I felt a bit
-intimidating at first because I thought I would not be able to use my
-development skills anymore.
+I was searching for ways to implement Ruby's <code>method_missing</code> in
+Elixir the other day. Then I ran into this package:
+<a href="https://github.com/andrewvy/method_missing">andrewvy/method_missing: Elixir Library for dynamic code
+execution</a>. And it implements exactly what I want: a <code>method_missing</code>
+function to dynamically generate function body for what's not defined
+yet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Dog do
+  use MethodMissing
+
+  def method_missing(func, _args) do
+    func_name = Atom.to_string(func)
+
+    cond do
+      Regex.match?(~r/bark|woof/, func_name) -&gt; "WOOF"
+      true -&gt; "?"
+    end
+  end
+end
+
+Dog.bark()
+# &gt; "WOOF"
+Dog.woof()
+# &gt; "WOOF"
+Dog.meow()
+# &gt; "?"
+</pre>
+</div>
+
+<p>
+I was curious about how it was implemented in Elixir, so I looked into
+the <code>lib</code> directory. Surprisingly, it's fairly simple:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MethodMissing do
+  defmacro __using__(_opts) do
+    quote do
+      def method_missing(_func, _args) do
+      end
+
+      def unquote(:"$handle_undefined_function")(func, args), do: method_missing(func, args)
+
+      defoverridable method_missing: 2
+    end
+  end
+end
+</pre>
+</div>
+
+<p>
+From this implementation, we can know that we don't even need to use
+this package to get <code>method_missing</code> in Elixir. (The name
+<code>method_missing</code> is not very functional either.)
 </p>
 
 <p>
-But the more I learn about management, the more similarities I find
-between management and software development. Even more fascinating, I
-find that I can apply the same discipline to the management process as
-I did to my coding process, and it can help me to do my work better.
+All we need to do is to define <code>$handle_undefined_function/2</code>. And
+just like <code>method_missing</code>, it will receive two arguments, one for the
+function name, and one for the list of arguments.
 </p>
 
 <p>
-In today's post, I want to show you an example of the similarities
-between Test-Driven Development (TDD) and meeting
-arrangement. Hopefully, you can get a grasp of how they are related
-and how to apply the same discipline from development to management.
-</p>
-
-<div id="outline-container-orgca03546" class="outline-2">
-<h2 id="orgca03546">What is TDD and how do we do it?</h2>
-<div class="outline-text-2" id="text-orgca03546">
-<p>
-TDD is a development approach where tests are written before the
-development of a feature. This is done in increments so that that only
-enough code necessary to pass the tests are written. The test drives
-the production code, rather than the other way around. This forces
-developers to be agile and to focus on the requirements of the feature
-before writing any code, ultimately resulting in fewer bugs.
+Again, I want to praise Elixir/Erlang when I discovered this
+feature. Almost every time I miss something in Ruby, Elixir already
+has a solution for that.
 </p>
 
 <p>
-Practicing TDD in the traditional Red/Green/Refactor cycle.
+Although, I doubt that <code>$handle_undefined_function</code> will be as popular
+in the Elixir community as <code>method_missing</code> in the Ruby community.
 </p>
-
-<p>
-The Red/Green/Refactor cycle essentially defines the steps of TDD,
-where red represents a "failing test" and green represents a "passing
-test."
-</p>
-
 <ol class="org-ol">
 <li><p>
-<b>Red</b>
+Elixir is a language that emphasize on explicity.
 </p>
 
 <p>
-In this step, we write a test with detailed description to define
-the problem we need to solve. Here, we define the specifications
-for the feature we want to develop and create tests for each of and
-only the functionalities of the feature.
+Looking for behaviors that are hidden under
+<code>$handle_undefined_function</code> is a long trip.
 </p>
 
 <p>
-At this stage, the written tests should fail as to ensure that it's
-not a false positive or false negative.
-</p>
-
-<dl class="org-dl">
-<dt>false positives</dt><dd>tests that are passing but not because of our changes. So we
-make sure our tests are red before we make any changes</dd>
-<dt>false negatives</dt><dd>tests that are failing but are not caused by the part we want
-to test. (maybe we made a mistake in our test or something
-similar) So we make sure we get the expected failing message
-before we make changes.</dd>
-</dl></li>
-
-<li><p>
-<b>Green</b>
-</p>
-
-<p>
-Then we write just enough code to pass the test and turn it green.
-</p>
-
-<p>
-We emphasize minimal code because it's the only way to keep things
-simple. By keeping things simple, we maintain readability which
-helps the refactoring process and minimizes bugs. We should focus
-on coding what's required for this specific functionality and only
-let future requirements push us towards more complexities.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+This kind of meta-programming would always be the last resort for an
+Elixir developer.
 </p></li>
 
 <li><p>
-<b>Refactor</b>
+<code>$handle_undefined_function</code> might not be as efficient as
+<code>method_missing</code>
 </p>
 
 <p>
-After passing a test, we review our code and see if there's
-anything we can refactor.
+When we use <code>method_missing</code>, we usually use <code>define_method</code> to
+speed up future method calls.
+</p>
+
+<p>
+But Elixir, as a compiled language, doesn't have a function like
+<code>define_method</code> to generate new functions. So it may be much slower.
 </p></li>
 </ol>
 
 <p>
-With this process in mind, I realized that when we were unconsciously
-applying the same discipline to our management process, things work
-better.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> For example, we could use the TDD approach to organize a
-meeting.
-</p>
-</div>
-</div>
-<div id="outline-container-orga686d97" class="outline-2">
-<h2 id="orga686d97">How to arrange a meeting</h2>
-<div class="outline-text-2" id="text-orga686d97">
-<p>
-So, How do we arrange a meeting at Ekohe?
+After all, I'm very glad that Elixir/Erlang provide us an option to do
+this kind of meta-programming. And I can't wait to see more surprises
+Elixir/Erlang bring to me in the future.
 </p>
 
-<ol class="org-ol">
-<li><p>
-<b>What's the problem?</b>
-</p>
-
-<p>
-First, we define the problem that requires a meeting and identify
-the people we need to participate in the meeting to solve the
-problem
-</p>
-
-<p>
-At this point, we don't bring up any potential solutions<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>,
-because that would divert our focus and confuse people about why
-it's necessary to have a meeting in the first place.
-</p>
-
-<p>
-This is just like writing a test that's not tied to our
-implementation. It's much harder to develop a test when we think
-about writing production code at the same time.
-</p>
-
-<p>
-I remembered once I thought we were not communicating enough about
-our projects (the problem), and I suggested we do our daily
-stand-up over Slack (a potential solution). Then I was asked,
-"What's the real problem behind this?" After that we dug deeper
-together and found the real problem.
-</p>
-
-<p>
-Basically, the whole purpose of this phase is to set the goal for
-the meeting; otherwise, it's just a waste of time.
-</p>
-
-<p>
-Defining the goal is the test that can keep us focused and help us
-figure our solution in a better way.
-</p></li>
-
-<li><p>
-<b>Find a solution</b>
-</p>
-
-<p>
-After defining the problem, we can now go about finding potential
-solutions and identifying the appropriate people with whom we could
-work to solve the issue.
-</p>
-
-<p>
-It's important that we invite only the people necessary to solve
-the problem.
-</p>
-<dl class="org-dl">
-<dt>Is it a management problem?</dt><dd>Find the PM.</dd>
-<dt>Is it a technical issue?</dt><dd>Find the technical leader.</dd>
-<dt>Is it a spec misunderstanding?</dt><dd>Talk to the client and find what they really want.</dd>
-</dl>
-
-<p>
-It's equally important that the meeting covers only the set topic
-of the problem and that it doesn’t last too long. This simplifies
-the problem-solving process and maximizes efficiency, just as
-writing minimal code to pass tests written in the red phase helps
-keeps things simple.
-</p>
-
-<p>
-Just as in the green phase, we solve only the problem at hand and
-defer complexities to a later time.
-</p></li>
-<li><p>
-<b>Assess and adapt the solution</b>
-</p>
-
-<p>
-Once we implement the solution, we take a look back and see if it
-really solved the problem and if it needs any adjustments.
-</p>
-
-<p>
-At Ekohe, we believe <b>there is always more than one way to solve a
-problem.</b>
-</p>
-
-<blockquote>
-<p>
-<i>The only constant in this world is change.</i>
-</p>
-</blockquote>
-
-<dl class="org-dl">
-<dt>A solution that work today may not work tomorrow.</dt><dd>That's why we need to look back from time to time and check if
-the solution is still working as expected.</dd>
-<dt>We will never know less than we do today.</dt><dd>With the new feedback and information, we can adapt our
-solution if necessary.</dd>
-</dl>
-
-<p>
-So it's important for us to gather feedback and always try to
-improve (<i>refactor</i>).
-</p></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgecd49e0" class="outline-2">
-<h2 id="orgecd49e0">They are almost the same</h2>
-<div class="outline-text-2" id="text-orgecd49e0">
-<p>
-You may say there are still some differences between these two
-processes, like refactoring v.s. improvements. But the basic ideas and
-core principles are the same:
-</p>
-
-<ol class="org-ol">
-<li><b>Set clear goals / specifications</b></li>
-<li>Find the simplest solution</li>
-<li><b>Gather feedback</b> and improve</li>
-</ol>
-
-<p>
-Whether we are TDDing or arranging a meeting, we are just trying to
-solve a problem (technical or human-related). So it's natural that
-they share some similarities. And I believe there can be a meta way to
-follow here. Maybe I can also look back at this thought from time to
-time and see what it can be improved.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-I first heard about the idea of "letting the world push us to
-more complexities" from this podcast: <a href="http://www.fullstackradio.com/101">101: Ben Orenstein - How to
-Build an App in a Week - Full Stack Radio</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-After I wrote this blog post, I watched a talk about <a href="https://www.youtube.com/watch?v=-vTZzOssR7A&amp;t=0s&amp;index=64&amp;list=PLE7tQUdRKcyak-yFKj5IN3tDYOh5omMrH">Stop
-Testing, Start Storytelling by Mike Schutte</a>. In this talk, Mike
-suggested us to <b>apply the same discipline to your process as you do
-to your code</b>.
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-Read <a href="https://www.amazon.com/Are-Your-Lights-Figure-Problem/dp/0932633161">Are Your Lights On?: How to Figure Out What the Problem
-Really Is by Donald C. Gause, Gerald M. Weinberg</a> for more on this
-topic
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-11-27</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2018/11/27/$handle-undefined-function-in-elixir-erlang</guid>
+    </item>
+    <item>
+      <title>Similarities between TDD and Management</title>
+      <link>http://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-11-27</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management</guid>
     </item>
@@ -343,13 +195,6 @@ topic
       <description><![CDATA[]]></description>
       <pubDate>2018-07-10</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/07/10/til-mix-test-stale</guid>
-    </item>
-    <item>
-      <title>TDD is All About Reducing Accidental Complication</title>
-      <link>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-06-27</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/06/27/tdd-is-all-about-reducing-accidental-complication</guid>
     </item>
   </channel>
 </rss>

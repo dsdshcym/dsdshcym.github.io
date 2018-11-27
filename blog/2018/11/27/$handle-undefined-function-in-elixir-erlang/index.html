@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>$handle_undefined_function in Elixir/Erlang - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Elixir, Erlang, Meta-Programming, method_missing, $handle_undefined_function" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>$handle_undefined_function in Elixir/Erlang</h1>
+            <p>
+I was searching for ways to implement Ruby's <code>method_missing</code> in
+Elixir the other day. Then I ran into this package:
+<a href="https://github.com/andrewvy/method_missing">andrewvy/method_missing: Elixir Library for dynamic code
+execution</a>. And it implements exactly what I want: a <code>method_missing</code>
+function to dynamically generate function body for what's not defined
+yet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Dog do
+  use MethodMissing
+
+  def method_missing(func, _args) do
+    func_name = Atom.to_string(func)
+
+    cond do
+      Regex.match?(~r/bark|woof/, func_name) -&gt; "WOOF"
+      true -&gt; "?"
+    end
+  end
+end
+
+Dog.bark()
+# &gt; "WOOF"
+Dog.woof()
+# &gt; "WOOF"
+Dog.meow()
+# &gt; "?"
+</pre>
+</div>
+
+<p>
+I was curious about how it was implemented in Elixir, so I looked into
+the <code>lib</code> directory. Surprisingly, it's fairly simple:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule MethodMissing do
+  defmacro __using__(_opts) do
+    quote do
+      def method_missing(_func, _args) do
+      end
+
+      def unquote(:"$handle_undefined_function")(func, args), do: method_missing(func, args)
+
+      defoverridable method_missing: 2
+    end
+  end
+end
+</pre>
+</div>
+
+<p>
+From this implementation, we can know that we don't even need to use
+this package to get <code>method_missing</code> in Elixir. (The name
+<code>method_missing</code> is not very functional either.)
+</p>
+
+<p>
+All we need to do is to define <code>$handle_undefined_function/2</code>. And
+just like <code>method_missing</code>, it will receive two arguments, one for the
+function name, and one for the list of arguments.
+</p>
+
+<p>
+Again, I want to praise Elixir/Erlang when I discovered this
+feature. Almost every time I miss something in Ruby, Elixir already
+has a solution for that.
+</p>
+
+<p>
+Although, I doubt that <code>$handle_undefined_function</code> will be as popular
+in the Elixir community as <code>method_missing</code> in the Ruby community.
+</p>
+<ol class="org-ol">
+<li><p>
+Elixir is a language that emphasize on explicity.
+</p>
+
+<p>
+Looking for behaviors that are hidden under
+<code>$handle_undefined_function</code> is a long trip.
+</p>
+
+<p>
+This kind of meta-programming would always be the last resort for an
+Elixir developer.
+</p></li>
+
+<li><p>
+<code>$handle_undefined_function</code> might not be as efficient as
+<code>method_missing</code>
+</p>
+
+<p>
+When we use <code>method_missing</code>, we usually use <code>define_method</code> to
+speed up future method calls.
+</p>
+
+<p>
+But Elixir, as a compiled language, doesn't have a function like
+<code>define_method</code> to generate new functions. So it may be much slower.
+</p></li>
+</ol>
+
+<p>
+After all, I'm very glad that Elixir/Erlang provide us an option to do
+this kind of meta-programming. And I can't wait to see more surprises
+Elixir/Erlang bring to me in the future.
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2018-11-27</span>
+        <span title="last modification date" class="post-info">2018-11-27</span>
+        <span title="tags" class="post-info"><a href="/tags/elixir/">Elixir</a>, <a href="/tags/meta-programming/">Meta-Programming</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+       //var disqus_developer = 1;
+       var disqus_identifier = "/blog/2018/11/27/$handle-undefined-function-in-elixir-erlang";
+       var disqus_url = "http://dsdshcym.github.io/blog/2018/11/27/$handle-undefined-function-in-elixir-erlang";
+       var disqus_shortname = 'dsdshcym-github-io';
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
