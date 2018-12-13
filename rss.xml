@@ -4,217 +4,46 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 06 Dec 2018 17:39:43 CST</pubDate>
-    <lastBuildDate>Thu, 06 Dec 2018 17:39:43 CST</lastBuildDate>
+    <pubDate>Thu, 13 Dec 2018 11:26:07 CST</pubDate>
+    <lastBuildDate>Thu, 13 Dec 2018 11:26:07 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Shall we test our Router?</title>
-      <link>http://dsdshcym.github.io/blog/2018/11/29/shall_we_test_our_router</link>
+      <title>The Point of A Degree</title>
+      <link>http://dsdshcym.github.io/clipping/2018/12/12/the_point_of_a_degree</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Shall we test our Router?</h1>
-            <p>
-When I wrote <a href="https://dsdshcym.github.io/blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix/">How to do Outside-In TDD with Phoenix</a>, I ran into a
-question: How to test our router definitions in Phoenix?
-</p>
-
+            <h1>The Point of A Degree</h1>
+            <blockquote>
 <p>
-But I couldn't find a proper solution. Neither Phoenix nor Plug
-provides any test helpers for us to test the router.
-</p>
-
-<div id="outline-container-org9a909f3" class="outline-2">
-<h2 id="org9a909f3">With Rails, we certainly can</h2>
-<div class="outline-text-2" id="text-org9a909f3">
-<p>
-Rails provides us <a href="http://guides.rubyonrails.org/routing.html#testing-routes">three built-in assertions</a> to test our router
-definitions:
-</p>
-<ul class="org-ul">
-<li><code>assert_generates</code> for testing router helper functions</li>
-<li><code>assert_recognizes</code> for testing a path can be routed to a controller
-action</li>
-<li><code>assert_routing</code> for testing both</li>
-</ul>
-
-<p>
-So it's natural for me to think about "Why can't Phoenix as a more
-functional web framework than Rails help me test this?"
-</p>
-
-<p>
-I then opened a <a href="https://github.com/phoenixframework/phoenix/blob/master/test/phoenix/router/routing_test.exs">proposal</a> to phoenix-core mailing list. Chris McCord
-(the creator of Phoenix) responds as following:
-</p>
-<blockquote>
-<p>
-I don't feel such features would be helpful for testing, and I would
-actually discourage such tests. The fact that a router "generates" or
-"recognizes" a route is not something to test – we test requests
-through the application, and except results to come out the other side
-in the form of a response. So the fact that the router recognizes
-"/products" isn't a strong tests, rather we would test that GET
-"/products" sends us back a listing of products, so unit tests of the
-router itself are pointless.
+The point of a degree is more of teaching you how to learn.
 </p>
 </blockquote>
-
 <p>
-Reading his response makes me thinking: am I going too far to pursue a
-higher test coverage and forgetting why we need tests?
-</p>
-</div>
-</div>
-<div id="outline-container-orgbee9db0" class="outline-2">
-<h2 id="orgbee9db0">Test, or not test?</h2>
-<div class="outline-text-2" id="text-orgbee9db0">
-<p>
-Then I read <a href="http://blog.ploeh.dk/2018/11/12/what-to-test-and-not-to-test/">What to test and not to test</a> which answers this question
-perfectly.
+-- From <a href="http://bikeshed.fm/160">160: Praise Hands Emoji 🙌 (Vaidehi Joshi) - The Bike Shed</a>
 </p>
 
 <p>
-It listed 2 main reasons for writing tests:
-</p>
-<ol class="org-ol">
-<li>Provide feedback about the API under testing (if doing TDD).</li>
-<li>Prevent regressions (but not errors).</li>
-</ol>
-
-<p>
-So, can route tests justify their existence under these two reasons?
-</p>
-<ol class="org-ol">
-<li><p>
-Route tests provide little feedback about the API (the routes).
+I'm really grateful that I somehow taught myself how to learn in my
+college.
 </p>
 
 <p>
-<code>assert_routing({ path: 'photos', method: :post }, { controller:
-   'photos', action: 'create' })</code> is way more complicated than
-<code>resources :photos, only: [:create]</code>
+Knowing how to learn a new technology/framework/language is one of the
+core skills of a developer. I also believe that the meaning of life is
+to explore the world around us and learn who we really are.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
 
 <p>
-In another word, we can already get enough design feedback by
-writing the routing definition itself.
-</p></li>
-
-<li><p>
-Route tests provide little value for preventing regressions.
+I'm still in this journey of learning and hope to learn more stuffs.
 </p>
-
-<p>
-The router is the most straightforward code we can write in a web
-application. But it's also the most important part for a
-feature. If it's not working as expected, a feature would fail
-completely, then the feature test for this feature would fail even
-if we don't write any tests for this route.
-</p>
-
-<p>
-And let's see what kinds of bugs can happen to our router:
-</p>
-<ol class="org-ol">
-<li><p>
-A path cannot be routed.
-</p>
-
-<p>
-Then we add the missing route definition, the feature test
-passes, end of the story.
-</p></li>
-
-<li><p>
-A path is routed to a wrong controller.
-</p>
-
-<p>
-Then our feature test would fail if we write our feature test
-correctly and these two controllers are doing different things.
-</p>
-
-<p>
-We redirect the route to the correct controller, the feature
-test passes, end of the story.
-</p></li>
-</ol>
-
-<p>
-So, if we have at least one feature test for every one of our
-routing rules, we don't need any router tests.
-</p></li>
-</ol>
-
-<p>
-More importantly, testing routers is like testing implementation
-details, which would add more unnecessary work if we want to
-refactoring. Just think of your server as a module and user requests
-as function calls<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, everything would become clear:
-</p>
-<ol class="org-ol">
-<li><p>
-If you are writing a monolith application:
-</p>
-
-<p>
-Then the routing rule is absolutely an implementation detail. Every
-request is like a private function call. And we should never test a
-private function. So that we can refactor/rename these functions
-freely and our users can still use our application without noticing
-anything.
-</p></li>
-
-<li><p>
-If you are writing a backend API for your own clients:
-</p>
-
-<p>
-Then every request is like a public function call. But these
-functions are not documented to the outside world, which means they
-are private (this idea is familiar to an Elixir programming).
-</p></li>
-
-<li><p>
-If you are writing an API service for others:
-</p>
-
-<p>
-Then every request is a public function call. But we should be
-testing these "functions" with a more thorough feature test.
-</p></li>
-</ol>
-
-<p>
-Using the "function call" metaphor, our route definitions are just
-"function names", and we almost never test a function is named
-correctly, right?
-</p>
-</div>
-</div>
-<div id="outline-container-org7328aba" class="outline-2">
-<h2 id="org7328aba">What should we do?</h2>
-<div class="outline-text-2" id="text-org7328aba">
-<p>
-So, as you can see in the previous discussions: <b>we should write
-feature tests for our applications</b>, and since they've already covered
-the routing part, we don't need to test that part again.
-</p>
-
-<p>
-You can find some great examples from <a href="https://github.com/elixir-plug/plug/blob/master/test/plug/router_test.exs">plug/router_test.exs</a> and
-<a href="https://github.com/phoenixframework/phoenix/blob/master/test/phoenix/router/routing_test.exs">phoenix/routing_test.exs</a>.
-</p>
-</div>
-</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-I learned this idea from <a href="http://dsdshcym.github.io/blog/2017/12/28/book-review-programming-phoenix/">Programming Phoenix</a>
+<a href="https://dsdshcym.github.io/blog/2017/12/05/meaning-of-life/">人活着的意义和人生的价值就在于提升心性、磨炼灵魂。</a>
 </p></div></div>
 
 
@@ -223,6 +52,13 @@ I learned this idea from <a href="http://dsdshcym.github.io/blog/2017/12/28/book
     </div>
 </section>
 ]]></description>
+      <pubDate>2018-12-13</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2018/12/12/the_point_of_a_degree</guid>
+    </item>
+    <item>
+      <title>Shall we test our Router?</title>
+      <link>http://dsdshcym.github.io/blog/2018/11/29/shall_we_test_our_router</link>
+      <description><![CDATA[]]></description>
       <pubDate>2018-12-06</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/11/29/shall_we_test_our_router</guid>
     </item>
@@ -281,13 +117,6 @@ I learned this idea from <a href="http://dsdshcym.github.io/blog/2017/12/28/book
       <description><![CDATA[]]></description>
       <pubDate>2018-07-24</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/07/24/a-bug-discovered-via-upgrading-Surge</guid>
-    </item>
-    <item>
-      <title>Five minute journal</title>
-      <link>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-07-12</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/07/12/five-minute-journal</guid>
     </item>
   </channel>
 </rss>
