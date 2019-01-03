@@ -4,260 +4,142 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 02 Jan 2019 21:28:49 CST</pubDate>
-    <lastBuildDate>Wed, 02 Jan 2019 21:28:49 CST</lastBuildDate>
+    <pubDate>Thu, 03 Jan 2019 22:13:10 CST</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2019 22:13:10 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>My Monthly Best Reads (2018 Dec)</title>
-      <link>http://dsdshcym.github.io/clipping/2019/01/02/my-monthly-best-reads-2018-dec</link>
+      <title>How to pattern match a function in Elixir</title>
+      <link>http://dsdshcym.github.io/blog/2019/01/03/how-to-pattern-match-a-function-in-elixir</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>My Monthly Best Reads (2018 Dec)</h1>
-            <ol class="org-ol">
-<li><p>
-<a href="https://jaceju.net/be-a-senior-engineer/">如何才有資格稱為資深工程師 - 網站製作學習誌</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>技术能力层面
-<ul class="org-ul">
-<li>对工具技术有深入的掌握度</li>
-<li>能写出可理解可维护的程式码</li>
-<li>选择技术的能力</li>
-<li>软体架构分析与设计能力</li>
-<li>图像解说能力</li>
-<li>文件编写能力</li>
-<li>能综观全局的能力</li>
-<li>尝试导入对团队更好的流程</li>
-</ul></li>
-<li>心理素质层面
-<ul class="org-ul">
-<li>真正能完成一件事的自信</li>
-<li>不断地自我提升</li>
-<li>临危不乱</li>
-<li>乐于分享所知</li>
-<li>沟通受人敬重</li>
-<li>勇于认错、自我反省</li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://devrain.io/posts/using-phoenix-pubsub-to-manage-side-effects/?utm_source=elixirweekly&amp;utm_medium=email&amp;utm_campaign=featured">Using Phoenix.PubSub to manage side effects - DevRain</a>
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/DefactoSoftware/assert_async">DefactoSoftware/assert_async: Elixir library to assert in tests for async calls</a></li>
-</ul>
-<div class="org-src-container">
-<pre class="src src-elixir"># insert/1 and params_for/1 are done with ExMachina
-test "handle_call of event subscribers are called with :created, the course and the actor" do
-  EventCenter.subscribe()
-
-  user = insert(:user, roles: ["roles", "that", "are", "needed"])
-
-  {:ok, %Course{} = course} = Courses.create_course(params_for(:course), user)
-
-  assert_received({:created, ^course, ^user})
-end
-
-test "create an audit after broadcasting it" do
-  start_supervised(AppName.Audits.EventSubscriber)
-  course = insert(:course, status: "draft")
-  actor = insert(:user)
-
-  EventCenter.broadcast(:updated, course, %{course | status: "published"}, actor)
-
-  assert_eventually(Repo.exists?(Audit))
-  stop_supervised(AppName.Audits.EventSubscriber)
-end
-</pre>
-</div></li>
-<li><p>
-<a href="http://blog.plataformatec.com.br/2014/09/writing-assertive-code-with-elixir/">Writing assertive code with Elixir « Plataformatec Blog</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li><b>Polymorphism is opt-in</b>
-<ul class="org-ul">
-<li>Before adding protocols to our code, we should ask if we really
-intend to open our function to all types.</li>
-<li>However, if we are confident we want a protocol, then we should
-indeed use the protocol and write a test case that guarantees
-our function works for at least a couple types that implement
-such protocol.
-<ul class="org-ul">
-<li>Such tests are extremely important to guarantee we don’t make
-a different assumption somewhere in the same function.</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://twitter.com/david_perell/status/1071836429058232320">ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ on Twitter: "Thread! Productivity tricks that work for me..."</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>I like @sama's approach to prioritization:
-<ol class="org-ol">
-<li>Make sure to get the important stuff done</li>
-<li>Don't waste time on stupid things</li>
-<li>Make a lot of lists
-(Make lists of what you want to achieve each year, each month,
-and each day.)</li>
-</ol></li>
-</ul>
-</blockquote></li>
-<li><a href="https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript">Phoenix.LiveView: Interactive, Real-Time Apps. No Need to Write JavaScript. - DockYard</a>
-<ul class="org-ul">
-<li><p>
-35 LOC for autocomplete
+            <h1>How to pattern match a function in Elixir</h1>
+            <p>
+I ran into this problem of pattern matching a function when using
+<a href="https://github.com/plataformatec/mox">mox</a>. I wanted to check that a function is injected into another
+function as a dependency. Here is a simplified example:
 </p>
 <div class="org-src-container">
-<pre class="src src-elixir">defmodule DemoWeb.SearchView do
-  use Phoenix.LiveView
+<pre class="src src-elixir">test "calls Dependency.do_something with AnotherModule.function/1" do
+  Mox.expect(DependencyMock, :do_something, fn ^(&amp;AnotherModule.function/1) -&gt; nil end)
 
-  def render(assigns) do
-    ~L"""
-    &lt;form phx-change="suggest" phx-submit="search"&gt;
-      &lt;input type="text" name="q" value="&lt;%= @query %&gt;" list="matches"
-             placeholder="Search..."
-             &lt;%= if @loading, do: "readonly" %&gt;/&gt;
-      &lt;datalist id="matches"&gt;
-        &lt;%= for match &lt;- @matches do %&gt;
-          &lt;option value="&lt;%= match %&gt;"&gt;&lt;%= match %&gt;&lt;/option&gt;
-        &lt;% end %&gt;
-      &lt;/datalist&gt;
-      &lt;%= if @result do %&gt;&lt;pre&gt;&lt;%= @result %&gt;&lt;/pre&gt;&lt;% end %&gt;
-    &lt;/form&gt;
-    """
-  end
+  Module.call()
 
-  def mount(_session, socket) do
-    {:ok, assign(socket, query: nil, result: nil, loading: false, matches: [])}
-  end
-
-  def handle_event("suggest", %{"q" =&gt; q}, socket) when byte_size(q) &lt;= 100 do
-    {words, _} = System.cmd("grep", ~w"^#{q}.* -m 5 /usr/share/dict/words")
-    {:noreply, assign(socket, matches: String.split(words, "\n"))}
-  end
-
-  def handle_event("search", %{"q" =&gt; q}, socket) when byte_size(q) &lt;= 100 do
-    send(self(), {:search, q})
-    {:noreply, assign(socket, query: q, result: "…", loading: true, matches: [])}
-  end
-
-  def handle_info({:search, query}, socket) do
-    {result, _} = System.cmd("dict", ["#{query}"], stderr_to_stdout: true)
-    {:noreply, assign(socket, loading: false, result: result, matches: [])}
-  end
+  Mox.verify!()
 end
 </pre>
-</div></li>
-</ul></li>
-<li><p>
-<a href="http://www.perell.com/blog/writing">Riding the Writing Wave — David Perell</a>
-</p>
-<blockquote>
-<p>
-<b>Writing doesn’t just communicate ideas; it generates new ones</b>
-</p>
-</blockquote></li>
-<li><p>
-<a href="https://lemire.me/blog/2018/12/06/asking-the-right-question-is-more-important-than-getting-the-right-answer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website">Asking the right question is more important than getting the right answer – Daniel Lemire's blog</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Knowing too much can harm you
-<ul class="org-ul">
-<li>some of the very best researchers and innovators were average
-students.</li>
-<li>to find good questions, you have to maintain some distance from
-the material.
-<ul class="org-ul">
-<li>Pick a scholarly field, any field, then spend two weeks reading
-everything about it that you can. Next, write down 5
-questions. I can almost guarantee you that these 5 questions
-will be already covered by sources you read. They will be
-“known” questions.</li>
-</ul></li>
-<li><b>Our minds tend to frame everything in terms of the patterns we
-have learned.</b>
-<ul class="org-ul">
-<li>Spend two years studying Marxism and every single problem will
-feel like a Marxist problem to you.</li>
-<li>It becomes difficult for you to come up with new questions
-outside of the frame.</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://medium.com/darius-foroux/want-to-make-better-decisions-do-this-13ccc94da024">Want To Make Better Decisions? Do This – The Blog Of Darius Foroux – Medium</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li><p>
-Do This Instead: <b>Make Small Decisions.</b> Decide Often.
-</p>
+</div>
 
 <p>
-The difference between a good business and a bad business is that
-good businesses throw up one easy decision after another. The bad
-businesses throw up painful decisions time after time.
+But this code doesn't work in Elixir:
 </p>
+<pre class="example">
+(CompileError) invalid argument for unary operator ^, expected an existing variable, got: ^(&amp;AnotherModule.function/1)
+</pre>
 
-<ul class="org-ul">
-<li>When you make small decisions early, before they become big — it’s
-easy. When you put off decisions, they become big — and painful.</li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><a href="https://twitter.com/searls/status/1075802549796638721">Justin Searls on Twitter: "Most people imagine the difficulty of
-software development as knowing how to technically accomplish
-something, but for me it's almost entirely about organizing
-information thoughtfully and consistently."</a></li>
-<li><p>
-<a href="https://drewdevault.com/2018/07/09/Simple-correct-fast.html">Simple, correct, fast: in that order - Drew DeVault’s Blog</a>
+<p>
+After some research, I found how to do this correctly in Elixir:
+<a href="https://github.com/elixir-lang/elixir/issues/5649#issuecomment-272259876">Improve error messages for invalid expression in match · Issue #5649 ·
+elixir-lang/elixir</a>
 </p>
-<blockquote>
-<ul class="org-ul">
-<li>When you are faced with these problems, you must seek out the
-simplest way they can be solved.
-<ol class="org-ol">
-<li>take problems apart,</li>
-<li>identify smaller problems within them</li>
-<li>ruthlessly remove scope until you find the basic problem you can
-apply a basic solution to.</li>
-<li>The complex problem comes later, and it'll be better served by
-<b>the composition of simple solutions than with the application of
-a complex solution.</b></li>
-</ol></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://blog.coinbase.com/bar-raisers-at-coinbase-if-youre-not-a-hell-yes-you-re-a-no-68145c6fbe60">Bar Raisers at Coinbase: If you’re not a hell yes, you’re a no</a>
+<div class="org-src-container">
+<pre class="src src-elixir">x = &amp;List.first/1
+case &amp;List.first/1 do
+  ^x -&gt; true
+end
+</pre>
+</div>
+
+<p>
+So my use case only needs a small fix:
 </p>
-<blockquote>
+<div class="org-src-container">
+<pre class="src src-elixir">test "calls Dependency.do_something with AnotherModule.function/1" do
+  expected_fun = &amp;AnotherModule.function/1
+  Mox.expect(DependencyMock, :do_something, fn ^expected_fun -&gt; nil end)
+
+  Module.call()
+
+  Mox.verify!()
+end
+</pre>
+</div>
+
+<p>
+One caveat is that it doesn't work for anonymous functions even if
+they have the same body and arity. Because they are completely
+unrelated and Elixir doesn't know how to check if they can match:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">fun1 = fn _ -&gt; nil end
+fun2 = fn _ -&gt; nil end
+
+case fun2 do
+  ^fun1 -&gt; true
+  _ -&gt; false
+end
+</pre>
+</div>
+
+<pre class="example">
+false
+</pre>
+
+
+<p>
+Pattern matching is a really useful feature in functional
+languages. But Elixir's implementation does have some unexpected
+behaviour. For example:
+</p>
 <ul class="org-ul">
-<li>How do you know you’re a hell yes?
-<ul class="org-ul">
-<li>Did I leave the interview with more energy than when I went in?
-Did I leave inspired?</li>
-<li>Did I learn something from this candidate?</li>
-<li>Is this person much better than me in at least one area?</li>
-<li>Could this person start adding value right away? Would they take
-work off my plate or create more work for me?</li>
-<li>Does this person raise the average at Coinbase? Does them starting
-Monday make me want to work here more or less?</li>
-</ul></li>
+<li>Pattern match functions like explained above</li>
+<li><p>
+Pattern match an empty map <code>%{}</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">empty = %{}
+case %{} do
+  ^empty -&gt; true
+end
+</pre>
+</div>
+
+<pre class="example">
+true
+</pre></li>
+<li><p>
+Pattern match a pid
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">pid = self()
+case self() do
+  ^pid -&gt; true
+end
+</pre>
+</div>
+
+<pre class="example">
+true
+</pre></li>
 </ul>
-</blockquote></li>
-</ol>
+
+<p>
+I guess we need to get used to them for quite some time, because as
+José Valim explained in that issue: "There is very little interest in
+making functions valid patterns in Elixir."
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-01-03</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2019/01/03/how-to-pattern-match-a-function-in-elixir</guid>
+    </item>
+    <item>
+      <title>My Monthly Best Reads (2018 Dec)</title>
+      <link>http://dsdshcym.github.io/clipping/2019/01/02/my-monthly-best-reads-2018-dec</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-01-02</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/01/02/my-monthly-best-reads-2018-dec</guid>
     </item>
@@ -316,13 +198,6 @@ Monday make me want to work here more or less?</li>
       <description><![CDATA[]]></description>
       <pubDate>2018-08-07</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design</guid>
-    </item>
-    <item>
-      <title>Clippings from Extreme Programming Explained</title>
-      <link>http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-08-07</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained</guid>
     </item>
   </channel>
 </rss>
