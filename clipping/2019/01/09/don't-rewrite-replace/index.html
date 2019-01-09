@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Don&#39;t Rewrite, Replace - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Refactor, TDD" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Don&#39;t Rewrite, Replace</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>Don't change things
+<ol class="org-ol">
+<li>add new things (via copy/paste)</li>
+<li>migrate the clients</li>
+<li>remove old things</li>
+</ol></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://online-training.jbrains.ca/courses/wbitdd-01/lectures/133486">Add Fractions in Java Part 2 - The World's Best Intro to TDD, Level 1: TDD Done Right - jbrains.c</a>
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>Introduce an abstraction around the code that is to be replaced,
+and commit that for all to see.</li>
+<li>Write a second implementation of the abstraction for the
+to-be-introduced code, and commit that,</li>
+<li>Flip the software 'off' switch to 'on' for the rest of the team,
+and commit/push that.</li>
+<li>Remove the to-be-replaced implementation</li>
+<li>Remove the abstraction</li>
+</ol>
+</blockquote>
+<p>
+-- from <a href="https://trunkbaseddevelopment.com/branch-by-abstraction/">Branch by Abstraction - Trunk Based Development</a>
+</p>
+
+<p>
+This 3-step rule is the safest way I know to change software. Because
+in every step, we make sure the app still works:
+</p>
+<ol class="org-ol">
+<li>Add a new thing
+<ul class="org-ul">
+<li>If no client is using the new thing, adding it won't affect any
+of our old code.</li>
+<li>If the adding action is also "safe", the existing behaviour won't
+change in any way.</li>
+</ul></li>
+<li>Migrate the clients
+<ul class="org-ul">
+<li>We can migrate the clients one by one. And after each migration,
+we run the tests and deploy the new tested version.</li>
+<li>We repeat this process until all clients have been migrated.</li>
+</ul></li>
+<li>Remove the old thing
+<ul class="org-ul">
+<li>Then, since no client is using the old thing, removing it won't
+affect any behaviour.</li>
+<li>If the removing action is also "safe", the existing behaviour
+won't change.</li>
+</ul></li>
+</ol>
+
+<p>
+And this rule can be applied in various scales of development
+activities.
+</p>
+<ol class="org-ol">
+<li>Code-level refactor (i.e. Extract method, extract
+class, etc.)</li>
+<li>Dependency-level replacement (i.e. 3rd-party library switch)</li>
+<li>Application-level upgrade (i.e. replace a microservice)</li>
+</ol>
+
+<p>
+This rule is also the core idea behind <a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">Refactoring: Improving the
+Design of Existing Code</a>, and that's why this book is so valuable.
+Learn this rule to change your app in a controllable way. Happy
+Hacking!
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-01-09</span>
+        <span title="last modification date" class="post-info">2019-01-10</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/refactor/">Refactor</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

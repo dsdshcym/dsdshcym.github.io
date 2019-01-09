@@ -4,135 +4,102 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 03 Jan 2019 22:13:10 CST</pubDate>
-    <lastBuildDate>Thu, 03 Jan 2019 22:13:10 CST</lastBuildDate>
+    <pubDate>Thu, 10 Jan 2019 07:45:40 CST</pubDate>
+    <lastBuildDate>Thu, 10 Jan 2019 07:45:40 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>How to pattern match a function in Elixir</title>
-      <link>http://dsdshcym.github.io/blog/2019/01/03/how-to-pattern-match-a-function-in-elixir</link>
+      <title>Don&#39;t Rewrite, Replace</title>
+      <link>http://dsdshcym.github.io/clipping/2019/01/09/don&#39;t-rewrite-replace</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>How to pattern match a function in Elixir</h1>
-            <p>
-I ran into this problem of pattern matching a function when using
-<a href="https://github.com/plataformatec/mox">mox</a>. I wanted to check that a function is injected into another
-function as a dependency. Here is a simplified example:
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">test "calls Dependency.do_something with AnotherModule.function/1" do
-  Mox.expect(DependencyMock, :do_something, fn ^(&amp;AnotherModule.function/1) -&gt; nil end)
-
-  Module.call()
-
-  Mox.verify!()
-end
-</pre>
-</div>
-
-<p>
-But this code doesn't work in Elixir:
-</p>
-<pre class="example">
-(CompileError) invalid argument for unary operator ^, expected an existing variable, got: ^(&amp;AnotherModule.function/1)
-</pre>
-
-<p>
-After some research, I found how to do this correctly in Elixir:
-<a href="https://github.com/elixir-lang/elixir/issues/5649#issuecomment-272259876">Improve error messages for invalid expression in match · Issue #5649 ·
-elixir-lang/elixir</a>
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">x = &amp;List.first/1
-case &amp;List.first/1 do
-  ^x -&gt; true
-end
-</pre>
-</div>
-
-<p>
-So my use case only needs a small fix:
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">test "calls Dependency.do_something with AnotherModule.function/1" do
-  expected_fun = &amp;AnotherModule.function/1
-  Mox.expect(DependencyMock, :do_something, fn ^expected_fun -&gt; nil end)
-
-  Module.call()
-
-  Mox.verify!()
-end
-</pre>
-</div>
-
-<p>
-One caveat is that it doesn't work for anonymous functions even if
-they have the same body and arity. Because they are completely
-unrelated and Elixir doesn't know how to check if they can match:
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">fun1 = fn _ -&gt; nil end
-fun2 = fn _ -&gt; nil end
-
-case fun2 do
-  ^fun1 -&gt; true
-  _ -&gt; false
-end
-</pre>
-</div>
-
-<pre class="example">
-false
-</pre>
-
-
-<p>
-Pattern matching is a really useful feature in functional
-languages. But Elixir's implementation does have some unexpected
-behaviour. For example:
-</p>
+            <h1>Don&#39;t Rewrite, Replace</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>Pattern match functions like explained above</li>
-<li><p>
-Pattern match an empty map <code>%{}</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">empty = %{}
-case %{} do
-  ^empty -&gt; true
-end
-</pre>
-</div>
-
-<pre class="example">
-true
-</pre></li>
-<li><p>
-Pattern match a pid
-</p>
-<div class="org-src-container">
-<pre class="src src-elixir">pid = self()
-case self() do
-  ^pid -&gt; true
-end
-</pre>
-</div>
-
-<pre class="example">
-true
-</pre></li>
+<li>Don't change things
+<ol class="org-ol">
+<li>add new things (via copy/paste)</li>
+<li>migrate the clients</li>
+<li>remove old things</li>
+</ol></li>
 </ul>
+</blockquote>
+<p>
+-- from <a href="https://online-training.jbrains.ca/courses/wbitdd-01/lectures/133486">Add Fractions in Java Part 2 - The World's Best Intro to TDD, Level 1: TDD Done Right - jbrains.c</a>
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li>Introduce an abstraction around the code that is to be replaced,
+and commit that for all to see.</li>
+<li>Write a second implementation of the abstraction for the
+to-be-introduced code, and commit that,</li>
+<li>Flip the software 'off' switch to 'on' for the rest of the team,
+and commit/push that.</li>
+<li>Remove the to-be-replaced implementation</li>
+<li>Remove the abstraction</li>
+</ol>
+</blockquote>
+<p>
+-- from <a href="https://trunkbaseddevelopment.com/branch-by-abstraction/">Branch by Abstraction - Trunk Based Development</a>
+</p>
 
 <p>
-I guess we need to get used to them for quite some time, because as
-José Valim explained in that issue: "There is very little interest in
-making functions valid patterns in Elixir."
+This 3-step rule is the safest way I know to change software. Because
+in every step, we make sure the app still works:
+</p>
+<ol class="org-ol">
+<li>Add a new thing
+<ul class="org-ul">
+<li>If no client is using the new thing, adding it won't affect any
+of our old code.</li>
+<li>If the adding action is also "safe", the existing behaviour won't
+change in any way.</li>
+</ul></li>
+<li>Migrate the clients
+<ul class="org-ul">
+<li>We can migrate the clients one by one. And after each migration,
+we run the tests and deploy the new tested version.</li>
+<li>We repeat this process until all clients have been migrated.</li>
+</ul></li>
+<li>Remove the old thing
+<ul class="org-ul">
+<li>Then, since no client is using the old thing, removing it won't
+affect any behaviour.</li>
+<li>If the removing action is also "safe", the existing behaviour
+won't change.</li>
+</ul></li>
+</ol>
+
+<p>
+And this rule can be applied in various scales of development
+activities.
+</p>
+<ol class="org-ol">
+<li>Code-level refactor (i.e. Extract method, extract
+class, etc.)</li>
+<li>Dependency-level replacement (i.e. 3rd-party library switch)</li>
+<li>Application-level upgrade (i.e. replace a microservice)</li>
+</ol>
+
+<p>
+This rule is also the core idea behind <a href="http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/">Refactoring: Improving the
+Design of Existing Code</a>, and that's why this book is so valuable.
+Learn this rule to change your app in a controllable way. Happy
+Hacking!
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-01-10</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/01/09/don&#39;t-rewrite-replace</guid>
+    </item>
+    <item>
+      <title>How to pattern match a function in Elixir</title>
+      <link>http://dsdshcym.github.io/blog/2019/01/03/how-to-pattern-match-a-function-in-elixir</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-01-03</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/01/03/how-to-pattern-match-a-function-in-elixir</guid>
     </item>
@@ -191,13 +158,6 @@ making functions valid patterns in Elixir."
       <description><![CDATA[]]></description>
       <pubDate>2018-10-26</pubDate>
       <guid>http://dsdshcym.github.io/blog/2018/10/26/dont-repeat-your-domain-knowledge</guid>
-    </item>
-    <item>
-      <title>Clippings from Domain-Driven Design</title>
-      <link>http://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-08-07</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design</guid>
     </item>
   </channel>
 </rss>
