@@ -4,8 +4,8 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 10 Jan 2019 07:45:40 CST</pubDate>
-    <lastBuildDate>Thu, 10 Jan 2019 07:45:40 CST</lastBuildDate>
+    <pubDate>Tue, 15 Jan 2019 10:38:05 CST</pubDate>
+    <lastBuildDate>Tue, 15 Jan 2019 10:38:05 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -90,10 +90,16 @@ Learn this rule to change your app in a controllable way. Happy
 Hacking!
 </p>
 
+<p>
+EDIT: If I've learned this rule before, I would be much more confident
+when facing the two problems in <a href="http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way/">Learn Incremental Deployment the Hard
+Way - dsdshome</a>
+</p>
+
     </div>
 </section>
 ]]></description>
-      <pubDate>2019-01-10</pubDate>
+      <pubDate>2019-01-15</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/01/09/don&#39;t-rewrite-replace</guid>
     </item>
     <item>
