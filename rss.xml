@@ -4,97 +4,113 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 31 Jan 2019 08:40:08 CST</pubDate>
-    <lastBuildDate>Thu, 31 Jan 2019 08:40:08 CST</lastBuildDate>
+    <pubDate>Sun, 03 Feb 2019 15:12:51 CST</pubDate>
+    <lastBuildDate>Sun, 03 Feb 2019 15:12:51 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>为什么 Native English Speaker 更容易写好代码？</title>
-      <link>http://dsdshcym.github.io/blog/2019/01/30/why-native-English-speaker-can-write-better-code</link>
+      <title>人生，不是每一步都要找到「最优解」</title>
+      <link>http://dsdshcym.github.io/clipping/2019/02/03/人生-不是每一步都要找到最优解</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>为什么 Native English Speaker 更容易写好代码？</h1>
-            <p>
-中文程序员圈似乎有一种观点，认为「老外写的代码就是好」。虽然我个人并不赞同这个观点，但还是不得不承认 Native English Speaker 对英语的熟练掌握给他们带来了一些优势，这篇文章就是对这些优势的一个小结，也希望借这篇文章激励自己的英语学习。
+            <h1>人生，不是每一步都要找到「最优解」</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>和人合作的时候，尽可能做到自己能做到的最好</li>
+<li>职业发展不是每一步都要踩在对的点上
+<ul class="org-ul">
+<li>速度不重要</li>
+<li>「职位」是很虚的</li>
+<li>哪怕每一步都去优化，也不一定能到达山顶</li>
+<li>不如花时间去找自己真正想要的东西</li>
+</ul></li>
+<li>所谓的「成功」有很多方面</li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="http://www.uxcoffee.com/51292c05">#62：人生，不是每一步都要找到「最优解」（Netflix 设计师唐黛 Sally） - UX Coffee 设计咖</a>
 </p>
 
-<div id="outline-container-org6697ee7" class="outline-2">
-<h2 id="org6697ee7">写作能力上占优</h2>
-<div class="outline-text-2" id="text-org6697ee7">
-<p>
-首先，<a href="http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/">写代码犹如写文章</a>，又因为主流的程序语言的函数、注释的主要用语都是英语，熟练使用英语写作的人，在使用这些函数，编写注释上自然也有了优势。
-</p>
-
-<p>
-而在这之上，更大的优势或许在于「命名」。「命名」在编程领域可以算得上是最难的一件事，而Native English Speaker 有着更多的词汇量，了解组词、造词的规则，在了解领域相关的知识之后，往往能够给变量、函数、类一个更好、更清晰的「命名」。也因此，写出的代码更容易让人读懂。
-</p>
-</div>
-</div>
-<div id="outline-container-org192102d" class="outline-2">
-<h2 id="org192102d">学习资源上占优</h2>
-<div class="outline-text-2" id="text-org192102d">
-<p>
-在学习资源上，Native English Speaker 的优势可能就更大了。
-</p>
-
+<blockquote>
+<ul class="org-ul">
+<li>Connecting the Dots into the Future
+<ul class="org-ul">
+<li>A new question mark implies having made the key cliff jump on two
+roller coasters:
 <ol class="org-ol">
-<li>编程领域的第一手学习资料（论文、书籍、演讲），几乎都是英文写就的。如果不能读懂、听懂英语资料，需要依靠翻译。而翻译的等待时间可能很长，冷门的资料甚至没有人翻译。更严重的问题是翻译的质量参差不齐，佳作的数量非常少，更造成了资料的缺失。</li>
-<li>另外就是 Google这一搜索神器，只要愿意搜索，并且问了对的问题<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>，几乎所有领域（不限于编程）都能找到相应的学习资料。在GFW和第二语言这两个因素的影响下，国人很难使用 Google 找到合适的学习资料，也造成了可供学习的资源进一步减少。</li>
+<li>getting to know yourself</li>
+<li>getting to know the world</li>
+</ol></li>
+<li>Careers have probably never really functioned like
+40-year-tunnels, they just seemed that way.
+<ul class="org-ul">
+<li>When you think of your career as a tunnel, it causes an identity
+crisis in anyone who doesn’t feel sure of who exactly they are
+and who they’ll want to be decades from now—which is most sane
+people.</li>
+<li>When you think of your career as a tunnel, the stakes to make
+the right choice seem so high that it explodes the feeling of
+tyranny of choice.</li>
+<li>When you think of your career as a tunnel, you lose the courage
+to make a career switch, even when your soul is begging for it.</li>
+</ul></li>
+<li>Today’s career isn’t a tunnel, or a box, or an identity label—it’s
+a long series of <b>science experiments</b>.</li>
+</ul></li>
+<li>The Next Dot
+<ul class="org-ul">
+<li>I think end-of-life regrets may simply be your authentic self
+thinking about the parts of your life you never got to live—the
+parts of you that someone else kicked down into your subconscious.</li>
+<li><b>My goal for the future isn’t to avoid mistakes, it’s for the
+mistakes I do make to be my own.</b></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://waitbutwhy.com/2018/04/picking-career.html">How to Pick a Career (That Actually Fits You) - Wait But Why</a>
+</p>
+
+<p>
+我其实一直觉得我的每一步都没有踩到对的点上：
+</p>
+<ul class="org-ul">
+<li>进复旦读大学</li>
+<li>大一升大二的时候，没有选择计算机系，而是选择了微电子系这一看上去比较好就业的专业</li>
+<li>大二在微电子系读的不开心，又转系、降级到计算机系</li>
+<li>毕业后没有选择考研、出国留学或者进大公司工作，而是进小的创业公司写
+Ruby, Elixir 这样的冷门语言</li>
+</ul>
+
+<p>
+但我又从不后悔每一个决定，甚至回头来看，似乎每个决定都很正确：
+</p>
+<ul class="org-ul">
+<li>如果不是进复旦，就不会来到上海这么一个我比较喜欢的城市</li>
+<li>如果不是选择微电子系，绕了一下弯，就不会遇到微电子系的学长回国创业，让我认识到计算机并不只是研究算法，还有软件开发这样有趣的事情</li>
+<li>如果不是转系降级，也不会认识几个聊得来的「学弟」</li>
+<li>如果不是选择小公司，也不能在自己喜欢的语言、工作上花时间，督促自己学习进步</li>
+</ul>
+
+<p>
+毕业之后，也经历了很多职业上的选择，现在我的想法就像上面两个 quote 里提到的那样：
+</p>
+<ol class="org-ol">
+<li>所谓的「成功」有很多方面</li>
+<li>职业生涯，甚至人生，就像做产品一样，是一系列的「科学实验」，应该「走一步看一步」。以求不断平衡自己各个方面的需要。</li>
 </ol>
 
-<p>
-P.S. 这一小节的灵感来自于和<a href="http://dnc1994.com/">章凌豪</a><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>的讨论，感谢！
-</p>
-<blockquote>
-<p>
-我觉得是这样，写代码这一块很多真理都存在于英文资料中，而且基本上都出现在 Google 前排（只要搜索关键词用对了）
-</p>
-
-<p>
-所以英语好就保证第一你能看懂，第二你愿意去看去搜
-</p>
-
-<p>
-这就保证了没有 mentorship 也能走上正轨，因为至少在某一个程度之前网上存在的资料就等于是最正确的 mentor
-</p>
-
-<p>
-而在这种方式开始显露局限性的时候，你的能力和阅历已经足够让你去自主解决问题了
-</p>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-orgd47654e" class="outline-2">
-<h2 id="orgd47654e">小结</h2>
-<div class="outline-text-2" id="text-orgd47654e">
-<p>
-但是即便如此，我们也不必失去信心，在知道了他们为什么会有这些优势之后，我们也能按图索骥。提高自己的词汇量，提高自己的阅读能力，多写多练，语言上的差距也能够被追上。只是在学习技术的同时，不忘提高英语能力就可以了。
-</p>
-
-<p>
-Stay Hungry, Stay Foolish!
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a>
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-在此推荐章凌豪写的<a href="http://dnc1994.com/2017/01/how-to-improve-your-english/">如何提高英语姿势水平</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-02-03</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/02/03/人生-不是每一步都要找到最优解</guid>
+    </item>
+    <item>
+      <title>为什么 Native English Speaker 更容易写好代码？</title>
+      <link>http://dsdshcym.github.io/blog/2019/01/30/why-native-English-speaker-can-write-better-code</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-01-31</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/01/30/why-native-English-speaker-can-write-better-code</guid>
     </item>
@@ -153,13 +169,6 @@ Stay Hungry, Stay Foolish!
       <description><![CDATA[]]></description>
       <pubDate>2018-12-26</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2018/12/25/write-tests-to-justify-your-design-decisions</guid>
-    </item>
-    <item>
-      <title>No Code is Better Than No-Code</title>
-      <link>http://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2018-12-24</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code</guid>
     </item>
   </channel>
 </rss>
