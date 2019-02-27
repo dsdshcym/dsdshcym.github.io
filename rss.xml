@@ -4,171 +4,158 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 25 Feb 2019 18:28:44 CST</pubDate>
-    <lastBuildDate>Mon, 25 Feb 2019 18:28:44 CST</lastBuildDate>
+    <pubDate>Wed, 27 Feb 2019 11:30:28 CST</pubDate>
+    <lastBuildDate>Wed, 27 Feb 2019 11:30:28 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>My Understandings of Agile Over Time</title>
-      <link>http://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time</link>
+      <title>Only With Limited Resources Can We Finish Things</title>
+      <link>http://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>My Understandings of Agile Over Time</h1>
-            <p>
-This post is a short summary of my understanding of Agile over the
-past several years:
-</p>
-
-<ol class="org-ol">
-<li><p>
-"I don't need to learn Agile. I just need to write code."
+            <h1>Only With Limited Resources Can We Finish Things</h1>
+            
+<div id="outline-container-orgcfbd780" class="outline-2">
+<h2 id="orgcfbd780">Being Immortal</h2>
+<div class="outline-text-2" id="text-orgcfbd780">
+<p>
+Think about this: <i>"What would this world be if everyone is
+immortal?"</i>
 </p>
 
 <p>
-This is my thought when I first learned the concept of Agile in my
-college.
+My answer to this question is that the world would stop evolving
+anymore and people would lose hope/meaning to live any longer.
 </p>
 
 <p>
-It turns out to be really wrong.
-</p></li>
-
-<li><p>
-"Agile is just shorter waterfalls."
+With unlimited time, it seems that everyone can achieve anything if
+we'd like to. We can use as much time as we can to get/build anything
+we want. But I just don't think we can finish anything. Here is why:
 </p>
+
+<p>
+<b>We would lose the sense of "Time" if we have unlimited time.</b>
+</p>
+
+<p>
+Because we have infinite time, one second is the same as one hour, one
+day, one week when compared to infinity. So the measure of time
+doesn't make any sense anymore.
+</p>
+
+<p>
+With this in mind, it would be almost impossible to fight
+procrastination. If you want to play video games for a week, you would
+easily fall into that because you have unlimited time ahead of you.
+</p>
+
+<p>
+Furthermore, it would be much harder to limit the scope of our work
+even if we somehow start working on things. You want that feature to
+be added? Fine, we have unlimited time to get any resources we
+want, so just wait a bit longer.
+</p>
+
+<p>
+In a word, unlimited time only brings us procrastination and unlimited
+scoping, which make it impossible to deliver anything.
+</p>
+
+<p>
+(P.S. That's also why I believe if any scientist finds out how to make
+humankind immortal, he would destroy his research result
+immediately. It seems to be a nice idea for a science fiction.)
+</p>
+</div>
+</div>
+<div id="outline-container-org1a5397f" class="outline-2">
+<h2 id="org1a5397f">Set Clear Constraints</h2>
+<div class="outline-text-2" id="text-org1a5397f">
+<p>
+Go back to project management, I think the same idea applies to any
+resources we have:
+</p>
+
+<p>
+<b>We would lose the sense of a Resource if it is unlimited.</b>
+</p>
+
+<ul class="org-ul">
+<li>If we have unlimited time, it lose its sense.</li>
+<li>If we have unlimited money, it lose its sense.</li>
+<li>If we have unlimited machine power, it lose its sense.</li>
+</ul>
+
+<p>
+That's why we need to set clear constraints to limit the scope of our
+work and deliver the end results.
+</p>
+
 <blockquote>
 <p>
-<a href="https://twitter.com/JonKernPA/status/1062427606723846146">Jon Kern on Twitter: "Start with doing waterfall in really short timeframes.… "</a>
+<b>Tight constraints force a creative, disciplined and critical approach
+ to product design and development.</b>
 </p>
-</blockquote></li>
-<li><p>
-"Agile is to do things in smaller steps and to gather feedback as
-much as possible."
+</blockquote>
+<p>
+-- from <a href="https://open.buffer.com/product-scope/">Product Scope: The Path to a Minimum Lovable Product</a>
 </p>
+
 <blockquote>
 <ul class="org-ul">
-<li><b>Courage</b>
+<li><p>
+Scope Hammering
+</p>
+
+<p>
+We take the chisel to the big block of marble and figuring out how
+to sculpt, nip, and tuck a feature into the best six-week version
+possible. It's all about looking carefully at a feature and figuring
+out the true essence. Not what can it be, but what does it need to
+be?
+</p>
+
 <ol class="org-ol">
-<li>Take small steps</li>
-<li>Get feedback</li>
-<li>Refine</li>
-<li>Repeat</li>
+<li>Before any project is included in a cycle, we've already figured
+out what we think the six week version is.</li>
+<li>We don't include planning in the cycle time - all the planning
+and consideration happens in the pitch.</li>
+<li>the six weeks is all implementation and execution.
+<ol class="org-ol">
+<li>No time is spent on big unknowns</li>
+<li>we try to make sure all the big stuff is known enough before
+we get started.</li>
+<li>QA fits into the six week time frame too, so nothing busts a
+deadline like a pile of last minute QA findings.</li>
 </ol></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=a-BOSpxYJ9M">GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas - YouTube</a>
-</p></li>
-<li><p>
-"Agile is to validate your actions before you take them."
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Design
-<ul class="org-ul">
-<li>What makes agile and waterfall different
-<ol class="org-ol">
-<li>Iteration length</li>
-<li><b>If you make the iteration short enough, behavior has to
-change</b></li>
 </ol></li>
-<li>Design is just a fancy word for organize
+<li>Scope is ever changing
 <ol class="org-ol">
-<li>I don't know which part I need to change (Design)</li>
-<li>I don't know if I did it correctly (Test)</li>
+<li>adjusting down if we're running low on time</li>
+<li>ramping up if we find we have more time than we thought.</li>
+<li>It's a very fluid process.</li>
 </ol></li>
-<li>The reason for agile software development:
-<b>Cash in my pocket sooner</b></li>
-<li><p>
-Reverse the order and repeat
-</p>
-<pre class="example">
-Investment -&gt; Requirement -&gt; Analysis -&gt; Design -&gt; Coding -&gt; Testing -&gt; Operations
-Operations -&gt; Testing -&gt; Coding -&gt; Design -&gt; Analysis -&gt; Requirement -&gt; Investment
-</pre></li>
-</ul></li>
-<li>Almost every problem boils down to <b>long feedback cycles</b> (two
-people don't like to talk to each other)
-<ul class="org-ul">
-<li>Cut it in half
-<ul class="org-ul">
-<li>It's already hard enough to change the way you work</li>
-<li>It's challenging enough that make you energized enough to work
-on it</li>
-</ul></li>
-<li>Repeat when half the length feels long again</li>
-</ul></li>
+<li>What isn't fluid is the deadline: <b>six weeks from when we started</b>.</li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://dev.tube/video/TQ9rng6YFeY">DevTernity 2018: J.B. Rainsberger - The Economics of Software Design</a>
-</p></li>
-<li><p>
-"You can always be more Agile." ("Agile is not a noun, it's an
-adjective.")
+-- from <a href="https://m.signalvnoise.com/how-we-set-up-our-work-cbce3d3d9cae#.rx56948ir">How we structure our work and teams at Basecamp</a>
 </p>
-<blockquote>
-<p>
-Agile is about Change.
-</p>
-<ul class="org-ul">
-<li>Takeaway message
-<ul class="org-ul">
-<li>Agility is a journey</li>
-<li>Always inspect and adapt the process</li>
-<li>It is a continuous investment</li>
-<li>Don't be afraid, there is hope</li>
-</ul></li>
-<li>The heart of being agile
-<ul class="org-ul">
-<li>Growth mindset</li>
-<li>Inspect and adapt</li>
-<li>Flexibility</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://www.youtube.com/watch?v=sFb1wpdn5Ys&amp;t=0s&amp;index=6&amp;list=PLEx5khR4g7PKqVew27D3jvMknjxjowoKl">GOTO 2018 • Polyglot Agile • Aino Vonge Corry - YouTube</a>
-</p>
-<ul class="org-ul">
-<li><p>
-That being said, "doing Agile" (Agile as a noun) is still important
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>THE IMPORTANCE OF "DOING"
-<ul class="org-ul">
-<li>The practices are needed to help understand the principles</li>
-<li>The principles are needed to help guide towards new or
-stronger practices</li>
-<li>"The activities (practices) are what you do. The values are
-how you decide if you are doing it right."</li>
-<li>In situations where I don't quite know what to do, I fall
-back on the practices, trusting that they will carry me
-forward until I figure out which way to go.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://blog.jbrains.ca/permalink/embrace-doing-agile">Embrace 'Doing Agile'</a>
-</p></li>
-</ul></li>
-</ol>
-
-<p>
-As it was said in the last point, I can always be more agile as
-well. And I think this summary is also a great reflect on this point.
-</p>
-
-<p>
-Hope you can also learn more about "Agile" from these great talks and
-articles, or share your experiences with "Agile" in the comments below.
-</p>
+</div>
+</div>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-02-27</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things</guid>
+    </item>
+    <item>
+      <title>My Understandings of Agile Over Time</title>
+      <link>http://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-02-25</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time</guid>
     </item>
@@ -227,13 +214,6 @@ articles, or share your experiences with "Agile" in the comments below.
       <description><![CDATA[]]></description>
       <pubDate>2019-01-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout</guid>
-    </item>
-    <item>
-      <title>Writing Software v.s. Organizing Notes</title>
-      <link>http://dsdshcym.github.io/blog/2019/01/18/writing-software-v-s-organizing-notes</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-01-24</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/01/18/writing-software-v-s-organizing-notes</guid>
     </item>
   </channel>
 </rss>
