@@ -4,151 +4,119 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 27 Feb 2019 11:30:28 CST</pubDate>
-    <lastBuildDate>Wed, 27 Feb 2019 11:30:28 CST</lastBuildDate>
+    <pubDate>Thu, 28 Feb 2019 17:26:01 CST</pubDate>
+    <lastBuildDate>Thu, 28 Feb 2019 17:26:01 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Only With Limited Resources Can We Finish Things</title>
-      <link>http://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things</link>
+      <title>Agile and Saying &quot;NO&quot;</title>
+      <link>http://dsdshcym.github.io/clipping/2019/02/28/agile-and-saying-no</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Only With Limited Resources Can We Finish Things</h1>
-            
-<div id="outline-container-orgcfbd780" class="outline-2">
-<h2 id="orgcfbd780">Being Immortal</h2>
-<div class="outline-text-2" id="text-orgcfbd780">
-<p>
-Think about this: <i>"What would this world be if everyone is
-immortal?"</i>
-</p>
-
-<p>
-My answer to this question is that the world would stop evolving
-anymore and people would lose hope/meaning to live any longer.
-</p>
-
-<p>
-With unlimited time, it seems that everyone can achieve anything if
-we'd like to. We can use as much time as we can to get/build anything
-we want. But I just don't think we can finish anything. Here is why:
-</p>
-
-<p>
-<b>We would lose the sense of "Time" if we have unlimited time.</b>
-</p>
-
-<p>
-Because we have infinite time, one second is the same as one hour, one
-day, one week when compared to infinity. So the measure of time
-doesn't make any sense anymore.
-</p>
-
-<p>
-With this in mind, it would be almost impossible to fight
-procrastination. If you want to play video games for a week, you would
-easily fall into that because you have unlimited time ahead of you.
-</p>
-
-<p>
-Furthermore, it would be much harder to limit the scope of our work
-even if we somehow start working on things. You want that feature to
-be added? Fine, we have unlimited time to get any resources we
-want, so just wait a bit longer.
-</p>
-
-<p>
-In a word, unlimited time only brings us procrastination and unlimited
-scoping, which make it impossible to deliver anything.
-</p>
-
-<p>
-(P.S. That's also why I believe if any scientist finds out how to make
-humankind immortal, he would destroy his research result
-immediately. It seems to be a nice idea for a science fiction.)
-</p>
-</div>
-</div>
-<div id="outline-container-org1a5397f" class="outline-2">
-<h2 id="org1a5397f">Set Clear Constraints</h2>
-<div class="outline-text-2" id="text-org1a5397f">
-<p>
-Go back to project management, I think the same idea applies to any
-resources we have:
-</p>
-
-<p>
-<b>We would lose the sense of a Resource if it is unlimited.</b>
-</p>
-
+            <h1>Agile and Saying &quot;NO&quot;</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>If we have unlimited time, it lose its sense.</li>
-<li>If we have unlimited money, it lose its sense.</li>
-<li>If we have unlimited machine power, it lose its sense.</li>
-</ul>
-
-<p>
-That's why we need to set clear constraints to limit the scope of our
-work and deliver the end results.
-</p>
-
-<blockquote>
-<p>
-<b>Tight constraints force a creative, disciplined and critical approach
- to product design and development.</b>
-</p>
-</blockquote>
-<p>
--- from <a href="https://open.buffer.com/product-scope/">Product Scope: The Path to a Minimum Lovable Product</a>
-</p>
-
-<blockquote>
+<li>The 4Ds Time Management
+<ol class="org-ol">
+<li>Delete/Drop</li>
+<li>Delegate</li>
+<li>Defer</li>
+<li>Do</li>
+</ol></li>
+<li>The First D: Delete or Drop
+<ol class="org-ol">
+<li>Maintain a Not-to-do List</li>
+<li>Stop Doing</li>
+<li>You Don't Have To</li>
+<li>Stop Completing Surveys</li>
+<li>Drop That Call</li>
+<li>Stop Starting
 <ul class="org-ul">
-<li><p>
-Scope Hammering
-</p>
-
-<p>
-We take the chisel to the big block of marble and figuring out how
-to sculpt, nip, and tuck a feature into the best six-week version
-possible. It's all about looking carefully at a feature and figuring
-out the true essence. Not what can it be, but what does it need to
-be?
-</p>
-
-<ol class="org-ol">
-<li>Before any project is included in a cycle, we've already figured
-out what we think the six week version is.</li>
-<li>We don't include planning in the cycle time - all the planning
-and consideration happens in the pitch.</li>
-<li>the six weeks is all implementation and execution.
-<ol class="org-ol">
-<li>No time is spent on big unknowns</li>
-<li>we try to make sure all the big stuff is known enough before
-we get started.</li>
-<li>QA fits into the six week time frame too, so nothing busts a
-deadline like a pile of last minute QA findings.</li>
+<li>Start finishing projects that are in-progress</li>
+<li>Work on as few major tasks as you can on any given day (This
+principle is adopted from agile project management.)</li>
+</ul></li>
 </ol></li>
-</ol></li>
-<li>Scope is ever changing
-<ol class="org-ol">
-<li>adjusting down if we're running low on time</li>
-<li>ramping up if we find we have more time than we thought.</li>
-<li>It's a very fluid process.</li>
-</ol></li>
-<li>What isn't fluid is the deadline: <b>six weeks from when we started</b>.</li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://m.signalvnoise.com/how-we-set-up-our-work-cbce3d3d9cae#.rx56948ir">How we structure our work and teams at Basecamp</a>
+-- from <a href="https://www.linkedin.com/pulse/4ds-time-management-delete-delegate-defer-do-wan-how">4Ds Time Management: Delete, Delegate, Defer, Do</a>
 </p>
-</div>
-</div>
 
+<p>
+<a href="https://lifehacker.com/im-david-heinemeier-hansson-basecamp-cto-and-this-is-1820470919">DHH and Basecamp are also great advocates for saying "NO"</a>:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>What's your best time-saving shortcut for life hack?
+<ul class="org-ul">
+<li><b>Saying no</b></li>
+<li>I say no to almost everything. Then I can commit myself fully to
+the few things that I do truly choose to do.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+And there are other quotes for saying "NO":
+</p>
+<blockquote>
+<p>
+<a href="https://twitter.com/devoncestes/status/1100371100330950656">Devon C. Estes on Twitter: "My #1 business trick when presented with a
+  specific part of a big feature request that seems like it will be
+  really hard is to ask "Can we not do that?" So often the answer is
+  "Yes" and everyone is happier not having it."</a>
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+<a href="https://twitter.com/dsdshcym/status/1080353242691715072">Yiming Chen on Twitter: "Not all posts are worth reading and that's
+  okay… "</a>
+</p>
+</blockquote>
+
+<p>
+I think the mindset to say NO to everything first matches the idea of
+Agile Software Development pretty well.
+</p>
+
+<p>
+To me, part of being Agile is to validate idea before working on it
+and to say "no" to it as soon as we find it will not work<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+Being Agile sometimes means pursuing some sorts of minimalism. And
+achieving the expected results by doing nothing is the best, isn't
+it?<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/">My Understandings of Agile Over Time - dsdshome</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code/">No Code is Better Than No-Code - dsdshome</a>
+</p></div></div>
+
+
+</div>
+</div>
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-02-28</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/02/28/agile-and-saying-no</guid>
+    </item>
+    <item>
+      <title>Only With Limited Resources Can We Finish Things</title>
+      <link>http://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-02-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things</guid>
     </item>
@@ -207,13 +175,6 @@ deadline like a pile of last minute QA findings.</li>
       <description><![CDATA[]]></description>
       <pubDate>2019-01-28</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/01/28/make-a-lot-of-lists</guid>
-    </item>
-    <item>
-      <title>&quot;A Philosophy of Software Design&quot; by John Ousterhout</title>
-      <link>http://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-01-27</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout</guid>
     </item>
   </channel>
 </rss>
