@@ -4,204 +4,82 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Mon, 01 Apr 2019 22:43:32 CST</pubDate>
-    <lastBuildDate>Mon, 01 Apr 2019 22:43:32 CST</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2019 07:57:26 CST</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2019 07:57:26 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Agile Podcast Recording</title>
-      <link>http://dsdshcym.github.io/blog/2019/03/29/agile-podcast-recording</link>
+      <title>硬影像：故事的意义与元素</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/03/硬影像：故事的意义与元素</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Agile Podcast Recording</h1>
-            <p>
-I recorded my first podcast episode (<a href="https://hyperbola.link/3">Hyperbola Episode 3: From Agile
-to Beyond</a>) this month. My friend Linghao and I discussed Agile
-software development (in Chinese).
-</p>
-
-<p>
-What's interesting was that we encountered several issues in the
-recording process. And these issues reminded me of Agile software
-development. I thought Agile methodologies may help here as well. I
-didn't get the chance to discuss this topic in that episode, so I'm
-sharing these thoughts here.
-</p>
-
-<div id="outline-container-org5eaca14" class="outline-2">
-<h2 id="org5eaca14">Issues We Encountered</h2>
-<div class="outline-text-2" id="text-org5eaca14">
-<p>
-Here are some of the issues we had during the recording:
-</p>
-<ol class="org-ol">
-<li><p>
-Sound recording issue
-</p>
-
-<p>
-We have a weird setup recording our audio:
-</p>
+            <h1>硬影像：故事的意义与元素</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>We have a FaceTime call.</li>
-<li>Linghao uses Audio Hijack to record both of our voices.
-But once Audio Hijack takes control over FaceTime, my voice would
-only be channeled to Audio Hijack, but not to Linghao's
-speaker. This means that Linghao can't hear me over FaceTime anymore.</li>
-<li>So we have another WeChat audio call so that Linghao can hear me.</li>
+<li>好作品要建立在普世的小脑情感上
+<ul class="org-ul">
+<li>恐惧</li>
+<li>愤怒</li>
+<li>悲伤</li>
+<li>快乐</li>
+</ul></li>
+<li>好的人物要有伤口，还有对抗伤口给自己编织的谎言，剧情就是来打破这一谎言</li>
+<li>现代人对疏离感下建立的熟悉感会有共鸣（城市里找到熟人社会的感觉）</li>
+<li>对死亡的恐惧是最基本的情感之一</li>
+<li>人活着的意义
+<ul class="org-ul">
+<li>繁衍</li>
+<li>做更好的自己</li>
+</ul></li>
+<li>通过做选择来体现人物的性格</li>
+<li>Stake 决定了故事的吸引力</li>
+<li>悲剧就是人对抗命运却被命运玩弄</li>
+<li>人物的魅力在于成长
+<ul class="org-ul">
+<li>成长的关键不在于一直赢</li>
+</ul></li>
 </ul>
-
+</blockquote>
 <p>
-This setup is way more fragile than a single FaceTime call.
-</p>
-<dl class="org-dl">
-<dt>Two points of failure</dt><dd>Either one of WeChat or FaceTime call fails, our recording
-fails. So the possibility of an accident basically doubled.</dd>
-<dt>Lack of feedback loop</dt><dd>If FaceTime call fails, we won't notice it because my voice
-is channeled through Audio Hijack and Linghao is talking to me
-through WeChat.</dd>
-</dl>
-
-<p>
-Aware of this issue upfront, we did a trial run for half an hour
-and made sure several times our audios were recorded before we
-started the official recording.
+-- from <a href="http://hardimage.pro/76">硬影像 Episode 76: The Last of Us：故事的意义与元素（一）</a>
 </p>
 
-<p>
-Unfortunately, my voice was not recorded when we started our
-official recording. And we didn't notice it until 15mins later, I
-lost my internet connection due to a short power outage.
-</p></li>
-<li><p>
-Network/Power issue
-</p>
-
-<p>
-I'm in China and Linghao's in U.S. The internet connection between
-us was not good. But it's acceptable to let the audio go through.
-</p>
-
-<p>
-The real issue came when my house got a short power outage. And my
-network got cut due to the outage.
-</p>
-
-<p>
-Then I used my cellphone's Personal Hotspot to connect to
-FaceTime. But it didn't work at all (and we didn't test it before).
-</p>
-
-<p>
-Thankfully, the electricity came back on pretty soon, and we can
-continue our recording.
-</p></li>
-
-<li><p>
-My AirPods ran out of power
-</p>
-
-<p>
-At this time, we've recorded for about 1 hour and my AirPods was
-running out of power. So I switched to EarPods in the middle of the
-recording.
-</p></li>
-
-<li><p>
-Delivery came during the recording
-</p>
-
-<p>
-Finally, just before we wrapped up. A delivery came and I had to
-open the door for it. It broke my flow of recording and left a long
-silence that Linghao needed to edit out.
-</p></li>
-</ol>
-
-<p>
-In retrospect, the process of this recording is just like a software
-development process.
-</p>
-<dl class="org-dl">
-<dt>Using FaceTime + WeChat</dt><dd>Due to some external constraints, we had to make some trade-offs
-right at the beginning. And these trade-offs added complexity to
-our whole process.</dd>
-<dt>Personal Hotspot didn't work</dt><dd>Though we had a backup plan, we didn't test it at all. It's like
-having a backup database but never testing it.</dd>
-<dt>AirPods running out of power</dt><dd>Due to a wrong estimation, we had to switch implementations.</dd>
-<dt>Delivery</dt><dd>External world continued impacting our process after we
-started and forced us to change accordingly.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-org786e3c8" class="outline-2">
-<h2 id="org786e3c8">How to Record Podcast in an Agile Way</h2>
-<div class="outline-text-2" id="text-org786e3c8">
-<p>
-After I realized the similarities between these two process, it's
-natural for me to think about solving the recording problem with ideas
-from software engineering.
-</p>
-
+<blockquote>
+<ul class="org-ul">
+<li>只有为别人负责才能避免庸人自扰
+<ul class="org-ul">
+<li>有担当</li>
+<li>为别人付出来体现自己的价值</li>
+</ul></li>
+<li>永恒和短暂是两种不同的美</li>
+<li>三种叙事
 <ol class="org-ol">
-<li>Record short pieces and publish often
-<ul class="org-ul">
-<li>If we think of a piece of recording as a deliverable feature,
-then it makes perfect sense to record short pieces.</li>
-<li>Just like releasing small features, publishing short episodes let
-us gather feedback quickly and reduce the possibilities of
-recording issues I encountered.</li>
-<li>And recording short pieces doesn't mean the episode need to be
-short as well. We can put multiple pieces together as an episode
-later. The benefits of recording short pieces is worth the
-editing overhead IMHO.</li>
-</ul></li>
-<li>Go through trial runs
-<ul class="org-ul">
-<li>When writing code, I find that if I redesign/rewrite a
-class/module/function, the result would usually be better.</li>
-<li>It's the same for recording.
-<ul class="org-ul">
-<li>recording multiple trial runs means that we can choose the best
-one</li>
-<li>trail runs will get better and better since we keep learning
-during the recording process</li>
-</ul></li>
-</ul></li>
-<li>Always be more agile
-<ul class="org-ul">
-<li>And remember, <a href="https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/">we can always be more agile</a></li>
-<li>So always look for ways to improve the recording process. Gather
-feedback and try new ways.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orga4a26a6" class="outline-2">
-<h2 id="orga4a26a6">Another example: <a href="http://yakshave.fm/12">12: A new cat named Merb! - The Yak Shave</a></h2>
-<div class="outline-text-2" id="text-orga4a26a6">
+<li>集体主义</li>
+<li>个人主义</li>
+<li>虚无主义</li>
+</ol></li>
+</ul>
+</blockquote>
 <p>
-Another real world example is from <a href="http://yakshave.fm/">The Yak Shave</a>:
+-- from <a href="http://hardimage.pro/77">硬影像 Episode 77: The Last of US：故事的意义与元素（二）</a>
 </p>
 
 <p>
-In episode 12, I heard that they lost two whole episodes completely
-due to the same reason as my first run (one host's voice was not
-recorded). Unfortunately, they didn't have a power outage to give
-them a break and check. And they had to record the same episode again.
+硬影像一直是我个人很喜欢的电影 <del>游戏</del> 播客，最近的两期又通过分析 The
+Last of US 的故事编排来阐述怎么讲好一个故事，还涉及到了人生的意义等等。值得一听，强烈推荐！
 </p>
-
-<p>
-So, to prevent this kind of mistakes again, take smaller steps and
-look for agility. Happy podcasting!
-</p>
-</div>
-</div>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-04-03</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/03/硬影像：故事的意义与元素</guid>
+    </item>
+    <item>
+      <title>Agile Podcast Recording</title>
+      <link>http://dsdshcym.github.io/blog/2019/03/29/agile-podcast-recording</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-04-01</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/03/29/agile-podcast-recording</guid>
     </item>
@@ -260,13 +138,6 @@ look for agility. Happy podcasting!
       <description><![CDATA[]]></description>
       <pubDate>2019-03-07</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/03/07/clippings-of-2019-feb</guid>
-    </item>
-    <item>
-      <title>Agile and Saying &quot;NO&quot;</title>
-      <link>http://dsdshcym.github.io/clipping/2019/02/28/agile-and-saying-no</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-02-28</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/02/28/agile-and-saying-no</guid>
     </item>
   </channel>
 </rss>
