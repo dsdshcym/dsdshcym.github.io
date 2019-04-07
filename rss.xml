@@ -4,427 +4,68 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 03 Apr 2019 20:00:08 CST</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2019 20:00:08 CST</lastBuildDate>
+    <pubDate>Sun, 07 Apr 2019 08:54:59 CST</pubDate>
+    <lastBuildDate>Sun, 07 Apr 2019 08:54:59 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Clippings of 2019 Mar</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/03/clippings_of_2019_mar</link>
+      <title>TDD Gives You a Tractable Task Board</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/07/tdd-gives-you-a-tractable-task-board</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Clippings of 2019 Mar</h1>
-            <ol class="org-ol">
-<li><p>
-<a href="https://www.sandimetz.com/blog/2017/6/1/why-we-argue-style">Why We Argue: Style — Sandi Metz</a>
-</p>
-
-<p>
-The best article about code style and arguments around this topic
-I've ever read.
-</p>
-
-<blockquote>
+            <h1>TDD Gives You a Tractable Task Board</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>Why Have A Style Guide?
+<li>Kent's personal mission: help geeks feel safe in the world</li>
+<li>Test as a oracle to predict if your change is safe or not</li>
+<li><a href="https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626">The War of Art</a></li>
+<li>If you can predict an error, it's the same as passing</li>
+<li>TDD gives you a tractable task board
 <ul class="org-ul">
-<li>Code is read more than it's written</li>
-<li>Code should be optimized for readability</li>
-<li>An application's code should all follow the same style</li>
+<li>You don't need to know how to implement a thing before writing a
+test. Having a test case is better than having nothing.</li>
 </ul></li>
-<li>What Style Is Best?
+<li>Write your first test no matter how bad it is.
 <ul class="org-ul">
-<li>many stylistic choices are arbitrary, and purely a matter of
-personal preference.</li>
-<li>Choosing a style guide means building agreements in areas where we
-have strong differences of opinion about issues of little
-significance.</li>
-<li><b>It's not <i>style</i> that matters, but <i>sameness</i> of style.</b></li>
-</ul></li>
-<li>Why Can't Teams Agree?
-<ul class="org-ul">
-<li>These "style wars" are ostensibly about formatting code, but are
-actually about <i>power</i>.</li>
+<li>You will know how to write a better one next time.</li>
 </ul></li>
 </ul>
-</blockquote></li>
-<li><p>
-<a href="http://www.paulgraham.com/makersschedule.html">Maker's Schedule, Manager's Schedule</a>
+</blockquote>
+<p>
+-- from <a href="http://www.rubytestingpodcast.com/kent-beck">024 - Kent Beck, Author of Test-Driven Development: By Example - The Ruby Testing Podcast</a>
 </p>
 
 <p>
-It makes me think how to manage my time to work more efficiently
-and how to better use other people's time.
+I also use TDD as a task board, i.e.
 </p>
-
-<blockquote>
-<ul class="org-ul">
-<li>Manager's Schedule
-<ul class="org-ul">
-<li>By default you change what you're doing every hour.</li>
-<li>When you use time that way, it's merely a practical problem to
-meet with someone.</li>
-<li>The schedule of command</li>
-</ul></li>
-<li>Maker's Schedule
-<ul class="org-ul">
-<li>Use time in units of half a day at least</li>
-<li>Meetings are a disaster
 <ol class="org-ol">
-<li>It breaks a whole afternoon in to two pieces each too small to
-do anything hard in</li>
-<li>When someone on the maker's schedule has a meeting, they have
-to think about it</li>
-</ol></li>
-</ul></li>
-<li>Two workdays each day
-<ol class="org-ol">
-<li>Manager's schedule: 11:00am - dinner (7:00 pm)</li>
-<li>Maker's schedule: dinner (7:00 pm) - 3:00 am</li>
-</ol></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://www.jamesshore.com/Blog/Dont-Measure-Unit-Test-Code-Coverage.html">James Shore: Don't Measure Unit Test Code Coverage</a>
-</p>
-
-<p>
-It resonates with the goal-driven thinking pretty well, reminds me
-of ideas from <a href="https://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management/">Similarities between TDD and Management</a>
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>What should you do instead? That depends on what you want to
-accomplish.</li>
-<li>Figure out what you really want to improve and focus directly on
-that instead.</li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://www.pipelinedb.com/blog/three-sales-mistakes-software-engineers-make">Three Sales Mistakes Software Engineers Make</a>
-</p>
-
-<p>
-This explains "why we need to build MVPs" and "how to define what
-features go into MVP" from Sales perspective.
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>Everybody is selling something.
-<ol class="org-ol">
-<li>selling products directly to customers on the front lines</li>
-<li>selling new product feature ideas internally within an
-organization</li>
-</ol></li>
-<li>Mistakes
-<ol class="org-ol">
-<li>Building Before you Start Selling</li>
-<li>Talking Instead of Listening</li>
-<li>Mistaking Interest for Demand</li>
-</ol></li>
-<li>This iterative process of talking to customers and building what
-they need and will pay for is not only an exercise to be conducted
-before building products, but should also serve as <b>a continuous
-feedback loop between customers and developers.</b></li>
-<li><b>Talk to your customers, build what they want and will pay for, and
-iterate relentlessly.</b></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://www.ybrikman.com/writing/2018/08/12/the-10-to-1-rule-of-writing-and-programming/">The 10:1 rule of writing and programming</a>
-</p>
-
-<p>
-How to estimate tasks. I usually do an estimation first and tell
-others I need 2x of that time to finish that task. Maybe I should
-use 10x instead?
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li><p>
-<a href="https://en.wikipedia.org/wiki/Hofstadter%27s_law">Hofstadter's law - Wikipedia</a>
-</p>
-
-<p>
-It always takes longer than you expect, even when you take into
-account Hofstadter's Law.
-</p></li>
-
-<li><p>
-The 10:1 rule of writing and programming
-</p>
-
-<p>
-<b>Good software and good writing requires that every line has been
-rewritten, on average, at least 10 times.</b>
-</p>
-
-<ol class="org-ol">
-<li>The ratio of "raw materials" to "finished product" in a book is
-roughly 10:1. Keep this in mind the next time an editor asks you
-for a timeline! If you want to write a 300 page book, you’ll
-probably have to write around 3,000 pages.</li>
-<li>Similarly, the ratio of "code churn" to "lines of code" in mature
-and non-trivial software is also at least 10:1. Keep this in mind
-the next time a manager or customer asks you for a time estimate!
-To build a 10,000 line app, expect to write roughly 100,000
-lines.</li>
-</ol></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://hbr.org/2017/07/stop-using-the-excuse-organizational-change-is-hard%C2%A0">Stop Using the Excuse “Organizational Change Is Hard”</a>
-</p>
-
-<p>
-The research result gives me hope on what I'm doing now at work.
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>We assume that failure is a more likely outcome than success, and,
-as a result, we wrongly treat successful outcomes as flukes and bad
-results as irrefutable proof that change is difficult.</li>
-<li>Only "about one in ten admit to having been involved in a
-transformation that was 'completely' or 'mostly' unsuccessful."</li>
-<li><b>Adaptation is the rule of human existence, not the exception.</b></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://medium.com/@will_80765/startups-start-slow-to-move-fast-and-take-less-money-cb9c3f5ad51">Startups: Start Slow to Move Fast (and Take Less Money)</a>
-</p>
-
-<p>
-Another article about MVP.
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>No one wins when a startup optimizes all its success for the short
-term.
-<ul class="org-ul">
-<li>As a startup, to be successful, you need to
-<ol class="org-ol">
-<li>deliver more than just a first product to a handful of customers</li>
-<li>continually deliver to a large number of customers over a long
-period of time</li>
-</ol></li>
-<li>Scaling requires at least some structure and methodology</li>
-<li>Especially early on</li>
-</ul></li>
-<li>Start Slower, Finish Faster (and Better)
-<ul class="org-ul">
-<li>Starting slower and more methodically, especially in the early
-stages as you're vetting your idea and the target market, is the
-key to shifting the odds of creating a successful startup in your
-favor.
-<ol class="org-ol">
-<li>You'll get to market with a solid, finished product at least as
-fast (we're being generous here, in all likelihood, faster)</li>
-<li>You'll have more customers lined up to purchase once you
-deliver your product</li>
-<li>You'll end up with a more solid product that can quickly be
-modified to meet the needs of an expanding customer
-base — you'll be able to scale better and faster.</li>
-<li>You'll need less funding along the way.</li>
-</ol></li>
-</ul></li>
-<li>The Vetting Process - Doing the Hard Stuff When it's Easy(ier)
-<ul class="org-ul">
-<li>By using a methodical approach to vetting your idea, the market
-and your company, you can grease the rails to success.</li>
-<li>You do it by answering a few key questions before you squish the
-accelerator pedal to the floor.
-<ol class="org-ol">
-<li>What is your idea? The problem AND the solution.</li>
-<li>Who are your customers?</li>
-<li>What is your value proposition?</li>
-<li>Do you have product-market fit?</li>
-<li>Can you build a team?</li>
-<li>Can you build the product?</li>
-<li>How will you be different?</li>
-<li>How will you go to market?</li>
-<li>How will you make money?</li>
-<li>Can you get funding?</li>
-</ol></li>
-<li>You would have encountered these problems anyway, just later.
-<ul class="org-ul">
-<li>Asking the questions early doesn’t change the problems, it just
-makes them apparent earlier.</li>
-<li>When you find the problems early, you can deal with them better
-and make adjustments in stride.</li>
-</ul></li>
-<li>To be most effective, it's better to think of these questions
-forming an iterative loop.</li>
-</ul></li>
-<li>The ultimate benefit of starting slow to move faster is that you’ll
-develop a thorough understanding of customer needs, requirements,
-and preferences as a result of your deep customer engagement and
-analysis.</li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="http://algeri-wong.com/yishan/engineering-management.html">Engineering Management</a>
-</p>
-
-<p>
-Great idea from 2009 can still be applied to what we are doing
-today. No wonder great people like Yishan Wang can build great
-companies like Paypal, Facebook, and Reddit.
-</p>
-<ul class="org-ul">
-<li><a href="http://algeri-wong.com/yishan/engineering-management-hiring.html">Hiring is number one</a></li>
-<li><a href="http://algeri-wong.com/yishan/engineering-management-process.html">Let process be implemented by those who practice it</a></li>
-<li><a href="http://algeri-wong.com/yishan/engineering-management-internal-promotion.html">Promotion from within</a></li>
-<li><a href="http://algeri-wong.com/yishan/engineering-management-tools-are-top-priority.html">Tools Are Top Priority</a></li>
-<li><a href="http://algeri-wong.com/yishan/engineering-management-technical-leaders.html">Technical Leaders</a></li>
-</ul></li>
-<li><p>
-<a href="http://jmock.org/oopsla2004.pdf">Mock Roles, not Objects</a>
-</p>
-
-<p>
-The best paper to learn Mock style testing.
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li>Mock Objects changes the focus of TDD from thinking about the
-changes in state of an object to <b>thinking about its interactions
-with other objects</b>
-<ul class="org-ul">
-<li>We use Mock Objects to let us write the code under test as if it
-had everything it needs from its environment.</li>
-<li>This process shows us what an object's environment should be so
-we can then provide it.</li>
-</ul></li>
-<li>Need-Driven Development
-<ul class="org-ul">
-<li>A core principle of Lean Development is that <b>value should be
-pulled into existence from demand</b>, rather than pushed from
-implementation</li>
-<li><a id="orgb1b6323"></a>: the flow of programming with Mock
-Objects.
-<ul class="org-ul">
-<li>TDD with Mock Objects guides interface design by the services
-that an object <i>requires</i>, not just those it <i>provides</i>.</li>
-<li>This process results in <b>a system of narrow interfaces each of
-which defines a role in an interaction between objects</b>, rather
-than wide interfaces that describe all the features provided by
-a class.</li>
-</ul></li>
-<li>We continue this process until we reach a layer that implements
-real functionality in terms of the system runtime or external
-libraries.</li>
-<li>Our experience is that systems we produce this way tend towards
-very flat class hierarchies.
-<ul class="org-ul">
-<li>This avoids well-known problems, such as the Fragile Base Class,
-which make systems harder to understand and modify.</li>
-</ul></li>
-<li>Need-Driven Development helps us stay focussed on the requirements
-in hand and to develop coherent objects.
-<ul class="org-ul">
-<li>This process is similar to traditional Top-Down Development
-<ul class="org-ul">
-<li>The intention is that each layer of code is written in a
-coherent terminology, defined in terms of the next level of
-abstraction</li>
-<li>This is difficult to achieve in practice because the most
-important decisions have to be taken early and it is hard to
-avoid duplication across lower level components
-<ul class="org-ul">
-<li>TDD mitigates this by including Refactoring in its process.</li>
-</ul></li>
-</ul></li>
-<li>Bottom-Up Development has different risks.
-<ul class="org-ul">
-<li>developing a supporting class in isolation, as part of a
-larger task, only to find that the result was not right
-because we had misunderstood something.</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="http://www.harukizaemon.com/blog/2010/03/01/functional-programming-in-object-oriented-languages/">Functional programming in object oriented languages</a>
-</p>
-
-<p>
-FP and OOP are not orthogonal. They are compatible and it's best
-to use them according to the problem you are facing.
-</p>
-
-<blockquote>
-<ul class="org-ul">
-<li><p>
-Immutable objects good; Mutable objects bad
-</p>
-
-<p>
-Classes should be immutable unless there's a very good reason to
-make them mutable….If a class cannot be made immutable, limit its
-mutability as much as possible.
-</p></li>
-
-<li>An object is a collection of partially applied functions
-<ul class="org-ul">
-<li>methods MUST operate, in some way, on the state of the object</li>
-<li>If they didn't operate on the object's state, they wouldn't be
-partially applied.</li>
-</ul></li>
-<li><p>
-An object's API provides a clear separation between Commands and Queries
-</p>
-
-<p>
-Methods should return a value only if they are referentially
-transparent and hence possess no side effects
-</p>
-<ul class="org-ul">
-<li>If we assume we only want to return one thing from a method, and
-that a change in state necessitates returning a handle to the new
-state, then <b>a method can only ever be either a query or command
-but not both</b>.</li>
-<li>In a sense commands are now queries, eg. that ask the question:
-"what would a system look like if I asked you to do something?"</li>
-</ul></li>
-<li>An object is a snapshot of state and possible outcomes
-<ul class="org-ul">
-<li>The methods are like the choices we make</li>
-</ul></li>
-<li>An object is a persistent data structure
-<ul class="org-ul">
-<li><p>
-each copy is like a delta from the previous, sharing as much state
-as possible and reducing not only the time to copy but also the
-amount of memory needed.
-</p>
-<div class="org-src-container">
-<pre class="src src-ruby">def add(other)
-  transform do
-    @amount = @amount + currency.convert(other.currency, other.money)
-  end
-end
-</pre>
-</div></li>
-<li>In a sense each method describes the delta between the current
-state and the new state.</li>
-<li>It reminds me of branching in a Version Control System.</li>
-</ul></li>
-<li>More to explore</li>
-</ul>
-</blockquote></li>
+<li>write down descriptions for all the cases I need to test</li>
+<li>then fill-in the body and make these tests pass one by one</li>
+<li>if I think of something that needs to be added, I add a description
+and come back to it after I finish all the description I have</li>
 </ol>
+
+<p>
+It's a simple and lightweight GTD system. So I don't need to leave my
+code to track my todos.
+</p>
+
+<p>
+I learned this technique from <a href="https://online-training.jbrains.ca/p/wbitdd-01">The World's Best Intro to TDD, Level 1:
+TDD Done Right - jbrains.c</a>. And I recommend you to give it a shot.
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-04-07</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/07/tdd-gives-you-a-tractable-task-board</guid>
+    </item>
+    <item>
+      <title>Clippings of 2019 Mar</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/03/clippings_of_2019_mar</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-04-03</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/03/clippings_of_2019_mar</guid>
     </item>
@@ -483,13 +124,6 @@ state and the new state.</li>
       <description><![CDATA[]]></description>
       <pubDate>2019-03-12</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/03/12/test-suite-as-a-complexity-measuring-tool</guid>
-    </item>
-    <item>
-      <title>Stop Thinking in Your &quot;Head&quot;</title>
-      <link>http://dsdshcym.github.io/clipping/2019/03/09/stop-thinking-in-your-head</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-03-11</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/03/09/stop-thinking-in-your-head</guid>
     </item>
   </channel>
 </rss>
