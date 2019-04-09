@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>&quot;Pattern Matching&quot; When Rendering Views in Rails - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Rails, MVC, View, Pattern Matching, String Interpolation" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>&quot;Pattern Matching&quot; When Rendering Views in Rails</h1>
+            
+<div id="outline-container-org85c2843" class="outline-2">
+<h2 id="org85c2843">What's Pattern Matching?</h2>
+<div class="outline-text-2" id="text-org85c2843">
+<p>
+Pattern matching is a useful feature provided by many programming
+languages. It can help because it reduces conditional statements
+like <code>if</code> in our code and thus make our code more straightforward
+and easier to understand.
+</p>
+
+<p>
+Here is a quick example of pattern matching in Elixir:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def string_based_on_locale("en") do
+  "Hello, World!"
+end
+
+def string_based_on_locale("zh") do
+  "你好，世界！"
+end
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org45db70f" class="outline-2">
+<h2 id="org45db70f">Usage in Rails View Rendering</h2>
+<div class="outline-text-2" id="text-org45db70f">
+<p>
+Pattern matching is so powerful that I even applied it unconsciously
+when I worked in a Ruby/Rails app after I've dived into
+Elixir/Phoenix world for some time.
+</p>
+
+<p>
+Here is the case:
+</p>
+<ul class="org-ul">
+<li>The app support two locales: English and Chinese.</li>
+<li>And there are some UI differences other than translations in these
+two versions.</li>
+<li><p>
+An example is navbar dropdown. So I turned dropdown into two
+partials: <code>dropdown_zh.html.slim</code> and
+<code>dropdown_en.html.slim</code>. Then render one of them based on current locale:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">render "dropdown_#{I18n.locale}"
+</pre>
+</div></li>
+<li><p>
+After I've written this code, I realized this is exactly like a
+pattern matching. In Elixir, I would write:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def render_dropdown("zh") do
+end
+
+def render_dropdown("en") do
+end
+</pre>
+</div></li>
+<li>Of course, this is a basic case for pattern matching. And
+Ruby and Rails still don't more advanced pattern matching. But
+it's still useful enough to show some strength:
+<ol class="org-ol">
+<li><p>
+We don't need <code>if</code> statements like
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">if I18n.locale == "zh"
+  # ...
+else
+  # ...
+end
+</pre>
+</div></li>
+<li>If we want to add a dropdown for a new locale, we just add a
+new template named after that locale, say
+<code>dropdown_de.html.slim</code></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf4941aa" class="outline-2">
+<h2 id="orgf4941aa">Summary</h2>
+<div class="outline-text-2" id="text-orgf4941aa">
+<p>
+Pattern matching is a language feature to achieve certain level of
+polymorphism. We can still use the same technique in Ruby/Rails even
+they don't provide such feature at language level. Let me know in the
+comments below if you know any example like this.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-04-09</span>
+        <span title="last modification date" class="post-info">2019-04-09</span>
+        <span title="tags" class="post-info"><a href="/tags/rails/">Rails</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
