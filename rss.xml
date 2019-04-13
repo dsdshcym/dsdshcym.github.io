@@ -4,133 +4,62 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Fri, 12 Apr 2019 08:23:17 CST</pubDate>
-    <lastBuildDate>Fri, 12 Apr 2019 08:23:17 CST</lastBuildDate>
+    <pubDate>Fri, 12 Apr 2019 14:48:18 CST</pubDate>
+    <lastBuildDate>Fri, 12 Apr 2019 14:48:18 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>Values and Practices</title>
       <link>http://dsdshcym.github.io/clipping/2019/04/11/values-and-practices</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2019-04-12</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/11/values-and-practices</guid>
+    </item>
+    <item>
+      <title>Why Do We Need Managers?</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/12/why-do-we-need-managers</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Values and Practices</h1>
+            <h1>Why Do We Need Managers?</h1>
             <blockquote>
 <ul class="org-ul">
-<li>The problem with Software Engineering (SE)
+<li>"I've met a lot of charming sociopaths"</li>
+<li><b>The only job of a manager is to make the team more effective</b>
 <ul class="org-ul">
-<li>Many universities treat software engineering as a course where
-they should give students some directly practical useful skills
-that future employers will ask for.
-<ul class="org-ul">
-<li>Consequently, software engineering becomes just a course trying
-to cover whatever methods and tools the industry needs.</li>
-<li>This is something that universities cannot, in principle, teach
-very well.</li>
-<li>It's impossible to keep up with industry</li>
-</ul></li>
-<li>Why teach SE at all
-<ul class="org-ul">
-<li>We teach algorithms, complexity theory and other computer
-science subjects because they will largely remain valid in 100
-years</li>
-<li><a href="https://dsdshcym.github.io/clipping/2018/12/12/the_point_of_a_degree/">The Point of A Degree - dsdshome</a></li>
-<li>A good Software Engineering curriculum needs to address this
-issue: <i>What are fundamental insights about software development?</i></li>
-</ul></li>
-</ul></li>
-<li>Fundamental Software Engineering knowledge
-<ul class="org-ul">
-<li>What I believe is unchanging is (a <i>historically situated analysis
-of Software Engineering</i>)
-<ol class="org-ol">
-<li>the motivation behind software engineering</li>
-<li>the reasoning that led to those particular methods tools in
-the face of particular problems that the industry was
-attempting to address</li>
-</ol></li>
-<li>We should teach (the reasoning behind Waterfall, UML, Scrum or TDD)
-<ol class="org-ol">
-<li>how different circumstances, problems and goals motivate these</li>
-<li>why the various methods are a reasonable response to the
-challenge</li>
-<li>circumstances where they do not work</li>
-</ol></li>
+<li>Know <i>what is effective</i> first</li>
 </ul></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="http://tomasp.net/blog/2019/software-engineering/">What should a Software Engineering course look like? - Tomas Petricek</a>
+-- from <a href="http://www.se-radio.net/2019/01/se-radio-episode-352-johnathan-nightingale-on-scaling-engineering-management/">SE-Radio Episode 352: Johnathan Nightingale on Scaling Engineering Management</a>
 </p>
 
 <p>
-I think this article is really good. Everyone in the software industry
-should read it. It's not only for teachers or professors.
+Let's admit it: not everyone would think about how to improve the way
+they work. If everyone knows the value of continuous improvement and
+do it, then we don't need managers.
 </p>
 
 <p>
-It reminded me of the relationship between Values and Practices
-mentioned in <a href="https://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#orgf020d8d">Extreme Programming Explained</a>:
+Some companies are so "flat" and they don't have roles for
+managers. Some of them may say "everyone is responsible to help the
+team be more effective." But if everyone is responsible, then no one
+is.
 </p>
-<blockquote>
-<ul class="org-ul">
-<li>Values are the roots of the things we like and don't like in a
-situation</li>
-<li>Values are the large-scale criteria we use to judge what we see,
-think, and do</li>
-<li>Values bring purpose to practices.</li>
-<li>Practices are evidence of values.
-<ul class="org-ul">
-<li>Communicating in the most effective way I can shows I value
-communication</li>
-</ul></li>
-<li>Practices bring accountability to values
-<ul class="org-ul">
-<li>Practices are clear</li>
-<li>Values are fuzzy</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
-Translate this into what we should be teaching in Software Engineering
-courses:
-</p>
-<ul class="org-ul">
-<li>We should not focus on Software Engineering Practices or practical
-skills because they are unstable and constantly
-changing. Furthermore, even knowing how to apply these practices but
-without knowing the reasoning behind them, students wouldn't fully
-understand them or apply them well.</li>
-<li>Instead, we should teach Values behind these Practices. Because they
-are stable and valid in 100 years. Equipped with these Values,
-students can learn practices later after they join the industry. And
-they will find learning the practices would be easier.</li>
-</ul>
 
 <p>
-Also, <a href="https://twitter.com/dsdshcym/status/1103086787738533888">the same idea can be applied to other courses as well.</a> Take
-Algorithms for example, instead of focusing on learning details of
-each algorithm, we should teach:
-</p>
-<ol class="org-ol">
-<li>how different circumstances, problems and goals motivate these
-(algorithms)</li>
-<li>why the various methods are a reasonable response to the challenge</li>
-<li>circumstances where they do not work</li>
-</ol>
-
-<p>
-Last but not the least, it doesn't mean we should not learn Practices
-at all. Actually, they are equally important. It's just that from my
-own experience, the education I received focused too much on Practices
-than Values.
+Thus a valuable lesson from this episode (also got mentioned) is just
+<i>copy an existing structure to your company</i>. It's highly possible
+that you won't be able to create a better structure than an old but
+battle-proofed one.
 </p>
 
     </div>
 </section>
 ]]></description>
       <pubDate>2019-04-12</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/04/11/values-and-practices</guid>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/12/why-do-we-need-managers</guid>
     </item>
     <item>
       <title>&quot;Pattern Matching&quot; When Rendering Views in Rails</title>
@@ -187,13 +116,6 @@ than Values.
       <description><![CDATA[]]></description>
       <pubDate>2019-03-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/03/21/le-blanc&#39;s-law-a-k-a-later-equals-never</guid>
-    </item>
-    <item>
-      <title>Keep Code Review In Scope</title>
-      <link>http://dsdshcym.github.io/blog/2019/03/17/keep-code-review-in-scope</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-03-17</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/03/17/keep-code-review-in-scope</guid>
     </item>
   </channel>
 </rss>
