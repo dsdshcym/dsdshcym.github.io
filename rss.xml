@@ -4,122 +4,71 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 16 Apr 2019 19:28:21 CST</pubDate>
-    <lastBuildDate>Tue, 16 Apr 2019 19:28:21 CST</lastBuildDate>
+    <pubDate>Sat, 20 Apr 2019 11:11:49 CST</pubDate>
+    <lastBuildDate>Sat, 20 Apr 2019 11:11:49 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Application-Infructructure Cycle in the Elixir world</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/15/application-infructructure-cycle-in-the-elixir-world</link>
+      <title>The Super Mario Effect</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/16/the-super-mario-effect</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Application-Infructructure Cycle in the Elixir world</h1>
+            <h1>The Super Mario Effect</h1>
             <blockquote>
 <ul class="org-ul">
-<li>platforms evolve from an iterative cycle of
-apps=&gt;infrastructure=&gt;apps=&gt;infrastructure and are rarely built in
-an outside vacuum.
-<ol class="org-ol">
-<li>First, apps inspire infrastructure.</li>
-<li>Then that infrastructure enables new apps.</li>
-</ol></li>
-<li>Apps and infrastructure evolve in responsive cycles, not distinct,
-separate phases.
+<li>The Super Mario Effect:
+<b>Focusing on the Princess and not the pits, to stick with a task and
+learn more</b>
 <ul class="org-ul">
-<li>Light bulbs &amp; electric grid
-<ul class="org-ul">
-<li><a href="https://www.amazon.com/Last-Days-Night-Novel/dp/0812988922">The Last Days of Night: A Novel: Graham Moore</a></li>
-</ul></li>
-<li>Planes &amp; airports
-<ul class="org-ul">
-<li>Sometimes all the infrastructure you need is a beach and some
-spare parts.</li>
-</ul></li>
-<li>Email &amp; Internet</li>
-</ul></li>
-<li>The Adjacent Possible
-<ul class="org-ul">
-<li><a href="https://www.amazon.com/Where-Good-Ideas-Come-Innovation/dp/1594485380">Where Good Ideas Come From: The Natural History of Innovation:
-Steven Johnson</a></li>
-<li>The common theme in the development of each major platform
-(electricity, cars, planes, the web, mobile, etc.) is that we
-build what we can given the tools available to us at the moment.</li>
-<li>It is hard to successfully build infrastructure that is too far
-ahead of the apps market.</li>
-<li>Each time the apps =&gt; infrastructure cycle repeats, new apps are
-made possible because of the infrastructure that was built in the
-cycles before.</li>
-<li>As there are more and more cycles in each new platform it gets
-cheaper to build and use those apps.</li>
-</ul></li>
-<li>Development Frameworks Versus Investing Frameworks
-<ul class="org-ul">
-<li>The apps=&gt;infrastructure=&gt;apps=&gt;infrastructure cycle explains when
-apps or infrastructure can be built, but doesn’t necessarily
-explain when to invest in apps versus when to invest in
-infrastructure.</li>
-</ul></li>
-<li>why is it that apps come first in the cycle, and not infrastructure
-first?
-<ul class="org-ul">
-<li>it doesn't make sense to create infrastructure until there are
-apps asking you to solve their infrastructure problems.</li>
+<li>Learning firm but not being focusing on the failures</li>
+<li>Less failure leads to higher success rate</li>
 </ul></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://www.usv.com/blog/the-myth-of-the-infrastructure-phase">The Myth of The Infrastructure Phase - Union Square Ventures</a>
+-- from <a href="https://www.youtube.com/watch?v=9vJRopau0g0">The Super Mario Effect - Tricking Your Brain into Learning More - Mark Rober - TEDxPenn</a>
 </p>
 
 <p>
-There are some real world examples from the Elixir world to prove this:
+Nintendo is a great game company. They've built lots of great games
+with a kind of "magic". Under the effect of this "magic", players like
+myself would experience a true form of joy and enjoy the game more.
 </p>
-<ol class="org-ol">
-<li><a href="https://github.com/elixir-lang/gen_stage">GenStage</a> &amp; <a href="https://github.com/plataformatec/broadway">Broadway</a>
-<ul class="org-ul">
-<li>In <a href="https://www.youtube.com/watch?v=Fq9hpl7xbWM&amp;feature=youtu.be">The Road to Broadway - Lambda Days 2019</a>, José showed us the
-background of developing Broadway.
-<ul class="org-ul">
-<li>They saw many applications that need a concurrent data
-processing mechanism with back-pressure, so they built
-gen_stage.</li>
-<li>They saw many projects reimplementing the same feature set
-using gen_stage, so they built broadway.
-<ul class="org-ul">
-<li>rate limiting</li>
-<li>matching</li>
-<li>metrics</li>
-</ul></li>
-</ul></li>
-<li>In these two examples, we can see that the rationales behind
-these two great libraries are all from a lot of real world
-applications. And then gen_stage came into life as an important
-infrastructure block in the Elixir world. A lot of applications
-were built upon it again. Finally, broadway was extracted as a
-new building block.</li>
-</ul></li>
-<li><a href="https://github.com/phoenixframework/phoenix">Phoenix</a> &amp; <a href="https://github.com/phoenixframework/phoenix_live_view">LiveView</a>
-<ul class="org-ul">
-<li>LiveView is built upon Phoenix Channel, which is battle proofed
-with tons of Phoenix applications.</li>
-<li>And the new apps built <i>are made possible because of the
-infrastructure that was built in the cycles before.</i></li>
-</ul></li>
-</ol>
 
 <p>
-I guess that's also why I like Elixir so much and decide to put a lot
-of my efforts into it. It's the thoughtful development process that
-lead to a <a href="https://www.youtube.com/watch?v=5SbWapbXhKo">solid ground</a> based on Erlang, OTP, Elixir, Phoenix,
-GenStage, and so on. Upon this solid ground, we can build our app with
-much higher confidence and help the Elixir infrastructure reach the
-next level.
+I think <i>The Super Mario Effect</i> aligns with the idea of <i><a href="https://www.amazon.com/Flow-The-Psychology-Optimal-Experience/dp/0061339202?tag=effectiveeng-20">Flow</a></i> as
+well:
 </p>
+<ul class="org-ul">
+<li>The <i>Flow</i> theory says
+<ul class="org-ul">
+<li>With a challenge that's a little bit higher than our current
+ability, we are more likely to get into the <i>flow</i> state and
+learn/work faster.</li>
+</ul></li>
+<li>In The Super Mario Effect:
+<ul class="org-ul">
+<li>The Princess is our clear goal.</li>
+<li>The game was designed so that every challenge we face is slightly
+over our ability, or a little bit harder than the previous
+challenge.</li>
+<li>Then we are easier to get into the <i>flow</i> state, because the goal
+is clear and the challenge we are facing right now is a
+low-hanging fruit that requires us to jump to pick.</li>
+</ul></li>
+</ul>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-04-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/16/the-super-mario-effect</guid>
+    </item>
+    <item>
+      <title>Application-Infructructure Cycle in the Elixir world</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/15/application-infructructure-cycle-in-the-elixir-world</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-04-16</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/15/application-infructructure-cycle-in-the-elixir-world</guid>
     </item>
@@ -178,13 +127,6 @@ next level.
       <description><![CDATA[]]></description>
       <pubDate>2019-04-03</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/03/clippings_of_2019_mar</guid>
-    </item>
-    <item>
-      <title>硬影像：故事的意义与元素</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/03/硬影像：故事的意义与元素</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-04-03</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/04/03/硬影像：故事的意义与元素</guid>
     </item>
   </channel>
 </rss>
