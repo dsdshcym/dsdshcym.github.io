@@ -4,67 +4,78 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sat, 27 Apr 2019 09:59:45 CST</pubDate>
-    <lastBuildDate>Sat, 27 Apr 2019 09:59:45 CST</lastBuildDate>
+    <pubDate>Mon, 29 Apr 2019 20:29:30 CST</pubDate>
+    <lastBuildDate>Mon, 29 Apr 2019 20:29:30 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Your First Task Would Take the Most of The Time</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/25/your-first-task-would-take-the-most-of-the-time</link>
+      <title>Difficulties in Abstraction</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/29/difficulties-in-abstraction</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Your First Task Would Take the Most of The Time</h1>
+            <h1>Difficulties in Abstraction</h1>
             <blockquote>
 <ul class="org-ul">
-<li>No meeting ever made it through an agenda
+<li>Designing an abstraction is an inverse problem
 <ul class="org-ul">
-<li>If your meeting has n &gt; 1 agenda items to work through you will
-not make it past the first couple.</li>
-<li>If your agenda for an entire meeting is just one item, then
-reconsider "world peace" as an agenda.</li>
-<li>The physics of meetings are such that the first agenda item you
-talk about (which half the time might not even be item 1) will
-expand to fill all available time.</li>
+<li>There is opacity of the structure of the system from observational
+perspective.</li>
+<li>An inverse problem in science is the process of calculating from a
+set of observations the causal factors that produced them.</li>
+</ul></li>
+<li>Abstraction as a <a href="https://en.wikipedia.org/wiki/Inverse_problem">Inverse Problem</a>
+<ul class="org-ul">
+<li>Most of the business requirements we deal with, consists of
+multiple parts interacting with each other.</li>
+<li>For a given business requirement, it is generally difficult to
+figure out its components and their interactions accurately based
+on observations about the system.</li>
+<li>It is difficult to reverse engineer a system compared to building one</li>
+</ul></li>
+<li>Abstraction depends on context
+<ul class="org-ul">
+<li>"A lock is a lock because of the key"
+<ul class="org-ul">
+<li>when we design abstractions for lock, we are also parallelly
+designing abstractions for key.</li>
+<li>We are always designing abstraction in pair most of the time
+sub-consciously.</li>
+</ul></li>
+<li>The abstraction we derive is nothing but interactions between the
+two components of the coupling.
+<ul class="org-ul">
+<li>As coupling changes the abstraction should also change.</li>
+<li>But since only a part of the coupling is exhibited in code, <b>the
+other part is often left to interpretations and assumptions.</b></li>
+</ul></li>
+<li><b>Our abstraction is always incomplete.</b></li>
 </ul></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a">Reaching Peak Meeting Efficiency – Learning By Shipping</a>
+-- from <a href="https://shripad-agashe.github.io/2018/03/19/abstractions/">Difficulties in abstraction • Random Sparks</a>
 </p>
 
 <p>
-I think this idea of "the first item (on your agenda) would take the
-most of the meeting time" can be applied to project management as
-well: "the first task (on your backlog) would take the most of the
-development time".
-</p>
-
-<p>
-When a project is just started, if the goal and timeline are not clear
-enough, there seems to be more than enough time to do the work. So
-people tend to spend more time on the first task.
-</p>
-
-<p>
-Plus, team members need time to get familiar with each other, the
-project, the feature, etc.
-</p>
-
-<p>
-(Of course, it's not necessary that the first task would take the most
-of the time. But the first task for sure would take more time than
-expected.)
-</p>
-
-<p>
-P.S. There are a lot of useful advice about meetings from <a href="https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a">this article</a>
-as well. Be sure to check it out!
+Abstraction is a great power that we programmers possessed when we
+code. But as uncle Ben said, "with great power comes great
+responsibility." We need to be careful with abstracting our code and
+business rules. Otherwise, we would probably shoot ourselves in our
+foot when a wrong abstraction was built and we find that it’s hard to
+reverse it.
 </p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-04-29</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/04/29/difficulties-in-abstraction</guid>
+    </item>
+    <item>
+      <title>Your First Task Would Take the Most of The Time</title>
+      <link>http://dsdshcym.github.io/clipping/2019/04/25/your-first-task-would-take-the-most-of-the-time</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-04-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/25/your-first-task-would-take-the-most-of-the-time</guid>
     </item>
@@ -123,13 +134,6 @@ as well. Be sure to check it out!
       <description><![CDATA[]]></description>
       <pubDate>2019-04-09</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/04/09/pattern-matching-when-rendering-views-in-rails</guid>
-    </item>
-    <item>
-      <title>What&#39;s Right Doesn&#39;t Seem Right</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/08/what&#39;s-right-doesn&#39;t-seem-right</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-04-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/04/08/what&#39;s-right-doesn&#39;t-seem-right</guid>
     </item>
   </channel>
 </rss>
