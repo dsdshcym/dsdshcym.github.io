@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Book Review: A Philosophy of Software Design - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Book Review, Philosophy, Software, Design, Game" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Book Review: A Philosophy of Software Design</h1>
+            <p>
+I agree to almost every word in this book: <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/">A Philosophy of Software
+Design</a>. I think this is a must-read book for all developers,
+designers, and even PMs who work in software industry.
+</p>
+
+<p>
+This post is my two more cents when I read the book.
+</p>
+
+<div id="outline-container-org6b1ffea" class="outline-2">
+<h2 id="org6b1ffea">Mock Objects and General-purpose Classes</h2>
+<div class="outline-text-2" id="text-org6b1ffea">
+<p>
+A very important trade-off we need to make when writing software is
+between straightforwardness and generality. This book advocates
+<a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org2cfee25">finding a sweet-spot of <i>somewhat general-purpose</i>.</a>
+</p>
+
+<p>
+Then it came to my mind that using Mock Objects is a great way to
+write <i>somewhat general-purpose</i> code.
+</p>
+
+<p>
+If we follow the concept of <i>Need-Driven Development</i> from <a href="http://jmock.org/oopsla2004.pdf">Mock Roles,
+not Objects</a>, we can easily answer the questions we need to ask
+ourselves to write <i>somewhat general-purpose</i> code:
+</p>
+<dl class="org-dl">
+<dt>What is the simplest interface that will cover all my current needs?</dt><dd>Because the mock are driven by the need, we will naturally come
+up with the simplest interface to cover the needs.</dd>
+<dt>In how many situations will this method be used?</dt><dd>Typically, we would only have one use case when we write a
+mock. But with the mock in mind, we can easily reuse the mock in
+other places even before the mocked part is implemented. This
+gives us a great advantage to see more use cases before we start
+the implementation.</dd>
+<dt>Is this API easy to use for my current needs?</dt><dd>We wouldn't write a hard to use mock for the current needs if the
+mock is driven by the needs.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org2aacf16" class="outline-2">
+<h2 id="org2aacf16">Shallow Interface, Deep Module and Game Design</h2>
+<div class="outline-text-2" id="text-org2aacf16">
+<p>
+Another core idea from this book is that <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org7cd2cad">Modules Should Be Deep</a>.
+</p>
+
+<p>
+Which reminds me of this clip from <a href="https://youtu.be/z_KVEjhT4wQ?t=184">The Design Behind Super Mario
+Odyssey</a>. If we think of the game control as an interface, then the
+same idea can be applied to game design as well:
+</p>
+<ul class="org-ul">
+<li>The control design of Super Mario Odyssey is deep. It only uses
+several buttons to achieve what players want to do depending on the
+context.</li>
+<li>On the other hand, some other games' interface is really shallow (as
+it was illustrated in the video): they need more than ten keys or
+even combinations of keys to control the character.</li>
+</ul>
+
+<p>
+From this example, we can see that the idea of <b>Deep Interface</b> can be
+applied to many more areas other than software design. And hopefully,
+you would learn similar ideas like this from this book. So go check it
+out. Or if you don't have enough time, you can watch <a href="https://www.youtube.com/watch?v=bmSAYlu0NcY">the author's talk
+at Google</a> (<a href="https://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout/">my notes</a>) about this book.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-05-14</span>
+        <span title="last modification date" class="post-info">2019-05-15</span>
+        <span title="tags" class="post-info"><a href="/tags/book-review/">Book Review</a>, <a href="/tags/software-engineering/">Software Engineering</a>, <a href="/tags/game/">Game</a>, <a href="/tags/tdd/">TDD</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

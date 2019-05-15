@@ -4,110 +4,100 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Tue, 14 May 2019 21:35:58 CST</pubDate>
-    <lastBuildDate>Tue, 14 May 2019 21:35:58 CST</lastBuildDate>
+    <pubDate>Wed, 15 May 2019 08:42:46 CST</pubDate>
+    <lastBuildDate>Wed, 15 May 2019 08:42:46 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>才华不够</title>
-      <link>http://dsdshcym.github.io/clipping/2019/05/13/才华不够</link>
+      <title>Book Review: A Philosophy of Software Design</title>
+      <link>http://dsdshcym.github.io/blog/2019/05/14/book-review-a-philosophy-of-software-design</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>才华不够</h1>
-            <blockquote>
-<ul class="org-ul">
-<li>真正有才华的人，能够洞悉自己的缺陷</li>
-<li><a href="https://www.amazon.com/Peter-Principle-Things-Always-Wrong-ebook/dp/B00IRCZHXI">彼得定律</a>：每个人都停留在自己不能胜任的位置</li>
-<li>努力能决定你走多快，才华能决定你走多远</li>
-<li>勤奋能让你过上体面的生活，成功完全要靠运气</li>
-</ul>
-</blockquote>
-<p>
--- from <a href="http://hardimage.pro/65">硬影像 Episode 65: 陷入虚无主义泥潭：才华不够</a>
+            <h1>Book Review: A Philosophy of Software Design</h1>
+            <p>
+I agree to almost every word in this book: <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/">A Philosophy of Software
+Design</a>. I think this is a must-read book for all developers,
+designers, and even PMs who work in software industry.
 </p>
 
 <p>
-「才华」是个很神秘的东西。无论是拍电影，写代码，还是做产品，人们似乎都还没能掌握成功的秘密，最终只能将之归结为「才华」。
+This post is my two more cents when I read the book.
+</p>
+
+<div id="outline-container-org6b1ffea" class="outline-2">
+<h2 id="org6b1ffea">Mock Objects and General-purpose Classes</h2>
+<div class="outline-text-2" id="text-org6b1ffea">
+<p>
+A very important trade-off we need to make when writing software is
+between straightforwardness and generality. This book advocates
+<a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org2cfee25">finding a sweet-spot of <i>somewhat general-purpose</i>.</a>
 </p>
 
 <p>
-我也不知道成功的秘密是什么，只相信「努力」和「持续改进」是成功的两个必要条件：
-</p>
-<ol class="org-ol">
-<li><p>
-努力：
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>努力只是成功的必要条件之一。</li>
-<li>这种诉求其实就是一种只要使力只要拼命了就可以成功的心理诉求，
-<ul class="org-ul">
-<li>因为这类人基本上都是能力有限，不知道怎么提升自己的人，当他们看到只要拼命使力就可以成功的观点时，他们就会有共鸣，就会感到，不用学习那些晦涩难懂高级的知识，不用掌握和练习哪些高级技能，自己只需要在低级的事情上拼命和努力，加更多的班和干更多活，自己就会像电影中的那些小人物一样，总有一天会成功的……</li>
-<li>不但符合那些低级管理者的利益诉求，同样符合那些能力不足不愿意学习和成长的人的诉求。因为，他们混淆了行动与进展，忙碌与多产，他们以为能靠蛮力可以弥补思维上的惰性，靠拼命可以弥补能力上的不足……</li>
-</ul></li>
-<li>当一件事的难度超过一定程度的时候，那些聪明的人会找到更省力的方法，而能力上有问题的，还是在那使蛮力。</li>
-<li>我的职业生涯的成长， <b>最根本的不是你有多努力，有多勤奋，而是你能搞定很多人搞不定的事！</b>
-<ul class="org-ul">
-<li>而我失败的时候，总是因为我搞不定事，即便是加班拼命努力也无济于事！</li>
-<li>再回想一下我以前在职场上的很多关键点，不是因为我加班了，而是因为在某些关键问题上，我跳出来解决了其它人都解决不了的问题</li>
-</ul></li>
-<li>同样是一个简单的 for-loop 语句，有人写的就值 1 万元一行，而你写的则一文不值。关键不在于谁写的代码多，关键在于我们解决了什么样的问题。</li>
-<li><b>无法通过努力工作改善我思维的不足</b></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://coolshell.cn/articles/19271.html">“努力就会成功”</a>
-</p></li>
-<li><p>
-持续改进
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>People who were right a lot of the time were <i>people who often
-changed their minds.</i></li>
-<li>The smartest people are
-<ul class="org-ul">
-<li>constantly revising their understanding, reconsidering a problem
-they thought they’d already solved.</li>
-<li>open to new points of view, new information, new ideas,
-contradictions, and challenges to their own way of thinking.</li>
-</ul></li>
-<li>This doesn’t mean you shouldn’t have a well formed point of view,
-but it means you should <i>consider your point of view as temporary.</i></li>
-<li>What trait signified someone who was wrong a lot of the time?
-<ul class="org-ul">
-<li>Someone obsessed with details that only support one point of view.</li>
-<li>If someone can’t climb out of the details, and see the bigger
-picture from multiple angles, they’re often wrong most of the
-time.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
--- from <a href="https://signalvnoise.com/posts/3289-some-advice-from-jeff-bezos">Some advice from Jeff Bezos – Signal v. Noise</a>
+Then it came to my mind that using Mock Objects is a great way to
+write <i>somewhat general-purpose</i> code.
 </p>
 
-<blockquote>
-<ul class="org-ul">
-<li>Leadership isn’t about avoiding every mistake in the book – that’s
-impossible.
-<ul class="org-ul">
-<li>Rather, <b>the best leaders are unendingly curious to know what
-their mistakes could be</b>, and deeply rigorous about trying to spot
-them in advance the next time around.</li>
-</ul></li>
-</ul>
-</blockquote>
 <p>
--- from <a href="https://knowyourteam.com/blog/2019/02/28/the-9-leadership-mistakes-you-dont-know-youre-making-as-a-new-manager/">The 9 leadership mistakes you don't know you're making as a
-new manager - Know Your Team - Blog</a>
-</p></li>
-</ol>
+If we follow the concept of <i>Need-Driven Development</i> from <a href="http://jmock.org/oopsla2004.pdf">Mock Roles,
+not Objects</a>, we can easily answer the questions we need to ask
+ourselves to write <i>somewhat general-purpose</i> code:
+</p>
+<dl class="org-dl">
+<dt>What is the simplest interface that will cover all my current needs?</dt><dd>Because the mock are driven by the need, we will naturally come
+up with the simplest interface to cover the needs.</dd>
+<dt>In how many situations will this method be used?</dt><dd>Typically, we would only have one use case when we write a
+mock. But with the mock in mind, we can easily reuse the mock in
+other places even before the mocked part is implemented. This
+gives us a great advantage to see more use cases before we start
+the implementation.</dd>
+<dt>Is this API easy to use for my current needs?</dt><dd>We wouldn't write a hard to use mock for the current needs if the
+mock is driven by the needs.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org2aacf16" class="outline-2">
+<h2 id="org2aacf16">Shallow Interface, Deep Module and Game Design</h2>
+<div class="outline-text-2" id="text-org2aacf16">
+<p>
+Another core idea from this book is that <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org7cd2cad">Modules Should Be Deep</a>.
+</p>
+
+<p>
+Which reminds me of this clip from <a href="https://youtu.be/z_KVEjhT4wQ?t=184">The Design Behind Super Mario
+Odyssey</a>. If we think of the game control as an interface, then the
+same idea can be applied to game design as well:
+</p>
+<ul class="org-ul">
+<li>The control design of Super Mario Odyssey is deep. It only uses
+several buttons to achieve what players want to do depending on the
+context.</li>
+<li>On the other hand, some other games' interface is really shallow (as
+it was illustrated in the video): they need more than ten keys or
+even combinations of keys to control the character.</li>
+</ul>
+
+<p>
+From this example, we can see that the idea of <b>Deep Interface</b> can be
+applied to many more areas other than software design. And hopefully,
+you would learn similar ideas like this from this book. So go check it
+out. Or if you don't have enough time, you can watch <a href="https://www.youtube.com/watch?v=bmSAYlu0NcY">the author's talk
+at Google</a> (<a href="https://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout/">my notes</a>) about this book.
+</p>
+</div>
+</div>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-05-15</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2019/05/14/book-review-a-philosophy-of-software-design</guid>
+    </item>
+    <item>
+      <title>才华不够</title>
+      <link>http://dsdshcym.github.io/clipping/2019/05/13/才华不够</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-05-14</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/05/13/才华不够</guid>
     </item>
@@ -166,13 +156,6 @@ new manager - Know Your Team - Blog</a>
       <description><![CDATA[]]></description>
       <pubDate>2019-04-26</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/24/从具象到抽象</guid>
-    </item>
-    <item>
-      <title>Good, Fast, and Featureful. Pick Two!</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/19/good-fast-and-featureful-pick-two</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-04-20</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/04/19/good-fast-and-featureful-pick-two</guid>
     </item>
   </channel>
 </rss>
