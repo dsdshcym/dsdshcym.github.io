@@ -4,93 +4,66 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Wed, 15 May 2019 08:42:46 CST</pubDate>
-    <lastBuildDate>Wed, 15 May 2019 08:42:46 CST</lastBuildDate>
+    <pubDate>Thu, 16 May 2019 08:04:45 CST</pubDate>
+    <lastBuildDate>Thu, 16 May 2019 08:04:45 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Book Review: A Philosophy of Software Design</title>
-      <link>http://dsdshcym.github.io/blog/2019/05/14/book-review-a-philosophy-of-software-design</link>
+      <title>Why Do We Need a Plan?</title>
+      <link>http://dsdshcym.github.io/clipping/2019/05/15/why-do-we-need-a-plan</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Book Review: A Philosophy of Software Design</h1>
-            <p>
-I agree to almost every word in this book: <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/">A Philosophy of Software
-Design</a>. I think this is a must-read book for all developers,
-designers, and even PMs who work in software industry.
-</p>
-
-<p>
-This post is my two more cents when I read the book.
-</p>
-
-<div id="outline-container-org6b1ffea" class="outline-2">
-<h2 id="org6b1ffea">Mock Objects and General-purpose Classes</h2>
-<div class="outline-text-2" id="text-org6b1ffea">
-<p>
-A very important trade-off we need to make when writing software is
-between straightforwardness and generality. This book advocates
-<a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org2cfee25">finding a sweet-spot of <i>somewhat general-purpose</i>.</a>
-</p>
-
-<p>
-Then it came to my mind that using Mock Objects is a great way to
-write <i>somewhat general-purpose</i> code.
-</p>
-
-<p>
-If we follow the concept of <i>Need-Driven Development</i> from <a href="http://jmock.org/oopsla2004.pdf">Mock Roles,
-not Objects</a>, we can easily answer the questions we need to ask
-ourselves to write <i>somewhat general-purpose</i> code:
-</p>
-<dl class="org-dl">
-<dt>What is the simplest interface that will cover all my current needs?</dt><dd>Because the mock are driven by the need, we will naturally come
-up with the simplest interface to cover the needs.</dd>
-<dt>In how many situations will this method be used?</dt><dd>Typically, we would only have one use case when we write a
-mock. But with the mock in mind, we can easily reuse the mock in
-other places even before the mocked part is implemented. This
-gives us a great advantage to see more use cases before we start
-the implementation.</dd>
-<dt>Is this API easy to use for my current needs?</dt><dd>We wouldn't write a hard to use mock for the current needs if the
-mock is driven by the needs.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-org2aacf16" class="outline-2">
-<h2 id="org2aacf16">Shallow Interface, Deep Module and Game Design</h2>
-<div class="outline-text-2" id="text-org2aacf16">
-<p>
-Another core idea from this book is that <a href="https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org7cd2cad">Modules Should Be Deep</a>.
-</p>
-
-<p>
-Which reminds me of this clip from <a href="https://youtu.be/z_KVEjhT4wQ?t=184">The Design Behind Super Mario
-Odyssey</a>. If we think of the game control as an interface, then the
-same idea can be applied to game design as well:
-</p>
+            <h1>Why Do We Need a Plan?</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>The control design of Super Mario Odyssey is deep. It only uses
-several buttons to achieve what players want to do depending on the
-context.</li>
-<li>On the other hand, some other games' interface is really shallow (as
-it was illustrated in the video): they need more than ten keys or
-even combinations of keys to control the character.</li>
+<li>A plan is four things:
+<ol class="org-ol">
+<li>Shared goals</li>
+<li>Agreed schedule</li>
+<li>Consistent participation</li>
+<li>Predictable processes</li>
+</ol></li>
 </ul>
+</blockquote>
+<p>
+-- from <a href="https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a">Reaching Peak Meeting Efficiency – Learning By Shipping</a>
+</p>
 
 <p>
-From this example, we can see that the idea of <b>Deep Interface</b> can be
-applied to many more areas other than software design. And hopefully,
-you would learn similar ideas like this from this book. So go check it
-out. Or if you don't have enough time, you can watch <a href="https://www.youtube.com/watch?v=bmSAYlu0NcY">the author's talk
-at Google</a> (<a href="https://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout/">my notes</a>) about this book.
+When I first started learning Agile software development, I thought we
+don't need a plan anymore. We just keep delivering and keep punching
+through blocks along the way. Planning is just a waste of time.
 </p>
-</div>
-</div>
+
+<p>
+But now, I believe that we still need plans, especially if we need to
+be Agile. Why? Because we need to <b>align every team members</b>. And by
+aligning, I mean all the four things mentioned above.
+</p>
+
+<p>
+Take schedule for example. As I explained in <a href="https://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things/">Only With Limited
+Resources Can We Finish Things</a>, we need to set clear constraints for
+us to build a successful project. What does "clear constraints" mean?
+<b>Plans</b>.
+</p>
+
+<p>
+So what's your opinion on plans? Let me know in the comments below.
+Thanks!
+</p>
 
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-05-16</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/05/15/why-do-we-need-a-plan</guid>
+    </item>
+    <item>
+      <title>Book Review: A Philosophy of Software Design</title>
+      <link>http://dsdshcym.github.io/blog/2019/05/14/book-review-a-philosophy-of-software-design</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-05-15</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/05/14/book-review-a-philosophy-of-software-design</guid>
     </item>
@@ -149,13 +122,6 @@ at Google</a> (<a href="https://dsdshcym.github.io/clipping/2019/01/27/a-philoso
       <description><![CDATA[]]></description>
       <pubDate>2019-04-27</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/04/25/your-first-task-would-take-the-most-of-the-time</guid>
-    </item>
-    <item>
-      <title>从具象到抽象</title>
-      <link>http://dsdshcym.github.io/clipping/2019/04/24/从具象到抽象</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-04-26</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/04/24/从具象到抽象</guid>
     </item>
   </channel>
 </rss>
