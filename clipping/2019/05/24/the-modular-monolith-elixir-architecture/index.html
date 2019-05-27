@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>The Modular Monolith: Elixir Architecture - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Microservice, Monolith, Modular, Software Design, Rails, Elixir, Phoenix, Umbrella App" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>The Modular Monolith: Elixir Architecture</h1>
+            <p>
+There has been a hype about microservices: <i>start every project with a
+microservice structure</i>! But I always believe we should build a well
+organized monolith first, then consider extracting submodules into
+microservices one by one. And there are some people who think the same
+(or I learned this idea from them).
+</p>
+
+<p>
+First, I was quite curious about how to build a modular monolith with
+Ruby on Rails due to my Rails background. I found this article which
+gives a great answer:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>First focus on making our app modular
+<ul class="org-ul">
+<li>Our goal was to <b>identify good architectural boundaries before we
+extracted code out into independent services</b></li>
+<li>This would set us up to be able to migrate to microservices in the
+future, by having the code structured in a way to make a smooth
+transition.</li>
+</ul></li>
+<li>Effectively, we're using a monorepo.
+<ul class="org-ul">
+<li><p>
+We don't have an <code>app/</code> directory in our Rails project. All of our
+code is either in <code>gems/</code> or <code>engines/</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">Dir.glob(File.expand_path("../engines/*", __FILE__)).each do |path|
+  gem File.basename(path), :path =&gt; path
+end
+
+Dir.glob(File.expand_path("../gems/*", __FILE__)).each do |path|
+  gem File.basename(path), :path =&gt; path
+end
+</pre>
+</div></li>
+<li>First Steps Towards Implementing a Modular Monolith
+<ul class="org-ul">
+<li><p>
+A great place to start (three engines)
+</p>
+<pre class="example">
++----------+      +------------+
+|  Admin   |      |    API     |
++--+-------+      +---------+--+
+   |                        |
+   |                        |
+   |     +-------------+    |
+   +---&gt; |   Domain    | &lt;--+
+         +-------------+
+</pre>
+<ol class="org-ol">
+<li>Admin</li>
+<li>API</li>
+<li>Domain</li>
+</ol></li>
+<li>breaking up the domain logic</li>
+<li>putting third-party dependencies in context</li>
+</ul></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4">The Modular Monolith: Rails Architecture – Dan Manges – Medium</a>
+</p>
+
+<p>
+But this article reminds me more of Elixir than Rails. Here is why:
+</p>
+<ol class="org-ol">
+<li>Using relative path to extract code as <code>gems</code> into separate
+directories is almost the same as the way Elixir organize Umbrella
+apps.</li>
+<li>Breaking up the domain logic into three <code>gems=/=apps</code> (like Admin,
+API, Domain) is a typical use case for Umbrella apps.</li>
+</ol>
+
+<p>
+If you want to learn more about Umbrella apps, you can check the
+<a href="https://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-projects.html">official documents</a>. And I also explained <a href="http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally/">how to build an Elixir app
+from a monolith to a microservice</a> before. Hopefully this can help you
+somehow. :)
+</p>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-05-24</span>
+        <span title="last modification date" class="post-info">2019-05-25</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/elixir/">Elixir</a>, <a href="/tags/rails/">Rails</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

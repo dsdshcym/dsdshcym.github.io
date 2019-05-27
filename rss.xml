@@ -4,466 +4,116 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Sun, 26 May 2019 08:49:41 CST</pubDate>
-    <lastBuildDate>Sun, 26 May 2019 08:49:41 CST</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 20:37:44 CST</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 20:37:44 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>My GTD Workflow (2019 ver.)</title>
       <link>http://dsdshcym.github.io/blog/2019/05/22/my-gtd-workflow-2019-ver</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2019-05-25</pubDate>
+      <guid>http://dsdshcym.github.io/blog/2019/05/22/my-gtd-workflow-2019-ver</guid>
+    </item>
+    <item>
+      <title>The Modular Monolith: Elixir Architecture</title>
+      <link>http://dsdshcym.github.io/clipping/2019/05/24/the-modular-monolith-elixir-architecture</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>My GTD Workflow (2019 ver.)</h1>
+            <h1>The Modular Monolith: Elixir Architecture</h1>
             <p>
-You are reading this article now. It's quite hard to discover this
-small corner of the World-Wide-Web. So I assume you are also reading a
-lot of other articles online as well.
+There has been a hype about microservices: <i>start every project with a
+microservice structure</i>! But I always believe we should build a well
+organized monolith first, then consider extracting submodules into
+microservices one by one. And there are some people who think the same
+(or I learned this idea from them).
 </p>
 
 <p>
-The number of the articles you want to read may already have exceeded
-your capability to remember them, not to mention to read them all. You
-put them in your browser favorites, or organize them in a "Read it
-later" service (like Pocket). But later, you find out that <a href="https://dsdshcym.github.io/clipping/2019/03/21/le-blanc's-law-a-k-a-later-equals-never/">Later
-Equals Never</a>, some of articles in your Pocket are never going to be
-read by you again. So how to fight this tendency of not getting things
-done after we put them into our inbox?
-</p>
-
-<p>
-And this question goes far beyond "Read it later". It exists
-everywhere.
-</p>
-<dl class="org-dl">
-<dt>Managing software projects</dt><dd>The backlog items keeps growing and the growing speed is getting
-faster.</dd>
-<dt>Managing TV series to watch</dt><dd>Like reading lists, there are more and more shows we can watch
-nowadays.</dd>
-<dt>Managing blog posts to write</dt><dd>I still have a lot topics that I want to touch on but haven't got
-the time to do it.</dd>
-</dl>
-
-<p>
-And all of them are all about the same question: how to get things
-done (GTD)?
-</p>
-
-<p>
-In this article, I want to share the GTD workflow I'm using
-now. Hopefully, this can shed some light on how to win that fight
-between us and all the todo items we have.
-</p>
-
-<div id="outline-container-orga6d51be" class="outline-2">
-<h2 id="orga6d51be">Write Things Down</h2>
-<div class="outline-text-2" id="text-orga6d51be">
-<p>
-To get things done, we need to <b>write these things down</b> first.
-</p>
-
-<p>
-As the old saying says:
+First, I was quite curious about how to build a modular monolith with
+Ruby on Rails due to my Rails background. I found this article which
+gives a great answer:
 </p>
 <blockquote>
-<p>
-One dull pencil is worth six sharp minds.
-</p>
-</blockquote>
-
-<p>
-With all the information that gets generated in this world nowadays
-and all the areas we want to participate in, it's impossible to keep
-them in one person's mind. <i>Our brains are for generating ideas
-instead of remembering things.</i>
-</p>
-
-<p>
-So, writing things down become the first step to win this long-going
-fight. To do this, we have various options:
-</p>
-<ol class="org-ol">
-<li>You can simply start with papers + pens. Just dump out all the
-ideas or todos from your brain and persist them on paper.</li>
-<li>Or if you want to embrace a digital life, you can choose GTD apps
-like Things, Omnifocus.</li>
-<li>I personally use Org mode for almost all the GTD stuffs I do. If
-you are interested, you can check this post I wrote: <a href="https://dsdshcym.github.io/blog/2016/05/08/how-do-i-use-org-capture-on-mac/">How do I use
-org-capture on Mac</a>.</li>
-</ol>
-
-<p>
-It's kinda easy to write all things down. It's just like putting all
-the articles into "Read it later". Thus it's our first step and we
-have more important principles to follow to make this workflow work.
-</p>
-</div>
-</div>
-<div id="outline-container-org252cd71" class="outline-2">
-<h2 id="org252cd71">Set Deadlines</h2>
-<div class="outline-text-2" id="text-org252cd71">
-<p>
-The next step is to <b>set deadlines for everything we capture.</b>
-</p>
-
 <ul class="org-ul">
-<li><p>
-Why we need deadlines?
-</p>
-
-<p>
-Without a tool or process to remind us regularly about these things,
-it doesn't matter that much where we store these things. We would
-never have time or even <b>remember</b> to check these things again, even
-if they are just inches away from our reach.
-</p>
-
-<p>
-One way to remind us about these things is to set deadlines. We let
-time, a tool/friend everyone has, to naturally come to us and say
-"this task is due soon", so that it brings that task to us.
-</p></li>
-
-<li><p>
-How to use deadlines?
-</p>
-
-<p>
-Of course, it isn't enough to only rely on time itself. We need to
-either check deadlines regularly or let our tools to remind us.
-</p>
-
-<p>
-It's not easy to keep a habit of checking task deadlines everyday,
-unless we organize them by deadlines upfront. For example, if you
-are using papers to record tasks, put them on a kanban board or
-calendar.
-</p>
-
-<p>
-Things get much easier if tasks are all digitalized. Modern GTD
-tools all have features for setting deadlines. And they would have
-push notifications or things alike to remind you when the deadline
-is close.
-</p></li>
-
-<li><p>
-Set deadlines to when?
-</p>
-
-<p>
-It's easy to set deadlines when task comes with a deadline
-itself. For example, it's a task assigned to you by your boss, or
-it's a thing you need to do otherwise it would expire. You just set
-the deadline as requested.
-</p>
-
-<p>
-For things that don't have a natural deadline, I choose to set the
-deadline to the end of next month. Basically, it means I need to
-finish this task next month. Your choice may vary. I think 1 week/2
-weeks/1 month are all great choices.
-</p>
-
-<p>
-This idea of setting deadlines according to natural time spans is
-borrowed from the concept of Sprints. If you are interested, you can
-read <a href="https://praxis.fortelabs.co/personal-sprints-applying-design-thinking-to-your-life/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website">Personal Sprints: Applying Design Thinking to Your Life -
-Praxis</a>.
-</p></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge661e34" class="outline-2">
-<h2 id="orge661e34">Have Priorities</h2>
-<div class="outline-text-2" id="text-orge661e34">
-<p>
-After I started setting deadlines for every task I have, I soon ran
-into the problem of <i>lack of priorities</i>.
-</p>
-
-<p>
-Since I have too many tasks set for one month, when I start my day,
-I'm still lost. In another word, the situation of having more things
-than my capacity still doesn't change at all.
-</p>
-
-<p>
-Then I realized the most important piece that I was missing:
-<b>priority</b>. (Or you can call it goals, objectives, or whatever makes
-sense to you.)
-</p>
-
+<li>First focus on making our app modular
 <ul class="org-ul">
-<li><p>
-Why is priority important?
-</p>
-
-<p>
-Without priorities, all the items in our inbox look almost the
-same. It would be hard for us to know which task to work on first,
-or which task is okay to fail or cancel.
-</p>
-
-<p>
-Only with priorities/goals in our mind, can we see a path or build a
-plan to start working and keep the momentum going forward.
-</p></li>
-
-<li>How to set priorities?
-<ol class="org-ol">
-<li><p>
-Set yearly/monthly/weekly/daily goals
-</p>
-
-<p>
-To know our priorities day by day, we need some higher level
-goals. The approach I'm using now is to
-</p>
-<ol class="org-ol">
-<li>set yearly goals in January</li>
-<li>set monthly goals based on yearly goals on 1st</li>
-<li>set weekly goals based on monthly goals on Sunday</li>
-<li>set daily goals based on weekly goals in the morning</li>
-</ol>
-
-<p>
-There are several benefits using this top-down approach,
-</p>
-<ol class="org-ol">
-<li>the bottom-level priorities would come up naturally,
-since we only need to
-<ol class="org-ol">
-<li>either pick goals from the upper level</li>
-<li>or break them down into finer grains and pick from these
-sub-goals.</li>
-</ol></li>
-<li>each goal-setting session would be quick, since we only need
-to focus on setting goals that reside on current level</li>
-</ol></li>
-<li>Priorities/Goals and deadlines are complementary to each
-other. So always set deadlines for your goals, and consider
-when's the best time for your deadline based on the goals you
-have.
-<ul class="org-ul">
-<li>Goals without deadlines aren't goals; they're merely
-directions.</li>
-<li>Deadlines without goals aren't deadlines; they're merely
-timestamps.</li>
+<li>Our goal was to <b>identify good architectural boundaries before we
+extracted code out into independent services</b></li>
+<li>This would set us up to be able to migrate to microservices in the
+future, by having the code structured in a way to make a smooth
+transition.</li>
 </ul></li>
+<li>Effectively, we're using a monorepo.
+<ul class="org-ul">
 <li><p>
-Capture new tasks based on importance and emergency
+We don't have an <code>app/</code> directory in our Rails project. All of our
+code is either in <code>gems/</code> or <code>engines/</code>.
 </p>
+<div class="org-src-container">
+<pre class="src src-ruby">Dir.glob(File.expand_path("../engines/*", __FILE__)).each do |path|
+  gem File.basename(path), :path =&gt; path
+end
 
-<p>
-For tasks that emerges along the way, I would follow <a href="https://www.eisenhower.me/eisenhower-matrix/">The
-Eisenhower Matrix</a>:
+Dir.glob(File.expand_path("../gems/*", __FILE__)).each do |path|
+  gem File.basename(path), :path =&gt; path
+end
+</pre>
+</div></li>
+<li>First Steps Towards Implementing a Modular Monolith
+<ul class="org-ul">
+<li><p>
+A great place to start (three engines)
 </p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-left">Urgent</th>
-<th scope="col" class="org-left">Less Urgent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Important</td>
-<td class="org-left">Do first (Schedule to this month/week/today)</td>
-<td class="org-left">Schedule to next month</td>
-</tr>
-
-<tr>
-<td class="org-left">Less Important</td>
-<td class="org-left">Delegate</td>
-<td class="org-left">Don't do</td>
-</tr>
-</tbody>
-</table>
-
-<p>
-A specific example for dealing with things that are important but
-less urgent is "Read it later". By scheduling "read later"s to
-next month, I can look at them when my reading impulses fade away
-after a month. So that articles are really important would be set
-as monthly-goals, while less important articles would become
-obvious and would not be chosen to be read at all. This can save
-a lot of time for me. So I can have more time to spend on truly
-important things.
-</p></li>
+<pre class="example">
++----------+      +------------+
+|  Admin   |      |    API     |
++--+-------+      +---------+--+
+   |                        |
+   |                        |
+   |     +-------------+    |
+   +---&gt; |   Domain    | &lt;--+
+         +-------------+
+</pre>
+<ol class="org-ol">
+<li>Admin</li>
+<li>API</li>
+<li>Domain</li>
 </ol></li>
+<li>breaking up the domain logic</li>
+<li>putting third-party dependencies in context</li>
+</ul></li>
+</ul></li>
 </ul>
-</div>
-</div>
-<div id="outline-container-org3f128dd" class="outline-2">
-<h2 id="org3f128dd">Review Often</h2>
-<div class="outline-text-2" id="text-org3f128dd">
+</blockquote>
 <p>
-Last but not least, we have to review our progress regularly to help
-ourselves improve continuously.
+-- from <a href="https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4">The Modular Monolith: Rails Architecture – Dan Manges – Medium</a>
 </p>
 
 <p>
-If we are not reviewing our progress at all, then non of things we
-mentioned above would make any sense anymore.
-</p>
-<dl class="org-dl">
-<dt>Deadline means nothing now.</dt><dd>Even if a task dues, we would not check this task again and ask
-why it is not finished and how to deal with it next.</dd>
-<dt>Priority means nothing now.</dt><dd>Priorities are not static and they need to be updated in real
-time.</dd>
-</dl>
-
-<p>
-So I've combined my goal-setting process with goal-review
-process. Whenever I'm going to set goals for the next time span, I
-would review the progress from the previous time span first. See what
-I can improve next and what to do with unfinished goals.
-</p>
-
-<p>
-Basically, the easiest way to do the review is to treat it as a normal
-task. Write it down, give a recurring deadline to it, set a high
-priority for it, get it done, review it.
-</p>
-
-<p>
-A few tips on how to review progress:
+But this article reminds me more of Elixir than Rails. Here is why:
 </p>
 <ol class="org-ol">
-<li><p>
-Always stretch yourself
-</p>
-
-<p>
-We need to stretch ourselves when we set goals. So sometimes a 100%
-completed plan means that we are not trying enough. Sometimes a 70%
-complete is good enough. And we can think of ways to improve next
-time.
-</p>
-
-<p>
-Note that it doesn't mean we need to aim for 70%. We should always
-aim for 100% complete. It only means when you are setting the
-goals, always set them so that you know you need to work harder
-this time to achieve it.
-</p></li>
-
-<li><p>
-Cancel unimportant tasks after a few misses
-</p>
-
-<p>
-Another important benefit we get from this workflow is that we can
-see the importance of a task through some rounds of
-processing. Then we get the privilege to cancel tasks.
-</p>
-
-<p>
-When a task has been missed for several times, it might be a
-heuristic that this task is not as important as you thought. We
-need to think <i>If this task really matters to me?</i> After all, there
-must be a reason for not finishing it. And very likely, this reason
-is that this task doesn't really matter.
-</p></li>
-
-<li><p>
-Break down daunting yet important tasks
-</p>
-
-<p>
-Then what happens to the tasks that have been missed for several
-times, yet you still think they are really important?
-</p>
-
-<p>
-We need to break down these tasks into more manageable
-sub-tasks. And set deadlines for each of them.
-</p></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orga53c611" class="outline-2">
-<h2 id="orga53c611">The Workflow I'm Using Now</h2>
-<div class="outline-text-2" id="text-orga53c611">
-<p>
-To summarize a bit, here is an example for this workflow:
-</p>
-<ol class="org-ol">
-<li>When year 2019 started, I set a yearly objective to "Improve
-Management Skills", with priority set to A (highest compared to
-B/C) and several key results like "Read book <a href="https://dsdshcym.github.io/clipping/2019/05/08/clippings-from-nonviolent-communication/">Nonviolent
-Communication</a>", "Implement an OKR system at work", etc..</li>
-<li>On April 1st, I picked "Read book Nonviolent Communication" as one
-of my monthly goal with priority A.</li>
-<li>Then I broke down "Read book Nonviolent Communication" into
-sub-tasks based on Chapters.</li>
-<li>Whenever a week started in April, I opened the monthly goals list
-and pick several chapters as this week's todoes.</li>
-<li>Everyday, I picked one chapter to finish.</li>
-<li>Then, an article about OKR comes up in my Twitter feeds. Since it's
-related to one of my yearly goal "Implement an OKR system at work",
-I capture this article as a todo (with priority C since it's just
-an article) for next month (2019 May). So this article would go
-through almost the same lifecycle as the book Nonviolent
-Communication.</li>
-<li>Whenever each week/month ends, I review how things went for all the
-goals I set before.</li>
-<li>When 2019 ends, I will review how my 2019 was based on 12 monthly
-reviews, and see how the yearly goals for 2019 progressed.</li>
+<li>Using relative path to extract code as <code>gems</code> into separate
+directories is almost the same as the way Elixir organize Umbrella
+apps.</li>
+<li>Breaking up the domain logic into three <code>gems=/=apps</code> (like Admin,
+API, Domain) is a typical use case for Umbrella apps.</li>
 </ol>
 
 <p>
-Basically, this is a rough explanation for my workflow. If you still
-have questions, feel free to ask in the comments below.
+If you want to learn more about Umbrella apps, you can check the
+<a href="https://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-projects.html">official documents</a>. And I also explained <a href="http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally/">how to build an Elixir app
+from a monolith to a microservice</a> before. Hopefully this can help you
+somehow. :)
 </p>
-</div>
-</div>
-<div id="outline-container-orga9e4045" class="outline-2">
-<h2 id="orga9e4045">How I Feel Using This Workflow</h2>
-<div class="outline-text-2" id="text-orga9e4045">
-<p>
-I've been using this workflow for almost half an year now. And I can
-say it definitely has made my life easier.
-</p>
-
-<p>
-I'm no longer nervous as before. I used to think I have too many
-things to do, too many books to read, too many movies to watch. Now,
-since these tasks all live in this GTD lifecycle, I know what I need
-to finish and what I can finish everyday. Having this kind of clear
-scope gives me confidence to manage all of my tasks.
-</p>
-
-<p>
-The next area for me to improve is to see if I need some buffer
-time. Sometimes when I was setting goals, I was too stretching or
-forgot to count in vacations, so when I came back, I had too many due
-tasks.
-</p>
-
-<p>
-So what's your thought on this GTD system? Do you have any
-suggestions? Leave your comments!
-</p>
-</div>
-</div>
 
     </div>
 </section>
 ]]></description>
       <pubDate>2019-05-25</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/05/22/my-gtd-workflow-2019-ver</guid>
+      <guid>http://dsdshcym.github.io/clipping/2019/05/24/the-modular-monolith-elixir-architecture</guid>
     </item>
     <item>
       <title>Defining a MVP by Setting OKRs</title>
@@ -520,13 +170,6 @@ suggestions? Leave your comments!
       <description><![CDATA[]]></description>
       <pubDate>2019-05-10</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/05/09/clippings-of-2019-apr</guid>
-    </item>
-    <item>
-      <title>Clippings from Nonviolent Communication</title>
-      <link>http://dsdshcym.github.io/clipping/2019/05/08/clippings-from-nonviolent-communication</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-05-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/05/08/clippings-from-nonviolent-communication</guid>
     </item>
   </channel>
 </rss>
