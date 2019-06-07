@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Pattern Matching is FP&#39;s Polymorphism Affordance - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="keywords" content="Pattern Matching, Polymorphism, Functional Programming, Elixir, Affordance, Software Engineering, Programming Languages" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Pattern Matching is FP&#39;s Polymorphism Affordance</h1>
+            <div id="outline-container-org6117ada" class="outline-2">
+<h2 id="org6117ada">What's Affordance</h2>
+<div class="outline-text-2" id="text-org6117ada">
+<p>
+From <a href="https://www.sandimetz.com/blog/2018/21/what-does-oo-afford">What Does OO Afford?</a> by Sandi Metz,
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>(OO) Affordance is:
+<ol class="org-ol">
+<li>the qualities or properties of an object that define its possible
+uses or make clear how it can or should be used.</li>
+<li>a potential action enabled by an object.</li>
+</ol></li>
+<li>Different Programming Languages Offer Different Affordances
+<ul class="org-ul">
+<li>programming languages are explicitly designed to "enable" certain
+kinds of thinking.</li>
+<li>Languages have points-of-view: they're designed to be used in
+certain stylized ways.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+Basically, a programming language affordance is a language feature
+that enables programmer to think in a certain way.
+</p>
+</div>
+</div>
+<div id="outline-container-org70734b1" class="outline-2">
+<h2 id="org70734b1">Why Pattern Matching is FP's Polymorphism Affordance</h2>
+<div class="outline-text-2" id="text-org70734b1">
+<p>
+Take Elixir for example, Pattern Matching is how an Elixir function
+provides different behavior for different structs (data
+structures). Furthermore, it's the secret sauce behind <code>Protocol</code>,
+which is one of the official ways to support Polymorphism in Elixir.
+</p>
+
+<p>
+And this idea was also mentioned in the talk <a href="https://www.youtube.com/watch?v=S2-1Rt-R2cY">ElixirConf 2017 - Its
+Better Unstated - TJ Stankus</a>:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Affordances in Elixir for avoiding conditionals
+<ol class="org-ol">
+<li>Lists</li>
+<li>Pattern matching</li>
+<li>Guard clauses</li>
+<li>Recursion</li>
+</ol></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org5082ba3" class="outline-2">
+<h2 id="org5082ba3">Bonus: FP and OOP are compatible</h2>
+<div class="outline-text-2" id="text-org5082ba3">
+<p>
+Polymorphism Affordance in FP also proves the point that <a href="http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be/">FP and OOP
+are compatible</a>:
+</p>
+
+<p>
+FP and OO are just two programming preferences. They offer different
+affordances when they first started. And both modern FP languages and
+modern OO languages can provide affordances from the other paradigm.
+</p>
+
+<p>
+And that's why this tweet came out:
+</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Shower thought: Smalltalk (and to some extent other OO languages) replace pattern matching with dynamic dispatch.<br><br>I miss pattern matching in Lisp dialects without a good implementation, but I haven&#39;t noticed its absence in Smalltalk.</p>&mdash; Wilfred Hughes (@_wilfredh) <a href="https://twitter.com/_wilfredh/status/1133100857602510848?ref_src=twsrc%5Etfw">May 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-06-06</span>
+        <span title="last modification date" class="post-info">2019-06-07</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/functional-programming/">Functional Programming</a>, <a href="/tags/elixir/">Elixir</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
