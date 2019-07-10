@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Do We Need a Better Medium for Representing Code? - dsdshome</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="Code, String, Text, Programming Languages, Abstraction, IDE," />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">dsdshome</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Do We Need a Better Medium for Representing Code?</h1>
+            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Unpopular opinion: text is actually a really bad medium for storing source code<br><br>Text source code should be a view of the truth, not the source of truth. I should be able to freely switch between whatever views I want.</p>&mdash; Hillel (@hillelogram) <a href="https://twitter.com/hillelogram/status/1130517002425122816?ref_src=twsrc%5Etfw">May 20, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+After all these years of writing code as texts, I completely agree
+that text is not a good medium for storing code. But I'm afraid that
+texts won't go away in any near future. In this clipping, I would
+explain why text is a bad format, show several attempts to fix this
+problem, and finally, why text is gonna stay for long.
+</p>
+
+<div id="outline-container-orgf149a4e" class="outline-2">
+<h2 id="orgf149a4e">Why are texts bad?</h2>
+<div class="outline-text-2" id="text-orgf149a4e">
+<p>
+After all, the sole purpose of writing code is to express our
+ideas. There are many ways to express ideas. Other than texts, we can
+express ideas with drawing, illustrating, speaking, performing, and so
+on.
+</p>
+
+<p>
+The text format became so popular and dominated almost all programming
+language because it's the easiest and cheapest way for machines to
+understand our ideas. We didn't have any sophisticated technologies
+for machines to recognize our voices, pictures, facial or body
+languages decades before. (And we still don't have any of these
+technologies now.)
+</p>
+
+<p>
+Even though text is so popular, I still feel the pain from the fact
+that we will lose so much information when translating ideas into code
+in plain text. Most of the time, the code we write is only the
+executable part of the idea: how a feature should work. Other more
+important information, like why this feature works in this way, was
+lost in the translating process.
+</p>
+
+<p>
+When running the code, this information loss won't create any
+trouble. As long as the code express the logic correctly in a way that
+machines can understand, machines will do exactly what they are told
+to do. The problem occurs when we try to understand the idea behind
+the code and we need to update this idea.
+</p>
+
+<p>
+Here are some typical cases I ran into everyday:
+</p>
+<ol class="org-ol">
+<li><p>
+Go to definitions
+</p>
+
+<p>
+Maybe it's because I don't use the most powerful IDE or the most
+advanced plugins, I still rely on text pattern matcher like <code>grep</code>
+and <code>rg</code> to find the location of module definitions and variable
+definitions. And every once a while, my attempt to jump to a
+definition would fail because there are modules with similar names
+or something like that.
+</p>
+
+<p>
+Every occurrences of a class name, variable name is actually saying
+"we are going to use the idea represented by this name here." And
+since the runtime can understand this fact easily, our tooling
+should be able to do this as well.
+</p></li>
+
+<li><p>
+Change variable/class names
+</p>
+
+<p>
+On the other way around, I should be able to change a class name
+while not changing any existing behaviours of my application. But
+currently in most dynamic languages like Ruby, I still need to rely
+on text search and replace every occurrence manually.
+</p></li>
+
+<li><p>
+Documentation &amp; test
+</p>
+
+<p>
+To me, documentation and test are also important aspects of our
+ideas. They explain why the code works like this and gives examples
+of how to use this code.
+</p>
+
+<p>
+But in most languages, documentations are not tightly attached to
+the code itself, so many documentations are telling lies. Tests are
+often placed in a separated file and in a separated directory. It's
+a hassle to switch between test file and implementation file, not
+to mention to understand them as a whole.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfe1f7e4" class="outline-2">
+<h2 id="orgfe1f7e4">What does this "better" look like?</h2>
+<div class="outline-text-2" id="text-orgfe1f7e4">
+<p>
+The ideal situation is for our machines and tools to understand our
+ideas better and then support our work as programmers in a better
+way. Like what's said in the tweets above, we should be able to switch
+between different whatever views or aspects of an idea. Then, it's
+natural for us to jump to definitions as we wish, and change names
+without breaking the application in any way.
+</p>
+</div>
+</div>
+<div id="outline-container-orgab73e88" class="outline-2">
+<h2 id="orgab73e88">Attempts to fix this problem</h2>
+<div class="outline-text-2" id="text-orgab73e88">
+<p>
+This is not a new idea. And there are tons of solutions out there
+trying to help machines to understand our thoughts better already.
+</p>
+<dl class="org-dl">
+<dt>Type systems</dt><dd><p>
+By specifying type information explicitly, we help
+the machine to understand more aspects of our
+program.
+</p>
+
+<p>
+But writing type information can become
+cumbersome. (Just think about languages like Java)
+</p>
+
+<p>
+Type annotations and inference can help a lot. See
+TypeScript, <a href="http://erlang.org/doc/man/dialyzer.html">dialyzer for erlang and elixir</a>, and
+<a href="https://github.com/sorbet/sorbet">sorbet for Ruby</a>.
+</p></dd>
+<dt>IDEs &amp; LSP</dt><dd>IDEs like IntelliJ by JetBrains and the Language
+Server Protocol by Microsoft are tools that leverages
+parsers and compilers to help us modify our code more
+efficiently.</dd>
+<dt>Visual Programming Language</dt><dd>Pure visual languages like <a href="https://medium.com/@noelrap/prograph-c3caa90b89e8">Prograph</a> are attempts to program in
+more formats other than text. It's a pity that they are not
+popular enough.</dd>
+<dt>Integrated Language Design</dt><dd>Languages like Smalltalk was developed with developing experience
+in mind. And they provide a complete tool chain to support this
+experience.
+<ul class="org-ul">
+<li><p>
+I'm excited to see new languages like Dark which promises to
+follow this direction as well:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>The defining principle behind Dark is that we want to remove all
+accidental complexity from coding.</li>
+<li>The core problem here is that the tools we have been
+building — as an industry — are incremental.</li>
+<li>Decreasing complexity
+<ul class="org-ul">
+<li>Infrastructure complexity</li>
+<li>Deployment complexity</li>
+<li>API complexity</li>
+<li>Code-as-text complexity</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://medium.com/darklang/the-design-of-dark-59f5d38e52d2">What is Dark? – Darklang – Medium</a>
+</p></li>
+<li><p>
+And also there are some similar attempts to add this kind of
+integration to existing languages like JavaScript:
+</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is awesome! We&#39;re just finishing up the editor for <a href="https://twitter.com/darklang?ref_src=twsrc%5Etfw">@darklang</a>, and it works almost exactly like this!</p>&mdash; Paul Biggar (@paulbiggar) <a href="https://twitter.com/paulbiggar/status/1136034871560687617?ref_src=twsrc%5Etfw">June 4, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+</ul></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org8775459" class="outline-2">
+<h2 id="org8775459">Do we need a better medium?</h2>
+<div class="outline-text-2" id="text-org8775459">
+<p>
+That being said, would text go away from programming world eventually?
+And would some multimedia format replace text completely? I really
+doubt that.
+</p>
+
+<p>
+After all, we've been using text as a communicating medium for too
+long. Since the first human started drawing characters on oracle
+bones, text has become the best choice for our async communications.
+And as I mentioned above, writing code is communicating our ideas. So
+text is still and will remain to be our best choice.
+</p>
+
+<p>
+But there are still many things we can do out there. The goal is for
+machines to understand our ideas better without too much extra help
+from programmers.
+</p>
+
+<p>
+And eventually, we will build new abstractions upon our existing text
+format. New languages like Dark will appear and become more and more
+popular. Just like what high level languages did to assembly and
+machine code.
+</p>
+
+<p>
+I can't wait to see more possibilities like this.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-07-10</span>
+        <span title="last modification date" class="post-info">2019-07-10</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/programming-languages/">Programming Languages</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
