@@ -4,189 +4,88 @@
     <title>dsdshome</title>
     <link>http://dsdshcym.github.io</link>
     <description>This is my small blog :)</description>
-    <pubDate>Thu, 18 Jul 2019 08:39:38 CST</pubDate>
-    <lastBuildDate>Thu, 18 Jul 2019 08:39:38 CST</lastBuildDate>
+    <pubDate>Fri, 19 Jul 2019 09:01:27 CST</pubDate>
+    <lastBuildDate>Fri, 19 Jul 2019 09:01:27 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>The Ovarian Lottery Thought Experiment</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</link>
+      <title>Speed-Up and Accelerate</title>
+      <link>http://dsdshcym.github.io/clipping/2019/07/17/speeding-up-and-accelerate</link>
       <description><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>The Ovarian Lottery Thought Experiment</h1>
-            <p>
-I came across this thought experiment on Twitter the other day. I was
-quite interested so I put some thoughts into it. I think I have a good
-answer now. So I'm going to share this experiment and my answer in
-this post with you.
-</p>
-
-<div id="outline-container-org2026c5e" class="outline-2">
-<h2 id="org2026c5e">What an Unequal World</h2>
-<div class="outline-text-2" id="text-org2026c5e">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="zh" dir="ltr">文章开头这个巴菲特提出的 thought experiment 不错：假设还有 24 小时你就要来到人世间了；你突然有了一种超能力，可以制定你即将进入的这个人世间的社会、经济、政府管理法则，你会怎么设置才能让你以及你的后代的一生过得好一点？注意：你不能决定生在哪个国家、性别、贫富，这些属性仍然是随机的。</p>&mdash; Wanqu 湾区日报 (@wanquribao) <a href="https://twitter.com/wanquribao/status/1137440320998608896?ref_src=twsrc%5Etfw">June 8, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote>
+            <h1>Speed-Up and Accelerate</h1>
+            <blockquote>
 <ul class="org-ul">
-<li>The thought experiment
-<ul class="org-ul">
-<li>It's 24 hours before your birth, and a genie appears to you. He
-tells you that you can set the rules for the world you're about to
-enter — economic, social, political — the whole enchilada. Sounds
-great, right? What's the catch?</li>
-<li>Before you enter the world, you will pick one ball from a barrel
-of 6.8 billion (the number of people on the planet). That ball
-will determine your gender, race, nationality, natural abilities,
-and health — whether you are born rich or poor, sick or
-able-bodied, brilliant or below average, American or Zimbabwean.</li>
-</ul></li>
-<li>We should be designing a society that, as Buffett says, “doesn't
-leave behind someone who accidentally got the wrong ball and is not
-well-wired for this particular system.”</li>
+<li>Engineering orgs slow down as they age.</li>
+<li>Two different economical models
+<ol class="org-ol">
+<li>A “cost center,” where every engineer hour not spent on features
+must translate to (at least) one engineer hour saved</li>
+<li>"investment", which speed to delivery, rather than number of
+engineer hours paid, is the dominant economic factor–and in which
+considerable, sustained investment in that speed can reap massive
+economic returns.</li>
+</ol></li>
+<li>If you can ship faster, you can then gather feedback, and
+<ol class="org-ol">
+<li>Iterate</li>
+<li>Abandon</li>
+<li>Sell to Someone Else</li>
+</ol></li>
+<li>How to Invest in Latency Reduction
+<ol class="org-ol">
+<li>Activities Engineers Bitch About</li>
+<li>Things Only Person X Can Do</li>
+<li>Look for Queues</li>
+<li>Automated Tests</li>
+<li>Monitoring</li>
+<li>Post Mortems (<a href="https://www.slideshare.net/danmil30/how-to-run-a-postmortem-with-humans-not-robots-velocity-2013">How to Run a Post-Mortem (With Humans, Not Robots), Velocity 2013</a>)</li>
+<li>Decentralization with Safety Nets / Impact Reduction Schemes</li>
+</ol></li>
 </ul>
 </blockquote>
 <p>
--- from <a href="https://www.getrichslowly.org/warren-buffett-on-the-lottery-of-birth/">Warren Buffett on the Lottery of Birth</a>
+-- from <a href="https://www.tomheon.com/2019/03/12/speeding-up-your-engineering-org-part-i-beyond-the-cost-center-mentality/">Speeding Up Your Engineering Org, Part I: Beyond the Cost Center Mentality</a>
 </p>
 
 <p>
-In our current world, where and when we are born are really
-important. Take myself for example:
+This article reminded me of <a href="https://learning.oreilly.com/library/view/accelerate/9781457191435/">Accelerate: The Science of Lean Software
+and DevOps</a><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, one of the best software engineering books I've read
+in 2019.
 </p>
 <ul class="org-ul">
-<li>It's not bad for me to be born in one of more-advanced province in
-China in the mid of 1990s. So that I was able to go to one of the
-best university in Shanghai after several years of hard study. I'm
-always grateful for that.</li>
-<li><p>
-But I'm also jealous of people who were born in U.S. or Europe.
-</p>
-
-<ul class="org-ul">
-<li>"What if I was able to learn programming way earlier like [some
-legendary programmer]?"</li>
-<li>"What if I could join [a dream company] in the bay area?"</li>
+<li>They both use the same metaphor "speed" for organization growths.</li>
+<li>They both emphasize on this "growth"/"investment" mindset/model.</li>
 </ul>
 
 <p>
-That being said, I still tell myself, even if I was born in U.S., I
-would just face other problems, which may even be harder than
-these. So I'm okay with who I am and where I am now.
-</p></li>
-</ul>
-
-<p>
-So it didn't surprise me that Buffett thought this ball we got from
-that lottery was the most important thing in our lives. And that's why
-this experiment is interesting to me. How can we change one rule in
-this world so that we won't leave anyone behind?
+The <i>Accelerate</i> book explains why we need to speed up with tons of
+evidences from the surveys they conducted over the last several years.
+The Speed-up post explains it in theory. So I would highly recommend
+you read them both.
 </p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+You can also check <a href="https://dsdshcym.github.io/clipping/2019/04/07/clippings-from-accelerate-the-science-of-lean-software-and-dev-ops/">my clippings from this book</a>
+</p></div></div>
+
+
 </div>
 </div>
-<div id="outline-container-org46b0005" class="outline-2">
-<h2 id="org46b0005">Communication Comes to the Rescue</h2>
-<div class="outline-text-2" id="text-org46b0005">
-<p>
-I'm not an economic expert, not to even mention social or
-political. I can only come up with this rule to change:
-</p>
-<blockquote>
-<p>
-<b>everyone need to master communication skills during their education.</b>
-</p>
-<ul class="org-ul">
-<li>It can be a series of mandated courses like <a href="https://www.youtube.com/watch?v=VNu0DsyrgsQ&amp;feature=youtu.be">Healthy Relationships
-101</a>.</li>
-<li>It can be a social rule that enforces everyone to think from each
-others' perspective during daily interactions (<a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/8183220630">How to Win Friends &amp;
-Influence People</a>).</li>
-</ul>
-</blockquote>
-
-<p>
-As Michael Jascz explained in his <a href="https://www.youtube.com/watch?v=VNu0DsyrgsQ&amp;feature=youtu.be">talk</a>, we received too few educations
-around how to communicate well and maintain healthy relationships with
-each other. My parents didn't teach me how to communicate, and they
-don't know the best practices as far as I know. My schools didn't have
-courses on this topic neither.
-</p>
-
-<p>
-And I believe this lack of education, or this inability to communicate
-well is what prevents everyone in this world to live a better
-life. Most of the issues I had in my daily work were caused by
-miscommunications. Most of the misunderstandings I had in my daily
-life were caused by miscommunications.
-</p>
-
-<p>
-If this rule becomes true everywhere, everyone can live a better life,
-no matter what kind of ball we got. Because this betterment of
-communication brings us much more understanding and eases so many pain
-points in our lives.
-</p>
-</div>
-</div>
-<div id="outline-container-org5a9b4e3" class="outline-2">
-<h2 id="org5a9b4e3">What Kind of Bad Things Can Happen?</h2>
-<div class="outline-text-2" id="text-org5a9b4e3">
-<p>
-Then, I took this idea to extreme and thought "Can this rule change go
-bad?"
-</p>
-
-<p>
-Yes, it might.
-</p>
-
-<p>
-We've already had a perfect example of highly-efficient communication
-in our world: Internet.
-</p>
-<dl class="org-dl">
-<dt>The thought processes are the same</dt><dd>Different machines can have the same infrastructure, the same
-CPU, the same instruction set. Then given the same program, they
-can "think" in the exactly the same way.</dd>
-<dt>The language used for communicating is the same</dt><dd><p>
-Even better, the language that used by different machines to talk
-over the internet is the same. It's all just 0s or 1s.
-</p>
-
-<p>
-The higher level of this communicating is also very
-efficient. We've defined several common formats for machines to
-communicate with each other: JSON, XML, YAML, etc. Different
-machines understand a piece of string in the exactly the same
-way.
-</p></dd>
-</dl>
-
-<p>
-But this kind of highly-efficient communication is not what I asked
-for humans. To gain this kind of efficiency, machines lose the
-creativity along the way. After all, <b>every mistake is a new idea</b>
-(<i>from one of my favorite book: <i>Becoming a Technical Leader</i>.</i>)
-</p>
-
-<p>
-So, what I asked was not "accept others' ideas no matter what", it was
-"understand others' ideas from others' point of view first, then use
-our best judgment to solve the problem together". This is, what I
-believe, a better form of communication.
-</p>
-
-<p>
-Hope you would agree so and let's build toward a better world by
-improving our own communication skills first!
-</p>
-</div>
-</div>
-
     </div>
 </section>
 ]]></description>
+      <pubDate>2019-07-19</pubDate>
+      <guid>http://dsdshcym.github.io/clipping/2019/07/17/speeding-up-and-accelerate</guid>
+    </item>
+    <item>
+      <title>The Ovarian Lottery Thought Experiment</title>
+      <link>http://dsdshcym.github.io/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-07-18</pubDate>
       <guid>http://dsdshcym.github.io/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</guid>
     </item>
@@ -245,13 +144,6 @@ improving our own communication skills first!
       <description><![CDATA[]]></description>
       <pubDate>2019-06-17</pubDate>
       <guid>http://dsdshcym.github.io/blog/2019/06/14/make-it-safe-book-review-crucial-conversations</guid>
-    </item>
-    <item>
-      <title>面向对象编程之我见</title>
-      <link>http://dsdshcym.github.io/blog/2019/06/13/面向对象编程之我见</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-06-15</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/06/13/面向对象编程之我见</guid>
     </item>
   </channel>
 </rss>
