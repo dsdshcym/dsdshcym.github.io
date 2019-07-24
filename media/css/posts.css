@@ -98,3 +98,8 @@ img {
 hr {
     color: LightGrey;
 }
+
+footer {
+  font-size: 16px;
+  color: gray;
+}
