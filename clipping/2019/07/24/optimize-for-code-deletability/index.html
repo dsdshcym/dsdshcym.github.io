@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Optimize for Code Deletability - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="nil" />
+  <meta name="keywords" content="Software, Engineering, Clean Code, Coding" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Optimize for Code Deletability</h1>
+            <p>
+It's not my first time to talk about this idea in this blog:
+<i>we should optimize our code for its deletability, reversibility,
+replacability, etc.</i>
+</p>
+<ol class="org-ol">
+<li><a href="http://dsdshcym.github.io/clipping/2018/02/08/adding-more-code-is-a-code-smell/">Adding more code is a code smell - dsdshome</a></li>
+<li><a href="https://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code/">Livable and Disposable Code - dsdshome</a></li>
+<li><a href="https://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code/">No Code is Better Than No-Code - dsdshome</a></li>
+<li><a href="https://dsdshcym.github.io/clipping/2019/01/09/don't-rewrite-replace/">Don't Rewrite, Replace - dsdshome</a></li>
+</ol>
+
+<p>
+Yet this post is my another attempt to connect the dots around this
+idea about <b>deletability</b>.
+</p>
+
+<div id="outline-container-org3b0e865" class="outline-2">
+<h2 id="org3b0e865">Why is deletable code great?</h2>
+<div class="outline-text-2" id="text-org3b0e865">
+<p>
+It all comes down to changeability and maintainability.
+</p>
+
+<p>
+In his great talk about <a href="https://vimeo.com/108441214">the art of destroying software</a>, Greg Young
+mentioned that the philosophies behind Erlang, Microservices, OOP,
+Unix are all the same: <i>Writing code for the purpose of deleting
+it</i>.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Writing code for the purpose of deleting it
+<ul class="org-ul">
+<li>Erlang</li>
+<li>Microservices</li>
+<li>Objects (in Smalltalk)</li>
+<li>Unix</li>
+</ul></li>
+<li>How to optimize for deletability?
+<ul class="org-ul">
+<li>Decouple</li>
+<li>18-month project -&gt; 1-week project</li>
+</ul></li>
+<li>Benefits
+<ul class="org-ul">
+<li>Reduce your fears</li>
+<li>Increase your velocity</li>
+</ul></li>
+<li>The difference between great code and sucky code is only the size
+of the program.</li>
+<li>Don't try to predict the future. Optimize for re-writability.</li>
+</ul>
+</blockquote>
+
+<p>
+This idea resonated with my personal experiences pretty well. When
+I first started learning programming, I wished to write a program
+that can be used for decades without changing a single line of code
+for it. This wish turns out to be somewhat naive, because in the
+real life, most of the requirements are constantly changing and so
+would our implementations. The best we can do is to make our code
+easy to change.
+</p>
+
+<p>
+Code that's easy to delete is easy to replace or change. We can
+delete the part which doesn't meet our new requirement and write a
+new one to replace it.
+</p>
+</div>
+</div>
+<div id="outline-container-org3f31a3d" class="outline-2">
+<h2 id="org3f31a3d">How to write deletable code?</h2>
+<div class="outline-text-2" id="text-org3f31a3d">
+<p>
+Then the question becomes: <i>How to write deletable code to make our
+codebase more maintainable?</i>
+</p>
+
+<ol class="org-ol">
+<li><p>
+TDD &amp; TCR
+</p>
+
+<p>
+We can understand TDD from the perspective of code deletability as
+well: all the tests we write is to make our life easier when we
+delete a portion of our code. These failed tests would point us to
+the broken part of our application caused by the deletion.
+</p>
+
+<p>
+When Justin Searls introduced <a href="http://blog.testdouble.com/posts/2015-09-10-how-i-use-test-doubles.html">his favorite way to TDD</a>, he also had
+this exactly the same idea: when he needed to update a piece of
+feature, he would first find the minimal sub-tree of classes in his
+application that affects this feature, delete it, and rewrite it
+completely.
+</p>
+
+<p>
+He thought it was one of the drawbacks of London-school TDD
+compared to Detroit-school TDD: <i>Radical implementation changes
+favor rewrites over refactors</i>. But it might be a major win if we
+want our code to be deletable, isn't it?
+</p>
+
+<p>
+Then, TCR (Test &amp;&amp; Commit || revert) got introduced recently as a
+successor for TDD. The idea of TCR is simple: automatically revert
+to the latest stable point when the new change introduces any test
+failure.
+</p>
+
+<p>
+When <a href="https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864">Kent Beck introduced this new workflow</a>, he said:
+</p>
+<blockquote>
+<p>
+It’s kind of nice to have incorrect code instantly deleted. If you
+don’t want a bunch of code wiped out then don’t write a bunch of
+code between greens.
+</p>
+</blockquote>
+
+<p>
+In another word, TCR is a workflow that forces us to <b>embrace
+code-deletion</b>. You need to think hard about how to organize your
+code and how to make your changes so that you are no longer afraid
+of the code-deletion.
+</p></li>
+
+<li><p>
+Single Responsibility Principle
+</p>
+
+<p>
+I also realized that Single Responsibility Principle was also about
+code-deletability as well. Only when the code we need to delete has
+a single responsibility, can we delete it without the fear of
+affecting other irrelevant responsibilities.
+</p>
+
+<p>
+The philosophies mentioned in <a href="https://vimeo.com/108441214">the art of destroying software</a> are
+great examples for SRP:
+</p>
+<blockquote>
+<dl class="org-dl">
+<dt>Unix</dt><dd>Do one thing and do it well.</dd>
+<dt>Erlang</dt><dd><a href="http://erlang.org/download/armstrong_thesis_2003.pdf">Each real world concurrent activity should be mapped
+onto exactly one concurrent process in our programming
+language.</a></dd>
+<dt>Microservices</dt><dd>Each microservices has only one single
+responsibility.</dd>
+<dt>OOP</dt><dd><a href="https://www.yegor256.com/2018/09/05/monolithic-repositories.html">Multiple objects are better than a single large one.</a></dd>
+</dl>
+</blockquote>
+
+<p>
+And to keep things small is just an over-simplified version of SRP:
+if a thing is too big, then it's a smell that it has more than one
+responsibilities.
+</p></li>
+
+<li><p>
+Don't rewrite, replace!
+</p>
+
+<p>
+<a href="https://martinfowler.com/bliki/StranglerApplication.html">StranglerApplication</a> mentioned by Martin Fowler is a great
+technique to refactor a large application. And it's exactly a
+thinking of making code deletable first, and then delete it.
+</p></li>
+
+<li><p>
+Code-deletion can happen on the fly
+</p>
+
+<p>
+Finally, there is a trend to embrace the fact that code is going to
+be deleted, and the deletion may happen on the fly.
+</p>
+
+<p>
+Take Netflix's <a href="https://github.com/netflix/chaosmonkey">chaosmonkey</a> for example, it's an extreme of deleting
+the code when the app is running. And by simulating these extreme
+cases actively, we as developers can build a resilient system.
+</p>
+
+<p>
+Erlang's <a href="http://erlang.org/download/armstrong_thesis_2003.pdf">"Let it fail" philosophy</a> is based on the same assumption:
+failure is inevitable. When a failure happens, it's no different
+than this part of code is deleted. So Erlang developers struct
+their apps with tons of small processes and a Supervision Tree to
+make sure the "code gets deleted" is minimum and we can restore it
+back easily.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbddf1a2" class="outline-2">
+<h2 id="orgbddf1a2">Bonus: A CTO needs to help the team write less code</h2>
+<div class="outline-text-2" id="text-orgbddf1a2">
+<p>
+Based on this thinking, we can get a simplified answer for "What's a
+CTO's responsibility?"
+</p>
+
+<p>
+I believe a CTO is responsible for an organization's technical
+excellence. And to make a team become more tech efficient, a CTO needs
+to help everyone write less code.
+</p>
+
+<p>
+She can build a framework around the domain the team is working on.
+</p>
+
+<p>
+She can introduce new technologies (languages, libraries, tools,
+processes, etc.) to the team.
+</p>
+
+<p>
+She can help cut the scope of a project and define the MVP.
+</p>
+
+<p>
+But the goals are the same: to write less code and get more things
+done.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-07-24</span>
+        <span title="last modification date" class="post-info">2019-07-31</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/clean-code/">Clean Code</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

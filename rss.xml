@@ -2,252 +2,81 @@
 <rss version="2.0">
   <channel>
     <title>Yiming Chen</title>
-    <link>http://dsdshcym.github.io</link>
-    <description>This is my small blog :)</description>
-    <pubDate>Mon, 22 Jul 2019 20:28:39 CST</pubDate>
-    <lastBuildDate>Mon, 22 Jul 2019 20:28:39 CST</lastBuildDate>
+    <link>https://yiming.dev</link>
+    <description>My rants against Life and Software.</description>
+    <pubDate>Wed, 31 Jul 2019 20:18:23 CST</pubDate>
+    <lastBuildDate>Wed, 31 Jul 2019 20:18:23 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Optimize for Code Deletability</title>
+      <link>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</link>
+      <description><![CDATA[nil]]></description>
+      <pubDate>2019-07-31</pubDate>
+      <guid>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</guid>
+    </item>
+    <item>
       <title>Learning = Being Inconsistent Consistently</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/22/learning-being-inconsistent-consistently</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>Learning = Being Inconsistent Consistently</h1>
-            <p>
-I believe <a href="http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life/">the whole purpose of life is to learn</a>. Then what is
-learning? I've read many articles about the topic of learning. And it
-seems that they all point to the same direction: learning means to
-have a <b>growth mindset</b>, which means to be inconsistent consistently.
-</p>
-
-<div id="outline-container-orgc4f596f" class="outline-2">
-<h2 id="orgc4f596f">Growth Mindset vs. Fixed Mindset</h2>
-<div class="outline-text-2" id="text-orgc4f596f">
-<p>
-The term "growth mindset" and "fixed mindset" came from the researches
-done by Carol Dweck: <a href="https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322">Mindset: The New Psychology of Success</a>.
-</p>
-
-<ul class="org-ul">
-<li><p>
-<a href="file:///clipping/2019/02/05/clippings-from-the-effective-enginner/#orgba942ac">The Effective Enginner - Adopt a Growth Mindset</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li><b>How we view our own effectiveness impacts how much effort we invest
-in improving it</b></li>
-<li>Two mindsets
-<dl class="org-dl">
-<dt>Fixed mindset</dt><dd>human qualities are carved in stone</dd>
-<dt>Growth mindset</dt><dd>human can cultivate and grieve their
-intelligence and skills through effort</dd>
-</dl></li>
-</ul>
-</blockquote></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1325505" class="outline-2">
-<h2 id="org1325505">Being Inconsistent</h2>
-<div class="outline-text-2" id="text-org1325505">
-<p>
-A growth mindset means that through effort, we can improve and become
-a better version of ourselves.
-</p>
-
-<p>
-The definition of "improve": <i>make or become better</i>. This means we
-need to be inconsistent with our past selves.
-</p>
-<ul class="org-ul">
-<li><p>
-<a href="https://fs.blog/2012/10/the-art-of-learning/">The Art of Learning</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Be willing to lose to win</li>
-<li>Don't be locked in a need to be correct</li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://joel.is/want-to-be-successful-be-inconsistent/">Want to be successful? Be inconsistent</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li><a href="https://medium.com/@ctaylormpearson/how-to-stop-procrastinating-using-the-70-rule-f2f79c87c380">Entrepreneurs make fast decisions and move forward knowing that at
-best 70% of their decisions are going to be right.</a></li>
-<li>Embrace being inconsistent
-<ul class="org-ul">
-<li>be open to making adjustments as you learn more.</li>
-</ul></li>
-</ul>
-</blockquote></li>
-<li><p>
-<a href="https://signalvnoise.com/posts/3289-some-advice-from-jeff-bezos">Some advice from Jeff Bezos – Signal v. Noise</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>People who were right a lot of the time were <i>people who often
-changed their minds.</i></li>
-<li>The smartest people are
-<ul class="org-ul">
-<li>constantly revising their understanding, reconsidering a problem
-they thought they’d already solved.</li>
-<li>open to new points of view, new information, new ideas,
-contradictions, and challenges to their own way of thinking.</li>
-</ul></li>
-<li>This doesn’t mean you shouldn’t have a well formed point of view,
-but it means you should <i>consider your point of view as temporary.</i></li>
-<li>What trait signified someone who was wrong a lot of the time?
-<ul class="org-ul">
-<li>Someone obsessed with details that only support one point of view.</li>
-<li>If someone can’t climb out of the details, and see the bigger
-picture from multiple angles, they’re often wrong most of the
-time.</li>
-</ul></li>
-</ul>
-</blockquote></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org99fa104" class="outline-2">
-<h2 id="org99fa104">How to Adopt a Growth Mindset</h2>
-<div class="outline-text-2" id="text-org99fa104">
-<p>
-If you think it's definitely possible to change from a fixed mindset
-to a growth mindset, then you are already thinking in a growth
-mindset.
-</p>
-
-<p>
-To do that, we just need to recognize when we are thinking in a fixed
-mindset, and rephrase the situation with a growth mindset.
-</p>
-
-<ul class="org-ul">
-<li><p>
-<a href="http://akaptur.com/blog/2015/10/10/effective-learning-strategies-for-programmers/">Effective Learning Strategies for Programmers - Allison Kaptur</a>
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Does anyone believe in a fixed mindset?
-<ul class="org-ul">
-<li>10x engineers</li>
-<li>Hero worship</li>
-</ul></li>
-<li>Can you change a fixed mindset? Heck yes</li>
-<li>How do you identify a fixed mindset?
-<ul class="org-ul">
-<li>“I am ..”</li>
-<li>“Some people are just …”</li>
-</ul></li>
-<li>How do you change a fixed mindset?
-<ul class="org-ul">
-<li>Reframe praise &amp; success
-<ul class="org-ul">
-<li>when you get the wrong kind of compliments, turn them into
-growth-​mindset compliments.</li>
-<li>“wow, great job on that project, you’re so smart,” translate it to
-“yeah, it was great, I worked really hard on that project</li>
-<li>“Of course that went well because I’m awesome.” Instead think, “I
-used an effective strategy on that project! I should do that more
-often”</li>
-</ul></li>
-<li>Reframe failure
-<ul class="org-ul">
-<li>If you’re saying, “Maybe I’m not cut out for this job after all,”
-treat that as a red flag.</li>
-<li>Instead, ask what you learned from your unsuccessful attempt or
-what strategies you could have used instead</li>
-</ul></li>
-<li>Celebrate challenges</li>
-<li>Ask about processes
-<ul class="org-ul">
-<li>Sometimes, I’ll try to fix a tricky bug and won’t be able to, and
-then one of them will be able to fix it right away.</li>
-<li>In these situations I’ve tried to be really disciplined about
-<i>asking how they did it</i>.</li>
-<li>This is a much more useful strategy in the long term than saying
-“Oh, of course, that person got the bug because they are a
-wizard.</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote></li>
-</ul>
-</div>
-</div>
-
-    </div>
-</section>
-]]></description>
+      <link>https://yiming.dev/clipping/2019/07/22/learning-being-inconsistent-consistently</link>
+      <description><![CDATA[]]></description>
       <pubDate>2019-07-22</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/07/22/learning-being-inconsistent-consistently</guid>
+      <guid>https://yiming.dev/clipping/2019/07/22/learning-being-inconsistent-consistently</guid>
     </item>
     <item>
       <title>How to Apply OKRs Practically? (Book Review: Radical Focus)</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</link>
+      <link>https://yiming.dev/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-21</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</guid>
+      <guid>https://yiming.dev/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</guid>
     </item>
     <item>
       <title>Speed-Up and Accelerate</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/17/speeding-up-and-accelerate</link>
+      <link>https://yiming.dev/clipping/2019/07/17/speeding-up-and-accelerate</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-19</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/07/17/speeding-up-and-accelerate</guid>
+      <guid>https://yiming.dev/clipping/2019/07/17/speeding-up-and-accelerate</guid>
     </item>
     <item>
       <title>The Ovarian Lottery Thought Experiment</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</link>
+      <link>https://yiming.dev/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-18</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</guid>
+      <guid>https://yiming.dev/clipping/2019/07/18/the-ovarian-lottery-thought-experiment</guid>
     </item>
     <item>
       <title>用 Tech Plan 来为开发提速</title>
-      <link>http://dsdshcym.github.io/blog/2019/07/11/用-tech-plan-来为开发提速</link>
+      <link>https://yiming.dev/blog/2019/07/11/用-tech-plan-来为开发提速</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-13</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/07/11/用-tech-plan-来为开发提速</guid>
+      <guid>https://yiming.dev/blog/2019/07/11/用-tech-plan-来为开发提速</guid>
     </item>
     <item>
       <title>Do We Need a Better Medium for Representing Code?</title>
-      <link>http://dsdshcym.github.io/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</link>
+      <link>https://yiming.dev/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-10</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</guid>
+      <guid>https://yiming.dev/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</guid>
     </item>
     <item>
       <title>Clippings of 2019 Jun</title>
-      <link>http://dsdshcym.github.io/clipping/2019/07/03/clippings-of-2019-jun</link>
+      <link>https://yiming.dev/clipping/2019/07/03/clippings-of-2019-jun</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-08</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/07/03/clippings-of-2019-jun</guid>
+      <guid>https://yiming.dev/clipping/2019/07/03/clippings-of-2019-jun</guid>
     </item>
     <item>
       <title>How to Give/Receive Feedback?</title>
-      <link>http://dsdshcym.github.io/blog/2019/07/07/how-to-give-receive-feedback</link>
+      <link>https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-07-07</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/07/07/how-to-give-receive-feedback</guid>
+      <guid>https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback</guid>
     </item>
     <item>
       <title>Life Changing Tools (Book Review: Nonviolent Communication)</title>
-      <link>http://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</link>
+      <link>https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</link>
       <description><![CDATA[]]></description>
       <pubDate>2019-06-26</pubDate>
-      <guid>http://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</guid>
-    </item>
-    <item>
-      <title>Apple, OKRs, and DRI</title>
-      <link>http://dsdshcym.github.io/clipping/2019/06/20/apple-ok-rs-and-dri</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-06-20</pubDate>
-      <guid>http://dsdshcym.github.io/clipping/2019/06/20/apple-ok-rs-and-dri</guid>
+      <guid>https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</guid>
     </item>
   </channel>
 </rss>
