@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 31 Jul 2019 20:18:23 CST</pubDate>
-    <lastBuildDate>Wed, 31 Jul 2019 20:18:23 CST</lastBuildDate>
+    <pubDate>Fri, 02 Aug 2019 06:54:47 CST</pubDate>
+    <lastBuildDate>Fri, 02 Aug 2019 06:54:47 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Use Phoenix LiveView to Enhance Observability</title>
+      <link>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</link>
+      <description><![CDATA[Application observability is becoming more and more important nowadays. Phoenix LiveView is a perfect technical solution for this use case.]]></description>
+      <pubDate>2019-08-02</pubDate>
+      <guid>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</guid>
+    </item>
+    <item>
       <title>Optimize for Code Deletability</title>
       <link>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</link>
-      <description><![CDATA[nil]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-07-31</pubDate>
       <guid>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-07-07</pubDate>
       <guid>https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback</guid>
-    </item>
-    <item>
-      <title>Life Changing Tools (Book Review: Nonviolent Communication)</title>
-      <link>https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-06-26</pubDate>
-      <guid>https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication</guid>
     </item>
   </channel>
 </rss>

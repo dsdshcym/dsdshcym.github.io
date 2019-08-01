@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Use Phoenix LiveView to Enhance Observability - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Application observability is becoming more and more important nowadays. Phoenix LiveView is a perfect technical solution for this use case." />
+  <meta name="keywords" content="Elixir, Phoenix, LiveView, Observability" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use Phoenix LiveView to Enhance Observability</h1>
+            <p>
+Application observability is becoming more and more important
+nowadays. Phoenix LiveView is a perfect technical solution for this
+use case. In this post, we will see how important observability is and
+why Phoenix LiveView is a perfect fit.
+</p>
+
+<div id="outline-container-org2bd42f6" class="outline-2">
+<h2 id="org2bd42f6">Application Observability is More Important Than Ever</h2>
+<div class="outline-text-2" id="text-org2bd42f6">
+<p>
+On the business side, decision makers are asking for some kinds of
+<i>Operational Intelligence</i>. In an episode of the a16z Podcast, they
+discussed <a href="https://soundcloud.com/a16z/future-of-decision-making-startup-opportunities">The Future Of Decision-Making</a>. They noticed that:
+</p>
+<blockquote>
+<p>
+As companies digitize, they change the way they make decisions:
+decisions are made lower in the organization, based on data, and
+increasingly automated.
+</p>
+</blockquote>
+<p>
+In another word, our application needs to provide <b>real-time</b> business
+related data, such as subscription numbers, churn rate, and so
+on. Since the data is updated in real-time, business people don't have
+to wait for a long feedback cycle (from weeks to years) to get a
+conclusion and then make a decision.
+</p>
+
+<p>
+On the operation side, DevOps people are asking for the same thing, a
+better <i>Operator Experience</i>. In <a href="https://ferd.ca/operable-software.html">Operable Software</a>, Fred Hebert
+explained why Observability is important:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>If we want our system to be reliable, we need to know when it
+misbehaves and when there are bugs.</li>
+<li>The general approach for this is monitoring
+<ul class="org-ul">
+<li>In a nutshell, monitoring is the act of asking your system "how
+are you doing?", and checking for a response</li>
+<li>Monitoring generally tells you only whether something is wrong,
+but not what is wrong, nor why it is wrong.</li>
+</ul></li>
+<li>The identification of a fault is more generally resolved through
+<i>observability</i>.
+<ul class="org-ul">
+<li>monitoring asks "how are you doing?"</li>
+<li>observability asks "what are you doing?"</li>
+</ul></li>
+<li>Observability comes from control theory
+<ul class="org-ul">
+<li>self-regulating systems such as
+<ul class="org-ul">
+<li>speed control on a car,</li>
+<li>flight stabilizers in airplanes.</li>
+</ul></li>
+<li>The gist of observability according to control theory is that
+<b>by looking at the outputs of a system, you can infer its
+internal state</b>.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+To get a higher level of observability, our application needs to
+provide <b>real-time</b> data to infer its internal state. Again,
+<b>real-time</b> is the key here. Only with a short feedback loop, can
+a better Operator Experience be achieved.
+</p>
+
+<p>
+The demands are high from both the business perspective and operation
+perspective. But I don't see any good solutions for this
+problem. That's also why in <a href="https://soundcloud.com/a16z/future-of-decision-making-startup-opportunities">The Future Of Decision-Making</a>, the hosts
+thought this problem is a great opportunity for starting a new
+business.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd214647" class="outline-2">
+<h2 id="orgd214647">Phoenix LiveView Comes to the Rescue</h2>
+<div class="outline-text-2" id="text-orgd214647">
+<p>
+In <a href="https://devchat.tv/elixir-mix/emx-054-phoenix-liveview-with-leandro-pereira/">this episode of Elixir Mix Podcast</a>, the hosts discussed LiveView
+with Leandro Pereira. And Leandro mentioned:
+</p>
+<blockquote>
+<p>
+LiveView is a great technical solution for building business
+intelligence dashboard.
+</p>
+</blockquote>
+
+<p>
+You may ask <b>Why</b>. I think the answer is obvious here: <b>Phoenix
+LiveView was born for providing real-time data</b>. Its GitHub project
+description says:
+</p>
+<blockquote>
+<p>
+phoenixframework/phoenix_live_view: Rich, real-time user experiences
+with server-rendered HTML
+</p>
+</blockquote>
+
+<p>
+To be more specific, Phoenix LiveView is so <i>backend-friendly</i> that
+showing <b>real-time</b> data is just an ease.
+</p>
+
+<p>
+Calculating <b>real-time</b> data is mostly a backend work. Phoenix
+LiveView empowers a backend developer to write a highly interactive
+frontend without writing a single line of JavaScript.
+</p>
+
+<p>
+Like what I did for a Sudoku solver:
+</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just built a Sudoku solver with Phoenix LiveView within 6 hours! (about half of the time spent on fighting CSS). It&#39;s such a pleasure to work with, since I don&#39;t need to worry about JavaScript.<br>You can check the implementation here: <a href="https://t.co/nWYnqMsZqr">https://t.co/nWYnqMsZqr</a><a href="https://twitter.com/hashtag/myelixirstatus?src=hash&amp;ref_src=twsrc%5Etfw">#myelixirstatus</a> <a href="https://t.co/dcGL9cW3Lf">pic.twitter.com/dcGL9cW3Lf</a></p>&mdash; Yiming Chen (@dsdshcym) <a href="https://twitter.com/dsdshcym/status/1154693783771963393?ref_src=twsrc%5Etfw">July 26, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+Updating data in <b>real-time</b> is just a few lines of code:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def handle_info(:update, socket) do
+  {new_sudoku, pos} = Sudoku.next(socket.assigns.server)
+
+  Process.send_after(self(), :update, socket.assigns.interval)
+
+  {:noreply, assign(socket, sudoku: new_sudoku, highlight_pos: pos)}
+end
+</pre>
+</div>
+
+<p>
+Another real-world example is <a href="https://zorbash.com/post/observer-live/">the Observer Live interface made by
+Dimitris Zorbas</a>.
+</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I made a port of observer_cli for the web using LIveView.<br><br>Demo: <a href="https://t.co/cvFS7QWWiW">https://t.co/cvFS7QWWiW</a><br>Source: <a href="https://t.co/ArYuKvEUkz">https://t.co/ArYuKvEUkz</a><a href="https://twitter.com/hashtag/phoenix?src=hash&amp;ref_src=twsrc%5Etfw">#phoenix</a> <a href="https://twitter.com/hashtag/liveview?src=hash&amp;ref_src=twsrc%5Etfw">#liveview</a> <a href="https://twitter.com/hashtag/myelixirstatus?src=hash&amp;ref_src=twsrc%5Etfw">#myelixirstatus</a> <a href="https://t.co/GYkUwCnzJP">pic.twitter.com/GYkUwCnzJP</a></p>&mdash; Dimitris Zorbas (@_zorbash) <a href="https://twitter.com/_zorbash/status/1112859727845904385?ref_src=twsrc%5Etfw">April 1, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+This is what the better Operator Experience looks like in
+real-life. And you can imagine the power it would bring to the
+business people if it's showing business critical data in real-time.
+</p>
+
+<p>
+To me, it's a no-brainer to use LiveView for adding this kind of
+feature to an existing Phoenix app. If it's not a Phoenix app, you may
+need to build a new service for it and balance the trade-offs of
+bringing a new language/framework to your team. But I think it would
+be worth it. Let me know what you think about it!
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-08-01</span>
+        <span title="last modification date" class="post-info">2019-08-02</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/phoenix/">Phoenix</a>, <a href="/tags/elixir/">Elixir</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
