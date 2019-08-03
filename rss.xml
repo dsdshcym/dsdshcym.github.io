@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 02 Aug 2019 06:54:47 CST</pubDate>
-    <lastBuildDate>Fri, 02 Aug 2019 06:54:47 CST</lastBuildDate>
+    <pubDate>Sat, 03 Aug 2019 09:47:44 CST</pubDate>
+    <lastBuildDate>Sat, 03 Aug 2019 09:47:44 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Put Decision Into Action - Assign It To a DRI</title>
+      <link>https://yiming.dev/clipping/2019/08/02/put-decision-into-action-assign-it-to-a-dri</link>
+      <description><![CDATA[Many times I go out of the meeting room, feeling so excited about the decisions we've made. But after several weeks, none of these decisions become true. If you are like me, wondering why this happens and how to solve this problem, this post is for you.]]></description>
+      <pubDate>2019-08-03</pubDate>
+      <guid>https://yiming.dev/clipping/2019/08/02/put-decision-into-action-assign-it-to-a-dri</guid>
+    </item>
+    <item>
       <title>Use Phoenix LiveView to Enhance Observability</title>
       <link>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</link>
-      <description><![CDATA[Application observability is becoming more and more important nowadays. Phoenix LiveView is a perfect technical solution for this use case.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-02</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-07-08</pubDate>
       <guid>https://yiming.dev/clipping/2019/07/03/clippings-of-2019-jun</guid>
-    </item>
-    <item>
-      <title>How to Give/Receive Feedback?</title>
-      <link>https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-07-07</pubDate>
-      <guid>https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback</guid>
     </item>
   </channel>
 </rss>
