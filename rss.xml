@@ -4,64 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Tue, 06 Aug 2019 20:02:14 CST</pubDate>
-    <lastBuildDate>Tue, 06 Aug 2019 20:02:14 CST</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2019 08:28:19 CST</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2019 08:28:19 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Understanding Agile with Complete Rate</title>
+      <link>https://yiming.dev/clipping/2019/08/07/understanding-agile-with-complete-rate</link>
+      <description><![CDATA[Terry Baker said "A program is never less than 90% complete, and never more than 95% complete." Borrowing this idea of complete rate, this post is another attempt to explain what Agile software development looks like.]]></description>
+      <pubDate>2019-08-08</pubDate>
+      <guid>https://yiming.dev/clipping/2019/08/07/understanding-agile-with-complete-rate</guid>
+    </item>
+    <item>
       <title>《龙蛋》摘录</title>
       <link>https://yiming.dev/clipping/2019/08/05/龙蛋-摘录</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>《龙蛋》摘录</h1>
-            <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">看完了的感受就是：<br>古人诚不我欺也<br>天上一天 地上一年 <a href="https://t.co/MeL6rn0F3D">https://t.co/MeL6rn0F3D</a></p>&mdash; Yiming Chen (@dsdshcym) <a href="https://twitter.com/dsdshcym/status/1151729161636986880?ref_src=twsrc%5Etfw">July 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>
-如果古时的传说「天上一天，地上一年」真的存在于现实世界的话，会发生什么有趣的事呢？
-</p>
-
-<p>
-《龙蛋》就是从科学的角度出发，利用相对论构筑了一个「地球上一秒，中子星上三天」的世界。作者带着我们领略了这个中子星上从智慧诞生，到文明出现，高速发展超过人类科技水平的故事。
-</p>
-
-<p>
-这又让我想起了 <a href="https://www.netflix.com/sg/title/80174608">Love, Death &amp; Robots</a> E16 Ice Age：一对情侣在冰箱中发现了一个微型世界。在短短几分钟内，这个世界就从冰河世纪发展到了工业时代。这两个作品的出发点是类似的。如果你喜欢 Ice Age 的话，你也一定会喜欢《龙蛋》。
-</p>
-
-<p>
-最后，感谢 @softlysighs 的推荐，让我读到了这么一个好故事！
-</p>
-
-<p>
-接下来是《龙蛋》中一些与科幻无关的金句：
-</p>
-
-<div id="outline-container-orgd41f2d9" class="outline-2">
-<h2 id="orgd41f2d9">关于教育</h2>
-<div class="outline-text-2" id="text-orgd41f2d9">
-<blockquote>
-<ul class="org-ul">
-<li>巨缝尽力解释，这时她遇到了一种现象，想要教会其他人某件事的人经常会遇到这种现象：在解释的过程中，老师自己学到了新东西。</li>
-<li>“就像优秀的老师。”皮埃尔暗想，“让学生知道在某个领域存在有趣的知识，接下来让他们自己探索，最后再检查他们的结论，有必要的话予以纠正。”</li>
-</ul>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-org9692fb3" class="outline-2">
-<h2 id="org9692fb3">Bonus</h2>
-<div class="outline-text-2" id="text-org9692fb3">
-<blockquote>
-<ul class="org-ul">
-<li>圣者们大惑不解，但表面上丝毫不露。他们是这一行当的大师，早就学会了一件事：在确定无疑之前，话要少说，事更要少做。</li>
-</ul>
-</blockquote>
-</div>
-</div>
-
-    </div>
-</section>
-]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-06</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/05/龙蛋-摘录</guid>
     </item>
@@ -120,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-07-13</pubDate>
       <guid>https://yiming.dev/blog/2019/07/11/用-tech-plan-来为开发提速</guid>
-    </item>
-    <item>
-      <title>Do We Need a Better Medium for Representing Code?</title>
-      <link>https://yiming.dev/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-07-10</pubDate>
-      <guid>https://yiming.dev/blog/2019/07/10/do-we-need-a-better-medium-for-representing-code</guid>
     </item>
   </channel>
 </rss>
