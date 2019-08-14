@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Use Uncertainty to Drive Design Decisions - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="We (Programmers) are making tons of decisions everyday. But how to make good design decisions? This post shows Kevlin&#39;s idea of using uncertainty to drive design decisions." />
+  <meta name="keywords" content="Uncertainty, Design, Programming, Clean Code, Programmer" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use Uncertainty to Drive Design Decisions</h1>
+            
+<div id="outline-container-orgf147beb" class="outline-2">
+<h2 id="orgf147beb"><a href="../../Org/notes/programming.html#ID-F6ECB5E2-0506-4EE6-BF48-201D8F044FE2">The programmer as decision maker</a></h2>
+<div class="outline-text-2" id="text-orgf147beb">
+<p>
+We, as programmers, are making tons of technical decisions everyday:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>As a programmer, your job is to make technical decisions.</li>
+<li>It seems to me that programmers often defer too much authority to
+their managers.</li>
+<li>Technical decisions
+<ul class="org-ul">
+<li>If your job is programmer, software developer, or similar, the
+value you add to the team is that you bring <i>technical expertise</i>.</li>
+<li>Even if the project manager or other superiors used to program,
+unless they're also writing code for the current code base, they
+only have general technical expertise, but not specific expertise
+related to the code base you're working with.</li>
+<li>You are decision makers.</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="../../Org/notes/programming.html#ID-F6ECB5E2-0506-4EE6-BF48-201D8F044FE2">The programmer as decision maker</a>
+</p>
+
+<p>
+Among these technical decisions, design decisions that affect how we
+architect our application are the most important yet the most
+difficult ones. So how to make these kinds of design decisions?
+</p>
+</div>
+</div>
+<div id="outline-container-org149c2d0" class="outline-2">
+<h2 id="org149c2d0"><a href="../../Org/notes/software_engineering.html#ID-C6950E73-57E4-4E0E-A9B8-C786DD45EDA3">Use Uncertainty As a Driver – Medium</a></h2>
+<div class="outline-text-2" id="text-org149c2d0">
+<p>
+In this article, Kevlin Henney gave us a great answer.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Difference between effective and ineffective architectures
+<ul class="org-ul">
+<li>An effective architecture is one that generally reduces the
+significance of design decisions in the areas of greatest change.</li>
+<li>An ineffective architecture will amplify significance.</li>
+</ul></li>
+<li>Instead of trying to decide between options A and B, the question
+becomes <b>“How do I design so that the choice between A and B is less
+significant?”</b>
+<ul class="org-ul">
+<li>The most interesting thing is not actually the choice between A
+and B, but that
+<ol class="org-ol">
+<li>there is a choice between A and B</li>
+<li>the appropriate choice is not necessarily either obvious or
+stable.</li>
+</ol></li>
+</ul></li>
+<li>Structuring by uncertainty is not new.
+(<a href="../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4">On the Criteria To Be Used in Decomposing Systems into Modules</a>)</li>
+</ul>
+</blockquote>
+<p>
+There is no silver bullet in the technical world. Every choice has its
+trade-offs. So the best choice is to make the choice less
+significant. Or to make the switch between these different options
+easy. So that we can test them easily or switch to another if we find
+the current one doesn't suit our use cases.
+</p>
+</div>
+</div>
+<div id="outline-container-org58774c7" class="outline-2">
+<h2 id="org58774c7"><a href="../../Org/inbox.html#ID-5BD36244-0785-48AE-9610-00A30B9870DB">Maciej Kaszubowski - Modular Design in Elixir - ElixirConf EU 2019 - YouTube</a></h2>
+<div class="outline-text-2" id="text-org58774c7">
+<p>
+Speaking of <a href="../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4">On the Criteria To Be Used in Decomposing Systems into
+Modules</a>, it was mentioned in <a href="../../Org/inbox.html#ID-5BD36244-0785-48AE-9610-00A30B9870DB">this talk about Modular Design in Elixir</a>
+as well:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Modular Design
+<ul class="org-ul">
+<li><a href="../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4">On the Criteria To Be Used in Decomposing Systems into Modules</a></li>
+<li>One big problem</li>
+<li>Goals
+<ul class="org-ul">
+<li>smaller, simpler modules</li>
+<li>strong boundaries</li>
+<li>low coupling</li>
+</ul></li>
+<li>Each module can be:
+<ul class="org-ul">
+<li>understood in isolation</li>
+<li>modified in isolation</li>
+<li>tested in isolation</li>
+<li>replaced or removed</li>
+</ul></li>
+<li>How?
+<ol class="org-ol">
+<li>Extracting behaviour</li>
+<li>Isolate important decisions</li>
+</ol></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+If you are into Elixir and want to see how to use uncertainty to drive
+your design in an Elixir application, you can't miss this talk!
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-08-14</span>
+        <span title="last modification date" class="post-info">2019-08-14</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/clean-code/">Clean Code</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
