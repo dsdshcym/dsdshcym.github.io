@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Use Return Value to Defer Decisions - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="By deferring decisions of how to respond to an event, our app can become extremely flexible. This post is about the simplest, yet the most powerful tool for deferring decisions in our app: Return Value." />
+  <meta name="keywords" content="Inversion of Control, Design Pattern, Functional Programming, Pattern Matching, Elixir, Event Sourcing, Event Bus" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Use Return Value to Defer Decisions</h1>
+            <p>
+We need to "<a href="https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html">defer architectural decisions</a>" when designing a piece of
+software, <a href="https://yiming.dev/clipping/2019/08/14/use-uncertainty-to-drive-design-decisions/">so that we can switch between different options easily</a>. In
+another word, deferring architectural decisions brings us design
+flexibility for our application.
+</p>
+
+<p>
+The same idea can be applied to the running application. By deferring
+decisions of how to respond to an event, our app can become extremely
+flexible. So how does a running application defer decisions it needs
+to make?
+</p>
+
+<p>
+There are many design patterns for solving this problem, such as
+<a href="https://github.com/kamranahmedse/design-patterns-for-humans#-visitor">Visitor</a> and <a href="https://github.com/kamranahmedse/design-patterns-for-humans#-strategy">Strategy</a>. But this post is about a much simpler one: the
+return value of our functions. As we'll see, Return Value is the
+simplest, yet the most powerful tool to defer decisions for later.
+</p>
+
+<div id="outline-container-org38be893" class="outline-2">
+<h2 id="org38be893">What is Return Value?</h2>
+<div class="outline-text-2" id="text-org38be893">
+<p>
+Return value is one of the first concepts I learned when I started
+programming in <code>Pascal</code>. A <code>Procedure</code> would not return anything. A
+<code>Function</code> would return a value.
+</p>
+
+<p>
+Then I learned Ruby and Elixir. In these two languages, every line of
+code would return a value. Return value is so fundamental that its
+concept fades away quickly.
+</p>
+
+<p>
+Until recently, I realized that the return value of a function is an
+important part of its API. If you think about it, return value is the
+most natural way for us to pass information aground, and only with
+information, can the app make any decisions. By defining the return
+value well, we can defer decision-makings in our code until the last
+possible moment.
+</p>
+
+<p>
+Let's see some examples:
+</p>
+</div>
+</div>
+<div id="outline-container-org1432fe9" class="outline-2">
+<h2 id="org1432fe9">Tagged Tuple</h2>
+<div class="outline-text-2" id="text-org1432fe9">
+<p>
+The first example is a common pattern in Erlang/Elixir. Tagged Tuples
+are tuples with an atom <code>:ok</code> or <code>:error</code>. The atom is a tag saying if
+a function gets executed successfully or not. Take
+<code>Ecto.Repo.delete/1</code> for example:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">case MyRepo.delete(post) do
+  {:ok, struct}       -&gt; # Deleted with success
+  {:error, changeset} -&gt; # Something went wrong
+end
+</pre>
+</div>
+
+<p>
+At first glance, it's too simple to be anything that's useful. But
+it's actually extremely powerful.
+</p>
+
+<p>
+Just think about the alternatives if we don't use a tag to indicate
+the execution result:
+</p>
+<ol class="org-ol">
+<li><p>
+Hard wire the error handling logic
+</p>
+
+<p>
+But that means there would be no flexibility at all. If we want to
+handle failed deletions differently in different places, it's
+almost impossible. So this alternative is not acceptable for a
+library like <code>Ecto</code>.
+</p>
+
+<p>
+And if we want to deal with different failure reasons, we need to
+update the <code>delete/1</code> function itself. Then it will break the
+<code>Open-Close Principle</code>.
+</p></li>
+
+<li><p>
+Receive callbacks to handle errors
+</p>
+
+<p>
+We can also add callback parameters to add some flexibility:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">def delete(struct, error_callback_fun) do
+  if something_goes_wrong do
+    error_callback_fun.()
+  end
+end
+</pre>
+</div>
+
+<p>
+It's an improvement compared to hard-wire the logic, but still, it
+doesn't scale. If we want to handle multiple failure reasons, we
+either add more callback parameters (which will make the API
+unnecessarily large), or use pattern matching in
+<code>error_callback_fun</code> (which is basically no different than pattern
+matching the return value).
+</p></li>
+
+<li><p>
+Raise exceptions when an error happens
+</p>
+
+<p>
+This is one of the most common solutions in other
+languages/frameworks. (Yes, I'm thinking about Ruby/Rails here.)
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">begin
+  post.destroy!
+rescue ActiveRecord::RecordNotDestroyed
+  # Something went wrong
+end
+</pre>
+</div>
+
+<p>
+Due to the lack of a built-in pattern matching mechanism, the best
+we can do is to return <code>true/false</code> as the indicator. But it
+doesn't scale when dealing with more than two results
+(succeeded/failed). And things get nastier if we want to return
+some data with the result indicator.
+</p>
+
+<p>
+So, I think of the exception rescuing mechanism as a pattern
+matching replacement. The snippet above can be translated to:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">case post.destroy! do
+  true -&gt; # Deleted with success
+  ActiveRecord::RecordNotDestroyed -&gt; # Something went wrong
+end
+</pre>
+</div>
+
+<p>
+Though the exception way and the pattern matching way are
+semantically the same, exceptions have a performance overhead, an
+maintenance overhead and a cognitive overhead.
+</p>
+<dl class="org-dl">
+<dt>Performance overhead</dt><dd>Raising an exception and catching it needs to go through a
+separate stack and it will impact the performance more or
+less.</dd>
+<dt>Maintenance overhead</dt><dd>To handle a new case, we need to define a new exception
+type/class. Categorize it somewhere. I can tell from my
+experience, maintaining a growing number of exceptions you own
+can become a nightmare.</dd>
+<dt>Cognitive overhead</dt><dd><p>
+Compared to the return value version, exception mechanism is a
+whole new system to learn and grasp.
+</p>
+
+<p>
+And learning all the exceptions defined in your app and your
+dependencies is almost impossible. (A potential outcome is
+that you will define a redundant exception.)
+</p></dd>
+</dl></li>
+</ol>
+
+<p>
+To wrap the comparison above, by returning results in a tuple tagged
+with an atom like <code>:ok/:error</code>, we get the most flexibility in the
+simplest way. It doesn't have any performance overhead or cognitive
+overhead. And to handle a new case, we just add a new type of tag in
+the API definition. So the client know it needs to upgrade. The
+maintenance cost is also low.
+</p>
+</div>
+</div>
+<div id="outline-container-org3dc697c" class="outline-2">
+<h2 id="org3dc697c">Functional Modeling</h2>
+<div class="outline-text-2" id="text-org3dc697c">
+<p>
+You may still think Tagged Tuples are too simple. So let's see how
+return value helps us to model our application in a functional way.
+</p>
+
+<p>
+When explaining <a href="http://www.theerlangelist.com/article/spawn_or_not">why spawning a process is not always a best choice and
+how to model a Blackjack game functionally</a>, Saša Jurić demonstrated
+the power of return values.
+</p>
+
+<ul class="org-ul">
+<li><p>
+Tagged Tuples
+</p>
+
+<p>
+First, Saša showed us how to model a Deck in a functional way:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Blackjack.Deck do
+  @cards for suit &lt;- [:spades, :hearts, :diamonds, :clubs],
+             rank &lt;- [2, 3, 4, 5, 6, 7, 8, 9, 10, :jack, :queen, :king, :ace],
+             do: %{suit: suit, rank: rank}
+
+  def shuffled(), do: Enum.shuffle(@cards)
+
+  def take([card | rest]), do: {:ok, card, rest}
+  def take([]), do: {:error, :empty}
+end
+
+deck = Blackjack.Deck.shuffled()
+
+case Blackjack.Deck.take(deck) do
+  {:ok, card, transformed_deck} -&gt;
+    # do something with the card and the transform deck
+
+  {:error, :empty} -&gt;
+    # deck is empty -&gt; do something else
+end
+</pre>
+</div>
+
+<p>
+This is just the foundation work and it uses Tagged Tuples as
+usual. No big deal.
+</p></li>
+
+<li><p>
+<b>Return Side-Effects as Data to Defer Decisions</b>
+</p>
+
+<p>
+The mind-blown part is how to model a round with return values in a
+purely functional way.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elixir">{instructions, round} = Blackjack.Round.start([:player_1, :player_2])
+
+# The instructions can be like this
+[
+  {:notify_player, :player_1, {:deal_card, %{rank: 4, suit: :hearts}}},
+  {:notify_player, :player_1, {:deal_card, %{rank: 8, suit: :diamonds}}},
+  {:notify_player, :player_1, :move}
+]
+
+{instructions, round} = Blackjack.Round.move(round, :player_2, :stand)
+
+# instructions:
+[
+  {:notify_player, :player_1, {:winners, [:player_2]}}
+  {:notify_player, :player_2, {:winners, [:player_2]}}
+]
+</pre>
+</div>
+
+<p>
+By modeling side-effects like notifying a player as pure data, we
+get more flexibility because we can pass this data around, or store
+it somewhere, and decide later when and how to use this
+"side-effect" data. With this kind of flexibility, we can:
+</p>
+<ol class="org-ol">
+<li>Separate concerns.
+<dl class="org-dl">
+<dt>How to make a side-effect happen</dt><dd>How to notify a player</dd>
+<dt>When a side-effect needs to happen</dt><dd>When we need to notify a player</dd>
+</dl></li>
+<li>Drive the code from different client.
+<ol class="org-ol">
+<li>Tests</li>
+<li>A GenServer wrapper to add concurrency</li>
+</ol></li>
+</ol>
+
+<p>
+P.S. I learned a similar functional modeling technique from Saša
+Jurić last year. If you are interested, you can find it at <a href="https://dsdshcym.github.io/blog/2019/01/29/my-advent-of-code-2018-recap/">My Advent
+of Code 2018 Recap</a>
+</p></li>
+
+<li><p>
+Event Bus / Event Sourcing
+</p>
+
+<p>
+The struct like <code>{:notify_player, :player_1, :move}</code> reminds me of
+Event Bus immediately. If we think of the <code>instructions</code> array as an
+event bus, then every <code>instruction</code> is an event. So you don't need a
+fancy framework, service to build an event sourcing system, just use
+dead simple return values!
+</p>
+
+<p>
+And the reason that Event Sourcing is getting more popular is the
+same as above: <b>it helps us to defer decisions for later</b>.
+</p></li>
+
+<li><p>
+Message Passing / Actor Model
+</p>
+
+<p>
+In addition to Event Bus, we can also understand Message Passing or
+Actor Model in the same way. If we think of the <code>instructions</code> array
+as an actor's message box, then every <code>instruction</code> is a message
+that can be received and handled by that actor. So this kind of
+functional modeling is a must-have for an Actor Model based system
+like Erlang/Elixir.
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c74d20" class="outline-2">
+<h2 id="org3c74d20">Enumerating a Collection with Reducee</h2>
+<div class="outline-text-2" id="text-org3c74d20">
+<p>
+The last example is also the hardest one. With the flexibility return
+value brings us, we can have different levels of flexibility in our
+app by designing the return values (API) differently. The best example
+for this is <a href="http://blog.plataformatec.com.br/2015/05/introducing-reducees/">how Elixir designs its <code>Enumerator</code> API</a>.
+</p>
+
+<p>
+In this post, José Valim, the creator of Elixir, compared several
+different solutions for enumerating a data structure. You can see how
+the design becomes more flexible, loses some simplicity along the way,
+and finally reaches a balance between being flexible and simple.
+</p>
+
+<p>
+The final solution they chose was like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-elixir">defmodule Reducee do
+  @doc """
+  Reduces the collection with the given instruction,
+  accumulator and function.
+
+  If the instruction is a `{:cont, acc}` tuple, the given
+  function will be invoked with the next item and the
+  accumulator.
+
+  If the instruction is `{:halt, acc}`, it means there is
+  nothing to process and the collection should halt.
+  """
+  def reduce([h | t], {:cont, acc}, fun) do
+    reduce(t, fun.(h, acc), fun)
+  end
+
+  def reduce([], {:cont, acc}, _fun) do
+    {:done, acc}
+  end
+
+  def reduce(_, {:halt, acc}, _fun) do
+    {:halted, acc}
+  end
+end
+</pre>
+</div>
+
+<p>
+By extracting side-effects like <code>continuing</code> or <code>halting</code> an
+enumeration out as data, the <code>Reducee.reduce/3</code> is easy to understand
+(compared to other solutions like <code>Iteratee</code>). And more importantly,
+it's flexible enough to support almost all the functions in the
+<code>Elixir.Enum</code> module.
+</p>
+
+<p>
+I'd highly recommend this post if you want to know more about
+different ways of data modeling and how they affect the overall API
+design differently.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf2d5bd4" class="outline-2">
+<h2 id="orgf2d5bd4">Wrap Up: Why Pure Functions Are Good?</h2>
+<div class="outline-text-2" id="text-orgf2d5bd4">
+<p>
+The idea of using return values to model side-effects is not new. Gary
+Bernhardt talked about it in his incredible talk <a href="https://www.destroyallsoftware.com/talks/boundaries">Boundaries</a>. The gist
+is to keep side effects at the boundaries of our app, so we can have a
+pure functional core.
+</p>
+
+<p>
+A function is pure when it doesn't have any side-effects. How to model
+that? By returning data. So we can decide what to do with this data
+later. That's the beauty of functional programming.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-08-16</span>
+        <span title="last modification date" class="post-info">2019-08-16</span>
+        <span title="tags" class="post-info"><a href="/tags/functional-programming/">Functional Programming</a>, <a href="/tags/elixir/">Elixir</a>, <a href="/tags/move-logic-around-with-data/">Move Logic Around With Data</a>, <a href="/tags/event-sourcing/">Event Sourcing</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

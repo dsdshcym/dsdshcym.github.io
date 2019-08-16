@@ -4,10 +4,17 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 14 Aug 2019 22:04:13 CST</pubDate>
-    <lastBuildDate>Wed, 14 Aug 2019 22:04:13 CST</lastBuildDate>
+    <pubDate>Fri, 16 Aug 2019 23:07:39 CST</pubDate>
+    <lastBuildDate>Fri, 16 Aug 2019 23:07:39 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Use Return Value to Defer Decisions</title>
+      <link>https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions</link>
+      <description><![CDATA[By deferring decisions of how to respond to an event, our app can become extremely flexible. This post is about the simplest, yet the most powerful tool for deferring decisions in our app: Return Value.]]></description>
+      <pubDate>2019-08-16</pubDate>
+      <guid>https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions</guid>
+    </item>
     <item>
       <title>Clippings from The Effective Enginner</title>
       <link>https://yiming.dev/clipping/2019/02/05/clippings-from-the-effective-enginner</link>
@@ -18,7 +25,7 @@
     <item>
       <title>Use Uncertainty to Drive Design Decisions</title>
       <link>https://yiming.dev/clipping/2019/08/14/use-uncertainty-to-drive-design-decisions</link>
-      <description><![CDATA[We (Programmers) are making tons of decisions everyday. But how to make good design decisions? This post shows Kevlin's idea of using uncertainty to drive design decisions.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-14</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/14/use-uncertainty-to-drive-design-decisions</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-07-22</pubDate>
       <guid>https://yiming.dev/clipping/2019/07/22/learning-being-inconsistent-consistently</guid>
-    </item>
-    <item>
-      <title>How to Apply OKRs Practically? (Book Review: Radical Focus)</title>
-      <link>https://yiming.dev/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-07-21</pubDate>
-      <guid>https://yiming.dev/clipping/2019/07/12/how-to-apply-okrs-practically-book-review-radical-focus</guid>
     </item>
   </channel>
 </rss>
