@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 16 Aug 2019 23:07:39 CST</pubDate>
-    <lastBuildDate>Fri, 16 Aug 2019 23:07:39 CST</lastBuildDate>
+    <pubDate>Mon, 19 Aug 2019 20:49:46 CST</pubDate>
+    <lastBuildDate>Mon, 19 Aug 2019 20:49:46 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>记一次「数独算法」工作坊</title>
+      <link>https://yiming.dev/blog/2019/08/19/a-workshop-about-sudoku</link>
+      <description><![CDATA[nil]]></description>
+      <pubDate>2019-08-19</pubDate>
+      <guid>https://yiming.dev/blog/2019/08/19/a-workshop-about-sudoku</guid>
+    </item>
+    <item>
       <title>Use Return Value to Defer Decisions</title>
       <link>https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions</link>
-      <description><![CDATA[By deferring decisions of how to respond to an event, our app can become extremely flexible. This post is about the simplest, yet the most powerful tool for deferring decisions in our app: Return Value.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-16</pubDate>
       <guid>https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-07-31</pubDate>
       <guid>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</guid>
-    </item>
-    <item>
-      <title>Learning = Being Inconsistent Consistently</title>
-      <link>https://yiming.dev/clipping/2019/07/22/learning-being-inconsistent-consistently</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-07-22</pubDate>
-      <guid>https://yiming.dev/clipping/2019/07/22/learning-being-inconsistent-consistently</guid>
     </item>
   </channel>
 </rss>

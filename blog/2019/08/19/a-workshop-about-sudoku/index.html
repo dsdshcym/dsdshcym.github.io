@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>记一次「数独算法」工作坊 - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="nil" />
+  <meta name="keywords" content="Workshop, Sudoku, Algorithm" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>记一次「数独算法」工作坊</h1>
+            <p>
+前不久，在我们公司里刮起了一股「数独风」。大家在茶余饭后都玩起了数独。不久后，单纯用人力解数独已经满足不了大家的好奇心了，我便利用一次周五，举办了一次以「数独 Sudoku」为主题的游戏 Workshop。我们希望能通过这个
+Workshop，让每个人都参与进来，体会蕴藏在数独这一看似简单的游戏背后的「数学之美」、「算法之美」。
+</p>
+
+<div id="outline-container-orgcdeced9" class="outline-2">
+<h2 id="orgcdeced9">游戏流程</h2>
+<div class="outline-text-2" id="text-orgcdeced9">
+<p>
+首先，我们将所有人分为若干小组。随后，各个小组有 45 分钟的时间讨论，目标是探索出一个能够解开所有数独谜题的通用算法。最后，所有人集合，分享每个小组探索的结果。
+</p>
+
+<p>
+值得一提的是，我们对最终算法的呈现方式并没有做任何要求。不同的小组可以选择自己擅长的方式。无论是可视化的程序，还是简单的文字说明，只要有所收获，将这些收获分享出来就是成功。也正因如此，PM 和设计师们也能很好地参与到讨论中来，而不是仅仅看着程序员们敲代码。
+</p>
+
+<p>
+整个流程其实非常简单，但最终的感悟却出人意料地丰富多彩。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0f3c4f" class="outline-2">
+<h2 id="orgc0f3c4f">感悟与收获</h2>
+<div class="outline-text-2" id="text-orgc0f3c4f">
+<p>
+经过 45 分钟的激烈讨论，每个小组都在画有数独九宫格的纸上写满了各自的想法。随后，每个小组都派了代表，分享小组讨论的收获，带给大家不同的惊喜。
+</p>
+</div>
+
+<div id="outline-container-orgff5b203" class="outline-3">
+<h3 id="orgff5b203">人脑 vs. 电脑</h3>
+<div class="outline-text-3" id="text-orgff5b203">
+<p>
+首先，收获最大的可能是并没有太多编程经验的 PM 和设计师们。电脑和人脑的思维模式是有着巨大差别的。而思考解数独的算法的过程，恰恰就是一个模拟电脑思维模式的过程。不同于人脑，电脑擅长的是存储大量规则的数据，以及重复的计算。因此，在解数独时，电脑可以存储每一次尝试后九宫格的状态，电脑需要知道如何存储这些状态，以及如何在搜索进入「死胡同」之后回退到最近一次有不同选择的状态。这些是人脑在计算数独时很少主动去想的事情。另外，将人工手算数独的过程抽象为电脑可以理解并执行的步骤，也是对「编程小白」们的一次锻炼。虽然在平时的工作中或多或少都有接触到数据库、
+API 等编程术语，像这样近距离地接触计算机算法，对 PM 和设计师来说，都是很新鲜的体验。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org498857c" class="outline-3">
+<h3 id="org498857c">坐标系的变换</h3>
+<div class="outline-text-3" id="text-org498857c">
+<p>
+另外一个有趣的讨论是围绕「如何表示格子的位置」展开的。在讨论过程中，我们发现，有的组用了四个坐标来表示格子的位置（两个坐标表示这个格子在九宫格的哪一个宫，另外两个坐标表示这个格子在这个宫三行三列中的哪一行、哪一列），有的组只用了两个坐标（表示这个格子在九宫格中的哪一行、哪一列，然后通过计算得出这两个坐标所在的宫）。为什么会出现这样的差别呢？
+</p>
+
+<p>
+在简单的解释过后，大家就理解了如何计算坐标和宫的关系。以横坐标为例，九宫格在横向上有 9 个格子，3 个宫。给 9 个格子编号 0-8，给宫编号 0-2
+的话，0-2 号格子就在宫 0 里，3-5 号格子就在宫 1 里，6-8 号格子就在宫
+3 里。不难观察出来，只要将格子序号整除 3，就能得到这个格子的宫序号了，而格子序号除以 3 的余数就是这个格子在这个宫中的横坐标了。对纵坐标也同理。这样我们就能从两个坐标的表示换算到四个坐标的表示了。
+</p>
+
+<p>
+这时候，我们可以发现，其实用一个坐标 0-80 也能代表所有的格子的位置。只需要将 0-80 用同样的思路整除 9 换算成两个坐标，便能再次换算到四个坐标。
+</p>
+
+<p>
+其实，在这简单的换算背后，也体现了一种取舍。四个坐标的做法不需要计算，就能立马得到每个格子所在的宫坐标，但存储上就需要更多的空间。而两个坐标在存储空间上比较节省，但需要耗费额外的计算资源。这样的取舍在我们的产品设计、实现上也是经常遇到的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09e7a5d" class="outline-3">
+<h3 id="org09e7a5d">Dancing Links</h3>
+<div class="outline-text-3" id="text-org09e7a5d">
+<p>
+最后，不甘于简单的搜索算法的小伙伴们还提出了各式各样的优化方案。有的小伙伴还上<a href="https://en.wikipedia.org/wiki/Sudoku_solving_algorithms">维基百科</a>搜索了数独的算法，查阅文献，发现计算机大拿 Donald
+Knuth 在 2000 年时就在他的论文《Dancing Links》里提出了对于类似数独这样的「精确覆盖问题」的<a href="https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X">一种高效解法</a>。
+</p>
+
+<p>
+本文篇幅所限，就不在此介绍这个算法啦。感兴趣的小伙伴可以在评论区找我们一同讨论。
+</p>
+</div>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-08-19</span>
+        <span title="last modification date" class="post-info">2019-08-19</span>
+        <span title="tags" class="post-info"><a href="/tags/algorithm/">Algorithm</a>, <a href="/tags/workshop/">Workshop</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
