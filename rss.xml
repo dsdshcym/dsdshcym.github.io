@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Mon, 19 Aug 2019 20:49:46 CST</pubDate>
-    <lastBuildDate>Mon, 19 Aug 2019 20:49:46 CST</lastBuildDate>
+    <pubDate>Wed, 21 Aug 2019 08:31:59 CST</pubDate>
+    <lastBuildDate>Wed, 21 Aug 2019 08:31:59 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Ideas Are Cheap</title>
+      <link>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</link>
+      <description><![CDATA[New ideas are cheap nowadays. What's more important is to recognize which ones are more valuable and then execute on them. This clipping is about how easy generating new ideas is, and what to do after you have tons of cheap ideas.]]></description>
+      <pubDate>2019-08-21</pubDate>
+      <guid>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</guid>
+    </item>
+    <item>
       <title>记一次「数独算法」工作坊</title>
       <link>https://yiming.dev/blog/2019/08/19/a-workshop-about-sudoku</link>
-      <description><![CDATA[nil]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-19</pubDate>
       <guid>https://yiming.dev/blog/2019/08/19/a-workshop-about-sudoku</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-02</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</guid>
-    </item>
-    <item>
-      <title>Optimize for Code Deletability</title>
-      <link>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-07-31</pubDate>
-      <guid>https://yiming.dev/clipping/2019/07/24/optimize-for-code-deletability</guid>
     </item>
   </channel>
 </rss>
