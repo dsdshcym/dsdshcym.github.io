@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Doing One Thing At A Time - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="Design, Programming, Optimization, Attribute Substitution, Software Engineering" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Doing One Thing At A Time</h1>
+            <p>
+When I started programming, I first learned different Algorithms, Time
+Complexity, Big O Notations, etc. Naturally, I was used to analyze the
+performance issues when I got a solution.
+</p>
+
+<p>
+After all these years of coding, I learned that programming is about
+doing one thing at a time. Therefore, performance should be a concern
+for later (if not last). But I still see a lot of people trying to
+optimize their code upfront, or doing multiple things at a time.
+</p>
+
+<p>
+So this post is about the idea of doing one thing at a time, and why
+it is necessary.
+</p>
+
+<div id="outline-container-org2c34d5d" class="outline-2">
+<h2 id="org2c34d5d">Make It Work, Make It Right, Make It Fast</h2>
+<div class="outline-text-2" id="text-org2c34d5d">
+<p>
+The best example of doing one thing at a time is the famous quote from
+Kent Beck:
+</p>
+<blockquote>
+<p>
+<a href="http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast">Make It Work Make It Right Make It Fast</a>
+</p>
+</blockquote>
+<dl class="org-dl">
+<dt>Make It Work</dt><dd>Build the system that can work as specified by the
+requirements. The code can be messy. The performance
+can be poor.</dd>
+<dt>Make It Right</dt><dd>Refactor the code to make the design
+right. "Refactor" means that we are not changing
+any existing behaviors, so the system is still
+working. Still, performance is not the concern here
+yet.</dd>
+<dt>Make It Fast</dt><dd>Finally, since the system is working and designed
+well, we can improve the performance of it more
+easily.</dd>
+</dl>
+
+<p>
+And I favor a rephrased version of this quote:
+</p>
+<blockquote>
+<p>
+Make it work, then make it beautiful, then if you really, really have
+to, make it fast. - Joe Armstrong
+</p>
+</blockquote>
+
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr"><a href="https://twitter.com/hashtag/myelixirstatus?src=hash&amp;ref_src=twsrc%5Etfw">#myelixirstatus</a> <a href="https://t.co/5X8Z3Wr9zQ">pic.twitter.com/5X8Z3Wr9zQ</a></p>&mdash; todd resudek (@sprsmpl) <a href="https://twitter.com/sprsmpl/status/1141088708889722880?ref_src=twsrc%5Etfw">June 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+Most of the time, we don't need our program to be fast. The extreme
+cases are often rare.
+</p>
+
+<p>
+Often, we don't need our program to be designed well, neither. We only
+need it to work correctly. We can always refactor it later.
+</p>
+
+<p>
+Even so, making the program work by itself is hard enough. We need to
+<a href="https://dsdshcym.github.io/clipping/2019/05/11/asking-the-right-question/">make the requirements clear</a> to define what it means by "working". We
+need to write the program according to these requirements, deploy it,
+test it. None of them is easy.
+</p>
+
+<p>
+Michael Feathers summarized this in a short sentence: <a href="https://twitter.com/CodeWisdom/status/1163792048144732166">“Programming is
+the art of doing one thing at a time.”</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org6305fe0" class="outline-2">
+<h2 id="org6305fe0">Design One Thing At A Time</h2>
+<div class="outline-text-2" id="text-org6305fe0">
+<p>
+Doing one thing at a time doesn't only apply to programming. You can
+see this philosophy in other activities as well.
+</p>
+
+<p>
+Take design activities for example, designers can also take several
+steps: make it functional, then make it reliable, and finally make it
+delightful.
+</p>
+
+<p>
+Besides this idea in <a href="https://matthewstrom.com/writing/delight-comes-last/">the post</a>, Matthew Ström also gave an explanation
+on why people often consider Delight first. Due to this cognitive bias
+called Attribute Substitution, people tend to replace a hard question
+with a more easily calculated heuristic attribute of the original
+question.
+</p>
+<ul class="org-ul">
+<li>When designing, thinking about which font or color to use is
+simple. The business-related questions are much harder to reason
+about. So designers can fall into this trap.</li>
+<li>When programming, performance calculation is universal and familiar
+to programmers. The requirements and architectures are different
+from project to project, and require a much deeper thinking. So
+programmers can fall into this trap too.</li>
+</ul>
+
+<p>
+To fight this cognitive bias, we need to constantly remind ourselves:
+<b>always do one thing at a time.</b>
+</p>
+</div>
+</div>
+<div id="outline-container-orgebf5b7c" class="outline-2">
+<h2 id="orgebf5b7c">This is How We Get Things Done</h2>
+<div class="outline-text-2" id="text-orgebf5b7c">
+<p>
+Jazzwant once said: <a href="https://twitter.com/CodeWisdom/status/1073638879503237120">“Programming is breaking of one big impossible
+task into several very small possible tasks.”</a> It's basically the same
+idea of doing one thing at a time. And as we can see above, it's the
+same for designing process as well. So, can we apply this idea to
+everything we do? I think the answer is YES!
+</p>
+
+<p>
+No matter what kind of products we are building, we can always break
+the building process into smaller tasks.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> After that, we focus on
+doing each task well and improving them separately. This is how we get
+any thing done.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+It sounds like Waterfall but it's actually required by any
+Agile approach as well. This is a topic for another day.
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-08-22</span>
+        <span title="last modification date" class="post-info">2019-08-28</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/software-engineering/">Software Engineering</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

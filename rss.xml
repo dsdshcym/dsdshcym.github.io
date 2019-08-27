@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 21 Aug 2019 08:31:59 CST</pubDate>
-    <lastBuildDate>Wed, 21 Aug 2019 08:31:59 CST</lastBuildDate>
+    <pubDate>Wed, 28 Aug 2019 06:55:10 CST</pubDate>
+    <lastBuildDate>Wed, 28 Aug 2019 06:55:10 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Doing One Thing At A Time</title>
+      <link>https://yiming.dev/clipping/2019/08/22/doing-one-thing-at-a-time</link>
+      <description><![CDATA[]]></description>
+      <pubDate>2019-08-28</pubDate>
+      <guid>https://yiming.dev/clipping/2019/08/22/doing-one-thing-at-a-time</guid>
+    </item>
+    <item>
       <title>Ideas Are Cheap</title>
       <link>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</link>
-      <description><![CDATA[New ideas are cheap nowadays. What's more important is to recognize which ones are more valuable and then execute on them. This clipping is about how easy generating new ideas is, and what to do after you have tons of cheap ideas.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-08-21</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-03</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/02/put-decision-into-action-assign-it-to-a-dri</guid>
-    </item>
-    <item>
-      <title>Use Phoenix LiveView to Enhance Observability</title>
-      <link>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-02</pubDate>
-      <guid>https://yiming.dev/clipping/2019/08/01/use-phoenix-live-view-to-enhance-observability</guid>
     </item>
   </channel>
 </rss>
