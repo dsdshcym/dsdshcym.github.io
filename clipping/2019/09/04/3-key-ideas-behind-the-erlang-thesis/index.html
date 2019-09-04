@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>3 Key Ideas Behind The Erlang Thesis - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="[[id:07F227E6-6BE5-4033-9238-62C22D49B890][making reliable distributed system in the presence of software errors]] is the best way to learn the considerations when designing Erlang. This post is a summary of the 3 key ideas from this paper." />
+  <meta name="keywords" content="Erlang, Programming Language, Abstraction" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>3 Key Ideas Behind The Erlang Thesis</h1>
+            <p>
+Elixir, my current favorite programming language, is built upon
+Erlang. So, to understand many concepts for Elixir, I need to learn
+more about Erlang. Without any doubt, the paper written by its
+creator, <a href="http://erlang.org/download/armstrong_thesis_2003.pdf">making reliable distributed system in the presence of
+software errors</a>, is the best way to learn why Erlang was designed in
+this way.
+</p>
+
+<p>
+This post is my summary of this paper, which are the key points that
+make Erlang such a great language.
+</p>
+<ol class="org-ol">
+<li>Concurrency Oriented Programming</li>
+<li>Abstracting Concurrency Out</li>
+<li>The philosophy of falling back to an easier task when an error occurs</li>
+</ol>
+
+<div id="outline-container-org2608660" class="outline-2">
+<h2 id="org2608660">Concurrency Oriented Programming</h2>
+<div class="outline-text-2" id="text-org2608660">
+<p>
+Erlang is a Concurrency Oriented Programming Language (COPL). That
+means, "the concurrent structure of the program should follow the
+concurrent structure of the application." Why this is so important?
+</p>
+
+<p>
+Because <b>our world is full of concurrency.</b>
+</p>
+
+<p>
+As it was explained in the paper, "the real world is concurrent."
+Every second, there are countless things happening at the same
+time. Even we pick one simple thing out, it's still composed of
+many concurrent events.
+</p>
+
+<p>
+The activity of walking is a great example. One's walking is a
+cohesive activity to another. But it actually requires many
+different muscles to work together, <b>concurrently</b>. And if we dig
+deeper, every muscle needs many different cells to work together,
+<b>concurrently</b>.
+</p>
+
+<p>
+Organizations also depend on concurrency to perform well. An
+organization is a bunch of different people working together,
+<b>concurrently</b>.
+</p>
+
+<p>
+Another example, which is more important than all the others, is our
+computer hardware. Different parts of our computer are working
+concurrently. The CPU is getting more and more cores, working
+concurrently. With network, multiple computers can become a cluster,
+working concurrently.
+</p>
+
+<p>
+So, we need a concurrency oriented programming language, to model our
+hardware and our world. That's why Erlang shines in today's world:
+it's built for concurrency.
+</p>
+</div>
+</div>
+<div id="outline-container-org82fe9aa" class="outline-2">
+<h2 id="org82fe9aa">Abstracting Out Concurrency</h2>
+<div class="outline-text-2" id="text-org82fe9aa">
+</div>
+<div id="outline-container-org2fedf40" class="outline-3">
+<h3 id="org2fedf40">Concurrent programming is hard</h3>
+<div class="outline-text-3" id="text-org2fedf40">
+<p>
+But writing a concurrent program is hard, way harder than writing a
+sequential program.
+</p>
+<ol class="org-ol">
+<li><p>
+We as human beings can hardly think concurrently.
+</p>
+
+<p>
+For most tasks, we are used to break them down into steps and
+compose these small steps back together. And I think that's why
+most programming languages are designed for this use case.
+</p>
+
+<p>
+When it comes to concurrency, a series of sequential steps won't
+work. Step 1 may happen after Step 2. Task 4 may finish before
+Task 3. And so on.
+</p>
+
+<p>
+This incompatibility between how we are used to model problems and
+how concurrent program works is a main issue that a COP language
+needs to solve.
+</p></li>
+
+<li><p>
+Concurrent programs have more concerns other than solving the
+problem itself.
+</p>
+
+<p>
+Besides the problem modeling, concurrent programs have many other
+concerns we need to deal with.
+</p>
+
+<p>
+For example, when a asynchronous task fails and another task is
+waiting for its results, what do we do next? Do we just restart the
+failed task and hope this time it will work? Or do we notice the
+blocked task and let it fail as well? But then how do we implement
+these strategies?
+</p>
+
+<p>
+These are just a few concerns that we need to consider when
+designing concurrent programs. And these concerns are not really
+related to the problem we are solving, they are there because they
+are the nature of concurrency. So concurrent programs are orders of
+magnitude harder than sequential programs.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org8354dd0" class="outline-3">
+<h3 id="org8354dd0">Erlang's answer: Abstract out concurrency</h3>
+<div class="outline-text-3" id="text-org8354dd0">
+<p>
+So how does Erlang solve this hard problem? The answer from this paper
+is actually quite simple: we <i>abstract out the concurrent aspects</i>. By
+doing that, we transform a concurrent problem to a sequential problem.
+</p>
+
+<p>
+The best example for this is the <code>gen_server</code> module/behaviour.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+<ul class="org-ul">
+<li>The concurrent issues like storing states, handling failures are all
+handled by the Erlang/OTP module <code>gen_server</code>. Modules like
+<code>gen_server</code> are maintained by a bunch of professional developers
+with tons of experience in concurrent programming. And since
+Erlang/OTP is open sourced, these modules can be improved with the
+help from the community.</li>
+<li>Domain/Business specific problems are solved in application module
+callbacks like <code>handle_call</code>, <code>handle_cast</code>, <code>init</code>, etc.. These
+callbacks are implemented by us, the developers, users of the
+language/framework. Thanks to the hard work behind Erlang/OTP, we
+are freed from solving the concurrent problems, and only need to
+focus on our specific problems.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org45a7346" class="outline-3">
+<h3 id="org45a7346">Anything can be abstracted out</h3>
+<div class="outline-text-3" id="text-org45a7346">
+<p>
+If concurrency, an already abstracted concept, can be abstracted
+elegantly in Erlang, then I believe anything can be abstracted out as
+well.
+</p>
+
+<p>
+I really like how <a href="http://shop.oreilly.com/product/0636920024149.do">Designing for Scalability with Erlang/OTP</a>
+demonstrated the way to design a generic module. Here is an example
+of designing the Generic Finite State Machines:
+</p>
+<blockquote>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Generic</th>
+<th scope="col" class="org-left">Specific</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Spawning the FSM</td>
+<td class="org-left">Initializing the FSM state</td>
+</tr>
+
+<tr>
+<td class="org-left">Storing the loop data</td>
+<td class="org-left">The loop data</td>
+</tr>
+
+<tr>
+<td class="org-left">Sending events to the FSM</td>
+<td class="org-left">The events</td>
+</tr>
+
+<tr>
+<td class="org-left">Sending synchronous requests</td>
+<td class="org-left">Handling events/requests</td>
+</tr>
+
+<tr>
+<td class="org-left">Receiving replies</td>
+<td class="org-left">The FSM states</td>
+</tr>
+
+<tr>
+<td class="org-left">Timeouts</td>
+<td class="org-left">State transitions</td>
+</tr>
+
+<tr>
+<td class="org-left">Stopping the FSM</td>
+<td class="org-left">Cleaning up</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>
+-- from <a href="http://shop.oreilly.com/product/0636920024149.do">Designing for Scalability with Erlang/OTP</a>
+</p>
+
+<p>
+By listing the generic and specific characters of a problem side by
+side, we can clearly see how to abstract out the generic part.
+</p>
+
+<p>
+Using the same approach, the only question left when designing a
+abstract module is how you define your problem to split the generic
+and the specific. The best way to do that is to write enough specific
+code and keep in mind to <a href="https://dsdshcym.github.io/blog/2018/10/26/dont-repeat-your-domain-knowledge/">not repeat your domain language</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org10de586" class="outline-2">
+<h2 id="org10de586">Fallback, Don't Let It Fail!</h2>
+<div class="outline-text-2" id="text-org10de586">
+<p>
+The last but not the least gem from this paper is about how to handle
+failures. It's about the philosophy of how Erlang handles
+software/hardware failures, or famously known as "Let it crash."
+</p>
+
+<p>
+"Let it crash" seems to be a controversial idea. People often
+misunderstand it as "do nothing when error happens, let it crash and
+the infrastructure will handle it."
+</p>
+
+<p>
+There's already <a href="https://www.amberbit.com/blog/2019/7/26/the-misunderstanding-of-let-it-crash/">a great explanation about why this is not true from
+Hubert Łępicki</a>:
+</p>
+<blockquote>
+<p>
+"Let it crash" is about <b>building <i>components</i> of software that do not
+concern themselves with detailed error handling.</b>
+</p>
+</blockquote>
+
+<p>
+And if we dig further in the original paper, "Let it crash" is really
+about <b>task isolation</b> and <b>fallback</b>.
+</p>
+<ol class="org-ol">
+<li><p>
+Isolation:
+</p>
+<blockquote>
+<p>
+Each process should only have one "role", perform one "task".
+</p>
+<dl class="org-dl">
+<dt>Supervisor</dt><dd>watches other processes and restarts them if they
+fail.</dd>
+<dt>Worker</dt><dd>a normal work process (can have errors).</dd>
+<dt>Trusted Worker</dt><dd>not allowed to have errors.</dd>
+</dl>
+</blockquote></li>
+<li><p>
+Fallback:
+</p>
+<blockquote>
+<p>
+A strategy for programming fault-tolerance
+</p>
+<ol class="org-ol">
+<li>fail immediately if you cannot correct an error</li>
+<li>try to do something that is simpler to achieve</li>
+</ol>
+</blockquote>
+
+<p>
+So "Let it crash" doesn't mean we don't attempt to correct an error
+at all. It's just that we fallback to a simpler task when we cannot
+correct an error. Often, this simpler task is to restart the failed
+task and retry.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5bda809" class="outline-2">
+<h2 id="org5bda809">Summary</h2>
+<div class="outline-text-2" id="text-org5bda809">
+<p>
+Hopefully, through this lengthy post, you can get the gist of why
+Erlang is a great concurrency-oriented and fault-tolerant language. If
+you want to learn more, I would highly recommend you to read <a href="http://erlang.org/download/armstrong_thesis_2003.pdf">the
+paper</a>. If you don't have enough time, you can read <a href="https://pragprog.com/articles/erlang">this summary
+written by Joe himself</a> or <a href="https://dockyard.com/blog/2018/07/18/all-for-reliability-reflections-on-the-erlang-thesis">the reflections on this paper from
+DockYard</a>. Enjoy!
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+This idea of abstracting concurrency out is best explained In
+the book <a href="http://shop.oreilly.com/product/0636920024149.do">Designing for Scalability with Erlang/OTP</a>, It used examples
+like <code>gen_server</code>, <code>gen_fsm</code>, <code>supervisor</code>, etc. to show how Erlang
+and OTP extract these common part of a problem to simplify a
+problem. Highly recommended!
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-04</span>
+        <span title="last modification date" class="post-info">2019-09-04</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/erlang/">Erlang</a>, <a href="/tags/elixir/">Elixir</a>, <a href="/tags/programming-languages/">Programming Languages</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

@@ -4,10 +4,17 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 28 Aug 2019 06:55:10 CST</pubDate>
-    <lastBuildDate>Wed, 28 Aug 2019 06:55:10 CST</lastBuildDate>
+    <pubDate>Wed, 04 Sep 2019 21:02:21 CST</pubDate>
+    <lastBuildDate>Wed, 04 Sep 2019 21:02:21 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>3 Key Ideas Behind The Erlang Thesis</title>
+      <link>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</link>
+      <description><![CDATA[[[id:07F227E6-6BE5-4033-9238-62C22D49B890][making reliable distributed system in the presence of software errors]] is the best way to learn the considerations when designing Erlang. This post is a summary of the 3 key ideas from this paper.]]></description>
+      <pubDate>2019-09-04</pubDate>
+      <guid>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</guid>
+    </item>
     <item>
       <title>Doing One Thing At A Time</title>
       <link>https://yiming.dev/clipping/2019/08/22/doing-one-thing-at-a-time</link>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-06</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/05/龙蛋-摘录</guid>
-    </item>
-    <item>
-      <title>Put Decision Into Action - Assign It To a DRI</title>
-      <link>https://yiming.dev/clipping/2019/08/02/put-decision-into-action-assign-it-to-a-dri</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-03</pubDate>
-      <guid>https://yiming.dev/clipping/2019/08/02/put-decision-into-action-assign-it-to-a-dri</guid>
     </item>
   </channel>
 </rss>
