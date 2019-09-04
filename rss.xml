@@ -4,14 +4,14 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 04 Sep 2019 21:02:21 CST</pubDate>
-    <lastBuildDate>Wed, 04 Sep 2019 21:02:21 CST</lastBuildDate>
+    <pubDate>Wed, 04 Sep 2019 22:34:25 CST</pubDate>
+    <lastBuildDate>Wed, 04 Sep 2019 22:34:25 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>3 Key Ideas Behind The Erlang Thesis</title>
       <link>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</link>
-      <description><![CDATA[[[id:07F227E6-6BE5-4033-9238-62C22D49B890][making reliable distributed system in the presence of software errors]] is the best way to learn the considerations when designing Erlang. This post is a summary of the 3 key ideas from this paper.]]></description>
+      <description><![CDATA[If you are like me, you may be wondering why Erlang is designed in this way. To figure it out, the thesis written by its creator (Joe Armstrong) is the best resources out there. This post is my summary of this thesis.]]></description>
       <pubDate>2019-09-04</pubDate>
       <guid>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</guid>
     </item>
