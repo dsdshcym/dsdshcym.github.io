@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Discuss Ruby 3 and Open Source with Matz at RubyConf China 2019 - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="I was really excited to see Matz at this year&#39;s RubyConf China. Chatting with him was a great experience for sure. This post is a quick summary of my discussions with him." />
+  <meta name="keywords" content="Ruby, RubyConf China, Matz, Open Source, Ruby 3, Concurrency" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Discuss Ruby 3 and Open Source with Matz at RubyConf China 2019</h1>
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Meeting with <a href="https://twitter.com/yukihiro_matz?ref_src=twsrc%5Etfw">@yukihiro_matz</a> is like a dream come true for me. <br><br>Thank you for your talk, your book, and all the work you’ve done for Ruby! <a href="https://t.co/RjGBBhy0BK">pic.twitter.com/RjGBBhy0BK</a></p>&mdash; Yiming Chen (@dsdshcym) <a href="https://twitter.com/dsdshcym/status/1165999258568257536?ref_src=twsrc%5Etfw">August 26, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>
+I was really excited to see Matz at this year's RubyConf China.
+Chatting with him was a great experience for sure. This post is a
+quick summary of my discussions with him.
+</p>
+
+<div id="outline-container-org7b0a8ae" class="outline-2">
+<h2 id="org7b0a8ae">Concurrent programming in Ruby 3</h2>
+<div class="outline-text-2" id="text-org7b0a8ae">
+<p>
+Matz gave <a href="https://www.youtube.com/watch?v=flTdbrF0yuA">a talk about "The future of Ruby"</a> at the conference.
+</p>
+
+<p>
+After this talk, I asked:
+</p>
+
+<p>
+"You mentioned in your talk: other languages, like Go and Elixir, can
+use one single entity for concurrency abstraction. Why can't Ruby do
+that? Could you elaborate on the legacy issues we have in Ruby?"
+</p>
+<blockquote>
+<p>
+Languages like Elixir use immutable data structures by default. They
+don't need to worry about shared data being modified. So they can use
+one single type of abstraction for concurrency, like Process.
+</p>
+
+<p>
+But objects in Ruby are mutable. So we have this legacy problem of
+sharing mutable data in a concurrent Ruby program.
+</p>
+
+<p>
+In Ruby 3, we'll introduce Guilds and AutoFiber as the solution. In
+Guilds, data are immutable and isolated, but it's not easy to
+use. AutoFiber will be the successor for Threads in Ruby, which will
+be simpler than Guilds but not as powerful.
+</p>
+</blockquote>
+
+<p>
+在 Matz 演讲结束后，我提问说：“您在演讲中提到，其他编程语言（例如 Go,
+Elixir）可以只用一种方案作为并发（Concurrency）的抽象，但 Ruby 需要
+Guilds 和 AutoFiber 两种方案。这是为什么呢？您能介绍一下背后的历史遗留问题吗？”
+</p>
+
+<p>
+Matz 的回答是这样的：“Elixir 中的数据结构都是不可变的（Immutable），因此他们可以放心地共享数据，不用担心在并发过程中共享数据被修改的问题。一种对并发的抽象便足够了。比如 Elixir 中的 Processes。但 Ruby 中的数据结构都是可变的（Mutable），在对 Concurrency 进行抽象时会遇到共享数据的问题。因此，我们打算在 Ruby3 中引入两类抽象机制，Guilds 和 AutoFiber。
+Guilds 可以通过数据隔离的方式来解决可变数据的问题，但比较繁琐。
+AutoFiber 则提供了一个比较简单的解决方案，作为当前 Ruby 中 Threads 实现的延续。”
+</p>
+</div>
+</div>
+<div id="outline-container-orgba61e62" class="outline-2">
+<h2 id="orgba61e62">Experience at this year's RubyConf China</h2>
+<div class="outline-text-2" id="text-orgba61e62">
+<p>
+During the interlude, I got the chance to ask Matz some questions.
+</p>
+
+<p>
+"How's your RubyConf China experience today?"
+</p>
+<blockquote>
+<p>
+People are nice here. But unfortunately, I don't understand Chinese,
+so it's a bit hard for me to get involved.
+</p>
+</blockquote>
+<p>
+"Yes, people in the Ruby community are so nice. There's an old saying:
+'Matz is nice, so we are nice.' You are the model we all look up to."
+</p>
+
+<p>
+在茶歇时，我又跟 Matz 聊起了维护 Ruby 这样巨大的开源项目是什么体验：
+</p>
+<ul class="org-ul">
+<li>我：“您能分享一下今天参加 RubyConf China 的体验吗？”</li>
+<li>Matz：“我很高兴能参加这次大会。中国的 Ruby 开发者都很友好（Nice）。”</li>
+<li>我：“是的，Matz is nice so we are nice。您一直是我们的榜样。”</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7672da6" class="outline-2">
+<h2 id="org7672da6">Maintaining an open source project like Ruby</h2>
+<div class="outline-text-2" id="text-org7672da6">
+<p>
+Then I asked several questions about the experience of maintaining a
+huge open source project, how to deal with different people, different
+opinions, etc.
+</p>
+
+<p>
+"How does maintaining open source project feel nowadays, especially
+for a huge project like Ruby?"
+</p>
+<blockquote>
+<p>
+It's definitely better than 20 years ago, when Ruby just got
+started. Back then, people didn't understand what open source is, so
+we needed to explain it. Now, open source is a common sense. Many
+people have joined to contribute, too.
+</p>
+</blockquote>
+<p>
+"Yeah, I think all the contributors around the world must be very
+helpful. But people can also be hard sometimes. How to deal with
+different opinions from different people? For example, there was a
+controversial discussion around the Pipe Operator you added recently."
+</p>
+<blockquote>
+<p>
+Yes. People actually have good intentions. It's just that we have
+different opinions. So I would focus on the reason behind their
+thinking. Always ask "why".
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li>我：“现在维护 Ruby 这样的开源项目是什么体验呢？”</li>
+<li>Matz：“相比于 20 年前已经好太多了。20 年前，Ruby 刚开始开发的时候，大家还不知道「开源」是一个什么概念，还需要解释、探索。现在，大家都参与到了开源项目中来，很多人都为 Ruby 项目做出了贡献。”</li>
+<li>我：“相信大家的参与也是和您一起承担起了维护的重任。但您是如何处理来自社区不同的声音的呢？比如不久之前加入的 Pipe Operator 就引起了很多争议。”</li>
+<li>Matz：“有不同的声音是件好事。对待不同的声音、意见，我会探求背后的原因：提出这个意见的人为什么会这么想。了解了这个之后，再做决定。”</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb49dbdc" class="outline-2">
+<h2 id="orgb49dbdc">Thank you, Matz!</h2>
+<div class="outline-text-2" id="text-orgb49dbdc">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ruby literally changed my life. <a href="https://twitter.com/hashtag/Ruby25?src=hash&amp;ref_src=twsrc%5Etfw">#Ruby25</a> <a href="https://t.co/cEeScmvhys">https://t.co/cEeScmvhys</a></p>&mdash; Yiming Chen (@dsdshcym) <a href="https://twitter.com/dsdshcym/status/941320400062967808?ref_src=twsrc%5Etfw">December 14, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>
+I want to thank Matz in this post again. Without your great work, I
+would not learn so much about programming. Thank you!
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-05</span>
+        <span title="last modification date" class="post-info">2019-09-13</span>
+        <span title="tags" class="post-info"><a href="/tags/ruby/">Ruby</a>, <a href="/tags/conf/">Conf</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
