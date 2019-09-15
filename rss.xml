@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 13 Sep 2019 09:13:12 CST</pubDate>
-    <lastBuildDate>Fri, 13 Sep 2019 09:13:12 CST</lastBuildDate>
+    <pubDate>Sun, 15 Sep 2019 11:00:36 CST</pubDate>
+    <lastBuildDate>Sun, 15 Sep 2019 11:00:36 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Clippings of 2019 Aug</title>
+      <link>https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug</link>
+      <description><![CDATA[This is my top reads from Aug, 2019. Its topics vary from software testing to leadership and management.]]></description>
+      <pubDate>2019-09-15</pubDate>
+      <guid>https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug</guid>
+    </item>
+    <item>
       <title>Discuss Ruby 3 and Open Source with Matz at RubyConf China 2019</title>
       <link>https://yiming.dev/blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019</link>
-      <description><![CDATA[I was really excited to see Matz at this year's RubyConf China. Chatting with him was a great experience for sure. This post is a quick summary of my discussions with him.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-09-13</pubDate>
       <guid>https://yiming.dev/blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-09</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/05/clippings-of-2019-jul</guid>
-    </item>
-    <item>
-      <title>Understanding Agile with Complete Rate</title>
-      <link>https://yiming.dev/clipping/2019/08/07/understanding-agile-with-complete-rate</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-08</pubDate>
-      <guid>https://yiming.dev/clipping/2019/08/07/understanding-agile-with-complete-rate</guid>
     </item>
   </channel>
 </rss>

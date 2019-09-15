@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Clippings of 2019 Aug - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="This is my top reads from Aug, 2019. Its topics vary from software testing to leadership and management." />
+  <meta name="keywords" content="Leadership, Software, Engineering, Career, Learning, Elixir, Design, Testing, Management" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Clippings of 2019 Aug</h1>
+            <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc266c8c">Programmer Test Principles – Kent Beck – Medium&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Testing">Testing</span></span></a></li>
+<li><a href="#orgc021947">What is Software Design? by Jack W. Reeves ©1992 C++ Journal&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Design">Design</span>&#xa0;<span class="Software">Software</span></span></a></li>
+<li><a href="#org9813125">Going off the Rails into Elixir - Technical.ly Baltimore&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Elixir">Elixir</span></span></a></li>
+<li><a href="#org0f37d1e">Why learning more isn’t always better - The Startup - Medium&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Learning">Learning</span></span></a></li>
+<li><a href="#orgd8d673f">Big Ball of Mud&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span></span></a></li>
+<li><a href="#orgd3b7b0e">Things Nobody Told Me About Being a Software Engineer · Ana Ulin&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span>&#xa0;<span class="Career">Career</span></span></a></li>
+<li><a href="#org7db4f88">The Parable of the Two Programmers · RealMensch&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span>&#xa0;<span class="Career">Career</span></span></a></li>
+<li><a href="#org1988327">How to Slow Down to Go Faster Than Ever in Software Development&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span></span></a></li>
+<li><a href="#org93c9dcc">The Most Common Type of Incompetent Leader and Make Them Your Anti-Mentor&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span></span></a></li>
+<li><a href="#org44b9622">Level Up - a curated newsletter for leaders in tech.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span></span></a></li>
+<li><a href="#org9869bc2">#73：新晋管理者的自我修养 - UX Coffee 设计咖&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span>&#xa0;<span class="Management">Management</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc266c8c" class="outline-2">
+<h2 id="orgc266c8c"><a href="https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934">Programmer Test Principles – Kent Beck – Medium</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Testing">Testing</span></span></h2>
+<div class="outline-text-2" id="text-orgc266c8c">
+<p>
+As always, a masterpiece from Kent Beck. Following the same ideas as
+<a href="https://dsdshcym.github.io/clipping/2019/04/11/values-and-practices/">Values and Practices in XP</a>, there are Principles vs. Details in
+Testing. In this post, Kent explained why discussing testing
+principles is more effective and listed some common principles.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Minimize programmer waiting.</li>
+<li>Run reliably.</li>
+<li>Predict deployability.</li>
+<li>Respond to behavior changes.</li>
+<li>Not respond to structure changes.</li>
+<li>Be cheap to write.</li>
+<li>Be cheap to read.</li>
+<li>Be cheap to change.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgc021947" class="outline-2">
+<h2 id="orgc021947"><a href="http://user.it.uu.se/~carle/softcraft/notes/Reeve_SourceCodeIsTheDesign.pdf">What is Software Design? by Jack W. Reeves ©1992 C++ Journal</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Design">Design</span>&#xa0;<span class="Software">Software</span></span></h2>
+<div class="outline-text-2" id="text-orgc021947">
+<p>
+From my personal experiences, software engineering is very different
+from other types of engineering, say buildings or mechanics. I found
+reasons for these differences in this paper.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Engineering is more about <b>how you do the process</b> than it is about
+what the final product looks like.</li>
+<li>The goal of any engineering design project is <b>the production of
+some documentation.</b></li>
+<li>To summarize:
+<ol class="org-ol">
+<li>Real software runs on computers.
+<ul class="org-ul">
+<li>It is a sequence of ones and zeros that is stored on some
+magnetic media.</li>
+<li>It is not a program listing in C++ (or any other programming
+language).</li>
+</ul></li>
+<li>A program listing is a document that represents a software
+design.
+<ul class="org-ul">
+<li>Compilers and linkers actually build software designs.</li>
+</ul></li>
+<li>Real software is incredibly cheap to build, and getting cheaper
+all the time as computers get faster.</li>
+<li>Real software is incredibly expensive to design.
+<ul class="org-ul">
+<li>Given that software designs are relatively easy to turn out,
+and essentially free to build, an unsurprising revelation is
+that software designs tend to be incredibly large and complex.</li>
+<li>Additionally, software designs are almost always constantly
+evolving.</li>
+</ul></li>
+<li>Programming is a design activity
+<ol class="org-ol">
+<li>a good software design process recognizes this</li>
+<li>a good software design process does not hesitate to code when
+coding makes sense.
+<ul class="org-ul">
+<li>Coding actually makes sense more often than believed.
+<ul class="org-ul">
+<li>Often the process of rendering the design in code will
+reveal oversights and the need for additional design
+effort.</li>
+<li>The earlier this occurs, the better the design will be.</li>
+</ul></li>
+</ul></li>
+</ol></li>
+<li>Since software is so cheap to build,
+<ul class="org-ul">
+<li>formal engineering validation methods are not of much use in
+real world software development.</li>
+<li>It is easier and cheaper to just build the design and test it
+than to try to prove it.</li>
+</ul></li>
+<li>Testing and debugging are design activities
+<ul class="org-ul">
+<li>they are the software equivalent of the design validation and
+refinement processes of other engineering disciplines.</li>
+<li>A good software design process recognizes this and does not try
+to short change the steps.</li>
+</ul></li>
+<li>There are other design activities -- call them top level design,
+module design, structural design, architectural design, or
+whatever.
+<ul class="org-ul">
+<li>A good software design process recognizes this and deliberately
+includes the steps.</li>
+</ul></li>
+<li>All design activities interact.
+<ul class="org-ul">
+<li>A good software design process recognizes this</li>
+<li>A good software design process allows the design to change,
+sometimes radically, as various design steps reveal the need.</li>
+</ul></li>
+<li>Many different software design notations are potentially useful
+-- as auxiliary documentation and as tools to help facilitate
+the design process.</li>
+<li>Software development is still more a craft than an engineering
+discipline.
+<ul class="org-ul">
+<li>This is primarily because of a lack of rigor in the critical
+processes of validating and improving a design.</li>
+</ul></li>
+<li>Ultimately, <b>real advances in software development depend upon
+advances in programming techniques</b>, which in turn mean advances
+in programming languages.
+<ul class="org-ul">
+<li>C++ is such an advance. It has exploded in popularity because
+it is a mainstream programming language that directly supports
+better software design.</li>
+<li>C++ is a step in the right direction, but still more advances
+are needed.</li>
+</ul></li>
+</ol></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org9813125" class="outline-2">
+<h2 id="org9813125"><a href="https://technical.ly/baltimore/2019/07/25/going-off-the-rails-into-elixir/">Going off the Rails into Elixir - Technical.ly Baltimore</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Elixir">Elixir</span></span></h2>
+<div class="outline-text-2" id="text-org9813125">
+<p>
+I've read so many articles that preaches Elixir. Most of them are just
+focusing on the language features, like pipe operators, pattern
+matching, etc.. I'm not saying these languages features are not good,
+but I think we are missing the key point here: <b>the business value</b> of
+switching to Elixir.
+</p>
+
+<p>
+That's why I'm excited to see this post, as it explains exactly the
+business value of switching to Elixir and the ecosystem around this
+new language.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Elixir: <b>a toolset that is perfect for data-driven applications.</b>
+<ul class="org-ul">
+<li>Most modern web applications are just that, data driven. The
+application’s flow is a function of the data:
+<ol class="org-ol">
+<li>data provided by external systems,</li>
+<li>data provided by the user,</li>
+<li>data that is computed.</li>
+</ol></li>
+<li>Elixir ecosystem is a great environment for building today’s web
+applications.
+<ul class="org-ul">
+<li>Elixir’s functional programming,</li>
+<li>Erlang’s solid foundation</li>
+<li>the power and ease of use of Phoenix</li>
+</ul></li>
+</ul></li>
+<li>Elixir helps our clients and ourselves by lowering several costs in
+several ways.
+<ol class="org-ol">
+<li>the language is stable and won’t change drastically on the
+developers while they are building your application</li>
+<li>resource utilization and fault-tolerance</li>
+<li>the developer friendly syntax and functional programming</li>
+<li>with Elixir, you are sure to attract the best staff.</li>
+</ol></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org0f37d1e" class="outline-2">
+<h2 id="org0f37d1e"><a href="https://medium.com/swlh/why-learning-more-isnt-always-better-2154f75a71d6">Why learning more isn’t always better - The Startup - Medium</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Learning">Learning</span></span></h2>
+<div class="outline-text-2" id="text-org0f37d1e">
+<p>
+I have this feeling that learning is my own biggest enemy now. I spend
+most of my time reading books, listening to podcasts, watching
+conference videos. I have little time to write or build new things.
+</p>
+
+<p>
+After reading this post, I'm more certain about my feeling.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Knowledge has no power without action.</li>
+<li>The key to success appears to be regulating our knowledge intake,
+while putting the information we acquire into action.</li>
+<li>The less we obsess about staying up to date on the latest books,
+podcasts and informational trends, the more time we have to create.</li>
+</ul>
+</blockquote>
+
+<p>
+Now, I'm trying to reduce my time spent on learning by skimming
+through blog posts, quitting Twitter/RSS, etc.
+</p>
+
+<p>
+With the time freed from learning, I can write more and create
+more. And it feels better!
+</p>
+
+<p>
+If you are interested in similar ideas, <a href="https://tjcx.me/posts/consumption-distraction/">Consume less, create more</a>
+would be a great read.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8d673f" class="outline-2">
+<h2 id="orgd8d673f"><a href="http://www.laputan.org/mud/mud.html">Big Ball of Mud</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span></span></h2>
+<div class="outline-text-2" id="text-orgd8d673f">
+<p>
+Again, a great paper from the past. The most impressive thing I
+learned from it is that <b>Maintenance is learning.</b>
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Three levels of learning in the context of systems.
+<ol class="org-ol">
+<li>This first is <b>habit</b>, where a system dutifully serves its
+function within the parameters for which it was designed.</li>
+<li>The second level comes into play when <b>the system must adapt to
+change</b>. Here, it usually must be modified, and its capacity to
+sustain such modification determines its degree of adaptability.</li>
+<li>The third level is the most interesting: <b>learning to
+learn</b>. With buildings, adding a raised floor is an
+example. Having had to sustain a major upheaval, the system
+adapts so that subsequent adaptations will be much less painful.</li>
+</ol></li>
+</ul>
+</blockquote>
+
+<p>
+It resonates with my current understanding of Agile. To me, <i>Agile =
+Continuous Learning</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd3b7b0e" class="outline-2">
+<h2 id="orgd3b7b0e"><a href="https://anaulin.org/blog/things-nobody-told-me-about-being-a-software-engineer/">Things Nobody Told Me About Being a Software Engineer · Ana Ulin</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span>&#xa0;<span class="Career">Career</span></span></h2>
+<div class="outline-text-2" id="text-orgd3b7b0e">
+<blockquote>
+<p>
+That, 15-ish years in, my main professional contributions could be
+summarized as:
+</p>
+<ol class="org-ol">
+<li><b>nudging folks to write better and/or more tests</b>,</li>
+<li>getting people to talk to each other.</li>
+</ol>
+</blockquote>
+
+<p>
+This summary resonates with my personal experiences perfectly.
+</p>
+<ol class="org-ol">
+<li>I learned TDD at school so I thought everyone must had been doing
+it all the time. But it turned out not to be the case at all. Then
+<b>learning how to write better tests and how to nudge others to
+write more tests</b> became the major parts of my career.</li>
+<li>But testing is not the end of the story. It's just the
+beginning. Even if developers write enough tests, project could
+still fail. I learned this lesson the hard way. Then I found the
+root cause: team members don't talk to each other often enough. So
+naturally, I started <b>learning <a href="https://dsdshcym.github.io/blog/2019/06/14/make-it-safe-book-review-crucial-conversations/">how to talk to people</a> and <a href="https://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/">how to get
+people to talk to each other</a>.</b></li>
+</ol>
+
+<p>
+I am and still will be in this great journey. If you have similar
+experiences, I'm more than happy to hear them.
+</p>
+</div>
+</div>
+<div id="outline-container-org7db4f88" class="outline-2">
+<h2 id="org7db4f88"><a href="https://realmensch.org/2017/08/25/the-parable-of-the-two-programmers/">The Parable of the Two Programmers · RealMensch</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span>&#xa0;<span class="Career">Career</span></span></h2>
+<div class="outline-text-2" id="text-org7db4f88">
+<p>
+I've been wondering this for quite some time: why are some experienced
+programmers less skillful? This parable is an interesting read if you
+have the same question.
+</p>
+<blockquote>
+<p>
+<b>Experience does matter. But so does underlying skill.</b>
+</p>
+</blockquote>
+<ul class="org-ul">
+<li><p>
+<a href="https://mp.weixin.qq.com/s/Wsu6l5vmJs0SG78sEA9-dg">【专访】太多企业只做敏捷表面功夫，一线程序员水平太差</a>
+</p>
+
+<p>
+这篇对 ThoughtWorks 总监咨询师熊节的采访也讨论了类似的话题： <b>基本功可能比经验更加重要</b> 。
+</p>
+<blockquote>
+<p>
+如果有一个程序员他开始意识到，我每天的工作是什么，我的基本功（如何），对我开发效率有影响的事情是什么。我们讲：理解需求、拆分任务、编写测试、高质量的代码实现——所有这些动作能够很快的做出来。这五个要素很少有企业去考他。
+</p>
+
+<p>
+但是如果程序员自己意识到了这些东西很重要，去练习这方面的能力，他就会在这个团队中鹤立鸡群。他做的工作会更快、更好。
+</p>
+
+<p>
+这会带来什么效应呢？别人会看到这个人价值很大。比如我 2013 年培养的毕业生，在我这培养了 1 年，他就可以去某知名大公司做咨询，去教该公司那些号称有多少年经验的程序员怎么做软件，这些老程序员还很服他。在我这工作 3
+年，这家大公司出高薪去挖他，结果还没挖动。所以这个对个人价值的提升是非常明显的。
+</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1988327" class="outline-2">
+<h2 id="org1988327"><a href="https://www.infoq.com/articles/slow-down-go-faster/">How to Slow Down to Go Faster Than Ever in Software Development</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Software">Software</span>&#xa0;<span class="Engineering">Engineering</span></span></h2>
+<div class="outline-text-2" id="text-org1988327">
+<blockquote>
+<ul class="org-ul">
+<li>The only way of going faster at a sustainable pace is slowing down,
+in three important areas:
+<ol class="org-ol">
+<li>People for improving professionalism and craftsmanship</li>
+<li>The process for improving adaptation and efficiency</li>
+<li>Product for improving automation and quality</li>
+</ol></li>
+</ul>
+</blockquote>
+
+<p>
+I encountered similar ideas in many different places recently:
+</p>
+<ul class="org-ul">
+<li><a href="https://basecamp.com/shapeup">SHAPE UP: Stop Running in Circles and Ship Work that Matters</a></li>
+<li><a href="https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&amp;qid=1525875626&amp;sr=8-2&amp;keywords=company+of+one&amp;linkCode=sl1&amp;tag=eik05-20&amp;linkId=470605f6117f60ed70b3b4268f0e78d1">Company of One: Why Staying Small Is the Next Big Thing for Business</a></li>
+<li><a href="https://pragprog.com/book/rjnsd/the-nature-of-software-development">The Nature of Software Development: Keep It Simple, Make It
+Valuable, Build It Piece by Piece by Ron Jeffries</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93c9dcc" class="outline-2">
+<h2 id="org93c9dcc"><a href="https://hbr.org/2018/03/the-most-common-type-of-incompetent-leader">The Most Common Type of Incompetent Leader</a> and <a href="https://knowyourteam.com/blog/2019/02/13/the-anti-mentor-how-a-bad-boss-influences-our-leadership-style/">Make Them Your Anti-Mentor</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span></span></h2>
+<div class="outline-text-2" id="text-org93c9dcc">
+<p>
+Being a leader is hard. Being promoted to a leadership role without
+noticing it is even harder. As you can see from <a href="https://hbr.org/2018/03/the-most-common-type-of-incompetent-leader">this report</a>:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>The key derailment characteristics of bad managers are well
+documented and fall into three broad behavioral categories:
+<dl class="org-dl">
+<dt>“moving away behaviors”</dt><dd>which create distance from others through hyper-emotionality,
+diminished communication, and skepticism that erodes trust;</dd>
+<dt>“moving against behaviors”</dt><dd>which overpower and manipulate people while aggrandizing the
+self;</dd>
+<dt>“moving toward behaviors”</dt><dd>which include being ingratiating, overly conforming, and
+reluctant to take chances or stand up for one’s team.</dd>
+</dl></li>
+<li>Absentee Leadership
+<ul class="org-ul">
+<li>Absentee leaders are people in leadership roles who are
+psychologically absent from them.</li>
+<li>Research shows that it is the most common form of incompetent
+leadership.</li>
+<li>Research shows that being ignored by one’s boss is more alienating
+than being treated poorly.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+I can tell you how hard it is to be led by an absentee leader. But the
+more important lesson is to learn from their behaviors and don't
+become a leader like them, like Claire Lew explained in <a href="https://knowyourteam.com/blog/2019/02/13/the-anti-mentor-how-a-bad-boss-influences-our-leadership-style/">this post</a>:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>"negative morality"
+<ul class="org-ul">
+<li>Seeing what you <i>don’t</i> want to be like is more powerful than what
+you do want to be.</li>
+<li>The push is greater than the pull.</li>
+<li><b>learning from mistakes is markedly more powerful than learning
+from successes</b></li>
+</ul></li>
+<li>Ask yourself:
+<ol class="org-ol">
+<li>Who is the worst boss I’ve ever had? Then reflect.</li>
+<li>In what ways are you consciously or unconsciously reacting to
+your experience with this person?</li>
+<li>Are those reactions to this person – your "anti-mentor" – helping
+your team? Or, are they hurting?</li>
+</ol></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org44b9622" class="outline-2">
+<h2 id="org44b9622"><a href="http://levelup.thekua.com/">Level Up - a curated newsletter for leaders in tech.</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span></span></h2>
+<div class="outline-text-2" id="text-org44b9622">
+<p>
+Speaking of leadership, I would recommend this newsletter from Patrick
+Kua. I learned a lot from <a href="https://www.youtube.com/watch?v=iLS6NXMXtLI">his</a> <a href="https://www.youtube.com/watch?v=N9UPW-2wL5U">talks</a> and <a href="https://www.thekua.com/atwork/2014/11/the-definition-of-a-tech-lead/">blog</a> <a href="https://www.thekua.com/atwork/2015/06/tech-lead-circles-of-responsibility/">posts</a> before. Then, he
+started publishing this newsletter about tech leadership. So I became
+a subscriber naturally. If you are also interested in tech,
+leadership, management, subscribe it!
+</p>
+</div>
+</div>
+<div id="outline-container-org9869bc2" class="outline-2">
+<h2 id="org9869bc2"><a href="https://uxcoffee.simplecast.com/episodes/73-a8BBjaVZ">#73：新晋管理者的自我修养 - UX Coffee 设计咖</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Leadership">Leadership</span>&#xa0;<span class="Management">Management</span></span></h2>
+<div class="outline-text-2" id="text-org9869bc2">
+<p>
+最后，推荐这一期 UX Coffee，他们讨论了设计师转至设计经理岗位时遇到的种种问题。虽然是来自设计师的讨论，但是管理的思路都是相通的，同样的问题在开发、项目管理上都会碰到，这些讨论都很有借鉴的价值。
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>好的管理者是个「聚宝盆」
+<ul class="org-ul">
+<li>里面的宝物可能每一个价值都更高</li>
+<li>但是聚宝盆能把他们圈在一起</li>
+</ul></li>
+<li>一线员工可能不了解公司战略信息，1:1 的时候给到</li>
+<li>三个放手
+<ol class="org-ol">
+<li>对项目放手</li>
+<li>对团队管理放手</li>
+<li>对不合适的人放手</li>
+</ol></li>
+<li>通过提要求、定标准来保证产出质量（军训教官）</li>
+<li>IC (Individual Contributor) 要站在更高的层次看自己的工作</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-06</span>
+        <span title="last modification date" class="post-info">2019-09-15</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/newsletter/">Newsletter</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
