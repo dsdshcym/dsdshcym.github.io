@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Sun, 15 Sep 2019 11:00:36 CST</pubDate>
-    <lastBuildDate>Sun, 15 Sep 2019 11:00:36 CST</lastBuildDate>
+    <pubDate>Wed, 18 Sep 2019 22:12:43 CST</pubDate>
+    <lastBuildDate>Wed, 18 Sep 2019 22:12:43 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Each Problem Is Unique</title>
+      <link>https://yiming.dev/clipping/2019/09/17/each-problem-is-unique</link>
+      <description><![CDATA[I believe that, each problem is unique. To find the best solution, we need to *understand the context* first, apply our knowledge, and finally execute & iterate.]]></description>
+      <pubDate>2019-09-18</pubDate>
+      <guid>https://yiming.dev/clipping/2019/09/17/each-problem-is-unique</guid>
+    </item>
+    <item>
       <title>Clippings of 2019 Aug</title>
       <link>https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug</link>
-      <description><![CDATA[This is my top reads from Aug, 2019. Its topics vary from software testing to leadership and management.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-09-15</pubDate>
       <guid>https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-14</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/14/use-uncertainty-to-drive-design-decisions</guid>
-    </item>
-    <item>
-      <title>Clippings of 2019 Jul</title>
-      <link>https://yiming.dev/clipping/2019/08/05/clippings-of-2019-jul</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-09</pubDate>
-      <guid>https://yiming.dev/clipping/2019/08/05/clippings-of-2019-jul</guid>
     </item>
   </channel>
 </rss>
