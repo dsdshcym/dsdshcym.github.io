@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Agile Is Continuous Learning - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="What is &quot;Agile&quot;? Why is &quot;Agile&quot; so popular in the software industry? This post is my current understanding: being agile means to learn continuously." />
+  <meta name="keywords" content="Agile, Software, Development, Continuous, Learning" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Agile Is Continuous Learning</h1>
+            <p>
+In the software industry, there is no word buzzier than "Agile". Most
+companies are "Agile" building their software. But not every company
+is building software in the same way. Company A's "Agile" is different
+from (if not opposite to) company B's. It seems to be unlimited
+definitions for "Agile" out there. So what really is "Agile"? And why
+is "Agile" so popular in the software industry?
+</p>
+
+<p>
+To me, being agile means <b>to learn continuously</b>. We work in smaller
+chunks to learn in a finer granularity. We iterate or make changes to
+learn in a broader space. We gather feedback more often to learn
+faster.
+</p>
+
+<p>
+To understand how I came to this conclusion, we need to go back to
+check the goal of "Agile", think about ways to achieve this goal, then
+the reason for why "Agile" = Continuous Learning is obvious.
+</p>
+
+<div id="outline-container-orga4ba334" class="outline-2">
+<h2 id="orga4ba334">The Goal of "Agile" Is to Deliver Valuable Software</h2>
+<div class="outline-text-2" id="text-orga4ba334">
+<p>
+<a href="http://agilemanifesto.org/">Manifesto for Agile Software Development</a> is one of the most famous
+document defining what "Agile" is. Most people (including me before
+writing this post) only knows the four values from the Manifesto.
+</p>
+<blockquote>
+<p>
+Individuals and Interactions over processes and tools
+Working Software over comprehensive documentation
+Customer Collaboration over contract negotiation
+Responding to Change over following a plan
+</p>
+</blockquote>
+
+<p>
+But the Manifesto contains not only these values, but also several
+principles. The goal of "Agile" is at the top of these <a href="https://agilemanifesto.org/principles.html">principles
+behind the Agile Manifesto</a>:
+</p>
+<blockquote>
+<p>
+Our highest priority is to satisfy the customer through early and
+continuous delivery of valuable software.
+</p>
+</blockquote>
+
+<p>
+Thus, all the "Agile" values, movements, practices, frameworks are
+aiming for the same goal: <b>delivering valuable software.</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org61d7935" class="outline-2">
+<h2 id="org61d7935">Delivering Valuable Software Requires Continuous Learning</h2>
+<div class="outline-text-2" id="text-org61d7935">
+<p>
+But delivering valuable software is hard, really hard. It's hard
+because every aspect of it is a moving target.
+</p>
+
+<ol class="org-ol">
+<li><p>
+The definition of "Value" is not consistent
+</p>
+
+<p>
+The definition of value is changing all the time. Customers often
+don't know what they really need. And they are always asking for more
+(different) values. So the problem our software need to solve is
+a moving target.
+</p></li>
+
+<li><p>
+The solution space is so large
+</p>
+
+<p>
+Even if a given problem is well-defined, there won't be a best
+solution. There would always be a faster algorithm, a more secure
+implementation, or a more elegant architecture. I really love how Li
+Hongyi phrased this problem in <a href="https://www.csc.gov.sg/articles/how-to-build-good-software">How to Build Good Software</a>:
+</p>
+<blockquote>
+<p>
+In software development, most ideas are bad; this is not anyone’s
+fault. It is just that <b>the number of possible ideas is so large</b> that
+any particular idea is probably not going to work, even if it was
+chosen very carefully and intelligently.
+</p>
+</blockquote></li>
+
+<li><p>
+The building blocks are changing
+</p>
+
+<p>
+Last but not least, modern software is building upon layers of
+building blocks: frameworks, libraries, languages, operating
+systems, hardware, and third-party apis. Each of these building
+blocks are out of our control. Once they change, our working
+software may fail immediately.
+</p></li>
+</ol>
+
+<p>
+Then the question of <i>how to deliver valuable software</i> becomes <i>how
+to hit all these moving targets at the same time.</i>
+</p>
+
+<p>
+The answer is quite simple (but not easy): <b>learn as fast as we can</b>, to
+catch up the rate of these changes.
+</p>
+
+<p>
+No one can predict the future. If we can, then we will just build the
+thing which can satisfy all the future needs and prevent all the
+future bugs. So the best thing we can do is to learn from the past and
+the present.
+</p>
+
+<ol class="org-ol">
+<li>Learn what's valuable to customers now and pivot accordingly.</li>
+<li>Learn different solutions and always iterate to a better one.</li>
+<li>Learn the building blocks and catch up with their changes.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge73a9fa" class="outline-2">
+<h2 id="orge73a9fa">Thus, "Agile" Is All About Continuous Learning</h2>
+<div class="outline-text-2" id="text-orge73a9fa">
+<p>
+As you can see above, continuous learning is the way to deliver
+valuable software. And "Agile" is aimed for valuable software. So
+naturally "Agile" is all about continuous learning.
+</p>
+
+<p>
+And that's also why "Agile" becomes so popular among the software
+industry. If "Agile" wasn't called "Agile", but "Nimble" or
+"Lightsome", as long as it expressed the same idea of continuous
+learning, it would still conquer the world.
+</p>
+
+<p>
+So how does "Agile" enables continuous learning?
+</p>
+
+<p>
+<b>Feedback</b> is the key to continuous learning. After all, <a href="https://dsdshcym.github.io/blog/2019/07/07/how-to-give-receive-feedback/">feedback is
+how we learn about our software and ourselves</a>. Without feedback, we
+can't learn how well we understand the value to our customer. Without
+feedback, we can't learn how well our software fits the
+problem. Without feedback, we can't know what we need to change due to
+an upstream updates.
+</p>
+
+<p>
+As you can see from the graph below, feedback cycles are everywhere in
+software development.
+</p>
+<pre class="example">
+Planning &lt;-------------\
+   |                   |
+   |                   |
+   v                   |
+Designing &lt;-----------&gt;|
+   |                   |
+   |                   |
+   v                   |
+Developing &lt;----------&gt;| Feedback
+   |                   |
+   |                   |
+   v                   |
+Shipping &lt;------------&gt;|
+   |                   |
+   |                   |
+   v                   |
+ User  &lt;--------------&gt;/
+</pre>
+<p>
+There are three levels of feedback cycles in this graph:
+</p>
+<ol class="org-ol">
+<li>A big cycle which includes every step (from Plan to User feedback)</li>
+<li>Small cycles between two steps (e.g. Plan &lt;-&gt; Design, Design &lt;-&gt;
+Develop, etc.)</li>
+<li>Internal cycles within each step (e.g. Code Reviews, Automated
+Testing when Developing the software)</li>
+</ol>
+
+<p>
+<b>The shorter these feedback cycles are, the faster we can learn, the
+faster we can improve our products.</b>
+</p>
+
+<p>
+So all the "Agile" frameworks is aimed to <b>shorten our feedback loops</b>
+in one way or another. Here are some common ideas:
+</p>
+<ol class="org-ol">
+<li>Work on fewer, smaller features or products, which is basically the
+idea of MVP. So that we can have a shorter big cycle.</li>
+<li>Involve every team member (including client or user) in every
+step. So that we can have shorter small cycles between steps.</li>
+<li>Collaborate closely, e.g. pair programming, code reviews, design
+criticize, etc. So that we can get shorter internal cycles within
+each steps.</li>
+</ol>
+
+<p>
+This is how I understand Agile now. Hopefully, it can reduce some of
+your confusions about Agile. If you have different opinions, please do
+let me know, I'd be glad to learn more!
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-16</span>
+        <span title="last modification date" class="post-info">2019-09-23</span>
+        <span title="tags" class="post-info"><a href="/tags/agile/">Agile</a>, <a href="/tags/learn/">Learn</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
