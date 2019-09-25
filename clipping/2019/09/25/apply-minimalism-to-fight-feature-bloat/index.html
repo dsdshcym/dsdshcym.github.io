@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Apply Minimalism to Fight &quot;Feature Bloat&quot; - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="&quot;Feature Bloat&quot; is the conflict between consumers&#39; needs for more features and our needs to keep our product maintainable. This post shows two options when facing this dilemma." />
+  <meta name="keywords" content="Minimalism, Product, Emacs, Vim, Application, Heroku" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Apply Minimalism to Fight &quot;Feature Bloat&quot;</h1>
+            <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3eb73ad">"Feature Bloat": What? Why? How?</a></li>
+<li><a href="#orgd95c3dc">The End of iTunes: Do One Thing And Do It Well</a></li>
+<li><a href="#org3c28bc0">Heroku: Apply Minimalism to Product</a></li>
+<li><a href="#org2fe6eae">Emacs &amp; Vim: Text Editor Minimalism</a></li>
+<li><a href="#org7ff79c3">Summary</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3eb73ad" class="outline-2">
+<h2 id="org3eb73ad">"Feature Bloat": What? Why? How?</h2>
+<div class="outline-text-2" id="text-org3eb73ad">
+<p>
+A few days ago, I read <a href="https://hbswk.hbs.edu/archive/feature-bloat-the-product-manager-s-dilemma">this HBS report about the "Feature Bloat"
+dilemma in product management</a>.
+</p>
+
+<p>
+The problem described in this report resonates with me.
+</p>
+
+<p>
+On the development side, a feature-bloated product comes with a
+codebase that's also bloated, complex, and poorly tested.
+</p>
+
+<p>
+On the project management side, a feature-bloated product has so many
+features that adding a new feature or changing an old behavior may
+break other features. Thus fewer features get added, fewer changes are
+made, and the project stales.
+</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Developer: *unpublishes 11 lines of JavaScript*<br><br>JavaScript:<br><br> <a href="https://t.co/b5lX0fJxha">pic.twitter.com/b5lX0fJxha</a></p>&mdash; swyx (@swyx) <a href="https://twitter.com/swyx/status/1173260769041035264?ref_src=twsrc%5Etfw">September 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>
+A feature-bloated product is like the tower in this tweet: changing a
+small piece of code, and the whole tower is down.
+(P.S. JavaScript ecosystem is a great example as a feature bloated
+product.)
+</p>
+
+<p>
+But why does "Feature Bloat" exist? And why is it a dilemma?
+</p>
+
+<p>
+Turns out the reason is simple:
+</p>
+<blockquote>
+<p>
+<i>Because consumers perceive value in this Swiss-Army-Knife approach
+and will pay for the added utility.</i>
+</p>
+</blockquote>
+
+<p>
+Due to this conflict between consumers' needs for more features and
+our needs for maintaining the product, "Feature Bloat" becomes a
+dilemma.
+</p>
+
+<p>
+How to break out of this dilemma? The report proposes some solutions.
+</p>
+<blockquote>
+<ol class="org-ol">
+<li>Remove features</li>
+<li>Build simpler products</li>
+<li>Give consumers decision aids</li>
+<li>Design products that do one thing very well</li>
+<li>Use prototypes and product-​in-​use research</li>
+</ol>
+</blockquote>
+
+<p>
+So far so good, but I'm surprised by a fact, that this report was
+written in <b>2006</b>! As you may know, I started my career
+around 2016. So a decade has passed, nothing has changed?!
+</p>
+</div>
+</div>
+<div id="outline-container-orgd95c3dc" class="outline-2">
+<h2 id="orgd95c3dc">The End of iTunes: Do One Thing And Do It Well</h2>
+<div class="outline-text-2" id="text-orgd95c3dc">
+<p>
+Let's take iTunes for example.
+</p>
+
+<p>
+iTunes is probably the most famous feature-bloated product in the last
+10+ years.
+</p>
+<ul class="org-ul">
+<li>It plays music, movies, podcasts, audio books.</li>
+<li>It manages your local music library and your Apple Music
+subscription.</li>
+<li>Plus, it also is the tool you use to manage your iPhone/iPod/iPad
+from your Mac.</li>
+</ul>
+
+<p>
+It's been years that Mac users complaining about this huge giant.
+Finally in the upcomming macOS this year, iTunes splits into three
+apps,: Apple Music, Podcasts, and TV. And iOS devices management is
+moved into Finder.
+</p>
+
+<p>
+From the story of iTunes, we can see that we are still struggling with
+the "Feature Bloat" dilemma. And by design three products that do one
+thing well, Apple find a way out.
+</p>
+</div>
+</div>
+<div id="outline-container-org3c28bc0" class="outline-2">
+<h2 id="org3c28bc0">Heroku: Apply Minimalism to Product</h2>
+<div class="outline-text-2" id="text-org3c28bc0">
+<p>
+But breaking iTunes down works because all the features are still
+there, just not in the same app. What if we can't split our product
+and we still need to add more features?
+</p>
+
+<p>
+Heroku finds a way: <a href="https://brandur.org/minimalism">pursuing production minimalism</a>.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Through ephemeralization from <a href="https://www.amazon.com/Nine-Chains-Moon-Buckminster-Fuller/dp/0385011490">Nine Chains to the Moon</a>
+<ul class="org-ul">
+<li><b>"Do more and more with less and less until eventually you can do
+everything with nothing."</b></li>
+<li>building a stack that scales to more users and more activity while
+the people and infrastructure supporting it stay fixed.</li>
+<li>This is accomplished by building systems that are more robust,
+more automatic, and less prone to problems because the tendency to
+grow in complexity that’s inherent to them has been understood,
+harnessed, and reversed.</li>
+<li>Realistic? Probably not. Useful? Yes. Even falling short of an
+incredibly ambitious goal tends to leave you somewhere good.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+The idea of "do more with less" sticks with me. In the same post,
+Brandur Leach gave several examples from Heroku's practice. Please do
+check them out!
+</p>
+</div>
+</div>
+<div id="outline-container-org2fe6eae" class="outline-2">
+<h2 id="org2fe6eae">Emacs &amp; Vim: Text Editor Minimalism</h2>
+<div class="outline-text-2" id="text-org2fe6eae">
+<p>
+To give product minimalism a close look, you definitely need to know
+Emacs and Vim.
+</p>
+
+<p>
+Emacs and Vim are two of the most powerful text editors in this
+world. They are powerful because they can do anything you can imagine
+(or can't imagine) with text editing, and keep the editor core
+small.
+</p>
+
+<p>
+I do these things in Emacs everyday:
+</p>
+<ul class="org-ul">
+<li>Writing code (in various programming languages)</li>
+<li>Managing my calendar</li>
+<li>Receiving and replying emails</li>
+</ul>
+
+<p>
+While Emacs is so powerful, it is just a Lisp interpreter at its
+core.
+</p>
+
+<p>
+So how can they achieve this? I think it's the same idea of product
+minimalism as Heroku peruses.
+</p>
+
+<p>
+Their cores are all written in <code>C</code>. And they both have a
+package/plugin system, written in <code>Emacs Lisp</code> / <code>Vim script</code>.  Over
+the time, they extract features from their <code>C</code> cores as <code>scripts</code>. So
+that their cores become smaller, but they can do more by switching
+different packages/plugins.
+</p>
+</div>
+</div>
+<div id="outline-container-org7ff79c3" class="outline-2">
+<h2 id="org7ff79c3">Summary</h2>
+<div class="outline-text-2" id="text-org7ff79c3">
+<p>
+"Feature Bloat" is a serious problem when developing products. To
+break out of this dilemma, we have to options depending on the
+context:
+</p>
+<ol class="org-ol">
+<li>When features are interdependent from each other, break them into
+separated products that do one thing well. (e.g. iTunes)</li>
+<li>When features are intertwined with each other, extract additional
+features as plugins, and keep the core system small. So that we can
+add more features via new plugins, and change existing behavior by
+switching plugins.</li>
+</ol>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-25</span>
+        <span title="last modification date" class="post-info">2019-09-25</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/product/">Product</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>

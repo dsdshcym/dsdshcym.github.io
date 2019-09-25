@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Mon, 23 Sep 2019 21:27:45 CST</pubDate>
-    <lastBuildDate>Mon, 23 Sep 2019 21:27:45 CST</lastBuildDate>
+    <pubDate>Wed, 25 Sep 2019 22:36:57 CST</pubDate>
+    <lastBuildDate>Wed, 25 Sep 2019 22:36:57 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Apply Minimalism to Fight &quot;Feature Bloat&quot;</title>
+      <link>https://yiming.dev/clipping/2019/09/25/apply-minimalism-to-fight-feature-bloat</link>
+      <description><![CDATA["Feature Bloat" is the conflict between consumers' needs for more features and our needs to keep our product maintainable. This post shows two options when facing this dilemma.]]></description>
+      <pubDate>2019-09-25</pubDate>
+      <guid>https://yiming.dev/clipping/2019/09/25/apply-minimalism-to-fight-feature-bloat</guid>
+    </item>
+    <item>
       <title>Agile Is Continuous Learning</title>
       <link>https://yiming.dev/blog/2019/09/16/agile-is-continuous-learning</link>
-      <description><![CDATA[What is "Agile"? Why is "Agile" so popular in the software industry? This post is my current understanding: being agile means to learn continuously.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-09-23</pubDate>
       <guid>https://yiming.dev/blog/2019/09/16/agile-is-continuous-learning</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-08-16</pubDate>
       <guid>https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions</guid>
-    </item>
-    <item>
-      <title>Clippings from The Effective Enginner</title>
-      <link>https://yiming.dev/clipping/2019/02/05/clippings-from-the-effective-enginner</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-14</pubDate>
-      <guid>https://yiming.dev/clipping/2019/02/05/clippings-from-the-effective-enginner</guid>
     </item>
   </channel>
 </rss>
