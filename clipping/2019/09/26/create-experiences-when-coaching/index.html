@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Create Experiences When Coaching - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Coaching others is hard. How to do it more effectively? Creating experience and let people change themselves! This post will show you my TDD-coaching journey and how creating experience is more effective than giving instructions." />
+  <meta name="keywords" content="Coaching, Teaching, Experiences, Pair Programming, Learning, TDD" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Create Experiences When Coaching</h1>
+            <p>
+<a href="https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug/#orgd3b7b0e">Since the beginning of my career, I've been nudging people to write
+more tests.</a> I learned one thing from these coaching experiences:
+<b>coaching is hard.</b> Because coaching requires one to <b>change</b>
+another's existing knowledge, and changing another individual is
+really hard. So how to coach (a.k.a change people) more effectively?
+<b>Creating experience and let people change themselves</b> is the best way
+I can tell.
+</p>
+
+<div id="outline-container-org432ddb3" class="outline-2">
+<h2 id="org432ddb3">Create Experience, Not Arguments</h2>
+<div class="outline-text-2" id="text-org432ddb3">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Change Pro-Tip: When I can give people an experience, I get dramatically better results than when I give them reasoning. <a href="https://t.co/qe4RGOQqHT">pic.twitter.com/qe4RGOQqHT</a></p>&mdash; GeePaw Hill (@GeePawHill) <a href="https://twitter.com/GeePawHill/status/1150791416492240896?ref_src=twsrc%5Etfw">July 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>
+In this thread, GeePaw explains why creating experiences is the best
+and how to do that.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Nothing works to persuade like having a winning experience (Why?)
+<ul class="org-ul">
+<li>humans don't mostly decide what to do based on reasons</li>
+<li>they decide what to do and use reasons to justify it</li>
+</ul></li>
+<li>An experience (What?)
+<ul class="org-ul">
+<li>is a short period of a particular activity</li>
+<li>is intended to put the problem and its solution "under the
+fingers"</li>
+</ul></li>
+<li>Ways to have an experience (How?)
+<dl class="org-dl">
+<dt>a toy</dt><dd>short exercises or games that give a person a taste of
+the better.</dd>
+<dt>a small portion of the day-job problem &amp; solution</dt><dd>situations from the dayjob world that you've vetted to be sure
+you'll get the "better".</dd>
+<dt>the full day-job problem &amp; solution</dt><dd>live-action</dd>
+</dl></li>
+<li><b>"Create experiences, not arguments."</b></li>
+</ul>
+</blockquote>
+
+<p>
+I can tell the same from my TDD-coaching journey<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>:
+</p>
+<ol class="org-ol">
+<li><p>
+Presentation (no experiences) can hardly work
+</p>
+
+<p>
+When I just started teaching developers about TDD, I thought it was
+easy: just gave a presentation with beautiful slides and fancy
+gifs, developers would realize TDD as a great tool and become so
+excited to learn it by themselves.
+</p>
+
+<p>
+It turned out that I was too naive. Nothing changed after my first
+presentation about testing. Developers still didn't write automated
+tests. "Okay, let me try presenting Code Review next time."  Again,
+nothing changed. Developers still merged others merge requests
+without a glance.
+</p></li>
+
+<li><p>
+Workshop (a toy) is slightly better
+</p>
+
+<p>
+Well, I learned the lesson of <a href="https://twitter.com/GeePawHill/status/1151429663413145602">"Try Different, Not Harder"</a> from my
+failed presentations. So I began to try different methods.
+</p>
+
+<p>
+I hosted several workshops around TDD and refactoring. I chose a
+small problem beforehand (e.g. <a href="http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32">99 Bottles</a>,
+<a href="https://github.com/thoughtbot-upcase-exercises/extract-class">thoughtbot-upcase-exercises/extract-class</a>, etc.). Then I organized
+developers to work on them in the workshop. After everyone finished
+their implementation, we discussed about tradeoffs around different
+solutions.
+</p>
+
+<p>
+Developers enjoyed it. But still, not many tests were added or
+refactoring were made in our real projects after the workshop.
+</p>
+
+<p>
+I wondered why.
+</p>
+
+<ol class="org-ol">
+<li><p>
+The topic was not focused.
+</p>
+
+<p>
+During the discussion, We were just exchanging our own opinions.
+One developer proposed "don't write your own email regex
+expression". Another said "we should plan before coding". So
+naturally, people couldn't get the point of testing or
+refactoring.
+</p></li>
+
+<li><p>
+Toy problems were different from real problems.
+</p>
+
+<p>
+The problems I chose were small enough to be fitted into a short
+time frame. The drawback was that they couldn't reflect what to
+do in a real project.
+</p>
+<ul class="org-ul">
+<li>How to start adding tests in a legacy application with no
+existing tests?</li>
+<li>How to refactor a complex piece of business logic?</li>
+<li>etc.</li>
+</ul>
+<p>
+This is the main reason that "toy experiences" work poorly.
+</p></li>
+</ol></li>
+
+<li><p>
+Code review (a small portion of the day-job) move the needle
+</p>
+
+<p>
+"Toy experiences" didn't work well. Thus I started nudging people
+to do code reviews (which was as hard as nudging people to write
+tests, if not harder.) Then in the code review session, I left
+comments about how to adding tests with examples.
+</p>
+
+<p>
+Code review moved the needle. Developers saw the benefits of having
+some automated tests and another person to check the code before
+merging. They started adding tests and assigning merge requests to
+me for my suggestions.
+</p></li>
+
+<li><p>
+Pair programming (the full day-job) is the king
+</p>
+
+<p>
+Pair programming worked the best. Without mentioning I was trying
+to teach TDD or refactoring, I just sit down with a developer to
+pair with him. Then we wrote some tests, refactored some code
+together. Often, he would see the benefits of testing and
+refactoring by himself. And after the pairing session, he would
+started writing more tests and refactoring more, without me told
+him so.
+</p>
+
+<p>
+This is the power of creating experiences when coaching.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfe3a9fa" class="outline-2">
+<h2 id="orgfe3a9fa">Research on Learning Says the Same</h2>
+<div class="outline-text-2" id="text-orgfe3a9fa">
+<p>
+If you need more proofs, check out this report from Farnam Street:
+<a href="https://fs.blog/2013/01/how-people-learn/">Arguments Are For Learning, Not Winning</a>.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>More instruction wasn’t helping students advance from novice to
+expert.
+<ul class="org-ul">
+<li>In fact, the data indicated the opposite:
+<b>students had more novice-like beliefs after they completed a
+course than they had when they started.</b></li>
+</ul></li>
+<li>Improved teaching and learning
+<ul class="org-ul">
+<li>A lot of educational and cognitive research can be reduced to this
+basic principle: <b>People learn by creating their own understanding.</b></li>
+<li>Effective teaching facilitates that creation by getting students
+engaged in thinking deeply about the subject at an appropriate
+level and then monitoring that thinking and guiding it to be more
+expert-like.
+<ul class="org-ul">
+<li>Reducing Cognitive Load</li>
+<li>Addressing Beliefs</li>
+<li>Stimulating and Guiding Thinking</li>
+</ul></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>
+Note that <b>people learn by creating their own understanding.</b> How can
+a person create her own understanding? From her own experiences!
+</p>
+
+<p>
+So, please remember this when coaching others, <b>bring less
+instructions, create more experiences!</b>
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+BTW, this journey is also a real world example for <i>THE LAW OF
+RASPBERRY JAM</i> from <a href="https://www.amazon.com/gp/product/B004J35LHQ/ref=as_li_ss_tl?ie=UTF8&amp;linkCode=ll1&amp;tag=jbrains.ca-20&amp;linkId=0ebeca4e7ca4d1a13bbf43b332282562">The Secrets of Consulting by Gerald Weinberg</a>.
+</p>
+<blockquote>
+<p>
+The wider you spread it, the thinner it gets.
+</p>
+</blockquote></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-09-26</span>
+        <span title="last modification date" class="post-info">2019-10-03</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/coaching/">Coaching</a>, <a href="/tags/tdd/">TDD</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
