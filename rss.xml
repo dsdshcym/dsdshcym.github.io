@@ -4,237 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 04 Oct 2019 22:46:06 CST</pubDate>
-    <lastBuildDate>Fri, 04 Oct 2019 22:46:06 CST</lastBuildDate>
+    <pubDate>Tue, 08 Oct 2019 23:12:35 CST</pubDate>
+    <lastBuildDate>Tue, 08 Oct 2019 23:12:35 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Isn&#39;t Class Violating Single Responsibility Principle By Definition?</title>
+      <link>https://yiming.dev/blog/2019/10/08/isnt-class-violating-single-responsibility-principle-by-definition</link>
+      <description><![CDATA[In Object-Oriented Programming, a Class is responsible for both storing the data and providing the behavior. Isn't Class itself violating Single Responsibility Principle (SRP) by definition?]]></description>
+      <pubDate>2019-10-08</pubDate>
+      <guid>https://yiming.dev/blog/2019/10/08/isnt-class-violating-single-responsibility-principle-by-definition</guid>
+    </item>
+    <item>
       <title>Clippings of 2019 Sep</title>
       <link>https://yiming.dev/clipping/2019/10/04/clippings-of-2019-sep</link>
-      <description><![CDATA[<section id="content" role="main">
-    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
-        <div class="col-md-2"></div>
-            <h1>Clippings of 2019 Sep</h1>
-            <div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org40b3e84">Testing the boundaries of collaboration – Increment: Testing&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Testing">Testing</span></span></a></li>
-<li><a href="#org9ea2762">We're probably bad at job titles. And it's OK.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Hiring">Hiring</span></span></a></li>
-<li><a href="#org9663866">RailsConf 2018: Engineering Engineering: More than the sum of our parts by Vietor Davis - YouTube&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Management">Management</span></span></a></li>
-<li><a href="#org187560c">How to Build Good Software&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SoftwareEngineering">SoftwareEngineering</span></span></a></li>
-<li><a href="#orga356053">How Technology Hijacks People's Minds — from a Magician and Google's Design Ethicist — Medium&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Technology">Technology</span></span></a></li>
-<li><a href="#org58102bf">Overfitting&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SoftwareEngineering">SoftwareEngineering</span>&#xa0;<span class="Abstraction">Abstraction</span></span></a></li>
-<li><a href="#orgdf9550e">太多企业只做敏捷表面功夫，一线程序员水平太差&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Agile">Agile</span>&#xa0;<span class="Coding">Coding</span></span></a></li>
-<li><a href="#org3969a7f">坐和放宽 — 对恋爱关系的思考&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Love">Love</span></span></a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org40b3e84" class="outline-2">
-<h2 id="org40b3e84"><a href="https://increment.com/testing/testing-the-boundaries-of-collaboration/">Testing the boundaries of collaboration – Increment: Testing</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Testing">Testing</span></span></h2>
-<div class="outline-text-2" id="text-org40b3e84">
-<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">The script used by <a href="https://twitter.com/KentBeck?ref_src=twsrc%5Etfw">@KentBeck</a> automated the commit-push-PR steps: `while(true); do git pull --rebase; git push; done;`.<br><br>And trunk based development explains how to work in small steps and keep the build working:<a href="https://t.co/q8kRBZBwub">https://t.co/q8kRBZBwub</a><br><br>I&#39;m working toward this future, and you?</p>&mdash; Yiming Chen (@dsdshcym) <a href="https://twitter.com/dsdshcym/status/1177592633046159360?ref_src=twsrc%5Etfw">September 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-</div>
-<div id="outline-container-org9ea2762" class="outline-2">
-<h2 id="org9ea2762"><a href="https://no-kill-switch.ghost.io/we-are-probably-bad-at-job-titles-and-its-ok/">We're probably bad at job titles. And it's OK.</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Hiring">Hiring</span></span></h2>
-<div class="outline-text-2" id="text-org9ea2762">
-<p>
-If you follow my work in this blog, you know I'm a strong advocate for
-<a href="http://dsdshcym.github.io/clipping/2018/01/18/understand-the-problem-first/">understanding the problem and its context first</a>, then coming up with a
-specific solution. This post is how we apply this idea to hiring:
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Software Engineering varies so heavily &amp; is so contextual that what
-(IMHO) works best is crafting your own solutions to solve your own
-specific problems (by MAPPING others’ experiences onto your own
-environment)</li>
-<li>Everything starts with the actual needs:
-<ul class="org-ul">
-<li>what activities would a person do (typically)?</li>
-<li>what goals would (s)he have?</li>
-<li>which gaps would (s)he fill (in the org)?</li>
-<li>how would we say whether (s)he does well or not?</li>
-</ul></li>
-</ul>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-org9663866" class="outline-2">
-<h2 id="org9663866"><a href="https://www.youtube.com/watch?v=7vTtOoCiKao&amp;t=0s&amp;index=66&amp;list=PLE7tQUdRKcyak-yFKj5IN3tDYOh5omMrH">RailsConf 2018: Engineering Engineering: More than the sum of our parts by Vietor Davis - YouTube</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Management">Management</span></span></h2>
-<div class="outline-text-2" id="text-org9663866">
-<p>
-This talk is about how to <b>help <i>well intentioned</i> organizations
-become <i>healthy</i> organizations</b>. And it's another application of
-<a href="http://dsdshcym.github.io/clipping/2018/01/18/understand-the-problem-first/">understanding the problem and its context first</a>.
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Create <i>stable</i> solutions which balance <i>investment</i> and <i>output</i></li>
-<li>Remember that "what's right" is highly context dependent
-<ul class="org-ul">
-<li>Context matters
-<ul class="org-ul">
-<li>Few things are 100% bad</li>
-<li>They are reactions to certain circumstance</li>
-</ul></li>
-</ul></li>
-<li>All bad things have reasonable reasons: Understand them
-<ul class="org-ul">
-<li>Find the Positive reason to understand a Problem (like Politics)</li>
-<li><b>Waterfall magnifies the cost of mistakes (and mistakes are easier
-to discover downstream)</b></li>
-</ul></li>
-<li>Expect hard problems, bring your full brain</li>
-<li>Achieve near team outcomes, they <i>provide</i> the credit to
-successfully achieve long term outcomes
-<ul class="org-ul">
-<li>Trust is the only silver bullet
-<ul class="org-ul">
-<li>What is "trust" in an organization
-<ul class="org-ul">
-<li>Trust is the expectation that observation doesn't influence
-trust</li>
-<li>The ability to do the right thing, without asking for permission</li>
-</ul></li>
-<li>Successful Execution results in Operational Latitude (Trust)
-<ul class="org-ul">
-<li><b>The more we get done, the more we can get done</b></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-org187560c" class="outline-2">
-<h2 id="org187560c"><a href="https://www.csc.gov.sg/articles/how-to-build-good-software">How to Build Good Software</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SoftwareEngineering">SoftwareEngineering</span></span></h2>
-<div class="outline-text-2" id="text-org187560c">
-<p>
-This post is a great summary of why software engineering matters and
-some key principles of software engineering.
-</p>
-<blockquote>
-<ul class="org-ul">
-<li>Some characteristics particular to software that consistently cause
-traditional management practices to fail, while allowing small
-startups to succeed with a shoestring budget:
-<ol class="org-ol">
-<li>Reusing good software is easy; it is what allows you to build
-good things quickly;</li>
-<li>Software is limited not by the amount of resources put into
-building it, but by how complex it can get before it breaks
-down;</li>
-<li><b>The main value in software is not the code produced, but the
-knowledge accumulated by the people who produced it.</b></li>
-</ol></li>
-<li>Some core operating principles that can dramatically improve the
-chances of success:
-<ol class="org-ol">
-<li>Start as simple as possible;</li>
-<li>Seek out problems and iterate;</li>
-<li>Hire the best engineers you can.</li>
-</ol></li>
-</ul>
-</blockquote>
-<p>
-I recently summarized <a href="https://yiming.dev/blog/2019/09/16/agile-is-continuous-learning/">Agile as Continuous Learning</a>. And this idea was
-influenced by this article, especially the statement that <b>the main
-value in software is the knowledge accumulated</b> by the people who
-produced it.
-</p>
-
-<p>
-The only thing I disagree from this article is to <i>hire the best
-engineers you can</i>. I started my career aiming to become the best
-engineers. But after I dig into management, I found it was the
-environment that decided if an engineer can perform well or not.
-</p>
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The real 10x is in the environment, not the individual contributor. The world is full of capable, creative people who’d make that 10x jump if only they weren’t being trapped and demotivated by the stupidity of the modern workplace.</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/1150106899330797568?ref_src=twsrc%5Etfw">July 13, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-</div>
-<div id="outline-container-orga356053" class="outline-2">
-<h2 id="orga356053"><a href="https://medium.com/@tristanharris/how-technology-hijacks-peoples-minds-from-a-magician-and-google-s-design-ethicist-56d62ef5edf3#.cml5d8qie">How Technology Hijacks People's Minds — from a Magician and Google's Design Ethicist — Medium</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Technology">Technology</span></span></h2>
-<div class="outline-text-2" id="text-orga356053">
-<p>
-This article reminded me to rethink about the technology I'm using. A
-few takeaways:
-</p>
-<ol class="org-ol">
-<li><i>All user interfaces are menus.</i> Always ask "what's not on the
-menu?" and "what's my original need?"</li>
-<li>Avoid slot machines like twitter timelines, games, etc..</li>
-<li>We don’t miss what we don’t see. And it's okay to miss them.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org58102bf" class="outline-2">
-<h2 id="org58102bf"><a href="https://drive.google.com/file/d/0B59Tysg-nEQZOGhsU0U5QXo0Sjg/view?pref=2&amp;pli=1">Overfitting</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SoftwareEngineering">SoftwareEngineering</span>&#xa0;<span class="Abstraction">Abstraction</span></span></h2>
-<div class="outline-text-2" id="text-org58102bf">
-<blockquote>
-<ul class="org-ul">
-<li>What is overfitting?
-<ol class="org-ol">
-<li>overfit the code to a set of assumptions,</li>
-<li>then take it down and overfit the next version to the new set of
-assumptions</li>
-<li>It gets worse as the number of assumptions (or order) grows.</li>
-</ol></li>
-</ul>
-</blockquote>
-<p>
-This paper explains the same idea as <a href="https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction">The Wrong Abstraction by Sandi
-Metz</a>. Sometimes we abstract things too early based on some
-assumptions, but more often than not, these assumptions are wrong. So
-<a href="https://dsdshcym.github.io/blog/2018/10/26/dont-repeat-your-domain-knowledge/">what I learned</a> was to avoid making these assumptions and to always
-write the code based on the fact we know for sure.
-</p>
-</div>
-</div>
-<div id="outline-container-orgdf9550e" class="outline-2">
-<h2 id="orgdf9550e"><a href="https://mp.weixin.qq.com/s/Wsu6l5vmJs0SG78sEA9-dg">太多企业只做敏捷表面功夫，一线程序员水平太差</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Agile">Agile</span>&#xa0;<span class="Coding">Coding</span></span></h2>
-<div class="outline-text-2" id="text-orgdf9550e">
-<blockquote>
-<p>
-如果有一个程序员他开始意识到，我每天的工作是什么，我的基本功（如何），对我开发效率有影响的事情是什么。我们讲：理解需求、拆分任务、编写测试、高质量的代码实现——所有这些动作能够很快的做出来。这五个要素很少有企业去考他。
-</p>
-
-<p>
-但是如果程序员自己意识到了这些东西很重要，去练习这方面的能力，他就会在这个团队中鹤立鸡群。他做的工作会更快、更好。
-</p>
-
-<p>
-这会带来什么效应呢？别人会看到这个人价值很大。比如我 2013 年培养的毕业生，在我这培养了 1 年，他就可以去某知名大公司做咨询，去教该公司那些号称有多少年经验的程序员怎么做软件，这些老程序员还很服他。在我这工作 3
-年，这家大公司出高薪去挖他，结果还没挖动。所以这个对个人价值的提升是非常明显的。
-</p>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-org3969a7f" class="outline-2">
-<h2 id="org3969a7f"><a href="https://wangcheng.tumblr.com/post/186706503423">坐和放宽 — 对恋爱关系的思考</a>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Love">Love</span></span></h2>
-<div class="outline-text-2" id="text-org3969a7f">
-<blockquote>
-<ol class="org-ol">
-<li>平等
-<ol class="org-ol">
-<li>一般般好</li>
-<li>哪哪都好</li>
-</ol></li>
-<li>相信
-<ul class="org-ul">
-<li>相信对方是爱自己的</li>
-</ul></li>
-</ol>
-</blockquote>
-</div>
-</div>
-
-    </div>
-</section>
-]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-10-04</pubDate>
       <guid>https://yiming.dev/clipping/2019/10/04/clippings-of-2019-sep</guid>
     </item>
@@ -293,13 +77,6 @@ write the code based on the fact we know for sure.
       <description><![CDATA[]]></description>
       <pubDate>2019-08-28</pubDate>
       <guid>https://yiming.dev/clipping/2019/08/22/doing-one-thing-at-a-time</guid>
-    </item>
-    <item>
-      <title>Ideas Are Cheap</title>
-      <link>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-08-21</pubDate>
-      <guid>https://yiming.dev/clipping/2019/08/18/ideas-are-cheap</guid>
     </item>
   </channel>
 </rss>

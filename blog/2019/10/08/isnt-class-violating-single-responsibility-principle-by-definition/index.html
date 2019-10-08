@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Isn&#39;t Class Violating Single Responsibility Principle By Definition? - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="In Object-Oriented Programming, a Class is responsible for both storing the data and providing the behavior. Isn&#39;t Class itself violating Single Responsibility Principle (SRP) by definition?" />
+  <meta name="keywords" content="Object Oriented Programming, Functional Programming, OOP, Class, Single Responsibility Principle, SRP" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Isn&#39;t Class Violating Single Responsibility Principle By Definition?</h1>
+            <p>
+I had a hard time understanding Single Responsibility Principle
+(SRP). I first saw its name in <a href="https://en.wikipedia.org/wiki/SOLID">SOLID principle</a>. At first glance, the
+idea was straightforward: "Every class should only have one
+responsibility." But with a second thought, it doesn't make sense! In
+Object-Oriented Programming, a Class is responsible for both storing
+the data and providing the behavior. Isn't Class itself violating SRP
+by definition?
+</p>
+
+<div id="outline-container-org76b6fe5" class="outline-2">
+<h2 id="org76b6fe5">Yes, we should all write functional code!</h2>
+<div class="outline-text-2" id="text-org76b6fe5">
+<p>
+If we take SRP to the extreme, then we would only write two types of
+classes:
+</p>
+<ol class="org-ol">
+<li>Value objects, which only hold some data.</li>
+<li>Service objects, which only serve some functions.</li>
+</ol>
+
+<p>
+In this case, our code would be functional, but with some
+object-oriented boilerplate.
+</p>
+<ol class="org-ol">
+<li>Value objects are data structures wrapped in classes.</li>
+<li>Service objects are functions wrapped in classes.</li>
+</ol>
+
+<p>
+But this conclusion is based on the assumption that the R in SRP means
+programming-level responsibility: data or function. What if we
+understand <i>responsibility</i> in a different way?
+</p>
+</div>
+</div>
+<div id="outline-container-org13df08f" class="outline-2">
+<h2 id="org13df08f">No, a class should only have one <i>business-level</i> responsibility!</h2>
+<div class="outline-text-2" id="text-org13df08f">
+<p>
+I learned another interpretation of SRP from Robert Martin's <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean
+Code</a>:
+</p>
+<blockquote>
+<p>
+A class or module should have one, and only one, reason to change.
+</p>
+</blockquote>
+<p>
+This interpretation is better: for the same "reason to change", we may
+need to change data and behavior at the same time, so classes make
+sense again. But understanding "reason to change" was still hard to
+me. Is extracting a helper class a reason to change? Is handling a new
+edge case a reason to change? Is adding a new feature a reason to
+change?
+</p>
+
+<p>
+The Aha moment came when I read <a href="https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html">this blog post from Robert Martin</a>:
+</p>
+<blockquote>
+<p>
+The reasons for change are people. It is people who request changes.
+</p>
+</blockquote>
+
+<p>
+Then I realized my confusion came from different levels of
+"responsibilities".
+</p>
+
+<p>
+Data/Functions are programming-level responsibilities. But the R in
+SRP means business-level responsibility. The reasons to change at
+business-level come from business person: stakeholders, clients, or
+users.
+</p>
+
+<p>
+Take the classic MVC model for example, the different reasons for them
+to change are:
+</p>
+<dl class="org-dl">
+<dt>Model</dt><dd>"We need to store more data."</dd>
+<dt>View</dt><dd>"We need to change how we display this data."</dd>
+<dt>Controller</dt><dd>"We need to use a different workflow."</dd>
+</dl>
+
+<p>
+As you may see by now, SRP is a vague principle. It's hard to
+understand because different people hold different definitions for
+"responsibility". A SRP violation at one level may meet SRP in another
+level. It's highly context-dependent.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa233cf" class="outline-2">
+<h2 id="orgaa233cf">Principles are only guidelines</h2>
+<div class="outline-text-2" id="text-orgaa233cf">
+<p>
+I don't mean to say <a href="https://www.yegor256.com/2017/12/19/srp-is-hoax.html">SRP is a Hoax</a>. SRP is a highly abstract
+summary. Learning it has taught me so much about how to write good
+software.
+</p>
+
+<p>
+That being said, principles are only guidelines. My rule of thumb is
+to <a href="https://yiming.dev/clipping/2019/08/22/doing-one-thing-at-a-time/#fn.1">make it work first</a>, then refactor to make it right. Use our best
+judgments at every step. And use these principles as guides when
+refactoring the code.
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-10-08</span>
+        <span title="last modification date" class="post-info">2019-10-08</span>
+        <span title="tags" class="post-info"><a href="/tags/object-oriented/">Object-Oriented</a>, <a href="/tags/functional-programming/">Functional Programming</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
