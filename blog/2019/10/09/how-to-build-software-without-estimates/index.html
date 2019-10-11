@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>How to Build Software Without Estimates - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Estimating is hard and useless, so don&#39;t do it. This post is about focusing on shipping values and how to talk about risks without estimates." />
+  <meta name="keywords" content="Software Engineering, Estimates, Project Management, Communication" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>How to Build Software Without Estimates</h1>
+            <p>
+Estimating is hard.
+</p>
+
+<p>
+I was once asked how long it would take to extract all the
+configurations in a codebase to an yaml file. I said "I just need to
+write a grep script to do that. So two days, at most!" Guess what
+happened next? I spent <b>two months</b> on this refactoring task.
+</p>
+
+<div id="outline-container-org3ebdd2e" class="outline-2">
+<h2 id="org3ebdd2e">Why is estimating in software hard?</h2>
+<div class="outline-text-2" id="text-org3ebdd2e">
+<p>
+Why is estimating so hard? The trivial answer is that predicting the
+future is hard.
+</p>
+
+<p>
+But we can learn from our past! Yes, our past experience can help a
+lot. When estimating how long it would take to finish a repetitive
+task, we can do it perfectly. From my last 3 years time logging
+experience, I can tell that I need 4 minutes to brush my teeth.
+</p>
+
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/f6aa7c3bcdc8c8033fc4aa9de8e42ee6a48e5763/assets/brush_teeth_logbook.png" alt="brush_teeth_logbook.png" width="75%" />
+</p>
+</div>
+
+<p>
+Then, what's the special thing about building software that make it
+more complicated than brushing teeth? It is the fact that every
+software is new and <a href="https://www.jrothman.com/mpd/project-management/2013/10/why-do-we-estimate-anyway/">we have not built <i>exactly</i> this software
+before</a>. So every estimate we make involves some future
+predictions. And these future predictions can be inaccurate.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd18739b" class="outline-2">
+<h2 id="orgd18739b">Shipping values is the key</h2>
+<div class="outline-text-2" id="text-orgd18739b">
+<p>
+So how to build software without estimates? Remember, estimate is
+about predicting the future, and <a href="https://www.goodreads.com/quotes/328848-the-best-way-to-predict-your-future-is-to-create">"the best way to predict the future
+is to create it"</a>. <b>Focus on shipping values</b>, which is the only way we
+create the future for our software.
+</p>
+</div>
+
+<div id="outline-container-org2038e2d" class="outline-3">
+<h3 id="org2038e2d">Manage risks (a.k.a. Shape Up your ideas)</h3>
+<div class="outline-text-3" id="text-org2038e2d">
+<p>
+To ship values, we need a tool for managing potential risks. Without
+estimates as a gateway to talk about risks, how do we manage risks?
+</p>
+
+<p>
+Let's set a deadline first, and bet on tasks that seem to be feasible
+within this time range. Then keep reducing risks that may prevent us
+shipping before the deadline. This is what <a href="https://basecamp.com/shapeup">Shape Up</a> means to
+Basecamp. (And I also wrote a post about the same idea before:
+<a href="https://dsdshcym.github.io/blog/2019/05/27/estimating-is-hard-lets-cut-scope/">Estimating is Hard, Let's Cut Scope!</a>)
+</p>
+
+<p>
+Basically, it reverts the estimation process.
+</p>
+<ul class="org-ul">
+<li>When estimating, we have a fix design/spec, then we estimate how
+long it would take.</li>
+<li>When shaping up, we fix the deadline, then we find a solution that
+can fit into the time range.</li>
+</ul>
+
+<p>
+Why it works better than time estimations? For every problem, we have
+infinite possible solutions. While time is equal to everyone, no one
+can earn back another second. So the scope of the solution is more
+flexible than time. We can and should cut the scope if we know we are
+not gonna make it. With scopes reduced, our risks are reduced too. On
+the other hand, estimating has this natural assumption that the scope
+is fixed, and should not be modified (though it's often
+expanded). Then we can't manage risks after an estimate is given.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org436ef60" class="outline-3">
+<h3 id="org436ef60">Help stakeholders get rid of estimates</h3>
+<div class="outline-text-3" id="text-org436ef60">
+<p>
+But if you are working with someone who is used to asking for
+estimations and you can't transfer to the Shape Up method, you need to
+help her to shift her mindset. You have two powerful tools to do that.
+</p>
+
+<ol class="org-ol">
+<li>Build trust with your communication skills.</li>
+<li>Ship values steadily with your coding skills.</li>
+</ol>
+
+<p>
+<a href="http://blog.hut8labs.com/no-deadlines-for-you.html">This article from Dan Milstein</a> uses a real-world example to show what
+good communication skills look like.
+</p>
+
+<p>
+The key idea is that we can build trust with the business people by
+understanding the real business value/problem behind a proposed
+solution. Sounds familiar? It's the same idea of Shape Up or Cut
+Scopes. It's also a key idea from <a href="https://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/">Nonviolent Communication</a>: <b>asking
+for what they really want and be creative about the solution</b>.
+</p>
+
+<p>
+In order to know their real needs, we need to communicate it in a
+skillful way. The most important skill is echoing back what others
+just said. <a href="https://www.google.com/search?client=firefox-b-d&amp;q=ampp+crucial+conversations">The Ask, Mirror, Paraphrase, or Prime (AMPP) method</a> from
+<a href="https://www.amazon.com/Crucial-Conversations-Talking-Stakes-Second/dp/1469266822">Crucial Conversations</a> taught me how to do it well.
+</p>
+
+<p>
+After this trust is built, we can focus on shipping values
+steadily. As long as we ship new features/bug fixes every day, every
+week, the stakeholder won't ask us for estimates anymore. How to do
+that? Well, you need engineering practices like automated testing,
+continuous integration, and so on. But that's a topic for another day.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Since our estimations are so inaccurate, some says "we don't
+trust the estimate result, it doesn't matter if you need 1 hour or 1
+week. We use estimate point like Small, Large, Extra Large. And the
+goal is to make sure everyone understands the risk equally. If one
+estimates XL but I estimate S, then we need to talk." I don't believe
+in this idea. If we need to know the potential risks, just ask for
+them! Plus, different people hold different understandings of S, L,
+XL, so good luck making sure everyone uses them equally beforehand.
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-10-09</span>
+        <span title="last modification date" class="post-info">2019-10-11</span>
+        <span title="tags" class="post-info"><a href="/tags/software-engineering/">Software Engineering</a>, <a href="/tags/communication/">Communication</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
