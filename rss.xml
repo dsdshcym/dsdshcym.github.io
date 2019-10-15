@@ -4,14 +4,21 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Sun, 13 Oct 2019 08:31:14 CST</pubDate>
-    <lastBuildDate>Sun, 13 Oct 2019 08:31:14 CST</lastBuildDate>
+    <pubDate>Tue, 15 Oct 2019 20:57:07 CST</pubDate>
+    <lastBuildDate>Tue, 15 Oct 2019 20:57:07 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>The Paper First Illustrated Waterfall: 40 Years Later</title>
+      <link>https://yiming.dev/clipping/2019/10/15/the-paper-first-illustrated-waterfall-40-years-later</link>
+      <description><![CDATA[Why so many companies are still following "Waterfall" when they claim they are using "Agile"? The answer may hide behind the paper that first introduced "Waterfall".]]></description>
+      <pubDate>2019-10-15</pubDate>
+      <guid>https://yiming.dev/clipping/2019/10/15/the-paper-first-illustrated-waterfall-40-years-later</guid>
+    </item>
+    <item>
       <title>How to Build Software Without Estimates</title>
       <link>https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates</link>
-      <description><![CDATA[Estimating is hard and useless, so don't do it. This post is about focusing on shipping values and how to talk about risks without estimates.]]></description>
+      <description><![CDATA[]]></description>
       <pubDate>2019-10-13</pubDate>
       <guid>https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates</guid>
     </item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-09-13</pubDate>
       <guid>https://yiming.dev/blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019</guid>
-    </item>
-    <item>
-      <title>3 Key Ideas Behind The Erlang Thesis</title>
-      <link>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-09-04</pubDate>
-      <guid>https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis</guid>
     </item>
   </channel>
 </rss>

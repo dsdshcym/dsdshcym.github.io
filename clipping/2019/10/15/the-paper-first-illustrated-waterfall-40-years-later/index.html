@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>The Paper First Illustrated Waterfall: 40 Years Later - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="Why so many companies are still following &quot;Waterfall&quot; when they claim they are using &quot;Agile&quot;? The answer may hide behind the paper that first introduced &quot;Waterfall&quot;." />
+  <meta name="keywords" content="Waterfall, Software Engineering, Agile" />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>The Paper First Illustrated Waterfall: 40 Years Later</h1>
+            <p>
+In 1970, Winston W. Rovce wrote a paper about <i>MANAGING THE DEVELOPMENT
+OF LARGE SOFTWARE SYSTEMS</i>. In this paper, he illustrated a typical
+process to build software, which is called "Waterfall".
+</p>
+
+
+<div class="figure">
+<p><img src="https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/cb418b06ea9391affd557cd96e063271c22b9bdd/assets/hongyan_waterfall.jpg" alt="hongyan_waterfall.jpg" width="100%" />
+</p>
+</div>
+
+<p>
+It's almost 2020 now, which means 40 years have passed. "Waterfall"
+has become an unpopular word. Nobody says she's using
+"Waterfall". Agile, the opposite of "Waterfall", has become the
+buzzword. Everyone says she's doing "Agile". But I'm still fighting a
+lot of "Waterfally" processes in various projects. Why is that? How
+can "Waterfall" hide behind "Agile"? After reading this "original
+paper of Waterfall", I found an answer.
+</p>
+
+<div id="outline-container-org8a49aca" class="outline-2">
+<h2 id="org8a49aca">The paper illustrated "Waterfall" is against "Waterfall"</h2>
+<div class="outline-text-2" id="text-org8a49aca">
+<p>
+Before answering that question, I must reveal the biggest surprise
+from this paper. Most people think this paper describes "Waterfall" to
+preach it, but it's quite the opposite. This paper is against
+"Waterfall". As you can see from the excerpt below:
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>The implementation described above is risky and invites failure.
+<ul class="org-ul">
+<li>The testing phase which occurs at the end of the development
+cycle is the first event for which timing, storage
+input/output transfers, etc., are experienced as distinguished
+from analyzed</li>
+<li>These phenomena are not precisely analyzable.</li>
+<li>A simple octal patch or redo of some isolated code will not
+fix these kinds of difficulties.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+The goal of defining "Waterfall" in this paper is to adjust this model
+so we can gather feedback early and often.
+</p>
+<blockquote>
+<ul class="org-ul">
+<li>Five additional features that must be added to this basic approach
+to eliminate most of the development risks.
+<ol class="org-ol">
+<li>Program design comes first (before analysis)</li>
+<li>Document the design</li>
+<li>Do it twice</li>
+<li>Plan, control and monitor testing</li>
+<li>Involve the customer
+<ul class="org-ul">
+<li>The involvement should be formal, in-depth, and continuing
+<ol class="org-ol">
+<li>System Requirements Generation</li>
+<li>Preliminary Software Review</li>
+<li>Critical Software Review</li>
+<li>Final Software Acceptance Review</li>
+</ol></li>
+</ul></li>
+</ol></li>
+</ul>
+</blockquote>
+
+<p>
+This paper, at its core, is about Agile software development.
+</p>
+<ol class="org-ol">
+<li>Test Driven Development is about "design before analysis" and
+"plan, control and monitor testing".</li>
+<li>Continuous Delivery is about doing it twice, constantly.</li>
+<li><p>
+Short feedback loop must involve the customer:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ways to involve the customer</th>
+<th scope="col" class="org-left">Equivalent in "Agile"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">System Requirements Generation</td>
+<td class="org-left">Behaviour Driven Development</td>
+</tr>
+
+<tr>
+<td class="org-left">Preliminary Software Review</td>
+<td class="org-left">Minimum Viable Product</td>
+</tr>
+
+<tr>
+<td class="org-left">Critical Software Review</td>
+<td class="org-left">Code Review / Tech Plan Review</td>
+</tr>
+
+<tr>
+<td class="org-left">Final Software Acceptance Review</td>
+<td class="org-left">Quality Assurance</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+
+<p>
+So why many people still misinterpret this paper as pro-waterfall?
+Some may say that people don't read. But I believe a more important
+reason is that "Agile" and "Waterfall" are so similar.
+</p>
+</div>
+</div>
+<div id="outline-container-org1cfa4cb" class="outline-2">
+<h2 id="org1cfa4cb">"Agile" is just shorter "Waterfalls"</h2>
+<div class="outline-text-2" id="text-org1cfa4cb">
+<p>
+After all, whether you are doing "Agile" or "Waterfall", you need to
+do the same stuffs: defining requirements, designing architecture,
+coding, testing, etc.
+</p>
+
+<p>
+The root difference between these two methodologies is not what you do
+or don't do, it is <b>how often you collect feedback</b> for everything you
+do.
+</p>
+
+<p>
+Jon Kern summarizes that <a href="https://twitter.com/JonKernPA/status/1062427606723846146">"Agile" is just shorter "Waterfalls"</a>. I think
+it's <a href="https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/">the first step toward "Agile"</a> because a shorter "Waterfall" cycle
+increases the frequency we gather feedback for the features we deliver.
+</p>
+
+<p>
+But the problem then becomes how to define "shorter". Is a six-month
+cycle shorter? Is a six-hour cycle shorter? There is no clear
+definition.
+</p>
+
+<p>
+So people may think they are doing "Agile" while actually they have a
+long feedback cycle and they've lost their sight on feedback and
+improvement. This is how "Waterfall" hides behind "Agile".
+</p>
+</div>
+</div>
+
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2019-10-15</span>
+        <span title="last modification date" class="post-info">2019-10-15</span>
+        <span title="tags" class="post-info"><a href="/tags/clipping/">Clipping</a>, <a href="/tags/agile/">Agile</a>, <a href="/tags/paper/">Paper</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+
+  </body>
+</html>
