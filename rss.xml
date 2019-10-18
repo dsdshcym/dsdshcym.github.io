@@ -4,15 +4,22 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Tue, 15 Oct 2019 20:57:07 CST</pubDate>
-    <lastBuildDate>Tue, 15 Oct 2019 20:57:07 CST</lastBuildDate>
+    <pubDate>Fri, 18 Oct 2019 22:04:42 CST</pubDate>
+    <lastBuildDate>Fri, 18 Oct 2019 22:04:42 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
+      <title>Google is the modern Syntopicon</title>
+      <link>https://yiming.dev/clipping/2019/10/18/google-is-the-modern-syntopicon</link>
+      <description><![CDATA[I learned the concept of the Syntopicon from How to Read a Book. And it inspired me to think about why Google succeeded and where it's heading to.]]></description>
+      <pubDate>2019-10-18</pubDate>
+      <guid>https://yiming.dev/clipping/2019/10/18/google-is-the-modern-syntopicon</guid>
+    </item>
+    <item>
       <title>The Paper First Illustrated Waterfall: 40 Years Later</title>
       <link>https://yiming.dev/clipping/2019/10/15/the-paper-first-illustrated-waterfall-40-years-later</link>
-      <description><![CDATA[Why so many companies are still following "Waterfall" when they claim they are using "Agile"? The answer may hide behind the paper that first introduced "Waterfall".]]></description>
-      <pubDate>2019-10-15</pubDate>
+      <description><![CDATA[]]></description>
+      <pubDate>2019-10-16</pubDate>
       <guid>https://yiming.dev/clipping/2019/10/15/the-paper-first-illustrated-waterfall-40-years-later</guid>
     </item>
     <item>
@@ -70,13 +77,6 @@
       <description><![CDATA[]]></description>
       <pubDate>2019-09-15</pubDate>
       <guid>https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug</guid>
-    </item>
-    <item>
-      <title>Discuss Ruby 3 and Open Source with Matz at RubyConf China 2019</title>
-      <link>https://yiming.dev/blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019</link>
-      <description><![CDATA[]]></description>
-      <pubDate>2019-09-13</pubDate>
-      <guid>https://yiming.dev/blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019</guid>
     </item>
   </channel>
 </rss>
