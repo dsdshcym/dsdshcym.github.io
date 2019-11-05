@@ -4,10 +4,149 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 01 Nov 2019 23:24:40 CST</pubDate>
-    <lastBuildDate>Fri, 01 Nov 2019 23:24:40 CST</lastBuildDate>
+    <pubDate>Wed, 06 Nov 2019 08:25:49 CST</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 08:25:49 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Think of time as a series of timestamps</title>
+      <link>https://yiming.dev/clipping/2019/11/05/think-of-time-as-a-series-of-timestamps</link>
+      <description><![CDATA[How to log daily time usage easily? And how is it related to functinoal thinking?]]></description>
+      <content:encoded><![CDATA[<section id="content" role="main">
+    <div id="outline-container-sec-" class="row" style="padding-top: 70px">
+        <div class="col-md-2"></div>
+            <h1>Think of time as a series of timestamps</h1>
+            <p>
+I've been logging my daily time usage for almost 5 years.
+And by "daily time usage", I mean "every minute".
+Every day, I know where I spend every minute (sleeping, working, reading, writing, coding, etc.).
+As you may expected, it is not an easy task to do.
+</p>
+
+<div id="outline-container-orgfa3432a" class="outline-2">
+<h2 id="orgfa3432a">Logging daily time usage is not easy</h2>
+<div class="outline-text-2" id="text-orgfa3432a">
+<p>
+When I first started logging time, I thought of time usage as ranges:
+every task <code>T</code> has a clock, and it starts from a point <code>t1</code>, ends at a point <code>t2</code>, lasts for <code>m</code> minutes.
+It's intuitive, but it didn't work well.
+</p>
+<ul class="org-ul">
+<li>When starting a task, I need to note down what I'm going to do.
+But it may stop me from doing the real task.</li>
+<li>When adjusting a range, I need to adjust two data points at the same time: change one of <code>t1</code> or <code>t2</code>, then recalculate <code>m</code>.</li>
+<li>When switching from task A to task B, I need to stop task A first, then start task B.</li>
+<li>When multitasking, I need to keep multiple clocks running at the same time.</li>
+</ul>
+
+<p>
+After several rounds of iteration, I now think of time usage as just two timestamps:
+every task <code>T</code> has a start point <code>t1</code>, and an end point <code>t2</code>.
+</p>
+
+<p>
+Here is how I do it now:
+</p>
+<ol class="org-ol">
+<li>Whenever I need to spend a block of time on something, I jot down a timestamp <code>t1</code>.</li>
+<li>Then when I finish the task, I jot down a timestamp <code>t2</code>.</li>
+<li>Finally I specify which task <code>T</code> I was working on, and set <code>t1</code> as its start time, <code>t2</code> as its end time.</li>
+<li>If I start another task <code>T'</code> immediately, <code>t2</code> is the start time for <code>T'</code>.</li>
+</ol>
+
+<p>
+It's a more lightweight and flexible workflow.
+</p>
+</div>
+</div>
+<div id="outline-container-org72d6f41" class="outline-2">
+<h2 id="org72d6f41">Logging code time usage is not easy, either (and how Heroku solves this problem)</h2>
+<div class="outline-text-2" id="text-org72d6f41">
+<p>
+More interestingly, if you think of time logging beyond our daily time usage, you'll find many other things that require time logging.
+One of them is logging time spent in different parts of our program.
+Heroku faced this exact problem before. In <a href="https://ferd.ca/clever-functional-design.html">this post</a>, Fred Hebert shared how they solved it.
+</p>
+
+<p>
+Their first straightforward solution was like how I started logging my daily time:
+</p>
+<ol class="org-ol">
+<li>note <code>t1</code></li>
+<li>doing the real work <code>T</code></li>
+<li>note <code>t2</code></li>
+<li>calculate the duration <code>m</code></li>
+</ol>
+<p>
+But this solution would couple the code for time logging and the code for doing the real work together.
+</p>
+
+<p>
+Then a better solution was like what I am doing now:
+</p>
+<ol class="org-ol">
+<li>note <code>t1</code> with a label <code>l1: T started</code></li>
+<li>note <code>t2</code> with a label <code>l2: T stopped</code></li>
+<li>the analyzing library uses <code>t1, l1</code> and <code>t2, l2</code> to calculate how long task <code>T</code> took</li>
+<li>the analyzing library may use <code>t1</code> or <code>t2</code> for other task calculations like <code>T'</code></li>
+</ol>
+
+<p>
+With this solution, Heroku now fully decouples how the real work gets done (business logic) from how the time logs are analyzed (logging logic).
+</p>
+</div>
+</div>
+<div id="outline-container-org74546c5" class="outline-2">
+<h2 id="org74546c5">The power of data and deferring decisions</h2>
+<div class="outline-text-2" id="text-org74546c5">
+<p>
+Optimizing time logging reminds me of <a href="https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions/">Use Return Value to Defer Decisions</a>.
+</p>
+
+<p>
+In the case of Heroku, with the help of additional label <code>l1</code> and <code>l2</code>, we can defer the decision of how to analyze time logs to later.
+</p>
+
+<p>
+Again, this is the beauty of functional programming: <i>constraints breed creativity</i>. To quote Fred:
+</p>
+<blockquote>
+<p>
+it was the structural constraint of already being in an immutable context that prompted the cleaner design.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org8802ccb" class="outline-2">
+<h2 id="org8802ccb">Further reading</h2>
+<div class="outline-text-2" id="text-org8802ccb">
+<ul class="org-ul">
+<li><p>
+<a href="https://www.geepawhill.org/2018/08/29/tdd-pro-tip-time-needs-technique/">TDD Pro-Tip: Time Needs Technique - GeePawHill.org -- Helping Geeks Produce</a>
+</p>
+
+<p>
+This was the first time I learned to <i>think of time as a series of timestamps</i>.
+</p></li>
+
+<li><p>
+<a href="https://www.youtube.com/watch?v=E8I19uA-wGY">Functional programming design patterns by Scott Wlaschin - YouTube</a>
+</p>
+
+<p>
+An interesting question after watching this talk: <i>Can we model time with Monoid?</i>
+</p></li>
+</ul>
+</div>
+</div>
+
+    </div>
+</section>
+]]></content:encoded>
+      <pubDate>2019-11-06</pubDate>
+      <guid>https://yiming.dev/clipping/2019/11/05/think-of-time-as-a-series-of-timestamps</guid>
+    </item>
     <item>
       <title>Every business is a relationships business - Million Dollar Consulting Review</title>
       <link>https://yiming.dev/blog/2019/11/01/every-business-is-a-relationships-business-million-dollar-consulting-review</link>
