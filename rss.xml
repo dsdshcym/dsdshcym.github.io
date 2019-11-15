@@ -4,291 +4,115 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 13 Nov 2019 08:12:28 CST</pubDate>
-    <lastBuildDate>Wed, 13 Nov 2019 08:12:28 CST</lastBuildDate>
+    <pubDate>Fri, 15 Nov 2019 19:56:12 CST</pubDate>
+    <lastBuildDate>Fri, 15 Nov 2019 19:56:12 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Why Billing by Hours is a Bad Idea?</title>
-      <link>https://yiming.dev/blog/2019/11/12/why-billing-by-hours-is-a-bad-idea</link>
-      <description><![CDATA[An hourly-billing project is doomed from the beginning to the end. Let me show you why with my personal experiences. And I will explain a better alternative to hourly-billing.]]></description>
+      <title>How to Start Consuming Less and Creating More?</title>
+      <link>https://yiming.dev/clipping/2019/11/15/how-to-start-consuming-less-and-creating-more</link>
+      <description><![CDATA[This is my plan to consume less content and focus more on creations. Maybe you would find it useful, too!]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Why Billing by Hours is a Bad Idea?</h1>
+            <h1>How to Start Consuming Less and Creating More?</h1>
             <blockquote>
-<p>
-<b>No one is paid to take action, people are paid to achieve results.</b>
-</p>
+<ul class="org-ul">
+<li><b>The most reliable way to get better results is to just produce more crap.</b></li>
+<li>Most knowledge worth having comes from practice.
+<ul class="org-ul">
+<li>It comes from doing.</li>
+<li>It comes from creating.</li>
+</ul></li>
+<li>The real tragedy of modern technology is that it’s turned us into <b>consumers</b>.</li>
+</ul>
 </blockquote>
 <p>
-I really like this quote from <a href="https://www.amazon.com/Million-Dollar-Consulting-Professionals-Practice/dp/1259588610/ref=dp_ob_title_bk">Million Dollar Consulting</a>.
-It's the best summary for why we need to be results driven (if we want to get paid and make money).
-It also resonates with my terrible experiences in some hourly-billing projects.
-I want to share these experiences here, explain why hourly-billing caused these troubles, and what's the alternative way to hourly-billing.
-</p>
-
-<div id="outline-container-org2ad807f" class="outline-2">
-<h2 id="org2ad807f">The hourly-billing nightmare</h2>
-<div class="outline-text-2" id="text-org2ad807f">
-<p>
-An hourly-billing project is doomed from the start.
-But it's just the beginning.
-When building and delivering the project, we'll find more troubles due to hourly-billing.
-</p>
-</div>
-
-<div id="outline-container-org27f8a1a" class="outline-3">
-<h3 id="org27f8a1a">A fancy plan with a tight timeline</h3>
-<div class="outline-text-3" id="text-org27f8a1a">
-<p>
-Before a project gets started, we need to agree with the client what to build.
-Often, the project idea is from a simple need of the client.
-With hourly-billing, it's natural to build upon a simple need, adding more and more fancy features.
-Because why not? Client would need it, and we can bill more hours building it.
+-- from <a href="https://tjcx.me/posts/consumption-distraction/">Consume less, create more</a>
 </p>
 
 <p>
-Then we need to give a proposal for this fancy plan, with a budget estimation (price / fee).
-To get this budget estimation, we need a time estimation, since we are billing for hours, right?
+Inspired by this article, I decided to consume less crap, and to create more crap of my own.
 </p>
 
 <p>
-After reading the draft proposal, a developer estimates: "For these many features, we may need two years."
-</p>
-
-<p>
-"What? That's impossible! The client need it as soon as possible.
-Can we cut it to two months so it also fits into their budget?
-Just use the native style and whatever third party library you can find."
-</p>
-
-<p>
-At this point, the project is already doomed.
-After all, <a href="https://yiming.dev/clipping/2019/04/19/good-fast-and-featureful-pick-two/">good, fast, and featureful. We can only pick two.</a>
-With a short time frame and a tight budget, we have to cut the only thing left in the equation: software quality.
-</p>
-</div>
-</div>
-<div id="outline-container-org84b349a" class="outline-3">
-<h3 id="org84b349a">Bad executions under a tight budget</h3>
-<div class="outline-text-3" id="text-org84b349a">
-<p>
-Once the project starts with a fixed budget and a fixed timeline, every minute counts.
-</p>
-
-<p>
-To ship the project in two months, a lot of meetings are skipped.
-Because a 1 hour meeting with 5 people counts as 5 hours.
-It's just cheaper to dive into design and code.
-</p>
-
-<p>
-After two weeks of prototyping and coding, we finally ship something, only to find it's not what the user needs.
-</p>
-
-<p>
-(This kind of story always reminds me of the old saying: <a href="https://twitter.com/codewisdom/status/1002181404061552640?lang=en">weeks of coding can save you hours of planning</a>.)
-</p>
-
-<p>
-Besides, no one has written a line of automated test.
-Why?
-Because programmers know the requirements are definitely going to change.
-Changing and maintaining these tests are going to make our budget tighter!
-</p>
-
-<p>
-At the end of the sprint, what we've got is an untested, useless application.
-We need to hack it to make it really useful to the user.
-It's what we call a <a href="https://en.wikipedia.org/wiki/Death_march_(project_management)">Death March</a>.
-</p>
-</div>
-</div>
-<div id="outline-container-org4f063af" class="outline-3">
-<h3 id="org4f063af">Time for a time usage report</h3>
-<div class="outline-text-3" id="text-org4f063af">
-<p>
-After we've finished the Death March, there's one last challenge before we get fully paid:
-generate the time usage report and justify for it.
-</p>
-
-<p>
-<a href="https://yiming.dev/clipping/2019/11/05/think-of-time-as-a-series-of-timestamps/">Recording time usage is not easy.</a>
-Most people don't have the habit of doing it.
-When we are asked how much time we spent on a feature, the only thing we can only rely on is our memory.
-So the time usage report we generate would be inaccurate.
-</p>
-
-<p>
-Then we send the report to the client.
-Even if the report is accurate, the client would have a lot of questions.
-These questions would be difficult to answer, because few clients are familiar with software development.
-For example,
+How to do that?
+It's as simple as any improvements:
 </p>
 <ol class="org-ol">
-<li>"Why did a simple feature ("centering things with CSS") took you an hour?"</li>
-<li>"Why is the time usage not like what you estimated? Are you not following the plan?"</li>
+<li><b>Measure</b> your baseline</li>
+<li><b>Identify</b> the bottleneck</li>
+<li><b>Improve</b> the bottleneck</li>
+<li><b>Review</b> the progress</li>
+<li><b>Repeat</b></li>
 </ol>
-</div>
-</div>
-</div>
-<div id="outline-container-orgc59e4d9" class="outline-2">
-<h2 id="orgc59e4d9">Why is hourly-billing a trouble maker?</h2>
-<div class="outline-text-2" id="text-orgc59e4d9">
-<p>
-Of course, these troubles are not caused solely by hourly-billing.
-Bad executions like poor planning, no automated testing do have their own problem, too.
-But with hourly-billing, it's easier to fall into these traps like unrealistic estimations, lack of planning, no tests, etc.
-Plus, even if everything being equal (plan well, test well, record time well), we would still be questioned for how the time is being used.
-So it's worthwhile to look into why hourly-billing is bad and to see if we have other alternatives.
-</p>
 
 <p>
-I think the problem is at the core of hourly-billing: <b>coupling time and money together.</b>
-This coupling not only puts our relationship with our client in danger, but also makes scaling our business hard.
-</p>
-</div>
-
-<div id="outline-container-org1ee1fa3" class="outline-3">
-<h3 id="org1ee1fa3">The tension between our client and us</h3>
-<div class="outline-text-3" id="text-org1ee1fa3">
-<p>
-Due the coupling of how much time we spend and how much money we make, we want to spend more hours on a project.
-But what's our clients really want? Result!
-All they want is a product, a solution that can make their life/business better.
-This misalignment is the root conflict between our client and us.
+Below is my current status and how I plan to improve it:
 </p>
 
-<p>
-Due to this misalignment, we may prefer a fancier solution that costs more time.
-But what the client really needs is a simple working solution, ASAP.
-</p>
-
-<p>
-Due to this misalignment, we may have less incentive to improve, which are required to get a better result.
-</p>
-<blockquote>
-<p>
-"With this new X, we can deliver the same thing in half the time! But how can we charge it the same as before? Maybe we wait until next time."
-</p>
-</blockquote>
-
-<p>
-Due to this misalignment, we may center our internal conversations around how many hours we've spent, but not how many values we can generate.
-People tend to be misled by these conversions and thus lose their focus on value.
-</p>
-
-<p>
-Due to this misalignment, we may lose trust from our client.
-If we are not really thinking from the value our client can get, they will find it out one day.
-</p>
-
-<p>
-A better alternative must keep us aligned with our client,
-by focusing on what value we can bring to them.
-</p>
-</div>
-</div>
-<div id="outline-container-orga4a8681" class="outline-3">
-<h3 id="orga4a8681">It doesn't scale</h3>
-<div class="outline-text-3" id="text-orga4a8681">
-<p>
-The coupling of time and money makes the price calculation simple: <code>Price = Hours * Rate</code>.
-So scaling with hourly-billing should be simple, too.
-Our only two options are obvious, but neither of them are scalable:
-</p>
-<ol class="org-ol">
+<ul class="org-ul">
 <li><p>
-Spend more hours in projects.
+Consuming
 </p>
 
 <p>
-We can do this by working overtime, which is not sustainable for our own health.
-And we would hit the hard limit (24-hour-per-day) quickly.
+I consume a lot.
+Every month, I
+watch ~3 movies, ~10 episodes of tv shows, ~30 YouTube videos,
+read ~3 books, ~150 blog posts, and ~3000 of tweets.
 </p>
 
-<p>
-Or we can try to multi-task on different project at the same time.
-I don't think it's possible for me or any normal human beings.
-But if you know how to do it without affecting the quality of your output, please do teach me. :)
-</p>
-
-<p>
-The last resort is to hire some junior people to spend their time for us.
-But these people raise our internal cost by a lot, not only with their hourly rate, but also a management cost.
-</p>
-
-<p>
-A better alternative should decouple the time we spend and the fee we get paid, so we can get a higher leverage.
-</p></li>
+<ul class="org-ul">
+<li>Movies are an important part of my entertainment life. I can't leave them once and for all. But I can be more selective in what I watch. And set a deadline for what I want to watch. <a href="https://yiming.dev/blog/2019/05/22/my-gtd-workflow-2019-ver/">If I don't watch it before the deadline, then I won't.</a></li>
+<li>TV is also a huge time consumer. So I don't watch the traditional TVs (that you can't decide what you watch) anymore. I choose what I want to watch and allocate time for them.</li>
+<li>Good books are a joy to read. And it can worth hundreds of blog posts due to its density of knowledge. But if I can't apply the knowledge I learned from the book, then reading it would be a waste of time.</li>
+<li>Blog posts and tweets are my way to follow the newest trends. But it's totally okay to not read them. <a href="https://yiming.dev/clipping/2019/10/04/clippings-of-2019-sep/">We don’t miss what we don’t see.</a> My current strategy is to read for accomplishing a goal. <a href="https://yiming.dev/clipping/2019/10/18/google-is-the-modern-syntopicon/">Google is always my best friend</a> when I need to find some blog posts to learn about a topic.</li>
+</ul></li>
 
 <li><p>
-Raise our hourly rate.
+Creating
 </p>
 
 <p>
-To raise our hourly rate, we need to find more valuable clients.
-They value their projects more, they value our work more, and more importantly, they have more budget to afford a higher hourly rate.
+On the other hand, I create a lot less.
+Every month, I
+open ~3 pull requests on GitHub,
+write ~5 blog posts,
+post ~25 tweets.
 </p>
 
 <p>
-Then the question becomes "How to justify a $1,000 hourly rate?"
-A smart sales person would start from our client's perspective:
-"Our experience can bring you tremendous value. By finishing this feature in 5 hours, you would get far more than $5,000."
+Given a high consume-create ratio like this, I sometimes feel that I don't get enough chances to apply what I've learned.
 </p>
 
 <p>
-This is the A-ha moment for me:
-if we need to "justify" our pricing from the perspective of value, then why not give a pricing based on value, so we don't need to "justify" it anymore?
-</p></li>
-</ol>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org92aeebe" class="outline-2">
-<h2 id="org92aeebe">Bill by the value we've generated, not the time we've spent</h2>
-<div class="outline-text-2" id="text-org92aeebe">
-<p>
-The solution to the coupling problem is easy and simple:
-just decouple time and money and stop charging by hours.
-</p>
-
-<p>
-So how to decide how much we are going to charge?
-Again, we need to start from our client's perspective: how do they convince themselves to pay.
-</p>
-
-<p>
-Our clients are paying us for a solution to make their lives better.
-In another word, they are paying for the value this solution brings to them.
-So the decision process is actually simple: if the value is higher than the cost, then it's a good deal.
-</p>
-
-<p>
-This decision process gives us a clear way to set our pricing.
-Following this thinking, my programmer mindset shifts from writing code to a more complete one:
+So, I'm trying to do my best to create more craps and make sure they are read or used by someone else.
 </p>
 <ol class="org-ol">
-<li>Identify the real problem first.</li>
-<li>Come up with multiple solutions with their own trade-offs.</li>
-<li>Compare different solutions and choose the best one in the current situation.</li>
-<li>Implement the solution.</li>
-<li>Review to see if the real problem get solved.</li>
-<li>Iterate.</li>
-</ol>
+<li>Contribute more to open source projects like <a href="https://github.com/hexpm/hexpm">hexpm/hexpm</a>.</li>
+<li>Post 2 blog posts every week (= 8 posts every month).</li>
+<li>Use Twitter as a micro-blogging platform.
+It will be a backstop for my blog post ideas.
+If I can't convert an idea to a blog post in time, I would post it to Twitter.</li>
+</ol></li>
+</ul>
 
 <p>
-And this magical thinking is just a simple sentence:
-<b>Our pricing is proportional to the value we generated.</b>
+If you like the craps I've created so far, please do follow me on Twitter, or shot me an email to discuss any topics. :)
 </p>
-</div>
-</div>
 
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2019-11-15</pubDate>
+      <guid>https://yiming.dev/clipping/2019/11/15/how-to-start-consuming-less-and-creating-more</guid>
+    </item>
+    <item>
+      <title>Why Billing by Hours is a Bad Idea?</title>
+      <link>https://yiming.dev/blog/2019/11/12/why-billing-by-hours-is-a-bad-idea</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2019-11-13</pubDate>
       <guid>https://yiming.dev/blog/2019/11/12/why-billing-by-hours-is-a-bad-idea</guid>
     </item>
@@ -355,14 +179,6 @@ And this magical thinking is just a simple sentence:
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2019-10-04</pubDate>
       <guid>https://yiming.dev/clipping/2019/10/04/clippings-of-2019-sep</guid>
-    </item>
-    <item>
-      <title>Create Experiences When Coaching</title>
-      <link>https://yiming.dev/clipping/2019/09/26/create-experiences-when-coaching</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2019-10-03</pubDate>
-      <guid>https://yiming.dev/clipping/2019/09/26/create-experiences-when-coaching</guid>
     </item>
   </channel>
 </rss>
