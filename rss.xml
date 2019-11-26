@@ -4,133 +4,86 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 22 Nov 2019 21:40:00 CST</pubDate>
-    <lastBuildDate>Fri, 22 Nov 2019 21:40:00 CST</lastBuildDate>
+    <pubDate>Tue, 26 Nov 2019 21:52:27 CST</pubDate>
+    <lastBuildDate>Tue, 26 Nov 2019 21:52:27 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Nobody Wants To Use Your API</title>
-      <link>https://yiming.dev/clipping/2019/11/22/nobody-wants-to-use-your-api</link>
-      <description><![CDATA[Functions, libraries, RESTful endpoints, they are all APIs. Users of these APIs just want to finish their work ASAP. So we should make this process as easy as possible.]]></description>
+      <title>Management, Refactor, and Prune</title>
+      <link>https://yiming.dev/clipping/2019/11/26/management-refactor-and-prune</link>
+      <description><![CDATA[Gardening is a spectacular analogy not only for management, but also for code refactoring.]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="outline-container-sec-" class="row" style="padding-top: 70px">
         <div class="col-md-2"></div>
-            <h1>Nobody Wants To Use Your API</h1>
-            <p>
-When writing an API endpoint or a function, I often find myself being obsessed with it, adding tons of toggles or options so this endpoint handles too many use-cases.
-In the end, not all of the toggles are used by the client.
-Even worse, the code is too complex to maintain.
+            <h1>Management, Refactor, and Prune</h1>
+            <blockquote>
+<ul class="org-ul">
+<li>Being a great manager and English gardening have more in common than you might imagine.
+<ol class="org-ol">
+<li>small, seemingly minor activity</li>
+<li>clip away the dead leaves or diseased areas of a garden to encourage healthy growth.</li>
+<li>done periodically</li>
+<li>The day that you stop pruning is the day that the garden is full of weeds and overrun</li>
+</ol></li>
+</ul>
+</blockquote>
+<p>
+-- from <a href="https://m.signalvnoise.com/what-great-managers-do-prune/">What great managers do: Prune - Signal v. Noise</a>
 </p>
 
 <p>
-So how do we, as programmers, avoid this pitfall?
-I think we should apply some product thinking here.
-First, think of our API as our product.
-Then, realize that <a href="https://www.smashingmagazine.com/2016/01/nobody-wants-use-your-product/">Nobody Wants To Use Your Product</a>.
-Finally, we write simple APIs that are easy to learn and easy to use.
-</p>
-
-<div id="outline-container-orgc0acb7b" class="outline-2">
-<h2 id="orgc0acb7b">API is the only product of programming</h2>
-<div class="outline-text-2" id="text-orgc0acb7b">
-<p>
-What is an API, anyway?
-According to <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Wikipedia</a>,
-an API is <i>a "contract" between "the client" and "the server"</i>.
+Gardening is a spectacular analogy not only for management, but also for code refactoring.
+We need to prune our codebase consistently.
+And the activity of pruning in a software project is called refactoring.
 </p>
 
 <p>
-Notice that "the client" and "the server" don't need to be talking over a network.
-So we are defining an API ("a contract") at every level of our application:
-</p>
-<dl class="org-dl">
-<dt>When writing a function, we are designing an API for the callers of this function.</dt><dd>What's the name of the function?
-What arguments does this function need?
-What results would this function return?</dd>
-<dt>When writing a library, we are designing an API for other programmers.</dt><dd>What classes/modules does this library have?
-How to use these classes/modules?
-What results can these classes/modules achieve?</dd>
-<dt>When writing a RESTful controller action, we are designing an API for the browser.</dt><dd>What's the path to this action?
-What's the verb to use here? (GET, POST, PUT, DELETE)
-What's the response structure?</dd>
-<dt>When writing a page view with HTML, JS, and CSS, we are designing an API for the user.</dt><dd>What's this form used for?
-What would happen after clicking this button?
-What's the content of this page?</dd>
-</dl>
-
-<p>
-And everything else we do, is to fulfill the API ("the contract") we defined.
-</p>
-<dl class="org-dl">
-<dt>Write business code</dt><dd>Fulfill the business logic contract.</dd>
-<dt>Write automated tests</dt><dd>Make sure we fulfill the business contract as specified.</dd>
-<dt>Fix various bugs</dt><dd>The contract was broken, we need to fulfill it again.</dd>
-<dt>Improve performance</dt><dd>Fulfill the performance contract (return the results within <code>x</code> seconds).</dd>
-<dt>Document the API</dt><dd>Explain the contract to the user.</dd>
-</dl>
-
-<p>
-Or we can think it from the opposite.
-If you as "the server" don't expose an API to "the client", then it doesn't matter how much work you do behind the scenes.
-Because nobody can use it anyhow.
+Like pruning, refactoring is a small, seemingly minor activity.
+Renaming a variable, making a public function private, or moving a function from a module to another.
+It's the accumulation of all these small, incremental steps that <a href="https://yiming.dev/clipping/2018/06/07/livable_and_disposable_code/">make our codebase a better place to live</a>.
 </p>
 
 <p>
-So API is the most important, if not the only, product of programming.
+Like pruning, refactoring demands us to remove dead code or technical debt to encourage good design.
+<a href="https://en.wikipedia.org/wiki/Broken_windows_theory">Broken windows theory</a> is real.
+Only by constantly fixing the broken windows in our codebase, can we nudge others to not break another window.
 </p>
-</div>
-</div>
-<div id="outline-container-orgf5ccf85" class="outline-2">
-<h2 id="orgf5ccf85">Nobody wants to use your API</h2>
-<div class="outline-text-2" id="text-orgf5ccf85">
+
 <p>
-After understanding that <code>API == product</code> in programming, we can start to think from a product perspective.
-In the article <a href="https://www.smashingmagazine.com/2016/01/nobody-wants-use-your-product/">Nobody Wants To Use Your Product</a>, Goran Peuc summarizes this presumption about human nature as:
+Like pruning, refactoring is a periodical activity.
+We cannot be refactoring all the time, or we have no time for building the real thing.
+Often, people schedule a repetitive event to tackle the technical debts accumulated along the way.
+Further more, experimental messy is a necessary evil.
+Because we need these experiments to tell us if there's a better design.
+</p>
+
+<p>
+So if you need to explain refactoring to other non-technical people, you can use pruning as an analogy.
+And please remember this:
 </p>
 <blockquote>
 <p>
-People are not really into using products.
-Rather, people are more interested in the end result and in obtaining that result in the quickest, least intrusive and most efficient manner possible.
+The day that you stop refactoring is the day that the project is full of tech debts and overrun.
 </p>
 </blockquote>
 
 <p>
-The same product thinking applies to programming as well.
-Other programmers are not really into using our API.
-They may use our API to get some data.
-Or they may use our API to avoid reinventing the wheel and thus simplify their own code.
-In a word, they use our API to <b>achieve a result</b>.
+P.S. Refactoring is everywhere in our daily life.
+I even <a href="http://dsdshcym.github.io/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process/">treat optimizing my editor workflow as a refactoring process</a>.
+Pruning is just one of the best analogies out there.
 </p>
-</div>
-</div>
-<div id="outline-container-org1e0f56d" class="outline-2">
-<h2 id="org1e0f56d">KISS (Keep it simple, stupid)<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-org1e0f56d">
-<p>
-So what can we do as API designers?
-If nobody wants to use our API, and people use it only because they want to achieve a result, then we should make our API really simple.
-And by "simple", I mean easy to learn and easy to use.
-It's simple to say, but it's hard to do.
-The ultimate goal requires us to spend tons of efforts:
-people can spend almost no time to learn our API and start using it.
-So they can focus on their own concerns, and spend more time figuring out how to succeed in their own way.
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="http://principles-wiki.net/principles:keep_it_simple_stupid">Keep It Simple Stupid (KISS) {Principles Wiki}</a>
-</p></div></div>
-
-
-</div>
-</div>
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2019-11-26</pubDate>
+      <guid>https://yiming.dev/clipping/2019/11/26/management-refactor-and-prune</guid>
+    </item>
+    <item>
+      <title>Nobody Wants To Use Your API</title>
+      <link>https://yiming.dev/clipping/2019/11/22/nobody-wants-to-use-your-api</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2019-11-22</pubDate>
       <guid>https://yiming.dev/clipping/2019/11/22/nobody-wants-to-use-your-api</guid>
     </item>
@@ -197,14 +150,6 @@ So they can focus on their own concerns, and spend more time figuring out how to
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2019-10-16</pubDate>
       <guid>https://yiming.dev/clipping/2019/10/15/the-paper-first-illustrated-waterfall-40-years-later</guid>
-    </item>
-    <item>
-      <title>How to Build Software Without Estimates</title>
-      <link>https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2019-10-13</pubDate>
-      <guid>https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates</guid>
     </item>
   </channel>
 </rss>
