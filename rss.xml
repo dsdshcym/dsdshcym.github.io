@@ -4,215 +4,102 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 05 Feb 2020 22:51:49 CST</pubDate>
-    <lastBuildDate>Wed, 05 Feb 2020 22:51:49 CST</lastBuildDate>
+    <pubDate>Wed, 26 Feb 2020 20:16:12 CST</pubDate>
+    <lastBuildDate>Wed, 26 Feb 2020 20:16:12 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Clippings of 2020 Jan</title>
-      <link>https://yiming.dev/clipping/2020/02/04/clippings-of-2020-jan</link>
-      <description><![CDATA[The top 5 articles from all I've read in Jan, 2020. Topics include communicatiton, goal-setting, testing, object-oriented programming, and domain-driven design.]]></description>
+      <title>What is an Effective OKR?</title>
+      <link>https://yiming.dev/blog/2020/02/26/what-is-an-effective-okr</link>
+      <description><![CDATA[An effective OKR needs to clarify strategy and guide execution. This post would explain these two characteristics in detail.]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="post-container">
-        <h1>Clippings of 2020 Jan</h1>
-        
-<div id="outline-container-orgbf8aba0" class="outline-2">
-<h2 id="orgbf8aba0"><a href="https://www.rightattitudes.com/2017/06/16/rapoport-rules-criticism/">Rapoport’s Rules to Criticize Someone Constructively</a></h2>
-<div class="outline-text-2" id="text-orgbf8aba0">
-<blockquote>
+        <h1>What is an Effective OKR?</h1>
+        <p>
+Let's say we've identified a gap between strategy and execution in your team.
+And <a href="https://yiming.dev/blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results/">we were convinced to use OKR</a> to fill that gap.
+The next step is to define OKRs for your team.
+But how to define an effective OKR?
+To do that, we need to first know what is an effective OKR.
+</p>
+
+<p>
+As explained above, the purpose of using OKR is to fill the gap between strategy and execution.
+Once the gap is filled, our strategy would be crystal clear to everyone in the team and our execution would be perfectly targeting our strategy.
+In another word, everyone is aligned to execute on the same strategy.
+So an effective OKR needs to <b>clarify strategy</b> and <b>guide execution</b>.
+</p>
+
+<div id="outline-container-orgc53853b" class="outline-2">
+<h2 id="orgc53853b">Clarify Strategy</h2>
+<div class="outline-text-2" id="text-orgc53853b">
+<p>
+According to <a href="https://lethain.com/strategies-visions/">visions and strategies by Will Larson</a>, a strategy is an approach to a specific challenge, it needs to be practical, accurate, and detailed.
+</p>
+
+<p>
+So an effective OKR needs to explain our challenge, and our approach to tackle it.
+An effective OKR doesn't need to be detailed strategy documentation because it's not.
+But it does need to remind people which strategy it's about.
+</p>
+
+<p>
+We do that by defining an Objective that reflects the strategy.
+An effective Objective summarize the challenge we are facing and the big picture of how we are gonna solve it.
+A simple sentence like "We are going to do X (approach) in order to Y (tackle the challenge)" is sufficient.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0ea2dd" class="outline-2">
+<h2 id="orgf0ea2dd">Guide Execution</h2>
+<div class="outline-text-2" id="text-orgf0ea2dd">
+<p>
+After clarifying the strategy in our Objective, we can guide execution by defining our Key Results.
+To "guide" effectively, Key Results need to be inspiring but not restricting.
+</p>
+
 <ol class="org-ol">
-<li>You should attempt to re-express your target’s position so clearly, vividly, and fairly that your target says, “Thanks, I wish I’d thought of putting it that way.”</li>
-<li>You should list any points of agreement (especially if they are not matters of general or widespread agreement).</li>
-<li>You should mention anything you have learned from your target.</li>
-<li>Only then are you permitted to say so much as a word of rebuttal or criticism.</li>
+<li><p>
+Key Results should inspire us to take actions.
+</p>
+
+<p>
+When getting a list of effective Key Results, we should be able to come up with plans easily.
+Effective Key Results set clear directions for us to search and try different plans.
+</p>
+
+<p>
+And effective Key Results can motivate people to take actions.
+When we feel the goal is reachable, we perform better.
+Like running a marathon, we will run faster when we can see the finish line.
+</p></li>
+
+<li><p>
+Key Results should not restrict our actions.
+</p>
+
+<p>
+Although effective Key Results give us clear directions on what actions we need to take,
+they should not restrict us from coming up with creative plans and experimenting with different solutions.
+</p></li>
 </ol>
-</blockquote>
-<p>
-As I mentioned in <a href="https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/">my Review for Nonviolent Communication</a>, NVC still feels a bit vague for me even after reading the book.
-Because I still don't know exactly how to apply NVC in my life.
-</p>
 
 <p>
-Rapoport's Rules to Criticize, on the other hand, is such a practical steps to follow.
-And I can tell from my experience that it definitely works.
-Before learning Rapoport's Rules, I've been using similar techniques already:
-I always try to re-express what I received and what I agree before I say what I don't.
-And most of the time, people would accept my opinions better.
-</p>
-
-<p>
-After learning Rapoport's Rules, I would re-express more and start mentioning what I've learned.
-Maybe you can do the same and see if it helps with your communication?
+So a good rule of thumb is to think 3 different plans to achieve this Key Result, if you can do that easily, you are good to go.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgbc08eb1" class="outline-2">
-<h2 id="orgbc08eb1"><a href="https://t.co/UkYsUjQ2TO">I’ve never had a goal - Signal v. Noise</a></h2>
-<div class="outline-text-2" id="text-orgbc08eb1">
-<blockquote>
-<ul class="org-ul">
-<li>A goal is something that goes away when you hit it.
-<ul class="org-ul">
-<li>Once you’ve reached it, it’s gone.</li>
-<li>You could always set another one, but I just don’t function in steps like that.</li>
-</ul></li>
-<li>I just worked at whatever I was working on and ended up wherever I am.</li>
-</ul>
-</blockquote>
-
+<div id="outline-container-org2726877" class="outline-2">
+<h2 id="org2726877">Summary</h2>
+<div class="outline-text-2" id="text-org2726877">
 <p>
-As I learn to become goal-driven (a.k.a <a href="https://yiming.dev/blog/2019/12/31/growing-a-result-driven-mindset/">result-driven</a>), I am also aware of the downside of goals:
-setting goals in itself doesn't mean anything, <b>what really matters is execution.</b>
+An effective OKR is an OKR that can <b>clarify strategy</b> and <b>guide execution</b>.
+Knowing these two characteristics is the first step to define an effective OKR.
+In the future, I would write more about my OKR experiences, so stay tuned!
 </p>
 
 <p>
-Another interesting quote from this article is:
-</p>
-<blockquote>
-<p>
-The reason that most of us are unhappy most of the time is that we set our goals not for the person we’re going to be when we reach them, but we set our goals for the person we are when we set them.
-</p>
-</blockquote>
-<p>
-From my current understanding, it's impossible to "set our goals not for the person we’re going to be when we reach them".
-So shall we stop setting goals once and for all?
-</p>
-
-<p>
-That being said, I still believe in the power of goals: <a href="http://billhennessy.com/simple-strategies/2015/09/09/i-wish-drucker-never-said-it">what gets measured gets managed</a>.
-What we need to do is to set goals for what really matters to us.
-Use a few goals to help us focus on things really matter.
-And learn the goal-setting skills from practices.
-</p>
-</div>
-</div>
-<div id="outline-container-org2e21aa0" class="outline-2">
-<h2 id="org2e21aa0"><a href="https://thoughtbot.com/blog/the-case-for-wet-tests">The Case for WET Tests</a></h2>
-<div class="outline-text-2" id="text-org2e21aa0">
-<blockquote>
-<ul class="org-ul">
-<li>Writing tests that scale with your team
-<ul class="org-ul">
-<li>Abstractions can be useful tools</li>
-<li>Abstractions can also increase the cognitive load on the next person to work with your code</li>
-</ul></li>
-<li>Minimizing dependencies between tests</li>
-<li>Requirements change, abstractions break</li>
-<li>Writing untested logic
-<ul class="org-ul">
-<li>we shouldn’t spend time testing that language features work as expected</li>
-</ul></li>
-<li>Making the right abstractions
-<ul class="org-ul">
-<li>DRY test code should be a means to achieving the goals of your test suite, rather than a goal in and of itself.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
-When writing tests, we should strive for being <a href="https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests">DAMP (Descriptive And Meaningful Phrases)</a>, rather than DRY (Don't Repeat Yourself).
-It's way easier to build a <a href="https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Wrong Abstraction</a> when writing tests.
-And it doesn't cost much to have duplicated code in our tests.
-</p>
-</div>
-</div>
-<div id="outline-container-org4483990" class="outline-2">
-<h2 id="org4483990"><a href="https://www.youtube.com/watch?v=_f2LYPpueAY&amp;feature=share">RubyConf 2018 - Inheritance, Composition, Ruby and You by Cody Stringham - YouTube</a></h2>
-<div class="outline-text-2" id="text-org4483990">
-<blockquote>
-<ul class="org-ul">
-<li>Inheritance
-<ul class="org-ul">
-<li>When?
-<b>Object Specialization</b>
-<ul class="org-ul">
-<li>A child should be a specialized version of its parent</li>
-<li>Not to share behaviour</li>
-</ul></li>
-<li>Pros (when done correctly)
-<ul class="org-ul">
-<li>Reusable</li>
-<li>Extensible</li>
-</ul></li>
-<li>Cons
-<ul class="org-ul">
-<li>Coupling</li>
-<li>Reduced Readability</li>
-<li>Easy to Abuse</li>
-<li>Complicates Unit Testing
-<ul class="org-ul">
-<li>subclasses are not fully tested</li>
-<li>if someone changes superclass and its tests, tests would pass, but the behaviours of subclasses are changed</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Composition
-<ul class="org-ul">
-<li>When?
-<b>As much as possible!</b>
-<ul class="org-ul">
-<li>Small classes</li>
-<li>Small methods</li>
-</ul></li>
-<li>Pros
-<ul class="org-ul">
-<li>Flexible</li>
-<li>Readable</li>
-<li>Easily Testable</li>
-</ul></li>
-<li>Cons
-<ul class="org-ul">
-<li>More boilerplate</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote>
-
-<p>
-I spent quite some time to understand "Composition over Inheritance".
-Because when I first started learning Object-Oriented Programming, it was one of the core concepts I learned.
-After reading many articles and books, I was convinced that Composition is actually better.
-This talk is the best resource you can learn about this idea.
-</p>
-
-<p>
-If you want to learn more about "Composition over Inheritance", these are some great reads:
-</p>
-<ul class="org-ul">
-<li><a href="https://twitter.com/mfeathers/status/994661651466010624">Michael Feathers on Twitter: "Inheritance might be the most unjustly maligned language feature."</a></li>
-<li><a href="http://www.yegor256.com/2016/09/13/inheritance-is-procedural.html">Inheritance Is a Procedural Technique for Code Reuse</a></li>
-<li><a href="http://mjk.space/how-to-avoid-inheritance-in-ruby/">How to avoid inheritance in Ruby? – Michał Konarski</a></li>
-<li><a href="http://softwareengineering.stackexchange.com/questions/134097/why-should-i-prefer-composition-over-inheritance">interfaces - Why should I prefer composition over inheritance? - Software Engineering Stack Exchange</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org002f20c" class="outline-2">
-<h2 id="org002f20c"><a href="https://dev.to/kmruiz/to-domain-driven-design-6ao">To Domain Driven Design - DEV Community 👩‍💻👨‍💻</a></h2>
-<div class="outline-text-2" id="text-org002f20c">
-<blockquote>
-<ul class="org-ul">
-<li><b>split your achitecture based on knowledge, not on data.</b>
-<ul class="org-ul">
-<li>How a company structures knowledge depends entirely on the people and the business they are on</li>
-<li>think in our business as a business platform:
-<ul class="org-ul">
-<li>we don't have a product, we have a set of products.</li>
-<li>Those products are a set of features that apply to a persona.</li>
-</ul></li>
-</ul></li>
-<li>Summary
-<ul class="org-ul">
-<li>Thinking in platforms allows us to split our business better.</li>
-<li>Linking products to personas and also to bounded contexts makes boundaries explicit.</li>
-<li>State-sourcing and event-driven architectures are essential for building distributed and available platforms.</li>
-<li>Teams should not share code, but a common platform.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
-How to design a architecture optimized for long-term evolution is the core of software design.
-This article provides a practical example to explain how to split domains based on knowledge, rather than data.
+If you want to learn more, I'ld recommand this <a href="https://www.youtube.com/watch?v=XQy-h_LugpM&amp;feature=youtu.be">OKR Workshop</a>, you can find more examples from it.
 </p>
 </div>
 </div>
@@ -220,6 +107,22 @@ This article provides a practical example to explain how to split domains based 
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2020-02-26</pubDate>
+      <guid>https://yiming.dev/blog/2020/02/26/what-is-an-effective-okr</guid>
+    </item>
+    <item>
+      <title>Clippings from A Philosophy of Software Design</title>
+      <link>https://yiming.dev/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>2020-02-10</pubDate>
+      <guid>https://yiming.dev/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design</guid>
+    </item>
+    <item>
+      <title>Clippings of 2020 Jan</title>
+      <link>https://yiming.dev/clipping/2020/02/04/clippings-of-2020-jan</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-02-05</pubDate>
       <guid>https://yiming.dev/clipping/2020/02/04/clippings-of-2020-jan</guid>
     </item>
@@ -278,22 +181,6 @@ This article provides a practical example to explain how to split domains based 
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2019-12-20</pubDate>
       <guid>https://yiming.dev/clipping/2019/12/04/clippings-of-2019-nov</guid>
-    </item>
-    <item>
-      <title>Why do we need OKR (Objectives and Key Results)?</title>
-      <link>https://yiming.dev/blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2019-12-17</pubDate>
-      <guid>https://yiming.dev/blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results</guid>
-    </item>
-    <item>
-      <title>结对编程时思路不同，怎么办？ - GDCR 2019</title>
-      <link>https://yiming.dev/blog/2019/12/03/gdcr-shanghai-summary-pair-programming</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2019-12-04</pubDate>
-      <guid>https://yiming.dev/blog/2019/12/03/gdcr-shanghai-summary-pair-programming</guid>
     </item>
   </channel>
 </rss>
