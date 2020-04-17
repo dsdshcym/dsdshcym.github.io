@@ -4,285 +4,148 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Wed, 01 Apr 2020 20:45:24 CST</pubDate>
-    <lastBuildDate>Wed, 01 Apr 2020 20:45:24 CST</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2020 19:26:12 CST</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2020 19:26:12 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Clippings of 2020 Feb</title>
-      <link>https://yiming.dev/clipping/2020/03/09/clippings-of-2020-feb</link>
-      <description><![CDATA[My top reads in 2020 Feb include topics like Philosophy, Metrics, Management, Programming, and Software Engineering.]]></description>
+      <title>OKR Case Study #1 - How to find KEY results?</title>
+      <link>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</link>
+      <description><![CDATA[In this series of OKR Case Studies, we'll walk through a few OKRs and explain how to define great OKRs. Let's first see how to find the KEY results for an objective.]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="post-container">
-        <h1>Clippings of 2020 Feb</h1>
-        <div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgdd786a2">Top 6</a>
-<ul>
-<li><a href="#orgb4414df">如果没有今天，明天会不会有昨天？</a></li>
-<li><a href="#org4bf281a">GOTO 2019 • Lies, Damned Lies, and Metrics • Roy Osherove - YouTube</a></li>
-<li><a href="#orgf2d9cd5">Work Is Work - codahale.com</a></li>
-<li><a href="#org7da2bef">Growing a Language, by Guy Steele - YouTube</a></li>
-<li><a href="#orgf348519">From 15,000 database connections to under 100: DigitalOcean's tale of tech debt</a></li>
-<li><a href="#org6e0ea9d">How to Estimate Feature Development Time: Maybe Don't</a></li>
-</ul>
-</li>
-<li><a href="#org05dc7b0">Others</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgdd786a2" class="outline-2">
-<h2 id="orgdd786a2">Top 6</h2>
-<div class="outline-text-2" id="text-orgdd786a2">
-</div>
-<div id="outline-container-orgb4414df" class="outline-3">
-<h3 id="orgb4414df"><a href="https://book.douban.com/subject/26949210/">如果没有今天，明天会不会有昨天？</a></h3>
-<div class="outline-text-3" id="text-orgb4414df">
-<blockquote>
-<ul class="org-ul">
-<li>提出疑问及为之寻找完善的解答，就是推动哲学前进的力量。
-<ul class="org-ul">
-<li>思辨的时候，我们首先交换的并不是立场，而是论证。</li>
-<li>哲学家们特别致力于追求的，是理解与明晰性。</li>
-<li>对每一个哲学问题，只有在理解了问题及其中包含的概念之后，我们才能启程寻找解答。</li>
-<li>所以，哲学也总是试着厘清本身使用的基本概念，并借此对人类生命与思想的根本范畴进行理解，这就是哲学家们的核心任务。</li>
-</ul></li>
-<li>但是哲学概念该怎么厘清呢？哲学观点又该如何论证？哲学家如何思索人生的重大问题？他们具体来说怎样进行这些工作
-<ul class="org-ul">
-<li>哲学的方法，就是完全靠思索。</li>
-<li>他们有秘密武器，就是思想实验（Gedanken experimente）。
-<ul class="org-ul">
-<li>哲学家们让真实与不真实的情境在思想中上演，从中探查出根本概念的意涵，推翻不同的理论，或者为新的思想建筑打下基柱。</li>
-<li>借由这些具体的例子，我们得以认识重要的哲学立场，包括它们有什么长处与缺点</li>
-<li>但是最重要的一点是：思想实验给我们提供了独立思考的空间。</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-org4bf281a" class="outline-3">
-<h3 id="org4bf281a"><a href="https://www.youtube.com/watch?v=goihWvyqRow">GOTO 2019 • Lies, Damned Lies, and Metrics • Roy Osherove - YouTube</a></h3>
-<div class="outline-text-3" id="text-org4bf281a">
-<blockquote>
-<ul class="org-ul">
-<li>Leading &amp; Lagging Indicators
-<dl class="org-dl">
-<dt>Leading</dt><dd>Influence future performance
-<ul class="org-ul">
-<li>Inputs</li>
-<li>We have direct control</li>
-<li>Fast feedback</li>
-</ul></dd>
-<dt>Lagging</dt><dd>Analyze past performance
-<ul class="org-ul">
-<li>Outputs (outcomes)</li>
-<li>no direct control</li>
-</ul></dd>
-</dl></li>
-<li>Recommendations
-<dl class="org-dl">
-<dt>Don't treat leading indicators as goals</dt><dd>Do pair leading indicators to lagging indicators</dd>
-<dt>Don't measure just one lagging indicator</dt><dd>Do understand how lagging indicators affect each other</dd>
-<dt>Don't measure things without a dilemma that drives them</dt><dd>Do decide what is your reason for using metrics, and what you are trying to change</dd>
-</dl></li>
-</ul>
-</blockquote>
-<p>
-When defining OKRs, I find it hard to choose which key results to measure.
-This talk shed some lights for me by teaching me the differences between leading and lagging indicators.
-</p>
-<ul class="org-ul">
-<li>Lagging indicators are great candidates for Key Results, since they are out of our direct control but still can be influenced by our hard work.</li>
-<li>Leading indicators are not very suited for Key Results, since they are controlled by us directly and thus can be cheated easily.</li>
-</ul>
-
-<p>
-That being said, leading indicators are still useful.
-We can use them to guide our actions.
-The message here is don't treat them as our goals.
+        <h1>OKR Case Study #1 - How to find KEY results?</h1>
+        <p>
+This is the first post of my OKR Case Study series.
+In this series, we'll walk through a few OKRs and explain how to define great OKRs.
+Let's first see how to find the KEY results for an objective.
 </p>
 
 <p>
-If you want to learn more about metrics, I'd highly recommend this talk.
-</p>
-</div>
-</div>
-<div id="outline-container-orgf2d9cd5" class="outline-3">
-<h3 id="orgf2d9cd5"><a href="https://codahale.com/work-is-work/">Work Is Work - codahale.com</a></h3>
-<div class="outline-text-3" id="text-orgf2d9cd5">
-<blockquote>
-<ul class="org-ul">
-<li>Principles From Beyond Space And Time
-<ul class="org-ul">
-<li>Keep the work parallel, the groups small, and the resources local.</li>
-<li>Prioritize the development of force multipliers.</li>
-<li>If possible, factor work products into independent modules; if not, grow slowly and optimize.</li>
-<li>Scale organizational efforts across a portfolio of synergistic products.</li>
-<li>Keep responsibility assignment matrices small, sparse, and local.</li>
-<li>Prioritize asynchronous information distribution over synchronous.</li>
-<li>What happens inside the boundaries is important.
-<ul class="org-ul">
-<li>Companies are groups of people being compensated for having to spend some of their finite lifetimes not being with their partners, children, pets, or super weird hobbies.</li>
-<li>They deserve to be members of organizations which honor that time by ensuring that their work has value and meaning.</li>
-</ul></li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
-IMHO, most management problems come from scaling (a.k.a managing more people).
-When your team has only 10 people, everything's fine and moving fast.
-When you grow to 50, that's another problem.
-When 100, another completely different problem.
-This post explains why scaling is the root cause of these problems (from a <i>mathematical</i> perspective) and more importantly, some principles to guide us fight these problems.
-</p>
-</div>
-</div>
-<div id="outline-container-org7da2bef" class="outline-3">
-<h3 id="org7da2bef"><a href="https://www.youtube.com/watch?v=_ahvzDzKdB0">Growing a Language, by Guy Steele - YouTube</a></h3>
-<div class="outline-text-3" id="text-org7da2bef">
-<blockquote>
-<p>
-If I want to help other persons to write all sorts of programs,
-should I design a small programming language or a large one?
-</p>
-</blockquote>
-<p>
-In this interesting talk, the speaker demonstrates the power of a small language with the talk itself.
+For every objective, we can set different results.
+Some of them can help us focus on the objective and achieve what we really want.
+They are the KEY results we want to use.
+Some results are not really the KEY result.
+They may not really related to the objective or may misguide people.
+Finding the KEY results is one of the most important thing when setting your OKRs.
 </p>
 
-<blockquote>
-<ul class="org-ul">
-<li>A good programmer does not write program
-<ul class="org-ul">
-<li>a good programmer builds a working vocabulary</li>
-<li>a good programmer does language design</li>
-</ul></li>
-</ul>
-</blockquote>
+<div id="outline-container-org529a3bb" class="outline-2">
+<h2 id="org529a3bb">Two ways to validate key results</h2>
+<div class="outline-text-2" id="text-org529a3bb">
 <p>
-This quote resonates with me the most.
+To check if our key results are really the KEY results, we can:
 </p>
-</div>
-</div>
-<div id="outline-container-orgf348519" class="outline-3">
-<h3 id="orgf348519"><a href="https://blog.digitalocean.com/from-15-000-database-connections-to-under-100-digitaloceans-tale-of-tech-debt/">From 15,000 database connections to under 100: DigitalOcean's tale of tech debt</a></h3>
-<div class="outline-text-3" id="text-orgf348519">
-<blockquote>
-<ul class="org-ul">
-<li>“What does DigitalOcean’s tech debt look like?”
-<ul class="org-ul">
-<li>Software engineers asking about a company’s tech debt is the equivalent of asking about a credit score.</li>
-<li>It’s their way of gauging a company’s questionable past and what baggage they’re carrying.</li>
-</ul></li>
-<li>simply because something is “legacy” does not mean it is dysfunctional and should be replaced.</li>
-<li>a three-pronged plan for rectifying the situation:
+
 <ol class="org-ol">
-<li>Decrease the number of direct connections on the database</li>
-<li>Refactor Scheduler’s ranking algorithm to improve availability</li>
-<li>Absolve the database of its message queue responsibilities
-<ul class="org-ul">
-<li><a href="https://martinfowler.com/bliki/StranglerFigApplication.html">StranglerApplication</a></li>
-<li>MySQL -&gt; RabbitMQ</li>
-</ul></li>
+<li><p>
+Think about the worst actions we can take to achieve each key result.
+</p>
+
+<p>
+We want key result to be a guidance for our actions, but not too restricted, nor lead to bad behaviours.
+</p></li>
+
+<li>Ask these two questions:
+<ol class="org-ol">
+<li>If we've already got all the key results listed here, can we call this objective achieved?</li>
+<li>If a key result is not achieved (or we get the opposite of it), can we still achieve the same objective?</li>
 </ol></li>
-</ul>
-</blockquote>
-<p>
-A great post to learn how engineers at DigitalOcean deal with tech debts.
-</p>
-</div>
-</div>
-<div id="outline-container-org6e0ea9d" class="outline-3">
-<h3 id="org6e0ea9d"><a href="https://thoughtbot.com/blog/how-to-estimate-feature-development-time-maybe-don-t">How to Estimate Feature Development Time: Maybe Don't</a></h3>
-<div class="outline-text-3" id="text-org6e0ea9d">
-<blockquote>
-<p>
-Should I make an estimate?
-</p>
-<ul class="org-ul">
-<li>Is time estimation the right tool for your team?
-<ul class="org-ul">
-<li>One consequence of time estimates is that they create a de-facto deadline
-<ul class="org-ul">
-<li>"lurking deadlines"
-<ul class="org-ul">
-<li>not explicit</li>
-<li>often arbitraty</li>
-</ul></li>
-<li>there are no real consequences for taking an extra week to get it right, and many stakeholders are happy wait a week for a stronger product.</li>
-</ul></li>
-<li>The problem arises when estimating becomes a default part of the process for every new feature, regardless of what (if any) value it adds.</li>
-</ul></li>
-</ul>
-</blockquote>
-<p>
-Two takeaways from this post:
-</p>
-<ol class="org-ol">
-<li>Maybe you don't need estimate when developing a feature: <a href="https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates/">How to Build Software Without Estimates</a></li>
-<li>Always question the process: <a href="https://yiming.dev/clipping/2019/06/10/say-no-to-processes/">Say NO to Processes</a></li>
 </ol>
 </div>
 </div>
-</div>
-<div id="outline-container-org05dc7b0" class="outline-2">
-<h2 id="org05dc7b0">Others</h2>
-<div class="outline-text-2" id="text-org05dc7b0">
+<div id="outline-container-orgacabb24" class="outline-2">
+<h2 id="orgacabb24">Always dig deeper</h2>
+<div class="outline-text-2" id="text-orgacabb24">
+<blockquote>
 <p>
-Below are what I've read/watched in 2020 Feb.
-You may find some of them interesting to you. :)
+<b>Objective</b>: Improve efficiency and organization in projects
 </p>
 <ul class="org-ul">
-<li><a href="https://vimeo.com/393580241/82c6d7c5f6">Tailwind UI Preview on Vimeo</a></li>
-<li><a href="https://www.techradar.com/news/the-nintendo-switch-was-a-masterstroke-in-a-decade-of-ups-and-downs">The Nintendo Switch was a masterstroke in a decade of ups and downs - TechRadar</a></li>
-<li><a href="https://m.signalvnoise.com/only-15-of-the-basecamp-operations-budget-is-spent-on-ruby/">Only 15% of the Basecamp operations budget is spent on Ruby - Signal v. Noise</a></li>
-<li><a href="https://jesor.me/2020/shi/">拾 - 大破进击</a></li>
-<li><a href="https://jesor.me/2020/jesses-best-of-2019/">Jesse‘s best of 2019 - 大破进击</a></li>
-<li><a href="http://shop.oreilly.com/product/0636920030331.do">Becoming Functional - O'Reilly Media</a></li>
-<li><a href="https://shapeofdesignbook.com/">The Shape of Design · Home</a></li>
-<li><a href="https://itrevolution.com/the-unicorn-project/">The Unicorn Project - by Gene Kim (author of The Phoenix Project)</a></li>
-<li><a href="https://www.masteringemacs.org/">Mastering Emacs</a></li>
-<li><a href="https://www.theengineeringmanager.com/book/my-book-has-been-released-in-beta/">My book has been released in beta - The Engineering Manager</a></li>
-<li><a href="https://joearms.github.io/published/2013-03-28-solving-the-wrong-problem.html">Solving the wrong problem - &lt;h1&gt;Joe Armstrong - Erlang and other stuff&lt;/h1&gt;</a></li>
-<li><a href="https://www.theerlangelist.com/article/periodic">The Erlangelist - Periodic jobs</a></li>
-<li><a href="https://medium.com/@iacobson/piping-phoenix-contexts-3d54dbba8df9">Piping Phoenix Contexts - iacobson - Medium</a></li>
-<li><a href="https://elixirschool.com/blog/live-view-live-component/">LiveView Design Patterns - LiveComponent and the Single Responsibility Principle · Elixir School</a></li>
-<li><a href="https://blog.jola.dev/building-hex-diff">Building Hex Diff</a></li>
-<li><a href="http://www.dr-qubit.org/Lost_undo-tree_history.html">Toby 'qubit' Cubitt - Lost or corrupted undo-tree history</a></li>
-<li><a href="https://blog.aaronbieber.com/2015/01/17/learning-to-love-emacs.html">Learning to Love Emacs - The Chronicle</a></li>
-<li><a href="https://hacks.mozilla.org/2020/01/how-we-built-picture-in-picture-in-firefox-desktop/">How we built Picture-in-Picture in Firefox Desktop with more control over video - Mozilla Hacks - the Web developer blog</a></li>
-<li><a href="https://signalvnoise.com/posts/3124-give-it-five-minutes">Give it five minutes – Signal v. Noise</a></li>
-<li><a href="https://blog.vjeux.com/2020/uncategorized/reflections-on-excalidraw.html">Vjeux » Reflections on Excalidraw</a></li>
-<li><a href="https://twitter.com/tobi/status/1210242184341000192">Tobi Lutke 🌳🌲🛒🕹 on Twitter: "I realize everyone's twitter feed looks different. But I'll go ahead and subtweet two conversations that I see going by right now: Thread/" / Twitter</a></li>
-<li><a href="https://medium.com/@joulee/10-questions-i-wish-id-asked-more-to-turbocharge-my-career-afad1b0fa501">10 questions I wish I’d asked more to turbocharge my career</a></li>
-<li><a href="https://blog.pragmaticengineer.com/a-team-where-everyone-is-a-leader/">An Engineering Team where Everyone is a Leader</a></li>
-<li><a href="https://panum.dk/blog/nixos_the_distribution_i_got_to_love/">NixOS: The distribution I got to love - Thomas Kobber Panum</a></li>
-<li><a href="https://mobile.twitter.com/rjs/status/1217947689473601536">Ryan Singer on Twitter: "An affordance is a piece of supply that, when integrated by the one with demand, gives them a new ability." / Twitter</a></li>
-<li><a href="https://twitter.com/chris_herd/status/1212412869251350529">Chris Herd on Twitter: "The 2020s will be known as the Remote Work decade A few predictions of what is likely to emerge [ a thread ] 💻🏠🌍" / Twitter</a></li>
-<li><a href="http://www.rosspettit.com/2019/12/but-is-it-really-tech-firm.html">The Agile Manager: But Is It Really a Tech Firm?</a></li>
-<li><a href="https://twitter.com/bcantrill/status/1216491216356823040">Bryan Cantrill on Twitter: "So, my thoughts on engineering performance management have always been a bit idiosyncratic, but Matt's tweets today have me reflecting, so... storytime. 1/ https://t.co/Jr9Kf23WZZ" / Twitter</a></li>
-<li><a href="https://codahale.com/work-is-work/">Work Is Work - codahale.com (The math of organization scaling)</a></li>
-<li><a href="https://t.co/sCiHMhh7Zf">The Next Experiment? Starting My Own Venture - patkua@work</a></li>
-<li><a href="https://til.hashrocket.com/posts/e65bb49204-lower-is-faster-than-ilike">Lower Is Faster Than ilike - Today I Learned</a></li>
-<li><a href="https://glitch.com/culture/the-year-in-glitches/">The Year in Glitches</a></li>
-<li><a href="https://blog.digitalocean.com/from-15-000-database-connections-to-under-100-digitaloceans-tale-of-tech-debt/">From 15,000 database connections to under 100: DigitalOcean's tale of tech debt</a></li>
-<li><a href="https://adamconrad.dev/blog/how-to-improve-on-naming-contexts-in-domain-driven-design/">How to Improve on Naming Contexts in Domain-Driven Design - Adam C. Conrad</a></li>
-<li><a href="https://thoughtbot.com/blog/how-to-estimate-feature-development-time-maybe-don-t">How to Estimate Feature Development Time: Maybe Don't</a></li>
-<li><a href="https://overreacted.io/goodbye-clean-code/">Goodbye, Clean Code — Overreacted</a></li>
-<li><a href="https://rauchg.com/2020/2019-in-review">2019 in Review (Next.js &amp; Zeit)</a></li>
-<li><a href="https://t.co/sA9sh0Ih0G">Good times create weak men @ tonsky.me</a></li>
-<li><a href="https://jesor.me/2019/sex-education-review/">《Sex Education》：性的迷思和爱的教育 - 大破进击</a></li>
+<li>KR 1: Reduce sprint meetings by 15 minutes</li>
+<li>KR 2: Close at least 80% of issues for each sprint</li>
 </ul>
+</blockquote>
+<p>
+The worst actions for these two results are simple:
+</p>
+<ol class="org-ol">
+<li><p>
+Stop every sprint call when we hit the time limit (say 45mins).
+</p>
+
+<p>
+This is the worst action because we still want to continue (or improve) our communications with devs, and this action goes against this goal.
+</p></li>
+
+<li><p>
+Close issues at the end of sprint, and create new ones if some of them are not finished/shipped.
+</p>
+
+<p>
+This is the worst action because recreating unfinished issues is basically the same as moving the old issues to the next sprint but creates too many work overhead.
+</p></li>
+</ol>
+
+<p>
+Note that I'm not saying that we are definitely going to take the worse actions for the sake of achieving these key results. But considering these can help us digger deeper and find the key results we really want.
+</p>
+
+<p>
+Now let's test these key results with the two questions above:
+</p>
+
+<ol class="org-ol">
+<li><p>
+If we've already reduced sprint calls by 15mins, is efficiency improved?
+</p>
+
+<p>
+Maybe not, especially if we rushed through meetings and communications are bad.
+</p>
+
+<p>
+And if we extend the sprint calls to a half day, but communications are extremely good, everybody knows what we are going to do in the following week. So everything goes smoothly in the following week, I think the efficiency is improved, too. (And I as a developer would be love to attend this half-day long sprint call)
+</p>
+
+<p>
+So maybe time of sprint calls is not the <b>KEY</b> result here, but the <b>internal communication efficiency</b> (the result of this efficiency may appear in feature ship speed).
+</p></li>
+
+<li><p>
+If we've closed 80% issues for each sprint, is efficiency improved?
+</p>
+
+<p>
+Again, maybe not, especially if they are just closed when the sprint ends, or if we are just shipping 8 out of 10 tiny issues/features.
+</p>
+
+<p>
+And if issues are not closed at all, but features are shipped faster and better, I'd call efficiency improved, too.
+</p>
+
+<p>
+So maybe issue close rate is not the <b>KEY</b> result here, but the <b>feature ship rate/bug fix rate</b>.
+</p></li>
+</ol>
+
+<p>
+So, always review your OKR after you've defined one, and always dig deeper to find the real <b>KEY</b> results.
+</p>
 </div>
 </div>
 
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2020-04-17</pubDate>
+      <guid>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</guid>
+    </item>
+    <item>
+      <title>Clippings of 2020 Feb</title>
+      <link>https://yiming.dev/clipping/2020/03/09/clippings-of-2020-feb</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-04-01</pubDate>
       <guid>https://yiming.dev/clipping/2020/03/09/clippings-of-2020-feb</guid>
     </item>
@@ -349,14 +212,6 @@ You may find some of them interesting to you. :)
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-01-08</pubDate>
       <guid>https://yiming.dev/blog/2020/01/06/how-to-write-elixiry-ruby-result-object</guid>
-    </item>
-    <item>
-      <title>Growing a Result-Driven Mindset</title>
-      <link>https://yiming.dev/blog/2019/12/31/growing-a-result-driven-mindset</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2019-12-31</pubDate>
-      <guid>https://yiming.dev/blog/2019/12/31/growing-a-result-driven-mindset</guid>
     </item>
   </channel>
 </rss>
