@@ -4,140 +4,75 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Fri, 17 Apr 2020 19:26:12 CST</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2020 19:26:12 CST</lastBuildDate>
+    <pubDate>Thu, 23 Apr 2020 20:31:03 CST</pubDate>
+    <lastBuildDate>Thu, 23 Apr 2020 20:31:03 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>OKR Case Study #1 - How to find KEY results?</title>
-      <link>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</link>
-      <description><![CDATA[In this series of OKR Case Studies, we'll walk through a few OKRs and explain how to define great OKRs. Let's first see how to find the KEY results for an objective.]]></description>
+      <title>OKR Case Study #2 - Reduce emails from clients?!</title>
+      <link>https://yiming.dev/blog/2020/04/23/okr-case-study-2-reduce-emails-from-clients</link>
+      <description><![CDATA[In this case study, you will see an example of ambiguous key results and how to fix that.]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="post-container">
-        <h1>OKR Case Study #1 - How to find KEY results?</h1>
-        <p>
-This is the first post of my OKR Case Study series.
-In this series, we'll walk through a few OKRs and explain how to define great OKRs.
-Let's first see how to find the KEY results for an objective.
-</p>
-
+        <h1>OKR Case Study #2 - Reduce emails from clients?!</h1>
+        <blockquote>
 <p>
-For every objective, we can set different results.
-Some of them can help us focus on the objective and achieve what we really want.
-They are the KEY results we want to use.
-Some results are not really the KEY result.
-They may not really related to the objective or may misguide people.
-Finding the KEY results is one of the most important thing when setting your OKRs.
-</p>
-
-<div id="outline-container-org529a3bb" class="outline-2">
-<h2 id="org529a3bb">Two ways to validate key results</h2>
-<div class="outline-text-2" id="text-org529a3bb">
-<p>
-To check if our key results are really the KEY results, we can:
-</p>
-
-<ol class="org-ol">
-<li><p>
-Think about the worst actions we can take to achieve each key result.
-</p>
-
-<p>
-We want key result to be a guidance for our actions, but not too restricted, nor lead to bad behaviours.
-</p></li>
-
-<li>Ask these two questions:
-<ol class="org-ol">
-<li>If we've already got all the key results listed here, can we call this objective achieved?</li>
-<li>If a key result is not achieved (or we get the opposite of it), can we still achieve the same objective?</li>
-</ol></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgacabb24" class="outline-2">
-<h2 id="orgacabb24">Always dig deeper</h2>
-<div class="outline-text-2" id="text-orgacabb24">
-<blockquote>
-<p>
-<b>Objective</b>: Improve efficiency and organization in projects
+<b>Objective</b>: Inspire more client confidence by anticipating their needs
 </p>
 <ul class="org-ul">
-<li>KR 1: Reduce sprint meetings by 15 minutes</li>
-<li>KR 2: Close at least 80% of issues for each sprint</li>
+<li>KR 1: Reduce number of emails from clients</li>
 </ul>
 </blockquote>
-<p>
-The worst actions for these two results are simple:
-</p>
 <ol class="org-ol">
-<li><p>
-Stop every sprint call when we hit the time limit (say 45mins).
-</p>
-
-<p>
-This is the worst action because we still want to continue (or improve) our communications with devs, and this action goes against this goal.
-</p></li>
-
-<li><p>
-Close issues at the end of sprint, and create new ones if some of them are not finished/shipped.
-</p>
-
-<p>
-This is the worst action because recreating unfinished issues is basically the same as moving the old issues to the next sprint but creates too many work overhead.
-</p></li>
+<li>Is "number of emails" referring to <code>angry emails from clients</code>?</li>
 </ol>
-
 <p>
-Note that I'm not saying that we are definitely going to take the worse actions for the sake of achieving these key results. But considering these can help us digger deeper and find the key results we really want.
-</p>
-
-<p>
-Now let's test these key results with the two questions above:
+Because we may not want to reduce <code>happy emails or new-contract emails from clients</code>, right?
 </p>
 
 <ol class="org-ol">
 <li><p>
-If we've already reduced sprint calls by 15mins, is efficiency improved?
+I'm not sure if we should use <b>reduction</b> of this number as a Key Result.
 </p>
 
 <p>
-Maybe not, especially if we rushed through meetings and communications are bad.
+My concern is that the number of these emails doesn't show a consistent pattern overtime.
+It might be a random thing, 2 emails this month due to various reasons, 20 emails next month due to other various reasons.
 </p>
 
 <p>
-And if we extend the sprint calls to a half day, but communications are extremely good, everybody knows what we are going to do in the following week. So everything goes smoothly in the following week, I think the efficiency is improved, too. (And I as a developer would be love to attend this half-day long sprint call)
-</p>
-
-<p>
-So maybe time of sprint calls is not the <b>KEY</b> result here, but the <b>internal communication efficiency</b> (the result of this efficiency may appear in feature ship speed).
+So aiming for <b>reduction</b> may not make sense for this metric.
+My suggestion is to just set a goal of <code>0 angry emails from clients in 2020 Q2</code> (if it's not too stretching).
 </p></li>
 
-<li><p>
-If we've closed 80% issues for each sprint, is efficiency improved?
-</p>
+<li>Since "number of angry emails" is a thing, "number of happy emails" can also be a good Key Result.</li>
 
-<p>
-Again, maybe not, especially if they are just closed when the sprint ends, or if we are just shipping 8 out of 10 tiny issues/features.
-</p>
-
-<p>
-And if issues are not closed at all, but features are shipped faster and better, I'd call efficiency improved, too.
-</p>
-
-<p>
-So maybe issue close rate is not the <b>KEY</b> result here, but the <b>feature ship rate/bug fix rate</b>.
-</p></li>
+<li>I think the focus here is the feedback from clients, so maybe we don't need to be restricted to only one medium (email)?
+Angry/happy feedback from phone/meeting/etc. should also count, too?
+(Though it might add some work when reviewing this key result.)</li>
 </ol>
 
+
 <p>
-So, always review your OKR after you've defined one, and always dig deeper to find the real <b>KEY</b> results.
+So the KR might be something like:
 </p>
-</div>
-</div>
+
+<ul class="org-ul">
+<li><code>0 annoyed/angry/bug emails from client in 2020 Q2</code></li>
+<li><code>1 good feedback communication from client every month in 2020 Q2</code></li>
+</ul>
 
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2020-04-23</pubDate>
+      <guid>https://yiming.dev/blog/2020/04/23/okr-case-study-2-reduce-emails-from-clients</guid>
+    </item>
+    <item>
+      <title>OKR Case Study #1 - How to find KEY results?</title>
+      <link>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-04-17</pubDate>
       <guid>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</guid>
     </item>
@@ -204,14 +139,6 @@ So, always review your OKR after you've defined one, and always dig deeper to fi
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-01-14</pubDate>
       <guid>https://yiming.dev/blog/2020/01/13/how-to-partially-restore-a-postgre-sql-database</guid>
-    </item>
-    <item>
-      <title>How to Write Elixiry Ruby - Result Object</title>
-      <link>https://yiming.dev/blog/2020/01/06/how-to-write-elixiry-ruby-result-object</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2020-01-08</pubDate>
-      <guid>https://yiming.dev/blog/2020/01/06/how-to-write-elixiry-ruby-result-object</guid>
     </item>
   </channel>
 </rss>
