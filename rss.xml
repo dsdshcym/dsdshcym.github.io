@@ -4,8 +4,8 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Mon, 29 Jun 2020 16:41:52 CST</pubDate>
-    <lastBuildDate>Mon, 29 Jun 2020 16:41:52 CST</lastBuildDate>
+    <pubDate>Mon, 29 Jun 2020 22:10:17 CST</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2020 22:10:17 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -25,8 +25,12 @@ malicious code can be injected to these third party libraries and get pulled int
 <p>
 One way to inject malicious code is through the package manager.
 We've seen many such accidents in various package managers in the past years:
-<a href="https://github.com/rest-client/rest-client/issues/713#issuecomment-522735093">event-stream (from NPM) got injected in 2018 Nov</a>;
-<a href="https://github.com/rest-client/rest-client/issues/713">rest-client (from RubyGems) got injected in 2019</a>.
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/rest-client/rest-client/issues/713#issuecomment-522735093">event-stream (from NPM) got injected in 2018 Nov</a>;</li>
+<li><a href="https://github.com/rest-client/rest-client/issues/713">rest-client (from RubyGems) got injected in 2019</a>.</li>
+</ul>
+<p>
 This security threat is out there targeting every language and every ecosystem.
 </p>
 
