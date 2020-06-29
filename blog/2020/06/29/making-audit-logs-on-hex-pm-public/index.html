@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Making Audit Logs on Hex.pm Public - Yiming Chen</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@dsdshcym" />
+  <meta name="twitter:creator" content="@dsdshcym" />
+  <meta name="author" content="Yiming Chen" />
+  <meta name="description" content="This post explains why Hex.pm is making its audit logs public and what kind of information you can find via these audit logs." />
+  <meta name="keywords" content="nil" />
+  <meta property="og:title" content="Making Audit Logs on Hex.pm Public - Yiming Chen" />
+  <meta property="og:description" content="This post explains why Hex.pm is making its audit logs public and what kind of information you can find via these audit logs." />
+
+  <link rel="alternate" title="RSS Feed" href="/rss.xml" type="application/rss+xml">
+  <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/posts.css" type="text/css">
+  <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="/media/js/main.js"></script>
+</head>
+
+  <body class="container">
+<header id="header">
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Yiming Chen</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/clipping/">Clipping</a></li>
+                        <li><a href="/tags/">Tags</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="https://github.com/dsdshcym">GitHub</a></li>
+                        <li><a href="/rss.xml">RSS</a></li>
+                        <li><a href="https://webring.xxiivv.com/#random">Webring</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</header>
+
+<section id="content" role="main">
+    <div id="post-container">
+        <h1>Making Audit Logs on Hex.pm Public</h1>
+        <p>
+Third-party libraries are one of the most important building blocks for modern software development.
+We can hardly build anything useful without depending on other's work.
+But this dependency introduces a significant security risk:
+malicious code can be injected to these third party libraries and get pulled into our application.
+</p>
+
+<p>
+One way to inject malicious code is through the package manager.
+We've seen many such accidents in various package managers in the past years:
+<a href="https://github.com/rest-client/rest-client/issues/713#issuecomment-522735093">event-stream (from NPM) got injected in 2018 Nov</a>;
+<a href="https://github.com/rest-client/rest-client/issues/713">rest-client (from RubyGems) got injected in 2019</a>.
+This security threat is out there targeting every language and every ecosystem.
+</p>
+
+<p>
+And this is why Hex team has been working on securing the Elixir/Erlang package manager for so long.
+</p>
+<ol class="org-ol">
+<li><a href="https://github.com/hexpm/hexpm/pull/551">Hex.pm displays the package tarball checksum since 2017 Aug.</a></li>
+<li><a href="https://github.com/hexpm/hexpm/pull/836/files">A new outer checksum mechanism was introduced in 2019 July.</a></li>
+<li><a href="https://hex.pm/blog/announcing-hex-diff">Hex package differ was introduced in 2020 Jan.</a></li>
+</ol>
+<p>
+All these features are aimed to help Elixir/Erlang developers to audit a package.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+Most importantly, Hexpm has been recording user actions as audit logs since 2016 Jan.
+These audit logs include info about what actions are performed on packages, when these actions are performed, and who performed these actions.
+So with these audit logs in place, we can know what actions are performed after an user account was compromised (if they published any new packages, added new owners to packages, etc.).
+</p>
+
+<p>
+Now you can check these audit logs on Hexpm:
+</p>
+<ol class="org-ol">
+<li><p>
+Check who owns a package and who published a release.
+</p>
+
+<p>
+In a package's show page, Hexpm displays its owner and publishers for its releases.
+</p>
+
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/owners.png" alt="owners.png" width="50%" />
+</p>
+</div></li>
+<li><p>
+Check all actions performed around a package.
+</p>
+
+<p>
+Hexpm displays all recent activities for a package:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_recent_activities.png" alt="package_recent_activities.png" width="50%" />
+</p>
+</div>
+
+<p>
+And you can see all activities related to this package in a dedicated page:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_all_activities.png" alt="package_all_activities.png" width="50%" />
+</p>
+</div></li>
+<li><p>
+Check all actions taken by your own user account.
+</p>
+
+<p>
+You can go to your account dashboard and check all your recent activities:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/user_activities.png" alt="user_activities.png" width="50%" />
+</p>
+</div></li>
+<li>Check all these audit logs via Hexpm API.
+If you have access to Hexpm API endpoints, you can fetch audit logs from the following endpoints:
+<ul class="org-ul">
+<li><code>GET /api/users/me/audit_logs</code></li>
+<li><code>GET /api/orgs/:organization/audit_logs</code></li>
+<li><code>GET /api/packages/:name/audit_logs</code></li>
+<li><code>GET /api/repos/:repository/packages/:name/audit_logs</code></li>
+</ul></li>
+</ol>
+
+<p>
+By making audit information public, everyone can review the full history of a package on Hexpm.
+Hopefully by doing so, we can bring more transparency to Hexpm and make our ecosystem more secure together.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+As a side note, <a href="https://hex.pm/blog/announcing-two-factor-auth">Two Factor Auth was added to Hex.pm in 2020 May</a> to help developers better secure their accounts.
+</p></div></div>
+
+
+</div>
+</div>
+    </div>
+</section>
+
+
+    <div class="post-meta">
+        <span title="post date" class="post-info">2020-06-29</span>
+        <span title="last modification date" class="post-info">2020-06-29</span>
+        <span title="tags" class="post-info"><a href="/tags/hex/">Hex</a>, <a href="/tags/package-manager/">Package Manager</a>, <a href="/tags/elixir/">Elixir</a>, <a href="/tags/security/">Security</a></span>
+        <span title="author" class="post-info">Yiming Chen</span>
+    </div>
+  <section>
+    <h1>Comments</h1>
+    <script src="https://utteranc.es/client.js"
+      repo="dsdshcym/dsdshcym.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+<footer class="footer">
+  <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> (<a href="http://orgmode.org">Org mode</a>)</p>
+  <p>
+    Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:dsdshcym &lt;at&gt; gmail &lt;dot&gt; com">Yiming Chen</a>
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+    <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+  </p>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152951733-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152951733-1');
+</script>
+
+  </body>
+</html>

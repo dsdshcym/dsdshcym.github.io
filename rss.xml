@@ -4,283 +4,133 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Sun, 28 Jun 2020 22:26:17 CST</pubDate>
-    <lastBuildDate>Sun, 28 Jun 2020 22:26:17 CST</lastBuildDate>
+    <pubDate>Mon, 29 Jun 2020 16:41:52 CST</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2020 16:41:52 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
-      <title>Clippings of 2020 May</title>
-      <link>https://yiming.dev/clipping/2020/06/01/clippings-of-2020-may</link>
-      <description><![CDATA[My top 10 reads from 2020 Apr. Topics include communication, start-up, software engineering, design, etc.]]></description>
+      <title>Making Audit Logs on Hex.pm Public</title>
+      <link>https://yiming.dev/blog/2020/06/29/making-audit-logs-on-hex-pm-public</link>
+      <description><![CDATA[This post explains why Hex.pm is making its audit logs public and what kind of information you can find via these audit logs.]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="post-container">
-        <h1>Clippings of 2020 May</h1>
-        <div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#%5B%5Bid%3A0203FC52-D04B-4CCF-9631-E82F683FF734%5D%5BCompeting%20Against%20Luck%3A%20The%20Story%20of%20Innovation%20and%20Customer%20Choice%5D%5D">Competing Against Luck: The Story of Innovation and Customer Choice</a></li>
-<li><a href="#%5B%5Bid%3ADCABAA37-4473-492B-AD70-472505122BBB%5D%5BDon%27t%20Worry%2C%20There%27s%20a%20Method%20to%20the%20Meeting%5D%5D">Don't Worry, There's a Method to the Meeting</a></li>
-<li><a href="#%5B%5Bid%3A208F27C0-BEE1-4310-B0D0-8E8C1B4D4981%5D%5BCreativity%20Is%20a%20Search%20Problem%20-%20Teng%20Bao%5D%5D">Creativity Is a Search Problem - Teng Bao</a></li>
-<li><a href="#%5B%5Bid%3A6AB731D0-4A76-4345-B358-27E8D7C5DA8D%5D%5BDesign%20Patterns%20for%20Progressive%20Complexity%20-%20Teng%20Bao%5D%5D">Design Patterns for Progressive Complexity - Teng Bao</a></li>
-<li><a href="#%5B%5Bid%3ABFE5BD1B-C4E6-48F0-9A84-05F3669EEB0A%5D%5BMaker%20vs%20Multiplier%20-%20patkua.com%5D%5D">Maker vs Multiplier - patkua.com</a></li>
-<li><a href="#%5B%5Bid%3A2794941C-27AA-43D8-A119-5E8A68C85654%5D%5BJohn%20Cutler%20on%20Twitter%3A%20%22Some%20of%20the%20best%20roadmaps...%20%22%20%2F%20Twitter%5D%5D">John Cutler on Twitter: "Some of the best roadmaps... " / Twitter</a></li>
-<li><a href="#%5B%5Bid%3A59329CDC-0D49-4D07-AA43-4EE2D7F30F56%5D%5BTeam%20Objectives%20Archives%20-%20Silicon%20Valley%20Product%20Group%5D%5D">Team Objectives Archives - Silicon Valley Product Group</a></li>
-<li><a href="#%5B%5Bid%3A859173E5-46E2-4ED5-A4C1-34BEFC5DB875%5D%5BThe%20only%20truthful%20answer%20to%20any%20question%20about%20management%20%E2%80%94%20Quartz%20at%20Work%5D%5D">The only truthful answer to any question about management — Quartz at Work</a></li>
-<li><a href="#%5B%5Bid%3A18B8A831-7070-40D9-8CB8-0029CA3A9A45%5D%5BLayout-isolated%20components%5D%5D">Layout-isolated components</a></li>
-<li><a href="#%5B%5Bid%3A0B4C0610-1B73-430F-AEDD-D7880740646B%5D%5BSebastian%20Markbage%3A%20Minimal%20API%20Surface%20Area%20-%20JSConf%20EU%202014%20-%20YouTube%5D%5D">Sebastian Markbage: Minimal API Surface Area - JSConf EU 2014 - YouTube</a></li>
-<li><a href="#%5B%5Bid%3AE0844B4A-260B-4A13-8E2D-B11A09F903F2%5D%5BComplexity%20Has%20to%20Live%20Somewhere%5D%5D">Complexity Has to Live Somewhere</a></li>
-<li><a href="#%5B%5Bid%3A9BB4063E-28CB-4BE6-A208-98DFB2713228%5D%5BShould%20I%20Test%20Private%20Methods%3F%5D%5D">Should I Test Private Methods?</a></li>
-<li><a href="#%5B%5Bid%3A284A735C-1376-40E5-894E-9D7521B7BACB%5D%5BBurnout%20with%20Aneika%20and%20Anjuan%20Simmons%20by%20Storytime%20With%20Managers%20%E2%80%A2%20A%20podcast%20on%20Anchor%5D%5D">Burnout with Aneika and Anjuan Simmons by Storytime With Managers • A podcast on Anchor</a></li>
-<li><a href="#%5B%5Bid%3A6240F395-F5A2-45D5-B469-C3C6F71A6975%5D%5B%E4%B8%AD%E6%96%87%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E2%80%9C%E8%AE%A8%E8%AE%BA%E2%80%9D%E7%9A%84%E6%B6%88%E4%BA%A1%20-%20%E6%9C%BA%E6%A0%B8%20GCORES%5D%5D">中文互联网中“讨论”的消亡 - 机核 GCORES</a></li>
-<li><a href="#Non-Top">Non-Top</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-%5B%5Bid%3A0203FC52-D04B-4CCF-9631-E82F683FF734%5D%5BCompeting%20Against%20Luck%3A%20The%20Story%20of%20Innovation%20and%20Customer%20Choice%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A0203FC52-D04B-4CCF-9631-E82F683FF734%5D%5BCompeting%20Against%20Luck%3A%20The%20Story%20of%20Innovation%20and%20Customer%20Choice%5D%5D"><a href="https://www.amazon.com/Competing-Against-Luck-Innovation-Customer/dp/0062435612">Competing Against Luck: The Story of Innovation and Customer Choice</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A0203FC52-D04B-4CCF-9631-E82F683FF734%5D%5BCompeting%20Against%20Luck%3A%20The%20Story%20of%20Innovation%20and%20Customer%20Choice%5D%5D">
-<p>
-After reading this book, I can see Jobs everywhere:
-</p>
-<ul class="org-ul">
-<li>We hire a taxi to go from location A to location B.</li>
-<li>We hire a light to help us see things in the dark.</li>
-<li>We hire a mobile phone to contact with our families and friends.</li>
-</ul>
-
-<p>
-Seeing Jobs in our lives is just the beginning.
-Jobs are highly contextual.
-</p>
-<ul class="org-ul">
-<li>Some people hire an iPhone to take photos with a small device.</li>
-<li>Some people hire an iPhone to bring musics with them all day.</li>
-<li>Some people hire an iPhone to play games during commute.</li>
-<li>Some people hire an iPhone to just make phone calls.</li>
-</ul>
-<p>
-Understanding these pain points where our users struggle to make progress in their lives is the key for innovators like us to learn the problem we need to solve.
-Only by understanding the problem to solve, can we improve the existing product (like iPhone) in these various contexts, or create a new product to solve a specific Job under a specific context better.
+        <h1>Making Audit Logs on Hex.pm Public</h1>
+        <p>
+Third-party libraries are one of the most important building blocks for modern software development.
+We can hardly build anything useful without depending on other's work.
+But this dependency introduces a significant security risk:
+malicious code can be injected to these third party libraries and get pulled into our application.
 </p>
 
 <p>
-Jobs to be done theory helps us realize the context around a Job, understand the real struggle hidden behind an existing solution, so we can identify innovations and compete against pure luck.
+One way to inject malicious code is through the package manager.
+We've seen many such accidents in various package managers in the past years:
+<a href="https://github.com/rest-client/rest-client/issues/713#issuecomment-522735093">event-stream (from NPM) got injected in 2018 Nov</a>;
+<a href="https://github.com/rest-client/rest-client/issues/713">rest-client (from RubyGems) got injected in 2019</a>.
+This security threat is out there targeting every language and every ecosystem.
 </p>
 
 <p>
-Solving the problems is just the beginning.
-In this competitive market, customers can always find more than one solutions for the same problem they are struggling with.
-What distinguishes us from other competitors is not only our product, but the experience we are providing.
-By providing an unique experience for our customers, we can get the unique competitive advantages that cannot be copied anywhere else.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3ADCABAA37-4473-492B-AD70-472505122BBB%5D%5BDon%27t%20Worry%2C%20There%27s%20a%20Method%20to%20the%20Meeting%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3ADCABAA37-4473-492B-AD70-472505122BBB%5D%5BDon%27t%20Worry%2C%20There%27s%20a%20Method%20to%20the%20Meeting%5D%5D"><a href="https://thoughtbot.com/blog/method-to-my-meeting">Don't Worry, There's a Method to the Meeting</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3ADCABAA37-4473-492B-AD70-472505122BBB%5D%5BDon%27t%20Worry%2C%20There%27s%20a%20Method%20to%20the%20Meeting%5D%5D">
-<p>
-It's interesting to think of meetings as functions in programming.
-<b>Think about the output you want to get from your next meeting.</b>
-</p>
-
-<p>
-P.S. I also wrote a similar blog post before: <a href="https://yiming.dev/blog/2018/11/15/similarities_between_tdd_and_management/">Similarities between TDD and Management</a>
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A208F27C0-BEE1-4310-B0D0-8E8C1B4D4981%5D%5BCreativity%20Is%20a%20Search%20Problem%20-%20Teng%20Bao%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A208F27C0-BEE1-4310-B0D0-8E8C1B4D4981%5D%5BCreativity%20Is%20a%20Search%20Problem%20-%20Teng%20Bao%5D%5D"><a href="https://www.tengbao.me/blog/creativity-is-a-search-problem/">Creativity Is a Search Problem - Teng Bao</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A208F27C0-BEE1-4310-B0D0-8E8C1B4D4981%5D%5BCreativity%20Is%20a%20Search%20Problem%20-%20Teng%20Bao%5D%5D">
-<p>
-Maybe god wanted to solve a problem, but god didn't know how to solve it.
-So god created human race to search the answer for him/her.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A6AB731D0-4A76-4345-B358-27E8D7C5DA8D%5D%5BDesign%20Patterns%20for%20Progressive%20Complexity%20-%20Teng%20Bao%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A6AB731D0-4A76-4345-B358-27E8D7C5DA8D%5D%5BDesign%20Patterns%20for%20Progressive%20Complexity%20-%20Teng%20Bao%5D%5D"><a href="https://www.tengbao.me/blog/design-patterns-for-complexity/">Design Patterns for Progressive Complexity - Teng Bao</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A6AB731D0-4A76-4345-B358-27E8D7C5DA8D%5D%5BDesign%20Patterns%20for%20Progressive%20Complexity%20-%20Teng%20Bao%5D%5D">
-<p>
-The differences between Graceful Degradation and Progressive Enhancement reminded me of two ways of writing code:
+And this is why Hex team has been working on securing the Elixir/Erlang package manager for so long.
 </p>
 <ol class="org-ol">
-<li>Abstract first, degrade later</li>
-<li>Duplicate first, abstract later</li>
+<li><a href="https://github.com/hexpm/hexpm/pull/551">Hex.pm displays the package tarball checksum since 2017 Aug.</a></li>
+<li><a href="https://github.com/hexpm/hexpm/pull/836/files">A new outer checksum mechanism was introduced in 2019 July.</a></li>
+<li><a href="https://hex.pm/blog/announcing-hex-diff">Hex package differ was introduced in 2020 Jan.</a></li>
+</ol>
+<p>
+All these features are aimed to help Elixir/Erlang developers to audit a package.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+Most importantly, Hexpm has been recording user actions as audit logs since 2016 Jan.
+These audit logs include info about what actions are performed on packages, when these actions are performed, and who performed these actions.
+So with these audit logs in place, we can know what actions are performed after an user account was compromised (if they published any new packages, added new owners to packages, etc.).
+</p>
+
+<p>
+Now you can check these audit logs on Hexpm:
+</p>
+<ol class="org-ol">
+<li><p>
+Check who owns a package and who published a release.
+</p>
+
+<p>
+In a package's show page, Hexpm displays its owner and publishers for its releases.
+</p>
+
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/owners.png" alt="owners.png" width="50%" />
+</p>
+</div></li>
+<li><p>
+Check all actions performed around a package.
+</p>
+
+<p>
+Hexpm displays all recent activities for a package:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_recent_activities.png" alt="package_recent_activities.png" width="50%" />
+</p>
+</div>
+
+<p>
+And you can see all activities related to this package in a dedicated page:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_all_activities.png" alt="package_all_activities.png" width="50%" />
+</p>
+</div></li>
+<li><p>
+Check all actions taken by your own user account.
+</p>
+
+<p>
+You can go to your account dashboard and check all your recent activities:
+</p>
+
+<div class="figure">
+<p><img src="https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/user_activities.png" alt="user_activities.png" width="50%" />
+</p>
+</div></li>
+<li>Check all these audit logs via Hexpm API.
+If you have access to Hexpm API endpoints, you can fetch audit logs from the following endpoints:
+<ul class="org-ul">
+<li><code>GET /api/users/me/audit_logs</code></li>
+<li><code>GET /api/orgs/:organization/audit_logs</code></li>
+<li><code>GET /api/packages/:name/audit_logs</code></li>
+<li><code>GET /api/repos/:repository/packages/:name/audit_logs</code></li>
+</ul></li>
 </ol>
 
 <p>
-If we want to write code that's better designed and more readable,
-maybe we prefer Progressive Enhancement over Graceful Degradation, too.
+By making audit information public, everyone can review the full history of a package on Hexpm.
+Hopefully by doing so, we can bring more transparency to Hexpm and make our ecosystem more secure together.
 </p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3ABFE5BD1B-C4E6-48F0-9A84-05F3669EEB0A%5D%5BMaker%20vs%20Multiplier%20-%20patkua.com%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3ABFE5BD1B-C4E6-48F0-9A84-05F3669EEB0A%5D%5BMaker%20vs%20Multiplier%20-%20patkua.com%5D%5D"><a href="https://www.patkua.com/blog/maker-vs-multiplier/">Maker vs Multiplier - patkua.com</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3ABFE5BD1B-C4E6-48F0-9A84-05F3669EEB0A%5D%5BMaker%20vs%20Multiplier%20-%20patkua.com%5D%5D">
-<p>
-A great leader needs to create an environment to boost team member's productivity.
-So it's more like a multiplier, less like a maker.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A2794941C-27AA-43D8-A119-5E8A68C85654%5D%5BJohn%20Cutler%20on%20Twitter%3A%20%22Some%20of%20the%20best%20roadmaps...%20%22%20%2F%20Twitter%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A2794941C-27AA-43D8-A119-5E8A68C85654%5D%5BJohn%20Cutler%20on%20Twitter%3A%20%22Some%20of%20the%20best%20roadmaps...%20%22%20%2F%20Twitter%5D%5D"><a href="https://twitter.com/johncutlefish/status/1059954114770227200">John Cutler on Twitter: "Some of the best roadmaps... " / Twitter</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A2794941C-27AA-43D8-A119-5E8A68C85654%5D%5BJohn%20Cutler%20on%20Twitter%3A%20%22Some%20of%20the%20best%20roadmaps...%20%22%20%2F%20Twitter%5D%5D">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some of the best roadmaps...<br>* mention 0 features<br>* use no shorthand (e.g. &quot;redesign V2.0&quot;)<br>* are not on a timeline (have no dates)<br>* mention Who and Why<br>* tell a compelling story<br>* acknowledge uncertainty<br>* set qual and quant goals<br>* embrace incremental delivery<a href="https://twitter.com/hashtag/youcandoit?src=hash&amp;ref_src=twsrc%5Etfw">#youcandoit</a>!</p>&mdash; John Cutler (@johncutlefish) <a href="https://twitter.com/johncutlefish/status/1059954114770227200?ref_src=twsrc%5Etfw">November 6, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p>
-Similar to what the best OKRs look like.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A59329CDC-0D49-4D07-AA43-4EE2D7F30F56%5D%5BTeam%20Objectives%20Archives%20-%20Silicon%20Valley%20Product%20Group%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A59329CDC-0D49-4D07-AA43-4EE2D7F30F56%5D%5BTeam%20Objectives%20Archives%20-%20Silicon%20Valley%20Product%20Group%5D%5D"><a href="https://svpg.com/insights/product/team-objectives/">Team Objectives Archives - Silicon Valley Product Group</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A59329CDC-0D49-4D07-AA43-4EE2D7F30F56%5D%5BTeam%20Objectives%20Archives%20-%20Silicon%20Valley%20Product%20Group%5D%5D">
-<p>
-After several months of using OKRs in my company, I can feel the similar pain points mentioned in this post.
-You cannot force people to define individual OKRs.
-It would only back-fire if you do so.
-What you can do is to define team objectives together, so these objectives bond us together as a team.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A859173E5-46E2-4ED5-A4C1-34BEFC5DB875%5D%5BThe%20only%20truthful%20answer%20to%20any%20question%20about%20management%20%E2%80%94%20Quartz%20at%20Work%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A859173E5-46E2-4ED5-A4C1-34BEFC5DB875%5D%5BThe%20only%20truthful%20answer%20to%20any%20question%20about%20management%20%E2%80%94%20Quartz%20at%20Work%5D%5D"><a href="https://qz.com/work/1835502/the-only-truthful-answer-to-any-question-about-management/">The only truthful answer to any question about management — Quartz at Work</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A859173E5-46E2-4ED5-A4C1-34BEFC5DB875%5D%5BThe%20only%20truthful%20answer%20to%20any%20question%20about%20management%20%E2%80%94%20Quartz%20at%20Work%5D%5D">
-<p>
-Of course it's "It depends."
-</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
 
-<p>
-Just like the only truthful answer to any question about development: "it depends."
-</p>
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+As a side note, <a href="https://hex.pm/blog/announcing-two-factor-auth">Two Factor Auth was added to Hex.pm in 2020 May</a> to help developers better secure their accounts.
+</p></div></div>
 
-<p>
-(The next question you should ask is "Depends on what?")
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A18B8A831-7070-40D9-8CB8-0029CA3A9A45%5D%5BLayout-isolated%20components%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A18B8A831-7070-40D9-8CB8-0029CA3A9A45%5D%5BLayout-isolated%20components%5D%5D"><a href="https://visly.app/blog/layout-isolated-components">Layout-isolated components</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A18B8A831-7070-40D9-8CB8-0029CA3A9A45%5D%5BLayout-isolated%20components%5D%5D">
-<p>
-My biggest question with writing HTML/CSS components is how to split responsibilities between <code>divs</code>.
-This post answers this question.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A0B4C0610-1B73-430F-AEDD-D7880740646B%5D%5BSebastian%20Markbage%3A%20Minimal%20API%20Surface%20Area%20-%20JSConf%20EU%202014%20-%20YouTube%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A0B4C0610-1B73-430F-AEDD-D7880740646B%5D%5BSebastian%20Markbage%3A%20Minimal%20API%20Surface%20Area%20-%20JSConf%20EU%202014%20-%20YouTube%5D%5D"><a href="https://www.youtube.com/watch?v=4anAwXYqLG8">Sebastian Markbage: Minimal API Surface Area - JSConf EU 2014 - YouTube</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A0B4C0610-1B73-430F-AEDD-D7880740646B%5D%5BSebastian%20Markbage%3A%20Minimal%20API%20Surface%20Area%20-%20JSConf%20EU%202014%20-%20YouTube%5D%5D">
-<p>
-Again, no abstraction is better than wrong abstraction
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3AE0844B4A-260B-4A13-8E2D-B11A09F903F2%5D%5BComplexity%20Has%20to%20Live%20Somewhere%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3AE0844B4A-260B-4A13-8E2D-B11A09F903F2%5D%5BComplexity%20Has%20to%20Live%20Somewhere%5D%5D"><a href="https://ferd.ca/complexity-has-to-live-somewhere.html">Complexity Has to Live Somewhere</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3AE0844B4A-260B-4A13-8E2D-B11A09F903F2%5D%5BComplexity%20Has%20to%20Live%20Somewhere%5D%5D">
-<p>
-So the only way to reduce complexity is to remove it completely.
-That's why we need to keep things simple and minimal.
-If we don't do so, complexity would creep into our system.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A9BB4063E-28CB-4BE6-A208-98DFB2713228%5D%5BShould%20I%20Test%20Private%20Methods%3F%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A9BB4063E-28CB-4BE6-A208-98DFB2713228%5D%5BShould%20I%20Test%20Private%20Methods%3F%5D%5D"><a href="http://shoulditestprivatemethods.com/">Should I Test Private Methods?</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A9BB4063E-28CB-4BE6-A208-98DFB2713228%5D%5BShould%20I%20Test%20Private%20Methods%3F%5D%5D">
-<p>
-Funny yet true.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A284A735C-1376-40E5-894E-9D7521B7BACB%5D%5BBurnout%20with%20Aneika%20and%20Anjuan%20Simmons%20by%20Storytime%20With%20Managers%20%E2%80%A2%20A%20podcast%20on%20Anchor%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A284A735C-1376-40E5-894E-9D7521B7BACB%5D%5BBurnout%20with%20Aneika%20and%20Anjuan%20Simmons%20by%20Storytime%20With%20Managers%20%E2%80%A2%20A%20podcast%20on%20Anchor%5D%5D"><a href="https://anchor.fm/cohere/episodes/Burnout-with-Aneika-and-Anjuan-Simmons-eddv1l">Burnout with Aneika and Anjuan Simmons by Storytime With Managers • A podcast on Anchor</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A284A735C-1376-40E5-894E-9D7521B7BACB%5D%5BBurnout%20with%20Aneika%20and%20Anjuan%20Simmons%20by%20Storytime%20With%20Managers%20%E2%80%A2%20A%20podcast%20on%20Anchor%5D%5D">
-<blockquote>
-<ul class="org-ul">
-<li>get familiar with your team, know their normal behavior so you can detect burnouts (get familiar with real Money to detect fake money)</li>
-<li>encourage relationship building</li>
-<li>having a track record of getting things done (shopping workable software)</li>
-<li><b>healthy team makes healthy code</b></li>
-</ul>
-</blockquote>
-<p>
-When I evaluate a team, I used to ask "what tools are you using", "how's the code quality", etc..
-But these are just the results of a healthy team, it's more important to evaluate the team as a whole.
-In a healthy team, everything would follow.
-</p>
-</div>
-</div>
-<div id="outline-container-%5B%5Bid%3A6240F395-F5A2-45D5-B469-C3C6F71A6975%5D%5B%E4%B8%AD%E6%96%87%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E2%80%9C%E8%AE%A8%E8%AE%BA%E2%80%9D%E7%9A%84%E6%B6%88%E4%BA%A1%20-%20%E6%9C%BA%E6%A0%B8%20GCORES%5D%5D" class="outline-2">
-<h2 id="%5B%5Bid%3A6240F395-F5A2-45D5-B469-C3C6F71A6975%5D%5B%E4%B8%AD%E6%96%87%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E2%80%9C%E8%AE%A8%E8%AE%BA%E2%80%9D%E7%9A%84%E6%B6%88%E4%BA%A1%20-%20%E6%9C%BA%E6%A0%B8%20GCORES%5D%5D"><a href="https://www.gcores.com/articles/121924">中文互联网中“讨论”的消亡 - 机核 GCORES</a></h2>
-<div class="outline-text-2" id="text-%5B%5Bid%3A6240F395-F5A2-45D5-B469-C3C6F71A6975%5D%5B%E4%B8%AD%E6%96%87%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E2%80%9C%E8%AE%A8%E8%AE%BA%E2%80%9D%E7%9A%84%E6%B6%88%E4%BA%A1%20-%20%E6%9C%BA%E6%A0%B8%20GCORES%5D%5D">
-<blockquote>
-<p>
-解决的方式只有对话；惟有理性的对话才能消解矛盾。没有地方讨论，只会有更多的两极化，更多的简化和污名化，更多无意义的争端。
-</p>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-Non-Top" class="outline-2">
-<h2 id="Non-Top">Non-Top</h2>
-<div class="outline-text-2" id="text-Non-Top">
-<ul class="org-ul">
-<li><a href="https://www.postgresql.eu/events/fosdem2020/sessions/session/2890/slides/273/FTS.pdf">The State of (Full) Text Search in PostgreSQL 12</a></li>
-<li><a href="https://lethain.com/build-vs-buy/">Build versus buy.</a></li>
-<li><a href="https://lethain.com/contentful/">Poking around Contentful.</a></li>
-<li><a href="https://lethain.com/reasoning-about-big-balls-of-mud/">You can't reason about big balls of mud.</a></li>
-<li><a href="https://lethain.com/minding-our-stories/">Minding our stories.</a></li>
-<li><a href="https://dribbble.com/shots/11052651-Fly-out-menus">Fly-out menus by Steve Schoger on Dribbble</a></li>
-<li><a href="https://gist.github.com/adamwathan/06faa4e9ee1571d3eb47cc0349b965cd">Integrating Tailwind UI with JavaScript</a></li>
-<li><a href="https://pragprog.com/book/swdddf/domain-modeling-made-functional">Domain Modeling Made Functional: Tackle Software Complexity with Domain-Driven Design and F# by Scott Wlaschin - The Pragmatic Bookshelf</a></li>
-<li><a href="https://blog.swmansion.com/live-video-streaming-in-elixir-made-simple-with-membrane-fc5b2083982d">Live video streaming from iOS devices made simple with Elixir &amp; Membrane Framework</a></li>
-<li><a href="https://github.com/alexdesousa/ayesql/blob/master/README.md">ayesql/README.md at master · alexdesousa/ayesql</a></li>
-<li><a href="https://dashbit.co/blog/speeding-up-re-compilation-of-elixir-projects">Speeding up re-compilation of Elixir projects - Dashbit Blog</a></li>
-<li><a href="https://t.me/QuizBot?start=TzjTSPjn">Elixir Quiz that tests your Knowledge in Elixir Programming - Telegram: Contact @QuizBot</a></li>
-<li><a href="https://www.reddit.com/r/emacs/comments/fw6onf/created_a_new_html_export_backend_that_uses/">Created a new HTML export back-end that uses Tailwind.css classes - emacs</a></li>
-<li><a href="https://lethain.com/getting-in-the-room/">Getting in the room. （where important decisions are being made)</a></li>
-<li><a href="https://lethain.com/learn-to-never-be-wrong/">Learn to never be wrong.</a></li>
-<li><a href="https://medium.dave-bailey.com/how-to-get-your-team-to-speak-up-4d403bfc10c9">How to Get Your Team to Challenge Your Ideas - The Founder Coach</a></li>
-<li><a href="https://www.webdesignerdepot.com/2009/09/the-difference-between-art-and-design/">The Difference Between Art and Design - Webdesigner Depot</a></li>
-<li><a href="https://daringfireball.net/2020/04/the_ipad_magic_keyboard">Daring Fireball: The iPad Magic Keyboard</a></li>
-<li><a href="https://ferd.ca/coding-for-fun.html">Coding for Fun</a></li>
-<li><a href="https://mobile.twitter.com/dan_abramov/status/1247261148518457351">Dan Abramov on Twitter: "Junior roles = learn the data flow Senior roles = be the data flow I wish someone explained this to me like five years ago" / Twitter</a></li>
-<li><a href="https://thoughtbot.com/blog/working-together-to-prioritize-your-product">Working Together to Prioritize Your Product</a></li>
-<li><a href="https://thoughtbot.com/blog/working-remotely-is-a-skill">Working Remotely is a Skill</a></li>
-<li><a href="https://mp.weixin.qq.com/s/YfPdrL5sJq5yaPK67ocPXQ">阿北不是老板，豆瓣不是公司</a></li>
-<li><a href="https://lethain.com/appropriate-programming-problems/">Picking problems for programming interviews.</a></li>
-<li><a href="https://amplitude.com/blog/feature-less-roadmap">Feature-less Roadmap: The Balance Between Delivering Concrete Features vs. Planning with High-level Themes</a></li>
-<li><a href="https://www.jeremiahlee.com/posts/failed-squad-goals/">Spotify’s Failed #SquadGoals</a></li>
-<li><a href="https://www.infoq.com/presentations/engineering-culture-examples/">Secrets of a Strong Engineering Culture</a></li>
-<li><a href="https://lethain.com/staying-aligned-with-authority/">Staying aligned with authority.</a></li>
-<li><a href="https://jamesclear.com/three-steps-habit-change">The 3 R's of Habit Change: How To Start New Habits That Actually Stick</a></li>
-<li><a href="https://www.depesz.com/2013/04/16/explaining-the-unexplainable/">select * from depesz; » Blog Archive » Explaining the unexplainable</a></li>
-<li><a href="https://use-the-index-luke.com/sql/partial-results/fetch-next-page">OFFSET is bad for skipping previous rows</a></li>
-<li><a href="https://thoughtbot.com/blog/css-animation-for-beginners">CSS Animation for Beginners</a></li>
-<li><a href="https://visly.app/blog/designing-for-incremental-adoption">Designing for incremental adoption</a></li>
-<li><a href="https://twitter.com/cyanapps/status/1252449684699795458">Ying Zhong on Twitter: "我对写界面这件事的观念经历了三个阶段。https://t.co/Z5L9bQ0DOf" / Twitter</a></li>
-<li><a href="https://www.mskog.com/posts/heroku-vs-self-hosted-paas/">Heroku vs self-hosted PaaS - Magnus Skog</a></li>
-<li><a href="https://github.blog/2020-04-07-celebrating-15-years-of-git-an-interview-with-git-maintainer-junio-hamano/">Celebrating 15 years of Git: An interview with Git maintainer Junio Hamano - The GitHub Blog</a></li>
-<li><a href="https://boringrails.com/articles/feature-flags-simplest-thing-that-could-work/">Feature Flags: The stupid simple way to de-stress production releases - Boring Rails: Skip the bullshit and ship fast</a></li>
-<li><a href="http://www.virtuouscode.com/2014/05/21/jim-weirich-on-exceptions/">Jim Weirich on exceptions - Virtuous Code</a></li>
-<li><a href="https://gist.github.com/mislav/4508988">Jim Weirich on the differences between procs and lambdas in Ruby</a></li>
-<li><a href="https://blog.thecodewhisperer.com/permalink/choosing-test-for-test-doubles">Choosing Tools for Test Doubles - The Code Whisperer</a></li>
-<li><a href="https://www.geepawhill.org/2018/02/02/optimizing-a-program-and-programming/">Optimizing A Program (And Programming) - Video - GeePawHill.org</a></li>
-<li><a href="https://medium.com/swlh/my-journey-from-agile-to-product-teams-7b7eec734f8">My journey from “Agile” to “product teams” - The Startup - Medium</a></li>
-<li><a href="https://blog.testdouble.com/posts/2020-04-21-our-pair-programming-ethos/">Test Double - Our Blog - Our Pair Programming Ethos</a></li>
-<li><a href="https://no-kill-switch.ghost.io/so-how-much-maintenance-is-precisely-enough-huh/">So, how much maintenance is (precisely) enough, huh?</a></li>
-<li><a href="https://blog.jobelenus.dev/blog/choices-engineering-organizations-and-constraints/">Choices: Engineering, Organizations, and Constraints · John Obelenus</a></li>
-<li><a href="https://martinfowler.com/bliki/TwoHardThings.html">TwoHardThings</a></li>
-</ul>
-</div>
-</div>
 
+</div>
+</div>
     </div>
 </section>
 ]]></content:encoded>
+      <pubDate>2020-06-29</pubDate>
+      <guid>https://yiming.dev/blog/2020/06/29/making-audit-logs-on-hex-pm-public</guid>
+    </item>
+    <item>
+      <title>Clippings of 2020 May</title>
+      <link>https://yiming.dev/clipping/2020/06/01/clippings-of-2020-may</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-06-28</pubDate>
       <guid>https://yiming.dev/clipping/2020/06/01/clippings-of-2020-may</guid>
     </item>
@@ -347,14 +197,6 @@ In a healthy team, everything would follow.
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>2020-04-26</pubDate>
       <guid>https://yiming.dev/blog/2020/04/26/okr-case-study-3-okr-is-not-about-you</guid>
-    </item>
-    <item>
-      <title>OKR Case Study #1 - How to find KEY results?</title>
-      <link>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>2020-04-23</pubDate>
-      <guid>https://yiming.dev/blog/2020/04/17/okr-case-study-1-how-to-find-key-results</guid>
     </item>
   </channel>
 </rss>
