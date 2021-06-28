@@ -4,8 +4,8 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Thu, 24 Jun 2021 21:08:05 CST</pubDate>
-    <lastBuildDate>Thu, 24 Jun 2021 21:08:05 CST</lastBuildDate>
+    <pubDate>Mon, 28 Jun 2021 10:33:45 CST</pubDate>
+    <lastBuildDate>Mon, 28 Jun 2021 10:33:45 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -347,7 +347,7 @@ But with "abstract" movers like <code>CompareAfterwardsMover</code>, we need a m
 end
 
 defmodule Mover do
-  @callback run(t(), source(), destination(), keyword()) :: :ok | {:error, any()}
+  @callback run(source(), destination(), keyword()) :: :ok | {:error, any()}
 
   def run([mod | opts], source, destination) do
     mod.run(source, destination, opts)
@@ -565,7 +565,7 @@ Actually, I was inspired by <a href="https://mobile.twitter.com/wilton_quinn/sta
     </div>
 </section>
 ]]></content:encoded>
-      <pubDate>2021-06-24</pubDate>
+      <pubDate>2021-06-28</pubDate>
       <guid>https://yiming.dev/blog/2021/06/13/what-i-learned-from-implementing-combinators-in-3-elixir-patterns</guid>
     </item>
     <item>

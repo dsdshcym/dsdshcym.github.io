@@ -389,7 +389,7 @@ But with "abstract" movers like <code>CompareAfterwardsMover</code>, we need a m
 end
 
 defmodule Mover do
-  @callback run(t(), source(), destination(), keyword()) :: :ok | {:error, any()}
+  @callback run(source(), destination(), keyword()) :: :ok | {:error, any()}
 
   def run([mod | opts], source, destination) do
     mod.run(source, destination, opts)
@@ -610,7 +610,7 @@ Actually, I was inspired by <a href="https://mobile.twitter.com/wilton_quinn/sta
 
     <div class="post-meta">
         <span title="post date" class="post-info">2021-06-13</span>
-        <span title="last modification date" class="post-info">2021-06-24</span>
+        <span title="last modification date" class="post-info">2021-06-28</span>
         <span title="tags" class="post-info"><a href="/tags/elixir/">Elixir</a>, <a href="/tags/functional-programming/">Functional Programming</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
