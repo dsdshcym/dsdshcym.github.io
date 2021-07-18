@@ -100,7 +100,7 @@ end
 This is a valid use case for Behaviour, but I always feel something is off here:<br />
 </p>
 <ol class="org-ol">
-<li>The name <code>behaviour~/~callback</code> confused me a lot when I first learned about this design pattern in Elixir.<br />
+<li>The name <code>behaviour</code> / <code>callback</code> confused me a lot when I first learned about this design pattern in Elixir.<br />
 Coming from a Object-Oriented background, what I want is just <code>interface</code> and <code>implementation</code>.<br />
 &gt; I can understand <code>behaviour</code> as a different way of saying <code>interface</code>.<br />
 &gt; But what's this <code>callback</code> non-sense?<br /></li>
@@ -111,8 +111,8 @@ Which means that:<br />
 <ol class="org-ol">
 <li>We need to use <code>global</code> mock sometimes, or spend some efforts to allow a child process to use the <code>private</code> mock.<br /></li>
 <li><p>
-We can't have 2 mocks with different <code>expect~s for the same Beahviour.
-      For example, to test the following ~chain/2</code> function, we may need to call <code>Mox.defmock</code> twice, which is so weird that I guess no body would actually do it.<br />
+We can't have 2 mocks with different <code>expect</code>-s or <code>stub</code>-s for the same Beahviour.<br />
+For example, to test the following <code>chain/2</code> function, we may need to call <code>Mox.defmock</code> twice, which is so weird that I guess no body would actually do it.<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-elixir">defmodule Weather.Chainable do
@@ -304,7 +304,7 @@ end
 
     <div class="post-meta">
         <span title="post date" class="post-info">2021-07-18</span>
-        <span title="last modification date" class="post-info">2021-07-18</span>
+        <span title="last modification date" class="post-info">2021-07-19</span>
         <span title="tags" class="post-info"><a href="/tags/elixir/">Elixir</a></span>
         <span title="author" class="post-info">Yiming Chen</span>
     </div>
