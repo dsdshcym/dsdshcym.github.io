@@ -1,0 +1,229 @@
+#+TITLE:       Book Review: The Goal - A Process of Ongoing Improvement
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       dsdshcym@gmail.com
+#+DATE:        2020-06-05 Fri
+#+URI:         /blog/%y/%m/%d/book-review-the-goal-a-process-of-ongoing-improvement
+#+KEYWORDS:    nil
+#+TAGS:        Book Review, Theory of Constraints
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+#+DESCRIPTION: The Goal is a great book that taught me Theory of Constraints, measuring against the goal, and balaning work and marriage.
+
+Reading /[[id:B3BC2C91-A8D5-4260-A149-97C8726EBF55][The Goal: A Process of Ongoing Improvement]]/ was a great pleasure.
+
+I didn't thought I would enjoy it that much because this book is not about software development at all.
+After all, this book is about plant operations, which I know nothing about.
+
+But pretty quickly, I knew I was wrong.
+Sometimes I couldn't put this book down because I wanted to know what happened next.
+That's how good this story is.
+
+And most importantly, I learned three valuable things from this book:
+1. This book deepened my understanding of Theory of Constraints.
+2. This book made me think of the equivalent of throughput, inventory, and operational expense for both software and individuals.
+3. This book gave an example of how to save a marriage from tons of work.
+
+* Theory of Constraints
+:PROPERTIES:
+:ID:       92B76A2C-197E-4A7D-A7DB-DF11752662B2
+:END:
+[[id:A86C142A-B9ED-4242-A4BC-77B3571C835E][The Phoenix Project]] introduced me to the [[id:23A2CE42-4E28-4C23-B4CD-C8D4F6FED348][Theory of Constraints]].
+I was mind-blown to know we can think of software project management as plant operations management:
+/identify your bottleneck first/, /any improvements made anywhere besides the bottleneck are an illusion/, and so on.
+From then on, I'd always try to eliminate the bottleneck from a system when I identify one.
+
+But after reading /[[id:B3BC2C91-A8D5-4260-A149-97C8726EBF55][The Goal]]/, I've realized we may not need to eliminate a bottleneck to improve the overall system.
+Let's see why.
+
+** /Dependent Events/ and /Statistical Fluctuations/
+First, we need to understand why bottleneck exists.
+A bottleneck in a system is the end result of combining two effects:
+/Dependent Events/ and /Statistical Fluctuations/.
+
+We can find the combination of these two effects (and thus bottlenecks) everywhere in our life:
+- CI Pipeline
+
+  Most applications' CI pipeline is a series of jobs (Dependent Events).
+  Compiling comes first, testing next, finally deploying to staging/production.
+  And each jobs' finish time has Statistical Fluctuations.
+
+  So how fast a Pipeline runs mostly depends on the slowest job in this Pipeline.
+
+- Traffic jam
+
+  Cars are running after each other, i.e. each car depends on the cars in front of it.
+  Due to Statistical Fluctuations, how fast a group of cars can pass a green light depends on the slowest car among them.
+  And how fast our car can move forward depends on the slowest car in front of us.
+  Most importantly, since different cars move at various speed, it's extremely hard for us to predict how fast we can move if we are in a traffic jam.
+
+  On the other hand, subways also have this kind of Statistical Fluctuations and Dependent Events.
+  But since they move at almost the same speed, and the buffer time between them are under control,
+  their arrival times are much more predictable.
+
+- Knowledge Passing
+
+  If the feature requirement needs to be passed from user, to customer service, to project manager, to designers, and finally to developers,
+  we get a knowledge passing chain here.
+
+  Each person's understanding of this feature depends on the previous person's understanding and the communication between these two people.
+  Thus these knowledge passes are Dependent Events.
+
+  Each person understand the same thing differently, and each communication introduces some noises or some information losses.
+  So we have Statistical Fluctuations.
+
+  How correct a developer can understand a feature request depends on the worst communication in this chain and the worst understanding within this group of people.
+
+** How to deal with systems under these effects?
+Understanding the effects above is the first step to leveraging the Theory of Constraints.
+Constraints or bottlenecks exist in every system that has /Dependent Events/ and /Statistical Fluctuations/.
+As we can see from the examples above, the throughput of the system is restricted by the bottleneck's capacity.
+
+So once we've identified the bottleneck of the system, we have two ways to improve the system's throughput:
+1. Remove unnecessary dependency on the bottleneck
+
+   This improvement is to solve the /Dependent Events/ effect around the bottleneck.
+
+   If the bottleneck is not necessary, we can rearrange the system to remove the bottleneck.
+   For example, let developers talk to customers directly so there are no bottlenecks in between.
+   But what if the bottleneck is necessary?
+
+2. Increase the bottleneck's throughput
+
+   The /Dependent Events/ is a system attribute and can be removed from the system.
+   But /Statistical Fluctuations/ is not a system attribute, but an attribute that associated to the event itself.
+   So we cannot remove /Statistical Fluctuations/ from the system as long as it still has events.
+
+   When it's not possible to remove the bottleneck from the system, the only thing we can do is to increase its throughput.
+   So even if /Statistical Fluctuations/ still exist, the worst throughput of the bottleneck increases, thus the whole system's throughput increases.
+
+So here is the generalized 5 steps we can take to deal with systems with a bottleneck:
+#+BEGIN_QUOTE
+1. IDENTIFY the system’s constraint(s).
+2. Decide how to EXPLOIT the system’s constraint(s).
+3. SUBORDINATE everything else to the above decision.
+4. ELEVATE the system’s constraint(s).
+5. WARNING!!!! If in the previous steps a constraint has been broken, go back to step 1, but do not allow INERTIA to cause a system’s constraint.
+#+END_QUOTE
+** Don't remove the bottleneck, exploit it
+One biggest lesson I learned from this book is that we don't always need to remove a bottleneck from a system.
+Because no matter what, the system would always have a bottleneck.
+Having a stable bottleneck means we can fully *exploit* this bottleneck and use it to control our system.
+A few examples from the book:
+- Make sure the bottleneck is working all the time. (/An hour lost at a bottleneck is an hour lost for the entire system./)
+- Make sure the bottleneck only works on good parts so its working time won't be wasted.
+- Reuse the old, less efficient machines to increase the bottleneck's capacity, and the whole system's throughput gets increased.
+- Set priorities based on if a product goes through the bottleneck or not.
+- Predict the product ship time based on the bottleneck's throughput.
+- Cut batch sizes in half on non-bottlenecks.
+
+Breaking the bottleneck all the time means we need to spend most of our time identifying the next bottleneck rather than improving the system's throughput.
+* Measuring Productivity Against the Goal
+:PROPERTIES:
+:ID:       D6D376EC-1C73-47FB-ABC2-32E982FBF41B
+:END:
+"Throughput" is a word we mentioned a lot above.
+Throughput is important because it's one of the 3 key metrics to measure our productivity.
+
+#+BEGIN_QUOTE
+*Productivity is meaningless unless you know what your goal is.*
+#+END_QUOTE
+So what's the goal for our business?
+
+For most business, the goal is to make money.
+And we can use different metrics to measure if a business is making money:
+- At marketing level, we have Net Profit, Return on Investment, and Cash Flow.
+  #+BEGIN_QUOTE
+  *To make money by increasing net profit, while simultaneously increasing return on investment,* and simultaneously increasing cash flow.
+  + net profit ::
+    an absolute measurement
+  + return on investment (ROI) ::
+    a relative measurement
+  + cash flow ::
+    It’s a measure of survival: stay above the line and you’re okay; go below and you’re dead.
+  #+END_QUOTE
+- At production level, we have Throughput, Inventory, and Operational Expense.
+  #+BEGIN_QUOTE
+  *Increase throughput while simultaneously reducing both inventory and operating expense*
+  + throughput ::
+    the rate at which the system generates money through sales.
+    (the money coming in)
+  + inventory ::
+    all the money that the system has invested in purchasing things which it intends to sell.
+    (the money currently inside the system)
+  + operational expense ::
+    all the money the system spends in order to turn inventory into throughput.
+    (the money we have to pay out to make throughput happen)
+  #+END_QUOTE
+
+** How to making more money with software?
+So what metrics can we use to measure the productivity of software development?
+Again: Throughput, Inventory, and Operational Expense.
+Because software development is production as well. (See also [[id:A86C142A-B9ED-4242-A4BC-77B3571C835E][The Phoenix Project]])
+So what exactly does these three metrics mean in software development?
+- throughput ::
+  This one is easy.
+  If you are a SaaS company with a subscription model, your throughput is how much subscription fee you get from your users.
+- inventory ::
+  This one is tricky.
+
+  I think inventory in software development as the features that are under development and are still not shipped to users.
+  And you can see inventory at every step of software development:
+  1. Feature requirements / specifications that are not runnable code yet.
+  2. Design mockups / wireframes that are not usable at all.
+  3. Code that are not merged nor deployed to production.
+  As the book explains, *when inventory goes up, the carrying costs goes up*.
+  The more feature branches you have, the more integration costs you need to pay.
+  The more features you are working on, the more possible to ship something that is not working as expected.
+  This is why we need to limit WIP. Because it helps reduce our inventory.
+
+  But the question then becomes how to measure the value of these WIP features?
+  It's a hard question and the answer varies from product to product.
+  (We may use how much a user want to pay for it and how many users may pay for it to estimate the value of a WIP feature.)
+- operational expense ::
+  Everything else is operational expense.
+  + Labor costs.
+  + Tools we are using (Laptops, editors, IDEs, software licenses, etc).
+  + The server that our code runs on.
+
+Only by understanding these 3 key metrics, can we start identifying the bottleneck in our feature development pipeline.
+** How to making more money as an individual?
+We can apply the same thinking to an individual as well:
+If our goal as an individual is to make money, then what's our throughput, inventory, and operational expense?
+- throughput ::
+  If you are like me, having a stable work and income, our throughput is very stable and predictable: salary, compensations, etc.
+- inventory ::
+  Then, what is our inventory?
+  What's the money currently inside us?
+
+  If we think at a higher level, our inventory is the knowledge we have.
+  Every piece of knowledge we have is value and can be transformed into throughput.
+
+  Coming down to a lower level, our inventory is the projects we are building.
+  This blog you're reading now is one of my inventory.
+  My GitHub account and the various projects hosted on it are my inventories.
+  These are the outcome of my knowledge and can be turned into throughput.
+- operational expense ::
+  For a human being, the operational expense is the cost that keep us alive.
+  Expense spent on food, house, clothes, etc.
+
+  And for us to be able to transform our inventories into throughput, our operational expense might include money we spent on our tools.
+
+So, to make more money as an individual, the main focus is to turn as many inventories into throughput.
+- Increase salary by delivering more values with your knowledge.
+- Transform more knowledge into purchasable products.
+
+And think about your bottleneck in this process.
+(My guess is that for most of us, the bottleneck is marketing/sales, i.e. let potential buyers know that you have the knowledge they need.)
+* Balancing Work and Marriage
+:PROPERTIES:
+:ID:       81398BA4-4A4C-4AC5-91E7-5519F9CD9A72
+:END:
+Finally, the main character also showed us how to balance work life and family life, especially, how to let your spouse understand your work.
+
+Two major tips I learned:
+1. Share what you are working on with your spouse.
+   Communication is the key.
+2. Think about the purpose of your marriage.
+   (What's your goal? And what's your spouse' goal?)
+
+I'm no expert to marriage, so I'll stop here. ;)
