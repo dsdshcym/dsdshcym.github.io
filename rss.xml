@@ -4,20 +4,18 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Thu, 29 Jul 2021 08:23:09 CST</pubDate>
-    <lastBuildDate>Thu, 29 Jul 2021 08:23:09 CST</lastBuildDate>
+    <pubDate>Thu, 29 Jul 2021 09:02:05 CST</pubDate>
+    <lastBuildDate>Thu, 29 Jul 2021 09:02:05 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>How to Speak by Patrick Winston</title>
       <link>https://yiming.dev/clipping/2021/07/29/how-to-speak-by-patrick-winston</link>
-      <description><![CDATA[A must watch for learning how to give a talk I've ever watched. Highly recommended!]]></description>
+      <description><![CDATA[A must watch for learning how to give a talk. Highly recommended!]]></description>
       <content:encoded><![CDATA[<section id="content" role="main">
     <div id="post-container">
         <h1>How to Speak by Patrick Winston</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Unzc731iCUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<p>
+        <p>
 This course itself is an perfect example of the techniques mentioned in the talk:<br />
 </p>
 <ol class="org-ol">
@@ -38,9 +36,11 @@ Provide them with<br />
 </ol>
 
 <p>
-A must watch for learning how to give a talk I've ever watched.<br />
+A must watch for learning how to give a talk.<br />
 Highly recommended!<br />
 </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Unzc731iCUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <div id="outline-container-Notes" class="outline-2">
 <h2 id="Notes">Notes</h2>
@@ -60,7 +60,7 @@ The success of your life will be determined largely by<br />
 <li><p>
 Your speaking and writing is determined by this formula:<br />
 </p>
-<pre class="example" id="org3e5134d">
+<pre class="example" id="org56a3809">
 f(K, P, t)
 </pre>
 <dl class="org-dl">
@@ -82,7 +82,7 @@ f(K, P, t)
 <li><p>
 start a talk with a PROMISE<br />
 </p>
-<pre class="example" id="org4143f29">
+<pre class="example" id="org23e407f">
 at the end of this 60 minutes, you will know things about speaking you don't know now,
 and something among those things you know will make a difference in your life.
 </pre></li>
@@ -92,7 +92,7 @@ and something among those things you know will make a difference in your life.
 <li><p>
 BUILD A FENCE around the idea<br />
 </p>
-<div class="notes" id="org40ea651">
+<div class="notes" id="org366f015">
 <p>
 explain what this idea is NOT<br />
 </p>
@@ -279,7 +279,7 @@ but you can get used to being famous<br /></li>
 <li>help your ideas (your children) get recognized for the value that is in them<br /></li>
 </ul></li>
 <li>HOW (to ensure your work gets recognized)<br />
-<a id="orge46369c"></a><br />
+<a id="orgcbf5f91"></a><br />
 <ol class="org-ol">
 <li>SYMBOL (associated with your work)<br /></li>
 <li>SLOGAN<br /></li>
@@ -296,7 +296,7 @@ but you can get used to being famous<br /></li>
 <li><p>
 <b>Contributions</b><br />
 </p>
-<pre class="example" id="org3727a3b">
+<pre class="example" id="org48f03f3">
 Contributions
 - Argued uniqueness of human intelligence
 - Demonstrated culturally biased understanding, persuasive retelling, schizophrenic behavior, and self-aware machines
@@ -329,7 +329,7 @@ people think that they've had fun the whole time<br />
 <li><p>
 Benediction ending<br />
 </p>
-<pre class="example" id="org83e1bab">
+<pre class="example" id="org272a25c">
 God bless you, and God bless America
 </pre></li>
 <li>Salute the audience<br />
