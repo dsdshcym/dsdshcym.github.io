@@ -4,8 +4,8 @@
     <title>Yiming Chen</title>
     <link>https://yiming.dev</link>
     <description>My rants against Life and Software.</description>
-    <pubDate>Mon, 11 Jul 2022 22:31:50 CST</pubDate>
-    <lastBuildDate>Mon, 11 Jul 2022 22:31:50 CST</lastBuildDate>
+    <pubDate>Tue, 12 Jul 2022 23:43:03 CST</pubDate>
+    <lastBuildDate>Tue, 12 Jul 2022 23:43:03 CST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -103,7 +103,7 @@ When it's unexpected<br />
 </p>
 
 <p>
-When you really pass 0 as the dividend, the runtime doesn't know how to proceed.<br />
+When you really pass 0 as the divisor, the runtime doesn't know how to proceed.<br />
 The behaviour is undefined <b>mathematically</b>, period.<br />
 So it's reasonable to raise an exception.<br />
 </p></li>
@@ -298,7 +298,7 @@ end
     </div>
 </section>
 ]]></content:encoded>
-      <pubDate>2022-07-11</pubDate>
+      <pubDate>2022-07-12</pubDate>
       <guid>https://yiming.dev/blog/2022/07/10/how-let-it-fail-leads-to-simpler-code</guid>
     </item>
     <item>
