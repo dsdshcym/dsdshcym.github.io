@@ -1,0 +1,72 @@
+#+TITLE: TIL: mix test --stale
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-07-10]
+#+URI:         blog/2018/07/10/til-mix-test-stale/index.html
+#+TAGS:        Elixir, TIL
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Meet mix test --stale
+
+Recently, I joined the mentor program on Exercism[fn:1]. When we practiced mentoring, I chose Elm as my test language as a student. And I discovered this useful feature from elm-test[fn:2]:
+
+#+begin_src awk
+elm test --watch
+#+end_src
+
+It's like guard-rspec[fn:3], which will automatically rerun all your tests after you change a file. And elm-test has great Emacs support[fn:4].
+
+It really helps since I don't need to manually hit the same keystrokes again and again to rerun my tests, which speeds up my TDD workflow.
+
+Then I started looking for something similar in Elixir. And there is one called mix-test.watch[fn:5]. But it's not bundled with the official ExUnit package and we need to add it as a dependency to our project, which I don't want to do. And it doesn't have nice Emacs support. Though I still found something useful from its README file:
+
+#+begin_src awk
+mix test --stale
+#+end_src
+
+This command will attempt to run only those tests which reference modules that have changed since the last time you ran mix test --stale.
+
+Documentation from mix help test:
+
+#+begin_quote
+
+• --stale - runs only tests which reference modules that changed since the last test --stale. You can read more about this option in the "Stale" section below.
+
+## "Stale"
+
+The --stale command line option attempts to run only those test files which reference modules that have changed since the last time you ran this task with --stale.
+
+The first time this task is run with --stale, all tests are run and a manifest is generated. On subsequent runs, a test file is marked "stale" if any modules it references (and any modules those modules reference, recursively) were modified since the last run with --stale. A test file is also marked "stale" if it has been changed since the last run with --stale.
+
+#+end_quote
+
+And alchemist.el also supports this command via alchemist-mix-test-stale.
+
+* Usages
+
+It's very useful to run this command when I'm changing a feature which I don't know how many clients are there. So that I can make sure every change I make won't break any client and I don't need to run the whole test suite.
+
+But when I'm TDD a feature, I think it's not as that useful. Since when I TDDing, I always know (or try to predict) what test would fail/success for some changes I make. Running stale tests sometimes would break this workflow because it would run more tests than I expected.
+
+Anyway, it's a useful tool to add to your toolbox. And it again shows that Elixir has a great development tooling ecosystem.
+
+* Footnotes
+[fn:1]
+
+[[http://mentoring.exercism.io/][Mentoring on Exercism]]
+
+[fn:2]
+
+[[https://github.com/elm-community/elm-test][elm-community/elm-test: Write unit and fuzz tests for your Elm code, in Elm.]]
+
+[fn:3]
+
+[[../../Org/notes/ruby.html#ID-D2F1DD88-9CA8-41D0-9B2C-79184F16620F][guard/guard-rspec: Guard::RSpec automatically run your specs (much like autotest)]]
+
+[fn:4]
+
+[[https://github.com/juanedi/elm-test-el][juanedi/elm-test-el: elm-test integration for Emacs!]]
+
+[fn:5]
+
+[[https://github.com/lpil/mix-test.watch][lpil/mix-test.watch: 🎁 Because TDD is awesome.]]

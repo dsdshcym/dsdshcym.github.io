@@ -1,0 +1,25 @@
+#+TITLE: Make Your Software Really "Soft"
+
+Do you ever have this question that why "Software" is called "Soft-ware"? I have. And I think I've got the answer with me now.
+
+"Software" is "soft" because it can be changed easily. "Hardware" is "hard" because it's much harder to change.
+
+Jeff Lawson, CEO of Twilio, gave several great examples to explain this key difference in his talk [[https://www.youtube.com/watch?v=ReSlJ5cq5D0][We are Software People - unSEXY Conf
+2013]]:
+
+#+begin_quote
+
+- Minimalism is software flexibility
+
+  - Whatever you build into the hardware is what you can no long use the power of software to address
+  - Minimal hardware implementation to *preserve the power of software*
+
+    - iPhone is revolutionary because it replaced the keyboard hardware with a touch screen + a software underneath it. So that the keyboard is there only when you need it.
+    - Apple TV remote controller only has several buttons. But it works better than a old TV controller with dozens of buttons. Because the Apple TV software can do the right thing given the current context. Furthermore this software be updated and refined all the time.
+
+#+end_quote
+
+Other than this great insight from the product perspective, it's more important for us as software developers to adapt this kind of "software" thinking as well. In another word, we need to [[http://dsdshcym.github.io/blog/2018/03/06/book-review-extreme-programming-explained-embrace-change/][embrace
+change]].
+
+So, just go and learn techniques that can help you change your craft more easily. [[http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/][Refactoring]], Test Driven Development, Type System, you name it. And you won't regret the effort. :)

@@ -1,0 +1,66 @@
+#+TITLE: Only With Limited Resources Can We Finish Things
+* Being Immortal
+
+Think about this: "What would this world be if everyone is immortal?"
+
+My answer to this question is that the world would stop evolving anymore and people would lose hope/meaning to live any longer.
+
+With unlimited time, it seems that everyone can achieve anything if we'd like to. We can use as much time as we can to get/build anything we want. But I just don't think we can finish anything. Here is why:
+
+*We would lose the sense of "Time" if we have unlimited time.*
+
+Because we have infinite time, one second is the same as one hour, one day, one week when compared to infinity. So the measure of time doesn't make any sense anymore.
+
+With this in mind, it would be almost impossible to fight procrastination. If you want to play video games for a week, you would easily fall into that because you have unlimited time ahead of you.
+
+Furthermore, it would be much harder to limit the scope of our work even if we somehow start working on things. You want that feature to be added? Fine, we have unlimited time to get any resources we want, so just wait a bit longer.
+
+In a word, unlimited time only brings us procrastination and unlimited scoping, which make it impossible to deliver anything.
+
+(P.S. That's also why I believe if any scientist finds out how to make humankind immortal, he would destroy his research result immediately. It seems to be a nice idea for a science fiction.)
+
+* Set Clear Constraints
+
+Go back to project management, I think the same idea applies to any resources we have:
+
+*We would lose the sense of a Resource if it is unlimited.*
+
+- If we have unlimited time, it lose its sense.
+- If we have unlimited money, it lose its sense.
+- If we have unlimited machine power, it lose its sense.
+
+That's why we need to set clear constraints to limit the scope of our work and deliver the end results.
+
+#+begin_quote
+
+*Tight constraints force a creative, disciplined and critical approach to product design and development.*
+
+#+end_quote
+
+-- from [[https://open.buffer.com/product-scope/][Product Scope: The Path to a Minimum Lovable Product]]
+
+#+begin_quote
+
+- Scope Hammering
+
+  We take the chisel to the big block of marble and figuring out how to sculpt, nip, and tuck a feature into the best six-week version possible. It's all about looking carefully at a feature and figuring out the true essence. Not what can it be, but what does it need to be?
+
+  1. Before any project is included in a cycle, we've already figured out what we think the six week version is.
+  2. We don't include planning in the cycle time - all the planning and consideration happens in the pitch.
+  3. the six weeks is all implementation and execution.
+
+     1. No time is spent on big unknowns
+     2. we try to make sure all the big stuff is known enough before we get started.
+     3. QA fits into the six week time frame too, so nothing busts a deadline like a pile of last minute QA findings.
+
+- Scope is ever changing
+
+  1. adjusting down if we're running low on time
+  2. ramping up if we find we have more time than we thought.
+  3. It's a very fluid process.
+
+- What isn't fluid is the deadline: *six weeks from when we started* .
+
+#+end_quote
+
+-- from [[https://m.signalvnoise.com/how-we-set-up-our-work-cbce3d3d9cae#.rx56948ir][How we structure our work and teams at Basecamp]]

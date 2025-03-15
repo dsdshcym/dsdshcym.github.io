@@ -1,0 +1,125 @@
+#+TITLE: Similarities between TDD and Management
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-11-15]
+#+URI:         blog/2018/11/15/similarities_between_tdd_and_management/index.html
+#+TAGS:        Management
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I started transitioning into more of a management role (more code review, hiring, and team building related work). I felt a bit intimidating at first because I thought I would not be able to use my development skills anymore.
+
+But the more I learn about management, the more similarities I find between management and software development. Even more fascinating, I find that I can apply the same discipline to the management process as I did to my coding process, and it can help me to do my work better.
+
+In today's post, I want to show you an example of the similarities between Test-Driven Development (TDD) and meeting arrangement. Hopefully, you can get a grasp of how they are related and how to apply the same discipline from development to management.
+
+* What is TDD and how do we do it?
+
+TDD is a development approach where tests are written before the development of a feature. This is done in increments so that that only enough code necessary to pass the tests are written. The test drives the production code, rather than the other way around. This forces developers to be agile and to focus on the requirements of the feature before writing any code, ultimately resulting in fewer bugs.
+
+Practicing TDD in the traditional Red/Green/Refactor cycle.
+
+The Red/Green/Refactor cycle essentially defines the steps of TDD, where red represents a "failing test" and green represents a "passing test."
+
+1. *Red*
+
+   In this step, we write a test with detailed description to define the problem we need to solve. Here, we define the specifications for the feature we want to develop and create tests for each of and only the functionalities of the feature.
+
+   At this stage, the written tests should fail as to ensure that it's not a false positive or false negative.
+
+   false positives
+       tests that are passing but not because of our changes. So we make sure our tests are red before we make any changes
+   false negatives
+       tests that are failing but are not caused by the part we want to test. (maybe we made a mistake in our test or something similar) So we make sure we get the expected failing message before we make changes.
+
+2. *Green*
+
+   Then we write just enough code to pass the test and turn it green.
+
+   We emphasize minimal code because it's the only way to keep things simple. By keeping things simple, we maintain readability which helps the refactoring process and minimizes bugs. We should focus on coding what's required for this specific functionality and only let future requirements push us towards more complexities.[fn:1]
+
+3. *Refactor*
+
+   After passing a test, we review our code and see if there's anything we can refactor.
+
+With this process in mind, I realized that when we were unconsciously applying the same discipline to our management process, things work better.[fn:2] For example, we could use the TDD approach to organize a meeting.
+
+* How to arrange a meeting
+
+So, How do we arrange a meeting at Ekohe?
+
+1. *What's the problem?*
+
+   First, we define the problem that requires a meeting and identify the people we need to participate in the meeting to solve the problem
+
+   At this point, we don't bring up any potential solutions[fn:3], because that would divert our focus and confuse people about why it's necessary to have a meeting in the first place.
+
+   This is just like writing a test that's not tied to our implementation. It's much harder to develop a test when we think about writing production code at the same time.
+
+   I remembered once I thought we were not communicating enough about our projects (the problem), and I suggested we do our daily stand-up over Slack (a potential solution). Then I was asked, "What's the real problem behind this?" After that we dug deeper together and found the real problem.
+
+   Basically, the whole purpose of this phase is to set the goal for the meeting; otherwise, it's just a waste of time.
+
+   Defining the goal is the test that can keep us focused and help us figure our solution in a better way.
+
+2. *Find a solution*
+
+   After defining the problem, we can now go about finding potential solutions and identifying the appropriate people with whom we could work to solve the issue.
+
+   It's important that we invite only the people necessary to solve the problem.
+
+   Is it a management problem?
+       Find the PM.
+   Is it a technical issue?
+       Find the technical leader.
+   Is it a spec misunderstanding?
+       Talk to the client and find what they really want.
+
+   It's equally important that the meeting covers only the set topic of the problem and that it doesn’t last too long. This simplifies the problem-solving process and maximizes efficiency, just as writing minimal code to pass tests written in the red phase helps keeps things simple.
+
+   Just as in the green phase, we solve only the problem at hand and defer complexities to a later time.
+
+3. *Assess and adapt the solution*
+
+   Once we implement the solution, we take a look back and see if it really solved the problem and if it needs any adjustments.
+
+   At Ekohe, we believe *there is always more than one way to solve a problem.*
+
+#+begin_quote
+
+   The only constant in this world is change.
+
+#+end_quote
+
+   A solution that work today may not work tomorrow.
+       That's why we need to look back from time to time and check if the solution is still working as expected.
+   We will never know less than we do today.
+       With the new feedback and information, we can adapt our solution if necessary.
+
+   So it's important for us to gather feedback and always try to improve (refactor).
+
+* They are almost the same
+
+You may say there are still some differences between these two processes, like refactoring v.s. improvements. But the basic ideas and core principles are the same:
+
+1. *Set clear goals / specifications*
+2. Find the simplest solution
+3. *Gather feedback* and improve
+
+Whether we are TDDing or arranging a meeting, we are just trying to solve a problem (technical or human-related). So it's natural that they share some similarities. And I believe there can be a meta way to follow here. Maybe I can also look back at this thought from time to time and see what it can be improved.
+
+* Footnotes
+[fn:1]
+
+I first heard about the idea of "letting the world push us to more complexities" from this podcast: [[http://www.fullstackradio.com/101][101: Ben Orenstein - How to
+Build an App in a Week - Full Stack Radio]]
+
+[fn:2]
+
+After I wrote this blog post, I watched a talk about [[https://www.youtube.com/watch?v=-vTZzOssR7A&t=0s&index=64&list=PLE7tQUdRKcyak-yFKj5IN3tDYOh5omMrH][Stop
+Testing, Start Storytelling by Mike Schutte]]. In this talk, Mike suggested us to *apply the same discipline to your process as you do to your code* .
+
+[fn:3]
+
+Read [[https://www.amazon.com/Are-Your-Lights-Figure-Problem/dp/0932633161][Are Your Lights On?: How to Figure Out What the Problem
+Really Is by Donald C. Gause, Gerald M. Weinberg]] for more on this topic

@@ -1,0 +1,96 @@
+#+TITLE: Why do we need OKR (Objectives and Key Results)?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-12-17]
+#+URI:         blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results/index.html
+#+TAGS:        OKR, Management
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Misalignment in a team hurts. It hurts when a Sprint cycle ends, but none of the promised features are finished. It hurts when asking for a reason, everyone says "I have this other project that drags me." It hurts when project fails because we are not clear about what we really want and fight for it as a team.
+
+I've been looking for a solution for misalignment for so long. I've tried [[https://yiming.dev/blog/2018/11/15/similarities_between_tdd_and_management/][organizing a meeting like TDD]], [[https://yiming.dev/blog/2019/07/11/%E7%94%A8-tech-plan-%E6%9D%A5%E4%B8%BA%E5%BC%80%E5%8F%91%E6%8F%90%E9%80%9F/][setting Tech Plans for dev team]], and [[https://yiming.dev/blog/2019/05/16/defining-a-mvp-by-setting-okrs/][defining a MVP by setting OKRs]]. In retrospect, they are all practices of setting OKRs. But their scopes are so small and can only cover a tiny portion of our daily works. To solve the misalignment issue once and for all, I need to apply OKR at the team level.
+
+Fortunately, I just started working as an OKR Ambassador in my current team. My main objective is to help everyone in my team get aligned and focused with well-defined OKRs. And the following is what I show them the first: What is OKR and Why do we need it?
+
+* What is OKR?
+
+OKR (Objectives and Key Results) is a goal system to create alignment around measurable goals. Well defined OKRs unite everyone behind the same goals (objectives). They provide focus so everyone can spend their time on things that matter the most. They keep reminding us if we are in the comfort zone or the stretching zone, and nudging us toward stretching ourselves and thus grow as a team.
+
+- Objectives and Key Results
+
+  OKR stands for *Objectives* and *Key Results* . These two elements are the core of this goal setting system. And they should always go together, as they are complementary to each other.
+
+  An Objective is a qualitative and time-bound goal which gives a vision. It needs to be inspiring and agreed by every team member. So every team member is aligned upon the same mission. A good example can be "Launch an Awesome MVP before 2020-03-31".
+
+  But it's not enough to define a qualitative vision. Everyone have a different understanding of "awesome", "MVP", and even "launch". That's why we need Key Results as a complementary.
+
+  Key Results are a few quantitative indicators which explains what the objective really means. They need to be as objective (as opposed to subjective) as possible. So every team member is aligned upon the same direction. Some good examples are:
+
+  - A web application that is used by at least 100 daily active users. ("launch" clarified)
+  - Users can write micro posts, follow new friends, read posts of his friends and re-post their posts. ("MVP" clarified)
+  - The loading time of friends' posts list is less than 100ms. ("awesome" clarified)
+
+  After the OKR is defined and agreed by every team member, we need a few other things to help us execute the OKR well.[fn:1]
+
+- Plan
+
+  Plans are actionable tasks that may contribute to at least one Key Result when finished. Inspirational Objectives and Key Results cannot be achieved by their own. So we need a road map that can lead us to our vision. Some good examples are:
+
+  - Set up a production environment before 2019-12-31.
+  - Design, develop, and deploy the homepage before 2020-01-10.
+  - Purchase ads campaign on Twitter for our new MVP before 2020-01-15.
+
+  Notice that plans may or may not contribute to a Key Result. The hypothesis behind purchasing a Twitter ads campaign is that it may help attract active users. If we find it not working as expected, we must look for another way.
+
+- Baseline
+
+  Baselines are some results that we need to keep and look out for. We ought to make some trade-offs when we try to achieve a Key Result. Baselines are here to help us make these trade-offs, or at least warn us if we make the wrong trade-off. Some good examples are:
+
+  - The overall cost must be lower than $20,000. (so we won't spend unlimited money on ads to attract active users.)
+  - The friends' posts list needs to show all the recent posts from every friend. (so we won't cut the loading time of this page by showing a incomplete list or even showing no posts at all.)
+
+- Future
+
+  Futures are what we need to discuss again in the future. Maybe we need to focus on the loading speed first, and postpone some new feature development to the future. So Future serves as a backlog and can be reviewed when next OKR cycle begins.
+
+* Why do we need OKR?
+
+As it was mentioned briefly above, the main purpose of defining OKRs is to create alignment around measurable goals. And as you may see, every build block of OKR contributes to this purpose in a different way.
+
+1. Objectives and Key Results defines clear direction and enables a continuous progress checking.
+
+   Missions are inspiring and agreed upon beforehand. Goals are no longer ambiguous because they are all measurable key results.
+
+   Everyone can have the same understanding of our progress so far. If the number of daily active users goes more up, we are moving closer to a successful launch. If the number goes down instead, we can review our assumptions, hypothesis, plans, or actions to see if there are other things we can do.
+
+2. Plans are defined and executed by the same people.
+
+   OKR frees both managers and managees from micro-managing.
+
+   Managers knows more about higher level stuffs like strategies, missions, and visions. So they can focus on what results a team needs to achieve by defining better OKRs.
+
+   Managees knows more about lower level (but not less important) stuffs like technologies, implementations, and constraints. So they can come up with plans that match the reality the most. These plans can even be more effective or creative than what managers can imagine.
+
+   Note that doesn't mean only Managers define Objectives or Key Results, nor only managees define Plans. OKRs are defined by all team members together. And they can be defined from top down (Manager -> Managee, Objective -> Key Results -> Plan), or from bottom up (Managee -> Manager, Plan / Key Results -> Objective).
+
+3. Baseline prevents us from losing the whole picture.
+
+   By human nature, we can easily lose the higher view when focusing on marching toward a narrowed goal. By setting baselines and continuously monitoring them, OKR nicely reminds us and leads us to the correct road when we make a detour.
+
+4. Future helps us focus on what matters now.
+
+   We have limited resources (human power, time, money), so we have to spend them at the right places. Being able to put things in Future can help us spend our resources wisely and get better results.
+
+More importantly, when more OKRs are defined, we can sort out priorities more easily and become more focused. How's "Launch an Awesome MVP" compared to "Build a better work place"? Some teams may prioritize prior so people may work overtime a lot before the launch date. Some teams may prioritize latter so the launch date is postponed by a month. There is no right choice here, but at least we can discuss these choices explicitly based on OKRs.
+
+Finally, when everyone can see every team's OKR, every individual's OKR, transparency is improved by a lot. When in conflicts, people can check each other's OKR, think about how to find a plan that can contribute to each other's Objectives, or compromise to a solution based on OKR priorities (if a plan cannot be find).
+
+* Final Words
+
+Hopefully, this short summary of OKR can help you understand this goal system better. And I'll keep posting my experiences and learnings of implementing OKR in my team. So, stay tuned!
+
+* Footnotes
+[fn:1]
+
+These other things are from the great management book [[https://www.amazon.com/Radical-Candor-Kickass-Without-Humanity/dp/1250103509][Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity: Kim Scott]].

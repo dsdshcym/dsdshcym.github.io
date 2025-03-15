@@ -1,0 +1,108 @@
+#+TITLE: AWS Lambda is what Microservices should be like
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-11-28]
+#+URI:         blog/2017/11/28/aws-lambda-is-what-microservices-should-be-like/index.html
+#+TAGS:        AWS, Lambda, Microservices
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This post is my third post about AWS Lambda. (You can check my previous posts about AWS Lambda [[http://dsdshcym.github.io/tags/lambda/][here]]) This time, I think I should talk more about my user experiences through my whole journey of using AWS Lambda to build a image resizing Microservice.
+
+* TL;DR
+
+Building a Microservice with AWS Lambda and API Gateway is a great experience, especially in these aspects:
+
+1. Testing
+2. Deployment
+3. Microservice size
+4. Monitoring/Logging
+5. Web UI / CLI
+
+* Microservice size
+
+First of all, every Lambda function is pretty small. (My image processing module only has 200 LOC in total.)
+
+If a service only has ~100 lines of code, it would be super easy to develop/read/debug. (You can read more about small functions' advantages in my previous post [[http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi Metz's Rules for OOP - dsdshome]])
+
+* Testing
+
+Amazon has provided docker images for all its available Lambda environments: [[https://github.com/lambci/docker-lambda][lambci/docker-lambda: Docker images and test runners
+that replicate the live AWS Lambda environment]]
+
+When I develop a Lambda function on local, I can just use these docker images to create containers that are almost identical to the production environments, and use them to test my function.
+
+#+begin_src json
+docker run \
+       -v "$PWD":/var/task \
+       lambci/lambda:nodejs6.10 index.handler '{"queryStringParameters": { "key": "100x100/test_image.jpg" }}'
+#+end_src
+
+(Although in this project, my function need to manipulate images, so it's a bit hard to write unit/integration test for it.)
+
+* Deployment
+
+Amazon also provided a [[https://github.com/awslabs/serverless-image-resizing/blob/master/Makefile][Makefile]] to build a lambda function zip file, and we can deploy this zip file via aws-cli easily.
+
+#+begin_src awk
+.PHONY: all image package dist clean
+
+all: package
+
+image:
+  docker build --tag amazonlinux:nodejs .
+
+package: image
+  docker run --rm --volume ${PWD}/lambda:/build amazonlinux:nodejs npm install --production
+
+dist: package
+  cd lambda && zip -FS -q -r ../dist/function.zip *
+
+clean:
+  rm -r lambda/node_modules
+  docker rmi --force amazonlinux:nodejs
+#+end_src
+
+After the function.zip is generated, we can deploy it to AWS Lambda via aws-cli:
+
+1. Deploy it to an existing function:
+
+#+begin_src awk
+aws lambda update-function-code --function-name ServerlessImageResize-ResizeFunction-1CUW6FR1XJJEL --zip-file fileb://dist/function.zip
+#+end_src
+2. Setup the whole Microservice architecture via CloudFormation
+
+#+begin_src shell
+aws cloudformation deploy \
+  --template-file=deploy/output.yaml \
+  --stack-name="${stack_name}" \
+  --capabilities=CAPABILITY_NAMED_IAM
+#+end_src
+
+   CloudFormation is like docker-compose for AWS services, it can setup AWS services like S3, API Gateway, etc. based on a YAML template file.
+
+   For this image resizing lambda function's CloudFormation template, you can check it [[https://github.com/awslabs/serverless-image-resizing/blob/master/image-resize.yaml][here]].
+
+* Monitoring/Logging
+
+Amazon also provided builtin monitoring and logging support for Lambda.
+
+Every lambda function comes with a monitoring console like this:
+
+[[https://i.loli.net/2017/11/29/5a1e4afdd67c6.jpg]]
+
+We can even go to the CloudWatch console for this Lambda function to see the logs.
+
+* Web UI / CLI
+
+All the actions mentioned in this post, can all be done via AWS's web user interface or through AWS's command line tool aws-cli. This gives developers enough choices to choose the one that suits them the best.
+
+* Summary
+
+So, what's the ideal Microservice development experience?
+
+1. The service codebase should be small enough.
+2. It has a way to reproduce the production environment on local. (e.g. Docker image)
+3. Developer can run tests in that environment by a single line of shell command (or a editor/IDE command)
+4. Developer can deploy changes using only a single command
+5. All the actions can be done via Web UI or CLI

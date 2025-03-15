@@ -1,0 +1,407 @@
+#+TITLE: Clippings of 2019 Feb
+
+1. [[https://hbr.org/2017/07/stop-using-the-excuse-organizational-change-is-hard%C2%A0][Stop Using the Excuse “Organizational Change Is Hard”]]
+
+   - We assume that failure is a more likely outcome than success, and, as a result, we wrongly treat successful outcomes as flukes and bad results as irrefutable proof that change is difficult.
+   - Only "about one in ten admit to having been involved in a transformation that was 'completely' or 'mostly' unsuccessful."
+   - *Adaptation is the rule of human existence, not the exception.*
+
+2. [[https://twitter.com/sarahmei/status/1090860150712221698][Sarah Mei on Twitter: "I talk a lot about how you can't be a great
+developer without great communication skills, but I don't think
+people grok how   your communication skills are reflected
+in your codebase. Let me give you an example."]]
+
+   - [[https://www.youtube.com/watch?v=lI77oMKr5EY][RailsConf 2018: Keynote - Livable Code by Sarah Mei - YouTube]]
+   - Rebuild/rewrite can't fix the real problem - which is the organizational incentives that put you in that place originally
+
+     - Hauling everything away and cleaning up the house doesn't fix people's habits that led to the hoarding.
+     - If you don't change the habits and incentives that led you to that point, you'll end up with a tangled mess of services mirroring your tangled mess of monolith code.
+     - And at that point, all you've accomplished with the money & time they gave you for the rebuild is to shift your problems to the network layer, where they are way harder to see, analyze, test, and fix.
+     - That is not progress. IMO that's engineer malpractice.
+
+   - A much more successful treatment for hoarding is to *work intensively one on one with folks* ,
+
+     1. changing their habits slowly over time,
+     2. having THEM clean up the house - one little area at a time.
+
+   - This is where communication skills come into play.
+
+     - Because it is not at all trivial to even understand the incentive structure that got you where you are, let alone to negotiate a new, healthier set of incentives.
+     - Pathology in the hoarded codebases
+
+       1. developers don't feel they have time and/or permission to refactor code.
+       2. developers see “refactoring” as a completely separate activity from building features or fixing bugs.
+
+          - A key indicator of this pathology is seeing stories in the backlog like “refactor user class.”
+
+     - Improvement Over Consistency
+
+       - If you had good code, then sure, that (consistency is key to good code.) would be true. But right now you don't.
+       - One book on the shelf and five in the pile is better than six books in the pile.
+
+     - To actually fix it, you need to
+
+       1. negotiate with the individuals who are applying the pressure.
+       2. understand THEIR incentives,
+       3. align your desired changes with those.
+
+     - You don't want begrudging acceptance. You want enthusiastic buy-in.
+     - As you improve your communication skills (by doing it badly at first), you start to get a sense of what works for different people.
+
+   - What's limiting your ability to write good code.
+
+     - It is NOT:
+
+       - knowledge of the latest framework
+       - how fast your tests run
+       - your own weak moral fiber
+       - your manager, PM, or CEO
+
+     - It IS:
+
+       - how well you understand & work with people
+
+3. [[http://www.harukizaemon.com/blog/2010/03/01/functional-programming-in-object-oriented-languages/][Functional programming in object oriented languages]]
+
+   - Immutable objects good; Mutable objects bad
+
+#+begin_quote
+
+     Classes should be immutable unless there's a very good reason to make them mutable….If a class cannot be made immutable, limit its mutability as much as possible.
+
+#+end_quote
+   - An object is a collection of partially applied functions
+
+     - methods MUST operate, in some way, on the state of the object
+     - If they didn't operate on the object's state, they wouldn't be partially applied.
+
+   - An object's API provides a clear separation between Commands and Queries
+
+#+begin_quote
+
+     Methods should return a value only if they are referentially transparent and hence possess no side effects
+
+#+end_quote
+
+     - If we assume we only want to return one thing from a method, and that a change in state necessitates returning a handle to the new state, then *a method can only ever be either a query or command but not both* .
+     - In a sense commands are now queries, eg. that ask the question: "what would a system look like if I asked you to do something?"
+
+   - An object is a snapshot of state and possible outcomes
+
+     - The methods are like the choices we make
+
+   - An object is a persistent data structure
+
+     - each copy is like a delta from the previous, sharing as much state as possible and reducing not only the time to copy but also the amount of memory needed.
+
+#+begin_src ruby
+def add(other)
+  transform do
+    @amount = @amount +
+              currency.convert(other.currency, other.money)
+  end
+end
+#+end_src
+     - In a sense each method describes the delta between the current state and the new state.
+     - It reminds me of branching in a Version Control System.
+
+   - More to explore
+
+4. [[https://firstround.com/review/my-lessons-from-interviewing-400-engineers-over-three-startups/][My Lessons from Interviewing 400+ Engineers Over Three Startups -
+First Round Review]]
+
+   - THREE HARMFUL RECRUITING REFRAINS AT STARTUPS
+
+     1. THE REFRAIN: We test the technical knowledge and skills needed for the role in the interview.
+
+        - THE REALITY: You don't actually know what you need. You're figuring out what you need.
+        - A stronger statement: the skills that people are hiring for are not the skills that they often most need.
+        - They haven't actually decided that interviewing and hiring is a critical business activity
+
+          - They're kind of just trying to get through it.
+          - And because they want to get past it, they look for and lean on patterns, opting to repeat what others have said or done.
+
+     2. THE REFRAIN: With engineers, only technical skills truly matter. Soft skills are a nice-to-have.
+
+        - THE REALITY: Every engineer must be equally skillful with code and colleagues.
+        - Questions
+
+          - Ego.
+
+            - Does the candidate have low ego?
+            - Will they be too protective of their code?
+            - Do they have to be right?
+            - Does that change how they listen to input or consider other ideas?
+
+          - Adaptability.
+
+            - Do they know that the goal of a business is to grow and change?
+            - Have they been a part of a team that has grown where process has had to change or team has had to be restructured?
+            - If so, how have they reacted to those changes?
+            - Do they seek opportunities for their growth in that change?
+
+          - Technical communication.
+
+            - Do they know the technical skill needed for the role?
+            - Have they demonstrated the ability to apply that skill?
+            - Finally, can they communicate technical complexities well?
+            - Do they recognize that knowledge, application and communication of technical know-how are separate skills to master?
+
+          - Cross-functional collaboration.
+
+            - Can they share multiple examples of close collaboration among individuals across functions, such as Engineering, Product, Design, Customer support and more. Do they have an example of when that collaboration went well?
+            - When it didn't, how did they respond and resolve or bring closure to the situation?
+            - Have they proactively identified silos in an organization — and what have they done about them?
+
+     3. THE REFRAIN: We've picked a few people to interview with them — let's get it scheduled.
+
+        - THE REALITY: Thoroughness and consistency is paramount for optimal, unbiased results.
+        - Four sessions: That's our 'right' number
+
+   - STEPS TO TAKE TO MAKE INTERVIEWING A CRITICAL BUSINESS STRATEGY
+
+     1. Interview in three-person groups.
+
+        - One-on-one interview is not a great candidate experience
+
+          - One-on-one interviews tend to lead to a unidirectional candidate-and-interviewer dynamic. A person asks a question, the other person tries to answer it. Rinse and repeat.
+          - they come away feeling grilled or discouraged after trying to answer a bevy of questions.
+          - Interviewers can also get disenchanted, when, instead of following the thread of the conversation, must cycle through questions like a more rigid, rote activity
+
+        - Add another colleague into the mix as a second interviewer.
+
+          - it brings a higher fidelity and signal to the conversation
+          - it breaks down the flow and nature of the conversation
+          - questions and answers bouncing between three points opens up the discussion and evaluation much more
+
+        - Three-person interviews generate more signal and meaningful meandering than traditional 1:1 interviews.
+
+          - It subtly helps reduce bias.
+          - It splits the acts of engaging from observing.
+
+            - When you send two people in, one of them is generally observing more, as the other engages.
+
+          - It simultaneously trains your more green interviewers.
+          - It elevates the perspective of less experienced employees.
+
+     2. Everybody — the entire team — interviews.
+
+        - having more people being able to interview candidates skillfully and efficiently is an advantage.
+        - it's easier to identify members of the team who are comfortable, confident interviewers — people who the engineering leader can tap to serve as mentors to make less experienced colleagues better interviewers.
+        - If you don't want some people to interview, ask yourself why. If you're worried about how they're representing the company, there's a bigger issue at hand.
+
+     3. Commit to doing more interviews.
+
+        - *The most effective way I've found to get to the top 10% is to interview and say no to the other 90%.*
+        - Create an interview-intensive system, stick to it, learn from it and you'll make better hires.
+        - *Partnering with an in-house recruiter* has been the only way he's been able to create a hiring system that can support many interviews.
+
+          - you need someone collaborating with you on the scale and scheduling of all the interviews for a hiring process.
+          - That's another reason why, as the hiring manager, I not only do a final evaluation of the candidate, but also get feedback on how the interview process went, and where it could improve.
+
+     4. Round up and huddle.
+
+        1. Get an initial yea or nay.
+
+           - a four-point scale
+
+             - strong hire
+             - hire
+             - no hire
+             - strong no hire
+
+           - That's the place to start. (Talk about why)
+           - Two pros
+
+             1. engineers love rubrics and rooting their rationale in a system.
+             2. making a ‘hire' or ‘no hire' decision upfront means starting with the end in mind.
+
+        2. Amplify signal.
+
+           - how did we do in this evaluation,
+           - how did the candidate do in this evaluation.
+
+        3. Surface skill bias.
+
+#+begin_quote
+
+           Is naming variables well in code really an important thing? Yes, it is. Is it a really coachable and fixable thing? Yes that's true. So it shouldn't disqualify people. That's why we do code reviews. We teach this.
+
+#+end_quote
+        4. Spotlight who's making the decision — and how.
+
+           - Acknowledge the value of each interviewer's contribution, but also convey that owning part of the process isn't the same as owning the decision.
+           - Bring visibility to your thought process. (Try to give the team more insight into how I'm making decisions)
+
+     5. TYING IT ALL TOGETHER
+
+        - Step zero is asking: are you getting enough different data points in an interview process?
+
+5. [[https://blog.thecodewhisperer.com/permalink/the-myth-of-advanced-tdd][The Myth of Advanced TDD - The Code Whisperer]]
+
+   - The single most important bit of "wisdom on TDD techniques": *the tests are telling you how to improve your design, so listen!*
+   - [[http://blog.thecodewhisperer.com/permalink/beyond-mock-objects][Beyond Mock Objects - The Code Whisperer]]
+
+     - Events and return values are the same thing.
+
+       - Many side-effects are events with a single, mandatory listener.
+       - You can replace side-effects with a value that represents the side-effect and then push the event listener up the call stack.
+
+     - Similarly, suppliers and values are the same thing.
+
+       - Many times we write code that depends on suppliers, when we have the opportunity to replace that with code that depends on the values it supplies.
+
+     - It doesn’t matter which design you choose if you see the equivalence between options. (As long as you can refactor between them)
+     - Removing mock objects is not a goal; it’s an option.
+
+   - Mock Objects Are Just Doing Their Job
+
+     - I use test doubles as a design tool specifically because they put constant positive pressure on my design and they alert me to design risks as they happen!
+
+   - What If We Listened To the Crying?
+
+#+begin_src ruby
+describe "when receiving a barcode" do
+  example "product found" do
+    product_found = Product.new(price: 795.cents, taxes: [:HST_PE])
+    catalog = double("a Catalog", :find_product => product_found)
+
+    display = double("a Display")
+    shopcart = double("a Shopcart")
+    inventory_gateway = double("an Inventory Gateway")
+
+    display.should_receive(:display_price).with(product_found.price)
+    shopcart.should_receive(:add_product).with(product_found)
+    inventory_gateway.should_receive(:reserve_product).with(quantity: 1, product: product_found)
+
+    Sale.new(catalog, shopcart, inventory_gateway, display).on_barcode "12345"
+  end
+end
+#+end_src
+
+     - Irrelevant details in a test indicate involving modules that the test would rather ignore.
+
+       - This means that we have an integrated test, even when it doesn’t look like we do.
+
+     - Duplicate assertions in a test indicate a missing abstraction.
+     - A function expectation in a test indicates the presence of side effect that we can often model as an event.
+
+       - I can *think of the event as an interface and the handler as an implementation of that interface* !
+
+   - Following the Test Doubles' Advice
+
+#+begin_src ruby
+describe "when receiving a barcode" do
+  example "product found" do
+    product_found = Product.new(price: 795.cents, taxes: [:HST_PE])
+    catalog = double("a Catalog", :find_product => product_found)
+
+    event_listener = double("an Event Listener")
+
+    event_listener.should_receive(:on_product_found).with(product_found)
+
+    Sale.new(catalog, event_listener).on_barcode "12345"
+  end
+end
+
+# In the entry point of the system...
+display = Display.new
+shopcart = Shopcart.new  # why is this a singleton? Hm. Multiple shoppers?
+inventory_gateway = InventoryGateway.connect(inventory_database)
+
+sale = Sale.new(
+  BroadcastEventListener.with_listeners(
+    -> product { display.display_price(product.price) }
+    -> product { shopcart.add(product) }
+    -> product { inventory_gateway.reserve(quantity: 1, sku: product.sku) }))
+# ...install sale into the routing table to receive "scanned barcode" requests
+#+end_src
+   - elementary TDD: *feedback from the tests drives the design.*
+   - advanced TDD is little more than practising TDD more diligently.
+
+6. [[https://www.youtube.com/watch?v=x1FU3e0sT1I&feature=youtu.be]["Make Data Structures" by Richard Feldman - YouTube]]
+
+   - [[https://www.youtube.com/watch?v=XpDsk374LDE][Elm Europe 2017 - Evan Czaplicki - The life of a file - YouTube]]
+   - BUILDING WITH BLOCKS (OOP / React Components)
+
+     - reveals *isolated* problems *early*
+     - reveals *structural* problems *late*
+
+   - STRUCTURAL PROBLEMS ARE COSTLY TO FIX AFTER BEING BUILT ON
+   - Changing Model
+
+     - affects view
+     - affects update
+     - affects init
+     - affects subscriptions
+
+   - No cost to change model when these have not been built
+   - *How* to Make Data Structures
+
+     1. design data structures to capture the UI
+
+        - start with a handcrafted type instead of a prepackaged type
+
+          - Maybe
+          - Result
+          - RemoteDate
+
+        - start with a type
+
+#+begin_src fsharp
+type Model
+    = Loading
+    | LoadedOne Doc
+    | LoadingProblem Problem
+    | Loaded LoadedModel
+
+type alias LoadedModel =
+    { doc : Doc
+      , problem : Maybe Problem
+      , menu : Menu
+      , settings : Settings
+    }
+#+end_src
+        - go opaque by default (opaque type > type > type alias)
+
+          - Compiler tells me if I mistakenly use an Int instead
+          - I can change internals without breaking other code
+          - Lovely code organization (decoder)
+          - Cache invalidation is easy now
+          - Trade-offs
+
+            ||Opaque |Exposed Internals | |
+            ||writing accessors |fixing race conditions | |
+            ||writing mappers |fixing caching bugs | |
+            ||Quick & Easy |Slow & Difficult | |
+
+     2. create interfaces to them
+
+        - The entire interface for that type is in one module with an obvious name
+
+     3. render them
+
+        - top level view is just a dispatcher
+
+#+begin_src haskell
+view : Model -> Html Msg
+view model =
+    case model of
+        Loaded loadedModel ->
+            viewloaded loadedModel
+        Loading ->
+            viewLoadingSpinner
+
+viewLoaded : LoadedModel -> Html Msg
+#+end_src
+
+   - Over-engineering hurts no matter what approach you take
+   - [[https://www.youtube.com/watch?v=IcgmSRJHu_8]["Making Impossible States Impossible" by Richard Feldman - YouTube]]
+   - Why?
+
+     - Building data structures gives you a *better understanding* of your app
+     - It's building the same app *in a different order*
+
+       1. Build
+       2. Discover
+       3. Refactor

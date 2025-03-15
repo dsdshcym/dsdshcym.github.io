@@ -1,0 +1,108 @@
+#+TITLE: Book Review: The Mythical Man-Month
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-04-09]
+#+URI:         blog/2018/04/09/book-review-the-mythical-man-month/index.html
+#+TAGS:        Agile, Management, Book Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+It (The Mythical Man-Month) is the only book you need to read about software management.
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=-I_jE0l7sYQ&feature=youtu.be][Joe Armstrong - Keynote: The Forgotten Ideas in Computer
+   Science - Code BEAM SF 2018 - YouTube]]
+
+I truly believe this assertion after reading this book (of course, it might because of my small sample size of software management books).
+
+This book reflects my current thinking that Agility is all about gathering fast feedback[fn:1] so well. And it amazed me from time to time when I read this book that this kind of thinking was already there 20, or even 40 years ago.
+
+What amazed me more is that after 40 years, we are struggling with some basic problems that could've been solved using the ideas from this book. I guess this fact is also a strong proof for *No Silver Bullets* , at least it shows that there is none yet.
+
+I'll write down some amazed moment down below:
+
+* Mockist style TDD
+
+In [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgeaf2d50][Chapter 13. The Whole and the Parts]], it mentioned *top-down design* and *dummy component* . They all remind me of the *mockist-style TDD* I'm current learning and using.
+
+1. Top-down design is basically what mockist-style TDD is doing.
+2. Dummy component is what we call mocks/stubs/fakes today.
+
+It always surprises me how early this style of development were used in the history of software development. Even without tests as automated as today, people in the early ages were still trying their best to use the most tight feedback loop they could get.
+
+In [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d][Chapter 19. The Mythical Man-Month: after 20 years]], it also introduces Building an end-to-end skeleton system, which is basically what Growing Object-Oriented Software Guided by Tests[fn:2] is doing.
+
+* Readable Code
+
+In [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgb12aa9d][Chapter 15. The Other Face]], it talked about the importance of readability[fn:3]:
+
+#+begin_quote
+
+*a written program has another face, that which tells its story to the human user.*
+
+#+end_quote
+
+I truly believe that *the only way to make our code maintainable is to write self-documenting programs* as described in this book.
+
+Class/Function/Variable Naming
+    Use the parts of the program that have to be there anyway (symbol names), for programming language reasons, to carry as much of the documentation as possible
+Style matters[fn:4]
+    Use space and format as much as possible to improve readability and show subordination and nesting
+Comments
+    Insert the necessary prose documentation as paragraphs of comment
+
+* Open Source v.s. Buy v.s. Build
+
+If there was anything close to a Silver Bullet, I guess that must be Open Source Software Movement[fn:5].
+
+With the rising of open source software hosting platform like GitHub, one can easily build its own software upon these countless open source libraries/frameworks without any cost.
+
+And one can continue get free security patches and performant improvements if he/she continues updating these dependencies.
+
+Indeed, Open Source made a great leap forward from buying software, but we are still facing the same issue as "buy v.s. build": *applicability* .
+
+It's still hard to find an off-the-shelf package to perform my own task and suit my own needs perfectly. (I'll talk more about this in a future post.) Because of this, I still cannot believe Open Source is the Silver Bullet.
+
+* Continuous Integration / Continuous Deployment (CI/CD)
+
+In [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d][Chapter 19. The Mythical Man-Month: after 20 years]], this book shows how Microsoft did CI/CD in the early days. They called it "Build Every Night" Approach, which is basically what Continuous Integration / Continuous Deployment means.
+
+And as you might have known, we've learned a lot about this CI/CD practices in the last 20 years.
+
+* Summary
+
+As it was said in [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/#outline-container-orgba7dc4d][Chapter 19. The Mythical Man-Month: after 20 years]]:
+
+#+begin_quote
+
+*Software engineering is merely immature as chemical engineering was in 1945*
+
+#+end_quote
+
+I think we as the whole software development community are still learning and gaining more experience in this area in 2018. And we've also improved a lot in the last 20 years.
+
+*The beauty of continuous learning and discovering in this immature industry is what intrigues me the most from this industry.*
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means/][What Agility Really Means - dsdshome]]
+
+[fn:2]
+
+[[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/][GOOS: Build a Faster Feedback Loop - dsdshome]]
+
+[fn:3]
+
+[[http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/][Write your code as if you're writing a letter - dsdshome]]
+
+[fn:4]
+
+[[http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters/][Code style consistency matters - dsdshome]]
+
+[fn:5]
+
+[[http://www.cs.colostate.edu/~bieman/Pubs/Editorials/EditorialV14N4.pdf][Editorial: Free/Open Source Software, Silver Bullets, and
+Mythical Months.]]

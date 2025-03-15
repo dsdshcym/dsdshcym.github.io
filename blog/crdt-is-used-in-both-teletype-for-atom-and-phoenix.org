@@ -1,0 +1,32 @@
+#+TITLE: CRDT is used in both Teletype for Atom and Phoenix
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-07]
+#+URI:         blog/2017/12/07/crdt-is-used-in-both-teletype-for-atom-and-phoenix/index.html
+#+TAGS:        Clipping, Podcast, Phoenix, Editor
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I heard about CRDT[fn:1] a lot from some podcasts:
+
+- [[https://changelog.com/podcast/147][The Changelog #147: Elixir and Phoenix with Chris McCord | Changelog | News and podcasts for developers]]
+- [[http://5by5.tv/rubyonrails/239][5by5 | Ruby on Rails Podcast #239: When You Type I Type We Type: Part 2]]
+
+Turns out, CRDT is used in Phoenix for its PubSub[fn:2] module and in Teletype for Atom for its text syncing process[fn:3].
+
+If you are interested in this kind of reliable distributed system, definitely go check it out: [[https://twitter.com/chris_mccord/status/711934423877480448][Chris McCord on Twitter: "If you're
+curious about the CRDT in my Erlang Factory keynote for Phoenix
+Presence, our impl is based on this paper https://t.co/q6CDmPB4Mj"]].
+
+* Footnotes
+[fn:1]
+
+[[https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type][Conflict-free replicated data type - Wikipedia]]
+
+[fn:2]
+
+[[https://github.com/phoenixframework/phoenix_pubsub][phoenixframework/phoenix_pubsub: Distributed PubSub and Presence platform for the Phoenix Framework]]
+
+[fn:3]
+
+[[https://github.com/atom/teletype-crdt][atom/teletype-crdt: String-wise sequence CRDT powering peer-to-peer collaborative editing in Teletype for Atom.]]

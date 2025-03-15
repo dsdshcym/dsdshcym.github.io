@@ -1,0 +1,212 @@
+#+TITLE: Say NO to Processes
+#+begin_quote
+
+- As developers, designers, and product managers, one area where we should say no frequently is when someone wants to introduce a new policy to our process in response to an issue.
+
+  - Too often we default to introducing a new policy into our process because
+
+    1. it shields us from blame for future mistakes (e.g. "it was the process that failed, not me"),
+    2. it makes us feel safe from future mistakes (e.g. "issue x cannot happen again because of policy z").
+
+  - But I think that 9 out of 10 times the better solution is to *clearly communicate problems and possible solutions and to trust your team to implement them.*
+
+- Adding policies is easy. Removing them is difficult.
+- And the more policies you have, the more rigid your process becomes
+- [[https://37signals.com/rework][REWORK: The new business book from 37signals.]]
+
+  Policies are organizational scar tissue. They are codified overreactions to situations that are unlikely to happen again.
+
+- What's the right amount of process?
+
+  - Daily standups
+  - Weekly retrospectives
+
+#+end_quote
+
+-- from [[https://thoughtbot.com/blog/say-no-to-more-process-say-yes-to-trust][Say no to more process, say yes to trust]]
+
+* Processes that kills communication
+
+I'm getting more pains than gains from some processes. Here are a few examples that can kill communication if executed badly:
+
+Sprint Meetings
+
+    From my current understanding, Sprint Meeting is a place for the whole team to review the previous sprint and discuss the goal for the next sprint.
+
+    But I saw people using them to discuss issues, rather than goals. They check each tasks in their issues list one by one. And see if they can close them. Then they create new tasks for the next sprint.
+
+    Even worse, people are waiting for a sprint meeting to discuss issue details. There are few (or even no) discussions happening in issues, over Slack chats, not even in Email threads. The only items in an issue are a bunch of commit hashes related to this issue. And then PMs and developers check if each task is done until the Sprint Meeting.
+
+    In the end, this kind of Sprint Meeting becomes Task Planning. And I think it completely misses the point of this process.
+
+Daily Stand-ups
+
+    Like Sprint Meetings, Daily Stand-ups are also goal-oriented and are hold to reduce risks.
+
+    But when executed badly, this meeting can become meaningless. It feels like a personal task report meeting to me. Everyone just talk about what issues/tasks they are going to work on today. And they never have chats around these tasks, the risks, nor the goals.
+
+    Even worse, people don't even listen anymore.
+
+    When a person has repeated the same task for several days, no one ask why it's still not finished or how's the progress on it.
+
+    When a person says "I am going to build a rocket and fly it to Mars today" for fun, no one laughs for this joke nor gets angry for this non-related topic.
+
+    - [[https://www.youtube.com/watch?v=lvs7VEsQzKY][GOTO 2017 • Patterns of Effective Teams • Dan North - YouTube]]
+
+#+begin_quote
+
+      - Seize the Day
+
+        - We lost the point of stand-ups
+        - It's not a Status Meeting, is a Guiding Meeting
+        - "What is the best possible today we can have?"
+        - *Let's have a stand-up about where we wanna go today*
+
+          1. What work items moved yesterday?
+          2. What work items are likely move today?
+          3. What work items are blocked today?
+
+        - People don't get blocked, work gets blocked
+
+#+end_quote
+    - [[https://blog.jbrains.ca/permalink/your-daily-scrum-is-killing-your-team][Your Daily Scrum is Killing Your Team]]
+
+#+begin_quote
+
+      - A MISSING INGREDIENT THAT YOU DIDN'T SEE COMING
+
+        - *discussing risks*
+        - unless we use it as an opportunity to surface and address risks, the Daily Scrum will remain an exercise in project management theater.
+        - The Daily Scrum's three questions appear to have been designed to help us manage risks on a daily basis.
+
+#+end_quote
+
+Focus Time (No Communication Time)
+
+    Some companies have this policy for communication: we discourage people to interrupt others during a specific time everyday. No talk, no Slack, no email. The goal was to give people a regular time to focus on coding, writing, etc.
+
+    I really believe this process was a productivity boost when it was first implemented (thought I was not there). People felt more productive because they were free of meetings and discussions during the Focus Time.
+
+    But then the Focus Time helps to build a "silent" culture. People tends to interrupt others less, even out of the Focus Time. And it turns out to be that if you want to communicate with others, you have to interrupt others first. So without these necessary interruptions, less communications can happen. People then reply on other processes (like daily stand-ups, sprint meetings) to communicate, which then builds up a negative feedback loop.
+
+* What if these processes are all gone?
+
+I wish I can remove these processes all at once and rebuild a culture that encourages communications. As mentioned in [[https://thoughtbot.com/blog/say-no-to-more-process-say-yes-to-trust][Say no to more
+process, say yes to trust]] before: to replace these processes, we need to *clearly communicate problems and possible solutions* and to *trust your team to implement them* .
+
+Take Focus Time for example.
+
+The ideas behind Focus Time are great:
+
+1. respect others' time
+2. focus on your own work
+
+We can still achieve both without this process. We only need to provide several possible solutions to the team and trust everyone to make their best judgments. A few examples I can think of now:
+
+1. respect others' time
+
+   1. hold meetings more efficiently
+   2. use asynchronous and synchronous message tools accordingly
+
+2. learn to focus on your own work
+
+   1. use "Do Not Disturb" features provided by our tools (macOS, Slack, Gmail)
+   2. set your own "focus time" on your calendar so others can see it when scheduling a meeting
+
+With a few training and mentoring sessions, I believe the result would be much better than a Focus Time policy.
+
+The same goes for both Sprint Meeting and Daily Stand-ups: we can absolutely find our own alternatives to satisfy our needs.
+
+After all, stop doing something has almost no risks because we can always roll back to using them again.
+
+#+begin_quote
+
+- I want you to stop because this is a very simple, low-risk experiment you can do.
+
+  - You need *no preparation* at all
+  - Just stop the doing the daily standup, and *make everyone record what they are missing.*
+  - *By stopping completely, you get a much better idea why you need the daily standup than by trying to change it in baby steps.*
+
+#+end_quote
+
+-- from [[https://www.devteams.at/2017/05/05/stop-the-daily-standup-meeting.html][Stop the Daily Standup Meeting - Developing Software Together]]
+
+* Why would processes backfire?
+
+This experiment demonstrates the situation of how a process backfires perfectly:
+
+#+begin_quote
+
+1. Start with a cage containing five apes. In the cage hang a banana on a string and put stairs under it. Before long an ape will go to the stairs in order to climb up and reach the banana.
+2. As soon as he touches the stairs all the apes are sprayed with cold water. After a while, another ape makes an attempt with the same result —all the apes are sprayed with shocking cold water. This continues for a few more times with each attempt.
+3. Turn off the cold water. Later on, if another ape tries to climb the stairs, the other apes —to avoid getting sprayed with cold water— will try to prevent the ape from climbing the stairs even though no water is actually sprayed on them.
+4. Now, remove one ape from the cage and replace it with a new ape. The new ape sees the banana and —not knowing of previous events— wants to climb the stairs. To his horror, all of the other apes attack him. After another attempt and attack he knows that if he tries to climb up the stairs, he will be assaulted.
+5. Next, remove another of the original five apes and replace it with a new one. The newcomer goes to the stairs to get to the banana and is attacked. The previous newcomer (of #4) also takes part in the punishment with enthusiasm.
+6. Again, replace a third original ape with a new one. The new one makes it to the stairs and is attacked as well. Two of the four apes that beat him have no idea why they were not permitted to climb the stairs in the first place, or why they are participating in the beating of the newest ape.
+7. After replacing the fourth and fifth original apes, all the apes that have been sprayed with cold water have been replaced. Nevertheless, no ape ever again approaches the stairs in order to climb up to get the banana.
+
+#+end_quote
+
+-- from [[https://www.luisprada.com/bureaucracy_in_the_planet_of_the_apes/][Bureaucracy in the Planet of the Apes - Brother Veritus' Website]]
+
+You can understand this experiment in the context of process:
+
+- Team members are just like apes. Some old team members exit the team, and some new team members join the team.
+- Building a new feature is like getting that banana every ape wants.
+- Issues would happen inevitably when building a new feature. When an issue occurs, it feels exactly like the shocking cold water.
+- Then, we introduce a process (prevent the one from climbing the stairs) to prevent the shocking cold water from spraying again.
+- Even though the issue is gone (no water is sprayed again) and all team members are replaced (all the apes are replaced), the process remains.
+
+That's the power of the process, or the power of team momentum.
+
+So why would this happen and how to prevent it?
+
+1. We forget the value behind the process.
+
+   All processes are practices, by definition. And [[https://dsdshcym.github.io/clipping/2019/04/11/values-and-practices/][there are always
+values behind a practice]]:
+
+   - The intended value behind Focus Time is the respect for others' time and focused working hours.
+   - The intended value behind the Apes Bureaucracy is everyone's physical safety.
+
+   If we didn't make these values clear when introducing practices, it's easy for the new comer to misunderstand them.
+
+   - Respect for others' time becomes communicating less.
+   - Physical safety becomes that stairs/banana are dangerous.
+
+2. The process is not implemented by those who practice it.
+
+   Only those who face the problem and practice the process can fully understand the value behind the process.
+
+#+begin_quote
+
+   - Why not managers?
+
+     - Often, managers and executives suggest process because it will help them better command, control, coordinate, or communicate.
+     - New process should never be implemented in the service of these goals, because its benefit is illusory and often highly overestimated:
+     - managers can perceive its benefits to them, but because they are at least one (or more) levels removed from the direct operation, they do not perceive its true costs.
+
+   - Why individuals?
+
+     - individuals doing hands-on work (e.g. engineers) can easily recognize when it is appropriate to add elements of organization or process,
+     - as they have a more direct ability to see how the benefits would outweigh the costs.
+
+   - What should managers do?
+
+     - Managers will need to suppress their natural fear that things are too chaotic or out of control due to the lack of visibility into details.
+     - They should focus on
+
+       1. *leading by setting accurate and informative context and goals* ,
+       2. facilitating the natural organization that results from collaboration between technology workers (who are often not the type prone to falling into anarchy anyhow).
+
+#+end_quote
+
+   -- from [[http://algeri-wong.com/yishan/engineering-management-process.html][Let process be implemented by those who practice it]]
+
+So we need to let process be implemented by those who practice it. And remember to let them explain the values behind these practices. The best scenario after each practice is done is that:
+
+1. We fix the issue by this practice we introduced.
+2. We learn the values from this practice.
+3. Next time we encounter a similar issue, we use the values we have to come up a better practice to fix it. After all, we are not going to face the exactly same issue again.
+
+Let me know what you think of Processes in the comment below! I would be happy to discuss them.

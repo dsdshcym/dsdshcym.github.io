@@ -1,0 +1,48 @@
+#+TITLE: A Simple Introduction to Docker IX
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2015-12-11]
+#+URI:         blog/2015/12/11/a-simple-introduction-to-docker-ix/index.html
+#+TAGS:        Docker, Container
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* What are some concerns about using docker?
+** Security
+
+- Shared kernel concern
+
+  Since containers share the same kernel, if one of them panics, everyone of them will panic too.
+
+- Privilege concern
+
+#+begin_quote
+
+  if a user or application has superuser privileges within the container, the underlying operating system could, in theory, be cracked.[fn:1]
+
+#+end_quote
+
+  - This concern will no longer be valid in a few months
+
+    Docker has been working on linux user namespace for a while now. And once this feature is completed. Then we can build a docker container without root privileges, and meanwhile in this container, we can still have enough privileges for us to do our job.
+
+- VM + Container
+
+[[http://hyper.sh][Hyper]] is a chinese startup project to make a lightweight virtual machine based on Docker images, which combines both advantages from container and VM.
+
+  - Its containers are isolated by VM. So it is immune from the "shared kernel" problem in containers.
+  - It's almost as lightweight as a container. So it's way more fast than a VM.
+  - Since it's a VM, you can choose your own kernel.
+
+** Management Complexity
+
+- DevOps needs to manage too many docker files.
+
+  - Since in docker's world, we need to seperate each of our apps into a single docker image.
+  - We must keep our eyes on many different docker files.
+  - This can be a problem when our project becomes so much big.
+  - But in general you won't face this.
+
+* Footnotes
+[fn:1]
+
+[[http://www.itworld.com/article/2915530/virtualization/containers-vs-virtual-machines-how-to-tell-which-is-the-right-choice-for-your-enterprise.html][Containers vs. virtual machines: How to tell which is the right choice for your enterprise | ITworld]]

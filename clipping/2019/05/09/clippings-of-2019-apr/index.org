@@ -1,0 +1,214 @@
+#+TITLE: Clippings of 2019 Apr
+* [[https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf][On the Criteria To Be Used in Decomposing Systems into Modules]]
+#+begin_quote
+
+- it is almost always incorrect to begin the decomposition of a system into modules on the basis of a flowchart.
+- We propose instead that
+
+  1. one begins with a list of difficult design decisions or design decisions which are likely to change.
+  2. Each module is then designed to hide such a decision from the others.
+
+- Since, in most cases, design decisions transcend time of execution, modules will not correspond to steps in the processing
+- To achieve an efficient implementation we must
+
+  1. abandon the assumption that a module is one or more subroutines
+  2. and instead allow subroutines and programs to be assembled collections of code from various modules
+
+#+end_quote
+* [[https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a][Reaching Peak Meeting Efficiency – Learning By Shipping]]
+#+begin_quote
+
+- The best meetings I remember are the ones where our team got a little closer and more connected
+
+  - and I remember that “feeling” more than I remember the specifics of what we talked about.
+
+- The more you know about what and how people think, the more the micro choices you make day in and day out (without meetings) will likely be done in unison.
+
+  - High performance teams don’t really need to meet, but every high-performance team I know seems to have a brain-wave connection across the team.
+  - That connection comes from talking, listening, talking, and listening. That can only happen in meetings.
+
+- Everyone has their own style and every company its own culture, but to I wanted to share what I found most valuable in executing at scale:
+
+  - 1:1s
+  - Skip level
+  - "Without"
+
+    - It removes the pressure of working things out in front of the boss.
+
+  - All/Team
+
+    - This is critical to connecting the “goals” to the broader company and for everyone to be able to connect their work products to the broader execution context in the company.
+
+  - Ad hoc chats
+
+    - Once I stopped writing code or specs, I made sure that 60% of my time was literally ad hoc and having conversations with as many people as possible when I wasn’t just doing my own individual work.
+
+#+end_quote
+* [[https://dsdshcym.github.io/clipping/2019/05/07/clippings-from-measure-what-matters/#outline-container-org358479d][17 Baking Better Every Day: The Zume Pizza Story (A robotics pioneer leverages OKRs for teamwork and leadership—and to create the perfect pizza.)]]
+#+begin_quote
+
+- Neither JIRA nor LiquidPlanner could answer one big question: What's the most important thing to do?
+
+#+end_quote
+* [[https://www.youtube.com/watch?v=RtMmxqkPVug&feature=youtu.be][GOTO 2017 • How to take great Engineers & make them great Technical Leaders • Courtney Hemphill - YouTube]]
+
+The management problems mentioned in this talk are exactly the problems I'm facing now. And I am clearer about the path I'm going to take after watching this talk. Hope you would too.
+
+#+begin_quote
+
+- Situation
+
+  Successful companies are built by great teams. Vision may come from one bright individual but the effective execution of that vision comes from *great general management skills* .
+
+- Complication
+
+  Experienced, highly skilled engineer manager is hard to come by.
+
+- Gap
+
+  - The skills and experience that make a great engineer are not the same as those that make a great manager
+  - Also, not everyone wants to manage
+
+- Patterns and optimizations
+
+  Transitioning from one set of hard problems (engineering) to another (management)
+
+  - Software Development
+
+    1. Open Source (Writing)
+    2. Continuous Integration (OKRs)
+    3. TDD (Psychological Safety)
+    4. Pair Programming (Mentorship)
+    5. Code Reviews (Radical Candor)
+    6. Regular Refactoring (Retrospectives)
+
+  - Management
+
+    Communication
+[[https://www.harrisonmetal.com/classes/foundations-general-management][Harrison Metal - General Management]]
+
+        1. Writing
+
+           - [[https://www.amazon.com/Pyramid-Principle-Logic-Writing-Thinking/dp/0273710516][The Pyramid Principle: Logic in Writing and Thinking]]
+           - Story Telling (SCQA)
+
+             - Situation
+             - Complication
+             - Question
+             - Answer
+
+        2. Goal Setting
+
+           - [[https://www.amazon.com/Measure-What-Matters-Google-Foundation/dp/0525536221][Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs]]
+           - Alignment with Measurement
+
+             - Company, team, individual
+             - Think big
+
+               - achieve only 70% key results
+               - if you achieve 100%, you are not thinking big enough
+
+             - Not too many
+             - Every 3 months or less
+             - Never tie to bonus or compensation
+
+               - It kills the culture of taking risks
+
+    Culture
+        Great products are to customers as great cultures are to employees
+
+        1. Psychological Safety
+
+           - Autonomous, shared accountability cultivates learning
+
+        2. Mentorship
+
+           - Activities
+
+             - One on one's
+             - Networking
+             - Teaching
+
+           - Compared to Pairing
+
+             Journeyman-apprentice
+                 Sharing down (i.e. one on one)
+             Driver-navigator
+                 Sharing across (i.e. networking)
+             Apprentice-journeyman
+                 Sharing up (mentee)
+
+           - [[http://randsinrepose.com/welcome-to-rands-leadership-slack/][Welcome to Rands Leadership Slack – Rands in Repose]]
+
+    Authenticity
+        Be a human
+
+        1. [[https://www.amazon.com/Radical-Candor-Kickass-Without-Humanity/dp/1250103509][Radical Candor]]
+
+           - Build stronger relationships through direct feedback
+
+        2. Retrospectives
+
+           - Measure and assess progress w/ [[https://blog.carbonfive.com/2015/07/29/the-product-dartboard/][Product Dartboard]]
+           - The dimensions needed for a great team
+
+    Paths
+        Dual track leadership
+
+        1. Management
+
+           1. Managing Oneself
+           2. Managing Humans
+           3. Managing Teams of teams
+           4. Managing Organization
+
+        2. IC
+
+           1. Solo IC
+           2. Managing Shared Backlog
+           3. Managing System at Scale
+           4. Managing Distributed Systems
+
+#+end_quote
+* [[https://blog.aboutamazon.com/company-news/2016-letter-to-shareholders][High-Velocity Decision Making - Jeff Bezos' 2016 Letter to Amazon Shareholders]]
+#+begin_quote
+
+- Day 2 companies make high-quality decisions, but they make high-quality decisions slowly.
+- To keep the energy and dynamism of Day 1, you have to somehow *make high-quality, high-velocity decisions.*
+
+  - Speed matters in business
+  - a high-velocity decision making environment is more fun too.
+
+- Here are some thoughts:
+
+  1. Never use a one-size-fits-all decision-making process
+
+     - Many decisions are reversible, two-way doors. Those decisions can use a light-weight process.
+     - [[https://fs.blog/2018/04/reversible-irreversible-decisions/][Go Fast and Break Things: The Difference Between Reversible
+and Irreversible Decisions]]
+
+  2. most decisions should probably be made with somewhere around 70% of the information you wish you had.
+
+     - [[https://medium.com/@ctaylormpearson/how-to-stop-procrastinating-using-the-70-rule-f2f79c87c380][How to Stop Procrastinating Using the 70% Rule – Taylor
+Pearson – Medium]]
+     - If you wait for 90%, in most cases, you’re probably being slow.
+     - Plus, either way, you need to be good at quickly recognizing and correcting bad decisions.
+     - *If you’re good at course correcting, being wrong may be less costly than you think* , whereas being slow is going to be expensive for sure.
+
+  3. Use the phrase *"disagree and commit."*
+
+     - If you have conviction on a particular direction even though there’s no consensus, it’s helpful to say, “Look, I know we disagree on this but will you gamble with me on it? Disagree and commit?”
+     - By the time you’re at this point, no one can know the answer for sure, and you’ll probably get a quick yes.
+     - If you’re the boss, you should do this too.
+     - It’s a genuine disagreement of opinion, a candid expression of my view, a chance for the team to weigh my view, and a quick, sincere commitment to go their way.
+
+  4. Recognize true misalignment issues early and escalate them immediately.
+
+     - No amount of discussion, no number of meetings will resolve that deep misalignment.
+
+       - The big decision set up hundreds of smaller decisions, many of which needed to be escalated to the senior team.
+       - Without escalation, the default dispute resolution mechanism for this scenario is exhaustion. Whoever has more stamina carries the decision.
+
+- *We can have the scope and capabilities of a large company and the spirit and heart of a small one. But we have to choose it.*
+
+#+end_quote

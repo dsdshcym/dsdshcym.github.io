@@ -1,0 +1,27 @@
+#+TITLE: How to keep Ruby Relevant?
+#+begin_quote
+
+- How to keep Ruby Relevant?
+
+  1. Talk about Ruby More
+  2. Learn new ideas
+  3. Help maintain abandoned libraries
+  4. Build new libraries
+  5. Build new products with Ruby
+  6. Teach people Ruby
+
+- Ruby literally changed my life
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=PiT2XEWae1c&list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt&index=20][RubyConf 2017: Saving Ruby from the Apocalypse by Jason Charnes - YouTube]]
+
+Ruby literally changed my life, too.
+
+- It brought me to Strikingly (An extremely awesome team)
+- It taught me how to write real Object-Oriented world (with TDD).
+- It made me know programming can be so much enjoyable.
+
+This talk was also mentioned in [[https://overcast.fm/+DuavCGVqo][134: Fastributes — The Bike Shed — Overcast]]
+
+P.S. The speaker deals with the false fire alarm pretty well. "Is this (the Apocalypse) really happening?"

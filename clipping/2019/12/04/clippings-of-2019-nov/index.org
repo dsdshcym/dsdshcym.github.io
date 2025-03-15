@@ -1,0 +1,103 @@
+#+TITLE: Clippings of 2019 Nov
+* [[https://aaronrenner.io/2019/09/18/application-layering-a-pattern-for-extensible-elixir-application-design.html][Application Layering - A Pattern for Extensible Elixir Application Design - Aaron Renner’s Blog]]
+
+I'm super excited after reading this article, because it summarizes the ideal application architecture based on my current understanding, and I can't explain it better than Aaron.
+
+Abstracting by layers is the most important weapon (if not the only) we have when programming. So if you want to learn how to write programs in this way, please do read this article.
+
+And the same thinking can be applied to not only Elixir, but also other languages like Ruby, Java, Python, etc. It's just that Elixir makes it easy for us to write programs in layers.
+
+* [[https://kellysutton.com/2019/10/29/taming-large-rails-codebases-with-private-activerecord-models.html][Taming Large Rails Applications with Private ActiveRecord Models]]
+
+I don't know if the author use Elixir/Phoenix or not, but designing a Rails application in this way is like implementing Phoenix Context in Ruby.
+
+- Private AR Models
+
+#+begin_src ruby
+module Accounts
+  def self.fetch()
+    # ...
+  end
+
+  class Model < ApplicationRecord
+    self.table_name = 'accounts'
+  end
+
+  class Account
+    attr_reader :id, :name
+
+    # ...
+  end
+end
+#+end_src
+- Phoenix Context
+
+#+begin_src ruby
+defmodule Accounts do
+  use MyApp.Context
+
+  def fetch() do
+    # ...
+  end
+
+  defmodule Model do
+    use MyApp.Schema
+
+    schema "accounts" do
+      # ...
+    end
+  end
+
+  defmodule Account do
+    defstruct [:id, :name]
+  end
+end
+#+end_src
+
+In the end, the principles behind these two design choices are the same: *have a deeper class/module* . (which is the lesson I learned from [[https://yiming.dev/blog/2019/05/14/book-review-a-philosophy-of-software-design/][A Philosophy of Software Design]])
+
+* [[https://blog.thepete.net/blog/2019/10/04/hello-production/][Hello, production - Pete Hodgson]]
+#+begin_quote
+
+Deploying something useless into production, as soon as you can, is the right way to start a new project.
+
+#+end_quote
+
+Measuring the time to production is a good start point to measure the delivery lead time ([[https://yiming.dev/clipping/2019/04/07/clippings-from-accelerate-the-science-of-lean-software-and-dev-ops/][which is one of the most important indicators for development performance]]).
+
+Plus, [[https://mobile.twitter.com/CodeWisdom/status/1202220260297990144][“Much of the essence of building a program is in fact the debugging of the specification.” - Fred Brooks]]. So, why not deploy to production early and start debugging the specification as soon as possible?
+
+* [[https://lethain.com/nobody-cares-about-quality/][Nobody cares about quality.]]
+#+begin_quote
+
+it’s almost never the case that folks don’t care about something, they’re merely care more about something else.
+
+#+end_quote
+
+I had the same feeling that "nobody cares about quality (especially testing)" when I started my career. Until latter I found that people actually care about quality very much. Whenever I asked someone, they would definitely tell me that they want to improve the quality of their application, and they want to write robust code. Then I asked "You know, writing tests can help you reduce bugs and refactor, so you can improve quality easily." Often, the answer was either:
+
+1. "What do you mean by tests? We do tests manually every time we change our code and we have QA people..." (Then I would explain what automated test is.)
+2. "We think maintaining a test suite would slow us down. And we still have tons of features to develop." (Then I would start writing tests myself and try to let them see tests would actually save us time.)
+
+So you see, people actually cares about quality, it's just that they either don't know how to improve quality or work on other things that they think are higher priorities.
+
+In these two cases, I think it's better to [[https://lethain.com/model-document-share/][model, document and share]] than to only align priorities:
+
+Model
+    You don't need to ask permission to start improving the quality of your project.
+
+    1. Start writing tests for new features.
+    2. Add or fix CI pipelines for your project.
+    3. Add linter or formatter to your project.
+
+Document
+    Describe how much the quality is improved via these methods.
+
+    1. Error rate is reduced by X.
+    2. Feature development time is reduced by Y.
+    3. Debug time is reduced by Z.
+
+Share
+    Share these outcomes with your team. If you did the first two steps well, people would come to you and learn from you.
+
+Finally, [[https://lethain.com/nobody-cares-about-quality/][nobody cares about quality]] and [[https://lethain.com/model-document-share/][model, document and share]] are from the same author Will Larson. And I also finished his great management book: [[https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186][An Elegant Puzzle: Systems of Engineering Management]]. Highly recommended!

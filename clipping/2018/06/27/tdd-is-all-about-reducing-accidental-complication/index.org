@@ -1,0 +1,39 @@
+#+TITLE: TDD is All About Reducing Accidental Complication
+#+begin_quote
+
+- The Mythical Man-Month
+- Complication, not complexity
+- The cost of a feature is dominated by the accidental complication
+- Your design sucks -> TDD to the rescue
+
+  1. *Think about what you want to do*
+  2. Write a test
+  3. Ask yourself "How much does this test suck?"
+
+     - simpler tests
+     - smaller tests
+
+  4. Run the test and watch it fail
+
+     - Stop writing too much code
+
+  5. Write just enough code to make it pass
+  6. Refactor a bit now
+
+- Refactoring is how you reduce accidental complication
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=WSes_PexXcA][7 minutes, 26 seconds, and the Fundamental Theorem of Agile
+   Software Development - YouTube]]
+
+I think this is the best explanation for why TDD can help with designing better software:
+
+1. TDD is never about writing some tests to prove our application is running correctly.
+2. Instead, TDD is all about *reducing the accidental complication* we add to our application.
+
+   1. Thinking about what you want to do and writing a test for that help you think deeply about your design decisions.
+   2. Rethinking about the tests helps you rethink about that.
+   3. Running the test and watching it fail makes sure we are not writing meaningless code.
+   4. Writing just enough code to make it pass is the hardest part. Because we as developers tend to show off our intelligence and always try to solve multiple problems at once. And sometimes finding the minimum code to pass a test is much harder than the obvious solution.
+   5. Refactoring makes sure we will think again about our design after learning more knowledge about our domain from the previous phases.

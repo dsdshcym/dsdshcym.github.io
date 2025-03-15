@@ -1,0 +1,134 @@
+#+TITLE: Error Message Really Matters
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-20]
+#+URI:         blog/2017/12/20/error-message-really-matters/index.html
+#+TAGS:        Error Handling
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+Error messages can really decide how fast you can find the problem in your code.
+
+#+end_quote
+
+This is what I learned after spending 2 days on an iOS push notification issue.
+
+* The iOS push notification issue
+
+1. We use Rpush[fn:1] to send notifications to mobile devices (Android/iOS).
+2. I did a huge refactoring in our codebase to wrap the Rpush API in our own class. (In the meantime, add more tests to cover notification push logic)
+3. Even though all the tests were passing, the Rpush::Apns::Notification objects were persisted correctly, the iOS Notifications could not be sent correctly. We only got the following error from Rpush:
+
+#+begin_src haskell
+
+Lost connection to gateway.push.apple.com:2195 (Errno::EPIPE)
+#+end_src
+4. But the Android notifications could be sent successfully.
+
+** Try to fix the wrong problem (App configurations)
+
+- I thought this must be due to some wrong configurations in our Rpush::Apns::App.
+- And I also found this [[https://github.com/rpush/rpush/issues/146][issue]][fn:2], there were some solutions like "recreating the certificate", or "use the correct environment value".
+- So I tried them all, but none of them really works, I kept getting the same error.
+
+** The real issue (Invalid Device Token)
+
+- One thing I noticed was that we could still send notifications within the Google Firebase[fn:3] console.
+
+  - So I started trying to see if there are any differences between the Rpush app configuration and the firebase configuration.
+  - Then I found that in Firebase, the configuration was using APNs Authentication Key instead of APNs Certificates as we were using in the Rpush configuration.
+
+[[https://i.loli.net/2017/12/20/5a39d1103d335.jpg]]
+
+- Another thing I also noticed was that newly created device tokens could not pass the Rpush::Apns::Notification's device_token validation.
+
+  - The old tokens were short hashes like da389196
+  - The invalid tokens were much longer hashes like ekKXarhmDOA:APA91bH9fsR-Dj5s0PQkwVZ-YwQtgDnMgaT8VwVVf5nFZ5KskGU5QLeVMOHXEO0wMzHfp1ifGAvNjipuvw5M6tpQO3e2fdrNw1rW4C9IPCoRGyFetwOrkuDdaDb0ftNoZmcrFyYJwJhC
+  - The validation were overwritten by another developer so I thought it was the old version Rpush using the wrong validation rule.
+
+- Finally we checked with the iOS developer (we are in different timezones). Turns out he has updated the iOS client logic to use Firebase as the push notification backend (without notifying us about this).
+
+  1. Firebase uses APNs Authentication Key to send notifications
+  2. Firebase tokens are long hashes like ekKXarhmDOA:APA91bH9fsR-Dj5s0PQkwVZ-YwQtgDnMgaT8VwVVf5nFZ5KskGU5QLeVMOHXEO0wMzHfp1ifGAvNjipuvw5M6tpQO3e2fdrNw1rW4C9IPCoRGyFetwOrkuDdaDb0ftNoZmcrFyYJwJhC
+
+- iOS developer rolled back the changes and the notifications can be pushed as normal
+
+* Good error message really matters
+
+In retrospect, I think if I can get a more meaningful error message from either Rpush or APNs, I can definitely fix this issue much quicker, instead of spending two days on this.
+
+What I'm expecting here is an error message that can directly lead me to the invalid token issue, but both Rpush and APNs have failed to provided me this kind of error.
+
+** Better error message from Rpush (Library)
+
+There's only one possible error for this case from Rpush[fn:4]:
+
+#+begin_src groovy
+
+[Connection 0] Lost connection to gateway.push.apple.com:2195 (#{error.class.name}, #{error.message}), reconnecting...
+#+end_src
+
+This error doesn't provide anything helpful that can lead me to the problem I need to solve.
+
+I still need to Google it. And in this case, Google leads me to the wrong solution (Invalid certificate[fn:2]).
+
+I think there are two possible improvements here:
+
+1. A small improvement could be adding the possible cause to the original error message (which is what the newest Rpush is doing).
+2. A better improvement could be parsing the error responses from APNs and provide more meaningful error messages for developers.
+
+** Better error message from APNs (API responses)
+
+I didn't check the error message from APNs in the debugging process. But this reminds me of the error message from AWS[fn:5].
+
+It's not easy to provide meaningful error messages in the API responses, because
+
+1. It's already hard to implement the right logic.
+2. If we provide too much info (like returning "This user doesn't exist" for invalid username but "The password is wrong" for wrong password), it might be used to attack our system.
+
+But I think it's still possible to do that:
+
+1. Return "Invalid certificate or device_token", like what most sites are doing now (returning "invalid username or password") for their user authentication
+2. Do validations on device_token and return the error.
+
+* Learn from programming language error messages
+
+More and more attentions are paying to good error messages.
+
+Languages like Elixir and Elm[fn:6] are providing pretty good error messages.
+
+I heard people saying that they can implement some Elm functions just by following the error message, without looking for documentations.
+
+I think error message definitely serves an important role in the future of programming (languages/libraries/APIs).
+
+If you are interested, you can also check out [[https://www.youtube.com/watch?v=dEC5cRvoeZw][this talk]][fn:7] by Ben Orenstein.
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/rpush/rpush][rpush/rpush: The push notification service for Ruby.]]
+
+[fn:2]
+
+[[https://github.com/rpush/rpush/issues/146][Invalid certificate · Issue #146 · rpush/rpush]]
+
+[fn:3]
+
+[[https://firebase.google.com/][Firebase]]
+
+[fn:4]
+
+[[https://github.com/rpush/rpush/blob/master/spec/unit/daemon/tcp_connection_spec.rb#L182][rpush/tcp_connection_spec.rb at master · rpush/rpush]]
+
+[fn:5]
+
+[[http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/#org838ee70][Ambiguous Errors from API Gateway - Build an Image Resizing Microservice on AWS Lambda - dsdshome]]
+
+[fn:6]
+
+[[http://elm-lang.org/blog/compiler-errors-for-humans][compiler errors for humans]]
+
+[fn:7]
+
+[[https://www.youtube.com/watch?v=dEC5cRvoeZw][Rocky Mountain Ruby 2017 - Trust, But Verify (Programmatically) by Ben Orenstein - YouTube]]

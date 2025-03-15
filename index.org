@@ -1,0 +1,34 @@
+#+TITLE: Welcome!
+
+Hi there!
+
+I'm Yiming Chen, a software engineer. This is my blog, a place for me to write about my Life and Software.
+
+It's my greatest pleasure that you find this tiny place in this enormous world. So if you want to know more about me as a person, you can go to [[https://yiming.dev/about/][About]]. And feel free to contact me via [[mailto:dsdshcym@gmail.com][email]]. I'd be glad to chat.
+
+Finally, I'd like to put a list of my favorite articles in this blog here. You may start reading my blog from them:
+
+- [[/blog/2017/10/30/how-to-do-code-review-correctly/][How to do Code Review correctly]]
+- [[/blog/2018/11/15/similarities_between_tdd_and_management/][Similarities between TDD and Management]]
+- [[/blog/2019/03/12/test-suite-as-a-complexity-measuring-tool/][Test Suite as a Complexity Measuring Tool]]
+- [[/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi Metz's Rules for OOP]]
+- [[/blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix/][How to do Outside-In TDD with Phoenix]]
+- [[/blog/2019/05/16/defining-a-mvp-by-setting-okrs/][Defining a MVP by Setting OKRs]]
+- [[/blog/2019/05/27/estimating-is-hard-lets-cut-scope/][Estimating is Hard, Let's Cut Scope!]]
+- [[/blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process/][Using Vim/Emacs is like a refactoring process]]
+- [[/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/][Compare Doom-emacs, Spacemacs, and vanilla Emacs]]
+- [[/blog/2019/05/22/my-gtd-workflow-2019-ver/][My GTD Workflow (2019 ver.)]]
+
+Thank you for your visiting!
+
+* If You Want To Listen To My Opinions...
+
+In 2010, I started listening to podcasts. Now, podcasts are an important part of my life. And I want to put my voice out there.
+
+These are the podcasts I was on. Topics varied from programming to project management and career development. I'm also preparing my own show, so stay tuned!
+
+** [[https://devchat.tv/elixir-mix/emx-046-dont-repeat-your-domain-knowledge-with-yiming-chen/][EMx 046: Don't Repeat Your Domain Knowledge with Yiming Chen - Devchat.tv]]
+** [[https://hyperbola.link/][二重曲线 Hyperbola]]
+*** [[https://hyperbola.link/3][Hyperbola Episode 3: From Agile to Beyond]]
+*** [[https://hyperbola.link/4][Hyperbola Episode 4: 论 Deadline 的重要性]]
+*** [[https://hyperbola.link/5][Hyperbola Episode 5: 成为更高效的软件工程师]]

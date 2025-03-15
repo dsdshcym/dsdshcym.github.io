@@ -1,0 +1,241 @@
+#+TITLE: Build an Image Resizing Microservice on AWS Lambda
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-31]
+#+URI:         blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/index.html
+#+TAGS:        Serverless, AWS, Lambda
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I'm working on a project which uses Carrierwave to resize user uploaded images and upload processed images to S3. It's a slow process and we want to speed it up.
+
+After some research and discussion, we decided to use AWS Lambda and build a microservice to handle this work.
+
+I basically followed the steps explained in AWS official blog[fn:1] to create an image resizing lambda function. I thought it would be a easy task. But I still encountered some unexpected problems.
+
+* Outdated Instructions
+
+The instructions in that blog post[fn:1] is pretty clear, but I found AWS Lambda had changed some of their UI and setup process so that the whole process is a little different now.
+
+Below is the process I use to setup a new Lambda function.
+
+1. Create a new S3 bucket
+
+   1. set bucket policy
+
+#+begin_src json
+
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1508988363603",
+    "Statement": [
+        {
+            "Sid": "Stmt1508988359028",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::kidizz-serverless-image-resize-test/*"
+        }
+    ]
+}
+#+end_src
+   2. setup Static Website Hosting for conditional redirection
+
+      - enable website hosting
+      - index document: index.html
+
+2. Create the Lambda function
+
+   1. enter name
+   2. set role
+
+      - Edit Policy Document
+
+#+begin_src json
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::__YOUR_BUCKET_NAME_HERE__/*"
+    }
+  ]
+}
+#+end_src
+
+   3. upload zip file that contains the code ([[https://github.com/awslabs/serverless-image-resizing/raw/master/dist/function.zip][https://github.com/awslabs/serverless-image-resizing/raw/master/dist/function.zip]])
+   4. set environment variables
+
+      BUCKET
+
+          bucket name
+
+#+begin_src awk
+
+kidizz-serverless-image-resize-test
+#+end_src
+      URL
+
+          bucket endpoint
+
+#+begin_src awk
+
+http://kidizz-serverless-image-resize-test.s3-website-us-east-1.amazonaws.com
+#+end_src
+
+   5. set Memory to 1536MB
+   6. set timeout to 10s
+   7. setup API Gateway
+
+      - for Security, choose Open
+
+3. Setup S3 redirection rule
+
+   - Edit Redirection Rules in Static Website Hosting
+
+#+begin_src xml
+
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals/>
+      <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <Protocol>https</Protocol>
+      <HostName>__YOUR_API_HOSTNAME_HERE__(qtb42kl5xe.execute-api.us-east-1.amazonaws.com)</HostName>
+      <ReplaceKeyPrefixWith>prod/resize?key=</ReplaceKeyPrefixWith>
+      <HttpRedirectCode>307</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>
+#+end_src
+
+* Script from Official Repo
+
+Because the manual setup process is kind of On the other hand, the scripts in [[https://github.com/awslabs/serverless-image-resizing][awslabs/serverless-image-resizing]] repo is working as expected. Just follow the following steps to deploy the code in this repo:
+
+1. Setup aws-cli tool:
+
+#+begin_src awk
+aws configure
+#+end_src
+2. build function.zip:
+
+#+begin_src awk
+make dist
+#+end_src
+3. deploy the whole stack
+
+#+begin_src shell
+./bin/deploy
+#+end_src
+4. update the lambda function
+
+#+begin_src awk
+aws lambda update-function-code --function-name ServerlessImageResize-ResizeFunction-1X6W58ABKICYC --zip-file fileb://dist/function.zip
+#+end_src
+
+Notice that in step 3, the deploy script will create following things every time:
+
+1. a S3 bucket for storing images
+2. a Lambda Function for resizing images
+3. an API Gateway for calling Lambda if the file is missing in the S3 bucket.
+
+Two drawbacks for this strategy:
+
+1. Function updates
+
+   It won't update the Lambda Function for you when you called it next time. Instead, we need to use step 4 to do that.
+
+2. Cannot integrate into existing S3 bucket
+
+   In my project's scenario, we already have a S3 bucket running and storing things, so we would like to reuse this bucket instead of creating a new one.
+
+   But it's hard to achieve via Cloudformation (the core service deploy is using, kind of like AWS's docker-compose), since it's for setting up new services using a template.
+
+   So, to upgrade our old S3 bucket, I need to follow the steps in previous section, and I found it was very error-prone.
+
+* Ambiguous Errors from API Gateway
+
+When I setup a new lambda for an existing S3 bucket manually, I ran into several different errors from API Gateway:
+
+1. Internal Server Error
+
+   This is an easy one. It either means there is an exception when running the Lambda function, or the API Gateway has some error.
+
+   Most of the time, I just go to CloudWatch (AWS's logging service for Lambda), and check the logs, fix the Lambda code, then it would be fine.
+
+2. Missing Authentication Token
+
+   This error is both hard and easy.
+
+   It's hard because it's confusing when you see it for the first time. And it's reasonable because there are two potential reasons for this error:
+
+   1. The API Gateway permission was not set to Open (which means calling this API needs to provide some kind of token)
+   2. The invocation link for API Gateway you are using is wrong.
+
+   It's easy to understand because it's a common decision we as web developers would do to return 401 Unauthorized instead of 404 Not Found for sensitive resources.
+
+   And when I created the API Gateway via the official script, its invocation endpoint is /, and I can call it without any problems.
+
+   But when I created the API Gateway via the AWS console, its invocation endpoint is /[lambda_name], but I was still using
+
+* AWS Region Issue
+
+The final issue that cost me two days to debug was about AWS Regions.
+
+As we know that AWS has different regions to provide their best server for developers in different countries. And resources in different regions can not be shared quickly.
+
+When I created the Lambda manually for the first several times, I set the region to us-east-1 (which is the default one for this account). Then, even the configurations for S3 bucket, API Gateway and Lambda are all correct, the function call will still timeout and API Gateway won't send any response.
+
+This is a weird issue to an AWS newbie like me, especially when
+
+1. API Gateway doesn't send any response
+2. There is no errors in Lambda logs. And the resized images are stored correctly.
+3. The Cloudformation stack setup using the script are working correctly.
+
+So I spent almost two days on this.
+
+And finally, I noticed that the region for the S3 bucket and the Lambda function are not the same. So I recreated a Lambda function in the same region as the S3 bucket. Then everything works fine.
+
+* Summary
+
+Building a microservice, like image processing, using AWS Lambda is really convenient:
+
+1. Flexible
+
+   The lambda function can be updated on the fly. And the application code can stay the same. (This is one of the main benefits of microservices architecture)
+
+   Since we used Carrierwave before, we just need to remove the processing blocks for different versions, and override store_versions! to doing nothing, Carrierwave will no longer process nor upload different versions, but only upload the original image. By doing this, the migration would be very smooth. And we can refactor our application later.
+
+2. Cost-effective
+
+   AWS Lambda is costing based on the time/memory cost for each call. It would be definitely cheaper than a server that's running all the time.
+
+3. Fast
+
+   Before, we use Carrierwave to do all the image processing work. It's pretty slow from the user's perspective. (Because they need to wait for the processing and uploading finished)
+
+   Now, resized images are lazy-loading, i.e. they will be generated by Lambda function when user asks for it. When a user uploads the original image, we do not need to process it and upload multiple versions.
+
+   Thus, this is a huge improvement for our image processing speed.
+
+We will definitely try to use Lambda more in our applications, like video processing or other tasks alike. Stay tuned for my updates on this topic!
+
+* Footnotes
+[fn:1]
+
+[[https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/][Resize Images on the Fly with Amazon S3, AWS Lambda, and Amazon
+API Gateway - AWS Compute Blog]]

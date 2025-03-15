@@ -1,0 +1,86 @@
+#+TITLE: Make it Safe! (Book Review: Crucial Conversations)
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-06-14]
+#+URI:         blog/2019/06/14/make-it-safe-book-review-crucial-conversations/index.html
+#+TAGS:        Book Review, Communication
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I've always been thinking that communication is one of the most important (if not the most important) element for both living and working in a modern world. But I don't know how to communicate well. I rarely chat with my parents after my childhood. My partner think I talk too little. I express most of my idea through writings, but they are not conversations (at least not in a common sense).
+
+So one of my 2019 goals is to learn how to communicate well. This book, [[https://dsdshcym.github.io/clipping/2019/06/05/clippings-from-crucial-conversations/][Crucial Conversations: Tools for Talking When Stakes Are High]], taught me the most effective tool for having conversations: *Make it Safe* .
+
+* [[https://dsdshcym.github.io/clipping/2019/06/05/clippings-from-crucial-conversations/#org8e13ecd][Why is Safety Important?]]
+
+Dialogue (or conversation) is the free flow of meaning between two or more people. Thus this book uses the Pool of Shared Meaning as a metaphor for conversations. If one of the participants doesn't feel safe, she would not continue feed her thoughts into this pool. Then there is no dialogue anymore, since the flow of meaning is no longer free.
+
+* [[https://dsdshcym.github.io/clipping/2019/06/05/clippings-from-crucial-conversations/#org18fb812][How to Make it Safe?]]
+
+After knowing that making it safe is the way to hold a successful conversation, the rest of book is all about how to build this safety, and encourage meaning to flow freely.
+
+Among all this techniques and tools, I think the most important one is to Start with Heart.
+
+Start with Heart means two things:
+
+1. Focus on what I really want.
+2. Avoid the Fool's Choice. (Believe that we can tell the truth and keep a friend at the same time as long as we make it safe.)
+
+And as long as we've accomplish this, the rest of the story is easy. You can learn all the techniques from this book and try to use them. Or you can use other techniques that suits you and your conversations.
+
+In a word, making what you really want clear and knowing the strategy (make it safe) are the start point to hold your conversations successfully.
+
+* [[https://dsdshcym.github.io/clipping/2019/06/05/clippings-from-crucial-conversations/#org9a69c17][My Style Under Stress]]
+
+Learn our own style under stress is a prerequisite for spotting a conversation is no longer safe, and then fixing it. So I want to look back on my style under stress here. And hopefully, by writing it down, I'll be more aware of when I'm in an unsafe conversation.
+
+1. Going to silence
+
+   An obvious pattern of mine is that I'll become completely silent when I feel unsafe.
+
+   When I'm in a crucial conversation and feeling unsafe, I'll always shut my mouth up and only listen to the other person. But normally, I am not a talking person. (Maybe it is also an indicator that I don't feel safe most of the time?) So when I fell into my silent mode, it feels normal to the other person. This unawareness is hurting the conversation. Unfortunately, only I know that.
+
+   Furthermore, I'm still thinking tons of things in my mind, just not saying them out loud. Usually, this is because I'm still organizing my thoughts and waiting for them to settle down. But when I sort them out, I often find that the conversation has already ended or a conclusion has already been made.
+
+   (The fact that I need some time to organize my thoughts is also the reason that I prefer writing over talking in person. Because writing gives me enough time to make myself thinking clearly.)
+
+2. Agree to everything
+
+   Another pattern I have is that I'm prone to agree when I feel unsafe. I've already lost hope of persuading someone when it's unsafe. So I give up and just agree to whatever another is saying.
+
+   Afterwards, I would often find myself regretting my not speaking up. Then it's more costy to either revert the conclusion or proceed what I don't agree from my heart.
+
+In the future, I hope I can notice these bad behaviors early on and help others to make the conversation safe, so that we can communicate, for real.
+
+* [[https://dsdshcym.github.io/clipping/2019/06/05/clippings-from-crucial-conversations/#orgd44cdf8][Master My Stories]]
+
+Last takeaway but not the least: we live in stories, and it's the story we tell ourselves that stirs our emotions. We can take control of our own emotions by assuming positive intent from others and telling a better story.
+
+This resonates with my current understanding and past experiences:
+
+- [[https://dsdshcym.github.io/clipping/2019/03/09/stop-thinking-in-your-head/][Stop Thinking in Your "Head" - dsdshome]]
+- [[https://knowyourteam.com/blog/2017/12/01/the-power-of-assuming-positive-intent/][The power of assuming positive intent - Know Your Team - Blog]]
+
+#+begin_quote
+
+  - Getting defensive is my greatest personal weakness.
+
+    - when you’re defensive, you stop listening.
+    - when you stop listening, you shut out critical information that could benefit you.
+
+  - the root cause of my defensiveness: I misread the intention behind what someone is saying.
+
+    - When you accuse another person of bad intentions, you create defensiveness.
+    - *Instead, assume good intentions, and your defensiveness goes away.*
+
+      1. Assume positive intent.
+      2. Thank them for their feedback.
+      3. And then listen. Don’t interrupt.
+      4. Ask questions. Clarify where they’re coming from.
+      5. And then form your own opinion about the content of what they’re saying and what their true intentions might be.
+
+#+end_quote
+
+And I've already been doing this for quite some time. I keep my thinking straight by putting my feet in others' shoes and always assume there must be a reason behind whatever they do to me.
+
+Hopefully, you will start thinking about your conversations from day to day. Maybe read this book as well, and tell me what you think. Always, I'd love to chat.

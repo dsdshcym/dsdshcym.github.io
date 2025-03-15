@@ -1,0 +1,59 @@
+#+TITLE: OKR Case Study #4 - Key Results Don't Have to Be Numeric
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-05-07]
+#+URI:         blog/2020/05/07/okr-case-study-4-key-results-don't-have-to-be-numeric/index.html
+#+TAGS:        OKR, Management, OKR Case Study
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+We've already known that [[https://yiming.dev/blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results/][Key Results need to be measurable]]. But when first start defining our OKRs, people may find it hard to define measurable Key Results. A common misunderstanding is: a measurable Key Result needs to have a number in it. This is not the case at all. *Key results are what matter the most to measure, but not something that are easy to measure.* This case study will show you why measurable != numeric and what's more important than being measurable for Key Results.
+
+* Does it really matter?
+#+begin_quote
+
+*Objective* : Share more knowledge among the team
+
+- KR: Host at least 1 workshop per month / Do not cancel a workshop
+
+#+end_quote
+
+Host at least 1 workshop per month is clearly a measurable Key Result. When reviewing it, we just check if there is a workshop every month in the past. Calculating the complete rate is also easy: # of workshops / # of months
+
+Similar thing for do not cancel a workshop. When reviewing it, we just ask "did you cancel a workshop in Q2?" If so, you fail this Key Result; if not, then you pass.
+
+But, *does it really matter?* Does having a workshop every month really matter? Does not cancelling a workshop really matter?
+
+* Think about best-case and worst-case scenarios
+
+To answer these questions, we can think about the best and the worst scenarios for each Key Result:
+
+In the best-case scenario, the team would have 1 workshop every month, without any cancellation. That's good, but what if these workshops have nothing to do with the knowledge we want to share? What if no one really learns anything from these workshops? Is it really what we want, even if we nail this Key Result?
+
+In the worst-case scenario, no workshop was hosted, or every planned workshop was canceled. This seems to be bad. But what if business goes as usual? What if everyone learned more things by their own and shared these knowledge via other channels? Maybe hosting workshop doesn't really matter. So what really matters?
+
+* Ask WHY to find what really matters
+
+[[https://yiming.dev/blog/2020/04/26/okr-case-study-3-okr-is-not-about-you/][Again]], only by asking *WHY* do we want to host workshops and to not cancel them, can we find what really matters. Some possible reasons for hosting regular workshops are:
+
+1. Building a culture around knowledge sharing
+2. Helping team members learn a specific topic or skill
+3. Building trust within the team (because cancelling planned meetings/workshops destroys this trust)
+
+These are the things that really matters. But they are hard to measure (how do you measure a culture, afterall?) So hosting 1 workshop per month was chosen to be this easy-to-measure result.
+
+* Refine our OKR to reflect what really matters
+
+Now that we've identified what really matters, we can refine our OKR:
+
+1. First, we can add more details to the Objective so it reflects our real goal here:
+
+#+begin_quote
+
+   Share more knowledge among the team -> Share more knowledge among the team to foster a knowledge sharing culture
+
+#+end_quote
+2. Second, find some results that can prove the Objective is achieved. If the Objective is to foster a knowledge sharing, then the number of workshop volunteers might be an useful Key Result. If the Objective is to help team members learn a specific topic, then we can check *if team members have used any knowledge from this topic* as a Key Result. Notice that the latter Key Result doesn't contain any number, but it is still a strong proof that the Objective is achieved, and checking it is still not hard.
+3. Finally, do not delete the original Key Result host at least 1 workshop per month. Put it in the Actions list. It may not be a good Key Result to track, but it's still a good action to take.
+
+So, [[https://svpg.com/team-objectives-empowerment/][don't let the tail wag the dog]]. Don't measure something only because it's easy to measure and kinda related to the Objective. For Key Results, being relevant and a high-priority for the objective is always more important than being measurable. An important Key Result is worth to measure, even if it's hard to do so (like a knowledge sharing culture). An unimportant result won't worth our time, even if measuring it only takes a second. Define your Key Results so that they really represent what actually matters.

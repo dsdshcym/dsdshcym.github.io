@@ -1,0 +1,96 @@
+#+TITLE: Every business is a relationships business - Million Dollar Consulting Review
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-11-01]
+#+URI:         blog/2019/11/01/every-business-is-a-relationships-business-million-dollar-consulting-review/index.html
+#+TAGS:        Book Review, Consulting
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Table of Contents
+
+- [[#org546a8a5]["We are all consultants"]]
+- [[#org187e962]["Wealth is discretionary time"]]
+- [[#orgc6551f7]["Marketing is the art and science of creating need"]]
+- [[#org0b74188]["Every business is a relationships business"]]
+- [[#org414b9dc][Don't charge by the hour, "charge by value"]]
+- [[#org51b5f60][Work for yourself]]
+
+If you ask me: who's been the best mentor I've ever had? I'll pick several names: [[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32][Sandi Metz]], [[https://dsdshcym.github.io/clipping/2019/04/07/tdd-gives-you-a-tractable-task-board/][J. B. Rainsberger]], [[http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/][Martin Fowler]], [[https://dsdshcym.github.io/clipping/2019/03/14/clippings-from-the-secrets-of-consulting/][Gerald
+Weinberg]], and so on. They are all great software consultants. I've learned a lot from their books, talks, and online courses. Naturally, I'm curious about their work: consulting.
+
+- What is consulting?
+- What is a consultant?
+- How can I become a successful consultant?
+
+In the book [[https://www.amazon.com/Million-Dollar-Consulting-Professionals-Practice/dp/1259588610/ref=dp_ob_title_bk][Million Dollar Consulting]], I found answers to all these questions and more. Most importantly, the wisdom from this book can be applied not only to consulting itself, but also to almost all kinds of work.
+
+* "We are all consultants"
+
+[[https://en.wikipedia.org/wiki/Consultant][Wikipedia]] defines consultant as "a professional who provides expert advice in a particular area". But this book gives a different definition: a consultant is an *expert* in one or more identified areas who partners with a client to improve the client’s condition.
+
+The key is to improve the client's condition, not to give advice. In this sense, almost every company, every people is a consultant. A product company like Google builds products to improve its users' condition. An employee is an expert who's hired to improve the employer's (or its clients') condition.
+
+Advice is just one of the best tools to improve the client's condition. As the book says: great consultants teach others how to do what they do and do not create codependencies. Thus,
+
+- a consultant gives advice to teach its client;
+- a product strives for user-friendliness to teach users how to use itself;
+- an employee becomes a mentor to teach juniors how to do senior stuffs.
+
+* "Wealth is discretionary time"
+
+Knowing that improving the client's condition is the key of our work, we also need to realize that money is simply the means to obtain wealth. We have to *continually work smarter, not harder.*
+
+- For a consultant, the key is to minimize labor while maximizing fees.
+- For a product team, the key is to minimize development efforts while maximizing feature sets (thus maximize the price).
+- For an employee, the key is to minimize work while maximizing impacts (thus maximize the compensation).
+
+* "Marketing is the art and science of creating need"
+
+To work smarter, marketing is one of the best tool we have. After all, without marketing, people won't know our great product even if we can build it effectively. That's why Rob Walling advocates "[[https://robwalling.com/2010/10/14/startup-marketing-part-6-why-you-should-start-marketing-the-day-you-start-coding/][start
+marketing the day you start coding]]".
+
+Then the book gives a way to market yourself as a consultant: *creating market gravity* , from passive methods like blog posts, books, public speaking, to active methods like advertising, referrals. Again, this market gravity thinking is universal:
+
+- For a consultant, she needs to generate and sustain market gravity to attract more clients.
+- For a product team, they need to generate and sustain market gravity to attract more users.
+- For an employee, she needs to generate and sustain market gravity to increase her impact.
+
+* "Every business is a relationships business"
+
+After the market gravity is sustained, the real business starts to kick in. But what is the key to business after all? The original quote from the book says "every business is a communications business". But as the book states right after:
+
+#+begin_quote
+
+1. Language controls discussions
+2. Discussions control relationships
+3. Relationships control business
+
+#+end_quote
+
+What does "relationships control business" mean anyway? I believe [[https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates/][trust is the key in a great relationship]]. If your customer doesn't trust your incentive, she won't sign the contract; if your customer doesn't trust your ability, she won't buy any product from you. On the other hand, if your customer trust your incentive, you can get to a conceptual agreement easily; if your customer trust your ability, even your product is not great yet, she can still buy it and count on you to improve it.
+
+So every business is a *relationships* business.
+
+- For a consultant, the key is to establish great relationships with clients and prospects.
+- For a product team, the key is to establish great relationships with users (also within the team).
+- For an employee, the key is to establish great relationships with employers.
+
+* Don't charge by the hour, "charge by value"
+
+Then the question comes down to how to charge your work. The answer from this book is: charge by the value, never charge by the hour.
+
+This thinking resonates with my personal experiences. I've worked on several hourly-billing projects, and it doesn't work well for me. (I'll write another post to elaborate why hourly-billing doesn't work, stay tuned!)
+
+* Work for yourself
+
+The final advice that strikes me from this book is preferring to be a solo practitioner and work for yourself.
+
+#+begin_quote
+
+*The only thing worse than shedding sweat and blood for your business is shedding sweat and blood for someone else’s business.*
+
+#+end_quote
+
+This idea is exactly what [[https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&qid=1525875626&sr=8-2&keywords=company+of+one&linkCode=sl1&tag=eik05-20&linkId=470605f6117f60ed70b3b4268f0e78d1]["Company of one"]] means. As always, great ideas are never new. [[https://www.amazon.com/Million-Dollar-Consulting-Alan-Weiss/dp/0071622101][The first edition of Million Dollar Consulting]] came out in 2009. And the book [[https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&qid=1525875626&sr=8-2&keywords=company+of+one&linkCode=sl1&tag=eik05-20&linkId=470605f6117f60ed70b3b4268f0e78d1][Company of one]] came out in 2019. 10 years have passed, more and more people are joining the army of one.
+
+I believe with the help of modern technologies, we will see more and more companies of one. Maybe in 2029, I'll be working for my own company of one too.

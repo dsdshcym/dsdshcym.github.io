@@ -1,0 +1,116 @@
+#+TITLE: Use :var in code blocks
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2016-04-14]
+#+URI:         blog/2016/04/14/use-var-in-code-blocks/index.html
+#+TAGS:        Org, Emacs
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+In this semester, I have a lab about simulating a 8 bit CPU. I need to do it from scratch. And I have some tables about the instructions. I want to extract some info out of it to form my instruction define file.
+
+* Table
+
+Here is the table:
+
+#+begin_src sql
+
+#+NAME: OperationDefinations
+| 编号 | 汇编码            | 指令码                 |
+|------+-------------------+------------------------|
+|    1 | ~MOV  Ai, #data8~ | ~00000iii dddddddd~    |
+|    2 | ~MOV  Ai, @Aj~    | ~00001iii 00000jjj~    |
+|    3 | ~MOV  @Aj, Ai~    | ~00010iii 00000jjj~    |
+|    4 | ~ADD  Ai, Aj~     | ~00011iii 00000jjj~    |
+|    5 | ~SUB  Ai, Aj~     | ~00100iii 00000jjj~    |
+|    6 | ~LD   Ai, addr~   | ~00101iii addrh addrl~ |
+|    7 | ~ST   Ai, addr~   | ~00110iii addrh addrl~ |
+|    8 | ~JMP  addr~       | ~00111000 addrh addrl~ |
+|    9 | ~JC   rel8~       | ~01000000 rel8~        |
+|   10 | ~BNKB rel8~       | ~01001000 rel8~        |
+|   11 | ~BNPB rel8~       | ~01010000 rel8~        |
+|   12 | ~JNKB addr~       | ~01011000 addrh addrl~ |
+|   13 | ~JNPB addr~       | ~01100000 addrh addrl~ |
+|   14 | ~SBC  Ai, #data8~ | ~01101iii dddddddd~    |
+|   15 | ~XOR  Ai, addr~   | ~01110iii addrh addrl~ |
+|   16 | ~DEC  @Ai~        | ~01111iii~             |
+|   17 | ~ASR  Ai~         | ~10000iii~             |
+|   18 | ~CALL addr~       | ~10001000 addrh addrl~ |
+|   19 | ~RET~             | ~10010000~             |
+#+TBLFM: $1=@#-1
+#+end_src
+* Results
+
+And I need to get something like this:
+
+#+begin_src awk
+
+-MOV
+Ai, #data8
+00000iii
+dddddddd
+#+end_src
+* Code
+
+Here is how I do this using Python and :var
+
+(The codes are a little bit ugly. But it's working.)
+
+- def generator
+
+#+begin_src python
+
+#+BEGIN_SRC python :results none :var operations=OperationDefinations[1:-1,1] :var instructions=OperationDefinations[1:-1,-1]
+    def replace_tilde(l):
+        return [s.replace("~", "") for s in l]
+
+    def correct(ins):
+        if "addr" in ins:
+            return "a" * 8
+        if "rel8" in ins:
+            return "r" * 8
+        return ins
+
+    operations = replace_tilde(operations)
+    instructions = replace_tilde(instructions)
+
+    with open("CPU8bit.def", "w") as f:
+      for operation, instruction in zip(operations, instructions):
+          operation = operation.split()
+          operation_name = '-' + operation[0]
+          operators = ' '.join(operation[1:])
+          f.write(operation_name + '\n')
+          f.write(operators + '\n')
+          for ins in instruction.split():
+              f.write(correct(ins) + '\n')
+          f.write('\n')
+
+      f.write("-enddef" + '\n')
+#+END_SRC
+#+end_src
+
+As we can see here, I'm using the :var option for code blocks to get the data from that table.
+
+1. First, add a name for the data source, no mater it's a table, list or even another code block.
+2. Then, use :var to assign these data or some of them to a variable.
+3. Use the variable in the script.
+
+* Note
+
+- We can specify a range for the data we want.
+
+  [1, 1]
+      Second row, second column
+  [1:-1,-1]
+      Second row to last row, last column
+  [5:-1,1:-1]
+      Sixth row to last row, second column to last column
+
+- The data may be casted into different classes. (str or int)
+
+* References
+
+For further infomations, see:
+
+1. [[https://acaird.github.io/2015/09/04/plots-from-org-mode-tables][Plotting Data in Org-Mode Tables with Python]]
+2. [[https://www.gnu.org/software/emacs/manual/html_node/org/var.html][The Org Manual: var]]

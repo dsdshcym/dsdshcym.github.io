@@ -1,0 +1,140 @@
+#+TITLE: Review of Refactoring: Improving the Design of Existing Code
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-04-09]
+#+URI:         blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/index.html
+#+TAGS:        Book Review, Refactor
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+- This book explains what is refactoring, why we need to refactor our code, when to refactor and how to refactor. And it shows us a list of code smells and a catalog of some typical refactoring techniques
+
+  - What
+
+    Refactoring is *the process of changing a software system* in such a way that *it does not alter the external behavior* of the code yet *improves its internal structure* .
+
+  - Why
+
+    - Refactoring Improves the Design of Software
+    - Refactoring makes software easier to understand
+    - Refactoring helps you find bugs
+    - Refactoring helps you program faster
+
+  - When
+
+    When you need to do something else and refactor can help you do that thing easier
+
+    1. When you find some duplications
+    2. When you add a function
+    3. When you need to fix a bug
+    4. When you review code
+
+  - How
+
+    1. Write tests first
+    2. Refactor
+    3. Keep the tests green
+
+  - Code smells
+
+    - Duplicated Code
+    - Long Method
+    - Large Class
+    - Long Parameter List
+    - Divergent Change
+    - Shotgun Surgery
+    - Feature Envy
+    - Data Clumps
+    - Primitive Obsession
+    - Switch Statements
+    - Parallel Inheritance Hierarchies
+    - Lazy Class
+    - Speculative Generality
+    - Temporary Field
+    - Message Chains
+    - Middle Man
+    - Inappropriate Intimacy
+    - Alternative Classes with Different Interfaces
+    - Incomplete Library Class
+    - Data Class
+    - Refused Bequest
+    - Comments
+
+  - Refactoring Techniques
+
+    - Extract Method
+    - Inline Method
+    - Inline Temp
+    - Replace Temp with Query
+    - Introduce Explaining Variable
+    - Split Temporary Variable
+    - Remove Assignments to Parameters
+    - Replace Method with Method Object
+    - Substitute Algorithm
+    - Move Method
+    - Move Field
+    - Extract Class
+    - Inline Class
+    - Hide Delegate
+    - Remove Middle Man
+    - Introduce Foreign Method
+    - Introduce Local Extension
+    - Self Encapsulate Field
+    - Replace Data Value with Object
+    - Change Value to Reference
+    - Change Reference to Value
+    - Replace Array with Object
+    - Duplicate Observed Data
+    - Change Unidirectional Association to Bidirectional
+    - Change Bidirectional Association to Unidirectional
+    - Replace Magic Number with Symbolic Constant
+    - Encapsulate Field
+    - Encapsulate Collection
+    - Replace Record with Data Class
+    - Replace Type Code with Class
+    - Replace Type Code with Subclasses
+    - Replace Type Code with State/Strategy
+    - Replace Subclass with Fields
+    - Decompose Conditional
+    - Consolidate Conditional Expression
+    - Consolidate Duplicate Conditional Fragments
+    - Remove Control Flag
+    - Replace Nested Conditional with Guard Clauses
+    - Replace Conditional with Polymorphism
+    - Introduce Null Object
+    - Introduce Assertion
+    - Tease Apart Inheritance
+    - Convert Procedural Design to Objects
+    - Separate Domain from Presentation
+    - Extract Hierarchy
+
+- It's really important for a software developer to recognize how important refactoring is and why/when/how to refactor our code. So the chapter 1 and 2 is really valuable.
+- The code smells list can help us know more about bad code. When I read them and compare these smells with my daily work, I found many code smells and I got a complete idea why they appeared and why they made me feeling bad.
+
+  - It's worth to note that *we don't need to refactor every time we spot a code smell* .
+
+    Code smells are just "smells", which are just code that may prevent us to change the functionalities. We need to decide which is better: to keep the code as the same or to refactor, based on our current project status and feature specs.
+
+- But I don't recommend to read the whole refactoring catelog carefully.
+
+  - I think it's enough to know the following two things:
+
+    1. The name of the refactoring (to communicate with other devs)
+    2. The summary of this refactoring (to get the basic idea of how to do this refactoring)
+
+  - The motivations are almost the same: to make our code more readable and easier to change.
+  - The mechanics are too Java specific (compile tools, assertions exceptions). Many of them are pretty easy in the Ruby world.
+  - So, for the catelog, I recommend skimming it once, have an idea of how many refactoring are there, and go back to a specific refactoring when you need to do it. And maybe build our own refactoring catelog
+
+- As for general rules for refactoring, we just need to keep in mind that:
+
+  - The things that make changes hard to make are called Code Smells. We need to find these pain points and use Refactor to eliminate them before we make some changes.
+  - Refactoring doesn't change the external behavior of the code so we need to *keep the tests green* .
+  - We need to *take small steps* each time so that if anything goes wrong, we can always revert it back.
+
+- Some external resources:
+
+  1. [[http://www.industriallogic.com/wp-content/uploads/2005/09/smellstorefactorings.pdf][Smells to Refactorings Quick Reference Guide]]
+  2. [[https://www.youtube.com/watch?v=PJjHfa5yxlU][RailsConf 2016 - Get a Whiff of This by Sandi Metz - YouTube]]
+  3. [[https://www.youtube.com/watch?v=DC-pQPq0acs][Aloha Ruby Conf 2012 Refactoring from Good to Great by Ben Orenstein - YouTube]]
+  4. [[http://robnapier.net/refactoring][Refactoring Slow and Steady - Cocoaphony]]

@@ -1,0 +1,2608 @@
+#+TITLE: Clippings from A Philosophy of Software Design
+* Table of Contents
+
+- [[#org1d9ed2e][Preface]]
+- [[#orgfc5f862][1 Introduction (It's All About Complexity)]]
+
+  - [[#org69d85fb][1.1 How to use this book]]
+
+- [[#orgd871c48][2 The Nature of Complexity]]
+
+  - [[#orgb2881e5][2.1 Complexity defined]]
+  - [[#orgf5ef24b][2.2 Symptoms of complexity]]
+  - [[#org13fa42c][2.3 Causes of complexity]]
+  - [[#org7cd10d3][2.4 Complexity is incremental]]
+  - [[#org8ce24f8][2.5 Conclusion]]
+
+- [[#orgba1d937][3 Working Code Isn't Enough]]
+
+  - [[#orge37de46][3.1 Tactical programming]]
+  - [[#org3ed0a98][3.2 Strategic programming]]
+  - [[#orgac737fc][3.3 How much to invest?]]
+  - [[#org63fc05b][3.4 Startups and investment]]
+  - [[#org9f2b865][3.5 Conclusion]]
+
+- [[#org7cd2cad][4 Modules Should Be Deep]]
+
+  - [[#org928ffe8][4.1 Modular design]]
+  - [[#org77b5b79][4.2 What’s in an interface?]]
+  - [[#org0ce7d2d][4.3 Abstractions]]
+  - [[#org5278897][4.4 Deep modules]]
+  - [[#org2d226c8][4.5 Shallow modules   ]]
+  - [[#org9b578ca][4.6 Classitis]]
+  - [[#org1b9174a][4.7 Examples: Java and Unix I/O]]
+  - [[#org1269e7b][4.8 Conclusion]]
+
+- [[#org9aa2ef0][5 Information Hiding (and Leakage)]]
+
+  - [[#org669fa78][5.1 Information hiding]]
+  - [[#org4186877][5.2 Information leakage   ]]
+  - [[#orgaec02da][5.3 Temporal decomposition   ]]
+  - [[#org91eb2cb][5.4 Example: HTTP server]]
+
+    - [[#org0042bfa][5.5 Example: too many classes]]
+    - [[#org0b44f4f][5.6 Example: HTTP parameter handling]]
+    - [[#orgbe2ddcd][5.7 Example: defaults in HTTP responses]]
+
+  - [[#orge9e3a2e][5.8 Information hiding within a class]]
+  - [[#orge64d313][5.9 Taking it too far]]
+  - [[#org1e87f39][5.10 Conclusion]]
+
+- [[#orgf31e735][6 General-Purpose Modules are Deeper]]
+
+  - [[#org2cfee25][6.1 Make classes somewhat general-purpose]]
+  - [[#orgdfcb514][6.2 Example: storing text for an editor]]
+
+    - [[#orgc82e266][6.3 A more general-purpose API]]
+    - [[#org5b5c2a3][6.4 Generality leads to better information hiding]]
+
+  - [[#org96c0d02][6.5 Questions to ask yourself]]
+  - [[#org2fe3342][6.6 Conclusion]]
+
+- [[#org7e89f9f][7 Different Layer, Different Abstraction]]
+
+  - [[#org11bcf10][7.1 Pass-through methods]]
+  - [[#orge9bfefd][7.2 When is interface duplication OK?]]
+  - [[#orge2d438d][7.3 Decorators]]
+  - [[#org2bbecb8][7.4 Interface versus implementation]]
+  - [[#orgb72eecc][7.5 Pass-through variables]]
+  - [[#org99f0566][7.6 Conclusion]]
+
+- [[#org44b1b0c][8 Pull Complexity Downwards]]
+
+  - [[#org48567f6][8.1 Example: editor text class]]
+  - [[#org7ed6a09][8.2 Example: configuration parameters]]
+  - [[#orga01c139][8.3 Taking it too far]]
+  - [[#org4bb147f][8.4 Conclusion]]
+
+- [[#orgbfea5cc][9 Better Together Or Better Apart?]]
+
+  - [[#org8322c61][9.1 Bring together if information is shared]]
+  - [[#orgc9fc10c][9.2 Bring together if it will simplify the interface]]
+  - [[#org8d45eb1][9.3 Bring together to eliminate duplication]]
+  - [[#orge385e94][9.4 Separate general-purpose and special-purpose code]]
+
+    - [[#orge363abb][Red Flag: Repetition   ]]
+
+  - [[#org0b59f61][9.5 Example: insertion cursor and selection]]
+
+    - [[#orgbab8203][Red Flag: Special-General Mixture   ]]
+
+  - [[#org1f1af79][9.6 Example: separate class for logging]]
+  - [[#org6669cef][9.7 Example: editor undo mechanism]]
+  - [[#orgfb912f7][9.8 Splitting and joining methods]]
+
+    - [[#orgba28e4f][Red Flag: Conjoined Methods]]
+
+  - [[#orgade6301][9.9 Conclusion]]
+
+- [[#orgc62fe20][10 Define Errors Out Of Existence]]
+
+  - [[#org530df5b][10.1 Why exceptions add complexity]]
+  - [[#org25e7ea2][10.2 Too many exceptions]]
+  - [[#orgd2cab10][10.3 Define errors out of existence]]
+
+    - [[#org5ad55c4][10.4 Example: file deletion in Windows]]
+    - [[#orga42e283][10.5 Example: Java substring method]]
+
+  - [[#orgbdee626][10.6 Mask exceptions]]
+  - [[#orge29d90a][10.7 Exception aggregation]]
+  - [[#org4a79e5b][10.8 Just crash?]]
+  - [[#org7d53fec][10.9 Design special cases out of existence]]
+  - [[#org4835b88][10.10 Taking it too far]]
+  - [[#org3173f89][10.11 Conclusion]]
+
+- [[#orgab74cb5][11 Design it Twice]]
+- [[#org4e1aa1d][12 Why Write Comments? The Four Excuses]]
+
+  - [[#org0b6bda1][12.1 Good code is self-documenting]]
+  - [[#orgcbabf50][12.2 I don't have time to write comments]]
+  - [[#org96da643][12.3 Comments get out of date and become misleading]]
+  - [[#org2cbed86][12.4 All the comments I have seen are worthless]]
+  - [[#org5232fcc][12.5 Benefits of well-written comments]]
+
+- [[#org94aa247][13 Comments Should Describe Things that Aren't Obvious from the Code]]
+
+  - [[#orgb250138][13.1 Pick conventions]]
+  - [[#orgae20215][13.2 Don't repeat the code]]
+
+    - [[#org63a9ee6][Red Flag: Comment Repeats Code   ]]
+
+  - [[#orgc03dff3][13.3 Lower-level comments add precision]]
+  - [[#org3152093][13.4 Higher-level comments enhance intuition]]
+  - [[#org7b2e259][13.5 Interface documentation]]
+
+    - [[#orgbb81e6f][Red Flag: Implementation Documentation Contaminates Interface   ]]
+
+  - [[#orga03be36][13.6 Implementation comments: what and why, not how]]
+  - [[#orgf322738][13.7 Cross-module design decisions]]
+  - [[#org38979cd][13.8 Conclusion]]
+  - [[#org5a334aa][13.9 Answers to questions from Section 13.5]]
+
+- [[#org04d11c7][14 Choosing Names]]
+
+  - [[#orgf9a274f][14.1 Example: bad names cause bugs]]
+  - [[#org16be545][14.2 Create an image]]
+  - [[#org3518aa1][14.3 Names should be precise]]
+
+    - [[#org7380887][Red Flag: Vague Name   ]]
+    - [[#org447ca83][Red Flag: Hard to Pick Name   ]]
+
+  - [[#org5e16465][14.4 Use names consistently]]
+  - [[#org58f7dda][14.5 A different opinion: Go style guide]]
+  - [[#org05ec677][14.6 Conclusion]]
+
+- [[#orgf14bd93][15 Write The Comments First]]
+
+  - [[#org7680244][15.1 Delayed comments are bad comments]]
+  - [[#org5279497][15.2 Write the comments first]]
+  - [[#org5ce02e8][15.3 Comments are a design tool]]
+
+    - [[#org0acf077][Red Flag: Hard to Describe]]
+
+  - [[#orgf656501][15.4 Early comments are fun comments]]
+  - [[#orgac5d423][15.5 Are early comments expensive?]]
+  - [[#orga8441db][15.6 Conclusion]]
+
+- [[#org8e152da][16 Modifying Existing Code]]
+
+  - [[#org6ec9eb0][16.1 Stay strategic]]
+  - [[#orgb0f30a2][16.2 Maintaining comments: keep the comments near the code]]
+  - [[#orgd17fcab][16.3 Comments belong in the code, not the commit log]]
+  - [[#org264e2c4][16.4 Maintaining comments: avoid duplication]]
+  - [[#orge1c0cea][16.5 Maintaining comments: check the diffs]]
+  - [[#org415840b][16.6 Higher-level comments are easier to maintain]]
+
+- [[#org5e8490e][17 Consistency]]
+
+  - [[#org0b84cd2][17.1 Examples of consistency]]
+  - [[#orgf45f1c7][17.2 Ensuring consistency]]
+  - [[#org136a4aa][17.3 Taking it too far]]
+  - [[#org213e4b8][17.4 Conclusion]]
+
+- [[#org12d6eb2][18 Code Should be Obvious]]
+
+  - [[#org4d8aa61][18.1 Things that make code more obvious]]
+  - [[#org2550bb1][18.2 Things that make code less obvious]]
+
+    - [[#org643f8a5][Red Flag: Nonobvious Code   ]]
+
+  - [[#org0e0ab63][18.3 Conclusion]]
+
+- [[#org6d6d1a0][19 Software Trends]]
+
+  - [[#orge8ac35e][19.1 Object-oriented programming and inheritance]]
+  - [[#org622c86f][19.2 Agile development]]
+  - [[#org579cdc2][19.3 Unit tests]]
+  - [[#orge5bf41e][19.4 Test-driven development]]
+  - [[#org6e66413][19.5 Design patterns]]
+  - [[#org47e0b51][19.6 Getters and setters]]
+  - [[#org6c143d6][19.7 Conclusion]]
+
+- [[#orgb73c199][20 Designing for Performance]]
+
+  - [[#org7ec9efc][20.1 How to think about performance]]
+  - [[#orgcb43dd6][20.2 Measure before modifying]]
+  - [[#org9ea0cfb][20.3 Design around the critical path]]
+  - [[#org48e482f][20.4 An example: RAMCloud Buffers]]
+  - [[#org2fdbe76][20.5 Conclusion]]
+
+- [[#org7f6b8e6][21 Conclusion]]
+
+* Preface
+
+- [[https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf][On the Criteria To Be Used in Decomposing Systems into Modules]]
+- The most fundamental problem in computer science is problem decomposition
+
+  - The central design task we face every day
+  - We teach for loops and object-oriented programming, but not software design.
+
+- There is a huge variation in quality and productivity among programmers
+
+  - We have made little attempt to understand what makes the best programmers so much better or to teach those skills in our classes.
+  - *Outstanding performance in many fields is related more to high-quality practice than innate ability*
+
+    - Students learn best by writing code, making mistakes, and then seeing how their mistakes and the subsequent fixes relate to the principles.
+
+- The overall goal is to *reduce complexity* ; this is more important than any particular principle or idea you read here
+
+* 1 Introduction (It's All About Complexity)
+
+- Why?
+
+  - All programming requires is a creative mind and the ability to organize your thoughts.
+  - This means that the greatest limitation in writing software is our ability to understand the systems we are creating.
+  - The larger the program, and the more people that work on it, the more difficult it is to manage complexity.
+
+- How?
+
+  - Good development tools can help us deal with complexity. But there is a limit to what we can do with tools alone.
+  - simpler designs allow us to build larger and more powerful systems before complexity becomes overwhelming.
+  - There are two general approaches to fighting complexity,
+
+    1. eliminate complexity by making code simpler and more obvious.
+    2. encapsulate it, so that programmers can work on a system without being exposed to all of its complexity at once. (modular design)
+
+  - Because software is so malleable, software design is a continuous process that spans the entire lifecycle of a software system;
+
+- Incremental Development over Waterfall
+
+  - It isn't possible to visualize the design for a large software system well enough to understand all of its implications before building anything.
+  - The incremental approach works for software because software is malleable enough to allow significant design changes partway through implementation.
+  - Incremental development means that
+
+    1. software design is never done.
+    2. continuous redesign.
+
+- This book is about how to use complexity to guide the design of software throughout its lifetime.
+- This book has two overall goals.
+
+  1. describe the nature of software complexity:
+
+     - what does "complexity" mean
+     - why does it matter
+     - how can you recognize when a program has unnecessary complexity?
+
+  2. present techniques you can use during the software development process to minimize complexity.
+
+     - there isn't a simple recipe that will guarantee great software designs.
+     - a collection of higher-level concepts that border on the philosophical,
+     - These concepts may not immediately identify the best design, but you can use them to compare design alternatives and guide your exploration of the design space.
+
+** 1.1 How to use this book
+
+- The best way: *in conjunction with code reviews*
+
+  - When you read other people’s code, think about whether it conforms to the concepts discussed here and how that relates to the complexity of the code.
+  - It's easier to see design problems in someone else’s code than your own
+  - You can use the red flags described here to identify problems and suggest improvements.
+  - Reviewing code will also expose you to new design approaches and programming techniques.
+
+- One of the best ways to improve your design skills is to *learn to recognize red flags (code smells):* signs that a piece of code is probably more complicated than it needs to be.
+- Don't give up easily: the more alternatives you try before fixing the problem, the more you will learn.
+- When applying the ideas from this book, it’s important to use moderation and discretion
+
+  - Every rule has its exceptions
+  - Every principle has its limits
+  - *Beautiful designs reflect a balance between competing ideas and approaches*
+
+* 2 The Nature of Complexity
+
+- This chapter:
+
+  1. understand the enemy at a high level
+
+     1. What is "complexity"?
+     2. Unnecessarily complex?
+     3. What causes systems to become complex?
+
+  2. Lays out some basic assumptions that provide a foundation for the rest of the book
+
+- *The ability to recognize complexity* is a crucial design skill.
+
+  1. allows you to identify problems before you invest a lot of effort in them
+  2. allows you to make good choices among alternatives
+
+     - It's easier to tell whether a design is simple than it is to create a simple design
+     - Once you can recognize that a system is too complicated, you can use that ability to guide your design philosophy towards simplicity. -> Try a different approach and see if that is simpler.
+     - Over time, you will notice that certain techniques tend to result in simpler designs, while others correlate with complexity. -> This allows you to produce simpler designs more quickly.
+
+** 2.1 Complexity defined
+
+- Complexity is anything related to the structure of a software system that *makes it hard to understand and modify the system*
+- Complexity can take many forms
+- Complexity is determined by the activities that are most common (the part that are touched often) \(C=\sum_p{c_p t_p}\)
+
+  - The overall complexity of a system (C) is determined by the complexity of each part p (c_p) weighted by the fraction of time developers spend working on that part (t_p).
+  - Isolating complexity in a place where it will never be seen is almost as good as eliminating the complexity entirely.
+
+- Complexity is more apparent to readers than writers.
+
+  - Your job as a developer is not just to create code that you can work with easily, but to *create code that others can also work with easily.*
+
+** 2.2 Symptoms of complexity
+
+- 1. Change amplification
+
+     - A seemingly simple change requires code modifications in many different places.
+     - One of the goals of good design is to *reduce the amount of code that is affected by each design decision* , so design changes don’t require very many code modifications.
+
+  2. Cognitive load
+
+     - Refers to how much a developer needs to know in order to complete a task.
+     - Why a higher cognitive load is bad: there is a greater risk of bugs because they have missed something important.
+     - Cognitive load arises in many ways, such as
+
+       - APIs with many methods,
+       - global variables,
+       - inconsistencies,
+       - dependencies between modules.
+
+     - System designers sometimes assume that complexity can be measured by lines of code
+
+       - There are costs (of fewer LoCs) associated with cognitive load
+       - *Sometimes an approach that requires more lines of code is actually simpler, because it reduces cognitive load.*
+
+  3. Unknown unknowns
+
+     - It is not obvious
+
+       1. which pieces of code must be modified to complete a task,
+       2. what information a developer must have to carry out the task successfully
+
+     - The worst: *it is unclear what to do or whether a proposed solution will even work*
+
+       1. There is something you need to know
+       2. But there is no way for you to find out what it is, or even whether there is an issue
+       3. You won't find out about it until bugs appear after you make a change
+       4. The only way to be certain is to read every line of code in the system, which is impossible for systems of any size
+
+- One of the most important goals of good design is for a system to be obvious
+
+  - This is the opposite of high cognitive load and unknown unknowns
+  - In an obvious system, a developer can
+
+    1. quickly understand how the existing code works and what is required to make a change
+    2. make a quick guess about what to do, without thinking very hard, and yet be confident that the guess is correct
+
+  - 18 Code Should be Obvious
+
+** 2.3 Causes of complexity
+
+- Complexity is caused by two things
+
+  1. #+begin_quote
+
+     A dependency exists when a given piece of code cannot be understood and modified in isolation
+
+#+end_quote
+
+     - Dependencies are a fundamental part of software and can’t be completely eliminated.
+     - However, one of the goals of software design is to reduce the number of dependencies and to make the dependencies that remain *as simple and obvious as possible.*
+
+  2. #+begin_quote
+
+     Obscurity occurs when important information is not obvious.
+
+#+end_quote
+
+     - Obscurity is often associated with dependencies, where it is not obvious that a dependency exist
+     - Inconsistency is also a major contributor to obscurity:
+     - In many cases, obscurity comes about because of inadequate documentation
+     - However, obscurity is also a design issue
+
+       - If a system has a clean and obvious design, then it will need less documentation.
+       - The need for extensive documentation is often a red flag that the design isn't quite right.
+       - *The best way to reduce obscurity is by simplifying the system design.*
+
+- Together, dependencies and obscurity account for the [[#orgeae23c4][three
+manifestations of complexity]]
+
+  - Dependencies lead to change amplification and a high cognitive load.
+  - Obscurity creates unknown unknowns, and also contributes to cognitive load
+  - f we can find design techniques that minimize dependencies and obscurity, then we can reduce the complexity of software.
+
+** 2.4 Complexity is incremental
+
+- Complexity isn't caused by a single catastrophic error; it accumulates in lots of small chunks
+- A single dependency or obscurity, by itself, is unlikely to affect significantly the maintainability of a software system.
+- The incremental nature of complexity makes it *hard to control*
+- Once complexity has accumulated, it is hard to eliminate, since fixing a single dependency or obscurity will not, by itself, make a big difference
+- In order to slow the growth of complexity, you must adopt a "zero tolerance" philosophy
+
+** 2.5 Conclusion
+#+begin_quote
+
+Complexity comes from an accumulation of dependencies and obscurities. As complexity increases, it leads to change amplification, a high cognitive load, and unknown unknowns. As a result, it takes more code modifications to implement each new feature. In addition, developers spend more time acquiring enough information to make the change safely and, in the worst case, they can't even find all the information they need. The bottom line is that complexity makes it difficult and risky to modify an existing code base.
+
+#+end_quote
+* 3 Working Code Isn't Enough
+
+- This chapter:
+
+  1. If you want a good design, you must take a more strategic approach where you invest time to produce clean designs and fix problems.
+  2. Why the strategic approach produces better designs and is actually cheaper than the tactical approach over the long run
+
+** 3.1 Tactical programming
+
+- In the tactical approach, your main focus is to get something working
+- Tactical programming makes it nearly impossible to produce a good system design
+- The problem is that it's *short-sighted*
+
+  - Planning for the future isn't a priority
+  - You don't spend much time looking for the best design
+  - You tell yourself that it's OK to add a bit of complexity or introduce a small kludge or two
+  - This is how systems become complicated
+
+- Almost every software development organization has at least one developer who takes tactical programming to the extreme: a tactical tornado
+
+** 3.2 Strategic programming
+
+- The first step towards becoming a good software designer is to *realize that working code isn't enough.*
+
+  - It's not acceptable to introduce unnecessary complexities in order to finish your current task faster.
+  - The most important thing is the long-term structure of the system.
+
+- - Your primary goal must be to *produce a great design, which also happens to work.*
+  - Strategic programming requires an investment mindset.
+
+    - Invest time to improve the design of the system.
+    - These investments will slow you down a bit in the short term, but they will speed you up in the long term
+    - Proactive investments
+
+      1. it's worth taking a little extra time to find a simple design for each new class; rather than implementing the first idea that comes to mind, try a couple of alternative designs and pick the cleanest one.
+      2. Try to imagine a few ways in which the system might need to be changed in the future and make sure that will be easy with your design.
+      3. Writing good documentation is another example of a proactive investment.
+
+    - Reactive investments (No matter how much you invest up front, there will inevitably be mistakes in your design decisions.)
+
+      - When you discover a design problem, don't just ignore it or patch around it; take a little extra time to fix it.
+      - If you program strategically, you will continually make small improvements to the system design.
+
+** 3.3 How much to invest?
+
+- The ideal design tends to emerge in bits and pieces, as you get experience with the system
+- The best approach is to *make lots of small investments on a continual basis*
+
+  - Spend about 10-20% of the total development time on investments
+
+    - Small enough that it won't impact your schedules significantly
+    - Large enough to produce significant benefits over time
+
+      - It won't be long before you're developing at least 10–20% faster than you would if you had programmed tactically.
+      - At this point your investments become free: the benefits from your past investments will save enough time to cover the cost of future investments.
+
+  - Poor code quality slows development by at least 20%
+
+** 3.4 Startups and investment
+
+- In some environments (early-stage startups) there are strong forces working against the strategic approach
+
+  - *Once a code base turns to spaghetti, it is nearly impossible to fix.*
+  - The payoff for good (or bad) design comes pretty quickly, so there's a good chance that the tactical approach won't even speed up your first product release.
+  - One of the most important factors for success of a company is *the quality of its engineers.*
+
+    - The best way to lower development costs is to hire great engineers
+    - The best engineers care deeply about good design.
+    - If your code base is a wreck, word will get out, and this will make it harder for you to recruit.
+    - As a result, you are likely to end up with mediocre engineers.
+
+  - Facebook changed its motto (from "Move fast and break things") to "Move fast with solid infrastructure" to encourage its engineers to invest more in good design.
+
+- Fortunately, it is also possible to succeed in Silicon Valley with a strategic approach.
+
+  - Google
+  - VMware
+
+** 3.5 Conclusion
+
+- Good design doesn't come for free. It has to be something you invest in continually, so that small problems don't accumulate into big
+- It's crucial to be consistent in applying the strategic approach and to think of investment as something to do today, not tomorrow. ones. Fortunately, good design eventually pays for itself, and sooner than you might think.
+- The most effective approach is one where *every engineer makes continuous small investments in good design.*
+
+* 4 Modules Should Be Deep
+
+- modular design:
+
+  - design systems so that developers only need to face a small fraction of the overall complexity at any given time.
+  - One of the most important techniques for managing software complexity
+
+- this chapter: basic principles of modular design
+
+** 4.1 Modular design
+
+- In modular design, a software system is decomposed into a collection of modules that are relatively independent.
+- Modules can take many forms,
+- In an ideal world, each module would be completely independent of the others:
+
+  - a developer could work in any of the modules without knowing anything about any of the other modules.
+  - In this world, the complexity of a system would be the complexity of its worst module.
+  - Unfortunately, this ideal is not achievable.
+
+- The goal of modular design is to *minimize the dependencies between modules* .
+- In order to manage dependencies, we think of each module in two parts:
+
+  1. Interface
+
+     - The interface consists of everything that a developer working in a different module must know in order to use the given module.
+     - Typically, the interface describes what the module does but not how it does it.
+
+  2. Implementation
+
+     - The implementation consists of the code that carries out the promises made by the interface.
+     - A developer should not need to understand the implementations of modules other than the one he or she is working in.
+
+- The best modules are those whose interfaces are much simpler than their implementations.
+
+  1. a simple interface minimizes the complexity that a module imposes on the rest of the system.
+  2. if a module is modified in a way that does not change its interface, then no other module will be affected by the modification. -> If a module’s interface is much simpler than its implementation, there will be many aspects of the module that can be changed without affecting other modules.
+
+** 4.2 What’s in an interface?
+
+- The interface to a module contains two kinds of information:
+
+  - formal
+
+    - specified explicitly in the code,
+    - some of these can be checked for correctness by the programming language.
+
+  - informal
+
+    - These are not specified in a way that can be understood or enforced by the programming language.
+
+      - its high-level behavior,
+      - constraints on the usage of a class
+
+    - an interface described in English is likely to be more intuitive and understandable for developers than one written in a formal specification language.
+    - For most interfaces the informal aspects are larger and more complex than the formal aspects.
+
+- One of the benefits of a clearly specified interface is that it indicates exactly what developers need to know in order to use the associated module. -> helps to eliminate the unknown unknowns
+
+** 4.3 Abstractions
+
+- An abstraction is *a simplified view of an entity* , which omits *unimportant* details.
+- Abstractions are useful because they make it easier for us to think about and manipulate complex things.
+- In modular programming, each module provides an abstraction in form of its interface.
+
+  - The interface presents a simplified view of the module’s functionality;
+  - the details of the implementation are unimportant from the standpoint of the module’s abstraction, so they are omitted from the interface.
+
+- the word "unimportant" is crucial.
+
+  - The more unimportant details that are omitted from an abstraction, the better.
+  - However, a detail can only be omitted from an abstraction if it is unimportant.
+
+- An abstraction can go wrong in two ways.
+
+  1. it can include details that are not really important;
+  2. omits details that really are important.
+
+     - An abstraction that omits important details is a false abstraction: it might appear simple, but in reality it isn’t.
+
+- The key to designing abstractions is
+
+  1. to understand what is important
+  2. to look for designs that minimize the amount of information that is important.
+
+- We depend on abstractions to manage complexity not just in programming, but pervasively in our everyday lives.
+
+** 4.4 Deep modules
+
+- The best modules are deep: they have a lot of functionality hidden behind a simple interface.
+- Module depth is a way of thinking about cost versus benefit.
+
+  - The benefit provided by a module is its functionality.
+  - The cost of a module (in terms of system complexity) is its interface.
+  - Interfaces are good, but more, or larger, interfaces are not necessarily better!
+
+- Examples
+
+  - Unix I/O
+  - garbage collectors
+
+** 4.5 Shallow modules   RedFlag
+
+- Shallow classes are sometimes unavoidable, but they don’t provide help much in managing complexity.
+- Small modules tend to be shallow.
+- Red Flag: Shallow Module
+
+** 4.6 Classitis
+
+- The conventional wisdom in programming is that classes should be small, not deep.
+- The extreme of the "classes should be small" approach is a syndrome I call classitis,
+
+  - which stems from the mistaken view that "classes are good, so more classes are better."
+  - Classitis may result in classes that are individually simple, but it increases the complexity of the overall system.
+
+    1. Small classes don’t contribute much functionality, so there have to be a lot of them, each with its own interface. These interfaces accumulate to create tremendous complexity at the system level.
+    2. Small classes also result in a verbose programming style, due to the boilerplate required for each class.
+
+** 4.7 Examples: Java and Unix I/O
+
+- interfaces should be designed to make the common case as simple as possible
+- If an interface has many features, but most developers only need to be aware of a few of them, the effective complexity of that interface is just the complexity of the commonly used features.
+
+** 4.8 Conclusion
+
+- By separating the interface of a module from its implementation, we can hide the complexity of the implementation from the rest of the system.
+- Users of a module need only understand the abstraction provided by its interface.
+- The most important issue in designing classes and other modules is to make them deep, so that they have simple interfaces for the common use cases, yet still provide significant functionality. This maximizes the amount of complexity that is concealed.
+
+* 5 Information Hiding (and Leakage)
+
+- Techniques for creating deep modules.
+
+** 5.1 Information hiding
+
+- The most important technique for achieving deep modules
+- [[https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf][On the Criteria To Be Used in Decomposing Systems into Modules]]
+
+  - The basic idea is that each module should encapsulate a few pieces of knowledge, which represent design decisions.
+  - The knowledge is embedded in the module's implementation but does not appear in its interface, so it is not visible to other modules.
+
+- The information hidden within a module usually consists of details about how to implement some mechanism.
+- The hidden information includes data structures and algorithms related to the mechanism.
+- Information hiding reduces complexity in two ways.
+
+  1. it simplifies the interface to a module.
+
+     - The interface reflects a simpler, more abstract view of the module's functionality and hides the details;
+     - this reduces the cognitive load on developers who use the module.
+
+  2. information hiding makes it easier to evolve the system.
+
+     - If a piece of information is hidden, there are no dependencies on that information outside the module containing the information,
+     - so a design change related to that information will affect only the one module.
+
+- When designing a new module, you should think carefully about what information can be hidden in that module.
+
+  - If you can hide more information, you should also be able to simplify the module's interface, and this makes the module deeper.
+  - Hiding variables and methods in a class by declaring them private isn't the same thing as information hiding.
+
+    - Private elements can help with information hiding
+    - However, information about the private items can still be exposed through public methods.
+
+- The best form of information hiding is when information is totally hidden within a module
+
+  - So that it is irrelevant and invisible to users of the module
+
+- Partial information hiding also has value
+
+  - If a particular feature or piece of information is only needed by a few of a class's users, and it is accessed through separate methods so that it isn't visible in the most common use cases, then that information is mostly hidden.
+  - Such information will create fewer dependencies than information that is visible to every user of the class.
+
+** 5.2 Information leakage   RedFlag
+
+- The opposite of information hiding
+- Information leakage occurs *when a design decision is reflected in multiple modules.* ( *when the same knowledge is used in multiple places* )
+
+  - : If a piece of information is reflected in the interface for a module, then by definition it has been leaked;
+  - : Information can be leaked even if it doesn't appear in a module's interface
+
+    - e.g. two classes both have knowledge of a particular file format
+    - more pernicious than leakage through an interface, because it isn't obvious.
+
+- One of the most important red flags in software design.
+
+  - One of the best skills you can learn as a software designer is *a high level of sensitivity to information leakage.*
+  - If you encounter information leakage between classes, ask yourself "How can I reorganize these classes so that this particular piece of knowledge only affects a single class?"
+
+    1. If the affected classes are relatively small and closely tied to the leaked information, it may make sense to merge them into a single class.
+    2. Pull the information out of all of the affected classes and create a new class that encapsulates just that information.
+
+       - However, this approach will be effective only if you can find a simple interface that abstracts away from the details;
+       - if the new class exposes most of the knowledge through its interface, then it won't provide much value (you've simply replaced back-door leakage with leakage through an interface).
+
+** 5.3 Temporal decomposition   RedFlag
+#+begin_src ruby
+
+Consider an application that reads a file in a particular format,
+modifies the contents of the file, and then writes the file out
+again. With temporal decomposition, this application might be broken
+into three classes: one to read the file, another to perform the
+modifications, and a third to write out the new version. Both the file
+reading and file writing steps have knowledge about the file format,
+which results in information leakage. The solution is to combine the
+core mechanisms for reading and writing files into a single
+class. This class will get used during both the reading and writing
+phases of the application.
+#+end_src
+
+- A design style
+- In temporal decomposition, the structure of a system corresponds to the time order in which operations will occur
+- It's easy to fall into the trap of temporal decomposition, because the order in which operations must occur is often on your mind when you code.
+- Most design decisions manifest themselves at several different times over the life of the application; *as a result, temporal decomposition often results in information leakage.*
+- Order usually does matter, so it will be reflected somewhere in the application
+
+  - However, it shouldn't be reflected in the module structure
+  - Unless that structure is consistent with information hiding (perhaps the different stages use totally different information).
+
+- *When designing modules, focus on the knowledge that's needed to perform each task, not the order in which tasks occur.*
+
+** 5.4 Example: HTTP server
+
+- The students in the course were asked to implement one or more classes to make it easy for Web servers to receive incoming HTTP requests and send responses.
+
+*** 5.5 Example: too many classes
+
+- The most common mistake made by students was to divide their code into a large number of shallow classes, which led to information leakage between the classes.
+- *Information hiding can often be improved by making a class slightly larger.*
+
+  1. Bring together all of the code related to a particular capability
+
+     - (such as parsing an HTTP request),
+     - so that the resulting class contains everything related to that capability.
+
+  2. Raise the level of the interface
+
+- Of course, it is possible to take the notion of larger classes too far (such as a single class for the entire application). 9 Better Together Or Better Apart?
+
+*** 5.6 Example: HTTP parameter handling
+
+- It's important to avoid exposing internal data structures
+
+  - Example:
+
+    - bad: getParams
+    - better: getParameter
+    - even better?: getIntParameter
+
+      - This saves the caller from having to request string-to-integer conversion separately, and hides that mechanism from the caller.
+      - Additional methods for other data types, such as getDoubleParameter, could be defined if needed.
+      - (All of these methods will throw exceptions if the desired parameter doesn't exist, or if it can't be converted to the requested type; the exception declarations have been omitted in the code above).
+
+*** 5.7 Example: defaults in HTTP responses
+
+- Interfaces should be designed to make the common case as simple as possible.
+- Whenever possible, classes should "do the right thing" without being explicitly asked.
+
+- Red Flag: Overexposure   RedFlag
+#+begin_quote
+
+  If the API for a commonly used feature forces users to learn about other features that are rarely used, this increases the cognitive load on users who don’t need the rarely used features.
+
+#+end_quote
+
+** 5.8 Information hiding within a class
+
+1. Try to design the private methods within a class so that each method encapsulates some information or capability and hides it from the rest of the class.
+2. In addition, try to minimize the number of places where each instance variable is used.
+
+   - if you can reduce the number of places where a variable is used, you will eliminate dependencies within the class and reduce its complexity.
+
+** 5.9 Taking it too far
+
+- Information hiding only makes sense when the information being hidden is not needed outside its module.
+- If the information is needed outside the module, then you must not hide it.
+- As a software designer, your goal should be to *minimize the amount of information needed outside a module*
+- But, it's important to recognize which information is needed outside a module and make sure it is exposed.
+
+** 5.10 Conclusion
+
+- Information hiding and deep modules are closely related.
+
+  - If a module hides a lot of information, that tends to increase the amount of functionality provided by the module while also reducing its interface. This makes the module deeper
+  - Conversely, if a module doesn't hide much information, then either it doesn't have much functionality, or it has a complex interface; either way, the module is shallow.
+
+- When decomposing a system into modules, try not to be influenced by the order in which operations will occur at runtime; that will lead you down the path of temporal decomposition, which will result in information leakage and shallow modules.
+- Instead, *think about the different pieces of knowledge that are needed to carry out the tasks of your application* , and design each module to encapsulate one or a few of those pieces of knowledge.
+
+  - This will produce a clean and simple design with deep modules.
+
+* 6 General-Purpose Modules are Deeper
+
+- The general-purpose approach seems consistent with the investment mindset discussed in Chapter 3, where you spend a bit more time up front to save time later on.
+- The special-purpose approach seems consistent with an incremental approach to software development.
+
+** 6.1 Make classes somewhat general-purpose
+
+- In my experience, the sweet spot is to implement new modules in a somewhat general-purpose fashion.
+
+  - The module's functionality should reflect your current needs, but its interface should not.
+  - Instead, the interface should be general enough to support multiple uses.
+
+- The most important (and perhaps surprising) benefit of the general-purpose approach is that *it results in simpler and deeper interfaces* than a special-purpose approach.
+
+  - The general-purpose approach can also save you time in the future, if you reuse the class for other purposes.
+  - However, even if the module is only used for its original purpose, the general-purpose approach is *still better because of its simplicity.*
+
+** 6.2 Example: storing text for an editor
+#+begin_src cpp
+void backspace(Cursor cursor);
+void delete(Cursor cursor);
+void deleteSelection(Selection selection);
+#+end_src
+
+- Each new user interface operation required a new method to be defined in the text class, so a developer working on the user interface was likely to end up working on the text class as well.
+- *One of the goals in class design is to allow each class to be developed independently* , but the specialized approach tied the user interface and text classes together.
+
+*** 6.3 A more general-purpose API
+#+begin_src cpp
+void insert(Position position, String newText);
+void delete(Position start, Position end);
+Position changePosition(Position position, int numChars);
+
+
+text.delete(cursor, text.changePosition(cursor, 1)); // delete
+text.delete(text.changePosition(cursor, -1), cursor); // backspace
+#+end_src
+*** 6.4 Generality leads to better information hiding
+
+- One of the most important elements of software design is *determining who needs to know what, and when.*
+
+  - When the details are important, it is better to make them explicit and as obvious as possible,
+  - Hiding this information behind an interface just creates obscurity.
+
+** 6.5 Questions to ask yourself
+
+- What is the simplest interface that will cover all my current needs?
+
+  - If you reduce the number of methods in an API without reducing its overall capabilities, then you are probably creating more general-purpose methods
+  - Reducing the number of methods makes sense only as long as the API for each individual method stays simple; if you have to introduce lots of additional arguments in order to reduce the number of methods, then you may not really be simplifying things.
+
+- In how many situations will this method be used?
+- Is this API easy to use for my current needs?
+
+  - This question can help you to determine when you have gone too far in making an API simple and general-purpose.
+  - If you have to write a lot of additional code to use a class for your current purpose, that’s a red flag that the interface doesn’t provide the right functionality
+
+** 6.6 Conclusion
+
+- General-purpose interfaces have many advantages over special-purpose ones.
+
+  - They tend to be simpler, with fewer methods that are deeper.
+  - They also provide a cleaner separation between classes, whereas special-purpose interfaces tend to leak information between classes.
+
+- Making your modules somewhat general-purpose is one of the best ways to reduce overall system complexity.
+
+* 7 Different Layer, Different Abstraction
+
+- If a system contains adjacent layers with similar abstractions, this is a red flag that suggests a problem with the class decomposition.
+- This chapter discusses situations where this happens, the problems that result, and how to refactor to eliminate the problems.
+
+** 7.1 Pass-through methods
+
+- When adjacent layers have similar abstractions, the problem often manifests itself in the form of pass-through methods.
+- A pass-through method is one that does little except invoke another method, whose signature is similar or identical to that of the calling method.
+- This typically indicates that there is not a clean division of responsibility between the classes.
+- Pass-through methods make classes shallower:
+
+  - they increase the interface complexity of the class, which adds complexity,
+  - but they don't increase the total functionality of the system.
+
+- Pass-through methods also create dependencies between classes:
+
+  - the interface to a piece of functionality should be in the same class that implements the functionality.
+  - consider the two classes and ask yourself "Exactly which features and abstractions is each of these classes responsible for?"
+  - The solution is to refactor the classes so that each class has a distinct and coherent set of responsibilities.
+
+** 7.2 When is interface duplication OK?
+
+- Having methods with the same signature is not always bad.
+
+  - The important thing is that each new method should contribute significant functionality.
+  - Pass-through methods are bad because they contribute no new functionality.
+
+- One example is a dispatcher.
+
+  - A dispatcher is a method that uses its arguments to select one of several other methods to invoke; then it passes most or all of its arguments to the chosen method.
+  - the dispatcher provides useful functionality: it chooses which of several other methods should carry out each task.
+
+- Another example is interfaces with multiple implementations,
+
+  - When several methods provide different implementations of the same interface, it reduces cognitive load.
+  - Once you have worked with one of these methods, it's easier to work with the others, since you don't need to learn a new interface.
+  - Methods like this are usually in the same layer and they don't invoke each other.
+
+** 7.3 Decorators
+
+- The motivation for decorators is to separate special-purpose extensions of a class from a more generic core.
+- However, decorator classes tend to be shallow: they introduce a large amount of boilerplate for a small amount of new functionality.
+- Decorator classes often contain many pass-through methods.
+- It's easy to overuse the decorator pattern, creating a new class for every small new feature.
+- Before creating a decorator class, consider alternatives such as the following:
+
+  - Could you add the new functionality directly to the underlying class, rather than creating a decorator class?
+
+    - This makes sense if
+
+      - the new functionality is relatively general-purpose,
+      - it is logically related to the underlying class,
+      - most uses of the underlying class will also use the new functionality.
+
+  - If the new functionality is specialized for a particular use case, would it make sense to merge it with the use case, rather than creating a separate class?
+  - Could you merge the new functionality with an existing decorator, rather than creating a new decorator?
+
+    - This would result in a single deeper decorator class rather than multiple shallow ones.
+
+  - ask yourself whether the new functionality really needs to wrap the existing functionality:
+
+    - could you implement it as a stand-alone class that is independent of the base class?
+
+** 7.4 Interface versus implementation
+
+- The interface of a class should normally be different from its implementation: the representations used internally should be different from the abstractions that appear in the interface.
+- If the two have similar abstractions, then the class probably isn't very deep.
+- The difference represents valuable functionality provided by the class.
+
+** 7.5 Pass-through variables
+
+- a variable that is passed down through a long chain of methods.
+- Pass-through variables add complexity because
+
+  1. they force all of the intermediate methods to be aware of their existence, even though the methods have no use for the variables.
+  2. Furthermore, if a new variable comes into existence, you may have to modify a large number of interfaces and methods to pass the variable through all of the relevant paths.
+
+- Eliminating pass-through variables can be challenging.
+
+  1. see if there is already an object shared between the topmost and bottommost methods.
+
+     - However, if there is such an object, then it may itself be a pass-through variable
+
+  2. store the information in a global variable,
+
+     - but global variables almost always create other problems.
+
+  3. introduce a context object (The solution I use most often)
+
+     - A context stores all of the application's global state (anything that would otherwise be a pass-through variable or global variable).
+     - The context allows multiple instances of the system to coexist in a single process, each with its own context.
+     - Unfortunately, the context will probably be needed in many places, so it can potentially become a pass-through variable.
+
+       - To reduce the number of methods that must be aware of it, a reference to the context can be saved in most of the system's major objects.
+       - With this approach, the context is available everywhere, but it only appears as an explicit argument in constructors.
+
+     - The context object unifies the handling of all system-global information and eliminates the need for pass-through variables.
+
+       - The context makes it easy to identify and manage the global state of the system, since it is all stored in one place.
+       - The context is also convenient for testing: test code can change the global configuration of the application by modifying fields in the context.
+
+     - Contexts are far from an ideal solution.
+
+       - The variables stored in a context have most of the disadvantages of global variables;
+       - Without discipline, a context can turn into a huge grab-bag of data that creates nonobvious dependencies throughout the system.
+       - Contexts may also create thread-safety issues;
+
+         - the best way to avoid problems is for variables in a context to be immutable.
+
+     - Unfortunately, I haven't found a better solution than contexts.
+
+** 7.6 Conclusion
+
+- Each piece of design infrastructure added to a system, such as an interface, argument, function, class, or definition, adds complexity, since developers must learn about this element.
+
+  - In order for an element to provide a net gain against complexity, it must eliminate some complexity that would be present in the absence of the design element.
+  - Otherwise, you are better off implementing the system without that particular element.
+
+- The "different layer, different abstraction" rule is just an application of this idea:
+
+* 8 Pull Complexity Downwards
+
+- This chapter
+
+  - introduces another way of thinking about how to create deeper classes.
+
+- It is more important for a module to have a simple interface than a simple implementation.
+
+  - Most modules have more users than developers, so it is better for the developers to suffer than the users.
+  - As a module developer, you should strive to make life as easy as possible for the users of your module, even if that means extra work for you.
+
+** 8.1 Example: editor text class
+
+- A character-oriented interface such as the one described in Section 6.3 pulls complexity downward.
+- This approach is better because it encapsulates the complexity of splitting and merging within the text class, which reduces the overall complexity of the system.
+
+** 8.2 Example: configuration parameters
+
+- Configuration parameters are an example of moving complexity upwards instead of down.
+- an easy excuse to avoid dealing with important issues and pass them on to someone else.
+
+  - In many cases, it's difficult or impossible for users or administrators to determine the right values for the parameters.
+  - In other cases, the right values could have been determined automatically with a little extra work in the system implementation.
+
+- Configuration parameters can easily become out of date.
+- Before exporting a configuration parameter, ask yourself: “will users (or higher-level modules) be able to determine a better value than we can determine here?”
+- Ideally, each module should solve a problem completely; configuration parameters result in an incomplete solution, which adds to system complexity.
+
+** 8.3 Taking it too far
+
+- This is an idea that can easily be overdone.
+- Pulling complexity down makes the most sense if
+
+  1. the complexity being pulled down is closely related to the class's existing functionality,
+  2. pulling the complexity down will result in many simplifications elsewhere in the application, and
+  3. pulling the complexity down simplifies the class's interface.
+
+- Remember that the goal is to minimize overall system complexity.
+
+** 8.4 Conclusion
+
+- When developing a module, look for opportunities to take a little bit of extra suffering upon yourself in order to reduce the suffering of your users.
+
+* 9 Better Together Or Better Apart?
+
+- One of the most fundamental questions in software design is this: given two pieces of functionality, should they be implemented together in the same place, or should their implementations be separated?
+
+  - This question applies at all levels in a system, such as functions, methods, classes, and services.
+
+- This chapter discusses the factors to consider when making these decisions.
+- When deciding whether to combine or separate, *the goal is to reduce the complexity of the system as a whole and improve its modularity* .
+- The act of subdividing creates additional complexity that was not present before subdivision:
+
+  - Some complexity comes just from the number of components:
+
+    - the more components, the harder to keep track of them all and the harder to find a desired component within the large collection.
+    - Subdivision usually results in more interfaces, and every new interface adds complexity.
+
+  - Subdivision can result in additional code to manage the components.
+  - Subdivision creates separation:
+
+    - the subdivided components will be farther apart than they were before subdivision.
+    - Separation makes it harder for developers to see the components at the same time, or even to be aware of their existence.
+    - If the components are truly independent, then separation is good: it allows the developer to focus on a single component at a time, without being distracted by the other components.
+    - On the other hand, if there are dependencies between the components, then separation is bad: developers will end up flipping back and forth between the components.
+    - Even worse, they may not be aware of the dependencies, which can lead to bugs.
+
+  - Subdivision can result in duplication: code that was present in a single instance before subdivision may need to be present in each of the subdivided components.
+
+- Here are a few indications that two pieces of code are related:
+
+  - They share information;
+  - They are used together: anyone using one of the pieces of code is likely to use the other as well.
+  - They overlap conceptually, in that there is a simple higher-level category that includes both of the pieces of code.
+  - It is hard to understand one of the pieces of code without looking at the other.
+
+** 9.1 Bring together if information is shared
+
+- Section 5.4 introduced this principle in the context of a project implementing an HTTP server.
+- Because of this shared information, it is better to both read and parse the request in the same place; when the two classes were combined into one, the code got shorter and simpler.
+
+** 9.2 Bring together if it will simplify the interface
+
+- This often happens when the original modules each implement part of the solution to a problem.
+- In addition, when the functionality of two or more classes is combined, it may be possible to perform some functions automatically, so that most users need not be aware of them.
+
+** 9.3 Bring together to eliminate duplication
+
+- If you find the same pattern of code repeated over and over, see if you can reorganize the code to eliminate the repetition.
+- Approaches
+
+  1. Factor the repeated code out into a separate method and replace the repeated code snippets with calls to the method.
+
+     - This approach is most effective if the repeated code snippet is long and the replacement method has a simple signature.
+     - If the snippet interacts in complex ways with its environment (such as by accessing numerous local variables), then the replacement method might require a complex signature (such as many pass-by-reference arguments), which would reduce its value.
+
+  2. Refactor the code so that the snippet in question only needs to be executed in one place.
+
+     - goto
+
+** 9.4 Separate general-purpose and special-purpose code
+
+- If a module contains a mechanism that can be used for several different purposes, then it should provide just that one general-purpose mechanism.
+
+  - It should not include code that specializes the mechanism for a particular use, nor should it contain other general-purpose mechanisms.
+  - Special-purpose code associated with a general-purpose mechanism should normally go in a different module (typically one associated with the particular purpose).
+
+- This approach eliminated information leakage and additional interfaces
+- In general, the lower layers of a system tend to be more general-purpose and the upper layers more special-purpose.
+- The way to separate special-purpose code from general-purpose code is to
+
+  1. pull the special-purpose code upwards, into the higher layers,
+  2. leaving the lower layers general-purpose.
+
+*** Red Flag: Repetition   RedFlag
+
+- If the same piece of code (or code that is almost the same) appears over and over again, that's a red flag that you haven't found the right abstractions.
+
+** 9.5 Example: insertion cursor and selection
+*** Red Flag: Special-General Mixture   RedFlag
+
+- This red flag occurs when a general-purpose mechanism also contains code specialized for a particular use of that mechanism.
+- This makes the mechanism more complicated and creates information leakage between the mechanism and the particular use case: future modifications to the use case are likely to require changes to the underlying mechanism as well.
+
+** 9.6 Example: separate class for logging
+
+- This separation added complexity with no benefit.
+- The logging methods were shallow:
+
+  - most consisted of a single line of code, but they required a considerable amount of documentation.
+  - Each method was only invoked in a single place.
+  - The logging methods were highly dependent on their invocations:
+
+    - someone reading the invocation would most likely flip over to the logging method to make sure that the right information was being logged;
+    - similarly, someone reading the logging method would probably flip over to the invocation site to understand the purpose of the method.
+
+** 9.7 Example: editor undo mechanism
+
+- The key design decision was the one that separated the general-purpose part of the undo mechanism from the special-purpose parts and put the general-purpose part in a class by itself. Once that was done, the rest of the design fell out naturally.
+- Note: the suggestion to separate general-purpose code from special-purpose code refers to *code related to a particular mechanism* .
+
+  - For example, special-purpose undo code (such as code to undo a text insertion) should be separated from general-purpose undo code (such as code to manage the history list).
+  - However, *it often makes sense to combine special-purpose code for one mechanism with general-purpose code for another* .
+
+    - The text class is an example of this:
+
+      - it implements a general-purpose mechanism for managing text,
+      - but it includes special-purpose code related to undoing.
+
+        - The undo code is special-purpose because it only handles undo operations for text modifications.
+
+      - It doesn't make sense to combine this code with the general-purpose undo infrastructure in the History class, but it does make sense to put it in the text class, since it is closely related to other text functions.
+
+** 9.8 Splitting and joining methods
+
+- Length by itself is rarely a good reason for splitting up a method.
+
+  - In general, developers tend to break up methods too much.
+  - Splitting up a method introduces additional interfaces, which add to complexity.
+  - You shouldn't break up a method unless it makes the overall system simpler;
+
+- Long methods aren't always bad.
+
+  - For example, suppose a method contains five 20-line blocks of code that are executed in order.
+
+    - If the blocks are relatively independent, then the method can be read and understood one block at a time; there's not much benefit in moving each of the blocks into a separate method.
+    - If the blocks have complex interactions, it's even more important to keep them together so readers can see all of the code at once;
+    - If each block is in a separate method, readers will have to flip back and forth between these spread-out methods in order to understand how they work together.
+
+  - Methods containing hundreds of lines of code are fine if they have a simple signature and are easy to read. These methods are deep (lots of functionality, simple interface), which is good.
+
+- When designing methods, the most important goal is to *provide clean and simple abstractions.*
+
+  - Each method should do one thing and do it completely.
+
+    - The method should have a clean and simple interface, so that users don't need to have much information in their heads in order to use it correctly.
+    - The method should be deep: its interface should be much simpler than its implementation.
+
+  - If a method has all of these properties, then it probably doesn't matter whether it is long or not.
+
+- Splitting up a method only makes sense if it results in cleaner abstractions, overall.
+
+  - A method can be split either
+
+    1. (The best way) by extracting a subtask
+
+       - This form of subdivision makes sense if there is a subtask that is cleanly separable from the rest of the original method,
+       - which means
+
+         1. someone reading the child method doesn't need to know anything about the parent method
+         2. someone reading the parent method doesn't need to understand the implementation of the child method.
+
+       - Typically this means that the child method is relatively general-purpose: it could conceivably be used by other methods besides the parent.
+       - If you make a split of this form and then find yourself flipping back and forth between the parent and child to understand how they work together, that is a red flag ("Conjoined Methods") indicating that the split was probably a bad idea.
+
+    2. by dividing its functionality into two separate methods.
+
+       - This makes sense if the original method had an overly complex interface because it tried to do multiple things that were not closely related.
+       - Ideally, most callers should only need to invoke one of the two new methods;
+
+         - if callers must invoke both of the new methods, then that adds complexity, which makes it less likely that the split is a good idea.
+
+       - The new methods will be more focused in what they do.
+
+         - It is a good sign if the new methods are more general-purpose than the original method (i.e., you can imagine using them separately in other situations).
+
+       - (This approach) don't make sense very often, because they result in callers having to deal with multiple methods instead of one.
+       - When you split this way, you run the risk of ending up with several shallow methods,
+       - If the caller has to invoke each of the separate methods, passing state back and forth between them, then splitting is not a good idea.
+       - judge it based on whether it simplifies things for callers.
+       - A method should not be split if it results in shallow methods, as in.
+
+  - There are also situations where a system can be made simpler by joining methods together.
+
+    - it (joining methods) might replace two shallow methods with one deeper method;
+    - it might eliminate duplication of code;
+    - it might eliminate dependencies between the original methods, or intermediate data structures;
+    - it might result in better encapsulation, so that knowledge that was previously present in multiple places is now isolated in a single place; or
+    - it might result in a simpler interface,
+
+*** Red Flag: Conjoined Methods
+
+- It should be possible to understand each method independently.
+- If you can't understand the implementation of one method without also understanding the implementation of another, that's a red flag.
+- This red flag can occur in other contexts as well: if two pieces of code are physically separated, but each can only be understood by looking at the other, that is a red flag.
+
+** 9.9 Conclusion
+
+- The decision to split or join modules should be based on complexity.
+- Pick the structure that results in
+
+  - the best information hiding,
+  - the fewest dependencies,
+  - the deepest interfaces.
+
+* 10 Define Errors Out Of Existence
+
+- Exception handling is one of the worst sources of complexity in software systems.
+
+  - Code that deals with special conditions is inherently harder to write than code that deals with normal cases,
+  - developers often define exceptions without considering how they will be handled.
+
+- This chapter discusses
+
+  - why exceptions contribute disproportionately to complexity
+  - how to simplify exception handling
+
+- The key overall lesson from this chapter is to *reduce the number of places where exceptions must be handled* ;
+
+  - in many cases the semantics of operations can be modified so that the normal behavior handles all situations and there is no exceptional condition to report (hence the title of this chapter).
+
+** 10.1 Why exceptions add complexity
+
+- exception: any uncommon condition that alters the normal flow of control in a program.
+
+  - Formal exception mechanism (try-catch)
+  - Informal exception mechanism (returning special values)
+
+- When an exception occurs, the programmer can deal with it in two ways, each of which can be complicated.
+
+  1. move forward and complete the work in progress in spite of the exception.
+  2. abort the operation in progress and report the exception upwards.
+
+     - aborting can be complicated because the exception may have occurred at a point where system state is inconsistent
+     - the exception handling code must restore consistency, such as by unwinding any changes made before the exception occurred.
+
+- Furthermore, exception handling code creates opportunities for more exceptions.
+
+  - Secondary exceptions occurring during recovery are often more subtle and complex than the primary exceptions.
+  - To prevent an unending cascade of exceptions, the developer must eventually find a way to handle exceptions without introducing more exceptions.
+
+- Language support for exceptions tends to be verbose and clunky, which makes exception handling code hard to read.
+- It’s difficult to ensure that exception handling code really works.
+
+  - Some exceptions, such as I/O errors, can’t easily be generated in a test environment, so it’s hard to test the code that handles them.
+  - Exceptions don’t occur very often in running systems, so exception handling code rarely executes.
+
+    - Bugs can go undetected for a long time, and when the exception handling code is finally needed, there’s a good chance that it won’t work
+    - “code that hasn’t been executed doesn’t work”
+    - When exception handling code fails, it’s difficult to debug the problem, since it occurs so infrequently.
+
+** 10.2 Too many exceptions
+
+- Programmers exacerbate the problems related to exception handling by *defining unnecessary exceptions* .
+
+  - Most programmers are taught that it’s important to detect and report errors; they often interpret this to mean “the more errors detected, the better.”
+  - This leads to an over-defensive style where anything that looks even a bit suspicious is rejected with an exception, which results in a proliferation of unnecessary exceptions that increase the complexity of the system.
+
+- It’s tempting to use exceptions to avoid dealing with difficult situations: rather than figuring out a clean way to handle it, just throw an exception and punt the problem to the caller.
+
+  - if you are having trouble figuring out what to do for the particular situation, there’s a good chance that the caller won’t know what to do either.
+  - The exceptions thrown by a class are part of its interface; classes with lots of exceptions have complex interfaces, and they are shallower than classes with fewer exceptions.
+  - It can propagate up through several stack levels before being caught, so it affects not just the method’s caller, but potentially also higher-level callers (and their interfaces).
+
+- Throwing exceptions is easy; handling them is hard.
+
+  - The best way to reduce the complexity damage caused by exception handling is to *reduce the number of places where exceptions have to be handled* .
+  - The rest of this chapter will discuss four techniques for reducing the number of exception handlers.
+
+** 10.3 Define errors out of existence
+
+- The best way to eliminate exception handling complexity is to define your APIs so that there are no exceptions to handle: define errors out of existence.
+- I should have changed the definition of unset slightly: rather than deleting a variable, unset should ensure that a variable no longer exists.
+
+*** 10.4 Example: file deletion in Windows
+
+- Delaying the file deletion defines errors out of existence.
+
+*** 10.5 Example: Java substring method
+
+- If errors are defined out of existence, won’t that result in buggier software?
+
+  - The error-ful approach may catch some bugs, but it also increases complexity, which results in other bugs.
+
+    - In the error-ful approach, developers must write additional code to avoid or ignore the errors, and this increases the likelihood of bugs
+    - or, they may forget to write the additional code, in which case unexpected errors may be thrown at runtime
+
+  - In contrast, defining errors out of existence simplifies APIs and it reduces the amount of code that must be written.
+
+- *Overall, the best way to reduce bugs is to make software simpler.*
+
+** 10.6 Mask exceptions
+
+- With this approach (exception masking), an exceptional condition is detected and handled at a low level in the system, so that higher levels of software need not be aware of the condition
+- Exception masking doesn’t work in all situations, but it is a powerful tool in the situations where it works.
+
+  - It results in deeper classes, since
+
+    1. it reduces the class’s interface (fewer exceptions for users to be aware of)
+    2. adds functionality in the form of the code that masks the exception.
+
+  - Exception masking is an example of pulling complexity downward. (8 Pull Complexity Downwards)
+
+** 10.7 Exception aggregation
+
+- The idea behind exception aggregation is to handle many exceptions with a single piece of code;
+
+  - rather than writing distinct handlers for many individual exceptions,
+  - handle them all in one place with a single handler.
+
+- A generally-useful design pattern for exception handling.
+
+  - If a system processes a series of requests, it’s useful to define an exception that aborts the current request, cleans up the system’s state, and continues with the next request.
+  - The exception is caught in a single place near the top of the system’s request-handling loop.
+  - This exception can be thrown at any point in the processing of a request to abort the request; different subclasses of the exception can be defined for different conditions.
+  - *Exceptions of this type should be clearly distinguished from exceptions that are fatal to the entire system.*
+
+- Exception aggregation works best *if an exception propagates several levels up the stack before it is handled;*
+
+  - this allows more exceptions from more methods to be handled in the same place.
+  - This is the opposite of exception masking:
+
+    - masking usually works best if an exception is handled in a low-level method.
+    - For masking, the low-level method is typically a library method used by many other methods, so allowing the exception to propagate would increase the number of places where it is handled
+
+- One way of thinking about exception aggregation is that it replaces several special-purpose mechanisms, each tailored for a particular situation, with a single *general-purpose mechanism* that can handle multiple situations
+
+** 10.8 Just crash?
+
+- In most applications there will be certain errors that it’s not worth trying to handle.
+
+  1. difficult or impossible to handle
+  2. don’t occur very often
+
+- Whether or not it is acceptable to crash on a particular error depends on the application.
+
+** 10.9 Design special cases out of existence
+
+- For the same reason that it makes sense to define errors out of existence, it also makes sense to define other special cases out of existence
+
+  - Special cases can result in code that is riddled with if statements, which make the code hard to understand and lead to bugs.
+  - The best way to do this is by *designing the normal case in a way that automatically handles the special cases* without any extra code.
+
+- 7 Different Layer, Different Abstraction
+
+#+begin_src awk
+
+The notion of “no selection” makes sense in terms of how the user
+thinks about the application’s interface, but that doesn’t mean it has
+to be represented explicitly inside the application. Having a
+selection that always exists, but is sometimes empty and thus
+invisible, results in a simpler implementation.
+#+end_src
+
+** 10.10 Taking it too far
+
+- Defining away exceptions, or masking them inside a module, only makes sense *if the exception information isn’t needed outside the module.*
+
+  - in the rare situations where a caller cares about the special cases detected by the exceptions, there are other ways for it to get this information.
+
+- With exceptions, as with many other areas in software design, you must *determine what is important and what is not important* .
+
+  - Things that are not important should be hidden, and the more of them the better.
+  - But when something is important, it must be exposed.
+
+** 10.11 Conclusion
+
+- Together, these techniques can have a significant impact on overall system complexity.
+
+* 11 Design it Twice
+
+- Designing software is hard, so it’s unlikely that your first thoughts about how to structure a module or system will produce the best design.
+
+  - You’ll end up with a much better result if you consider multiple options for each major design decision: design it twice.
+  - *You don’t need to pin down every feature of each alternative;* it’s sufficient at this point to sketch out a few of the most important methods.
+  - Try to pick approaches that are radically different from each other; you’ll learn more that way.
+
+    - Even if you are certain that there is only one reasonable approach, consider a second design anyway, no matter how bad you think it will be.
+    - It will be instructive to think about the weaknesses of that design and contrast them with the features of other designs.
+
+  - After you have roughed out the designs for the alternatives, make a list of the pros and cons of each one.
+
+    - The most important consideration for an interface is ease of use for higher level software.
+    - It is also worth considering other factors:
+
+      - Does one alternative have a simpler interface than another?
+      - Is one interface more general-purpose than another?
+      - Does one interface enable a more efficient implementation than another?
+
+  - Once you have compared alternative designs, you will be in a better position to identify the best design.
+
+    - The best choice may be one of the alternatives,
+    - or you may discover that you can combine features of multiple alternatives into a new design that is better than any of the original choices.
+
+  - Sometimes none of the alternatives is particularly attractive; when this happens, see if you can come up with additional schemes
+
+    - Use the problems you identified with the original alternatives to drive the new design(s)
+
+- The design-it-twice principle can be applied at many levels in a system
+- Designing it twice does not need to take a lot of extra time
+
+  - The initial design experiments will probably result in a significantly better design, which will more than pay for the time spent designing it twice.
+
+- The design-it-twice principle is sometimes hard for really smart people to embrace.
+
+  - if you want to get really great results, you have to consider a second possibility, or perhaps a third, no matter how smart you are.
+  - The design of large software systems falls in this category: *no-one is good enough to get it right with their first try.*
+  - It isn’t that you aren’t smart; it’s that the problems are really hard
+  - Furthermore, that's a good thing: *it’s much more fun to work on a difficult problem where you have to think carefully* , rather than an easy problem where you don’t have to think at all.
+
+- The design-it-twice approach not only improves your designs, but it also improves your design skills.
+
+  - The process of devising and comparing multiple approaches will teach you about the factors that make designs better or worse.
+  - Over time, this will make it easier for you to rule out bad designs and hone in on really great ones.
+
+* 12 Why Write Comments? The Four Excuses
+
+- In-code documentation plays a crucial role in software design.
+
+  - Comments are essential to help developers understand a system and work efficiently,
+  - Documentation also plays an important role in abstraction; without comments, you can't hide complexity.
+  - the process of writing comments, if done correctly, will actually improve a system's design.
+
+- I hope these chapters will convince you of three things:
+
+  1. good comments can make a big difference in the overall quality of software;
+  2. it isn't hard to write good comments;
+  3. (this may be hard to believe) writing comments can actually be fun.
+
+** 12.1 Good code is self-documenting
+
+- Nonetheless, there is still a significant amount of design information that can't be represented in code.
+
+  - The informal aspects of an interface, such as a high-level description of what each method does or the meaning of its result, can only be described in comments.
+  - the rationale for a particular design decision,
+  - the conditions under which it makes sense to call a particular method.
+
+- Some developers argue that if others want to know what a method does, they should just read the code of the method: this will be more accurate than any comment.
+
+  - It's possible that a reader could deduce the abstract interface of the method by reading its code, but it would be time-consuming and painful.
+  - In addition, if you write code with the expectation that users will read method implementations, you will try to make each method as short as possible, so that it's easy to read. If the method does anything nontrivial, you will break it up into several smaller methods. This will result in a large number of shallow methods.
+  - Furthermore, it doesn't really make the code easier to read: in order to understand the behavior of the top-level method, readers will probably need to understand the behaviors of the nested methods.
+  - For large systems it isn't practical for users to read the code to learn the behavior.
+
+- Moreover, comments are fundamental to abstractions.
+
+  - If users must read the code of a method in order to use it, then there is no abstraction:
+  - Without comments, the only abstraction of a method is its declaration, which specifies its name and the names and types of its arguments and results.
+  - The declaration is missing too much essential information to provide a useful abstraction by itself.
+  - Comments allow us to capture the additional information that callers need, thereby completing the simplified view while hiding implementation details.
+  - It's also important that comments are written in a human language such as English; this makes them less precise than code, but it provides more expressive power, so we can create simple, intuitive descriptions.
+
+** 12.2 I don't have time to write comments
+
+- However, software projects are almost always under time pressure, and there will always be things that seem higher priority than writing comments.
+- Thus, if you allow documentation to be de-prioritized, you'll end up with no documentation.
+- The counter-argument to this excuse is the investment mindset
+
+  - If you want a clean software structure, which will allow you to work efficiently over the long-term, then you must take some extra time up front in order to create that structure.
+
+- Furthermore, writing comments needn't take a lot of time.
+- Furthermore, many of the most important comments are those related to abstractions, such as the top-level documentation for classes and methods.
+
+  - these comments should be written as part of the design process, (chapter 15)
+  - the act of writing the documentation serves as an important design tool that improves the overall design. These comments pay for themselves immediately.
+
+** 12.3 Comments get out of date and become misleading
+
+- Keeping documentation up-to-date does not require an enormous effort.
+
+  - Chapter 16 discusses how to organize documentation so that it is as easy as possible to keep it updated after code modifications
+  - (the key ideas are to avoid duplicated documentation and keep the documentation close to the corresponding code).
+
+- Large changes to the documentation are only required if there have been large changes to the code, and the code changes will take more time than the documentation changes.
+- Code reviews provide a great mechanism for detecting and fixing stale comments.
+
+** 12.4 All the comments I have seen are worthless
+
+- writing solid documentation is not hard, once you know how.
+- The next chapters will lay out a framework for how to write good documentation and maintain it over time.
+
+** 12.5 Benefits of well-written comments
+
+- The overall idea behind comments is to capture information that was in the mind of the designer but couldn't be represented in the code.
+
+  - When other developers come along later to make modifications, the comments will allow them to work more quickly and accurately.
+  - Without documentation, future developers will have to rederive or guess at the developer's original knowledge;
+
+    - this will take additional time,
+    - and there is a risk of bugs if the new developer misunderstands the original designer's intentions.
+
+- Comments are valuable even when the original designer is the one making the changes: if it has been more than a few weeks since you last worked in a piece of code, you will have forgotten many of the details of the original design.
+- Good documentation helps with the last two of these issues (describes in chapter 2)
+
+  - Documentation can reduce cognitive load by providing developers with the information they need to make changes and by making it easy for developers to ignore information that is irrelevant.
+  - Documentation can also reduce the unknown unknowns by clarifying the structure of the system, so that it is clear what information and code is relevant for any given change.
+
+* 13 Comments Should Describe Things that Aren't Obvious from the Code
+
+- The reason for writing comments is that
+
+  1. statements in a programming language can't capture all of the important information that was in the mind of the developer when the code was written.
+  2. Comments record this information so that developers who come along later can easily understand and modify the code.
+  3. The guiding principle for comments is that comments should describe things that aren't obvious from the code.
+
+- There are many things that aren't obvious from the code.
+
+  - low-level details
+  - Why code is needed
+  - Why it was implemented in a particular way
+  - Rules the developer followed
+
+- One of the most important reasons for comments is abstractions, which include a lot of information that isn't obvious from the code.
+
+  - The idea of an abstraction is to provide a simple way of thinking about something,
+  - but code is so detailed that it can be hard to see the abstraction just from reading the code.
+  - Developers should be able to understand the abstraction provided by a module *without reading any code other than its externally visible declarations* .
+  - The only way to do this is by supplementing the declarations with comments.
+
+- This chapter discusses
+
+  - what information needs to be described in comments
+  - how to write good comments.
+
+- As you will see, good comments typically *explain things at a different level of detail than the code* , which is
+
+  - more detailed in some situations
+  - less detailed (more abstract) in others.
+
+** 13.1 Pick conventions
+
+- conventions for commenting, such as
+
+  - what you will comment
+  - the format you will use for comments.
+
+- If you are programming in a language for which there exists a document compilation tool,
+
+  - follow the conventions of the tools.
+  - None of these conventions is perfect,
+  - but the tools provide enough benefits to make up for that.
+
+- If you are programming in an environment where there are no existing conventions to follow,
+
+  - try to adopt the conventions from some other language or project that is similar;
+  - this will make it easier for other developers to understand and adhere to your conventions.
+
+- Conventions serve two purposes.
+
+  1. they ensure consistency,
+
+     - which makes comments easier to read and understand.
+
+  2. they help to ensure that you actually write comments.
+
+     - If you don't have a clear idea what you are going to comment and how, it's easy to end up writing no comments at all.
+
+- Most comments fall into one of the following categories:
+
+      a comment block that immediately precedes the declaration of a module such as a class, data structure, function, or method. The comment describe's the module's interface.
+
+      - For a class, the comment describes the overall abstraction provided by the class.
+      - For a method or function, the comment describes its overall behavior, its arguments and return value, if any, any side effects or exceptions that it generates, and any other requirements the caller must satisfy before invoking the method.
+
+      a comment next to the declaration of a field in a data structure,
+      a comment inside the code of a method or function, which describes how the code works internally.
+      a comment describing dependencies that cross module boundaries.
+
+- The most important comments are those in the first two categories. (Interface & Data structure member)
+
+  - Every class should have an interface comment,
+  - every class variable should have a comment,
+  - every method should have an interface comment.
+
+- it is easier to comment everything rather than spend energy worrying about whether a comment is needed.
+- Implementation comments are often unnecessary (see Section 13.6 below).
+- Cross-module comments are the most rare of all and they are problematic to write, but when they are needed they are quite important; Section 13.7 discusses them in more detail.
+
+** 13.2 Don't repeat the code
+
+- many comments are not particularly helpful.
+
+  - The most common reason is that the comments repeat the code:
+
+    - After you have written a comment, ask yourself the following question: could someone who has never seen the code write the comment just by looking at the code next to the comment?
+
+  - Another common mistake is to use the same words in the comment that appear in the name of the entity being documented:
+
+    - These comments just take the words from the method or variable name, perhaps add a few words from argument names and types, and form them into a sentence.
+
+- A first step towards writing good comments is to *use different words in the comment from those in the name of the entity being described*.
+
+  - Pick words for the comment that provide additional information about the meaning of the entity,
+  - rather than just repeating its name.
+
+- example
+
+#+begin_src fsharp
+/*
+ * The amount of blank space to leave on the left and right sides of
+ * each line of text, in pixels.
+ */
+private static final int textHorizontalPadding = 4;
+#+end_src
+
+  - This comment provides additional information that is not obvious from the declaration itself, such as the units (pixels) and the fact that padding applies to both sides of each line.
+  - Instead of using the term “padding”, the comment explains what padding is, in case the reader isn't already familiar with the term.
+
+*** Red Flag: Comment Repeats Code   RedFlag
+
+- If the information in a comment is already obvious from the code next to the comment, then the comment isn't helpful.
+- One example of this is when the comment uses the same words that make up the name of the thing it is describing.
+
+** 13.3 Lower-level comments add precision
+
+- *Comments augment the code by providing information at a different level of detail.*
+- Different levels of comments
+
+  - add precision
+
+    - by clarifying the exact meaning of the code
+
+  - offer intuition
+
+    - the reasoning behind the code
+    - a simpler and more abstract way of thinking about the code
+
+  - Comments at the same level as the code are likely to repeat the code (Red Flag: Comment Repeats Code)
+
+- Precision is most useful when commenting variable declarations
+
+  - such as
+
+    - class instance variables
+    - method arguments
+    - return values
+
+  - The name and type in a variable declaration are typically not very precise
+  - Comments can fill in missing details such as:
+
+    - What are the units for this variable?
+    - Are the boundary conditions inclusive or exclusive?
+    - If a null value is permitted, what does it imply?
+    - If a variable refers to a resource that must eventually be freed or closed, who is responsible for freeing or closing it?
+    - Are there certain properties that are always true for the variable (invariants), such as “this list always contains at least one entry”?
+
+  - Some of this information could potentially be figured out by examining all of the code where the variable is used.
+
+    - However, this is time-consuming and error-prone;
+    - the declaration's comment should be clear and complete enough to make this unnecessary
+
+  - When documenting a variable, think nouns, not verbs.
+
+    - Focus on *what the variable represents* , not how it is manipulated.
+    - Examples
+
+      - verbs (how it is manipulated)
+
+#+begin_src awk
+/* FOLLOWER VARIABLE: indicator variable that allows the Receiver and
+ * the PeriodicTasks thread to communicate about whether a heartbeat
+ * has been received within the follower's election timeout window.
+ * Toggled to TRUE when a valid heartbeat is received.
+ * Toggled to FALSE when the election timeout window is reset. */
+private boolean receivedValidHeartbeat;
+#+end_src
+      - nouns (what it represents)
+
+#+begin_src awk
+/* True means that a heartbeat has been received since the last time
+ * the election timer was reset. Used for communication between the
+ * Receiver and PeriodicTasks threads. */
+private boolean receivedValidHeartbeat;
+#+end_src
+
+** 13.4 Higher-level comments enhance intuition
+
+- They omit details and help the reader to understand the overall intent and structure of the code.
+- This approach is commonly used for comments inside methods, and for interface comments.
+- Higher-level comments are more difficult to write than lower-level comments because *you must think about the code in a different way* .
+- Ask yourself:
+
+  - What is this code trying to do?
+  - What is the simplest thing you can say that explains everything in the code?
+  - What is the most important thing about this code?
+
+- Engineers tend to be very detail-oriented.
+
+  - We love details and are good at managing lots of them; this is essential for being a good engineer.
+  - But, great software designers can also step back from the details and think about a system at a higher level.
+
+    - This means
+
+      1. deciding which aspects of the system are most important,
+      2. and being able to ignore the low-level details and think about the system only in terms of its most fundamental characteristics
+
+    - This is the essence of abstraction (finding a simple way to think about a complex entity),
+    - And it's also what you must do when writing higher-level comments.
+
+- A good higher-level comment expresses one or a few simple ideas that *provide a conceptual framework,*
+
+  - Given the framework, it becomes easy to see how specific code statements relate to the overall goal.
+
+- Comments of the form "how we get here" are very useful for helping people to understand code.
+
+  - it explains (in high level terms) why the code is executed.
+
+** 13.5 Interface documentation
+
+- One of the most important roles for comments is to *define abstractions*
+
+  - 4.3 Abstractions
+  - Code isn't suitable for describing abstractions
+
+    1. it's too low level
+    2. it includes implementation details that shouldn't be visible in the abstraction
+
+  - If you want code that presents good abstractions, you must document those abstractions with comments.
+
+- The first step in documenting abstractions is to separate interface comments from implementation comments.
+
+  - Differences
+
+    - Interface comments provide information that someone needs to know in order to use a class or method; they define the abstraction.
+    - Implementation comments describe how a class or method works internally in order to implement the abstraction.
+
+  - *If interface comments must also describe the implementation, then the class or method is shallow.*
+
+    - The act of writing comments can provide clues about the quality of a design
+    - (15.3 Comments are a design tool)
+
+  - The interface comment for a method includes both [[clippings-from-a-philosophy-of-software-design.html#MissingReference][higher-level
+information]] for abstraction and [[clippings-from-a-philosophy-of-software-design.html#MissingReference][lower-level details]] for precision
+
+    - The comment usually starts with a sentence or two describing the behavior of the method as perceived by callers; this is the higher-level abstraction.
+    - The comment must describe each argument and the return value (if any). These comments must be very precise, and must describe any constraints on argument values as well as dependencies between arguments.
+    - If the method has any side effects, these must be documented in the interface comment.
+    - A method's interface comment must describe any exceptions that can emanate from the method.
+    - If there are any preconditions that must be satisfied before a method is invoked, these must be described. It is a good idea to minimize preconditions, but any that remain must be documented.
+
+  - *It can be helpful to have examples in the class documentation that illustrate how its methods work together* , particularly for deep classes with usage patterns that are non-obvious.
+  - Some of the implementation documentation is useful, but it should go inside the method, where it will be clearly separated from interface documentation
+
+*** Red Flag: Implementation Documentation Contaminates Interface   RedFlag
+
+This red flag occurs when interface documentation, such as that for a method, describes implementation details that aren't needed in order to use the thing being documented.
+
+** 13.6 Implementation comments: what and why, not how
+
+- Most methods are so short and simple that they don't need any implementation comments: given the code and the interface comments, it's easy to figure out how a method works
+- The main goal of implementation comments is to *help readers understand what the code is doing* (not how it does it).
+- In addition to describing what the code is doing, implementation comments are also useful to explain why.
+- For longer methods, it can be helpful to write comments for a few of the most important local variables. However, most local variables don't need documentation if they have good names.
+- If the variable is used over a large span of code, then you should consider adding a comment to describe the variable. When documenting variables, focus on what the variable represents, not how it is manipulated in the code.
+
+** 13.7 Cross-module design decisions
+
+- The biggest challenge with cross-module documentation is finding a place to put it where it will naturally be discovered by developers.
+
+  - Sometimes there is an obvious central place to put such documentation.
+  - Unfortunately, in many cases there is not an obvious central place to put cross-module documentation
+
+    - One possibility is to duplicate parts of the documentation in each location that depends on it. However, this is awkward, and it is difficult to keep such documentation up to date as the system evolves
+    - Alternatively, the documentation can be located in one of the places where it is needed, but in this case it's unlikely that developers will see the documentation or know where to look for it.
+    - I have recently been experimenting with an approach where cross-module issues are documented in a central file called designNotes.
+
+      - The file is divided up into clearly labeled sections, one for each major topic.
+      - Then, in any piece of code that relates to one of these issues there is a short comment referring to the designNotes file:
+      - However, this has the disadvantage that the documentation is not near any of the pieces of code that depend on it, so it may be difficult to keep up-to-date as the system evolves.
+
+** 13.8 Conclusion
+
+- The goal of comments is to ensure that the structure and behavior of the system is obvious to readers, so they can quickly find the information they need and make modifications to the system with confidence that they will work.
+
+  - Some of this information can be represented in the code in a way that will already be obvious to readers, but there is a significant amount of information that can't easily be deduced from the code.
+  - Comments fill in this information.
+
+- When writing comments, *try to put yourself in the mindset of the reader* and ask yourself what are the key things he or she will need to know
+- If your code is undergoing review and a reviewer tells you that something is not obvious,
+
+  - don't argue with them; if a reader thinks it's not obvious, then it's not obvious.
+  - Instead of arguing, try to understand what they found confusing and see if you can clarify that, either with better comments or better code.
+
+** 13.9 Answers to questions from Section 13.5
+* 14 Choosing Names
+
+- Good names are a form of documentation:
+
+  - they make code easier to understand.
+  - They reduce the need for other documentation and make it easier to detect errors.
+
+- Conversely, poor name choices
+
+  - increase the complexity of code
+  - create ambiguities and misunderstandings that can result in bugs.
+
+- Name choice is an example of the principle that complexity is incremental.
+
+  - Choosing a mediocre name for a particular variable, as opposed to the best possible name, probably won’t have much impact on the overall complexity of a system.
+  - However, software systems have thousands of variables; choosing good names for all of these will have a significant impact on complexity and manageability.
+
+** 14.1 Example: bad names cause bugs
+
+- The problem was actually quite simple (as are most bugs, once you figure them out).
+- It took a long process of instrumentation, which eventually showed that the corruption must be happening in a particular statement, before I was able to get past the mental block created by the name and check to see exactly where its value came from.
+- Unfortunately, most developers don’t spend much time thinking about names.
+
+  - They tend to use the first name that comes to mind, as long as it’s reasonably close to matching the thing it names.
+
+- Take a bit of extra time to choose great names, which are *precise, unambiguous, and intuitive.*
+
+  - The extra attention will pay for itself quickly,
+  - and over time you’ll learn to choose good names quickly.
+
+** 14.2 Create an image
+
+- When choosing a name, the goal is to *create an image in the mind of the reader about the nature of the thing being named.*
+
+  - A good name conveys a lot of information about what the underlying entity is, and, just as important, what it is not.
+  - When considering a particular name, ask yourself: “If someone sees this name in isolation, without seeing its declaration, its documentation, or any code that uses the name, how closely will they be able to guess what the name refers to? Is there some other name that will paint a clearer picture?”
+
+- Names are a form of abstraction:
+
+  - they provide a simplified way of thinking about a more complex underlying entity.
+  - Like other forms of abstraction, the best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important.
+
+** 14.3 Names should be precise
+
+- Good names have two properties:
+
+  1. precision
+  2. consistency
+
+- The most common problem with names is that they are too generic or vague;
+
+  - as a result, it’s hard for readers to tell what the name refers to;
+  - the reader may assume that the name refers to something different from reality,
+
+- Like all rules, the rule about choosing precise names has a few exceptions.
+
+  1. If you can see the entire range of usage of a variable, then the meaning of the variable will probably be obvious from the code so you don’t need a long name.
+  2. It’s also possible for a name to be too specific,
+  3. If you find it difficult to come up with a name for a particular variable that is precise, intuitive, and not too long, this is a red flag.
+
+     - It suggests that the variable may not have a clear definition or purpose.
+     - When this happens, consider alternative factorings.
+     - The process of choosing good names can improve your design by identifying weaknesses.
+
+*** Red Flag: Vague Name   RedFlag
+
+- If a variable or method name is broad enough to refer to many different things, then
+
+  - it doesn’t convey much information to the developer
+  - the underlying entity is more likely to be misused.
+
+*** Red Flag: Hard to Pick Name   RedFlag
+
+If it’s hard to find a simple name for a variable or method that creates a clear image of the underlying object, that’s a hint that the underlying object may not have a clean design.
+
+** 14.4 Use names consistently
+
+- In any program there are certain variables that are used over and over again.
+- Consistent naming reduces cognitive load in much the same way as reusing a common class:
+
+  - once the reader has seen the name in one context, they can reuse their knowledge and instantly make assumptions when they see the name in a different context.
+
+- Consistency has three requirements:
+
+  1. always use the common name for the given purpose
+  2. never use the common name for anything other than the given purpose
+  3. make sure that the purpose is narrow enough that all variables with the name have the same behavior
+
+- Sometimes you will need multiple variables that refer to the same general sort of thing
+
+  - When this happens, use the common name for each variable but add a distinguishing prefix, such as srcFileBlock and dstFileBlock.
+
+- Loops are another area where consistent naming can help
+
+  - If you use names such as i and j for loop variables, always use i in outermost loops and j for nested loops.
+  - This allows readers to make instant (safe) assumptions about what’s happening in the code when they see a given name.
+
+** 14.5 A different opinion: Go style guide
+
+- Some of the developers of the Go language argue that names should be very short, often only a single character
+- In a presentation on name choice for Go, Andrew Gerrand states that “long names obscure what the code does.”
+- The Go culture encourages the use of the same short name for multiple different things: ch for character or channel, d for data, difference, or distance, and so on. To me, ambiguous names like these are likely to result in confusion and error, just as in the block example.
+- Overall, I would argue that *readability must be determined by readers, not writers.*
+- Gerrand makes one comment that I agree with: “The greater the distance between a name’s declaration and its uses, the longer the name should be.”
+
+** 14.6 Conclusion
+
+- Well chosen names help to make code more obvious;
+
+  - when someone encounters the variable for the first time, their first guess about its behavior, made without much thought, will be correct.
+
+- Choosing good names is an example of the investment mindset discussed in Chapter 3:
+
+  - if you take a little extra time up front to select good names, it will be easier for you to work on the code in the future.
+  - In addition, you will be less likely to introduce bugs.
+
+- Developing a skill for naming is also an investment
+
+  - When you first decide to stop settling for mediocre names, you may find it frustrating and time-consuming to come up with good names.
+  - However, as you get more experience you’ll find that it becomes easier; eventually, you’ll get to the point where it takes almost no extra time to choose good names, so you will get the benefits almost for free.
+
+* 15 Write The Comments First
+
+- The best time to write comments is at the beginning of the process, as you write the code.
+
+  1. Writing the comments first makes documentation part of the design process.
+  2. Not only does this produce better documentation, but it also produces better designs and it makes the process of writing documentation more enjoyable.
+
+** 15.1 Delayed comments are bad comments
+
+1. Delaying documentation often means that it never gets written at all. ([[http://on-agile.blogspot.com/2007/04/why-you-wont-fix-it-later.html][LeBlanc's Law / On Agile: Why You Won't Fix It Later]])
+
+   - Once you start delaying, it's easy to delay a bit more; after all, the code will be even more stable in a few more weeks.
+   - By the time the code has inarguably stabilized, there is a lot of it, which means the task of writing documentation has become huge and even less attractive.
+   - There's never a convenient time to stop for a few days and fill in all of the missing comments,
+   - it's easy to rationalize that the best thing for the project is to move on and fix bugs or write the next new feature.
+   - This will create even more undocumented code.
+
+2. Even if you do have the self-discipline to go back and write the comments (and don't fool yourself: you probably don't), the comments won't be very good.
+
+   - By this time in the process, you have checked out mentally.
+
+     - In your mind, this piece of code is done;
+     - you are eager to move on to your next project.
+
+   - You know that writing comments is the right thing to do, but it's no fun.
+
+     - You just want to get through it as quickly as possible.
+     - Thus, you make a quick pass over the code, adding just enough comments to look respectable.
+
+   - By now, it's been a while since you designed the code, so your memories of the design process are becoming fuzzy.
+
+     - You look at the code as you are writing the comments, so the comments repeat the code.
+     - Even if you try to reconstruct the design ideas that aren't obvious from the code, there will be things you don't remember.
+
+   - Thus, the comments are missing some of the most important things they should describe.
+
+** 15.2 Write the comments first
+
+- A different approach
+
+  - For a new class, I start by writing the class interface comment.
+  - Next, I write interface comments and signatures for the most important public methods, but I leave the method bodies empty.
+  - I iterate a bit over these comments until the basic structure feels about right.
+  - At this point I write declarations and comments for the most important class instance variables in the class.
+  - Finally, I fill in the bodies of the methods, adding implementation comments as needed.
+  - While writing method bodies, I usually discover the need for additional methods and instance variables. For each new method I write the interface comment before the body of the method; for instance variables I fill in the comment at the same time that I write the variable declaration.
+
+- The comments-first approach has three benefits.
+
+  1. it produces better comments.
+
+     - If you write the comments as you are designing the class, the key design issues will be fresh in your mind, so it's easy to record them.
+     - It's better to write the interface comment for each method before its body, so you can focus on the method's abstraction and interface without being distracted by its implementation.
+     - During the coding and testing process you will notice and fix problems with the comments. As a result, the comments improve over the course of development.
+
+  2. it improves the system design. (The most important)
+  3. it makes comment-writing more fun.
+
+** 15.3 Comments are a design tool
+
+- Comments provide the only way to fully capture abstractions, and good abstractions are fundamental to good system design.
+- If you write comments describing the abstractions at the beginning, you can *review and tune them before writing implementation code* .
+- To write a good comment, you must identify the essence of a variable or piece of code: what are the most important aspects of this thing? It's important to do this early in the design process; otherwise you are just hacking code.
+- Comments serve as a canary in the coal mine of complexity.
+
+  - If a method or variable requires a long comment, it is a red flag that you don't have a good abstraction.
+  - The best way to judge the complexity of an interface is from the comments that describe it.
+
+    - If the interface comment for a method provides all the information needed to use the method and is also short and simple, that indicates that the method has a simple interface.
+    - Conversely, if there's no way to describe a method completely without a long and complicated comment, then the method has a complex interface.
+
+  - You can compare a method's interface comment with the implementation to get a sense of how deep the method is: if the interface comment must describe all the major features of the implementation, then the method is shallow.
+  - The same idea applies to variables: if it takes a long comment to fully describe a variable, it's a red flag that suggests you may not have chosen the right variable decomposition.
+
+- Of course, comments are only a good indicator of complexity if they are complete and clear.
+
+*** Red Flag: Hard to Describe
+
+- The comment that describes a method or variable should be simple and yet complete.
+- If you find it difficult to write such a comment, that's an indicator that there may be a problem with the design of the thing you are describing.
+
+** 15.4 Early comments are fun comments
+
+- Finding simple comments is a source of pride.
+
+  - The comments are how I record and test the quality of my design decisions.
+  - Looking for the design that can be expressed completely and clearly in the fewest words.
+  - The simpler the comments, the better I feel about my design,
+
+- If you are programming strategically, where your main goal is a great design rather than just writing code that works, then writing comments should be fun, since that's how you identify the best designs.
+
+** 15.5 Are early comments expensive?
+
+1. Even if half of your total code lines are comments, writing comments probably doesn't account for more than about 5% of your total development time.
+
+   - Delaying the comments until the end will save only a fraction of this, which isn't very much.
+
+2. Writing the comments first will mean that the abstractions will be more stable before you start writing code.
+
+** 15.6 Conclusion
+
+If you haven't ever tried writing the comments first, give it a try. Stick with it long enough to get used to it. Then think about how it affects the quality of your comments, the quality of your design, and your overall enjoyment of software development.
+
+* 16 Modifying Existing Code
+
+- A large software system develops through a series of evolutionary stages, where each stage adds new capabilities and modifies existing modules.
+
+  - This means that a system's design is constantly evolving.
+  - It isn't possible to conceive the right design for a system at the outset;
+  - *the design of a mature system is determined more by changes made during the system's evolution than by any initial conception.*
+
+- this chapter discusses how to keep complexity from creeping in as the system evolves.
+
+** 16.1 Stay strategic
+
+- This idea (from chapter 3) also applies when you are modifying existing code.
+- Unfortunately, when developers go into existing code to make changes such as bug fixes or new features, they don't usually think strategically.
+
+  - A typical mindset is "what is the smallest possible change I can make that does what I need?"
+  - Sometimes developers justify this because they are not comfortable with the code being modified; they worry that larger changes carry a greater risk of introducing new bugs.
+  - However, this results in tactical programming.
+
+    - Each one of these minimal changes introduces a few special cases, dependencies, or other forms of complexity.
+    - As a result, the system design gets just a bit worse, and the problems accumulate with each step in the system's evolution.
+
+- If you want to maintain a clean design for a system, you must take a strategic approach when modifying existing code.
+
+  - *Ideally, when you have finished with each change, the system will have the structure it would have had if you had designed it from the start with that change in mind.*
+  - To achieve this goal,
+
+    - you must resist the temptation to make a quick fix.
+    - Instead, think about whether the current system design is still the best one, in light of the desired change.
+    - If not, refactor the system so that you end up with the best possible design.
+
+- This is also an example of the investment mindset
+
+  - Even if your particular change doesn't require refactoring, you should still be on the lookout for design imperfections that you can fix while you're in the code.
+  - Whenever you modify any code, try to find a way to improve the system design at least a little bit in the process.
+  - *If you're not making the design better, you are probably making it worse.*
+
+- an investment mindset sometimes conflicts with the realities of commercial software development.
+
+  - Nonetheless, you should resist these compromises as much as possible.
+  - Ask yourself "Is this the best I can possibly do to create a clean system design, given my current constraints?"
+
+    - Perhaps there's an alternative approach that would be almost as clean as the 3-month refactoring but could be done in a couple of days?
+    - Or, if you can't afford to do a large refactoring now, get your boss to allocate time for you to come back to it after the current deadline.
+
+- Every development organization should plan to spend a small fraction of its total effort on cleanup and refactoring; this work will pay for itself over the long run.
+
+** 16.2 Maintaining comments: keep the comments near the code
+
+- When you change existing code, there's a good chance that the changes will invalidate some of the existing comments.
+- with a little discipline and a couple of guiding rules, it's possible to keep comments up-to-date without a huge effort.
+- The best way to ensure that comments get updated is to *position them close to the code they describe* ,
+
+  - so developers will see them when they change the code.
+  - The farther a comment is from its associated code, the less likely it is that it will be updated properly.
+
+- users should not need to read either code or header files; they should get their information from documentation compiled by tools
+
+  - Given tools such as these, the documentation should be located in the place that is most convenient for developers working on the code.
+
+- When writing implementation comments, don't put all the comments for an entire method at the top of the method.
+
+  - Spread them out, pushing each comment down to the narrowest scope that includes all of the code referred to by the comment.
+
+- In general, the farther a comment is from the code it describes, the more abstract it should be
+
+  - this reduces the likelihood that the comment will be invalidated by code changes
+
+** 16.3 Comments belong in the code, not the commit log
+
+- A common mistake when modifying code is to put detailed information about the change in the commit message for the source code repository, but then not to document it in the code.
+- Although commit messages can be browsed in the future by scanning the repository's log,
+
+  - a developer who needs the information is unlikely to think of scanning the repository log.
+  - Even if they do scan the log, it will be tedious to find the right log message.
+
+- When writing a commit message, ask yourself whether developers will need to use that information in the future.
+
+  - If so, then document this information in the code.
+
+- If you want to include a copy of this information in the commit message as well, that's fine, but the most important thing is to get it in the code.
+- This illustrates the principle of placing documentation in the place where developers are most likely to see it; the commit log is rarely that place.
+
+** 16.4 Maintaining comments: avoid duplication
+
+- The second technique for keeping comments up to date is to avoid duplication.
+- If documentation is duplicated, it is more difficult for developers to find and update all of the relevant copies.
+- Instead, try to document each design decision exactly once.
+
+  - If there are multiple places in the code that are affected by a particular decision, don't repeat the documentation at each of these points.
+  - Find the most obvious single place to put the documentation.
+
+- If there is no "obvious" single place to put a particular piece of documentation where developers will find it,
+
+  - create a designNotes file as described in Section 13.7.
+  - Or, pick the best of the available places and put the documentation there.
+  - In addition, add short comments in the other places that refer to the central location:
+
+    - If the reference becomes obsolete because the master comment was moved or deleted, this inconsistency will be self-evident because developers won't find the comment at the indicated place; they can use revision control history to find out what happened to the comment and then update the reference.
+    - In contrast, if the documentation is duplicated and some of the copies don't get updated, there will be no indication to developers that they are using stale information.
+
+- Don't redocument one module's design decisions in another module.
+
+  - don't put comments before a method call that explain what happens in the called method.
+  - If readers want to know, they should look at the interface comments for the method.
+  - Good development tools will usually provide this information automatically,
+
+- If information is already documented someplace outside your program, don't repeat the documentation inside the program; just reference the external documentation.
+- It's important that readers can easily find all the documentation needed to understand your code, but that doesn't mean you have to write all of that documentation.
+
+** 16.5 Maintaining comments: check the diffs
+
+- One good way to make sure documentation stays up to date is to
+
+  1. take a few minutes before committing a change to your revision control system to scan over all the changes for that commit;
+  2. make sure that each change is properly reflected in the documentation.
+
+- These pre-commit scans will also detect several other problems, such as accidentally leaving debugging code in the system or failing to fix TODO items.
+
+** 16.6 Higher-level comments are easier to maintain
+
+- comments are easier to maintain if they are higher-level and more abstract than the code.
+- These comments do not reflect the details of the code,
+
+  - so they will not be affected by minor code changes;
+  - only changes in overall behavior will affect these comments.
+
+- in general, the comments that are most useful (they don't simply repeat the code) are also easiest to maintain.
+
+* 17 Consistency
+
+- If a system is consistent, it means that
+
+  1. similar things are done in similar ways
+  2. dissimilar things are done in different ways
+
+- Consistency creates cognitive leverage: once you have learned how something is done in one place, you can use that knowledge to immediately understand other places that use the same approach.
+- If a system is not implemented in a consistent fashion, developers must learn about each situation separately. This will take more time.
+- Consistency reduces mistakes.
+
+  - If a system is not consistent, two situations may appear the same when in fact they are different. A developer may see a pattern that looks familiar and make incorrect assumptions based on previous encounters with that pattern.
+  - On the other hand, if the system is consistent, assumptions made based on familiar-looking situations will be safe. Consistency allows developers to work more quickly with fewer mistakes.
+
+** 17.1 Examples of consistency
+
+- Consistency can be applied at many levels in a system;
+
+  - Names
+  - Coding style
+  - Interfaces
+  - Design patterns
+  - Invariants
+
+** 17.2 Ensuring consistency
+
+- consistency is hard to maintain
+- A few tips for establishing and maintaining consistency
+
+  - Document
+
+    - Create a document that lists the most important overall conventions
+    - Place the document in a spot where developers are likely to see it
+    - Encourage new people joining the group to read the document
+    - Encourage existing people to review it every once in a while
+    - For conventions that are more localized, find an appropriate spot in the code to document them
+
+  - Enforce
+
+    - The best way to enforce conventions is to write a tool that checks for violations
+
+      - Make sure that code cannot be committed to the repository unless it passes the checker
+
+    - Code reviews provide another opportunity for enforcing conventions and for educating new developers about the conventions
+
+      - The more nit-picky that code reviewers are, the more quickly everyone on the team will learn the conventions, and the cleaner the code will be
+
+  - When in Rome
+
+    - When working in a new file, look around to see how the existing code is structured
+    - When making a design decision,
+
+      - ask yourself if it's likely that a similar decision was made elsewhere in the project
+      - if so, find an existing example and use the same approach in your new code
+
+  - Don't change existing conventions
+
+    - *Having a "better idea" is not a sufficient excuse to introduce inconsistencies*
+
+      - The value of consistency over inconsistency is almost always greater than the value of one approach over another
+      - Before introducing inconsistent behavior, ask yourself two questions
+
+        1. Do you have significant new information justifying your approach that wasn't available when the old convention was established?
+        2. Is the new approach so much better that it is worth taking the time to update all of the old uses?
+
+    - When you are done (upgrading from the old convention to the new convention)
+
+      - There should be no sign of the old convention
+      - However, you still run the risk that other developers will not know about the new convention, so they may reintroduce the old approach in the future
+
+    - Overall, reconsidering establishes conventions is rarely a good use of developer time
+
+** 17.3 Taking it too far
+
+- If you become overzealous about consistency and try to force dissimilar things into the same approach, you'll create complexity and confusion
+- Consistency only provides benefits when developers have confidence that "if it looks like an x, it really is an x"
+
+** 17.4 Conclusion
+
+- Consistency is another example of the investment mindset
+
+  - It will take a bit of extra work to ensure consistency
+
+    - Work to decide on conventions
+    - Work to crate automated checkers
+    - Work to look for similar situations to mimic in new code
+    - Work in code reviews to educate the team
+
+  - The return on this investment is that your code will be more obvious
+
+    - Developers will be able to understand the code's behavior more quickly and accurately
+    - This will allow them to work faster, with fewer bugs
+
+* 18 Code Should be Obvious
+
+- The solution to the obscurity problem (Section 2.3) is to write code in a way that makes it obvious;
+- this chapter discusses some of the factors that make code more or less obvious.
+- If code is obvious, it means that
+
+  - someone can read the code quickly, without much thought, and their first guesses about the behavior or meaning of the code will be correct.
+  - a reader doesn't need to spend much time or effort to gather all the information they need to work with the code.
+
+- If code is not obvious, then a reader must expend a lot of time and energy to understand it.
+
+  - Not only does this reduce their efficiency,
+  - but it also increases the likelihood of misunderstanding and bugs.
+
+- Obvious code needs fewer comments than nonobvious code.
+- "Obvious" is in the mind of the reader:
+
+  - it's easier to notice that someone else's code is nonobvious than to see problems with your own code.
+  - Thus, the best way to determine the obviousness of code is through code reviews.
+
+    - If someone reading your code says it's not obvious, then it's not obvious, no matter how clear it may seem to you.
+    - By trying to understand what made the code nonobvious, you will learn how to write better code in the future.
+
+** 18.1 Things that make code more obvious
+
+- Two of the most important techniques for making code obvious have already been discussed in previous chapters.
+
+  1. The first is choosing good names
+
+     - Precise and meaningful names clarify the behavior of the code and reduce the need for documentation.
+     - If a name is vague or ambiguous, then readers will have read through the code in order to deduce the meaning of the named entity; this is time-consuming and error-prone.
+
+  2. consistency (Chapter 17).
+
+     - If similar things are always done in similar ways, then readers can recognize patterns they have seen before and immediately draw (safe) conclusions without analyzing the code in detail.
+
+- Here are a few other general-purpose techniques for making code more obvious:
+
+  - Judicious use of white space.
+
+    - The way code is formatted can impact how easy it is to understand.
+
+  - Comments.
+
+    - Sometimes it isn't possible to avoid code that is nonobvious. When this happens, it's important to use comments to compensate by providing the missing information.
+    - To do this well, you must put yourself in the position of the reader and figure out what is likely to confuse them, and what information will clear up that confusion.
+
+** 18.2 Things that make code less obvious
+
+Some of these, such as event-driven programming, are useful in some situations, so you may end up using them anyway. When this happens, extra documentation can help to minimize reader confusion.
+
+- Event-driven programming.
+
+  - Event-driven programming makes it hard to follow the flow of control.
+  - To compensate for this obscurity, use the interface comment for each handler function to indicate when it is invoked,
+
+- Generic containers.
+
+  - Many languages provide generic classes for grouping two or more items into a single object, such as Pair in Java or std::pair in C++.
+  - These classes are tempting because they make it easy to pass around several objects with a single variable.
+  - Unfortunately, generic containers result in nonobvious code because the grouped elements have generic names that obscure their meaning.
+  - Thus, it's better not to use generic containers.
+
+    - If you need a container, define a new class or structure that is specialized for the particular use.
+    - You can then use meaningful names for the elements, and you can provide additional documentation in the declaration, which is not possible with the generic container.
+
+  - a general rule: *software should be designed for ease of reading, not ease of writing* .
+
+- Different types for declaration and allocation.
+- Code that violates reader expectations.
+
+  - Code is most obvious if it conforms to the conventions that readers will be expecting;
+  - if it doesn't, then it's important to document the behavior so readers aren't confused.
+
+*** Red Flag: Nonobvious Code   RedFlag
+
+- If the meaning and behavior of code cannot be understood with a quick reading, it is a red flag.
+- Often this means that there is important information that is not immediately clear to someone reading the code.
+
+** 18.3 Conclusion
+
+- Another way of thinking about obviousness is in terms of information.
+
+  - If code is nonobvious, that usually means there is important information about the code that the reader does not have:
+  - To make code obvious, you must ensure that readers always have the information they need to understand it.
+
+- You can do this in three ways.
+
+  1. The best way is to reduce the amount of information that is needed, using design techniques such as abstraction and eliminating special cases.
+  2. take advantage of information that readers have already acquired in other contexts (for example, by following conventions and conforming to expectations) so readers don't have to learn new information for your code.
+  3. present the important information to them in the code, using techniques such as good names and strategic comments.
+
+* 19 Software Trends
+
+- This chapter:
+
+  - several trends and patterns that have become popular in software development over the last few decades
+  - For each trend:
+
+    - how that trend relates to the principles in this book
+    - use the principles to evaluate whether that trend provides leverage against software complexity.
+
+** 19.1 Object-oriented programming and inheritance
+
+- One of the key elements of object-oriented programming is inheritance.
+- Inheritance comes in two forms, which have different implications for software complexity
+
+  1. Interface inheritance
+
+     - Interface inheritance provides leverage against complexity by reusing the same interface for multiple purposes
+     - It allows knowledge acquired in solving one problem to be used to solve other problems.
+
+       Knowledge acquired in solving one problem
+           such as how to use an I/O interface to read and write disk files
+       Solve other problems
+           such as communicating over a network socket
+
+     - *The more different implementations there are of an interface, the deeper the interface becomes*
+     - In order for an interface to have many implementations, it must (this notion is at the heart of abstraction.)
+
+       1. capture the essential features of all the underlying implementations
+       2. while steering clear of the details that differ between the implementations;
+
+  2. Implementation inheritance
+
+     - Without implementation inheritance, the same method implementation might need to be duplicated in several subclasses, which would create dependencies between those subclasses
+     - Thus, implementation inheritance reduces the amount of code that needs to be modified as the system evolves
+     - However, implementation inheritance creates dependencies between the parent class and each of its subclasses
+
+       - this results in information leakage between the classes in the inheritance hierarchy and makes it hard to modify one class in the hierarchy without looking at the others
+       - In the worst case, programmers will need complete knowledge of the entire class hierarchy underneath the parent class in order to make changes to any of the classes.
+       - Class hierarchies that use implementation inheritance extensively tend to have high complexity.
+
+     - Thus, implementation inheritance should be used with caution.
+
+       - Before using implementation inheritance, consider whether an approach based on composition can provide the same benefits (Composition over Inheritance)
+       - If there is no viable alternative to implementation inheritance, try to separate the state managed by the parent class from that managed by subclasses
+
+         - This applies the notion of information hiding within the class hierarchy to reduce dependencies.
+
+- Although the mechanisms provided by object-oriented programming can assist in implementing clean designs, *they do not, by themselves, guarantee good design*
+
+** 19.2 Agile development
+
+- One of the most important elements of agile development is the notion that development should be incremental and iterative.
+
+  - 1 Introduction (It's All About Complexity)
+  - The best way to end up with a good design is to develop a system in increments, where each increment adds a few new abstractions and refactors existing abstractions based on experience
+
+- One of the risks of agile development is that it can lead to tactical programming
+
+  - Agile development tends to focus developers on features, not abstractions, and it encourages developers to put off design decisions in order to produce working software as soon as possible
+  - For example, some agile practitioners argue that you shouldn’t implement general-purpose mechanisms right away; implement a minimal special-purpose mechanism to start with, and refactor into something more generic later, once you know that it’s needed.
+
+    - Although these arguments make sense to a degree, they argue against an investment approach, and they encourage a more tactical style of programming.
+    - This can result in a rapid accumulation of complexity.
+
+  - Developing incrementally is generally a good idea, but *the increments of development should be abstractions* , not features.
+
+    - It’s fine to put off all thoughts about a particular abstraction until it’s needed by a feature.
+    - Once you need the abstraction,
+
+      - invest the time to design it cleanly;
+      - follow the advice of Chapter 6 and make it somewhat general-purpose.
+
+** 19.3 Unit tests
+
+- Tests, particularly unit tests, play an important role in software design because they *facilitate refactoring*
+
+  - Without a test suite, it’s dangerous to make major structural changes to a system
+
+    - There’s no easy way to find bugs, so it’s likely that bugs will go undetected until the new code is deployed, where they are much more expensive to find and fix.
+    - As a result, developers avoid refactoring in systems without good test suites;
+
+      - they try to minimize the number of code changes for each new feature or bug fix,
+      - which means that complexity accumulates and design mistakes don’t get corrected.
+
+  - With a good set of tests, developers can be more confident when refactoring
+
+    - because the test suite will find most bugs that are introduced.
+    - This encourages developers to make structural improvements to a system, which results in a better design.
+    - Unit tests are particularly valuable: they provide a higher degree of code coverage than system tests, so they are more likely to uncover any bugs.
+
+** 19.4 Test-driven development
+
+- The problem with test-driven development is that it focuses attention on getting specific features working, rather than finding the best design.
+
+  - This is tactical programming pure and simple, with all of its disadvantages
+  - Test-driven development is too incremental: at any point in time, it’s tempting to just hack in the next feature to make the next test pass.
+  - There’s no obvious time to do design, so it’s easy to end up with a mess.
+
+- The units of development should be abstractions, not features. (19.2 Agile development)
+
+  - Once you discover the need for an abstraction,
+
+    - don’t create the abstraction in pieces over time;
+    - design it all at once (or at least enough to provide a reasonably comprehensive set of core functions).
+
+  - This is more likely to produce a clean design whose pieces fit together well.
+
+- One place where it makes sense to write the tests first is when fixing bugs.
+
+  - *Before fixing a bug, write a unit test that fails because of the bug.*
+  - Then fix the bug and make sure that the unit test now passes.
+  - This is the best way to make sure you really have fixed the bug.
+
+    - If you fix the bug before writing the test, it’s possible that the new unit test doesn’t actually trigger the bug, in which case it won’t tell you whether you really fixed the problem.
+
+** 19.5 Design patterns
+
+- Design patterns represent an alternative to design: rather than designing a new mechanism from scratch, just apply a well-known design pattern.
+- For the most part, this is good: design patterns arose because
+
+  1. they solve common problems,
+  2. they are generally agreed to provide clean solutions.
+
+- The greatest risk with design patterns is over-application.
+
+  - Not every problem can be solved cleanly with an existing design pattern;
+  - Don’t try to force a problem into a design pattern when a custom approach will be cleaner
+  - Using design patterns doesn’t automatically improve a software system; it only does so if the design patterns fit.
+
+- As with many ideas in software design, the notion that design patterns are good doesn’t necessarily mean that more design patterns are better.
+
+** 19.6 Getters and setters
+
+- Getters and setters are shallow methods (typically only a single line), so they add clutter to the class’s interface without providing much functionality.
+- It’s better to avoid getters and setters (or any exposure of implementation data) as much as possible.
+- One of the risks of establishing a design pattern is that *developers assume the pattern is good and try to use it as much as possible.*
+
+  - This has led to overusage of getters and setters in Java.
+
+** 19.7 Conclusion
+
+- Whenever you encounter a proposal for a new software development paradigm, challenge it from the standpoint of complexity:
+
+  - *does the proposal really help to minimize complexity in large software systems?*
+  - Many proposals sound good on the surface, but if you look more deeply you will see that some of them make complexity worse, not better.
+
+* 20 Designing for Performance
+
+- This chapter discusses
+
+  - What if you are working on a system that needs to be fast?
+  - How should performance considerations affect the design process?
+  - how to achieve high performance without sacrificing clean design.
+
+- The most important idea is still *simplicity* :
+
+  - not only does simplicity improve a system's design,
+  - but it usually makes systems faster.
+
+** 20.1 How to think about performance
+
+- How much should you worry about performance during the normal development process?
+
+  - If you try to optimize every statement for maximum speed,
+
+    - it will slow down development and create a lot of unnecessary complexity.
+    - Furthermore, many of the “optimizations” won't actually help performance.
+
+  - On the other hand, if you completely ignore performance issues,
+
+    - it's easy to end up with a large number of significant inefficiencies spread throughout the code;
+    - the resulting system can easily be 5–10x slower than it needs to be.
+
+  - The best approach is something between these extremes, where you *use basic knowledge of performance to choose design alternatives that are “naturally efficient” yet also clean and simple.*
+
+    - The key is to develop an awareness of which operations are fundamentally expensive
+
+      - [[https://gist.github.com/hellerbarde/2843375][Latency numbers every programmer should know]]
+      - The best way to learn which things are expensive is to run micro-benchmarks (small programs that measure the cost of a single operation in isolation).
+
+    - Once you have a general sense for what is expensive and what is cheap, you can use that information to choose cheap operations whenever possible
+
+      - In many cases, a more efficient approach will be just as simple as a slower approach.
+      - If the only way to improve efficiency is by adding complexity, then the choice is more difficult
+
+        - If the more efficient design adds only a small amount of complexity, and if the complexity is hidden, so it doesn't affect any interfaces, then it may be worthwhile (but beware: complexity is incremental).
+        - If the faster design adds a lot of implementation complexity, or if it results in more complicated interfaces, then it may be better to start off with the simpler approach and optimize later if performance turns out to be a problem.
+
+          - However, if you have clear evidence that performance will be important in a particular situation, then you might as well implement the faster approach immediately.
+
+- In general, simpler code tends to run faster than complex code.
+
+  - If you have defined away special cases and exceptions, then no code is needed to check for those cases and the system runs faster.
+  - Deep classes are more efficient than shallow ones, because they get more work done for each method call. Shallow classes result in more layer crossings, and each layer crossing adds overhead.
+
+** 20.2 Measure before modifying
+
+- Programmers' intuitions about performance are unreliable
+
+  - If you start making changes based on intuition, you'll waste time on things that don't actually improve performance, and you'll probably make the system more complicated in the process.
+
+- *Before making any changes, measure the system's existing behavior*
+
+  1. the measurements will identify the places where performance tuning will have the biggest impact.
+
+     - You'll need to measure deeper to identify in detail the factors that contribute to overall performance;
+     - the goal is to identify a small number of very specific places where the system is currently spending a lot of time, and where you have ideas for improvement
+
+  2. provide a baseline, so that you can re-measure performance after making your changes to ensure that performance actually improved
+
+     - If the changes didn't make a measurable difference in performance, then back them out (unless they made the system simpler).
+     - *There's no point in retaining complexity unless it provides a significant speedup.*
+
+** 20.3 Design around the critical path
+
+- The best way to improve its performance is with a “fundamental” change, such as introducing a cache, or using a different algorithmic approach
+- Unfortunately, situations will sometimes arise where there isn't a fundamental fix
+
+  - This brings us to the core issue for this chapter, which is *how to redesign an existing piece of code so that it runs faster.*
+  - The key idea is to *design the code around the critical path.*
+
+    - Start off by asking yourself *what is the smallest amount of code that must be executed* to carry out the desired task in the common case
+    - The ideal code probably clashes with your existing class structure, and it may not be practical, but it provides a good target: *this represents the simplest and fastest that the code can ever be.*
+    - The next step is to look for a new design that comes as close as possible to the ideal while still having a clean structure
+    - One of the most important things that happens in this process is to *remove special cases from the critical path*
+
+      - When code is slow, it's often because it must handle a variety of situations, and the code gets structured to simplify the handling of all the different cases.
+      - Ideally, there will be a single if statement at the beginning, which detects all special cases with one test. In the normal case, only this one test will need to be made, after which the the critical path can be executed with no additional tests for special cases
+      - Performance isn't as important for special cases, so you can structure the special-case code for simplicity rather than performance.
+
+** 20.4 An example: RAMCloud Buffers
+** 20.5 Conclusion
+
+- *clean design and high performance are compatible.*
+- Complicated code tends to be slow because it does extraneous or redundant work.
+- On the other hand, if you write clean, simple code, your system will probably be fast enough that you don't have to worry much about performance in the first place.
+- In the few cases where you do need to optimize performance, the key is simplicity again: find the critical paths that are most important for performance and make them as simple as possible.
+
+* 21 Conclusion
+
+- This book is about one thing: complexity
+- Dealing with complexity is the most important challenge in software design.
+
+  - It is what makes systems hard to build and maintain,
+  - and it often makes them slow as well
+
+- Over the course of the book
+
+  1. the root causes that lead to complexity
+  2. red flags that can help you identify unnecessary complexity
+  3. general ideas you can use to create simpler software systems
+  4. the investment mindset needed to produce simple designs
+
+- The downside of all these suggestions is that they create extra work in the early stages of a project
+
+  - Furthermore, if you aren’t used to thinking about design issues, then you will slow down even more while you learn good design techniques.
+  - If the only thing that matters to you is making your current code work as soon as possible, then thinking about design will seem like drudge work that is getting in the way of your real goal.
+
+- On the other hand, *if good design is an important goal for you, then the ideas in this book should make programming more fun.*
+
+  - Design is a fascinating puzzle: how can a particular problem be solved with the simplest possible structure?
+  - It’s fun to explore different approaches, and it’s a great feeling to discover a solution that is both simple and powerful.
+  - A clean, simple, and obvious design is a beautiful thing.
+
+- Furthermore, the investments you make in good design will pay off quickly.
+
+  - The modules you defined carefully at the beginning of a project will save you time later as you reuse them over and over.
+  - The clear documentation that you wrote six months ago will save you time when you return to the code to add a new feature.
+  - The time you spent honing your design skills will also pay for itself:
+
+    - as your skills and experience grow, you will find that you can produce good designs more and more quickly.
+    - *Good design doesn’t really take much longer than quick-and-dirty design, once you know how.*
+
+- The reward for being a good designer is that *you get to spend a larger fraction of your time in the design phase, which is fun.*
+
+  - Poor designers spend most of their time chasing bugs in complicated and brittle code.
+  - If you improve your design skills, not only will you produce higher quality software more quickly, but the software development process will be more enjoyable.

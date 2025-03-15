@@ -1,0 +1,182 @@
+#+TITLE: Write Custom RSpec Matchers to Simplify Your Specs
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-01]
+#+URI:         blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs/index.html
+#+TAGS:        TDD, RSpec, Ruby, Minitest
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I write a lot of tests for our mobile devices push notifications feature (mainly for iOS and Android).
+
+* Before using a matcher
+
+We use gem Rpush[fn:1] to wrap the logic for sending notifications to iOS/Android devices and keeping a log for these notifications. And it's hard to test if an iOS/Android notification has been sent to the right device. So my specs only test if a Rpush notification object is persisted correctly:
+
+#+begin_src ruby
+it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  expect { described_class.send_for(user) }
+    .to(change { Rpush::Apns::Notification.count }.by(1))
+
+  notification = Rpush::Apns::Notification.last
+  expect(notification.app).to eq app
+  expect(notification.device_token).to eq 'DeviceToken'
+end
+#+end_src
+
+But there are multiple expect statements in this test, which makes this test's intention ambiguous. (You cannot tell what this test example is really testing if you don't check the it description.)
+
+* Ruby Way to Refactor It
+
+After I discovered this problem, I tried to solve it by extracting a Ruby method:
+
+#+begin_src ruby
+it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  assert_an_ios_notification_to_be_sent(app, 'DeviceToken') do
+    described_class.send_for(user)
+  end
+end
+
+def assert_an_ios_notification_to_be_sent(app, device_token)
+  expect { yield }
+    .to(change { Rpush::Apns::Notification.count }.by(1))
+
+  notification = Rpush::Apns::Notification.last
+  expect(notification.app).to eq app
+  expect(notification.device_token).to eq device_token
+end
+#+end_src
+** Higher Level of abstraction
+
+This new helper method raises us to a new level of abstraction for testing an iOS notification is sent correctly.
+
+- Readability
+
+  The reader can know for sure this function wants to send an iOS notification and do not need to care how to really test it.
+
+- Better Interface Design
+
+  Another benefit is that this helper method can guide us to a better interface.
+
+  If we find that we constantly using this helper method, we may consider to
+
+  1. create a new method for Rpush (send_ios_notification in this case).
+  2. Then we can just test that message (send_ios_notification) was sent to Rpush (or our own wrapper for Rpush),
+  3. and only test the real behavior in Rpush's specs. (Which will speed up our test suites a lot while still provides the same reliability for us)
+
+- Easier to update
+
+  It's much easier to update code in a helper method than code scattered through the codebase.
+
+  Say if we want to only test the send_ios_notification message was sent to Rpush instead of testing the notification is created, we just need to do that in this helper method.
+
+  For example, at first, I only tested that correct messages were sent to Rpush classes:
+
+#+begin_src ruby
+def assert_an_ios_notification_to_be_sent(app, device_token)
+  notification_spy = instance_spy(Rpush::Apns::Notification)
+
+  allow(Rpush::Apns::Notification).to receive(:new).and_return(notification_spy)
+
+  yield
+
+  expect(notification_spy).to have_received(:app=).with(app)
+  expect(notification_spy).to have_received(:device_token=).with(device_token)
+  expect(notification_spy).to have_received(:save!)
+end
+#+end_src
+
+  Then I found that I could just test the Notification creation, I just changed this method and every tests were still passing.
+
+* RSpec Way to Refactor It
+
+If I'm using Minitest, I'll stop refactoring. (But I'm using RSpec.)
+
+The problem with last solution for RSpec is that its language is not very native.
+
+1. You cannot customize the error message to explain why this method fails and how to fix it
+2. You cannot chain it with other RSpec matchers with and
+3. it's using assert instead of expect
+
+So, here comes the RSpec way to refactor our test:
+
+#+begin_src ruby
+it "sends a notification to user's ios device" do
+  user = user_with_device(device_token: 'DeviceToken')
+  app = create_rpush_apns_app
+
+  expect { described_class.send_for(user) }
+    .to send_ios_notification(app, 'DeviceToken')
+  end
+end
+
+RSpec::Matchers.define(:send_ios_notification) do |app, device_token|
+  match(notify_expectation_failures: true) do |action|
+    expect { action.call }
+      .to(change { Rpush::Apns::Notification.count }.by(1))
+
+    notification = Rpush::Apns::Notification.last
+    expect(notification.app).to eq app
+    expect(notification.device_token).to eq device_token
+  end
+
+  supports_block_expectations
+end
+#+end_src
+
+This solution reads more natural in RSpec's context.
+
+And better than that, you can even:
+
+1. customize the error message when the match fails
+2. chain several matchers together in another matcher to improve your test's readability to another level[fn:2]
+
+You can check more about how to write a custom RSpec Matcher [[https://relishapp.com/rspec/rspec-expectations/v/3-7/docs/custom-matchers][here]].
+
+* My Ranting about RSpec v.s. Minitest
+
+I really don't understand why RSpec is (or seems to be?) more popular than Minitest.
+
+To me, the second solution is good enough.
+
+If I'm using Minitest, I just need to
+
+1. pass the custom error message into assert to get the messages I want.
+2. wrap several assert in a single method to chain them together
+
+And the third solution is obviously longer and I need to put it in another file (because it's calling RSpec::Matchers.define, which seems to be a heavy method).
+
+Minitest is way faster than RSpec[fn:3], and more importantly, it's just pure Ruby.
+
+I really don't understand what we can get from using RSpec. Sacrificing the test speed just to make our tests read like English?
+
+And what's worse, RSpec has a way higher learning curve than Minitest. There are 7 pages for "Custom matchers" and if you want to learn all the features RSpec provides, you need to read a lot more documentations than Minitest.
+
+What we really want for writing a great test/spec? Just a true/false checker with some message customization availability. (You can even write a test framework like this in less than 1 hour[fn:4]) I think that's why XTest are successful. They just do this one thing and do this very well.
+
+For RSpec, it does have more features than minitest. But it's way slower than Minitest in exchange for these features. (Slower both for learning how to write specs and running your specs)
+
+I just think it's not worth it.
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/rpush/rpush][rpush/rpush: The push notification service for Ruby.]]
+
+[fn:2]
+
+[[https://robots.thoughtbot.com/chain-rspec-matchers-for-improved-test-readability][Chain RSpec Matchers for Improved Test Readability]]
+
+[fn:3]
+
+[[https://speakerdeck.com/ahawkins/bow-before-minitest][Bow Before MiniTest // Speaker Deck]]
+
+[fn:4]
+
+[[https://www.youtube.com/watch?v=VPr5pmlAq20][RailsConf 2016 Writing a Test Framework from Scratch by Ryan Davis - YouTube]]

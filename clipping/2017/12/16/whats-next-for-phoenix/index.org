@@ -1,0 +1,119 @@
+#+TITLE: What's Next For Phoenix
+
+I just watched this another great talk from Chris McCord (creator of Phoenix).
+
+The part explaining Contexts was super awesome. Context really is the way to write good code:
+
+#+begin_quote
+
+Write dedicated modules that expose and group related functionality.
+
+#+end_quote
+
+And Chris also talked about what new features would come in Phoenix 1.4. Definitely worth check out.
+
+* Notes
+
+- What makes a good Elixir Program? -> What makes a good Program?
+
+  - Easy to write
+  - Easy to understand
+  - Easy to change
+
+- Programming is hard. Teaching programming is harder.
+- OOP -> FP
+
+  - Design Patterns are baggage in FP world
+  - Mod.fun/arity is not quite enough
+
+- Contexts
+
+  - Dedicated modules that expose and group related functionality
+  - Don't be afraid to make decisions (context names)
+  - New comers are affected by Context thinking (explain Social Reaction to a new comer)
+
+#+begin_src ruby
+defmodule Reaction do
+  alias CommunityContent.Post
+
+  def add_like(user, %Post{} = post)
+
+  def get_stats(post)
+end
+
+defmodule Reaction.PostReaction do
+  schema "post_reactions" do
+    field :user_id, :id
+    field :post_id, :id
+    field :sentiment, :string
+  end
+end
+#+end_src
+  - Experienced Erlang/Elixir developers are affected too
+
+    - With Phoenix 1.1 => interleaved code
+    - Clean up => "service" modules (like contexts)
+    - *It's important to have generators that encourages clean boundaries*
+
+- Phoenix 1.4: *Monitoring & Metrics*
+
+  - Application Performance Monitor (APM)
+
+    - Common Interface for
+
+      - elixir monitoring
+      - Monitoring services (Datadog, NewRelic, etc.)
+
+    - Goals
+
+      Efficiency
+          Data collection must not take out the application under load
+      Insights
+          Metrics should provide actionable insights for non-experts
+
+    - Available Metrics
+
+      Gauge
+          instantaneous measurement
+
+          - CPU usage
+          - Memory usage
+
+      Meter/Timer
+          rate of events over time with statistical distribution
+
+          - requests per second
+
+      Instrumenter
+          compile-time hooks into application events
+
+  - Breakpoint Debugger
+  - Developer Dashboard
+  - End-to-End Testing
+
+    - Concurrent
+    - Transactional
+    - JavaScript tests:
+
+      Call Phoenix endpoints to check-out/check-in Ecto Sandbox connection
+
+#+begin_src ruby
+def checkout(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkout(conn)
+end
+
+def checkin(conn, _params) do
+  Phoenix.Ecto.Sandbox.checkin(conn)
+end
+#+end_src
+
+  - Easier Contribution
+
+    - 1st Contribution Sprint
+    - Phoenix Guides are merged
+
+- Phoenix/Elixir have enabled many people building many useful stuffs
+
+  - Make the previously unachievable, achievable
+
+-- from [[https://www.youtube.com/watch?v=zbbK0WOvWII][ElixirConf 2017 - Closing Keynote - Chris McCord - YouTube]]

@@ -1,0 +1,60 @@
+#+TITLE: The Modular Monolith: Elixir Architecture
+
+There has been a hype about microservices: start every project with a microservice structure! But I always believe we should build a well organized monolith first, then consider extracting submodules into microservices one by one. And there are some people who think the same (or I learned this idea from them).
+
+First, I was quite curious about how to build a modular monolith with Ruby on Rails due to my Rails background. I found this article which gives a great answer:
+
+#+begin_quote
+
+- First focus on making our app modular
+
+  - Our goal was to *identify good architectural boundaries before we extracted code out into independent services*
+  - This would set us up to be able to migrate to microservices in the future, by having the code structured in a way to make a smooth transition.
+
+- Effectively, we're using a monorepo.
+
+  - We don't have an app/ directory in our Rails project. All of our code is either in gems/ or engines/.
+
+#+begin_src ruby
+Dir.glob(File.expand_path("../engines/*", __FILE__)).each do |path|
+  gem File.basename(path), :path => path
+end
+
+Dir.glob(File.expand_path("../gems/*", __FILE__)).each do |path|
+  gem File.basename(path), :path => path
+end
+#+end_src
+  - First Steps Towards Implementing a Modular Monolith
+
+    - A great place to start (three engines)
+
+#+begin_src sql
+
++----------+      +------------+
+|  Admin   |      |    API     |
++--+-------+      +---------+--+
+   |                        |
+   |                        |
+   |     +-------------+    |
+   +---> |   Domain    | <--+
+         +-------------+
+#+end_src
+
+      1. Admin
+      2. API
+      3. Domain
+
+    - breaking up the domain logic
+    - putting third-party dependencies in context
+
+#+end_quote
+
+-- from [[https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4][The Modular Monolith: Rails Architecture – Dan Manges – Medium]]
+
+But this article reminds me more of Elixir than Rails. Here is why:
+
+1. Using relative path to extract code as gems into separate directories is almost the same as the way Elixir organize Umbrella apps.
+2. Breaking up the domain logic into three gems=/=apps (like Admin, API, Domain) is a typical use case for Umbrella apps.
+
+If you want to learn more about Umbrella apps, you can check the [[https://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-projects.html][official documents]]. And I also explained [[http://dsdshcym.github.io/clipping/2018/03/21/elixir-erlang-provide-a-great-way-to-develop-incrementally/][how to build an Elixir app
+from a monolith to a microservice]] before. Hopefully this can help you somehow. :)

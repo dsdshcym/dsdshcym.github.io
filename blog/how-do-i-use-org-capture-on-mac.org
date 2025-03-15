@@ -1,0 +1,87 @@
+#+TITLE: How do I use org-capture on Mac
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2016-05-08]
+#+URI:         blog/2016/05/08/how-do-i-use-org-capture-on-mac/index.html
+#+TAGS:        Org, Mac
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+org-capture is one of the most powerful feature of Org-Mode. It lets me capture my todo items and notes really quickly. Someone even use org-capture to [[https://www.youtube.com/watch?v=HVYQnvBrnZ4][capture
+Chinese words and build flash cards]]. Here is how I use org-capture.
+
+1. The most basic one is Task, which captures a todo item and save it to my refile.org file.
+2. You may wonder what are %a and %t do in my templates.
+
+   - %a will add a link to current file into the capture content
+   - %t will add a timestamp
+   - %^{} will prompt for content
+   - You can even eval some elisp code using %()
+
+3. I have two different ways to grab a link from Chrome.
+
+   1. org-mac-chrome-insert-frontmost-url, this is a function from org-mac-link package. This package use some apple scripts to grab links from some applications, such as Safari, Chrome, Skim. But these scripts don't work well when you have multiple windows of the same app opened. And it can also cause Emacs hanging.
+   2. Use org-protocol, which is a great way to capture links. But the emacs installed from homebrew can not handle org-protocol links, you need to install the emacs-mac from emacs-mac-port.
+
+      - Then I use a script to open a org-protocol link in Chrome.
+
+#+begin_src emacslisp
+
+orgCapture(key) -> {{
+location.href = 'org-protocol://capture://' + key + '/' +
+    encodeURIComponent(location.href) +
+    '/' +
+    encodeURIComponent(document.title) +
+    '/' +
+    encodeURIComponent(window.getSelection())
+}}
+#+end_src
+      - Emacs will deal with this link and choose which template I want to use.
+
+4. Here are my templates
+
+#+begin_src css
+(setq org-capture-templates
+          '(("t" "Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n")
+            ("T" "Clock-in Task" entry
+              (file "~/Org/refile.org")
+              "* TODO %?\n"
+              :clock-in t
+              :clock-resume t)
+            ("d" "Distraction in a pomodoro" entry
+              (file "~/Org/refile.org")
+              "* TODO %^{Task}\n  SCHEDULED: %t\n"
+              :immediate-finish t)
+            ("n" "Note" entry
+              (file "~/Org/refile.org")
+              "* %?\n")
+            ("l" "Note with link to current file" entry
+              (file "~/Org/refile.org")
+              "* %a")
+            ("j" "Journal" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n"
+              :clock-in t
+              :clock-resume t)
+            ("J" "Journal from Phone" entry
+              (file+datetree "~/Org/diary.org")
+              "* %^{Content}\n  :LOGBOOK:\n  CLOCK: %^{Begin}U--%^{End}U\n  :END:")
+            ("c" "Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)")
+            ("C" "Clock-in Link from Chrome" entry
+              (file "~/Org/refile.org")
+              "* %(org-mac-chrome-get-frontmost-url)"
+              :clock-in t
+              :clock-resume t)
+            ("p" "People (Contacts)" entry
+              (file "~/Org/contacts.org")
+              "* %(org-contacts-template-name)\n  :PROPERTIES:\n  :EMAIL: %(org-contacts-template-email)\n  :END:")
+            ("k" "Push to Kindle" entry
+              (file+headline "~/Org/refile.org" "Push to Kindle")
+              "* %a"
+              :immediate-finish t)
+            ))
+#+end_src

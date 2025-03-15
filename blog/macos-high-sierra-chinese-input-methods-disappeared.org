@@ -1,0 +1,37 @@
+#+TITLE: macOS High Sierra 下中文输入法突然消失
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-27]
+#+URI:         blog/2017/10/27/macos-high-sierra-chinese-input-methods-disappeared/index.html
+#+TAGS:        macOS, Mac
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+在升级 High Sierra 不久之后的一个晚上，我的 Mac 突然无法输入中文了。
+
+本以为是正常的输入法切换抽风现象，但是仔细一看：
+
+1. 简体中文输入法已经从当前输入法列表中消失了
+2. 整个中文输入法的选项也已经从可选的输入法列表中消失（如下图）。
+
+[[https://ws4.sinaimg.cn/large/006tNc79gy1fkwkx8ysdjj30zk0vl0xz.jpg]]
+
+经过一番搜寻后终于找到了解决方法：
+
+#+begin_src awk
+sudo rm /System/Library/Caches/com.apple.IntlDataCache*
+sudo rm /var/folders/*/*/-Caches-/com.apple.IntlDataCache*
+#+end_src
+
+- [[https://www.mobile01.com/topicdetail.php?f=482&t=977174][蘋果軟體綜合 - 求助！ 每開機一次！輸入法就消失一次 - 蘋果討論區 - Mobile01]]
+- [[https://support.apple.com/zh-tw/HT203221][Mac OS X Leopard：出現模擬鍵盤和字元面板未出現 - Apple 支援]]
+
+万万没想到这个 bug 是 Leopard 时代的，在升级 High Sierra 之后竟然还能复现。
+
+#+begin_quote
+
+P.S.
+
+再另外吐槽一下 macOS 的系统升级，升级到 High Sierra 之后，开机启动项都消失了，需要一个一个重新设置。
+
+#+end_quote

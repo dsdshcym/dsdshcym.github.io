@@ -1,0 +1,85 @@
+#+TITLE: Good, Fast, and Featureful. Pick Two!
+
+There is a famous saying about product development: "Good, Cheap, and Fast. Pick two!" I think it's definitely true when building features. But when building a whole product, which may contain many uncertain features, I have a slightly different version: *"Good, Fast, and Featureful. Pick two!"*
+
+[[https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/7342508a6ef23480ba759618c853d688980566cd/assets/pick_two.gif]]
+
+- Good is about software quality.
+- Fast is about delivery cost.
+- Featureful is about product scope.
+
+These three constraints is like the [[https://en.wikipedia.org/wiki/CAP_theorem][CAP theorem]] for project management. You need to make a tradeoff between them to build a product.
+
+* Fast + Featureful
+#+begin_quote
+
+- Examples
+
+  - Uber
+  - Stitch Fix
+  - Twitter
+  - HQ Trivia
+  - Android
+
+- If the product offers enough value to a user, she will put up with almost anything for the privilege of using it.
+- The broken customer journey of early users is a badge of pride for companies that have shown true breakaway growth and product/market fit.
+- Focus on the heart of what's working. Nearly everything else can be fixed with enough time and resources.
+
+#+end_quote
+
+-- from [[https://medium.com/lightspeed-venture-partners/broken-is-beautiful-425b530765c6][Broken is beautiful. – Lightspeed Venture Partners – Medium]]
+
+* Good + Featureful
+#+begin_quote
+
+- No one wins when a startup optimizes all its success for the short term.
+
+  - As a startup, to be successful, you need to
+
+    1. deliver more than just a first product to a handful of customers
+    2. continually deliver to a large number of customers over a long period of time
+
+  - Scaling requires at least some structure and methodology
+  - Especially early on
+
+- Start Slower, Finish Faster (and Better)
+
+  - Starting slower and more methodically, especially in the early stages as you're vetting your idea and the target market, is the key to shifting the odds of creating a successful startup in your favor.
+
+    1. You'll get to market with a solid, finished product at least as fast (we're being generous here, in all likelihood, faster)
+    2. You'll have more customers lined up to purchase once you deliver your product
+    3. You'll end up with a more solid product that can quickly be modified to meet the needs of an expanding customer base — you'll be able to scale better and faster.
+    4. You'll need less funding along the way.
+
+#+end_quote
+
+-- from [[https://medium.com/@will_80765/startups-start-slow-to-move-fast-and-take-less-money-cb9c3f5ad51][Startups: Start Slow to Move Fast (and Take Less Money)]]
+
+* Good + Fast
+#+begin_quote
+
+- *Tight constraints force a creative, disciplined and critical approach to product design and development.*
+- The product is the result of managing a delicate balance of tradeoffs.
+- Steps to build and release value for customers
+
+  - Product scoping (Product manager is accountable)
+
+    - Design your solution to the problem at hand
+    - Create a specification breakdown for the solution
+    - Turn this specification into user stories
+    - Go small: Define your minimum version of this feature that delivers value
+
+  - Technical Scoping (Engineering manager is accountable)
+
+    - Get full team alignment and understanding on the specification and user stories
+    - Break user stories into technical tasks
+    - Estimate technical tasks
+
+  - Cycle Scoping (Product manager is accountable)
+
+    - Based on estimates, select which stories and tasks will get completed in the current development cycle
+    - Leave out all the rest for another day
+
+#+end_quote
+
+-- from [[https://open.buffer.com/product-scope/][Product Scope: The Path to a Minimum Lovable Product]]

@@ -1,0 +1,27 @@
+#+TITLE: Coping with Complexity
+#+begin_quote
+
+1. If the tests fails in a predictable way (e.g. NoMethodError), it's almost as good as passing
+2. Complexoty Lumper vs Complexity Splitter
+
+   - Kent Beck is a Splitter
+
+     - logically simpler
+     - emotionally easier
+
+3. Storytelling is the fundamental skill for a change
+
+   - The human part of the problem is far more difficult than the software part
+
+#+end_quote
+
+-- from [[http://www.greaterthancode.com/podcast/060-coping-with-complexity-with-kent-beck/][060: Coping with Complexity with Kent Beck – Greater Than Code]]
+
+P.S. Sometimes I would have this feeling: right after I first learned something new, I'd hear/read about this again in the next few days.
+
+Like this time, I just wrote about storytelling[fn:1], then I listened to this episode (which is not from a podcast I subscribed) and they are talking basically the similar idea. It's amazing how things come together sometimes.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/clipping/2017/12/27/be-a-better-story-teller/][Be a Better Story Teller - dsdshome]]

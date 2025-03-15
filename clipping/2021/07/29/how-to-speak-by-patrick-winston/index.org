@@ -1,0 +1,286 @@
+#+TITLE: How to Speak by Patrick Winston
+
+This course itself is an perfect example of the techniques mentioned in the talk:
+
+1. Start a talk with a PROMISE
+2. Eliminate clutter from your slides
+   (because we only have one language processor,
+   and we can either use it to read the stuff, or use it to listen to the speaker)
+3. How do you teach people how to think?
+   Provide them with
+
+   - the stories they need to know
+   - the questions they need to ask about those stories
+   - mechanisms for analyzing these stories
+   - ways of putting stories together
+   - ways of evaluating how reliable a story is
+
+4. When finishing the talk, tell a JOKE or salute the audience
+
+A must watch for learning how to give a talk.
+Highly recommended!
+
+* Notes
+
+- The success of your life will be determined largely by
+
+  1. your ability to speak
+  2. your ability to write
+  3. the quality of your ideas
+
+  (in that order)
+
+- Your speaking and writing is determined by this formula:
+
+#+begin_src awk
+
+f(K, P, t)
+#+end_src
+
+  K
+      Knowledge
+  P
+      Practice
+  t
+      talent
+
+  (in that order)
+
+- This lecture: some examples of speaking techniques
+
+  1. How to start
+
+     - don't start a talk with a JOKE
+
+       - people is not ready for a joke
+
+     - start a talk with a PROMISE
+
+#+begin_src awk
+
+at the end of this 60 minutes, you will know things about speaking you don't know now,
+and something among those things you know will make a difference in your life.
+#+end_src
+     - samples
+
+       1. CYCLE on the same topic
+       2. BUILD A FENCE around the idea
+
+          explain what this idea is NOT
+
+          - so my idea can be distinguished from other's ideas
+          - so people won't confuse this idea with others
+
+       3. VERBAL PUNCTUATION
+
+          - because people will occasionally fog out, and need to get back on the bus
+          - you need to provide some *landmarks* ,
+            places where announcing you're announcing that it's a good place to get back on
+
+            - enumerating
+            - providing numbers
+
+          - give audience a sense that
+            there's a seam in the talk and you can get back on
+
+       4. ASK A QUESTION
+
+          - the standard amount of time you can wait for an answer:
+*7 seconds*
+          - the question has to be carefully chosen:
+
+            it can't be too obvious
+                people will be embarrassed to say it
+            it can't be too hard
+                nobody will have anything to say
+
+     - these 4 ideas is just a start
+       -> build up your repertoire of ideas about presentation
+
+       - How?
+         watch the speakers you admire and feel are effective,
+*ask yourself: why they are successful*
+         -> build up your own repertoire
+         -> develop your own style
+
+  2. THE TOOLS (effective things in Patrick's armamentarium)
+
+     - TIME & PLACE
+
+       - Best time to give a speech: 11am
+       - Best place:
+
+         1. WELL LIT
+
+            - whenever the room is dimmed, humans start to fall asleep
+
+         2. CASED
+
+            - See if there's any weirdness
+            - side note:
+              Imagine all the seats are filled with uninterested farm animals
+
+         3. REASONABLLY POPULATED
+
+            - more than a half-full
+
+     - Boards & Props & Slides
+
+       - EMPATHATIC MIRRORING (effective)
+
+         - Board
+
+           - best for informing (teaching, lecturing)
+           - why?
+
+             - graphics (easy to draw illustrations)
+             - speed (the speed to write is approximately the speed at which people can absorb ideas)
+             - target (for the hand)
+
+               - you can point at the stuff (on the board)
+
+         - Props
+
+       - Slides
+
+         - best for exposing
+         - More chalks, less powerpoints
+         - Job talks (conference talks)
+
+           - Our purpose is to expose ideas, not to teach audience
+           - There are always too many slides, always too many words
+           - Some extreme examples for "How not to use slides"
+
+             1. read your transparencies
+             2. too many words
+
+                - *We only have one language processor*
+                  and we can either use it to read the stuff, or use it to listen to the speaker
+
+             3. too far away between speaker and slides
+             4. laser points / physical pointer
+
+                - No eye-contact
+
+             5. The too-heavy crime
+
+           - Important rules
+
+             1. Do not read
+             2. Be in the image
+             3. Keep images simple
+             4. Eliminate clutter (title, footer, bullets)
+                (use a larger font-size so you can only put so many words)
+             5. Put a little arrow for emphasizing
+             6. Leave some air in the slides (make the slides lighter)
+
+                - An hapax legomenon (an extreme complex slide that can only occur once in a talk)
+
+  3. Special cases
+
+     - INFORMING
+
+       1. PROMISE
+
+          - start with a promise
+
+       2. INSPIRATION
+
+          - incoming freshman: tell them they could do it
+          - senior faculty: help them see a problem from a new way
+          - everyone: when someone *exhibited passion* about what they are doing
+
+            - express how cool the stuff is during the promise phase
+
+       3. HOW TO THINK
+*How do you teach people how to think*
+
+          - we are storytelling animals
+          - so if we want to teach people how to think,
+            provide them with
+
+            - the stories they need to know
+            - the questions they need to ask about those stories
+            - mechanisms for analyzing these stories
+            - ways of putting stories together
+            - ways of evaluating how reliable a story is
+
+     - PERSUADING
+
+       - Oral exams
+       - Job talks (general framework for building a tech talk)
+
+         - 5 mins (to express)
+
+           - (your) VISION
+
+             - a problem that somebody cares about
+             - something new in your approach
+
+           - (you've) DONE SOMETHING
+
+             - by listing the steps that need to be taken in order to achieve the solution to that problem
+             - you don't need to have done all that steps
+
+         - conclude by enumerating your CONTRIBUTIONS
+
+       - Getting famous
+
+         - WHY
+           (why should you care about getting famous)
+
+           - you never get used to being ignored
+             but you can get used to being famous
+           - help your ideas (your children) get recognized for the value that is in them
+
+         - HOW (to ensure your work gets recognized)
+
+           1. SYMBOL (associated with your work)
+           2. SLOGAN
+           3. SURPRISE
+           4. SALIENT (an idea that sticks out)
+           5. STORY (how you did it, how it works, why it's important)
+
+     - HOW TO STOP
+
+       - FINAL SLIDE
+
+         - *Contributions*
+
+#+begin_src awk
+
+Contributions
+- Argued uniqueness of human intelligence
+- Demonstrated culturally biased understanding, persuasive retelling, schizophrenic behavior, and self-aware machines
+- Offered steps toward a better understanding of ourselves and each other
+#+end_src
+
+           - your contributions
+           - what we get out of it
+
+       - FINAL WORDS
+         (how to tell people that you are finished)
+
+         1. tell a JOKE
+
+#+begin_quote
+
+            I always finish with a joke,
+            and that way,
+            people think that they've had fun the whole time
+
+#+end_quote
+         2. Don't say "THANK YOU"
+
+            - a weak move
+            - it suggests that people listened for that long out of politeness
+            - what everybody does is not necessarily the right thing
+
+         3. Benediction ending
+
+#+begin_src awk
+
+God bless you, and God bless America
+#+end_src
+         4. Salute the audience
+            (how much you value your time at a place)

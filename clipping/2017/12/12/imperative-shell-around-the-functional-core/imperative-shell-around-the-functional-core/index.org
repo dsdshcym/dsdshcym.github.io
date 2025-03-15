@@ -1,0 +1,22 @@
+#+TITLE: Imperative Shell around the Functional Core
+
+Elixir is the perfect language to build upon the methodology from this talk:
+
+#+begin_quote
+
+Imperative Shell around the Functional Core
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=yTkzNHF6rMs][RubyConf 12 - Boundaries by Gary Bernhardt - YouTube]]
+
+Elixir data structures are obviously immutable, and the code and data are combined within the same Module. (The FauxO style programming from this talk.)
+
+And Gary even introduced Actor Model which is the concurrency model used by Elixir/Erlang.
+
+In Ruby, we need some self-disciplines to force ourselves to write an imperative shell around the functional core. But in Elixir, the language is already encouraging us to write code in this style. I think that's why I feel so excited about Elixir.
+
+This talk was also mentioned in:
+
+1. [[http://www.fullstackradio.com/78][78: Ben Orenstein - Our All-Time Favorite Refactorings | Full Stack Radio]]
+2. [[https://www.youtube.com/watch?v=9TmJZSBYPQA&index=14&list=PLTUHmtFhYC6iEwu4h2REYhNKCHFFHYngS][14 - 刘常洋 - Functional Programming Concepts - YouTube]]

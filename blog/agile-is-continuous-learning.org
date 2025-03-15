@@ -1,0 +1,116 @@
+#+TITLE: Agile Is Continuous Learning
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-09-16]
+#+URI:         blog/2019/09/16/agile-is-continuous-learning/index.html
+#+TAGS:        Agile, Learn
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+In the software industry, there is no word buzzier than "Agile". Most companies are "Agile" building their software. But not every company is building software in the same way. Company A's "Agile" is different from (if not opposite to) company B's. It seems to be unlimited definitions for "Agile" out there. So what really is "Agile"? And why is "Agile" so popular in the software industry?
+
+To me, being agile means *to learn continuously* . We work in smaller chunks to learn in a finer granularity. We iterate or make changes to learn in a broader space. We gather feedback more often to learn faster.
+
+To understand how I came to this conclusion, we need to go back to check the goal of "Agile", think about ways to achieve this goal, then the reason for why "Agile" = Continuous Learning is obvious.
+
+* The Goal of "Agile" Is to Deliver Valuable Software
+
+[[http://agilemanifesto.org/][Manifesto for Agile Software Development]] is one of the most famous document defining what "Agile" is. Most people (including me before writing this post) only knows the four values from the Manifesto.
+
+#+begin_quote
+
+Individuals and Interactions over processes and tools Working Software over comprehensive documentation Customer Collaboration over contract negotiation Responding to Change over following a plan
+
+#+end_quote
+
+But the Manifesto contains not only these values, but also several principles. The goal of "Agile" is at the top of these [[https://agilemanifesto.org/principles.html][principles
+behind the Agile Manifesto]]:
+
+#+begin_quote
+
+Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+
+#+end_quote
+
+Thus, all the "Agile" values, movements, practices, frameworks are aiming for the same goal: *delivering valuable software.*
+
+* Delivering Valuable Software Requires Continuous Learning
+
+But delivering valuable software is hard, really hard. It's hard because every aspect of it is a moving target.
+
+1. The definition of "Value" is not consistent
+
+   The definition of value is changing all the time. Customers often don't know what they really need. And they are always asking for more (different) values. So the problem our software need to solve is a moving target.
+
+2. The solution space is so large
+
+   Even if a given problem is well-defined, there won't be a best solution. There would always be a faster algorithm, a more secure implementation, or a more elegant architecture. I really love how Li Hongyi phrased this problem in [[https://www.csc.gov.sg/articles/how-to-build-good-software][How to Build Good Software]]:
+
+#+begin_quote
+
+   In software development, most ideas are bad; this is not anyone’s fault. It is just that *the number of possible ideas is so large* that any particular idea is probably not going to work, even if it was chosen very carefully and intelligently.
+
+#+end_quote
+3. The building blocks are changing
+
+   Last but not least, modern software is building upon layers of building blocks: frameworks, libraries, languages, operating systems, hardware, and third-party apis. Each of these building blocks are out of our control. Once they change, our working software may fail immediately.
+
+Then the question of how to deliver valuable software becomes how to hit all these moving targets at the same time.
+
+The answer is quite simple (but not easy): *learn as fast as we can* , to catch up the rate of these changes.
+
+No one can predict the future. If we can, then we will just build the thing which can satisfy all the future needs and prevent all the future bugs. So the best thing we can do is to learn from the past and the present.
+
+1. Learn what's valuable to customers now and pivot accordingly.
+2. Learn different solutions and always iterate to a better one.
+3. Learn the building blocks and catch up with their changes.
+
+* Thus, "Agile" Is All About Continuous Learning
+
+As you can see above, continuous learning is the way to deliver valuable software. And "Agile" is aimed for valuable software. So naturally "Agile" is all about continuous learning.
+
+And that's also why "Agile" becomes so popular among the software industry. If "Agile" wasn't called "Agile", but "Nimble" or "Lightsome", as long as it expressed the same idea of continuous learning, it would still conquer the world.
+
+So how does "Agile" enables continuous learning?
+
+*Feedback* is the key to continuous learning. After all, [[https://dsdshcym.github.io/blog/2019/07/07/how-to-give-receive-feedback/][feedback is
+how we learn about our software and ourselves]]. Without feedback, we can't learn how well we understand the value to our customer. Without feedback, we can't learn how well our software fits the problem. Without feedback, we can't know what we need to change due to an upstream updates.
+
+As you can see from the graph below, feedback cycles are everywhere in software development.
+
+#+begin_src sql
+
+Planning <-------------\
+   |                   |
+   |                   |
+   v                   |
+Designing <----------->|
+   |                   |
+   |                   |
+   v                   |
+Developing <---------->| Feedback
+   |                   |
+   |                   |
+   v                   |
+Shipping <------------>|
+   |                   |
+   |                   |
+   v                   |
+ User  <-------------->/
+#+end_src
+
+There are three levels of feedback cycles in this graph:
+
+1. A big cycle which includes every step (from Plan to User feedback)
+2. Small cycles between two steps (e.g. Plan <-> Design, Design <-> Develop, etc.)
+3. Internal cycles within each step (e.g. Code Reviews, Automated Testing when Developing the software)
+
+*The shorter these feedback cycles are, the faster we can learn, the faster we can improve our products.*
+
+So all the "Agile" frameworks is aimed to *shorten our feedback loops* in one way or another. Here are some common ideas:
+
+1. Work on fewer, smaller features or products, which is basically the idea of MVP. So that we can have a shorter big cycle.
+2. Involve every team member (including client or user) in every step. So that we can have shorter small cycles between steps.
+3. Collaborate closely, e.g. pair programming, code reviews, design criticize, etc. So that we can get shorter internal cycles within each steps.
+
+This is how I understand Agile now. Hopefully, it can reduce some of your confusions about Agile. If you have different opinions, please do let me know, I'd be glad to learn more!

@@ -1,0 +1,114 @@
+#+TITLE: Code Review as an Interview
+
+After I was interviewed for several times in different companies, I think interviews can mostly reflect a company's working style.
+
+I also have interviewed dozens of developer candidates now. And we've tried different methods, like programming quiz, whiteboard interview, and small projects as homework. But none of them can reflect how a candidate's daily work performance is like.
+
+So I've been searching for a interview process to demonstrates our working style to candidates and test their daily work performance the best.
+
+I think Code Review is the best answer I've found til now.
+
+- What is a Code Review Interview?
+
+#+begin_quote
+
+  1. Present candidate with an example codebase.
+  2. Give them a day to study it, perhaps have them add a simple addition to see if they fully grok it.
+  3. Then, present them with a pull request and ask them to write comments on it.
+  4. They are only graded on their final comments, within reason
+
+#+end_quote
+
+  -- from [[https://www.hillelwayne.com/post/a-better-interview/][A Better Interview • Hillel Wayne]]
+
+- Why is it a better interview format?
+
+#+begin_quote
+
+  - What is the point of an interview? *To see if someone can do the job*
+  - Line up job expectations with interview expectations
+
+    - Job expectations
+
+      1. Read code
+      2. Understand it
+      3. Make it better
+
+    - Interview expectations
+
+      1. Read code
+      2. Explain it
+      3. Make it better
+
+  - Reading code vs Writing code
+
+    - [[https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/][it’s harder to read code than to write it.]]
+    - Do you want to ask about the part of the job that is:
+
+      1. 90% of the technical work and more difficult
+      2. 10% of the technical work and easier
+
+    - Even with "new" code on the job, do you expect:
+
+      - Starting from scratch without referencing any other code?
+      - Referencing examples and applying them to the problem at hand?
+
+  - What code should they read? *Yours*
+  - Explaining code - Review
+
+    - What is the code doing?
+
+      - Learn how they translate code into human understanding
+      - Explain the differences between different implementations (order vs. sort_by)
+
+        - Depth of knowledge of tools used on the job
+        - Do they consider tradeoffs and the potential for breaking things.
+
+      - Why the ternary? Why the to_s?
+
+        - Knowledge of the language's treatment of operations on different types
+
+  - Did they ask good questions?
+
+    - About writing tests?
+    - About the database?
+    - About Rails version and Ruby version
+    - About commit messages or reasons behind the initial implementation?
+
+#+end_quote
+
+  -- from [[http://confreaks.tv/videos/rubyconf2018-refactoring-the-technical-interview][Refactoring the Technical Interview - Ruby Conference 2018]]
+
+- How to do it correctly?
+
+#+begin_quote
+
+  - [[https://robots.thoughtbot.com/updating-our-technical-interview][Updating Our Technical Interview]]
+  - *Have Them do Review Code*
+
+    - Selecting Code to Review
+
+      - Avoid production code
+      - Actively reduce complexity
+      - Include realistic bugs, but *don't emphasize Bug Hunts*
+      - Best Options
+
+        - Completely contrived (maybe your old code challenge?)
+        - Open Source Repo with a contrived Pull Request
+
+      - *Pretend that interviewer is the author (to see whether candidate communicates well within the team)*
+
+    - Evaluating a Code Review
+
+      - Bad Pull Request or Commit Habits
+      - Non-idiomatic Code
+      - Overly Complex code (things that need refactors)
+      - Bad/confusing naming of variables or methods
+      - Overly architected classes / YAGNI
+      - Actual Bugs (Bonus Points Only)
+
+#+end_quote
+
+  -- from [[https://www.youtube.com/watch?v=O3XRE0HvzJ8&t=0s&index=44&list=PLE7tQUdRKcyak-yFKj5IN3tDYOh5omMrH][RailsConf 2018: The Code-Free Developer Interview by Pete Holiday - YouTube]]
+
+I'm excited for this interview format from both an interviewer perspective and an interviewee perspective. Can't wait to try it out!

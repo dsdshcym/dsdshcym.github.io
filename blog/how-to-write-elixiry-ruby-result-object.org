@@ -1,0 +1,318 @@
+#+TITLE: How to Write Elixiry Ruby - Result Object
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-01-06]
+#+URI:         blog/2020/01/06/how-to-write-elixiry-ruby-result-object/index.html
+#+TAGS:        Ruby, Elixir, Object-Oriented, Design Pattern, Error Handling
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Table of Contents
+
+- [[#org0989e7a][Why do we need Result Objects?]]
+
+  - [[#org4458d29][Returning  : The Billion Dollar Mistake]]
+  - [[#org426ca1e][Raising exceptions: The Million Dollar Mistake]]
+
+- [[#org0f729c1][Tagged Tuple: Modeling Errors in Elixir]]
+- [[#orgcdc2ea6][Result Objects: Introducing an extra level of indirection]]
+
+  - [[#orga894f7e][: Tagged Tuple in Ruby]]
+  - [[#orgc67b5dc][: Don't Repeat Yourself]]
+  - [[#org921b6df][Result Object: Adding More Behaviours to a ]]
+
+- [[#org1a6a2ba][Result Struct in Elixir?]]
+- [[#org7d12dbd][Summary: Modeling Business Error as Data/Objects]]
+
+#+begin_quote
+
+[[http://sasamat.xen.prgmr.com/michaelochurch/wp/2013/04/03/gervais-macleod-21-why-does-work-suck/]["A language that doesn't affect the way you think about programming is not worth knowing." - Alan J. Perlis]]
+
+#+end_quote
+
+Elixir/Erlang certainly affected the way I think about programming. Specifically, how to handle inevitable failure/error cases in my program. In Elixir/Erlang, [[https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions/][error cases can be easily modeled as tagged tuples]]: {:error, reason}. But in a more Object-Oriented language like Ruby, it's hard to model error as a lightweight data structure like Elixir tuples. After some trial-and-error, I've found a great way to model errors in OO languages: Result Object.
+
+* Why do we need Result Objects?
+
+Before explaining what is Result Object and how to write it, it's necessary to know why do we need it. Error handling is inevitable in every programming language. Take parsing CSV for example:
+
+- The file might be missing.
+- The header might be invalid.
+- The row might not match the header.
+
+Our program cannot always run in a happy path. We have to handle errors one way or another.
+
+Two methods I used to handle errors in Ruby are:
+
+1. returning nil or false.
+2. raising an exception.
+
+Let's see why these two methods are not enough for us.
+
+** Returning nil: The Billion Dollar Mistake
+
+Before learning Elixir, I used to return nil or false to indicate some error happens in Ruby:
+
+#+begin_src ruby
+def parse_csv(path)
+  if file_exists?(path)
+    file = read(path)
+    parse(file)
+  else
+    nil
+  end
+end
+
+# client
+if results = parse_csv
+  # do something
+else
+  # assuming file read failed
+end
+#+end_src
+
+It worked okay when the requirements were simple. But it quickly broke down when another error needs to be handled.
+
+#+begin_src ruby
+def parse_csv(path)
+  if file_exists?(path)
+    file = read(path)
+    rows = parse(file)
+    if valid_header?(rows)
+      # return results
+    else
+      # what to return here?
+      # nil is already used
+    end
+  else
+    nil
+  end
+end
+#+end_src
+
+When there are multiple error cases, a simple nil or false cannot tell the client what really goes wrong.
+
+More importantly, if the client doesn't handle nil and use nil as a normal return value, then a NoMethodError would be raised and the whole application would crash. Countless bugs are produced due to this reason. That's why [[https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare][null (nil) references is called The Billion Dollar Mistake]]. We need a better way to handle error cases than nil!
+
+** Raising exceptions: The Million Dollar Mistake
+
+If nil is not enough to tell what error happened, we can raise different exceptions, right?
+
+#+begin_src ruby
+def parse_csv(path)
+  file = read!(path)
+  parse!(file)
+end
+
+private
+
+def read!(path)
+  raise NoFileError unless file_exists?(path)
+  # ...
+end
+
+def parse!(file)
+  raise InvalidHeadersError unless valid_headers?
+  # ...
+end
+#+end_src
+
+It worked okay at first glance. Happy path is separated from sad paths. The code is much simpler and straight-forward now!
+
+But if we dig deeper, using exceptions has tremendous costs:
+
+1. Raising/Catching exceptions have a performance penalty.
+2. Method API is now unpredictable.
+
+   We cannot see all the possible returns from a method.
+
+   - "Are there any exceptions being raised beside the normal return value?"
+   - "Are there any other exceptions being raised in these private methods?"
+   - "Are there any other exceptions being raised in other object methods that are used in this method?"
+
+3. Adding behaviours to exception class is hard.
+
+   Exception classes are inherited from StandardError. So they have some default methods: backtrace, cause, etc. If we add more domain-related methods to it (e.g. reason), is it still an StandardError class?
+
+All the costs above are fixable. We can optimize the exception raising/catching performance so it won't be an issue. We can declare all the exceptions raised by a method (like Java). We can add a base class (inherited from StandardError) and inherit this base class to reuse behaviours.
+
+But the fundamental flaw of using exceptions to handle sad paths is unsolvable: *using exceptions mixes fatal exceptions with domain errors.*
+
+Every program needs to handle fatal exceptions: syntax error, divided by zero, and so on. But the errors we are handling here are domain errors: missing files, invalid inputs, and so on.
+
+They need to be handled differently. For fatal exceptions, the program may crash and notify a developer to fix the bug that leads to the exception. For domain errors, the program may need to recover from the error and notify the user for a better user experience.
+
+Raising exception like StandardError is the only solution for fatal exceptions for now. That's why almost every programming language has this feature. If we use exceptions for business errors, it's polluting the purity of fatal exceptions. And both developers and operators would be confused when a non-fatal exception is raised on production.
+
+So we need our own way to handle business errors. And different languages have different specific ways to do it.
+
+* Tagged Tuple: Modeling Errors in Elixir
+
+Let's first see how errors are modeled in Elixir. And we'll see how it inspired me to find Result Object. In Elixir, a function would [[https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions/][indicate its success/failure by returning a tagged tuple]]:
+
+#+begin_src erlang
+def parse_csv(path) do
+  if {:ok, file} = read_file(path) do
+    # ...
+    {:ok, results}
+  else
+    {:error, reason}
+  end
+end
+
+# client
+case pase_csv() do
+  {:ok, results} ->
+    # ...
+    nil
+
+  {:error, reason} ->
+    nil
+    # ...
+end
+#+end_src
+
+- {:ok, results} means the operation succeeded, callee can safely assume the results is correct.
+- {:error, reason} means the operation failed, and callee can know what caused the error based on the value of reason.
+
+So now, when I work in a Ruby project, I want to write similar code to handle errors more gracefully. But simply returning an array won't work elegantly as Elixir does:
+
+#+begin_src ruby
+def parse_csv(path)
+  if read(path)
+    [:ok, results]
+  else
+    [:error, reason]
+  end
+end
+
+# client
+case parse_csv(path)
+when [:ok, results] # results won't be bind to the return value
+  # ...
+when [:error, reason]
+  # ...
+end
+#+end_src
+
+Before Ruby 2.7, we don't have pattern matching to write Elixiry case conditions. What shall we do instead? Is there a Object-Oriented way to modeling errors?
+
+* Result Objects: Introducing an extra level of indirection
+#+begin_quote
+
+[[https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering][We can solve any problem by introducing an extra level of indirection. - Fundamental theorem of software engineering]]
+
+#+end_quote
+
+To get the similar result as tagged tuple in Elixir, I start with a lightweight approach. Then I gradually add more behavior and refactor it. Finally I landed with a more complicated design pattern: Result Object.
+
+** OpenStruct: Tagged Tuple in Ruby
+
+My first try is to wrap the return value in an OpenStruct:
+
+#+begin_src ruby
+def parse_csv(path)
+  if happy_path
+    OpenStruct.new({valid: true, data: results})
+  else
+    # sad path
+    OpenStruct.new({valid: false, reason: :file_missing})
+  end
+end
+
+# client
+result = parse_csv(path)
+if result.valid
+  p result.data
+else
+  case result.reason
+  when :file_missing
+    # ...
+  end
+end
+#+end_src
+
+As you can see above, OpenStruct works just like tuples in Elixir. We can create them and use them in a cheap and easy way. And all the possible return values of a method is clearer than raising exceptions.
+
+** Struct: Don't Repeat Yourself
+
+As more and more OpenStruct objects are created, they start to attract behaviors. The validation logic is a natural fit to be put in these objects, so I don't need to set :valid to true/false manually.
+
+#+begin_src ruby
+Result = Struct.new(:path) do
+  attr_reader :data, :reason
+
+  def valid?
+    if happy_path
+      @data = ...
+    else
+      @reason = ...
+    end
+  end
+end
+
+# client
+result = Result.new(path)
+if result.valid?
+  p result.data
+else
+  case result.reason
+  when :file_missing
+    # ...
+  end
+end
+#+end_src
+
+Defining Struct classes like this helps us group OpenStruct objects. So the happy result and the sad result for the same method are always bundled together. And different methods' result objects won't be mixed (since they are all OpenStruct before).
+
+** Result Object: Adding More Behaviours to a Struct
+
+Finally, when these Struct classes become larger, they can have their own classes. And if needed, they can have their own validation DSL, similar to what ActiveModel::Validations does.
+
+#+begin_src ruby
+class Result
+  validate_file_existence :path
+
+  def initialize(path)
+    # ...
+    # validate here
+  end
+
+  def valid?
+    # run_validations!
+  end
+end
+#+end_src
+
+Most importantly, we can discover more domain concepts just by following the lead of Result Objects. When I wrote the code to parse a CSV file and transform it into an ActiveRecord object, I discovered these classes along the way:
+
+1. CSVWrapper as a wrapper around Ruby's builtin CSV library. It provides an API (headers, each_row) that's more suitable to our use cases.
+2. CSVParser to transform a CSV file to a enumerator that returns valid domain objects.
+3. RowParser to transform a CSV row to a valid domain objects.
+
+To quickly summarize, business errors are cases we need to handle as normal happy paths. And just like normal business logic, we handle them by modeling them as data structures like tagged tuples or objects/classes like Result Objects.
+
+* Result Struct in Elixir?
+
+Following the path from OpenStruct to Result Object, I'm wondering if we need to define Result Struct in Elixir.
+
+#+begin_src ruby
+defmodule Result do
+  defstruct [:valid, :data, :reason]
+
+  def new(data) do
+    # ...
+    # initialize data or reason based on the data passed in
+  end
+end
+#+end_src
+
+Result Struct seems to be an overkill in Elixir/Erlang.
+
+1. Elixir already has a great pattern matching system that working with tagged tuples is simple yet powerful.
+2. Tagged tuple is a more common way for handling errors in Elixir/Erlang.
+
+But I think if the business logic gets more complicated, we can follow the same thinking process to extract more domain concepts, too.
+
+* Summary: Modeling Business Error as Data/Objects
+
+In the end, tagged tuple in Elixir and Result Object in Ruby are both an extra level of indirection. They both wrap the original results and provide an additional responsibility (to say if the operation succeeded or not or if the data is valid or not). Again, they both demonstrate the power of [[https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions/][modeling business knowledge as data]]. Hope this technique can help you tackle other hard business problems as well!

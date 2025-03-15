@@ -1,0 +1,1656 @@
+#+TITLE: Clippings from Accelerate: The Science of Lean Software and DevOps
+* Table of Contents
+
+- [[#orgf209b07][FOREWORD By Courtney Kissler]]
+- [[#org02d1830][PREFACE]]
+- [[#orgad2221d][Part I: What We Found]]
+
+  - [[#org34f6ecf][1. Accelerate]]
+  - [[#org4d1f56b][2. Measuring Performance]]
+  - [[#org2560d5f][3. Measuring and Changing Culture]]
+  - [[#org66d09d7][4. Technical Practices]]
+  - [[#orgf82e845][5. Architecture]]
+  - [[#orgede306c][6. Integrating Infosec into the Delivery Lifecycle]]
+  - [[#org816cb3b][7. Management Practices for Software]]
+  - [[#orgbf7cb22][8. Product Development]]
+  - [[#org338ef48][9. Making Work Sustainable]]
+  - [[#orgf319185][10. Employee Satisfaction, Identity, and Engagement]]
+  - [[#orged81862][11. Leaders and Managers]]
+
+- [[#org62d093a][Part II: The Research]]
+
+  - [[#org45a14e1][12. The Science Behind This Book]]
+  - [[#org602eae1][13. Introduction to Psychometrics]]
+  - [[#orgc90368a][14. Why Use a Survey]]
+  - [[#orgbb1f374][15. The Data for the Project]]
+
+- [[#orgffc4150][Part III: Transformation]]
+
+  - [[#org10b6526][16. High-Performance Leadership and Management]]
+
+- [[#orgcd4d467][Conclusion]]
+
+* FOREWORD By Courtney Kissler
+
+- Creating a learning organization.
+- Accelerate your transformation to a high-performing technology organization.
+
+* PREFACE
+
+- software delivery is an exercise in continuous improvement
+
+  - the best keep getting better
+  - those who fail to improve fall further and further behind.
+
+- Improvement Is Possible for Everyone
+
+  - as long as
+
+    - leadership provides consistent support, demonstrating a true commitment to improvement
+
+      - Time
+      - Actions
+      - Resources
+
+    - team members commit themselves to the work
+
+  - improvements in software delivery are possible for every team and in every company,
+
+- The essential components to making your organization better—starting with software delivery. It is through improving our ability to deliver software that organizations can
+
+  - deliver features faster,
+  - pivot when needed,
+  - respond to compliance and security changes,
+  - take advantage of fast feedback to attract new customers and delight existing ones.
+
+* Part I: What We Found
+** 1. Accelerate
+
+- To remain competitive and excel in the market, organizations must accelerate:
+
+  - delivery of goods and services to delight their customers; engagement with the market to detect and understand customer demand; anticipation of compliance and regulatory changes that impact their systems; and response to potential risks such as security threats or changes in the economy.
+
+- At the heart of this acceleration is software.
+
+  - Software and technology are key differentiators for organizations to deliver value to customers and stakeholders.
+  - Software is transforming and accelerating organizations of all kinds.
+
+- There is more work to be done than many of us currently believe.
+
+  1. DevOps is accelerating technology, but that organizations often overestimate their progress
+  2. Executives are especially prone to overestimating their progress when compared to those who are actually doing the work.
+
+     1. if we assume the estimates of DevOps maturity or capabilities from practitioners are more accurate—because they are closer to the work—the potential for value delivery and growth within organizations is much greater than executives currently realize.
+     2. the disconnect makes clear the need to measure DevOps capabilities accurately and to communicate these measurement results to leaders, who can use them to make decisions and inform strategy about their organization’s technology posture.
+
+- FOCUS ON CAPABILITIES, NOT MATURITY
+
+  - The key to successful change is measuring and understanding the right things with a focus on capabilities—not on maturity.
+  - Why (Four factors)
+
+    1. *technology transformations should follow a continuous improvement paradigm* .
+
+       - maturity models focus on helping an organization "arrive" at a mature state and then declare themselves done with their journey
+       - capability models focus on helping an organization continually improve and progress, realizing that the technological and business landscape is ever-changing.
+
+         - The most innovative companies and highest-performing organizations are always striving to be better and never consider themselves "mature" or "done" with their improvement or transformation journey
+
+    2. Teams have their own context, their own systems, their own goals, and their own constraints, and what we should focus on next to accelerate our transformation depends on those things.
+
+       - maturity models are quite often a "lock-step" or linear formula, prescribing a similar set of technologies, tooling, or capabilities for every set of teams and organizations to progress through.
+       - capability models are multidimensional and dynamic, allowing different parts of the organization to take a customized approach to improvement, and focus on capabilities that will give them the most benefit based on their current context and their short and long-term goals.
+
+    3. Be outcome based
+
+       - capability models focus on key outcomes and how the capabilities, or levers, drive improvement in those outcomes
+
+         - This provides technical leadership with clear direction and strategy on high-level goals (with a focus on capabilities to improve key outcomes).
+         - It also enables team leaders and individual contributors to set improvement goals related to the capabilities their team is focusing on for the current time period.
+
+       - Most maturity models simply measure the technical proficiency or tooling install base in an organization without tying it to outcomes.
+
+         - These are vanity metrics
+         - while they can be relatively easy to measure, they don’t tell us anything about the impact they have on the business.
+
+    4. The technology and business landscape is ever-changing
+
+       - maturity models define a static level of technological, process, and organizational abilities to achieve.
+       - capability models allow for dynamically changing environments and allow teams and organizations to focus on developing the skills and capabilities needed to remain competitive.
+
+         - what is good enough and even “high-performing” today is no longer good enough in the next year.
+
+  - By focusing on a capabilities paradigm, organizations can *continuously drive improvement* .
+
+- EVIDENCE-BASED TRANSFORMATIONS FOCUS ON KEY CAPABILITIES
+
+  - Which capabilities to focus on.
+  - Appendix A: Capabilities to Drive Improvement
+  - This book will
+
+    1. get you started on defining and measuring these capabilities.
+    2. point you to some fantastic resources for improving them
+
+- THE VALUE OF ADOPTING DEVOPS
+
+  - in 2017 we found that, when compared to low performers, the high performers have:
+
+    - 46 times more frequent code deployments
+    - 440 times faster lead time from commit to deploy
+    - 170 times faster mean time to recover from downtime
+    - 5 times lower change failure rate (1/5 as likely for a change to fail)
+
+  - High performers understand that they don't have to trade speed for stability or vice versa, because *by building quality in they get both.*
+  - How do high-performing teams achieve such amazing software delivery performance?
+
+    - *Turning the right levers* / *Improving the right capabilities*
+
+** 2. Measuring Performance
+
+- THE FLAWS ON PREVIOUS ATTEMPTS TO MEASURE PERFORMANCE
+
+  - Two drawbacks in general
+
+    1. Focus on outputs rather than outcomes
+    2. Focus on individual or local measures rather than team or global ones
+
+  - Three examples
+
+    1. LoC
+
+       - Ideally,
+
+         - We should reward developers for solving business problems with the minimum amount of code
+         - It's even better if we can solve a problem without writing code at all or by deleting code (perhaps by a business process change)
+
+       - Minimizing LoC isn't an ideal measure either (due to readability issues)
+
+    2. Velocity
+
+       - Velocity was designed to be used as a capacity planning tool
+       - Several flaws if used as a productivity metric
+
+         1. Velocity is a relative and team-dependent measure, not an absolute one
+         2. When used as a productivity measure, teams inevitably work to game their velocity
+
+            - Inflate their estimates
+            - Avoid collaborating with other teams (collaboration might decrease their velocity and increase the other team's velocity
+
+    3. Utilization
+
+       - High utilization is only good up to a point
+       - Once utilization gets above a certain level, there is no spare capacity (or "slack") to absorb
+
+         - Unplanned work
+         - Changes to the plan
+         - Improvement work
+
+       - Queue theory in Math tells us that ad utilization approaches 100%, lead times approach infinity
+
+- MEASURING SOFTWARE DELIVERY PERFORMANCE
+
+  - Two key characteristics of a successful measure
+
+    1. Focus on a global outcome to ensure teams aren't pitted against each other
+    2. Focus on outcomes not output (it shouldn't reward people for putting in large amounts of busywork that doesn't actually help achieve organizational goals)
+
+  - Four measures of delivery performance that meet these two criteria
+
+    1. Delivery lead time
+
+       - The time it takes to go from a customer making a request to the request being satisfied
+       - A key element of Lean Theory
+       - Two parts to lead time
+
+         1. The time it takes to design and validate a product or feature
+
+            - It's often unclear when to start the clock
+            - Often there is high variability
+
+         2. The time to deliver the feature to customers
+
+            - Easier to measure
+            - Has a lower variability
+
+       - The distinction between these two domains
+
+         ||Product Design and Development |Product Delivery (Build, Testing, Deployment) | |
+         ||Create new products and services that solve customer problems using hypothesis-driven delivery, modern UX, design thinking. |Enable fast flow from development to production and reliable releases by standardizing work, and reducing variability and batch sizes. | |
+         ||Feature design and implementation may require work that has never been performed before. |Integration, test, and deployment must be performed continuously as quickly as possible. | |
+         ||Estimates are highly uncertain. |Cycle times should be well-known and predictable. | |
+         ||Outcomes are highly variable. |Outcomes should have low variability. | |
+       - Shorter product delivery lead times are better
+
+         1. Enable faster feedback on what we are building
+         2. Allow us to course correct more rapidly
+         3. Deliver a fix rapidly and with high confidence
+
+       - We measure product delivery lead time as /the time it takes to go from code committed to code successfully running in production/
+
+    2. Deployment frequency
+
+       - Reducing batch size is another central element of the Lean paradigm
+
+         1. Reduced cycle times and variability in flow
+         2. Accelerates feedback
+         3. Reduces risk and overhead
+         4. Improves efficiency
+         5. Increases motivation and urgency
+         6. Reduces costs and schedule growth
+
+       - However, in software, batch size is hard to measure and communicate across contexts as there is no visible inventory.
+       - Therefore, we settled on deployment frequency as a proxy for batch size since it is easy to measure and typically has low variability
+
+    3. Time to restore service
+
+       - In modern software products and services, which are rapidly changing complex systems, failure is inevitable
+       - So the key question becomes: How quickly can service be restored?
+
+    4. Change fail rate
+
+       - In the context of Lean, this is the same as percent complete and accurate for the product delivery process
+
+  - Cluster Analysis
+  - The survey results demonstrate that *there is no trade off between improving performance and achieving higher levels of quality* and stability
+  - Does software delivery performance matter?
+
+- THE IMPACT OF DELIVERY PERFORMANCE ON ORGANIZATIONAL PERFORMANCE
+
+  - Your organization's software delivery capability can in fact provide a competitive advantage to your business
+  - Software delivery performance impacts organizational performance and noncommercial performance
+  - In software organizations, the ability to *work and deliver in small batches* is especially important
+
+    - because it allows you to gather user feedback quickly (using techniques such as A/B testing)
+    - the ability to take an experimental approach to product development is highly correlated with the technical practices that contribute to continuous delivery.
+
+  - Strategic Software
+
+    - Don't outsource the development of software that is strategic to tour business
+    - Distinguishing which software is strategic and which isn't, and managing them appropriately, is of enormous importance.
+
+      - [[https://medium.com/wardleymaps][wardleymaps – Medium]]
+
+- DRIVING CHANGE
+
+  - it is also possible to model and measure culture quantitatively.
+  - Before you are ready to deploy a scientific approach to improving performance, you must first understand and develop your culture
+
+#+begin_quote
+
+    whenever there is fear, you get the wrong numbers
+
+#+end_quote
+
+** 3. Measuring and Changing Culture
+
+- This chapter:
+
+  - A model of culture that
+
+    1. Is well-defined in the scientific literature
+    2. Could be measured effectively
+    3. Would have predictive power in our domain
+
+  - It is possible to influence and improve culture by implementing DevOps practices
+
+- MODELING AND MEASURING CULTURE
+
+  - Organizational culture can exist at three levels in organizations
+
+    1. Basic assumptions
+
+       - Formed over time as members of a group or organization make sense of relationships, events, and activities
+       - The least "visible"
+       - The things that we just "know," and may find difficult to articulate, after we have been long enough in a team
+
+    2. Values
+
+       - More "visible"
+       - collective values and norms
+       - can be discussed and even debated by those who are aware of them
+       - Provide a lens through which group members view and interpret the relationships, events, and activities around them
+       - Influence group interactions and activities by establishing social norms, which shape the actions of group members and provide contextual rules
+
+    3. Artifacts
+
+       - The most "visible"
+       - These artifacts can include
+
+         1. Written mission statements or creeds
+         2. technology
+         3. Formal procedures
+         4. Heros and Rituals
+
+  - A typology of organizational cultures
+
+    - Pathological (power-oriented) organizations are characterized by large amounts of fear and threat. People often hoard information or withhold it for political reasons, or distort it to make themselves look better.
+    - Bureaucratic (rule-oriented) organizations protect departments. Those in the department want to maintain their "turf," insist on their own rules, and generally do things by the book—their book.
+    - Generative (performance-oriented) organizations focus on the mission. How do we accomplish our goal? Everything is subordinated to good performance, to doing what we are supposed to do.
+
+  - The organizational culture predicts the way information flows through an organization
+
+    - Three characteristics of good information
+
+      1. It provides answers to the questions that the receiver needs answered.
+      2. It is timely.
+      3. It is presented in such a way that it can be effectively used by the receiver.
+
+    - Good information flow is critical to the safe and effective operation of high-tempo and high-consequence environments, including technology organizations
+    - The characteristics of organizations
+
+      ||Pathological (Power-Oriented) |Bureaucratic (Rule-Oriented) |Generative (Performance-Oriented) | |
+      ||Low cooperation |Modest cooperation |High cooperation | |
+      ||Messengers "shot" |Messengers neglected |Messengers trained | |
+      ||Responsibilities shirked |Narrow responsibilities |Risks are shared | |
+      ||Bridging discouraged |Bridging tolerated |Bridging encouraged | |
+      ||Failure leads to scapegoating |Failure leads to justice |Failure leads to inquiry | |
+      ||Novelty crushed |Novelty leads to problems |Novelty implemented | |
+
+  - This definition of organizational culture predicts performance outcomes.
+
+- MEASURING CULTURE
+
+  - Our research has consistently found our Westrum construct—an indicator of the level of organizational culture that prioritizes trust and collaboration in the team—to be both valid and reliable.
+
+    - This means you can use these questions in your surveys too.
+    - ||  |Strongly disagree |Disagree |Somewhat disagree |Neither agree nor disagree |Somewhat agree |Agree |Strongly agree | |
+      ||Information is actively sought |  |  |  |  |  |  |  | |
+      ||Messengers are not punished when they deliver news of failures or other bad news |  |  |  |  |  |  |  | |
+      ||Responsibilities are shared |  |  |  |  |  |  |  | |
+      ||Cross-functional collaboration is encouraged and rewarded |  |  |  |  |  |  |  | |
+      ||Failure causes inquiry |  |  |  |  |  |  |  | |
+      ||New ideas are welcomed |  |  |  |  |  |  |  | |
+      ||Failures are treated primarily as opportunities to improve the system |  |  |  |  |  |  |  | |
+    - To calculate the "score" for each survey response, take the numerical value (1-7) corresponding to the answer to each question and calculate the mean across all questions.
+
+  - Culture enables information processing through three mechanisms
+
+    1. in organizations with a generative culture, people collaborate more effectively and there is a higher level of trust both across the organization and up and down the hierarchy
+    2. generative culture emphasizes the mission, an emphasis that allows people involved to put aside their personal issues and also the departmental issues that are so evident in bureaucratic organizations. The mission is primary.
+    3. generativity encourages a "level playing field," in which hierarchy plays less of a role
+
+  - Bureaucracy is not necessarily bad
+
+    - the goal of bureaucracy is to "ensure fairness by applying rules to administrative behavior."
+
+- WHAT DOES WESTRUM ORGANIZATIONAL CULTURE PREDICT?
+
+  - Organizations with better information flow function more effectively
+  - This type of organizational culture has several important prerequisites, (which means that it is a good proxy for the characteristics described by these prerequisites)
+
+    1. A good culture requires trust and cooperation between people across the organization -> It reflects the level of collaboration and trust inside the organization
+    2. Better organizational culture can indicate higher quality decision-making.
+
+       1. not only is better information available for making decisions,
+       2. but those decisions are more easily reversed if they turn out to be wrong because the team is more likely to be open and transparent rather than closed and hierarchical.
+
+    3. teams with these cultural norms are likely to do a better job with their people, since problems are more rapidly discovered and addressed.
+
+  - Westrum Organizational Culture would predict
+
+    1. Software Delivery Performance
+    2. Organizational Performance
+
+- CONSEQUENCES OF WESTRUM'S THEORY FOR TECHNOLOGY ORGANIZATIONS
+
+  - It all comes down to team dynamics
+
+#+begin_quote
+
+    who is on a team matters less than how the team members interact, structure their work, and view their contributions
+
+#+end_quote
+  - How organizations deal with failures or accidents is particularly instructive
+
+    - Accident investigations that stop at "human error" are not just bad but dangerous
+
+      - Accidents typically emerge from a complex interplay of contributing factors
+      - In complex adaptive systems, accidents are almost never the fault of a single person
+
+    - *Human error should be the start of the investigation*
+
+      - Our goal should be
+
+        1. to discover how we could improve information flow so that people have better or more timely information
+        2. to find better tools to help prevent catastrophic failures following apparently mundane operations
+
+- HOW DO WE CHANGE CULTURE?
+
+  - Following the theory developed by the Lean and Agile movements, *implementing the practices of these movements can have an effect on culture*
+
+#+begin_quote
+
+    The way to change culture is not to first change how people think, but instead to start by changing how people behave--what they do
+
+#+end_quote
+  - *Continuous Delivery and Lean Management do in fact impact culture*
+
+    - 4. Technical Practices
+    - 7. Management Practices for Software
+    - 8. Product Development
+
+** 4. Technical Practices
+
+- Our research shows that technical practices play a vital role in achieving these outcomes.
+- In this chapter,
+
+  1. the research we performed to measure continuous delivery as a capability and to assess its impact on software delivery performance, organizational culture, and other outcome measures, such as team burnout and deployment pain.
+  2. We find that continuous delivery practices do in fact have a measurable impact on these outcomes.
+
+- WHAT IS CONTINUOUS DELIVERY?
+
+  - Continuous delivery is a set of capabilities that enable us to get changes of all kinds into production or into the hands of users safely, quickly, and sustainably.
+  - Five key principles
+
+    1. Build quality in.
+
+       - build a culture supported by tools and people where we can detect any issues quickly,
+       - so that they can be fixed straight away when they are cheap to detect and resolve.
+
+    2. Work in small batches.
+
+       - By splitting work up into much smaller chunks that deliver measurable business outcomes quickly for a small part of our target market, we get essential feedback on the work we are doing so that we can course correct.
+       - Even though working in small chunks adds some overhead, it reaps enormous rewards by allowing us to avoid work that delivers zero or negative value for our organizations.
+       - changing the economics of the software delivery process so the cost of pushing out individual changes is very low.
+
+    3. Computers perform repetitive tasks; people solve problems.
+    4. Relentlessly pursue continuous improvement.
+    5. Everyone is responsible.
+
+       - A key objective for management is making the state of these system-level outcomes transparent, working with the rest of the organization to set measurable, achievable, time-bound goals for these outcomes, and then helping their teams work toward them.
+
+  - Foundations:
+
+    1. Comprehensive configuration management.
+    2. Continuous integration (CI).
+    3. Continuous testing.
+
+       - No one should be saying they are "done" with any work until all relevant automated tests have been written and are passing.
+
+  - Implementing continuous delivery means creating multiple feedback loops to ensure that high-quality software gets delivered to users more frequently and more reliably
+  - When implemented correctly, the process of releasing new versions to users should be a routine activity that can be performed on demand at any time.
+
+- THE IMPACT OF CONTINUOUS DELIVERY
+
+  - Drivers of Continuous Delivery
+
+    1. Version Control
+    2. Deployment Automation
+
+       - Teams can deploy to production (or to end users) on demand, throughout the software delivery life cycle.
+
+    3. Continuous Integration
+    4. Trunk-Based Development
+    5. Test Automation
+    6. Test Data Management
+    7. Shift Left on Security
+    8. Loosely Coupled Architecture (5. Architecture)
+    9. Empowered Teams
+
+       - Fast feedback on the quality and deployability of the system is available to everyone on the team, and people make acting on this feedback their highest priority.
+       - Teams that can choose their own tools based on what is best for the users of those tools
+
+    10. Monitoring
+    11. Proactive Notification
+
+  - *If you want to improve your culture, implementing CD practices will help.*
+
+    - By giving developers the tools to detect problems when they occur, the time and resources to invest in their development, and the authority to fix problems straight away, we create an environment where developers accept responsibility for global outcomes such as quality and stability.
+
+  - It drives performance improvements in software delivery
+
+    - Strong identification with the organization you work for (10. Employee Satisfaction, Identity, and Engagement)
+    - Higher levels of software delivery performance (lead time, deploy frequency, time to restore service)
+    - Lower change fail rates
+    - A generative, performance-oriented culture (3. Measuring and Changing Culture)
+
+  - Investments in technology are also investments in people (Improvements in CD brought payoffs in the way that work felt)
+
+    - These investments will make our technology process more sustainable
+
+      1. Less Rework
+      2. Lower levels of deployment pain
+      3. Reduced team burnout (9. Making Work Sustainable)
+
+    - Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely ([[http://agilemanifesto.org/][Manifesto for Agile Software Development]])
+
+- THE IMPACT OF CONTINUOUS DELIVERY ON QUALITY
+
+  - We first have to find some way to measure quality
+
+    - This is challenging because quality is very contextual and subjective
+
+#+begin_quote
+
+      Quality is value to some person. - [[https://leanpub.com/b/qualitysoftware][Quality Software (Management)]]
+
+#+end_quote
+    - Several proxy variables for quality
+
+      - Change fail rates
+      - The quality and performance of applications, as perceived by those working on them
+      - *The percentage of time spent on rework or unplanned work* (The strongest correlation)
+      - The percentage of time spent working on defects identified by end users
+
+    - Continuous delivery predicts lower levels of unplanned work and rework in a statistically significant way
+
+      ||  |High Performers |Low Performers | |
+      ||New Work |49% |38% | |
+      ||Unplanned Work or Rework |21% |27% | |
+      ||Other Work |30% |35% | |
+    - Unplanned work and rework are useful proxies for quality because
+
+      - They represent a failure to build quality into our products
+      - In The Visible Ops Handbook, unplanned work is described as the difference between
+
+        Paying attention to the low fuel warning light on an auto mobile
+            The organization can fix the problem in a planned manner, without much urgency or disruption to other scheduled work
+        Running out of gas on the highway
+            The organization must fix the problem in a highly urgent manner, often requiring all hands on deck
+
+      - Reducing failure demand (The Vanguard Method)
+
+        - Failure demand is demand for work caused by the failure to do the right thing the first time by improving the quality of service we provide
+        - This is one of the key goals of CD, with its focus on working in small batches with continuous in-process testing
+
+- CONTINUOUS DELIVERY PRACTICES: WHAT WORKS AND WHAT DOESN'T
+
+  - Architecture and tool choice (5. Architecture)
+  - Version Control
+
+    - Keep as much things in version control as possible
+
+      1. Application code
+      2. System configuration
+      3. Application configuration
+      4. Scripts for automating build and configuration in version control
+
+    - These factors together predict IT performance and form a key component of CD
+    - Keeping system and application configuration in version control was more highly correlated with software delivery performance than keeping application code in version control.
+
+  - Test Automation
+
+    - the following practices predict IT performance:
+
+      1. Reliable automated tests
+      2. Developers primarily create and maintain acceptance tests, and they can easily reproduce and fix them on their development workstations
+
+         - having automated tests primarily created and maintained either by QA or an outsourced party is not correlated with IT performance.
+         - the theory behind this is that when developers are involved in creating and maintaining acceptance tests, there are two important effects.
+
+           1. The code becomes more testable when developers write tests.
+
+              - TDD enforces developers to create more testable designs
+
+           2. When developers are responsible for the automated tests, they care more about them and will invest more effort into maintaining and fixing them
+
+         - Testers (still) serve an essential role in the software delivery lifecycle
+
+           - performing manual testing such as exploratory, usability, and acceptance testing,
+           - helping to create and evolve suites of automated tests by working alongside developers.
+
+         - It's important to run them (automated tests) regularly
+
+           - Developers should get feedback from a more comprehensive suite of acceptance and performance tests every day.
+
+         - Furthermore, current builds should be available to testers for exploratory testing.
+
+      3. Test data management
+
+         - Successful teams
+
+           1. had adequate test data to run their fully automated test suites
+           2. could acquire test data for running automated tests on demand
+           3. test data was not a limit on the automated tests they could run
+
+      4. Trunk-based development
+
+         - Successful teams
+
+           - Fewer than three active branches at any time
+           - Branches with very short lifetimes (less than a day)
+           - Never had "code freeze" or stabilization periods
+
+         - These results are independent of team size, org size, or industry
+         - Anecdotally, and based on our own experience, we hypothesize that this is because having multiple long-lived branches discourages both refactoring and intrateam communication
+         - GitHub Flow is suitable for open source projects
+
+           - whose contributors are not working on a project full time.
+           - In that situation, it makes sense for branches that part-time contributors are working on to live for longer periods of time without being merged.
+
+      5. Information security
+
+         - High-performing teams
+
+           - were more likely to incorporate information security into the delivery process.
+           - Their infosec personnel provided feedback at every step of the software delivery lifecycle, from design through demos to helping with test automation.
+           - However, they did so in a way that did not slow down the development process, integrating security concerns into the daily work of teams.
+
+         - In fact, integrating these security practices contributed to software delivery performance.
+
+      6. Adopting continuous delivery
+
+         - the technical practices of continuous delivery have a huge impact on many aspects of an organization
+         - Continuous delivery improves both delivery performance and quality, and also helps improve culture and reduce burnout and deployment pain
+         - However, *implementing these practices often requires rethinking everything*
+
+           - how teams work
+           - how they interact with each other
+           - what tools and processes they use
+
+         - It also requires substantial investment in test and deployment automation, combined with relentless work to simplify systems architecture on an ongoing basis to ensure that this automation isn't prohibitively expensive to create and maintain.
+
+** 5. Architecture
+
+- High performance is possible with all kinds of systems, provided that systems—and the teams that build and maintain them—are loosely coupled.
+
+  - This key architectural property enables teams to easily test and deploy individual components or services even as the organization and the number of systems it operates grow
+  - it allows organizations to *increase their productivity as they scale* .
+
+- TYPES OF SYSTEMS AND DELIVERY PERFORMANCE
+
+  - We discovered that low performers were more likely to say that
+
+    1. the software they were building—or the set of services they had to interact with—was custom software developed by another company (e.g., an outsourcing partner).
+    2. to be working on mainframe systems.
+
+  - In the rest of the cases, there was no significant correlation between system type and delivery performance.
+
+    - This reinforces the importance of *focusing on the architectural characteristics* , discussed below, rather than the implementation details of your architecture.
+
+      - It's possible to achieve these characteristics even with packaged software and "legacy" mainframe systems
+      - employing the latest whizzy microservices architecture deployed on containers is no guarantee of higher performance if you ignore these characteristics.
+
+    - it's important to invest in your capabilities to create and evolve the core, strategic software products and services that provide a key differentiator for your business.
+    - The fact that low performers were more likely to be using—or integrating against—custom software developed by another company underlines the importance of bringing this capability in-house.
+
+- FOCUS ON DEPLOYABILITY AND TESTABILITY
+
+  - Those who agreed with the following statements were more likely to be in the high-performing group:
+
+    testability
+        We can do most of our testing without requiring an integrated environment.
+    deployability
+        We can and do deploy or release our application independently of other applications/services it depends on.
+
+  - To achieve these characteristics, design systems are loosely coupled—that is, can be changed and validated independently of each other.
+  - The biggest contributor to continuous delivery in the 2017 analysis—larger even than test and deployment automation—is whether teams can:
+
+    1. Make large-scale changes to the design of their system without the permission of somebody outside the team
+    2. Make large-scale changes to the design of their system without depending on other teams to make changes in their systems or creating significant work for other teams
+    3. Complete their work without communicating and coordinating with people outside their team
+    4. Deploy and release their product or service on demand, regardless of other services it depends upon
+    5. Do most of their testing on demand, without requiring an integrated test environment
+    6. Perform deployments during normal business hours with negligible downtime
+
+  - To enable this, we must also ensure delivery teams are cross-functional, with all the skills necessary to design, develop, test, deploy, and operate the system on the same team.
+  - Our research lends support to what is sometimes called the "inverse Conway Maneuver"
+
+    - [[///Users/dsdshcym/Dropbox/Calibre Library/Andy Oram/Making Software_ What Really Works, and Why We Believe It (91)/Making Software_ What Really Works, and Wh - Andy Oram.pdf::205][Conway's Corollary]]
+    - Organizations should evolve their team and organizational structure to achieve the desired architecture.
+    - The goal is for your architecture to support the ability of teams to get their work done—from design through to deployment—without requiring high-bandwidth communication between teams.
+
+  - Architectural approaches that enable this strategy include
+
+    1. the use of bounded contexts and APIs as a way to decouple large domains into smaller, more loosely coupled units
+    2. the use of test doubles and virtualization as a way to test services or components in isolation.
+
+  - Service-oriented architectures are supposed to enable these outcomes, as should any true microservices architecture.
+
+    - However, it's essential to be very strict about these outcomes when implementing such architectures.
+    - Unfortunately, in real life, many so-called service-oriented architectures don't permit testing and deploying services independently of each other, and thus will not enable teams to achieve higher performance.
+
+  - The goal of a loosely coupled architecture is to ensure that the available communication bandwidth isn't overwhelmed by fine-grained decision-making at the implementation level, so we can instead use that bandwidth for discussing higher-level shared goals and how to achieve them.
+
+- A LOOSELY COUPLED ARCHITECTURE ENABLES SCALING
+
+  - If we achieve a loosely coupled, well-encapsulated architecture with an organizational structure to match, two important things happen.
+
+    1. we can achieve better delivery performance, increasing both tempo and stability while reducing the burnout and the pain of deployment.
+    2. we can substantially grow the size of our engineering organization and increase productivity linearly—or better than linearly—as we do so.
+
+  - To measure productivity, we calculated the following metric from our data: number of deploys per day per developer.
+  - As the number of developers increases, we found: Low performers deploy with decreasing frequency. Medium performers deploy at a constant frequency. High performers deploy at a significantly increasing frequency.
+  - This allows our business to move faster as we add more people, not slow down, as is more typically the case.
+  - By focusing on the factors that predict high delivery performance, we can scale deployments per developer per day linearly or better with the number of developers.
+
+    - a goal-oriented generative culture
+    - a modular architecture
+    - engineering practices that enable continuous delivery
+    - effective leadership
+
+- ALLOW TEAMS TO CHOOSE THEIR OWN TOOLS
+
+  - Our analysis shows that tool choice is an important piece of technical work.
+  - When teams can decide which tools they use, it contributes to software delivery performance and, in turn, to organizational performance.
+  - The technical professionals who develop and deliver software and run complex infrastructures make these tool choices based on what is best for completing their work and supporting their users.
+  - That said, there is a place for standardization, particularly around the architecture and configuration of infrastructure.
+
+- ARCHITECTS SHOULD FOCUS ON ENGINEERS AND OUTCOMES, NOT TOOLS OR TECHNOLOGIES
+
+  - What tools or technologies you use is irrelevant if the people who must use them hate using them, or if they don't achieve the outcomes and enable the behaviors we care about.
+  - What is important is enabling teams to make changes to their products or services without depending on other teams or systems.
+
+** 6. Integrating Infosec into the Delivery Lifecycle
+
+- The original intent of the DevOps movement
+
+  - *To bring together developers and operations teams to create win-win solutions in the pursuit of system-level goals* , rather than throwing work over the wall and pointing fingers when things went wrong.
+  - However, this kind of behavior is not limited to just development and operations, it occurs wherever different functions within the software delivery value stream do not work effectively together.
+
+- a shift from information security teams doing the security reviews themselves to *giving the developers the means to build security in* .
+
+  1. it's much easier to make sure that the people building the software are doing the right thing than inspect nearly completed systems and features to find significant architectural problems and defects that involve a substantial rework.
+  2. information security teams simply don't have the capacity to be doing security reviews when deployments are frequent.
+
+- THE RUGGED MOVEMENT
+
+  - I am rugged and, more importantly, my code is rugged.
+  - I recognize that software has become a foundation of our modern world.
+  - I recognize the awesome responsibility that comes with this foundational role.
+  - I recognize that my code will be used in ways I cannot anticipate, in ways it was not designed, and for longer than it was ever intended.
+  - I recognize that my code will be attacked by talented and persistent adversaries who threaten our physical, economic, and national security.
+  - I recognize these things—and I choose to be rugged.
+  - I am rugged because I refuse to be a source of vulnerability or weakness.
+  - I am rugged because I assure my code will support its mission.
+  - I am rugged because my code can face these challenges and persist in spite of them.
+  - I am rugged, not because it is easy, but because it is necessary and I am up for the challenge
+
+** 7. Management Practices for Software
+
+- In this chapter
+
+  - management practices derived from the Lean movement
+  - how they drive software delivery performance.
+
+- LEAN MANAGEMENT PRACTICES
+
+  - Components of Lean Management
+
+    - Limit Work in Progress
+
+      - drive process improvement
+      - increase throughput
+
+    - Visual Management
+
+      - Creating and maintaining visual displays showing key quality and productivity metrics and the current status of work (including defects),
+      - making these visual displays available to both engineers and leaders,
+      - aligning these metrics with operational goals
+
+    - Feedback from Production
+    - Lightweight Change Approvals
+
+  - WIP limits on their own do not strongly predict delivery performance.
+
+    - It's only when they're combined with the use of visual displays and have a feedback loop from production monitoring tools back to delivery teams or the business that we see a strong effect.
+    - When teams use these tools together, we see a much stronger positive effect on software delivery performance.
+
+  - what exactly we're measuring.
+
+    - WIP limits are no good if they don't lead to improvements that increase flow.
+
+      - whether they are good at limiting their WIP and have processes in place to do so.
+      - if their WIP limits make obstacles to higher flow visible,
+      - if teams remove these obstacles through process improvement, leading to improved throughput.
+
+    - Visibility, and the high-quality communication it (visual displays) enables, are key. (the types of information being displayed, how broadly it is being shared, and how easy it is to access.)
+
+      - if teams use tools such as kanban or storyboards to organize their work.
+      - if visual displays or dashboards are used to share information,
+      - whether information on quality and productivity is readily available,
+      - if failures or defect rates are shown publicly using visual displays, and how readily this information is available.
+
+  - Impacts of Lean Management Practices
+
+    - Westrum Organizational Culture
+    - Software Delivery Performance
+    - Less Burnout
+
+- IMPLEMENT A LIGHTWEIGHT CHANGE MANAGEMENT PROCESS
+
+  - approval only for high-risk changes was not correlated with software delivery performance.
+
+    - Teams that reported no approval process or used peer review achieved higher software delivery performance.
+    - Teams that required approval by an external body achieved lower performance.
+
+  - In short, approval by an external body (such as a manager or CAB) simply doesn't work to increase the stability of production systems, measured by the time to restore service and change fail rate.
+
+    - External approvals were negatively correlated with lead time, deployment frequency, and restore time,
+    - and had no correlation with change fail rate.
+    - It certainly slows things down.
+
+  - Use a *lightweight change approval process based on peer review* , such as
+
+    - pair programming or intrateam code review,
+    - combined with a deployment pipeline to detect and reject bad changes.
+
+  - This process can be used for all kinds of changes, including code, infrastructure, and database changes.
+  - Logically, it's clear *why approval by external bodies is problematic.*
+
+    1. After all, software systems are complex.
+    2. Every developer has made a seemingly innocuous change that took down part of the system.
+    3. What are the chances that an external body, not intimately familiar with the internals of a system, can review tens of thousands of lines of code change by potentially hundreds of engineers and accurately determine the impact on a complex production system?
+
+  - At best, this process only introduces time delays and handoffs.
+
+    - This idea is a form of risk management theater:
+    - *we check boxes so that when something goes wrong, we can say that at least we followed the process.*
+
+  - There's a place for people outside teams to do effective risk management around changes.
+
+    - However, this is more of a governance role than actually inspecting changes.
+    - *Such teams should be monitoring delivery performance and helping teams improve it* by implementing practices that are known to increase stability, quality, and speed, such as the continuous delivery and Lean management practices described in this book.
+
+** 8. Product Development
+
+- Much of what has been implemented is faux Agile (People following some of the common practices while failing to address wider organizational culture and processes.)
+
+  - Months spent on budgeting, analysis, and requirements-gathering before work starts;
+  - Work batched into big projects with infrequent releases;
+  - For customer feedback to be treated as an afterthought.
+
+- both Lean product development and the Lean startup movement emphasize testing your product’s design and business model by performing user research frequently, from the very beginning of the product lifecycle.
+- The Lean Startup
+- LEAN PRODUCT DEVELOPMENT PRACTICES
+
+  - Components of Lean Product Management
+
+    - Work in Small Batches
+
+      - The key to working in small batches is to have work decomposed into features that allow for rapid development,
+      - instead of complex features developed on branches and released infrequently.
+      - This idea can be applied at both the feature and the product level.
+      - An MVP is a prototype of a product with just enough features to enable validated learning about the product and its business model.
+      - Working in small batches enables short lead times and faster feedback loops.
+      - it allows you to gather user feedback quickly using techniques such as A/B testing.
+
+    - Make Flow of Work Visible
+    - Gather & Implement Customer Feedback
+
+      - regularly collecting customer satisfaction metrics,
+      - actively seeking customer insights on the quality of products and features,
+      - using this feedback to inform the design of products and features.
+
+    - Team Experimentation
+
+      - Many development teams working in organizations that claim to be Agile are nonetheless obliged to follow requirements created by different teams.
+      - One of the points of Agile development is to seek input from customers throughout the development process, including early stages.
+      - This allows the development team to gather important information, which then informs the next stages of development
+      - But if a development team isn't allowed, without authorization from some outside body, to change requirements or specifications in response to what they discover, their ability to innovate is sharply inhibited
+
+    - To be effective, Experimentation should be combined with the other capabilities we measure here (above)
+
+      - ensures that your teams are making well-reasoned, informed choices about the design, development, and delivery of work, and changing it based on feedback
+      - ensures that informed decisions they make are communicated throughout the organization
+      - increases the probability that the ideas and features they build will deliver delight to customers and add value to the organization
+
+- Effective product management drives performance
+
+** 9. Making Work Sustainable
+
+- DEPLOYMENT PAIN
+
+  - Deployment pain: The fear and anxiety that engineers and technical staff fell when they push code into production
+  - It can tell us a lot about a team's software delivery performance
+  - It highlights the friction and disconnect that exist between
+
+    Development
+        the activities used to develop and test software
+    IT operations
+        the work done to maintain and keep software operational
+
+  - It is where there is the greatest potential for differences
+
+    1. in environment
+    2. in process and methodology
+    3. in mindset
+    4. even in the words teams use to describe the work they do
+
+  - Deployment pain can be
+
+    1. an indication that software development and delivery is not sustainable in your organization
+
+       - Where code deployments are most painful, you'll find the poorest software delivery performance, organizational performance, and culture
+       - A high correlation between deployment pain and key outcomes
+
+    2. a concern when development and test teams have no idea what deployments are like
+
+       - If your teams have no visibility into code deployments, that's another warning that software delivery performance could be low
+       - because if developers or tests aren't aware of the deployment process, there are probably barriers hiding the work from them
+       - And barriers that hide the work of deployment from developers are rarely good, because they isolate developers from the downstream consequences of their work
+
+  - A measure to capture how people feel when code is deployed: *if deployments were feared, disruptive in their work, or, in contrast, if they were easy and pain-free*
+  - Improving key technical capabilities reduces deployment pain (4. Technical Practices, 5. Architecture)
+  - How Painful Are Your Deployments?
+
+    - Ask your team
+
+      1. How painful deployments are
+      2. What specific things are causing that pain
+
+    - Be aware that if deployments have to be performed outside of normal business hours, that's a sign of architectural problems that should be addressed.
+    - It's entirely possible—given sufficient investment—to build complex, large-scale distributed systems which allow for fully automated deployments with zero downtime.
+
+  - Fundamentally, most deployment problems are caused by a complex, brittle deployment process.
+
+    1. Software is often not written with deployability in mind
+
+       - A common symptom here is when complex, orchestrated deployments are required because the software expects its environment and dependencies to be set up in a very particular way and does not tolerate any kind of deviation from these expectations, giving little useful information to administrators on what is wrong and why it is failing to operate correctly.
+       - These characteristics also represent poor design for distributed systems.
+
+    2. The probability of a failed deployment rises substantially when manual changes must be made to production environments as part of the deployment process.
+    3. complex deployments often require multiple handoffs between teams, particularly in siloed organizations where database administrators, network administrators, systems administrators, infosec, testing/QA, and developers all work in separate teams.
+
+  - In order to reduce deployment pain, we should:
+
+    1. Build systems that are designed to be deployed easily into multiple environments, can detect and tolerate failures in their environments, and can have various components of the system updated independently
+    2. Ensure that the state of production systems can be reproduced (with the exception of production data) in an automated fashion from information in version control
+    3. Build intelligence into the application and the platform so that the deployment process can be as simple as possible
+
+  - Deployment pain can lead to burnout if left unchecked
+
+- BURNOUT
+
+  - Burnout is physical, mental, or emotional exhaustion caused by overwork or stress—but it is more than just being overworked or stressed.
+
+    - Burnout can make the things we once loved about our work and life seem insignificant and dull.
+    - It often manifests itself as a feeling of helplessness, and is correlated with pathological cultures and unproductive, wasteful work.
+
+  - Research shows that stressful jobs can be as bad for physical health as secondhand smoke and obesity
+  - Symptoms of burnout include:
+
+    1. feeling exhausted, cynical, or ineffective
+    2. little or no sense of accomplishment in your work
+    3. feelings about your work negatively affecting other aspects of your life
+    4. (In extreme cases)
+
+       - family issues
+       - severe clinical depression
+       - suicide
+
+  - Job stress also affects employers
+
+    - costing the US economy $300 billion per year in sick time, long-term disability, and excessive job turnover
+    - Thus, employers have both a duty of care toward employees and a fiduciary obligation to ensure staff do not become burned out.
+
+  - Burnout can be prevented or reversed, and DevOps can help
+
+    1. foster a supportive work environment
+    2. ensure work is meaningful
+    3. ensure employees understand how their own work ties to strategic objectives
+
+  - Technology managers often try to fix the person while ignoring the work environment
+
+    - even though changing the environment is far more vital for long-term success
+    - Managers who want to avert employee burnout should concentrate their attention and efforts on
+
+      1. Fostering a respectful, supportive work environment that emphasizes learning from failures rather than blaming
+      2. Communicating a strong sense of purpose
+      3. Investing in employee development
+      4. Asking employees what is preventing them from achieving their objectives and then fixing those things
+      5. Giving employees time, space, and resources to experiment and learn
+
+    - Employees must be given the authority to make decisions that affect their work and their jobs, particularly in areas where they are responsible for the outcomes
+
+- COMMON PROBLEMS THAT CAN LEAD TO BURNOUT
+
+  - Six organizational risk factors that predict burnout
+
+    1. work overload: job demands exceed human limits
+    2. Lack of control: inability to influence decisions that affect your job
+    3. Insufficient rewards: insufficient financial, institutional, or social rewards
+    4. Breakdown of community: unsupportive workplace environment
+    5. Absence of fairness: lack of fairness in decision-making processes
+    6. Value conflicts: mismatch in organizational values and the individual's values
+
+  - 11. Leaders and Managers
+  - To measure burnout, we asked respondents:
+
+    - If they felt burned out or exhausted
+    - If they felt indifferent or cynical about their work, or if they felt ineffective
+    - If their work was having a negative effect on their life
+
+  - Improving technical practices and Lean practices reduce feelings of burnout among our survey respondents
+
+- HOW TO REDUCE OR FIGHT BURNOUT
+
+  - Organizational factors that are most strongly correlated with high levels of burnout, and suggests where to look for solutions
+
+    1. Organizational culture
+
+       - How to foster a supportive and respectful work environment
+
+         1. creating a blame-free environment
+         2. striving to learn from failures
+         3. communicating a shared sense of purpose
+
+       - Watch for other contributing factors
+       - remember that *human error is never the root of failure in systems*
+
+    2. Deployment pain
+
+       - Complex, painful deployments that must be performed outside of business hours contribute to high stress and feelings of lack of control
+       - *Ask teams how painful their deployments are and fix the things that hurt the most*
+
+    3. Effectiveness of leaders
+
+       - Responsibilities of a team leader include
+
+         - limiting WIP
+         - eliminating roadblocks for the team
+
+       - So they (team members) can get their work done
+
+    4. Organizational investments in DevOps
+
+       - Investing in training and providing people with the necessary support and resources (including time) to acquire new skills are critical to the successful adoption of DevOps.
+
+    5. Organizational performance
+
+       - At the heart of Lean management is *giving employees the necessary time and resources to improve their own work.*
+
+         1. creating a work environment that
+
+            1. supports experimentation, failure, and learning,
+            2. allows employees to make decisions that affect their jobs.
+
+         2. creating space for employees to do new, creative, value-add work during the work week, and not just expecting them to devote extra time after hours
+
+  - A point worth mentioning is *the importance of values alignment* and its role in fighting burnout.
+
+    - When organizational values and individual values aren't aligned, you are more likely to see burnout in employees, particularly in demanding and high-risk work like technology.
+    - *When organizational values and individual values are aligned, the effects of burnout can be lessened and even counteracted.*
+
+  - It is important to note that the organizational values we mention here are *the real, actual, lived organizational values felt by employees.*
+
+    - If there is a values mismatch, burnout will be a concern.
+
+      1. between an employee and their organization,
+      2. between the organization's stated values and their actual values
+
+  - not only do investments in technology make our software development and delivery better, they make the work lives of our professionals better.
+
+** 10. Employee Satisfaction, Identity, and Engagement
+
+- With market pressures to deliver technology and solutions ever faster, the importance of hiring, retaining, and engaging our workforce is greater than ever.
+- In this chapter, we discuss
+
+  - employee loyalty (as measured by employee Net Promoter Score and identity) and job satisfaction, and then close with a discussion of diversity.
+  - Our research found that employee engagement and satisfaction
+
+    1. are indicative of employee loyalty and identity,
+    2. can help reduce burnout,
+    3. can drive key organizational outcomes like profitability, productivity, and market share.
+
+  - How to measure these key employee factors so you can implement them in your own teams
+
+*** Employee Layalty
+
+- a broadly used benchmark of customer loyalty:
+
+  - Net Promoter Score (NPS).
+  - employee Net Promoter Score (eNPS)
+
+- MEASURING NPS
+
+  - How likely is it that you would recommend our company/product/service to a friend or colleague?
+  - Net Promoter Score is scored on a 0-10 scale, and is categorized as follows:
+
+    Promoters
+        9/10
+    Passives
+        7/8
+    Detractors
+        0-6
+
+  - In our study, we asked two questions to capture the employee Net Promoter Score:
+
+    1. Would you recommend your ORGANIZATION as a place to work to a friend or colleague?
+    2. Would you recommend your TEAM as a place to work to a friend or colleague?
+
+  - employees in high-performing teams were
+
+    1. 2.2 times more likely to recommend their organization to a friend as a great place to work,
+    2. 1.8 times more likely to recommend their team to a friend.
+
+  - Employee engagement is not just a feel-good metric—it drives business outcomes.
+
+    - We found that the employee Net Promoter Score was significantly correlated with the following constructs:
+
+      - The extent to which the organization collects customer feedback and uses it to inform the design of products and features
+      - The ability of teams to visualize and understand the flow of products or features through development all the way to the customer
+      - The extent to which employees identify with their organization's values and goals, and the effort they are willing to put in to make the organization successful
+
+    - when employees see the connection between the work they do and its positive impact on customers, they identify more strongly with the company’s purpose, which leads to better software delivery and organizational performance.
+
+- NPS Explained
+
+  - Loyal employees are the most engaged and do their best work, often going the extra mile to deliver better customer experiences—which in turn drives company performance.
+  - NPS is calculated by *subtracting the percentage of detractors from the percentage of promoters*
+
+*** CHANGING ORGANIZATIONAL CULTURE AND IDENTITY
+
+- When leaders invest in their people and enable them to do their best work, employees identify more strongly with the organization and are willing to go the extra mile to help it be successful. In return, organizations get higher levels of performance and productivity, which lead to better outcomes for the business.
+
+#+begin_src awk
+
+Continuous Delivery / Lean Practices -> Identity -> Organizational Performance
+#+end_src
+- Effective management practices combined with technical approaches, such as continuous delivery, don't just impact performance, they also have a measurable effect on organizational culture.
+- To measure the extent to which survey respondents identify with the organizations they work for
+
+  1. I am glad I chose to work for this organization rather than another company.
+  2. I talk of this organization to my friends as a great company to work for.
+  3. I am willing to put in a great deal of effort beyond what is normally expected to help my organization be successful.
+  4. I find that my values and my organization's values are very similar.
+  5. In general, the people employed by my organization are working toward the same goal.
+  6. I feel that my organization cares about me.
+
+- Our key hypotheses
+
+  1. teams implementing continuous delivery practices and taking an experimental approach to product development will build better products, and will also feel more connected to the rest of their organization.
+
+     - This, in turn, creates a virtuous cycle: by creating higher levels of software delivery performance, we increase the rate at which teams can validate their ideas, creating higher levels of job satisfaction and organizational performance.
+
+  2. identity includes values alignment with the goals of the team and organization
+
+     - one of the key contributors to burnout is a mismatch of personal and organizational values.
+     - A sense of identity can help reduce burnout by aligning personal and organizational values
+     - Therefore, investments in continuous delivery and Lean management practices, which contribute to a stronger sense of identity, may very well help reduce burnout.
+     - This creates a virtuous circle of value creation in the business where investments in technology and process that make the work better for our people are essential for delivering value for our customers and the business.
+
+- This is in contrast to the way many companies still work:
+
+  - requirements are handed down to development teams who must then deliver large stacks of work in batches.
+  - In this model, employees feel little control over the products they build and the customer outcomes they create, and little connection to the organizations they work for.
+  - This is immensely demotivating for teams and leads to employees feeling emotionally disconnected from their work— and to worse organizational outcomes.
+
+- *The extent to which people identified with their organization* predicted
+
+  1. a generative, performance-oriented culture
+  2. predicted organizational performance, as measured in terms of productivity, market share, and profitability
+
+- In today's fast-moving and competitive world, the best thing you can do for your products, your company, and your people is *institute a culture of experimentation and learning* , and *invest in the technical and management capabilities that enable it.*
+
+  - a healthy organizational culture contributes to hiring and retention,
+  - the best, most innovative companies are capitalizing on this.
+  - (3. Measuring and Changing Culture)
+
+*** HOW DOES JOB SATISFACTION IMPACT ORGANIZATIONAL PERFORMANCE?
+
+- Impacts of Technical and Lean Practices on Job Satisfaction
+
+#+begin_src awk
+
+Continuous Delivery / Lean Practices -> Job Satisfaction -> Organizational Performance
+#+end_src
+
+  - This cycle of continuous improvement and learning is what sets successful companies apart, enabling them to innovate, get ahead of the competition—and win.
+
+- HOW DOES DEVOPS CONTRIBUTE TO JOB SATISFACTION?
+
+  - Job satisfaction depends strongly on having the right tools and resources to do your work
+  - In fact, our measure of job satisfaction looks at a few key things:
+
+    1. if you are satisfied in your work,
+    2. if you are given the tools and resources to do your work,
+    3. if your job makes good use of your skills and abilities.
+
+  - Tools are an important component of DevOps practices, and many of these tools *enable automation* .
+
+    - Automation matters because it gives over to computers the things computers are good at—rote tasks that require no thinking and that in fact are done better when you don't think too much about them.
+    - Since humans are so bad at these kinds of tasks, turning them over to computers allows people to focus on the things they're good at: weighing the evidence, thinking through problems, and making decisions.
+
+  - Being able to apply one's judgment and experience to challenging problems is a big part of what makes people satisfied with their work.
+  - Practices like proactive monitoring and test and deployment automation all
+
+    - *automate menial tasks* and *require people to make decisions based on a feedback loop*
+    - Instead of managing tasks, people get to make decisions, employing their skills, experience, and judgment.
+
+*** DIVERSITY IN TECH
+
+- Diversity matters.
+
+  - We recommend that teams wanting to achieve high performance do their best to
+
+    1. recruit and retain more women and underrepresented minorities, and
+    2. work to improve diversity in other areas too, such as people with disabilities.
+
+- Diversity is not enough
+
+  - Teams and organizations must also *be inclusive* .
+
+    - An inclusive organization is one where “all organizational members feel welcome and valued for who they are and what they ’bring to the table.’
+    - All stakeholders share a high sense of belonging and fulfilled mutual purpose”
+
+  - *Inclusion must be present in order for diversity to take hold.*
+
+- WOMEN IN DEVOPS
+- WHAT OTHER RESEARCH TELLS US ABOUT DIVERSITY
+- WHAT WE CAN DO
+
+** 11. Leaders and Managers
+
+- This chapter will
+
+  - present our findings on the role of leaders and managers in technology transformations
+  - outline some steps that leaders can take to improve the culture in their own teams
+
+*** TRANSFORMATIONAL LEADERSHIP
+
+- by 2020, half of the CIOs who have not transformed their teams' capabilities will be displaced from their organizations' digital leadership teams
+- leadership really does have a powerful impact on results.
+
+  - leadership is about inspiring and motivating those around you.
+  - A good leader affects a team's ability to deliver code, architect good systems, and apply Lean principles to how the team manages its work and develops products.
+
+- In our opinion, the role of leadership on technology transformation has been one of the more overlooked topics in DevOps,
+- Transformational leadership is essential for:
+
+  1. Establishing and supporting generative and high-trust cultural norms
+  2. Creating technologies that enable developer productivity, reducing code deployment lead times and supporting more reliable infrastructures
+  3. Supporting team experimentation and innovation, and creating and implementing better products faster
+  4. Working across organizational silos to achieve strategic alignment
+
+- To capture transformational leadership, we used a model that includes five dimensions (Rafferty and Griffin 2004).
+
+  Vision
+      Has a clear understanding of where the organization is going and where it should be in five years.
+  Inspirational communication
+      Communicates in a way that inspires and motivates, even in an uncertain or changing environment.
+  Intellectual stimulation
+      Challenges followers to think about problems in new ways.
+  Supportive leadership
+      Demonstrates care and consideration of followers' personal needs and feelings.
+  Personal recognition
+      Praises and acknowledges achievement of goals and improvements in work quality; personally compliments others when they do outstanding work.
+
+- What Is Transformational Leadership?
+
+  - Transformational leadership means leaders inspiring and motivating followers to achieve higher performance by appealing to their values and sense of purpose, facilitating wide-scale organizational change.
+  - Such leaders encourage their teams to work toward a common goal through their vision, values, communication, example-setting, and their evident caring about their followers' personal needs.
+  - there are similarities between servant leadership and transformational leadership, but they differ in the leader's focus.
+
+    - Servant leaders focus on their followers' development and performance,
+    - transformational leaders focus on getting followers to identify with the organization and engage in support of organizational objectives.
+
+  - it (transformational leadership) is more predictive of performance outcomes in other contexts,
+
+- We observed significant differences in leadership characteristics among high-, medium-, and low-performing teams.
+
+  - High-performing teams reported having leaders with the strongest behaviors across all dimensions
+  - low-performing teams reported the lowest levels of these leadership characteristics.
+
+- Teams with the least transformative leaders are far less likely to be high performers.
+- Transformational leadership is highly correlated with employee Net Promoter Score.
+- A transformational leader's influence is seen through their support of their teams' work, be that in technical practices or product management capabilities.
+- Leaders alone cannot achieve high DevOps outcomes.
+
+  - Leaders cannot achieve goals on their own.
+  - They need their teams executing the work on a suitable architecture, with good technical practices, use of Lean principles, and all the other factors that we've studied over the years.
+
+- In summary
+
+  - leadership helps build great teams, great technology, and great organizations
+  - indirectly, leadership enables teams to rearchitect their systems and implement the necessary continuous delivery and Lean management practices.
+
+- Transformational leadership
+
+  - enables the practices that correlate with high performance
+  - supports effective communication and collaboration between team members in pursuit of organizational goals.
+  - provides the foundation for a culture in which continuous experimentation and learning is part of everybody's daily work.
+
+- it just amplifies the effectiveness of the technical and organizational practices we have been studying over several years.
+
+*** THE ROLE OF MANAGERS
+
+- Managers are those who have responsibility for people, and often budgets and resources, in organizations.
+- Managers, in particular, play a critical role in connecting the strategic objectives of the business to the work their teams do.
+- Managers can do a lot to improve their team's performance by
+
+  - creating a work environment where employees feel safe,
+  - investing in developing the capabilities of their people
+  - removing obstacles to work.
+
+- When it comes to culture, managers can improve matters by
+
+  - enabling specific DevOps practices in their teams
+  - visibly investing in DevOps and in their employees' professional development.
+
+- Managers can also facilitate big improvements in software delivery performance by taking measures to make deployments less painful.
+- managers should make performance metrics visible and take pains to align these with organizational goals, and should delegate more authority to their employees.
+- *Knowledge is power, and you should give power to those who have the knowledge.*
+- What could investment in DevOps initiatives and my teams look like?
+
+  1. Ensure that existing resources are made available and accessible to everyone in the organization. Create space and opportunities for learning and improving.
+  2. Establish a dedicated training budget and make sure people know about it.
+
+     - Also, give your staff the latitude to choose training that interests them.
+     - This training budget may include dedicated time during the day to make use of resources that already exist in the organization.
+
+  3. Encourage staff to attend technical conferences at least once a year and summarize what they learned for the entire team.
+  4. Set up internal hack days, where cross-functional teams can get together to work on a project.
+  5. Encourage teams to organize internal “yak days,” where teams get together to work on technical debt.
+  6. Hold regular internal DevOps mini-conferences.
+  7. Give staff dedicated time, such as 20% time or several days after a release, to experiment with new tools and technologies. Allocate budget and infrastructure for special projects.
+
+*** TIPS TO IMPROVE CULTURE AND SUPPORT YOUR TEAMS
+
+- perhaps the most valuable work they can do is *growing and supporting a strong organizational culture* among those they serve: their teams.
+
+  - This allows the experts that work with and for them to operate at maximum effectiveness, creating value for the organization.
+
+- three things are highly correlated with software delivery performance and contribute to a strong team culture:
+
+  1. Enable cross-functional collaboration
+
+     - Building trust with your counterparts on other teams.
+
+       - Trust is built on kept promises, open communication, and behaving predictably even in stressful situations.
+
+     - Encouraging practitioners to move between departments.
+
+       - This sort of lateral move can be incredibly valuable to both teams.
+
+         - Practitioners bring valuable information about processes and challenges to their new team
+         - Members of the previous team have a natural point person when reaching out to collaborate.
+
+     - Actively seeking, encouraging, and rewarding work that facilitates collaboration
+
+       - Make sure success is reproducible and pay attention to latent factors that make collaboration easier.
+
+     - Use Disaster Recovery Testing (DiRT) Exercises to Build Relationships
+
+       - in which outages are simulated or actually created according to a pre-prepared plan, and teams must work together to maintain or restore service levels.
+       - For DiRT-style events to be successful, an organization first needs to accept system and process failures as a means of learning
+       - We design tests that require engineers from several groups who might not normally work together to interact with each other
+       - That way, should a real large-scale disaster ever strike, these people will already have strong working relationships
+
+  2. Help create a climate of learning
+
+     - Creating a training budget and advocating for it internally
+
+       - Emphasize how much the organization values a climate of learning by putting resources behind formal education opportunities.
+
+     - Ensuring that your team has the resources to engage in informal learning and the space to explore ideas.
+
+       - Learning often happens outside of formal education
+       - 20% time
+
+     - Making it safe to fail.
+
+       - If failure is punished, people won't try new things.
+       - Treating failures as opportunities to learn
+       - Holding blameless postmortems to work out how to improve processes and systems
+
+         - helps people feel comfortable taking (reasonable) risks
+         - helps create a culture of innovation.
+
+     - Creating opportunities and spaces to share information
+
+       - Set up a regular cadence of opportunities for employees to share their knowledge
+
+         - weekly lightning talks
+         - offer resources for monthly lunch-and-learns
+
+     - Encourage sharing and innovation by having demo days and forums
+
+  3. Make effective use of tools
+
+     - Make sure your team can choose their tools
+     - Make monitoring a priority
+
+       - The visibility and transparency yielded by effective monitoring are invaluable.
+       - Proactive monitoring was strongly related to performance and job satisfaction in our survey, and it is a key part of a strong technical foundation
+
+* Part II: The Research
+** 12. The Science Behind This Book
+** 13. Introduction to Psychometrics
+** 14. Why Use a Survey
+** 15. The Data for the Project
+* Part III: Transformation
+
+- Taking this information and applying it to change your organization is a complex and daunting task.
+- The why and how of leadership, management, and team practices that enable culture change.
+
+  - This, in turn, enables sustainable high performance in a complex and dynamic environment.
+
+- Steve and Karen extend our view beyond the interrelationships of team, management, and leadership practices, beyond the skillful adoption of DevOps, and beyond the breaking down of silos—all necessary, but not sufficient. Here we see the evolution of holistic, end-to-end organizational transformation, fully engaged and fully aligned to enterprise purpose.
+
+** 16. High-Performance Leadership and Management
+
+- 11. Leaders and Managers
+- Why have technology practitioners continuously sought to improve the approach to software development and deployment as well as the stability and security of infrastructure and platforms, yet, in large part, have overlooked (or are unclear about) the way to lead, manage, and sustain these endeavors?
+- Why we must improve the way we lead and manage IT and, indeed, re-imagine the way everyone across the enterprise views and engages with technology.
+- We are in the midst of a complete transformation in the way value is created, delivered, and consumed.
+
+  - Our ability to rapidly and effectively envision, develop, and deliver technology-related value to enhance the customer experience is becoming a key competitive differentiator.
+  - But peak technical performance is only one part of competitive advantage—necessary but not sufficient.
+
+    - We may become great at rapidly developing and delivering reliable, secure, technology-enabled experiences,
+    - but
+
+      1. How do we know which experiences our customers value?
+      2. How do we prioritize what we create so that each team’s efforts advance the larger enterprise strategy?
+      3. How do we learn from our customers, from our actions, and from each other?
+      4. And as we learn, how do we share that learning across the enterprise and leverage that learning to continuously adapt and innovate?
+
+  - The other necessary component to sustaining competitive advantage is *a lightweight, high-performance management framework* that
+
+    - connects enterprise strategy with action,
+    - streamlines the flow of ideas to value,
+    - facilitates rapid feedback and learning, and
+    - capitalizes on and connects the creative capabilities of every individual throughout the enterprise to create optimal customer experiences.
+
+- This Chapter:
+
+  - What does such a framework look like—not in theory but in practice?
+  - And how do we go about improving and transforming our own leadership, management, and team practices and behaviors to become the enterprise we aspire to be?
+
+*** A HIGH-PERFORMING MANAGEMENT FRAMEWORK IN PRACTICE
+
+- We'll share with you the sights and sounds and experiences of a day at ING, showing you how practices, rhythms, and routines connect to create a learning organization and deliver high performance and value.
+- ING’s New Agile Organizational Model Has No Fixed Structure—It *Constantly Evolves* .
+
+  Tribe
+      collection of squads with interconnected missions
+
+      - includes on average 150 people
+      - empowers tribe lead to establish priorities, allocate budges, and form interface with other tribes to ensure knowledge/insights are shared
+      - Agile coach
+
+        - coaches individuals and squads to create high-performing teams
+
+  Squad
+      basis of new agile organization
+
+      - includes no more than 9 people;
+      - is self-steering and autonomous
+      - comprises representatives of different functions working in single location
+      - has end-to-end responsibility for achieving client related objective
+      - can change functional composition as mission evolves
+      - is dismantled as soon as mission is executed
+      - Product owner
+
+        - squad member, not its leader
+        - is responsible for coordinating squad activities
+        - manages backlog, to-do lists, and priority setting
+
+  Chapter
+      develops expertise and knowledge across squads
+
+      - Chapter lead
+
+        - is responsible for one chapter
+        - represents hierarchy for squad members
+
+          - personal development
+          - coaching
+          - staffing
+          - performance management
+
+- This practice of rapid exchange of learning, enabling the frontline teams to learn about strategic priorities and the leaders to learn about customer experience from frontline team customer interaction, is a form of strategy deployment
+
+  - Lean practitioners use the term Hoshin Kanri.
+  - It creates, at all levels, a continuous, rapid feedback cycle of learning, testing, validating, and adjusting, also known as PDCA.
+  - This pattern of vertical and horizontal communication is a leadership standard work practice called "[[https://kanbanize.com/lean-management/hoshin-kanri/what-is-catchball/][catchball]]"
+
+- In addition to regular stand-ups with squads, product owners, IT-area leads, and chapter leads, the tribe lead also regularly visits the squads to ask questions
+
+  - "Help me better understand the problems you’re encountering"
+  - "Help me see what you’re learning"
+  - "What can I do to better support you and the team?"
+
+- It takes real effort, with coaching, mentoring, and modeling to change behavior from the traditional command-and-control to *leaders-as-coaches*
+
+  - where everyone’s job is to
+
+    1. do the work
+    2. improve the work
+    3. develop the people
+
+       - especially important in a technology domain, where automation is disrupting many technology jobs
+       - for people to bring their best to the work that may eliminate their current job
+
+         - they need complete faith that their leaders value them
+         - not just for their present work but for their ability to improve and innovate in their work
+
+       - the work itself will constantly change
+       - *the organization that leads is the one with the people with consistent behavior to rapidly learn and adapt.*
+
+- Too often, quality is overshadowed by the pressure for speed. A courageous and supportive leader is crucial to help teams " *slow down to speed up* ,"
+
+  - providing them with the permission and safety to put quality first (fit for use and purpose)
+  - which, in the long run, improves speed, consistency, and capacity while reducing cost, delays, and rework. Best of all, this improves customer satisfaction and trust.
+
+- focusing on "going deep before going wide."
+- Another challenge the coaches are experimenting with is dispersed teams.
+- As a leader, you have to look at your own behaviors before you ask others to change
+- You get impatient wanting to speed their learning but then you realize you went through this yourself, and it took time. *Storytelling is important, but they have to have their own learning*
+- Over the years, they have experimented with different problem-solving methods, including A3, Kata, Lean startup, and others, and finally settled on a blend of elements that they found helpful, creating their own approach
+
+  - How
+
+    1. Their approach is to gather the right people who have experience and insights into the problem to rigorously examine the current condition.
+
+       - This rigor pays off, as the team gains insights that increase the probability of identifying the root cause rather than just the symptoms.
+
+    2. With this learning, they form a hypothesis about an approach to improvement, including how and what to measure to learn if the experiment produces the desired outcomes.
+    3. If the experiment is a success, they make it part of the standard work, share the learning, and continue to monitor to ensure the improvement is sustained
+
+  - Why it works:
+
+    - because it helps people to embrace change, letting people come up with their own ideas, which they can then test out
+
+- Amidst this colorful, creative work environment, with a philosophy of “make it your own,” the idea of standard work may seem to be antithetical, even counterproductive.
+
+  - when teams have a standard way of work, following that standard saves a lot of time and energy.
+  - standard work is established not by imitating a way of work that is prescribed in a book or used successfully by another company
+  - experiments with different approaches and agrees upon the one best way to do the work.
+  - As conditions change, the standard is reevaluated and improved.
+
+- We had to learn ourselves to become a learning team.
+
+  - When we were not able to learn as management, we were not able to help the teams to learn.
+  - We [his management team] experienced our own learning, then we went to the teams to help them learn to become a learning team
+
+- When you change the way you work, you change the routines, you create a different culture
+- We give them speed with quality.
+
+  - Sometimes, we may take a little longer than some of the others to reach green,
+  - but once we achieve it, we tend to stay green, when a lot of the others go back to red
+
+*** TRANSFORMING YOUR LEADERSHIP, MANAGEMENT, AND TEAM PRACTICES
+
+- We believe the better questions (than "How do we change our culture") to ask are:
+
+  - How do we learn how to learn?
+  - How do I learn?
+  - How can I make it safe for others to learn?
+  - How can I learn from and with them?
+  - How do we, together, establish new behaviors and new ways of thinking that build new habits, that cultivate our new culture?
+  - Where do we start?
+
+- "Let's try this together. Even if it doesn't work, we will learn something that will help us to be better. Will you join me in this and see what we can learn?”
+- *There is no checklist or playbook.*
+
+  - You can't "implement” culture change.
+  - Implementation thinking (attempting to mimic another company's specific behavior and practices) is, by its very nature, counter to the essence of generative culture.
+
+- A high-performance culture is
+
+  - far more than just
+
+    - the application of tools,
+    - the adoption of a set of interrelated practices,
+    - copying the behaviors of other successful organizations,
+    - the implementation of a prescribed, expert-designed framework.
+
+  - is the *development, through experimentation and learning guided by evidence, of a new way of working together* that is situationally and culturally appropriate to each organization.
+
+- Some suggestions we offer, based on our own experiences in helping enterprises evolve toward a high-performing, generative culture:
+
+  1. Develop and maintain the right mindset
+
+     - This is about
+
+       1. learning
+       2. how to create an environment for shared organizational learning
+
+     - This is not about
+
+       1. just doing the practices
+       2. employing tools (certainly not)
+
+  2. Make it your own
+
+     1. Don't look to copy other enterprises on their methods and practices, or to implement an expert-designed model
+
+        - Study and learn from them
+        - But then experiment and adapt to what works for you and your culture
+
+     2. Don't contract it out to a large consulting firm to expediently transform your organization or to implement new methodologies or practices for you
+
+        - Your teams will feel that these methodologies (Lean, Agile, whatever) are being done to them.
+        - While your current processes may temporarily improve, your teams will not develop the confidence or capability to sustain, continue to improve, or to adapt and develop new processes and behaviors on their own.
+
+     3. Do develop your own coaches
+
+        - Initially you may need to hire outside coaching to establish a solid foundation, but *you must ultimately be the agent of your own change.*
+        - Coaching depth is a key lever for sustaining and scaling.
+
+  3. You, too, need to change your way of work.
+
+     - Whether you are a senior leader, manager, or team member, *lead by example*
+     - *A generative culture starts with demonstrating new behaviors, not delegating them.*
+
+  4. Practice discipline
+
+     - Change takes discipline and courage.
+
+  5. Practice patience
+
+     - Your current way of work took decades to entrench
+     - It's going to take time to change actions and thought patterns until they become new habits and, eventually, your new culture.
+
+  6. Practice practice
+
+     - You just have to try it: *learn, succeed, fail, learn, adjust, repeat.*
+
+- As you learn a new way of leading and working, you, and those you bring along with you on this journey, will
+
+  1. explore, stretch, make some mistakes, get a lot right, learn, grow, and keep on learning.
+  2. discover better and faster ways to engage, learn, and adapt to changing conditions.
+  3. improve quality and speed in everything you do.
+  4. grow your own leaders, innovate, and outperform your competition.
+  5. more rapidly and effectively improve value for customers and the enterprise.
+  6. "have a measurable impact on an organization's profitability, productivity, and market share. These also have an impact on customer satisfaction, efficiency, and the ability to achieve organizational goals."
+
+* Conclusion
+
+- In all of our research, one thing has proved consistently true: *since nearly every company relies on software, delivery performance is critical to any organization doing business today*
+- We hope this book has helped you identify areas where you can improve your own technology and business processes, work culture, and improvement cycles
+- Remember: *you can’t buy or copy high performance.*
+
+  - You will need to develop your own capabilities as you pursue a path that fits your particular context and goals.
+  - This will take sustained effort, investment, focus, and time.

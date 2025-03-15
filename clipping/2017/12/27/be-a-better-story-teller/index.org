@@ -1,0 +1,23 @@
+#+TITLE: Be a Better Story Teller
+#+begin_quote
+
+1. Observe conflict (An issue that needs to be solved)
+2. Find shared language (Core concepts)
+3. Tell a story (Define goals and reach them)
+4. Create news (Release notes)
+
+#+end_quote
+
+-- from [[https://www.deconstructconf.com/2017/evan-czaplicki-on-storytelling][On Storytelling - by Evan Czaplicki - Deconstruct]]
+
+Great talk by Elm's creator! Learned a lot.
+
+Writing software, no matter it's open-sourced or not, is always more than a technical problem. Or worse, it's the easiest part of the whole project.
+
+Here are some more critical parts:
+
+1. Communication
+2. Communication
+3. *Communication*
+
+So, try to be a better story teller to be a better programmer.

@@ -1,0 +1,20 @@
+#+TITLE: Global Find Clipboard on macOS
+
+Turns out that macOS not only has Universal Clipboard to sync the clipboard content between your Mac and your iOS devices, but also has a feature called Global Find Clipboard to sync the content between the Find inputs in different applications.
+
+You can try this feature in Safari and Terminal:
+
+1. Open Safari
+2. Use Cmd-F to search anything (keyword for example)
+3. Open Terminal
+4. Press Cmd-F to see the content in the search bar (it should be keyword as well)
+5. If you update the content in the Terminal search bar and go back to Safari, the search content in Safari is updated automatically
+
+-- from
+
+1. [[https://twitter.com/njukidreborn/status/941393059337531392][rebornix on Twitter: \"Thanks to @melvinphilips8 for bringing us
+Global Find Clipboard on macOS https://t.co/1K1hpkL3C0
+https://t.co/xdP3IatLhi\"]]
+2. [[https://github.com/Microsoft/vscode/issues/39585][Test macOS Global Find Clipboard · Issue #39585 · Microsoft/vscode]]
+
+(Though, it is a nice-to-have feature, but I cannot think of a use case for it, searching the same word in both Preview and Safari?)

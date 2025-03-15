@@ -1,0 +1,111 @@
+#+TITLE: My Ideal Editor
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2015-11-20]
+#+URI:         blog/2015/11/20/my-ideal-editor/index.html
+#+TAGS:        Editor, Emacs, Vim
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+折腾编辑器也一年多了，也来谈谈我理想中的编辑器是什么样的。再用 Vim, Emacs 来和这些需求作个比较，看看我为什么选择了 Emacs
+
+* 需求
+** Vim Mode
+
+没有 Vim mode 的编辑器完全不能考虑，而且还得是一个足够优秀的 Vim mode ，不仅仅是 Insert Mode, Normal Mode, Visual Mode 这样简单的三种 Mode 实现，还包括了 Expert Mode 等其他高阶的功能。总之就是越像 Vim 越好（这点上看，我是个原教旨主义者）
+
+** Org Mode
+
+Org-Mode 对我来说是和 Vim, Emacs 并列的工具，写代码没有 Emacs 我可以用 Vim ，但是没了 Org Mode 我就完全不知道该如何生活、学习、工作了。
+
+** 性能
+
+天下武功，唯快不破。无论如何要求性能我觉得都是不为过的。不管文件的大小，都要能流畅地编辑才对。光标移动时的卡顿是绝对不能忍的。
+
+** 稳定
+
+绝对，绝对，绝对不能崩溃丢失改动。当然不崩溃也不现实，至少要提供一定的恢复手段。
+
+** 异步操作的支持
+
+不能在执行某些操作的时候卡住，没有响应，这会让我很没安全感，不知道要不要强制关闭，更担心强制关闭后文件的恢复问题。
+
+** 中文的支持
+
+足够优秀的中文支持，中英文字体分别设置是最基本的，如果能把中英文混排处理好就完美了。当然现在中文排版的方案也没什么统一的标准。最希望有的一个功能是自动在中文和其他字符之间加入空格。
+
+** 丰富的插件/社区支持
+
+一个庞大的社区是一个优秀的编辑器必备的条件。光靠编辑器开发者本身是永远无法满足广大用户的需求的，只有靠社区的力量才能让编辑器的功能不断完善。
+
+这也要求了编辑器本身的扩展性要足够优秀，至少要有一门不错的用于扩展的语言。
+
+* Vim/NeoVim [4/7]
+
+Vim 我持续用了半年， NeoVim 并没有怎么用过，在用 Vim 的时候它还不稳定，等它出 0.1 版本，比较稳定了，我已经转用 Emacs 一年了。
+
+[X] Vim Mode
+    这个不用说了
+[ ] Org Mode
+    其实我并没有在 Vim 里尝试过 Org Mode ，但是想想体验并不会很好，在这也不多说了，以后有机会尝试一下。
+[X] 性能
+    Vim 的性能绝对是没话说的，打开速度和处理速度都非常快，而且光标的移动也没有迟滞感。 NeoVim 0.1 版本的速度只能说比 Vim 更快。
+[X] 稳定
+    几乎没有在 Vim 中卡住过，也几乎不用考虑崩溃恢复的问题。
+[ ] 异步操作的支持
+    这个 Vim 支持的不是很好， NeoVim 的一个目标就是解决这个问题，然而我也没有体验过，在此不谈。
+[ ] 中文的支持
+    Vim 对中文的支持就是没有支持，想当年不知道为了设置一个中文字体折腾了好久，最后还是放弃了，毕竟主要是命令行下使用，太多历史遗留问题，没法解决。不知道以后 NeoVim 发展壮大之后会不会有更好的 GUI 支持。
+[X] 丰富的插件/社区支持
+    这个也不用说，想要什么插件上 GitHub 上一搜肯定有人已经做出来了。
+
+* Emacs [4/7]
+
+用 Spacemacs 已经快一年了，写这篇博客也主要想抱怨一下对 Spacemacs 的一些不满意的地方。
+
+[X] Vim Mode
+
+    虽然 Evil Mode 已经模拟 Vim 模拟得非常好了，但是还是没有实现 Expert Mode ，不知道是作者觉得有其他 Emacs 的功能已经能替代了还是其他什么考虑。
+
+    这里有个插曲，昨天我更新了 Emacs 25 后， Evil 的 Undo 功能完全和 Vim 中表现的不一样了[fn:1]。在这分享一下 Evil Mode Maintainer [[https://bitbucket.org/lyro/][Frank Fischer]] 的一个回复
+
+#+begin_quote
+
+    Emacs dev alwasys makes trouble ;)[fn:2]
+
+#+end_quote
+
+    也因为这个 Bug ，我又用回了 Emacs 24
+
+[X] Org Mode
+
+    毕竟是 Emacs 的插件，重度信赖 Emacs 。我也几次冒出用回 Vim 或者尝试 Sublime 或 Atom 的想法，但是每次想到 Org Mode 便打消了这种想法。
+
+#+begin_quote
+
+    不得不说这也是个好事，省去了我不少折腾其他编辑器的时间
+
+#+end_quote
+[ ] 性能
+    不得不说 Emacs 的性能只能说是够用，和 Vim 还是没办法比的。光是移动光标都能感觉卡顿。当然这个问题在 Emacs 25 里会有好转，这也是我之间用了几个星期不稳定的 Emacs 25 的原因。
+[ ] 异步操作的支持
+    绝对不及格。之前使用的 Gnus 接收邮件的时候就把 Emacs 整个 Block 了，再加上访问 Gmail 不流畅，让我每次收邮件都捏把汗。还有很多复杂操作也会这样，一旦发生死循环之类的事情就只能尝试 C-g 来中断了，再不行就只能 Force Quit 了。
+[ ] 稳定
+    因为异步支持的不够，偶尔需要 Force Quit ，这时候就要 Recover File 了，不得不说这是一个痛苦的过程，我每次都要 Diff 一下，不敢直接 Recover 。这也让我养成了随手保存的「好习惯」。
+[X] 中文的支持
+    至少比 Vim 好，虽然和英文字符的配合需要调整一下（还是看到有人一直纠结 Org Mode中文 Tag 的问题），但是至少能分别配置中英文字体了，而且 *黑体* 、 /斜体 / 都有很好的支持。
+[X] 丰富的插件/社区支持
+    Emacs Lisp 社区是一个非常优秀的社区，有很多很多优秀的插件，我也打算最近学完 Ruby 之后在假期里再花时间学习 Lisp 。
+
+* Summary
+
+最后一看， Emacs 和 Vim 竟然 4:4 打平了，但是 Emacs 有 Org Mode ，获得了压倒性的胜利。（这么一说，结局好像一开始就注定了……）
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/syl20bnr/spacemacs/issues/3869][https://github.com/syl20bnr/spacemacs/issues/3869]]
+
+[fn:2]
+
+[[https://bitbucket.org/lyro/evil/issues/594/undo-doesnt-behave-like-vim][https://bitbucket.org/lyro/evil/issues/594/undo-doesnt-behave-like-vim]]

@@ -1,0 +1,95 @@
+#+TITLE: Build Data-Oriented Applications with WulinMaster
+
+WulinMaster is a Gem built on top on rails to let you build Data-Oriented Applications faster.
+
+Its most valuable feature is generating grid-like views for your models whilst still providing enough customization possibilities.
+
+We all know that Rails has this great scaffolding feature to let you build a pure CRUD application in 15 mins[fn:1]. But the default templates are focused on more general data.
+
+WulinMaster instead focuses on large data sets that need to be shown in grids. It's still CRUD, but optimized for larger data sets.
+
+#+begin_quote
+
+- History
+
+  - World Cup
+  - Mission
+
+    - Build 2 large software suites
+
+      1. booking
+      2. logistic
+
+    - 5 accompanying web applications
+
+      - Data grids
+      - Keyboard friendly
+      - Excel
+      - PDF
+      - Auditing
+
+  - Challenges
+
+    - ~60 screens
+    - ~20 user roles
+    - Complex model and machines
+    - Limited resources
+
+- [[https://github.com/ekohe/wulin_master]]
+
+  - Framework to develop enterprise applications built on top of Ruby on Rails
+  - Extensible and Reusable
+
+    - Grid
+
+#+begin_src ruby
+class CountryGrid < WulinMaster::Grid
+  title 'Countries'
+
+  model Country
+
+  column :code
+  column :name
+
+  load_default_actions
+end
+#+end_src
+
+      - Sorting*
+      - Multi-column Filtering
+      - Creation and Updating
+
+    - Screen
+
+      - Composed by multiple grids
+
+    - Actions
+
+      - Extend a grid (add a button)
+
+    - Behaviors
+
+      - Callbacks
+
+  - [[https://github.com/ekohe/wulin_oauth]]
+  - [[https://github.com/ekohe/wulin_permits]]
+  - [[https://github.com/ekohe/wulin_excel]]
+  - [[https://github.com/ekohe/wulin_audit]]
+  - [[https://github.com/ekohe/wulin_wiki]]
+
+- Future
+
+  - test suite
+  - stability
+  - marketing site
+  - import tool
+  - rails generator
+
+#+end_quote
+
+-- from an Ekohe internal tech sharing ([[https://github.com/ekohe/wulin_master][ekohe/wulin_master: Wulin Master fight for enterprise problem]])
+
+* Footnotes
+[fn:1]
+
+[[https://www.youtube.com/watch?v=Gzj723LkRJY&feature=youtu.be][How to create a blog engine in 15 minutes - Ruby on Rails demo - YouTube]]

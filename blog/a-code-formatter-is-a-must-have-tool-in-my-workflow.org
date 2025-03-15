@@ -1,0 +1,67 @@
+#+TITLE: A code formatter is a must-have tool in my workflow
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-26]
+#+URI:         blog/2018/01/26/a-code-formatter-is-a-must-have-tool-in-my-workflow/index.html
+#+TAGS:        Clean Code, Code Style
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I'm a very opinionated developer when things come to how to write code. I think code consistency really matters a lot when we write code[fn:1]. This time I want to talk about some of my experiences after using mix format (the official code formatter shipped with Elixir 1.6) for several weeks.
+
+* Code formatter can be a great learning tool
+
+When I first started learning Elixir, I tried to find some style guides[fn:2] because I think they can help me learn how to write more idiomatic Elixir code.
+
+With the help of mix format, I can get instance feedback[fn:3] on how this code should be formatted and I know it would be the same even if another developer come and implements it again.
+
+* Code formatter can be a real-time reviewer of your code
+
+I've also been a rubocop user for a long time. I always think rubocop as a reviewer of my code.
+
+1. rubocop gives me a [[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/][feedback loop]][fn:4] that no other developers can give me.
+
+   Using rubocop (with flycheck in emacs) is like having a pair of eyes watching me writing code all the time. It provides suggestions on how well my code is written and helps me write better code.
+
+2. rubocop teaches me how to write cleaner code
+
+   For example, rubocop will use [[http://wiki.c2.com/?AbcMetric][Abc Metric]][fn:5] to check if your method is too complicated. And if I follow its direction, I can almost always find a better way to reorganize my code.
+
+mix format improves this guidance to another level.
+
+- I can see my code automatically updated after I save a file (I use [[https://github.com/anildigital/mix-format.el][mix-format]][fn:6] in emacs). And it *really feels different* . It's like not only a person reviews your code in real-time, but also corrects it for you.
+- But I have to say that , since mix format is still in its early stage, it has less features than rubocop. And mix format cannot change your code's logic (but only its style). Elixir may still need a linter that can provide suggestions on how well this code is written (like using Abc Metric to compute a method's complexity)
+
+* Focus on the things that really matter
+
+Since mix format automatically formats my code when I save a file, I can actually focus on things that really matter to me.
+
+- Before using mix format, I spent some part of my time formatting my code manually (Adding spaces here and there, indenting lines, splitting lines into shorter ones to fit the screen size, etc.). Even with emacs/vim's help, it's still a lot work to do.
+- After using mix format, I can be more forgivable on how I struct my code. Missing a space in a curly braces pair? No problem, just save the file and it's fixed. It's a huge relax on how I write my code (and I didn't even realize it before I used a formatter).
+- Maybe I'll also try to let rubocop automatically format my code when I save my files.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/clipping/2017/12/21/code-style-consistency-matters/][Code style consistency matters - dsdshome]]
+
+[fn:2]
+
+Like [[https://github.com/rrrene/elixir-style-guide][rrrene/elixir-style-guide: Style Guide for the Elixir language,
+implemented by Credo]]
+
+[fn:3]
+
+行为主义学派认为学习的两大要点是 self-pacing 和 immediate feedback -- from [[https://twitter.com/ConanChou/status/956004158741667842][https://twitter.com/ConanChou/status/956004158741667842]]
+
+[fn:4]
+
+[[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/][GOOS: Build a Faster Feedback Loop - dsdshome]]
+
+[fn:5]
+
+[[../../Org/notes/software_engineering.html#ID-320D5AB4-52D7-45B4-B6AE-C43C03B68E1F][Abc Metric]]
+
+[fn:6]
+
+[[https://github.com/anildigital/mix-format.el][anildigital/mix-format.el: Emacs package to format Elixir code in Emacs with elixir-mode]]

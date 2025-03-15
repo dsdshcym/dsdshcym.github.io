@@ -1,0 +1,2015 @@
+#+TITLE: Clippings from Domain-Driven Design
+* Foreword
+
+- The key to controlling complexity is a good domain model,
+
+  - a model that goes beyond a surface vision of a domain by introducing an underlying structure,
+  - which gives the software developers the leverage they need.
+
+- *You shouldn't separate the concepts from the implementation*
+
+  1. you cannot build a useful conceptual model without considering implementation issues.
+  2. The greatest value of a domain model is that it provides a *ubiquitous language* that ties domain experts and technologists together.
+
+- *Domain models aren't first modeled and then implemented.*
+
+  1. the really powerful domain models evolve over time
+  2. even the most experienced modelers find that they gain their best ideas after the initial releases of a system.
+
+* Preface
+
+- This book provides a framework for making design decisions and a technical vocabulary for discussing domain design.
+
+  - It is a synthesis of widely accepted best practices along with my own insights and experiences.
+  - Software development teams facing complex domains can use this framework to approach domain-driven design systematically.
+
+** Contrasting Three Projects
+
+A project lacking a domain model
+    over-came by business logic
+A project emphasizing domain design
+    The design became easier to modify and extend
+A project designed poorly
+    Repeated iteration produced no improvement
+
+** The Challenge of Complexity
+
+- *The approach to design largely determines how complex software can become*
+- *The most significant complexity of many applications is in the domain itself* , the activity or business of the user, (not technical).
+- The premise of this book:
+
+  1. For most software projects, the primary focus should be on the domain and domain logic.
+  2. Complex domain designs should be based on a model.
+
+- Domain-driven design, aimed at accelerating software projects that have to deal with complicated domains, is both
+
+  1. a way of thinking
+  2. a set of priorities,
+
+** Design Versus Development Process
+
+- Design and process are inextricable
+
+  - When people learn design techniques, they feel excited by the possibilities. Then the messy realities of a real project descend on them.
+
+    1. They can't fit the new design ideas with the technology they must use.
+    2. They don't know when to let go of a particular design aspect in the interest of time and when to dig in their heels and find a clean solution.
+
+  - Two (Agile) practices are prerequisites for applying the approach in this book.
+
+    1. Development is iterative
+    2. Developers and domain experts have a close relationship
+
+  - Extreme Programming Explained: Embrace Change, 2nd Edition
+  - This book intertwines design and development practice and *illustrates how domain-driven design and Agile development reinforce each other* .
+
+    1. A sophisticated approach to domain modeling within the context of an Agile development process will accelerate development.
+    2. The interrelationship of process with domain development makes this approach more practical than any treatment of "pure" design in a vacuum.
+
+- although fear of unanticipated requirements often leads to over-engineering, the attempt to avoid over-engineering can develop into another fear: *a fear of doing any deep design thinking at all* .
+- XP works best for developers with a sharp design sense
+
+  1. past design choices make refactoring itself either easier or harder
+  2. model and design choices clarify or confuse communication
+
+** The Structure of This Book
+** Who Should Read This Book
+
+- this book will fill in gaps and provide perspective on how object modeling fits into real life on a software project
+- learn to apply sophisticated modeling and design skills to practical problems.
+
+** A Domain-Driven Team
+
+- Domain-driven design is a difficult technical challenge that can pay off big, opening opportunities just when most software projects begin to ossify into legacy.
+- The biggest gains come when a team joins together to apply a domain-driven design approach and to move the domain model to the project's center of discourse.
+
+  1. the team members will share a language that enriches their communication and keeps it connected to the software.
+  2. They will produce a lucid implementation in step with a model, giving leverage to application development.
+  3. They will share a map of how the design work of different teams relates, and they will systematically focus attention on the features that are most distinctive and valuable to the organization.
+
+* Part I: Putting the Domain Model to Work
+
+- What is a Model?
+
+#+begin_src awk
+
+18th century Chinese map is a wrong model of this world
+#+end_src
+
+  - *A model is a selectively simplified and consciously structured form of knowledge*
+
+    - An appropriate model makes sense of information and focuses it on a problem
+    - Different forms of a model
+
+      1. A diagram
+      2. Carefully written code
+      3. An English sentence
+
+  - Domain modeling is not a matter of making as "realistic" a model as possible.
+
+- The Utility of a Model in DDD
+
+  1. The model and the heart of the design shape each other
+  2. The model is the backbone of a language used by all team members
+  3. The model is distilled knowledge
+
+- The Heart of Software
+
+  - The heart of software is its ability to solve domain-related problems for its user
+  - There are systematic ways of thinking that developers can employ to search for insight and produce effective models.
+
+** Chapter One. Crunching Knowledge
+
+- A Real-world Example (PCB)
+
+  1. They (PCB designers) constantly corrected me, and as they did I started to learn. We ironed out collisions and ambiguities in their terminology and differences between their technical opinions, and they learned. They began to explain things more precisely and consistently, and we started to develop a model together.
+  2. As the (PCB) engineers described new features they needed, I made them walk me through scenarios of how the objects interacted. When the model objects couldn't carry us through an important scenario, we brainstormed new ones or changed old ones, crunching their knowledge. We refined the model; the code coevolved. A few months later the PCB engineers had a rich tool that exceeded their expectations.
+
+- Ingredients of Effective Modeling
+
+  1. Binding the model and the implementation
+  2. Cultivating a language based on the model
+  3. Developing a knowledge-rich model
+
+     1. The objects had behavior and enforced rules.
+     2. The model wasn't just a data schema; it was integral to solving a complex problem.
+     3. It captured knowledge of various kinds.
+
+  4. Distilling the model
+  5. Brainstorming and experimenting
+
+*** Knowledge Crunching
+
+- *Effective domain modelers are knowledge crunchers.*
+- Knowledge crunching is not a solitary activity.
+
+  - A team of developers and domain experts collaborate,
+  - typically led by developers.
+
+- Waterfall method completely lacks feedback
+
+#+begin_src awk
+
+The analysts have full responsibility for creating the model, based
+only on input from the business experts. They have no opportunity to
+learn from the programmers or gain experience with early versions of
+software. Knowledge trickles in one direction, but does not
+accumulate.
+#+end_src
+- Other projects use an iterative process, but they fail to build up knowledge because they don't abstract.
+
+  - *If programmers are not interested in the domain, they learn only what the application should do, not the principles behind it.*
+  - Useful software can be built that way, but the project will never arrive at a point where powerful new features unfold as corollaries to older features.
+
+- Without collaboration with domain experts, the concepts (abstracted by programmers) are naive
+
+  - That shallowness of knowledge produces software that does a basic job but lacks a deep connection to the domain expert's way of thinking.
+
+- The interaction between team members changes as all members crunch the model together.
+
+  Because analysts and programmers are feeding into it
+      it is cleanly organized and abstracted, so it can provide leverage for the implementation.
+  Because the domain experts are feeding into it
+      the model reflects deep knowledge of the business.
+
+- As the model improves, it becomes *a tool for organizing the information that continues to flow through the project* .
+
+*** Continuous Learning
+
+- When we set out to write software, we never know enough.
+
+  - *we don't realize how much we don't know* -> domains that seem less technically daunting can be deceiving
+
+- All projects leak knowledge, and the knowledge is fragmented again.
+
+  1. People who have learned something move on.
+  2. Reorganization scatters the team
+  3. Crucial subsystems are out-sourced in such a way that code is delivered but knowledge isn't.
+  4. With typical design approaches, the code and documents don't express this hard-earned knowledge in a usable form, so *when the oral tradition is interrupted for any reason* , the knowledge is lost.
+
+- For developers:
+
+  1. Technical knowledge
+  2. General domain-modeling skills
+  3. *The specific domain they are working on*
+
+     - The goal is to *learn how to talk to domain experts*
+
+*** Knowledge-Rich Design
+
+- Business *activities* and *rules* are as central to a domain as are the entities involved (the nouns)
+- Example: Extracting a Hidden Concept
+
+  - Overbooking in the shipping industry
+  - *An important business rule may be hidden as a guard clause* in an application method
+
+    1. As written, it is unlikely that any business expert could read this code to verify the rule, even with the guidance of a developer.
+    2. It would be difficult for a technical, non-businessperson to connect the requirement text with the code.
+
+  - Focus on the important rules and minimize or separate everything else.
+  - The more explicit design has these advantages:
+
+    1. In order to bring the design to this stage, the programmers and everyone else involved will have come to understand the nature of overbooking as a distinct and important business rule, not just an obscure calculation.
+    2. Programmers can show business experts technical artifacts, even code, that should be intelligible to domain experts (with guidance), thereby closing the feedback loop.
+
+*** Deep Models
+
+- Useful models seldom lie on the surface.
+
+  - As we come to understand the domain and the needs of the application, *we usually discard superficial model elements that seemed important in the beginning* , or *we shift their perspective* .
+
+- *Knowledge crunching is an exploration, and you can't know where you will end up.*
+
+** Chapter Two. Communication and the Use of Language
+
+- To make most effective use of a model, *it needs to pervade every medium of communication* .
+
+  1. written text documents
+  2. informal diagrams
+  3. casual conversation
+  4. the code itself
+  5. the tests for code
+
+*** Ubiquitous Language
+
+- On a project without a common language
+
+  1. developers have to translate for domain experts
+  2. developers even translate for each other
+
+- Translation blunts communication and makes knowledge crunching anemic.
+- *A project needs a common language that is more robust than the lowest common denominator.*
+- Use the model as the backbone of a language.
+
+  - Commit the team to exercising that language relentlessly in all communication within the team and in the code.
+  - Iron out difficulties by experimenting with alternative expressions, which reflect alternative models.
+
+    - Then refactor the code, renaming classes, methods, and modules to conform to the new model.
+    - Resolve confusion over terms in conversation, in just the way we come to agree on the meaning of ordinary words.
+
+  - Recognize that a change in the UBIQUITOUS LANGUAGE is a change to the model.
+  - Domain experts should object to terms or structures that are awkward or inadequate to convey domain understanding;
+  - Developers should watch for ambiguity or inconsistency that will trip up design.
+
+*** Modeling Out Loud
+
+- *One of the best ways to refine a model is to explore with speech* , trying out loud various constructs from possible model variations.
+
+  vague and technical
+      "If we give the Routing Service an origin, destination, and arrival time, it can look up the stops the cargo will have to make and, well ... stick them in the database."
+  more complete, but verbose
+      "The origin, destination, and so on ... it all feeds into the Routing Service, and we get back an Itinerary that has everything we need in it."
+  concise
+      "A Routing Service finds an Itinerary that satisfies a Route Specification."
+
+- Our brains seem to be somewhat specialized for *dealing with complexity in spoken language*
+- An addendum to the Ubiquitous language pattern
+
+#+begin_quote
+
+  1. Play with the model as you talk about the system
+  2. Describe scenarios out loud using the elements and interactions of the model, combining concepts in ways allowed by the model
+  3. Find easier ways to say what you need to say
+  4. Take those new ideas back down to the diagrams and code
+
+#+end_quote
+
+*** One Team, One Language
+
+- *If sophisticated domain experts don't understand the model, there is something wrong with the model*
+- Ubiquitous Language is cultivated in the intersection of jargons
+
+  - Developers-only language
+
+    - Technical aspects of design
+    - Technical terms
+    - Technical design problems
+
+  - Ubiquitous language
+
+    - Domain model terms
+    - Names of Bounded Contexts
+    - Terminology of large-scale structure
+    - Many pattern names from this book
+
+  - Domain experts-only language
+
+    - Business terms developers don't understand
+    - Business terms everyone uses that don't appear in design (candidates to fold into model)
+
+*** Documents and Diagrams
+
+- UML diagrams
+
+  1. Class diagrams
+  2. Object-interactions
+
+- But a UML diagram *cannot* convey two of the most important aspects of a model (Careful use of natural languages can fill this role pretty well)
+
+  1. The meaning of the concepts it represents
+  2. What the objects are meant to do
+
+- Diagrams are *a means of communication and explanation* , and they facilitate brainstorming
+
+  - They serve these ends best if *they are minimal*
+
+    - Comprehensive diagrams of the entire object model fail to communicate or explain
+
+      1. They overwhelm the reader with detail
+      2. They lack meaning
+
+    - Simplify diagrams to only containing *conceptually important parts of the object model* that are essential to understand the design
+
+      1. Simplify
+      2. Explain
+      3. Even incorporate a bit of nonstandard notation when it clarifies their point
+
+- The vital detail about the design is captured in the code
+
+  - A well-written implementation should be *transparent, revealing the model underlying it* (what this book is about)
+
+- Responsibilities of different mediums
+
+  Code
+      Vital detail
+  Supplemental diagrams and documents
+      guide people's attention to the central parts
+  Natural language discussion
+      fill in the nuances of meaning
+
+- *Write a text document illustrated with selective and simplified diagrams*
+- *The model is not the diagram*
+- Written Design Documents
+
+  - Documents often lose their connection with the flow of the project
+  - Two general guidelines for evaluating a document
+
+    1. Documents should complement code and speech
+
+       - Cod as a design document can over-whelm the reader with detail
+       - Documents need to:
+
+         1. Illuminate meaning
+         2. Give insight into large-scale structures
+         3. Focus attention on core elements
+
+       - Documents can *clarify design intent* when the programming language does not support a straightforward implementation of a concept
+
+    2. Documents should work for a living and stay current
+
+       - A document must be involved in project activities. (Observe the document's interaction with the UBIQUITOUS LANGUAGE.)
+
+         - Is the document written in the language people speak on the project (now)?
+         - Is it written in the language embedded in the code?
+
+       - The UBIQUITOUS LANGUAGE allows other documents, such as requirements specifications, to be more concise and less ambiguous.
+
+- Executable Bedrock
+
+  - *It takes fastidiousness to write code that doesn't just do the right thing but also says the right thing.*
+
+*** Explanatory Models
+
+- *One model should underlie implementation, design, and team communication.*
+- But other models are also needed
+
+  1. To teach about the domain
+  2. For scope reasons
+
+     - Provide context that clarifies the more narrowly scoped model
+
+- Explanatory models offer the freedom to create much more communicative styles tailored to a particular topic
+
+** Chapter Three. Binding Model and Implementation
+
+*DDD requires a different approach to modeling*
+
+*** Model-Driven Design
+
+- Bad Examples
+
+  1. Projects that have no domain model at all
+  2. Complex projects that attempt some sort of domain model, but don't maintain a tight connection between the model and the code
+
+     - Design up-front model
+
+       - Pure analysis models get abandoned soon after coding starts
+
+- If the design, or some central part of it, does not map to the domain model
+
+  1. That model is of little value
+  2. The correctness of the software is suspect
+  3. Complex mappings between models and design functions are difficult to understand and impossible to maintain as the design changes
+  4. A deadly divide opens between analysis and design, so that insight gained in each of those activities does not feed into the other
+
+*** Modeling Paradigms and Tool Support
+
+- Different modeling paradigms
+
+  OOP
+      Object-oriented programming is powerful because it is based on a modeling paradigm, and it provides implementations of the model constructs.
+  Logic
+      a natural fit for MODEL-DRIVEN DESIGN
+  Procedural
+      software written in procedural languages has complicated functions linked together based on anticipated paths of execution, rather than by conceptual connections in the domain model.
+
+- Example: From Procedural to MODEL-DRIVEN
+- Benefits of Model-Driven Design
+
+  Scale easily
+      Can include constraints on combining rules and other enhancements
+  Accommodate testing
+      well-defined interfaces that can be unit-tested
+
+*** Letting the Bones Show: Why Models Matter to Users
+
+- Trying to create in the UI an illusion of a model other than the domain model will cause confusion unless the illusion is perfect.
+- Just by removing the misleading extra model, the power of the application would increase and become clearer.
+
+*** Hands-On Modelers
+
+- Software development is *all* design.
+- That model (highly skilled engineers design; less skilled laborers assemble the products / the sharp separation of modeling and programming) never put to work
+
+  1. Some of the model's intent was lost in the handoff
+  2. The indirectness of feedback from the interaction of the model with the implementation and the technology
+
+     1. If the people who write the code do not feel responsible for the model, or don't understand how to make the model work for an application, then the model has nothing to do with the software.
+     2. If developers don't realize that changing code changes the model, then their refactoring will weaken the model rather than strengthen it.
+     3. When a modeler is separated from the implementation process, he or she never acquires, or quickly loses, a feel for the constraints of implementation.
+     4. The knowledge and skills of experienced designers won't be transferred to other developers if the division of labor prevents the kind of collaboration that conveys the subtleties of coding a Model-Driven Design.
+
+- The need for HANDS-ON MODELERS does not mean that team members cannot have specialized roles.
+- *The problem arises from separating two tasks that are coupled in a MODEL-DRIVEN DESIGN, modeling and implementation.*
+- Any technical person contributing to the model must spend some time touching the code, whatever primary role he or she plays on the project.
+
+* Part II: The Building Blocks of a Model-Driven Design
+
+- Previous work
+
+  1. responsibility-driven design
+  2. design by contract
+
+** Chapter Four. Isolating the Domain
+
+*Decouple the domain objects from other functions of the system*
+
+*** Layered Architecture
+
+- Without Layers
+
+#+begin_src python
+
+In an object-oriented program, UI, database, and other support code
+often gets written directly into the business objects. Additional
+business logic is embedded in the behavior of UI widgets and data-base
+scripts. This happens because it is the easiest way to make things
+work, in the short run.
+#+end_src
+
+  - Implementing coherent, model-driven objects becomes impractical.
+  - With all the technologies and logic involved in each activity, a program must be kept very simple or it becomes impossible to understand.
+
+- *Any element of a layer depends only on other elements in the same layer or on elements of the layers "beneath" it.*
+
+  - *Communication upward must pass through some indirect mechanism*
+
+- The value of layers is that *each (layer) specializes in a particular aspect* of a computer program.
+- Most successful architectures use some version of these four conceptual layers:
+
+  1. UI (Presentation Layer)
+  2. Application Layer
+  3. Domain Layer (Model Layer)
+  4. Infrastructure Layer
+
+- Separating the domain layer from the infrastructure and user interface layers allows *a much cleaner design of each layer* .
+- Relating the Layers
+
+  - MVC
+  - The infrastructure layer (services)
+
+    - Simplify the application layer
+    - The application layer only needs to know when to send a message, but not how
+
+- Architectural Frameworks
+
+  - The best architectural frameworks solve complex technical problems while allowing the domain developer to concentrate on expressing a model.
+  - But frameworks can easily get in the way,
+
+    1. either by making too many assumptions that constrain domain design choices
+    2. or by making the implementation so heavyweight that development slows down
+
+  - A lot of the downside of frameworks can be avoided by *applying them selectively to solve difficult problems* without looking for a one-size-fits-all solution.
+
+*** The Domain Layer Is Where the Model Lives
+
+- Isolating the domain implementation is a prerequisite for domain-driven design.
+
+*** The Smart UI "Anti-Pattern"
+
+- SMART UI is an alternate, mutually exclusive fork in the road, incompatible with the approach of domain-driven design
+- When to use SMART UI?
+
+  - If an unsophisticated team with a simple project decides to try a MODEL-DRIVEN DESIGN with LAYERED ARCHITECTURE, it will face a difficult learning curve.
+
+- When to use Domain-Driven Design?
+
+  - Domain-driven design pays off best for ambitious projects, and it does require strong skills.
+
+- What is SMART UI? ( *The Default Rails Stack* )
+
+  - Put all the business logic into the user interface.
+  - Chop the application into small functions and implement them as separate user interfaces, embedding the business rules into them.
+  - Use a relational database as a shared repository of the data.
+  - Use the most automated UI building and visual programming tools available.
+
+- Pros & Cons
+
+  - Advantages
+
+    1. Productive
+    2. Less capable developers can work this way with little training
+    3. Even deficiencies in requirements analysis can be overcome by releasing a prototype to users and then quickly changing the product to fit their requests
+    4. Applications are decoupled from each other
+
+       1. Delivery schedules of small modules can be planned relatively accurately
+       2. Expanding the system with additional, simple behavior can be easy
+
+    5. Relational databases work well and provide integration at the data level
+    6. 4GL tools work well
+    7. When applications are hand off, maintenance programmers will be able to quickly redo portions they can't figure out, because the effects of the changes should be localized to each particular UI
+
+  - Disadvantages
+
+    1. Integration of applications is difficult except through the database
+    2. There is no reuse of behavior and no abstraction of the business problem - Business rules have to be duplicated in each operation to which they apply
+    3. Rapid prototyping and iteration reach a natural limit because the lack of abstraction limits refactoring options
+    4. Complexity buries you quickly, so the growth path is strictly toward additional simple applications ( *micro-services?* ). There is no graceful path to richer behavior
+    5. *You can't migrate to another design approach except by replacing entire applications.*
+    6. Just using a flexible language doesn't create a flexible system, but it may well produce an expensive one.
+
+- If the architecture isolates the domain-related code in a way that *allows a cohesive domain design loosely coupled to the rest of the system* , then that architecture can probably support domain-driven design.
+
+*** Other Kinds of Isolation
+** Chapter Five. A Model Expressed in Software
+
+- 3 patterns of model elements that express the model
+
+  - Entities
+  - Value Objects
+  - Services
+
+- Modules -> *Every design decision should be motivated by some insight into the domain*
+
+*** Associations
+
+- *For every traversable association in the model, there is a mechanism in the software with the same properties* .
+- The design has to specify a particular traversal mechanism whose behavior is consistent with the association in the model.
+- 3 ways of making associations more tractable
+
+  1. Imposing a traversal direction
+  2. Adding a qualifier, effectively reducing multiplicity
+
+     - It's important to constrain relationships as much as possible
+     - Some traversal directions can reflect a natural bias in the domain
+
+       - One direction of the association is much more meaningful and important than the other
+       - Examples
+
+         - Country <-> President
+
+#+begin_src awk
+
+Country -> * President
+        |
+        v
+Country + Period -> 1 President
+#+end_src
+         - Brokerage Account <-> Investment
+
+#+begin_src awk
+
+BrokerageAccount -> * Investment
+                 |
+                 v
+BrokerageAccount + Stock -> 1 Investment
+#+end_src
+
+  3. Eliminating nonessential associations
+
+*** Entities (a.k.a. Reference Objects)
+
+- *Many objects are not fundamentally defined by their attributes, but rather by a thread of continuity and identity.*
+- Their class definitions, responsibilities, attributes, and associations should revolve around who they are, rather than the particular attributes they carry.
+- Identity is a subtle and meaningful attribute of ENTITIES, which can't be turned over to the automatic features of the language.
+
+*** Value Objects
+
+- Many objects have no conceptual identity. These objects describe some characteristic of a thing.
+- Tracking the identity of ENTITIES is essential, but attaching identity to other objects can hurt system performance, add analytical work, and muddle the model by making all objects look the same.
+- When you care only about the attributes of an element of the model, classify it as a VALUE OBJECT.
+- Treat the VALUE OBJECT as *immutable* .
+- *The attributes that make up a VALUE OBJECT should form a conceptual whole*
+
+- Designing VALUE OBJECTS
+
+  - In order for a value object to be shared safely, it must be immutable
+
+    - Sharing is best restricted to those cases in which it is most valuable and least troublesome:
+
+      - When saving space or object count in the database is critical
+      - When communication overhead is low (such as in a centralized server)
+      - When the shared object is strictly immutable
+
+  - Flyweight
+
+- Designing Associations That Involve VALUE OBJECTS
+
+  - Associations
+  - The fewer and simpler the associations in the model, the better.
+  - Try to completely eliminate bidirectional associations between VALUE OBJECTS.
+
+*** Services
+
+- A SERVICE is *an operation offered as an interface that stands alone in the model* , without encapsulating state, as ENTITIES and VALUE OBJECTS do.
+- The name service emphasizes the relationship with other objects.
+- It is defined purely in terms of what it can do for a client.
+- When an operation is actually an important domain concept, a SERVICE forms a natural part of a MODEL-DRIVEN DESIGN
+- A good SERVICE has three characteristics.
+
+  1. The operation relates to a domain concept that is not a natural part of an ENTITY or VALUE OBJECT.
+  2. The interface is defined in terms of other elements of the domain model.
+  3. The operation is *stateless* .
+
+     - *Any client can use any instance of a particular SERVICE without regard to the instance's individual history.*
+
+- SERVICES and the Isolated Domain Layer
+
+  - Services can be in different layers
+
+    Application
+        Funds Transfer App Service
+
+        - Digests input (such as an XML request).
+        - Sends message to domain service for fulfillment.
+        - Listens for confirmation.
+        - Decides to send notification using infrastructure service.
+
+    Domain
+        Funds Transfer Domain Service
+
+        - Interacts with necessary Account and Ledger objects, making appropriate debits and credits.
+        - Supplies confirmation of result (transfer allowed or not, and so on).
+
+    Infrastructure
+        Send Notification Service
+
+        - Sends e-mails, letters, and other communications as directed by the application.
+
+  - Make a Facade for external services
+
+- Granularity
+
+  - Services are expressive (explained as above)
+  - Services are also valuable as a means of *controlling granularity* in the interfaces of the domain layer
+
+    - Medium-grained, stateless services can be easier to reuse in large systems (because they encapsulate significant functionality behind a simple interface)
+    - Fine-grained objects can lead to inefficient messaging in a distributed system
+
+  - Service pattern *favors interface simplicity over client control and versatility*
+
+- Access to Services
+
+  - Singleton
+
+*** Modules (a.k.a Packages)
+
+- *Cognitive overload is the primary motivation for modularity*
+- Modules give people two views of the model
+
+  1. Look at *detail within a module* without being overwhelmed by the whole
+  2. Look at *relationships between modules* in views that exclude interior detail
+
+- Low coupling, high cohesion
+
+  Low Coupling
+      There is a limit to how many things a person can think about at once
+  High Cohesion
+      Incoherent fragments of ideas are as hard to understand as an undifferentiated soup of ideas
+
+- Like everything else in a domain-driven design, MODULES are a communications mechanism
+
+  - The meaning of the objects being partitioned needs to drive the choice of MODULES
+  - *If your model is telling a story, the MODULES are chapters*
+  - MODULES' names enter the UBIQUITOUS LANGUAGE
+
+- Trade-off is best to got with the *conceptual clarity*
+
+  - Even if it means more references between modules or occasional ripple effects when changes are made to a module
+
+- Agile Modules
+
+  - Whatever development technology the implementation will be based on, we need to look for ways of
+
+    1. minimizing the work of refactoring MODULES
+    2. minimizing clutter in communicating to other developers.
+
+- The Pitfalls of Infrastructure-Driven Packaging
+
+  - Strong forces on our packaging decisions come from technical frameworks. (Rails/Phoenix)
+  - Tiered architectures can fragment the implementation of the model objects
+  - Elaborate technically driven packaging schemes impose two costs
+
+    1. If the framework's partitioning conventions pull apart the elements implementing the conceptual objects, the code no longer reveals the model
+    2. There is only so much partitioning a mind can stitch back together, and if the framework uses it all up, the domain developers lose their ability to chunk the model into meaningful pieces
+
+  - Unless there is a real intention to distribute code on different servers, keep all the code that implements a single conceptual object in the same MODULE, if not the same object.
+  - *Use packaging to separate the domain layer from other code.* Otherwise, leave as much freedom as possible to the domain developers to package the domain objects in ways that support their model and design choices.
+
+*** Modeling Paradigms
+
+- Why the Object Paradigm Predominates
+
+  - Object modeling does strike *a nice balance of simplicity and sophistication*
+
+    - Simplicity
+
+      - the fundamentals of object-oriented design seem to come naturally to most people
+
+    - Sophistication
+
+      - Object-oriented design has proven rich enough to capture important domain knowledge
+      - Most new technologies provide the means to integrate with the popular object-oriented platforms.
+      - Equally important is the maturity of the developer community and the design culture itself.
+
+- Nonobjects in an Object World
+
+  - A domain model does not have to be an object model.
+  - Whatever the dominant model paradigm may be on a project, there are bound to be parts of the domain that would be much easier to express in some other paradigm.
+  - Mixing paradigms allows developers to model particular concepts in the style that fits best.
+
+- Sticking with MODEL-DRIVEN DESIGN When Mixing Paradigms
+
+  - Without a seamless environment, it falls on the developers to distill a model made up of clear, fundamental concepts to hold the whole design together.
+  - The most effective tool for holding the parts together is a robust UBIQUITOUS LANGUAGE that underlies the whole heterogeneous model.
+  - 4 Rules of thumb for mixing non-object elements into a predominantly object-oriented system
+
+    1. Don't fight the implementation paradigm
+
+       - *There's always another way to think about a domain* -> find model concepts that fit the domain
+
+    2. Lean on the UBIQUITOUS LANGUAGE
+    3. Don't get hung up on UML
+
+       - Sometimes the fixation on a tool (UML) leads people to distort the model to make it fit what can easily be drawn
+
+    4. Be skeptical
+
+       - *multiple paradigms complicate matters enormously*
+       - Before taking on the burden of mixed paradigms, the options within the dominant paradigm should be exhausted
+
+  - *The relational paradigm is a special case of paradigm mixing* (which will be discussed in Chapter 6)
+
+** Chapter Six. The Life Cycle of a Domain Object
+
+- 2 Challenges
+
+  1. Maintaining integrity throughout the life cycle
+  2. Preventing the model from getting swamped by the complexity of managing the life cycle
+
+- 3 Patterns
+
+  1. AGGREGATES
+  2. FACTORIES
+  3. REPOSITORIES
+
+*** Aggregates
+
+- It is difficult to guarantee the consistency of changes to objects in a model with complex associations.
+
+  - The real world seldom obliges us with sharp boundaries (it's a problem in a software design)
+  - The web of relationships in a typical object model gives no clear limit to the potential effect of a change
+
+- A solution driven from the model will make the model easier to understand and make the design easier to communicate
+- Definition
+
+  - An AGGREGATE is a cluster of associated objects that we treat as a unit for the purpose of data changes
+  - Each AGGREGATE has a root and a boundary
+
+    Root
+        a single, specific ENTITY contained in the AGGREGATE
+    Boundary
+        defines what is inside the AGGREGATE
+
+- Rules
+
+  1. The root ENTITY has global identity and is ultimately responsible for checking invariant
+  2. ENTITIES inside the boundary have local identity, unique only within the AGGREGATE
+  3. Nothing outside the AGGREGATE boundary can hold a reference to anything inside, except to the root ENTITY
+  4. Only AGGREGATE roots can be obtained directly with database queries
+  5. A delete operation must remove everything within the AGGREGATE boundary at once
+  6. When a change to any object within the AGGREGATE boundary is committed, all invariant of the whole AGGREGATE must be satisfied
+
+- AGGREGATES mark off the scope within which invariant have to be maintained at every stage of the life cycle.
+
+*** Factories
+
+- When creation of an object, or an entire AGGREGATE, becomes complicated or reveals too much of the internal structure, FACTORIES provide encapsulation.
+- Rationales
+
+  - An object should be distilled until nothing remains that does not relate to its meaning or support its role in interactions.
+  - *Cars are never assembled and driven at the same time* , there is no value in combining both of these functions into the same mechanism.
+  - Complex object creation is a responsibility of the domain layer, yet that task does not belong to the objects that express the model.
+  - A program element whose responsibility is the creation of other objects is called a FACTORY.
+  - a FACTORY encapsulates the knowledge needed to create a complex object or AGGREGATE.
+
+- 2 basic requirements for any good FACTORY
+
+  1. Each creation method is atomic and enforces all invariant of the created object or AGGREGATE
+  2. The FACTORY should be abstracted to the type desired, rather than the concrete class(es) created
+
+- Choosing FACTORIES and Their Sites
+
+  - A FACTORY is very tightly coupled to its product, so a FACTORY should be attached *only to an object that has a close natural relationship with the product*
+  - If an object interior to an AGGREGATE needs a FACTORY, and the AGGREGATE root is not a reasonable home for it, then go ahead and make a standalone FACTORY.
+
+- When a Constructor Is All You Need
+
+  - FACTORIES can actually obscure simple objects that don't use polymorphism.
+  - Avoid calling constructors within constructors of other classes.
+
+- Designing the Interface
+
+  1. Each operation must be atomic
+  2. The FACTORY will be coupled to its arguments
+
+*** Repositories
+
+- *A starting point for a traversal to an ENTITY or VALUE in the middle of its life cycle*
+- How to get the reference to an object?
+
+  1. create it
+  2. traverse an association
+  3. execute a database query
+
+- *The right combination of search and association makes the design comprehensible.*
+- Retrieval of a stored object (Reconstitution) is the *middle* of the life cycle of an ENTITY
+- *The goal of DDD* is to *create better software* by focusing on a model of the domain rather than the technology
+
+#+begin_quote
+
+  By the time a developer has constructed an SQL query, passed it to a query service in the infrastructure layer, obtained a result set of table rows, pulled the necessary information out, and passed it to a constructor or FACTORY, the model focus is gone. It becomes natural to think of the objects as containers for the data that the queries provide, and the whole design shifts toward a data-processing style.
+
+#+end_quote
+
+  - *More and more domain rules become embedded in query code or simply lost.*
+
+- Reduce the scope of the object access problem
+
+  - if you find you need to search the database for a preexisting VALUE, it is worth considering the possibility that you've really got an ENTITY whose identity you haven't recognized.
+
+- The REPOSITORY pattern
+
+  - different solutions for dealing with the technical challenges of database access
+
+    1. QUERY OBJECTS
+    2. ORM (METADATA MAPPING LAYERS)
+    3. FACTORIES
+
+  - it's a simple conceptual framework to encapsulate these solutions (for dealing with the technical challenges of database access) and bring back our model focus
+
+*** Designing Objects for Relational Databases
+
+- When the database is being viewed as an object store, don't let the data model and the object model diverge far, regardless of the powers of the mapping tools.
+- Processes outside the object system should not access such an object store.
+
+** Chapter Seven. Using the Language: An Extended Example
+
+1. Isolating the domain
+2. Distinguishing ENTITIES and VALUE OBJECTS
+3. Designing Associations
+4. AGGREGATE Boundaries
+5. Selecting REPOSITORIES
+6. Walking Through Scenarios
+
+   - To cross-check all these decisions, we have to constantly step through scenarios to confirm that we can solve application problems effectively.
+
+7. Object Creation
+8. Pause for Refactoring: An alternative design
+
+   - By modeling VALUES, ENTITIES, and their AGGREGATES as we have, we have reduced the impact of such design changes.
+
+9. Introducing a New Feature
+
+   - Connecting the Two Systems
+
+     - ANTICORRUPTION LAYER
+
+* Part III: Refactoring Toward Deeper Insight
+
+- We hope to develop a model that captures a deep understanding of the domain.
+
+  1. Sophisticated domain models are achievable and worth the trouble.
+  2. They are seldom developed except through an iterative process of refactoring, including close involvement of the domain experts with developers interested in learning about the domain.
+  3. They may call for sophisticated design skills to implement and to use effectively.
+
+- Levels of Refactoring
+
+  - Nearly all the literature on how to refactor focuses on the technical view of the quality of the design
+  - The refactorings that have the greatest impact on the viability of the system are
+
+    1. *those motivated by new insights into the domain*
+    2. *those that clarify the model's expression through the code*
+
+  - *Modeling and design call for creativity*
+
+    - We shouldn't get sidetracked trying to reduce domain modeling to a cookbook or a toolkit
+
+- Deep /Models
+
+  - Initial models usually are naive and superficial, based on shallow
+
+  knowledge/
+
+  - A deep model *provides a lucid expression of the primary concerns of the domain experts and their most relevant knowledge* while it sloughs off the superficial aspects of the domain.
+
+- Deep Model/Supple Design (Chapter 10)
+
+  - A MODEL-DRIVEN DESIGN stands on two legs
+
+    1. A deep model makes possible an expressive design
+    2. A design can actually feed insight into the model discovery process when it has the flexibility to let a developer experiment and the clarity to show a developer what is happening
+
+- The Discovery Process (Chapter 9)
+
+** Chapter Eight. Breakthrough
+
+- The returns from refactoring are not linear.
+
+  - Each refinement of code and model gives developers a clearer view.
+  - This clarity creates the potential for a breakthrough of insights
+
+- The challenge lies in *recognizing what is happening* and deciding *how to deal with it* .
+- Story of a Breakthrough
+
+  - The *Share Pie* truly became part of the UBIQUITOUS LANGUAGE because it got to the heart of what loan syndication is about.
+
+- Opportunities
+
+  - The transition to a really deep model is a profound shift in your thinking and demands a major change to the design.
+
+- Focus on Basics
+
+  - To set the stage for a breakthrough, concentrate on knowledge crunching and cultivating a robust UBIQUITOUS LANGUAGE.
+
+    - Probe for important domain concepts and make them explicit in the model (Chapter 9).
+    - Refine the design to be suppler (Chapter 10)
+    - Distill the model (Chapter 15)
+
+  - *Don't hold back from modest improvements*
+
+- Epilogue: A Cascade of New Insights
+
+  - As is often the case after a real breakthrough to a deep model, the clarity and simplicity of the new design, combined with the enhanced communication based on the new UBIQUITOUS LANGUAGE, had led to yet another modeling breakthrough.
+
+** Chapter Nine. Making Implicit Concepts Explicit
+
+- A deep model has power because it contains the central concepts and abstractions that can succinctly and flexibly express essential knowledge of the users' activities, their problems, and their solutions.
+- *The first step is to somehow represent the essential concepts of the domain in the model.*
+
+  - Many transformations of domain models and the corresponding code happen when developers recognize a concept that has been hinted at in discussion or present implicitly in the design, and they then represent it explicitly in the model with one or more objects or relationships.
+
+- Digging Out Concepts
+
+  1. Listen to Language
+
+     - Listen to the language the domain experts use.
+
+       - Are there terms that succinctly state something complicated?
+       - Are they correcting your word choice (perhaps diplomatically)?
+       - Do the puzzled looks on their faces go away when you use a particular phrase?
+
+     - When the users or domain experts use vocabulary that is nowhere in the design, that is a warning sign.
+     - Benefits
+
+       1. Defining the interface more expressively
+       2. Decoupling
+       3. Clarifying relationships
+       4. Reducing duplication
+       5. Removing domain logic and placing it in the isolated domain layer
+       6. Expanding the UBIQUITOUS LANGUAGE
+
+  2. Scrutinize Awkwardness
+
+     - The place to dig is the most awkward part of your design.
+
+       - The place where procedures are doing complicated things that are hard to explain.
+       - The place where every new requirement seems to add complexity.
+
+  3. Contemplate Contradictions
+  4. Read the Book
+
+     1. Books that explain the fundamental concepts and conventional wisdom
+     2. Books written by another software professional with development experience in this domain
+
+  5. Try Try Again
+
+     - *A modeler/designer cannot afford to get attached to his own ideas* .
+
+- How to Model Less Obvious Kinds of Concepts
+
+  1. Explicit Constraints
+
+     - some warning signs that *a constraint is distorting the design of its host object* .
+
+       1. Evaluating a constraint requires data that does not otherwise fit the object's definition.
+       2. Related rules appear in multiple objects, forcing duplication or inheritance between objects that are not otherwise a family.
+       3. A lot of design and requirements conversation revolves around the constraints, but in the implementation, they are hidden away in procedural code.
+
+     - Methods
+
+       1. Factoring the constraint into its own method
+       2. Factoring it out into an explicit object
+       3. Modeling it as a set of objects and relationships
+
+     - Benefits
+
+       1. Allows us to give it an intention-revealing name that makes the constraint explicit in our design.
+       2. Gives the constraint some room to grow
+
+  2. Processes as Domain Objects
+
+     - *Objects are meant to encapsulate the procedures and let us think about their goals or intentions instead.*
+     - The key to distinguishing a process that ought to be made explicit from one that should be hidden is simple: *Is this something the domain experts talk about, or is it just part of the mechanism of the computer program?*
+     - Specification
+
+       - SPECIFICATION provides a concise way of expressing certain kinds of rules, extricating them from conditional logic and making them explicit in the model.
+       - Difficulties dealing with business rules
+
+         1. they often do not fit the responsibility of any of the obvious ENTITIES or VALUE OBJECTS,
+         2. their variety and combinations can overwhelm the basic meaning of the domain object.
+         3. moving them out of the domain layer is even worse, since the domain code no longer expresses the model
+         4. Logic programming solves this by defining "predicates", but it's hard to do that in OOP
+
+       - a SPECIFICATION can test any object to see if it satisfies the specified criteria.
+       - the concept can be extended to allow simple specifications to be combined, just as predicates are combined with logical operators.
+
+     - Applying and Implementing SPECIFICATION
+
+** Chapter Ten. Supple Design
+
+- This Chapter:
+
+  1. What kind of design are you trying to arrive at?
+  2. What kind of experiments should you try along the way?
+
+- To have a project accelerate as development proceeds—rather than get weighed down by its own legacy—demands a design that is a pleasure to work with, inviting to change. A supple design.
+
+  - The ultimate purpose of software is to *serve users* . But that same software has to *serve developers first*
+  - When software with complex behavior lacks a good design, it becomes hard to refactor or combine elements.
+  - Duplication starts to appear as soon as a developer isn't confident of predicting the full implications of a computation.
+  - *Duplication is forced when design elements are monolithic, so that the parts cannot be recombined*
+
+- Supple design is the complement to deep modeling
+
+  - Models are just the raw material
+  - Development of the design and code leads to insight that refines model concepts
+
+- Simple is not easy (Simple Made Easy - Rich Hickey)
+- Developers play two roles, *each of which must be served by the design*
+
+  1. The developer of a client
+  2. The developer working to change the design
+
+- Some *patterns that contribute to supple design*
+
+  1. Intention-Revealing Interfaces
+
+     - If a developer must consider the implementation of a component in order to use it, the value of encapsulation is lost
+     - Name classes and operations to describe their effect and purpose
+
+  2. Side-Effect-Free Functions
+
+     - *Command Query Separation*
+     - Reasoning
+
+       - The usefulness of any abstraction of interfaces is limited if the developers are forced to pierce the veil.
+       - Without safely predictable abstractions, the developers must limit the combinatory explosion, placing a low ceiling on the richness of behavior that is feasible to build.
+
+     - Methods
+
+       1. Place as much of the logic as possible into side-effect-free (pure) functions
+       2. Strictly segregate commands into very simple operations that do not return domain information
+       3. Further control side effects by moving complext logic into value objects
+
+  3. Assertions
+
+     - Assertions make side effects explicit and easier to deal with
+     - We need a way of understanding the meaning of a design element and the consequences of executing an operation *without delving into its internals* (abstraction).
+     - Design by contract
+
+       - Post-conditions
+       - Preconditions
+
+     - If assertions cannot be coded directly in your language, write automated unit tests for them
+
+  4. Conceptual Contours
+
+     - The CONCEPTUAL CONTOURS emerge as the code is adapted to newly understood concepts or requirements
+     - Decompose design elements into *high cohesive* units
+     - The goal is *a simple set of interfaces that combine logically to make sensible statements in the UBIQUITOUS LANGUAGE* , and without the distraction and maintenance burden of irrelevant options.
+
+  5. Standalone Classes
+
+     - Refined models are distilled until *every remaining connection between concepts represents something fundamental* to the meaning of those concepts
+     - Implicit concepts count just as much as explicit references
+
+       - *What primitive values represent*
+
+     - *Low coupling is fundamental to object design*
+     - The goal is not to eliminate all dependencies, but to eliminate all nonessential ones
+     - Standalone classes can *be studies and tested alone*
+
+  6. Closure of Operations (reducing dependency while keeping a rich interface)
+
+     - *Closed* : When you combine any two elements of the set, the result is also included in the set
+     - Benefits of the property of closure
+
+       1. tremendously simplifies the interpretation of an operation
+       2. it's easy to think about chaining together or combining closed operations
+
+     - How
+
+       - *Where it fits, define an operation whose return type is the same as the type of its argument(s)*
+       - Especially for VALUE OBJECTs
+       - An operation can be closed under an abstract type
+
+#+begin_src fortran
+
+Addition is closed under real numbers (rational or irrational)
+#+end_src
+
+     - Smalltalk example
+
+#+begin_src haskell
+
+The Smalltalk Collections provide other such FUNCTIONS that return
+derived Collections, which can be of several concrete classes. The
+operations are not closed, because they take a "block" as an
+argument. But blocks are a basic library type in Smalltalk, so they
+don't add to the developer's mental load. Because the return value
+matches the implementer, they can be strung together, like a series of
+filters. They are easy to write and easy to read. They do not
+introduce extraneous concepts that are irrelevant to the problem of
+selecting subsets.
+#+end_src
+#+begin_src delphi
+
+employees := (some Set of Employee objects).
+lowPaidEmployees := employees select:
+         [:anEmployee | anEmployee salary < 40000].
+#+end_src
+
+- Declarative Design: *Making software obvious, predictable, and communicative makes abstraction and encapsulation effective.*
+
+  - *Generating a running program from a declaration of model properties* is a kind of Holy Grail of MODEL-DRIVEN DESIGN
+  - Many declarative approaches can be corrupted if the developers bypass them intentionally or unintentionally.
+  - Domain-Specific Languages
+
+- A Declarative Style of Design
+
+  - A supple design can *make it possible for the client code to use a declarative style of design*
+
+- Angles of Attack
+
+  1. Carve Off Subdomains
+  2. Draw on Established Formalism, when you can
+
+     - *Use and adapt conceptual systems that are long established in your domain or others* , some of which have been refined and distilled over centuries.
+
+** Chapter Eleven. Applying Analysis Patterns
+
+- Analysis Patterns: Reusable Object Models by Martin Fowler
+
+#+begin_quote
+
+  Analysis patterns are groups of concepts that represent a common construction in business modeling.
+
+#+end_quote
+- Analysis Patterns Are Knowledge to Draw On
+
+*** Example Earning Interest with Accounts
+** Chapter Twelve. Relating Design Patterns to the Model
+
+- Design Patterns presents a catalog of design elements that have solved problems commonly encountered in a variety of contexts.
+- Strategy (A.K.A. Policy)
+
+  - When we use the technical design pattern in the domain layer, we have to add an additional motivation, another layer of meaning.
+
+- Composite
+
+  - When applying any design pattern in the domain, the first concern should be whether the pattern idea really is a good fit for the domain concept.
+
+** Chapter Thirteen. Refactoring Toward Deeper Insight
+
+- three things you have to focus on.
+
+  1. Live in the domain.
+  2. Keep looking at things a different way.
+  3. Maintain an unbroken dialog with domain experts.
+
+- Initiation
+
+  - Seeing the trouble spot is often the hardest and most uncertain part.
+
+- Exploration Teams
+
+  Self-determination
+      A small team can be assembled on the fly to explore a design problem. The team can operate for a few days and then disband. There is no need for long-term, elaborate organizational structures.
+  Scope and sleep
+      Two or three short meetings spaced out over a few days should produce a design worth trying. Dragging it out doesn't help. If you get stuck, you may be taking on too much at once. Pick a smaller aspect of the design and focus on that.
+  Exercising the UBIQUITOUS LANGUAGE
+      Involving the other team members—particularly the subject matter expert—in the brain-storming session creates an opportunity to exercise and refine the UBIQUITOUS LANGUAGE. The end result of the effort is a refinement of that LANGUAGE which the original developer(s) will take back and formalize in code.
+
+- Prior Art
+- A Design for Developers
+
+  - Chapter Ten. Supple Design
+
+- Timing
+
+  - *If you wait until you can make a complete justification for a change, you've waited too long.*
+  - Most project teams are still too cautious about continuous refactoring.
+
+    - They see the risk of changing code and the cost of developer time to make a change;
+    - but what's harder to see is *the risk of keeping an awkward design* and *the cost of working around that design* .
+
+  - Refactoring toward deeper insight needs to become part of the ongoing exploration of the subject matter of the domain, the education of the developers, and the meeting of the minds of developers and domain experts.
+  - Refactor when:
+
+    1. The design does not express the team's current understanding of the domain;
+    2. Important concepts are implicit in the design (and you see a way to make them explicit); or
+    3. You see an opportunity to make some important part of the design suppler.
+
+  - This aggressive attitude does not justify any change at any time.
+
+    1. Don't refactor the day before a release.
+    2. Don't introduce "supple designs" that are just demonstrations of technical virtuosity but fail to cut to the core of the domain.
+    3. Don't introduce a "deeper model" that you couldn't convince a domain expert to use, no matter how elegant it seems.
+    4. Don't be absolute about things, but push beyond the comfort zone in the direction of favoring refactoring.
+
+- Crisis as Opportunity
+
+* Part IV: Strategic Design
+
+- These are the decisions where design and politics often intersect.
+- The challenge is to *accomplish modularity without losing the benefits of integration* , allowing different parts of the system to interoperate to support the coordination of various business operations.
+- context, distillation, and large-scale structure.
+
+** Chapter Fourteen. Maintaining Model Integrity
+
+- The most fundamental requirement of a model is that it be *internally consistent* -> *unification*
+
+  - Total unification of the domain model for a large system will not be feasible or cost-effective.
+
+- The risks of fighting this fact (trying to unify all the software in a large project under a single model)
+
+  1. Too many legacy replacements may be attempted at once
+  2. Large projects may bog down because the coordination over-head exceeds their abilities.
+  3. Applications with specialized requirements may have to use models that don't fully satisfy their needs, forcing them to put behavior elsewhere.
+  4. Conversely, attempting to satisfy everyone with a single model may lead to complex options that make the model difficult to use.
+
+- This chapter lays out *techniques for recognizing, communicating, and choosing the limits of a model and its relationships to others* .
+
+*** Bounded Context
+#+begin_quote
+
+Cells can exist because their membranes define what is in and out and determine what can pass.
+
+#+end_quote
+
+- Multiple models are in play on any large project.
+
+  - It is often unclear in what context a model should *not* be applied.
+  - To clarify the context of a model, we have to look at both the project and its end products (code, database schemas, and so on).
+
+- BOUNDED CONTEXTS are *not* Modules
+
+  - Modules also organize the elements within one model - *they don't necessarily communicate an intention to separate CONTEXTS*
+
+- Benefits
+
+  clarity
+      For the teams working in CONTEXT
+  freedom
+      For the teams working outside CONTEXT
+
+- Recognizing Splinters Within a BOUNDED CONTEXT
+
+  1. Code interfaces don't match up (Unexpected behavior)
+  2. Combining elements of distinct models
+
+     Duplicate concepts
+         there are two model elements that actually represent the same concepts
+     False cognates
+         When two people who are using the same term think they are talking about the same thing, but really are not
+
+*** Continuous Integration
+
+- We need ways of increasing communication and reducing complexity.
+- We also need safety nets that prevent overcautious behavior, such as developers duplicating functionality because they are afraid they will break existing code.
+- XP in its purest form is a nice fit for maintaining model integrity within a single BOUNDED CONTEXT.
+- CONTINUOUS INTEGRATION
+
+  - means that all work within the context is being merged and made consistent frequently enough that *when splinters happen they are caught and corrected quickly* .
+  - operates at two levels:
+
+    1. The integration of model concepts
+
+       - *Constant communication among team members*
+       - *Constantly hammering out the UBIQUITOUS LANGUAGE*
+
+    2. the integration of the implementation
+
+       - *A systematic merge/build/test process that exposes model splinters early*
+       - Most of the effective processes share these characteristics
+
+         1. A step-by-step, reproducible merge/build technique
+         2. Automated test suites
+         3. Rules that set some reasonably small upper limit on the life time of unintegrated changes
+
+*** Context Map
+
+- When connections must be made between different contexts, they tend to bleed into each other.
+- A CONTEXT MAP is in the overlap between project management and software design.
+
+  1. Identify each model in play on the project and define its BOUNDED CONTEXT.
+  2. Describe the points of contact between the models, outlining explicit translation for any communication and highlighting any sharing.
+  3. Map the existing terrain. Take up transformations later.
+
+- Testing at the CONTEXT Boundaries
+
+  - Contact points with other BOUNDED CONTEXTS are particularly important to test.
+  - They can act as a valuable early warning system, especially reassuring in cases where you depend on the details of a model you don't control.
+
+- Organizing and Documenting CONTEXT MAPS
+
+  1. The BOUNDED CONTEXTS should have names so that you can talk about them. Those names should enter the UBIQUITOUS LANGUAGE of the team.
+  2. Everyone has to know where the boundaries lie, and be able to recognize the CONTEXT of any piece of code or any situation.
+
+*** Relationships Between BOUNDED CONTEXTS
+
+- More cooperative relationships
+
+  - Shared Kernel
+
+    - The SHARED KERNEL is often the CORE DOMAIN, some set of GENERIC SUBDOMAINS, or both
+    - The goal is to
+
+      1. *reduce duplication* (but not to eliminate ti)
+      2. make integration between the two subsystems relatively easy.
+
+  - Customer/Supplier Development Teams
+
+    - Problems can emerge, depending on the political relationship of the two teams.
+    - Iteration planning process
+
+      - Representatives of the downstream team can function much like the user representatives, joining them in planning sessions, discussing directly with their fellow "customers" the trade-offs for the tasks they want.
+
+    - Therefore
+
+      1. Establish a clear customer/supplier relationship between the two teams (implicate that the customer's needs are paramount)
+      2. Jointly develop automated acceptance tests that will validate the interface expected -> free the upstream team to make changes without fear of side effects downstream
+
+    - CUSTOMER/SUPPLIER TEAMS are more likely to succeed if the two teams work *under the same management* , so that ultimately they do share goals
+
+  - Conformist
+
+    - When two development teams have an upstream/downstream relationship in which the upstream has no motivation to provide for the downstream team's needs, the downstream team is helpless.
+
+      1. Separate Ways
+      2. Anticorruption Layer
+      3. Conformist
+
+    - Therefore:
+
+      - Eliminate the complexity of translation between BOUNDED CONTEXTS by slavishly adhering to the model of the upstream team.
+
+  - Anticorruption Layer
+
+    - When a new system is being built that must have a large interface with another, the difficulty of relating the two models can eventually overwhelm the intent of the new model altogether, causing it to be modified to resemble the other system's model, in an ad hoc fashion.
+    - Therefore:
+
+      - Create an isolating layer (anti-corruption layer) to provide clients with functionality in terms of their own domain model.
+
+    - Implementing the ANTICORRUPTION LAYER
+
+      - One way of organizing the design of the ANTICORRUPTION LAYER is as a combination of FACADES, ADAPTERS, and translators
+
+    - *Integration can be very valuable, but it is always expensive.*
+
+  - Separate Ways
+
+    - Integration is always expensive. Sometimes the benefit is small.
+    - *Just because features are related in a use case does not mean they must be integrated.*
+    - Therefore:
+
+      - Declare a BOUNDED CONTEXT to have no connection to the others at all, allowing developers to find simple, specialized solutions within this small scope.
+
+- Scale up integration
+
+  - Open Host Service
+
+    - When a subsystem has to be integrated with many others, customizing a translator for each can bog down the team.
+
+      - There is more and more to maintain, and more and more to worry about when changes are made.
+
+    - Therefore:
+
+      - *Define a protocol that gives access to your subsystem as a set of SERVICES.*
+
+  - Published Language
+
+    - Direct translation to and from the existing domain models may not be a good solution.
+    - Use a well-documented shared language *(XML, JSON, etc.)* that can express the necessary domain information as a common medium of communication, translating as necessary into and out of that language.
+
+  - Unifying an Elephant（盲人摸象）
+
+    - If no integration is required, then it doesn't matter that the models are not unified.
+    - If they require some integration, they may not actually have to agree on what an elephant is, but they will get a lot of value from merely recognizing that they don't agree.
+    - When more integration is needed, the unified model doesn't have to reach full maturity in the first version.
+    - *Unifying multiple models almost always means creating a new model.*
+
+*** Choosing Your Model Context Strategy
+
+1. Team Decision or Higher
+
+   - In practice, political relationships between teams often determine how systems are integrated. (Conway's Corollary)
+
+2. Putting Ourselves in Context
+3. Transforming Boundaries (How to draw the boundaries)
+
+   - Larger BOUNDED CONTEXTS
+
+     - Flow between user tasks is smoother when
+     - It's easier to understand one coherent model than two distinct ones plus mappings
+     - Translation between two models can be difficult (sometimes impossible)
+     - Shared language fosters clear team communication
+
+   - Smaller BOUNDED CONTEXTS
+
+     - Communication overhead between developers is reduced
+     - CONTINUOUS INTEGRATION is easier with smaller teams and code bases
+     - Larger contexts may call for more versatile abstract models, requiring skills that are in short supply
+     - Different models can cater to special needs or encompass the jargon of specialized groups of users, along with specialized dialects of the UBIQUITOUS LANGUAGE
+
+4. Accepting That Which We Cannot Change: Delineating the External Systems
+
+   - Relationships with the External Systems
+
+     1. Separate Ways
+     2. Conformist
+     3. Anti Corruption Layer
+
+5. The System Under Design
+6. Catering to Special Needs with Distinct Models
+7. Deployment
+
+*** Transformations
+
+- Merging CONTEXTS: SEPARATE WAYS SHARED KERNEL
+- Merging CONTEXTS: SHARED KERNEL CONTINUOUS INTEGRATION
+- Phasing Out a Legacy System
+- Open Host Service Published Language
+
+** Chapter Fifteen. Distillation
+
+Patterns to make the CORE DOMAIN easier to see and use and change.
+
+- Distillation is the process of separating the components of a mixture to extract the essence in a form that makes it more valuable and useful ( *CORE DOMAIN* ).
+- Strategic distillation of a domain model does all of the following:
+
+  1. Aids all team members in grasping the overall design of the system and how it fits together
+  2. Facilitates communication by identifying a core model of manageable size to enter the UBIQUITOUS LANGUAGE
+  3. Guides refactoring
+  4. Focuses work on areas of the model with the most value
+  5. Guides outsourcing, use of off-the-shelf components, and decisions about assignments
+
+- Navigation map
+
+  - Core domain
+
+    - (point the way with) Domain vision statement
+    - (designate content with) Highlighted core
+    - (repackaged into) Segregated core
+
+      - (Distill into) Abstract core
+      - (Distill to) Declarative Style
+
+    - (unencumber from) Generic subdomains
+
+      - (Distill to) Declarative Style
+
+    - (unencumber from) Cohesive mechanisms
+
+      - (expose capability through) Intention-revealing interfaces
+
+*** Core Domain
+
+- Reasons
+
+  - A system that is hard to understand is hard to change.
+  - Not all parts of the design are going to be equally refined.
+
+- Therefore
+
+  - Boil the model down
+
+    - Find the CORE DOMAIN
+    - make the CORE small
+
+  - Apply top talent to the CORE DOMAIN, and recruit accordingly
+
+- Distilling the CORE DOMAIN leads to some easy decisions
+
+  1. Put more efforts into your CORE
+  2. Only need to keep the CORE DOMAIN as your secret
+  3. Refactorings affects the CORE DOMAIN the most should be chosen first
+
+- Choosing the CORE
+
+  - Those parts of the model particular to representing your business domain and solving your business problems.
+  - The CORE DOMAIN you choose depends on your point of view.
+
+    - One application's CORE DOMAIN can be another application's generic supporting component.
+
+- The greatest value of custom software comes from the total control of the CORE DOMAIN.
+- One way or another, creating distinctive software comes back to a stable team *accumulating specialized knowledge and crunching it into a rich model* . No shortcuts. No magic bullets.
+
+*** An Escalation of Distillations
+
+- Successive distillation of a domain model produces an asset that gives the project speed, agility, and precision of execution.
+
+*** Generic Subdomains
+
+- Therefore
+
+  1. Identify cohesive subdomains that are not the motivation for your project (CORE DOMAIN)
+  2. Give their continuing development lower priority than the CORE DOMAIN
+
+- A few extra options when developing these packages
+
+  1. An Off-the-shelf Solution
+
+     - Advantages
+
+       - Less code to develop.
+       - Maintenance burden externalized.
+       - Code is probably more mature, used in multiple places, and therefore more bulletproof and complete than homegrown code.
+
+     - Disadvantages
+
+       - You still have to spend the time to evaluate it and understand it before using it.
+       - Quality control being what it is in our industry, you can't count on it being correct and stable.
+       - It may be overengineered for your purposes; integration could be more work than a minimalist homegrown implementation.
+       - Foreign elements don't usually integrate smoothly. There may be a distinct BOUNDED CONTEXT. Even if not, it may be difficult to smoothly reference ENTITIES from your other packages.
+       - It may introduce platform dependencies, compiler version dependencies, and so on.
+
+     - Sometimes GENERIC SUBDOMAIN solutions are packaged in the form of frameworks (Rails?), which implement a very abstract model that can be integrated with and specialized for your application.
+
+  2. A Published Design or Model
+
+     - Chapter Eleven. Applying Analysis Patterns
+     - Advantages
+
+       - More mature than a homegrown model and reflects many people's insights
+       - Instant, high-quality documentation
+
+     - Disadvantage
+
+       - May not quite fit your needs or may be overengineered for your needs
+
+  3. An Outsourced Implementation
+
+     - Advantages
+
+       - Keeps core team free to work on the CORE DOMAIN, where most knowledge is needed and accumulated.
+       - Allows more development to be done without permanently enlarging the team, but without dissipating knowledge of the CORE DOMAIN.
+       - Forces an interface-oriented design, and helps keep the subdomain generic, because the specification is being passed outside.
+
+     - Disadvantages
+
+       - Still requires time from the core team, because the interface, coding standards, and any other important aspects need to be communicated.
+       - Incurs significant overhead of transferring ownership back inside, because code has to be understood. (Still, overhead is less than for specialized subdomains, because a generic model presumably requires no special background to understand.)
+       - Code quality can vary. This could be good or bad, depending on the relative caliber of the two teams.
+
+  4. An In-House Implementation
+
+     - Advantages
+
+       - Easy integration.
+       - You get just what you want and nothing extra.
+       - Temporary contractors can be assigned.
+
+     - Disadvantages
+
+       - Ongoing maintenance and training burden.
+       - It is easy to underestimate the time and cost of developing such packages.
+
+- We technical people tend to enjoy definable problems like time zone conversion, and we can easily justify spending our time on them.
+
+  - But *a disciplined look at priorities usually points to the CORE DOMAIN* .
+
+- *Generic Doesn't Mean Reusable*
+
+  - *The model reuse is often a better level of reuse (than code reuse)*
+  - You can model and implement only the part you need for your business.
+
+- Introducing industry-specific model elements will have two costs.
+
+  1. impede future development
+
+     - By introducing anything to the design that is not part of the concept, you make it much more difficult to expand the system cleanly without completely rebuilding the older part and redesigning the other modules that use it.
+
+  2. industry-specific concepts belong either in the CORE DOMAIN or in their own, more specialized, subdomain
+
+     - those specialized models are even more valuable than the generic ones.
+
+- Project Risk Management
+
+  - Agile processes typically call for managing risk by tackling the riskiest tasks early.
+
+    - XP specifically calls for getting an end-to-end system up and running immediately.
+
+  - Projects face risk from both sides
+
+    1. technical risks
+    2. domain modeling risks
+
+       - *It is easy to underestimate the domain modeling risk.*
+
+         1. unforeseen complexity
+         2. inadequate access to business experts
+         3. gaps in key skills of the developers
+
+       - except when the team has proven skills and the domain is very familiar, *the first-cut system should be based on some part of the CORE DOMAIN, however simple.*
+
+- the next two patterns, DOMAIN VISION STATEMENT and HIGHLIGHTED CORE, show how the use of supplemental documents can, with a very minor investment, improve communication and awareness of the CORE and focus development effort
+
+*** Domain Vision Statement
+
+- A DOMAIN VISION STATEMENT is modeled after such documents ("vision statements", layu out the specific value the application will bring to the organization), but it focuses on the nature of the domain model and how it is valuable to the enterprise.
+- Therefore
+
+  1. Write a short description (about one page) of the CORE DOMAIN and the value it will bring (the "value proposition")
+  2. Show how the domain model serves and balances diverse interests
+  3. Keep it narrow
+  4. Write this statement early and revise it as you gain new insight
+
+- Examples
+
+  1. Airline Booking System
+
+     - The model can represent passenger priorities and airline booking strategies and balance these based on flexible policies. The model of a passenger should reflect the "relationship" the airline is striving to develop with repeat customers. Therefore, it should represent the history of the passenger in useful condensed form, participation in special programs, affiliation with strategic corporate clients, and so on.
+     - Different roles of different users (such as passenger, agent, manager) are represented to enrich the model of relationships and to feed necessary information to the security framework.
+     - Model should support efficient route/seat search and integration with other established flight booking systems.
+
+  2. Semiconductor Factory Automation
+
+     - The domain model will represent the status of materials and equipment within a wafer fab in such a way that necessary audit trails can be provided and automated product routing can be supported.
+     - The model will not include the human resources required in the process, but must allow selective process automation through recipe download.
+     - The representation of the state of the factory should be comprehensible to human managers, to give them deeper insight and support better decision making.
+
+- A DOMAIN VISION STATEMENT gives the team *a shared direction* .
+
+*** Highlighted Core
+
+- The CORE DOMAIN must be made easier to see.
+
+  - Different people won't pick out quite the same elements, and even the same person won't be consistent from one day to the next.
+
+- Significant structural changes to the code are the ideal way of identifying the CORE DOMAIN
+
+  - but they are not always practical in the short term
+
+- Two specific techniques can represent this class of solutions.
+
+  1. The Distillation Document
+
+     - A separate document to describe and explain the CORE DOMAIN.
+
+       - three to seven sparse pages
+       - describes the CORE DOMAIN and the primary interactions among CORE elements
+
+     - A distillation document is not a complete design document.
+     - All the usual risks of separate documents apply.
+
+       1. The document may not be maintained.
+       2. The document may not be read.
+       3. By multiplying the information sources, the document may defeat its own purpose of cutting through complexity.
+
+     - The best way to limit these risks is to *be absolutely minimalist* .
+     - *Write the document to be understood by the nontechnical members of the team.*
+
+  2. The Flagged CORE
+
+     - Flag the elements of the CORE DOMAIN within the primary repository of the model, without particularly trying to elucidate its role.
+
+- The Distillation Document as Process Tool
+
+  - If the distillation document outlines the essentials of the CORE DOMAIN, then it serves as a practical indicator of the significance of a model change.
+  - When a model or code change affects the distillation document, it requires consultation with other team members.
+  - When the change is made, it requires immediate notification of all team members, and the dissemination of a new version of the document.
+
+*** Cohesive Mechanisms
+
+- Computations sometimes reach a level of complexity that begins to bloat the design.
+
+  - The conceptual "what" is swamped by the mechanistic "how."
+  - A large number of methods that provide algorithms for resolving the problem obscure the methods that express the problem.
+
+- Therefore
+
+  - Partition a conceptually COHESIVE MECHANISM into a separate lightweight framework.
+  - Particularly watch for formalisms or well-documented categories of algorithms.
+  - Expose the capabilities of the framework with an INTENTION-REVEALING INTERFACE.
+  - Now the other elements of the domain can focus on expressing the problem ("what"), delegating the intricacies of the solution ("how") to the framework.
+
+- If this mechanism had been incorporated into the domain model, it would have cost us in two ways.
+
+  1. The model would have been coupled to a particular method of solving the problem, limiting future options.
+  2. The model of an organization would have been greatly complicated and muddied.
+
+- GENERIC SUBDOMAIN vs. COHESIVE MECHANISM
+
+  - GENERIC SUBDOMAIN is no different than the CORE DOMAIN, just less central, less important, less specialized
+  - A COHESIVE MECHANISM does not represent the domain, it solves some sticky computational problem posed by the expressive models
+
+- When a MECHANISM is Part of the CORE DOMAIN
+
+  - highly specialized algorithms
+
+- Distilling to a Declarative Style
+
+  - When a supple design reaches maturity, it provides an easily understood set of elements that can be combined unambiguously to accomplish complex tasks or express complex information, just as words are combined into sentences.
+
+*** Segregated Core
+
+- Therefore
+
+  - Refactor the model to *separate the CORE concepts from supporting players* (including ill-defined ones) and *strengthen the cohesion of the CORE* while *reducing its coupling to other code* .
+  - Factor all generic or supporting elements into other objects and place them into other packages, even if this means refactoring the model in ways that separate highly coupled elements.
+
+- The steps needed to refactor to SEGREGATED CORE are typically something like these:
+
+  1. Identify a CORE subdomain (possibly drawing from the distillation document).
+  2. Move related classes to a new MODULE, named for the concept that relates them.
+  3. Refactor code to sever data and functionality that are not directly expressions of the concept. Put the removed aspects into (possibly new) classes in other packages. Try to place them with conceptually related tasks, but don't waste too much time being perfect. Keep focused on scrubbing the CORE subdomain and making the references from it to other packages explicit and self-explanatory.
+  4. Refactor the newly SEGREGATED CORE MODULE to make its relationships and interactions simpler and more communicative, and to minimize and clarify its relationships with other MODULES. (This becomes an ongoing refactoring objective.)
+  5. Repeat with another CORE subdomain until the SEGREGATED CORE is complete.
+
+- The Costs of Creating a SEGREGATED CORE
+
+  - sometimes in the creation of a SEGREGATED CORE a nicely cohesive MODULE may be broken, sacrificing that cohesion for the sake of bringing out the cohesiveness of the CORE DOMAIN.
+  - segregating the CORE is a lot of work.
+
+- *The time to chop out a SEGREGATED CORE* is
+
+  - when you have a large BOUNDED CONTEXT that is critical to the system,
+  - but where the essential part of the model is being obscured by a great deal of supporting capability.
+
+- Evolving Team Decision
+
+  - The challenge is to *constrain everyone to use the same definition of the CORE* while *not freezing that decision*
+  - Whatever the process is for joint decisions, whether consensus or team leader directive, it must *be agile enough to make repeated course corrections.*
+  - Communication must be effective enough to keep everyone together in one view of the CORE.
+
+*** Abstract Core
+
+- Even the CORE DOMAIN model usually has so much detail that communicating the big picture can be difficult.
+- Consider slicing horizontally (polymorphism) rather than vertically.
+- Therefore
+
+  - Identify the most fundamental concepts in the model
+  - Factor them into distinct classes, abstract classes, or interfaces
+  - Place this abstract overall model in its own MODULE
+
+- The ABSTRACT CORE should end up looking a lot like the distillation document
+
+*** Deep Models Distill
+
+- Although a breakthrough to a deep model provides value anywhere it happens, it is in the CORE DOMAIN that it can change the trajectory of an entire project.
+
+*** Choosing Refactoring Targets
+
+- Where do you start?
+
+  1. Just start anywhere, because it all has to be factored
+
+     - Impractical (except in a few projects staffed entirely with top programmers)
+     - When you have the luxury of refactoring freely, you focus first on better factoring of the CORE DOMAIN, on improving the segregation of the CORE, and on purifying supporting subdomains to be GENERIC.
+
+  2. Start wherever it is hurting ( *Pain-Driven Refactoring* ). I'll refactor what I need to in order to get my specific task done.
+
+     - Tends to pick around the edges, treating symptoms and ignoring root causes, shying away from the worst tangles
+     - In a pain-driven refactoring, you look to see if the root involves the CORE DOMAIN or the relationship of the CORE to a supporting element. If it does, you bite the bullet and fix that first.
+
+** Chapter Sixteen. Large-Scale Structure
+
+- Layers would outline their story of the system.
+- The strict segregation imposed by BOUNDED CONTEXTS prevents corruption and confusion, but it does not, in itself, make it easier to see the system as a whole.
+- On a project of any size, people must work somewhat independently on different parts of the system.
+
+  - Without any coordination or rules, a confusion of different styles and distinct solutions to the same problems arises, making it hard to understand how the parts fit together and impossible to see the big picture.
+
+- Devise a pattern of rules or roles and relationships that will span the entire system and that allows some understanding of each part's place in the whole—even without detailed knowledge of the part's responsibility.
+- This chapter explores *patterns for successfully structuring a design* at this level.
+- Some patterns (and their relationships)
+
+  - Model-Driven Design
+
+    - (guide thinking by) System Metaphor
+
+      - (enters) UBIQUITOUS LANGUAGE
+
+    - (stratify into) RESPONSIBILITY LAYERS
+
+      - (names enter) UBIQUITOUS LANGUAGE
+
+    - (separate plastic behavior into) KNOWLEDGE LEVEL
+    - (decouple contributions) PLUG-ABLE COMPONENT FRAMEWORK
+    - (discover/distill structure through) EVOLVING ORDER
+
+*** Evolving Order
+
+- Architectures can straitjacket a project with up-front design assumptions and take too much power away from the developers/designers of particular parts of the application.
+- Therefore
+
+  - Let the conceptual large-scale structure evolve with the application
+  - Don't over-constrain the detailed design and model decisions that must be made with detailed knowledge
+
+- A really nice fit of structure to domain and requirements actually makes detailed modeling and design easier, by helping to quickly eliminate a lot of options.
+- The structure can also give shortcuts to design decisions that could, in principle, be found by working on the individual object level, but would, in practice, take too long and have inconsistent results.
+- A large-scale structure generally needs to be applicable across BOUNDED CONTEXTS.
+- Large-scale structures must accommodate practical constraints on development.
+- Unlike the CONTEXT MAP, a large-scale structure is optional.
+- An ill-fitting structure is worse than none
+
+*** System Metaphor
+
+- Software designs tend to be very abstract and hard to grasp.
+- SYSTEM METAPHOR has become a popular approach because it is one of the core practices of Extreme Programming
+- Therefore
+
+  - When a concrete analogy to the system emerges that captures the imagination of team members and seems to lead thinking in a useful direction, adopt it as a large-scale structure.
+
+- The "Naive Metaphor" and Why We Don't Need It
+
+  - a mature domain model is anything but naive
+
+*** Responsibility Layers
+
+- Layers are partitions of a system in which the members of each partition are aware of and are able to use the services of the layers "below," but unaware of and independent of the layers "above."
+
+  - But this ad hoc layering, while it can make tracing dependencies easier—and sometimes makes some intuitive sense—doesn't give much insight into the model or guide modeling decisions.
+
+- Therefore:
+
+  - Look at the conceptual dependencies in your model and the varying rates and sources of change of different parts of your domain.
+  - If you identify natural strata in the domain, cast them as broad abstract responsibilities. These responsibilities should *tell a story of the high-level purpose and design of your system* .
+  - Refactor the model so that the responsibilities of each domain object, AGGREGATE, and MODULE fit neatly within the responsibility of one layer.
+
+- Choosing Appropriate Layers
+
+  - some useful characteristics to look for and preserve.
+
+    Storytelling
+        The layers should bring out the priorities of the business.
+    Conceptual dependency
+        The concepts in the "upper" layers should have meaning against the backdrop of the "lower" layers, while the lower-layer concepts should be meaningful standing alone.
+    CONCEPTUAL CONTOURS
+        If the objects of different layers should have different rates of change or different sources of change, the layer accommodates the shearing between them.
+
+  - Certain layers show up in whole families of related domains.
+
+*** Knowledge Level
+
+- A KNOWLEDGE LEVEL is a group of objects that *describes how another group of objects should behave* .
+- KNOWLEDGE LEVEL untangles things *when we need to let some part of the model itself be plastic in the user's hands* yet constrained by a broader set of rules.
+- In an application in which the roles and relationships between ENTITIES vary in different situations, complexity can explode.
+- Therefore:
+
+  - Create a distinct set of objects that can be used to describe and constrain the structure and behavior of the basic model.
+  - Keep these concerns separate as two "levels,"
+
+    1. one very concrete,
+    2. the other reflecting rules and knowledge that a user or superuser is able to customize.
+
+*** Pluggable Component Framework
+
+- Therefore:
+
+  - Distill an ABSTRACT CORE of interfaces and interactions and create a framework that allows diverse implementations of those interfaces to be freely substituted.
+  - Likewise, allow any application to use those components, so long as it operates strictly through the interfaces of the ABSTRACT CORE.
+
+- a few downsides
+
+  1. It's a very difficult pattern to apply
+  2. applications have limited options
+
+     - If an application needs a very different approach to the CORE DOMAIN, the structure will get in the way.
+
+*** How Restrictive Should a Structure Be?
+
+- The most important contribution of the large-scale structure is conceptual coherence, and giving insight into the domain.
+- Each structural rule should make development easier.
+
+*** Refactoring Toward a Fitting Structure
+
+- The only way a useful structure can be found is from *a very deep understanding of the domain and the problem* ,
+- The practical way to that understanding is *an iterative development process* .
+- Some general ways of controlling the cost and maximizing the gain.
+
+  1. Minimalism
+
+     - Keep the structure simple and lightweight
+
+  2. Communication and Self-Discipline
+  3. Restructuring Yields Supple Design
+
+     - Each time the structure changes, the entire system has to be changed to adhere to the new order.
+     - A design with a large-scale structure is usually much easier to transform than one without
+
+  4. Distillation Lightens the Load
+
+     - Continuous distillation reduces the difficulty of changing the structure in various ways
+     - The principles of distillation and refactoring toward deeper insight apply even to the large-scale structure itself.
+
+** Chapter Seventeen. Bringing the Strategy Together
+*** Combining Large-Scale Structures and BOUNDED CONTEXTS
+*** Combining Large-Scale Structures and Distillation
+*** Assessment First
+
+- start from a clear assessment of the current situation.
+
+  1. Draw a CONTEXT MAP
+  2. Attend to the use of language on the project
+  3. Understand what is important
+  4. Does the technology of the project work for or against a MODEL-DRIVEN DESIGN?
+  5. Do the developers on the team have the necessary technical skills?
+  6. Are the developers knowledgeable about the domain? Are they interested in the domain?
+
+*** Who Sets the Strategy?
+
+1. Emergent Structure from Application Development
+2. A Customer Focused Architecture Team
+
+*** Six Essentials for Strategic Design Decision Making
+
+- 6 essentials
+
+  1. Decisions must reach the entire team
+  2. The decision process must absorb feedback
+  3. The plan must allow for evolution
+  4. Architecture teams must not siphon off all the best and brightest
+
+     - It is essential to have strong designers on all application teams.
+
+  5. Strategic design requires minimalism and humility
+  6. Objects are specialists; developers are generalists
+
+     - The essence of good object design is (a specialist)
+
+       1. to give each object a clear and narrow responsibility
+       2. to reduce interdependence to an absolute minimum
+
+     - Having two kinds of design activity does not mean having two kinds of people. -> let the developers be generalists.
+
+- The Same Goes for the Technical Frameworks
+
+  - Don't write frameworks for dummies
+
+    - If those people are not smart enough to design, they shouldn't be assigned to develop software.
+    - If they are smart enough, then the attempts to coddle them will only put up barriers between them and the tools they need.
+
+  - Beware the Master Plan
+
+** Conclusion
+*** Epilogues
+
+- *The true test of success is how the software serves over a period of time.*
+- Any project committed to domain-driven design will be recognizable in a few ways.
+
+  1. The defining characteristic is a priority on understanding the target domain and incorporating that understanding into the software. Everything else flows from that premise.
+  2. Team members are conscious of the use of language on the project and cultivate its refinement.
+  3. They are hard to satisfy with the quality of the domain model, because they keep learning more about the domain. They see continuous refinement as an opportunity and an ill-fitting model as a risk.
+  4. They take design skill seriously because it isn't easy to develop production-quality software that clearly reflects the domain model.
+  5. They stumble over obstacles, but they hold on to their principles as they pick themselves up and continue forward.
+
+*** Looking Forward
+
+- Although purely technological tasks have generally seemed most interesting and challenging to talented software engineers, domain-driven design opens up a new area of challenge that is at least equal.
+- *Creating good software is a learning and thinking activity.*
+
+  - *Modeling requires imagination and self-discipline.*
+  - Efforts to automate what must be the product of thought are naive and counterproductive.

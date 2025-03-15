@@ -1,0 +1,99 @@
+#+TITLE: Book Review: Programming Phoenix
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-28]
+#+URI:         blog/2017/12/28/book-review-programming-phoenix/index.html
+#+TAGS:        Book Review, Phoenix, Elixir
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Phoenix is basically the official web framework for Elixir now (As José Valim, the Elixir creator, is also the core maintainer of Phoenix). And I'm really excited by the ideas Elixir/Phoenix brought to the web development community. I'll explain some of them in this blog post.
+
+* Caveats
+
+Programming Phoenix 1.3 is *NOT* released yet. (Not until Feb/Mar 2018)
+
+So I also spent some time to learn about Context (which is a breaking change in Phoenix 1.3).
+
+- [[https://hexdocs.pm/phoenix/contexts.html][Contexts – Phoenix v1.3.0]]
+- [[https://elixirforum.com/t/contexts-a-barrier-too-high-for-newbies/5929/19][Contexts - a barrier too high for newbies? - Phoenix Forum / Phoenix Chat - Elixir Forum]]
+
+* Functional MVC
+
+*A web server is a natural problem for a functional language to solve.*
+
+We can think of any web server as a huge function collections:
+
+Function Name
+    URL
+Function Input
+    Request Payload
+Function Output
+    Response
+
+The whole job of our web server is to provide these different functions and deal with user input.
+
+This makes functional programming languages (like Elixir) a perfect fit for web development.
+
+And a whole trip of a request in a Phoenix application can be expressed in Elixir's data pipeline like this:
+
+#+begin_src fsharp
+connection
+|> endpoint
+|> router # directs a request into the appropriate controller
+|> pipelines # groups functions together to handle common tasks
+|> controller
+#+end_src
+
+This data flow is super neat because we can then break down each steps (like endpoint, router) even further into different pipelines (which is *the basic abstraction model* in Elixir). And this is the idea behind Phoenix (or Plug, the connection adapter behind Phoenix)
+
+* Ecto: Your Functional Data Source
+** Ecto.Repo is not using Repository Pattern
+
+Ecto.Repo is not a Repository[fn:1] (defined by P of EEA), but more like a Data Mapper[fn:2].
+
+You can see the discussion [[https://groups.google.com/forum/#!topic/elixir-ecto/CSC3ZRbJ9cU][here]][fn:3].
+
+** More Explicit
+
+Compared to ActiveRecord[fn:4], Ecto (or even Phoenix and Elixir) values explicity higher than implicity.
+
+Things like associations It's been talked many times in the community. So I'll skip this part.
+
+** SQL Sandbox is awesome
+
+Being explicit gives us more control over the db connections.
+
+Ecto.Adapters.SQL.Sandbox.checkout guarantees that connection runs in a transaction and automatically rolls back the db at the end of every test.
+
+So we can run our system tests concurrently, which is super hard in the Ruby/Rails world.
+
+** Ecto 2.1
+
+If you want to know more about Ecto, What's New in Ecto 2.1[fn:5] is a book you cannot miss.
+
+* Summary
+
+I'm really excited to learn Phoenix and the functional way to build a web application. I'll definitely try to build an app in Phoenix in the near future.
+
+* Footnotes
+[fn:1]
+
+[[https://martinfowler.com/eaaCatalog/repository.html][P of EAA: Repository]]
+
+[fn:2]
+
+[[https://martinfowler.com/eaaCatalog/dataMapper.html][P of EAA: Data Mapper]]
+
+[fn:3]
+
+[[https://groups.google.com/forum/#!topic/elixir-ecto/CSC3ZRbJ9cU][Ecto is not using repository pattern - Consider renaming Ecto.Repo to
+something else - Google Groups]]
+
+[fn:4]
+
+[[https://www.amberbit.com/blog/2016/2/24/how-elixirs-ecto-differs-from-rubys-activerecord/][How Elixir’s Ecto differs from Ruby’s ActiveRecord]]
+
+[fn:5]
+
+[[http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0][What's new in Ecto 2.1 (Free eBook)]]

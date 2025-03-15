@@ -1,0 +1,41 @@
+#+TITLE: Speed-Up and Accelerate
+#+begin_quote
+
+- Engineering orgs slow down as they age.
+- Two different economical models
+
+  1. A “cost center,” where every engineer hour not spent on features must translate to (at least) one engineer hour saved
+  2. "investment", which speed to delivery, rather than number of engineer hours paid, is the dominant economic factor–and in which considerable, sustained investment in that speed can reap massive economic returns.
+
+- If you can ship faster, you can then gather feedback, and
+
+  1. Iterate
+  2. Abandon
+  3. Sell to Someone Else
+
+- How to Invest in Latency Reduction
+
+  1. Activities Engineers Bitch About
+  2. Things Only Person X Can Do
+  3. Look for Queues
+  4. Automated Tests
+  5. Monitoring
+  6. Post Mortems ([[https://www.slideshare.net/danmil30/how-to-run-a-postmortem-with-humans-not-robots-velocity-2013][How to Run a Post-Mortem (With Humans, Not Robots), Velocity 2013]])
+  7. Decentralization with Safety Nets / Impact Reduction Schemes
+
+#+end_quote
+
+-- from [[https://www.tomheon.com/2019/03/12/speeding-up-your-engineering-org-part-i-beyond-the-cost-center-mentality/][Speeding Up Your Engineering Org, Part I: Beyond the Cost Center Mentality]]
+
+This article reminded me of [[https://learning.oreilly.com/library/view/accelerate/9781457191435/][Accelerate: The Science of Lean Software
+and DevOps]][fn:1], one of the best software engineering books I've read in 2019.
+
+- They both use the same metaphor "speed" for organization growths.
+- They both emphasize on this "growth"/"investment" mindset/model.
+
+The Accelerate book explains why we need to speed up with tons of evidences from the surveys they conducted over the last several years. The Speed-up post explains it in theory. So I would highly recommend you read them both.
+
+* Footnotes
+[fn:1]
+
+You can also check [[https://dsdshcym.github.io/clipping/2019/04/07/clippings-from-accelerate-the-science-of-lean-software-and-dev-ops/][my clippings from this book]]

@@ -1,0 +1,174 @@
+#+TITLE: Clippings of 2020 May
+* Table of Contents
+
+- [[#%5B%5Bid%3A0203FC52-D04B-4CCF-9631-E82F683FF734%5D%5BCompeting%20Against%20Luck%3A%20The%20Story%20of%20Innovation%20and%20Customer%20Choice%5D%5D][Competing Against Luck: The Story of Innovation and Customer Choice]]
+- [[#%5B%5Bid%3ADCABAA37-4473-492B-AD70-472505122BBB%5D%5BDon%27t%20Worry%2C%20There%27s%20a%20Method%20to%20the%20Meeting%5D%5D][Don't Worry, There's a Method to the Meeting]]
+- [[#%5B%5Bid%3A208F27C0-BEE1-4310-B0D0-8E8C1B4D4981%5D%5BCreativity%20Is%20a%20Search%20Problem%20-%20Teng%20Bao%5D%5D][Creativity Is a Search Problem - Teng Bao]]
+- [[#%5B%5Bid%3A6AB731D0-4A76-4345-B358-27E8D7C5DA8D%5D%5BDesign%20Patterns%20for%20Progressive%20Complexity%20-%20Teng%20Bao%5D%5D][Design Patterns for Progressive Complexity - Teng Bao]]
+- [[#%5B%5Bid%3ABFE5BD1B-C4E6-48F0-9A84-05F3669EEB0A%5D%5BMaker%20vs%20Multiplier%20-%20patkua.com%5D%5D][Maker vs Multiplier - patkua.com]]
+- [[#%5B%5Bid%3A2794941C-27AA-43D8-A119-5E8A68C85654%5D%5BJohn%20Cutler%20on%20Twitter%3A%20%22Some%20of%20the%20best%20roadmaps...%20%22%20%2F%20Twitter%5D%5D][John Cutler on Twitter: "Some of the best roadmaps... " / Twitter]]
+- [[#%5B%5Bid%3A59329CDC-0D49-4D07-AA43-4EE2D7F30F56%5D%5BTeam%20Objectives%20Archives%20-%20Silicon%20Valley%20Product%20Group%5D%5D][Team Objectives Archives - Silicon Valley Product Group]]
+- [[#%5B%5Bid%3A859173E5-46E2-4ED5-A4C1-34BEFC5DB875%5D%5BThe%20only%20truthful%20answer%20to%20any%20question%20about%20management%20%E2%80%94%20Quartz%20at%20Work%5D%5D][The only truthful answer to any question about management — Quartz at Work]]
+- [[#%5B%5Bid%3A18B8A831-7070-40D9-8CB8-0029CA3A9A45%5D%5BLayout-isolated%20components%5D%5D][Layout-isolated components]]
+- [[#%5B%5Bid%3A0B4C0610-1B73-430F-AEDD-D7880740646B%5D%5BSebastian%20Markbage%3A%20Minimal%20API%20Surface%20Area%20-%20JSConf%20EU%202014%20-%20YouTube%5D%5D][Sebastian Markbage: Minimal API Surface Area - JSConf EU 2014 - YouTube]]
+- [[#%5B%5Bid%3AE0844B4A-260B-4A13-8E2D-B11A09F903F2%5D%5BComplexity%20Has%20to%20Live%20Somewhere%5D%5D][Complexity Has to Live Somewhere]]
+- [[#%5B%5Bid%3A9BB4063E-28CB-4BE6-A208-98DFB2713228%5D%5BShould%20I%20Test%20Private%20Methods%3F%5D%5D][Should I Test Private Methods?]]
+- [[#%5B%5Bid%3A284A735C-1376-40E5-894E-9D7521B7BACB%5D%5BBurnout%20with%20Aneika%20and%20Anjuan%20Simmons%20by%20Storytime%20With%20Managers%20%E2%80%A2%20A%20podcast%20on%20Anchor%5D%5D][Burnout with Aneika and Anjuan Simmons by Storytime With Managers • A podcast on Anchor]]
+- [[#%5B%5Bid%3A6240F395-F5A2-45D5-B469-C3C6F71A6975%5D%5B%E4%B8%AD%E6%96%87%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%AD%E2%80%9C%E8%AE%A8%E8%AE%BA%E2%80%9D%E7%9A%84%E6%B6%88%E4%BA%A1%20-%20%E6%9C%BA%E6%A0%B8%20GCORES%5D%5D][中文互联网中“讨论”的消亡 - 机核 GCORES]]
+- [[#Non-Top][Non-Top]]
+
+* [[https://www.amazon.com/Competing-Against-Luck-Innovation-Customer/dp/0062435612][Competing Against Luck: The Story of Innovation and Customer Choice]]
+
+After reading this book, I can see Jobs everywhere:
+
+- We hire a taxi to go from location A to location B.
+- We hire a light to help us see things in the dark.
+- We hire a mobile phone to contact with our families and friends.
+
+Seeing Jobs in our lives is just the beginning. Jobs are highly contextual.
+
+- Some people hire an iPhone to take photos with a small device.
+- Some people hire an iPhone to bring musics with them all day.
+- Some people hire an iPhone to play games during commute.
+- Some people hire an iPhone to just make phone calls.
+
+Understanding these pain points where our users struggle to make progress in their lives is the key for innovators like us to learn the problem we need to solve. Only by understanding the problem to solve, can we improve the existing product (like iPhone) in these various contexts, or create a new product to solve a specific Job under a specific context better.
+
+Jobs to be done theory helps us realize the context around a Job, understand the real struggle hidden behind an existing solution, so we can identify innovations and compete against pure luck.
+
+Solving the problems is just the beginning. In this competitive market, customers can always find more than one solutions for the same problem they are struggling with. What distinguishes us from other competitors is not only our product, but the experience we are providing. By providing an unique experience for our customers, we can get the unique competitive advantages that cannot be copied anywhere else.
+
+* [[https://thoughtbot.com/blog/method-to-my-meeting][Don't Worry, There's a Method to the Meeting]]
+
+It's interesting to think of meetings as functions in programming. *Think about the output you want to get from your next meeting.*
+
+P.S. I also wrote a similar blog post before: [[https://yiming.dev/blog/2018/11/15/similarities_between_tdd_and_management/][Similarities between TDD and Management]]
+
+* [[https://www.tengbao.me/blog/creativity-is-a-search-problem/][Creativity Is a Search Problem - Teng Bao]]
+
+Maybe god wanted to solve a problem, but god didn't know how to solve it. So god created human race to search the answer for him/her.
+
+* [[https://www.tengbao.me/blog/design-patterns-for-complexity/][Design Patterns for Progressive Complexity - Teng Bao]]
+
+The differences between Graceful Degradation and Progressive Enhancement reminded me of two ways of writing code:
+
+1. Abstract first, degrade later
+2. Duplicate first, abstract later
+
+If we want to write code that's better designed and more readable, maybe we prefer Progressive Enhancement over Graceful Degradation, too.
+
+* [[https://www.patkua.com/blog/maker-vs-multiplier/][Maker vs Multiplier - patkua.com]]
+
+A great leader needs to create an environment to boost team member's productivity. So it's more like a multiplier, less like a maker.
+
+* [[https://twitter.com/johncutlefish/status/1059954114770227200][John Cutler on Twitter: "Some of the best roadmaps... " / Twitter]]
+#+begin_quote
+
+Some of the best roadmaps...
+* mention 0 features
+* use no shorthand (e.g. "redesign V2.0")
+* are not on a timeline (have no dates)
+* mention Who and Why
+* tell a compelling story
+* acknowledge uncertainty
+* set qual and quant goals
+* embrace incremental delivery[[https://twitter.com/hashtag/youcandoit?src=hash&ref_src=twsrc%5Etfw][#youcandoit]]!
+
+— John Cutler (@johncutlefish) [[https://twitter.com/johncutlefish/status/1059954114770227200?ref_src=twsrc%5Etfw][November 6, 2018]]#+end_quote
+
+Similar to what the best OKRs look like.
+
+* [[https://svpg.com/insights/product/team-objectives/][Team Objectives Archives - Silicon Valley Product Group]]
+
+After several months of using OKRs in my company, I can feel the similar pain points mentioned in this post. You cannot force people to define individual OKRs. It would only back-fire if you do so. What you can do is to define team objectives together, so these objectives bond us together as a team.
+
+* [[https://qz.com/work/1835502/the-only-truthful-answer-to-any-question-about-management/][The only truthful answer to any question about management — Quartz at Work]]
+
+Of course it's "It depends."
+
+Just like the only truthful answer to any question about development: "it depends."
+
+(The next question you should ask is "Depends on what?")
+
+* [[https://visly.app/blog/layout-isolated-components][Layout-isolated components]]
+
+My biggest question with writing HTML/CSS components is how to split responsibilities between divs. This post answers this question.
+
+* [[https://www.youtube.com/watch?v=4anAwXYqLG8][Sebastian Markbage: Minimal API Surface Area - JSConf EU 2014 - YouTube]]
+
+Again, no abstraction is better than wrong abstraction
+
+* [[https://ferd.ca/complexity-has-to-live-somewhere.html][Complexity Has to Live Somewhere]]
+
+So the only way to reduce complexity is to remove it completely. That's why we need to keep things simple and minimal. If we don't do so, complexity would creep into our system.
+
+* [[http://shoulditestprivatemethods.com/][Should I Test Private Methods?]]
+
+Funny yet true.
+
+* [[https://anchor.fm/cohere/episodes/Burnout-with-Aneika-and-Anjuan-Simmons-eddv1l][Burnout with Aneika and Anjuan Simmons by Storytime With Managers • A podcast on Anchor]]
+#+begin_quote
+
+- get familiar with your team, know their normal behavior so you can detect burnouts (get familiar with real Money to detect fake money)
+- encourage relationship building
+- having a track record of getting things done (shopping workable software)
+- *healthy team makes healthy code*
+
+#+end_quote
+
+When I evaluate a team, I used to ask "what tools are you using", "how's the code quality", etc.. But these are just the results of a healthy team, it's more important to evaluate the team as a whole. In a healthy team, everything would follow.
+
+* [[https://www.gcores.com/articles/121924][中文互联网中“讨论”的消亡 - 机核 GCORES]]
+#+begin_quote
+
+解决的方式只有对话；惟有理性的对话才能消解矛盾。没有地方讨论，只会有更多的两极化，更多的简化和污名化，更多无意义的争端。
+
+#+end_quote
+* Non-Top
+
+- [[https://www.postgresql.eu/events/fosdem2020/sessions/session/2890/slides/273/FTS.pdf][The State of (Full) Text Search in PostgreSQL 12]]
+- [[https://lethain.com/build-vs-buy/][Build versus buy.]]
+- [[https://lethain.com/contentful/][Poking around Contentful.]]
+- [[https://lethain.com/reasoning-about-big-balls-of-mud/][You can't reason about big balls of mud.]]
+- [[https://lethain.com/minding-our-stories/][Minding our stories.]]
+- [[https://dribbble.com/shots/11052651-Fly-out-menus][Fly-out menus by Steve Schoger on Dribbble]]
+- [[https://gist.github.com/adamwathan/06faa4e9ee1571d3eb47cc0349b965cd][Integrating Tailwind UI with JavaScript]]
+- [[https://pragprog.com/book/swdddf/domain-modeling-made-functional][Domain Modeling Made Functional: Tackle Software Complexity with Domain-Driven Design and F# by Scott Wlaschin - The Pragmatic Bookshelf]]
+- [[https://blog.swmansion.com/live-video-streaming-in-elixir-made-simple-with-membrane-fc5b2083982d][Live video streaming from iOS devices made simple with Elixir & Membrane Framework]]
+- [[https://github.com/alexdesousa/ayesql/blob/master/README.md][ayesql/README.md at master · alexdesousa/ayesql]]
+- [[https://dashbit.co/blog/speeding-up-re-compilation-of-elixir-projects][Speeding up re-compilation of Elixir projects - Dashbit Blog]]
+- [[https://t.me/QuizBot?start=TzjTSPjn][Elixir Quiz that tests your Knowledge in Elixir Programming - Telegram: Contact @QuizBot]]
+- [[https://www.reddit.com/r/emacs/comments/fw6onf/created_a_new_html_export_backend_that_uses/][Created a new HTML export back-end that uses Tailwind.css classes - emacs]]
+- [[https://lethain.com/getting-in-the-room/][Getting in the room. （where important decisions are being made)]]
+- [[https://lethain.com/learn-to-never-be-wrong/][Learn to never be wrong.]]
+- [[https://medium.dave-bailey.com/how-to-get-your-team-to-speak-up-4d403bfc10c9][How to Get Your Team to Challenge Your Ideas - The Founder Coach]]
+- [[https://www.webdesignerdepot.com/2009/09/the-difference-between-art-and-design/][The Difference Between Art and Design - Webdesigner Depot]]
+- [[https://daringfireball.net/2020/04/the_ipad_magic_keyboard][Daring Fireball: The iPad Magic Keyboard]]
+- [[https://ferd.ca/coding-for-fun.html][Coding for Fun]]
+- [[https://mobile.twitter.com/dan_abramov/status/1247261148518457351][Dan Abramov on Twitter: "Junior roles = learn the data flow Senior roles = be the data flow I wish someone explained this to me like five years ago" / Twitter]]
+- [[https://thoughtbot.com/blog/working-together-to-prioritize-your-product][Working Together to Prioritize Your Product]]
+- [[https://thoughtbot.com/blog/working-remotely-is-a-skill][Working Remotely is a Skill]]
+- [[https://mp.weixin.qq.com/s/YfPdrL5sJq5yaPK67ocPXQ][阿北不是老板，豆瓣不是公司]]
+- [[https://lethain.com/appropriate-programming-problems/][Picking problems for programming interviews.]]
+- [[https://amplitude.com/blog/feature-less-roadmap][Feature-less Roadmap: The Balance Between Delivering Concrete Features vs. Planning with High-level Themes]]
+- [[https://www.jeremiahlee.com/posts/failed-squad-goals/][Spotify’s Failed #SquadGoals]]
+- [[https://www.infoq.com/presentations/engineering-culture-examples/][Secrets of a Strong Engineering Culture]]
+- [[https://lethain.com/staying-aligned-with-authority/][Staying aligned with authority.]]
+- [[https://jamesclear.com/three-steps-habit-change][The 3 R's of Habit Change: How To Start New Habits That Actually Stick]]
+- [[https://www.depesz.com/2013/04/16/explaining-the-unexplainable/][select * from depesz; » Blog Archive » Explaining the unexplainable]]
+- [[https://use-the-index-luke.com/sql/partial-results/fetch-next-page][OFFSET is bad for skipping previous rows]]
+- [[https://thoughtbot.com/blog/css-animation-for-beginners][CSS Animation for Beginners]]
+- [[https://visly.app/blog/designing-for-incremental-adoption][Designing for incremental adoption]]
+- [[https://twitter.com/cyanapps/status/1252449684699795458][Ying Zhong on Twitter: "我对写界面这件事的观念经历了三个阶段。https://t.co/Z5L9bQ0DOf" / Twitter]]
+- [[https://www.mskog.com/posts/heroku-vs-self-hosted-paas/][Heroku vs self-hosted PaaS - Magnus Skog]]
+- [[https://github.blog/2020-04-07-celebrating-15-years-of-git-an-interview-with-git-maintainer-junio-hamano/][Celebrating 15 years of Git: An interview with Git maintainer Junio Hamano - The GitHub Blog]]
+- [[https://boringrails.com/articles/feature-flags-simplest-thing-that-could-work/][Feature Flags: The stupid simple way to de-stress production releases - Boring Rails: Skip the bullshit and ship fast]]
+- [[http://www.virtuouscode.com/2014/05/21/jim-weirich-on-exceptions/][Jim Weirich on exceptions - Virtuous Code]]
+- [[https://gist.github.com/mislav/4508988][Jim Weirich on the differences between procs and lambdas in Ruby]]
+- [[https://blog.thecodewhisperer.com/permalink/choosing-test-for-test-doubles][Choosing Tools for Test Doubles - The Code Whisperer]]
+- [[https://www.geepawhill.org/2018/02/02/optimizing-a-program-and-programming/][Optimizing A Program (And Programming) - Video - GeePawHill.org]]
+- [[https://medium.com/swlh/my-journey-from-agile-to-product-teams-7b7eec734f8][My journey from “Agile” to “product teams” - The Startup - Medium]]
+- [[https://blog.testdouble.com/posts/2020-04-21-our-pair-programming-ethos/][Test Double - Our Blog - Our Pair Programming Ethos]]
+- [[https://no-kill-switch.ghost.io/so-how-much-maintenance-is-precisely-enough-huh/][So, how much maintenance is (precisely) enough, huh?]]
+- [[https://blog.jobelenus.dev/blog/choices-engineering-organizations-and-constraints/][Choices: Engineering, Organizations, and Constraints · John Obelenus]]
+- [[https://martinfowler.com/bliki/TwoHardThings.html][TwoHardThings]]

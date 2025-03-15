@@ -1,0 +1,20 @@
+#+TITLE: Adding more code is a code smell
+#+begin_quote
+
+software would be better if diff tools showed insertions as red and deletions as green
+
+— Steve Losh (@stevelosh) [[https://twitter.com/stevelosh/status/960622797096566784?ref_src=twsrc%5Etfw][February 5, 2018]]#+end_quote
+
+This tweet reminds me of another episode of The Bike Shed, in which they said:
+
+#+begin_quote
+
+- It's a smell that adding more code (green number in a PR) than code that's deleted (red number in a PR) when maintaining (not developing) a project.
+
+  - Because this may indicate that not enough refactoring were made.
+
+#+end_quote
+
+-- from [[https://player.fm/1mjmHB][127: Bike Shed: Discovery by The Bike Shed]]
+
+I always feels happier when deleting code than adding code. Most of the times, less code is always better.

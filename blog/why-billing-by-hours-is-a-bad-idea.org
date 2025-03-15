@@ -1,0 +1,123 @@
+#+TITLE: Why Billing by Hours is a Bad Idea?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-11-12]
+#+URI:         blog/2019/11/12/why-billing-by-hours-is-a-bad-idea/index.html
+#+TAGS:        Billing
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+*No one is paid to take action, people are paid to achieve results.*
+
+#+end_quote
+
+I really like this quote from [[https://www.amazon.com/Million-Dollar-Consulting-Professionals-Practice/dp/1259588610/ref=dp_ob_title_bk][Million Dollar Consulting]]. It's the best summary for why we need to be results driven (if we want to get paid and make money). It also resonates with my terrible experiences in some hourly-billing projects. I want to share these experiences here, explain why hourly-billing caused these troubles, and what's the alternative way to hourly-billing.
+
+* The hourly-billing nightmare
+
+An hourly-billing project is doomed from the start. But it's just the beginning. When building and delivering the project, we'll find more troubles due to hourly-billing.
+
+** A fancy plan with a tight timeline
+
+Before a project gets started, we need to agree with the client what to build. Often, the project idea is from a simple need of the client. With hourly-billing, it's natural to build upon a simple need, adding more and more fancy features. Because why not? Client would need it, and we can bill more hours building it.
+
+Then we need to give a proposal for this fancy plan, with a budget estimation (price / fee). To get this budget estimation, we need a time estimation, since we are billing for hours, right?
+
+After reading the draft proposal, a developer estimates: "For these many features, we may need two years."
+
+"What? That's impossible! The client need it as soon as possible. Can we cut it to two months so it also fits into their budget? Just use the native style and whatever third party library you can find."
+
+At this point, the project is already doomed. After all, [[https://yiming.dev/clipping/2019/04/19/good-fast-and-featureful-pick-two/][good, fast, and featureful. We can only pick two.]] With a short time frame and a tight budget, we have to cut the only thing left in the equation: software quality.
+
+** Bad executions under a tight budget
+
+Once the project starts with a fixed budget and a fixed timeline, every minute counts.
+
+To ship the project in two months, a lot of meetings are skipped. Because a 1 hour meeting with 5 people counts as 5 hours. It's just cheaper to dive into design and code.
+
+After two weeks of prototyping and coding, we finally ship something, only to find it's not what the user needs.
+
+(This kind of story always reminds me of the old saying: [[https://twitter.com/codewisdom/status/1002181404061552640?lang=en][weeks of coding can save you hours of planning]].)
+
+Besides, no one has written a line of automated test. Why? Because programmers know the requirements are definitely going to change. Changing and maintaining these tests are going to make our budget tighter!
+
+At the end of the sprint, what we've got is an untested, useless application. We need to hack it to make it really useful to the user. It's what we call a [[https://en.wikipedia.org/wiki/Death_march_(project_management)][Death March]].
+
+** Time for a time usage report
+
+After we've finished the Death March, there's one last challenge before we get fully paid: generate the time usage report and justify for it.
+
+[[https://yiming.dev/clipping/2019/11/05/think-of-time-as-a-series-of-timestamps/][Recording time usage is not easy.]] Most people don't have the habit of doing it. When we are asked how much time we spent on a feature, the only thing we can only rely on is our memory. So the time usage report we generate would be inaccurate.
+
+Then we send the report to the client. Even if the report is accurate, the client would have a lot of questions. These questions would be difficult to answer, because few clients are familiar with software development. For example,
+
+1. "Why did a simple feature ("centering things with CSS") took you an hour?"
+2. "Why is the time usage not like what you estimated? Are you not following the plan?"
+
+* Why is hourly-billing a trouble maker?
+
+Of course, these troubles are not caused solely by hourly-billing. Bad executions like poor planning, no automated testing do have their own problem, too. But with hourly-billing, it's easier to fall into these traps like unrealistic estimations, lack of planning, no tests, etc. Plus, even if everything being equal (plan well, test well, record time well), we would still be questioned for how the time is being used. So it's worthwhile to look into why hourly-billing is bad and to see if we have other alternatives.
+
+I think the problem is at the core of hourly-billing: *coupling time and money together.* This coupling not only puts our relationship with our client in danger, but also makes scaling our business hard.
+
+** The tension between our client and us
+
+Due the coupling of how much time we spend and how much money we make, we want to spend more hours on a project. But what's our clients really want? Result! All they want is a product, a solution that can make their life/business better. This misalignment is the root conflict between our client and us.
+
+Due to this misalignment, we may prefer a fancier solution that costs more time. But what the client really needs is a simple working solution, ASAP.
+
+Due to this misalignment, we may have less incentive to improve, which are required to get a better result.
+
+#+begin_quote
+
+"With this new X, we can deliver the same thing in half the time! But how can we charge it the same as before? Maybe we wait until next time."
+
+#+end_quote
+
+Due to this misalignment, we may center our internal conversations around how many hours we've spent, but not how many values we can generate. People tend to be misled by these conversions and thus lose their focus on value.
+
+Due to this misalignment, we may lose trust from our client. If we are not really thinking from the value our client can get, they will find it out one day.
+
+A better alternative must keep us aligned with our client, by focusing on what value we can bring to them.
+
+** It doesn't scale
+
+The coupling of time and money makes the price calculation simple: Price = Hours * Rate. So scaling with hourly-billing should be simple, too. Our only two options are obvious, but neither of them are scalable:
+
+1. Spend more hours in projects.
+
+   We can do this by working overtime, which is not sustainable for our own health. And we would hit the hard limit (24-hour-per-day) quickly.
+
+   Or we can try to multi-task on different project at the same time. I don't think it's possible for me or any normal human beings. But if you know how to do it without affecting the quality of your output, please do teach me. :)
+
+   The last resort is to hire some junior people to spend their time for us. But these people raise our internal cost by a lot, not only with their hourly rate, but also a management cost.
+
+   A better alternative should decouple the time we spend and the fee we get paid, so we can get a higher leverage.
+
+2. Raise our hourly rate.
+
+   To raise our hourly rate, we need to find more valuable clients. They value their projects more, they value our work more, and more importantly, they have more budget to afford a higher hourly rate.
+
+   Then the question becomes "How to justify a $1,000 hourly rate?" A smart sales person would start from our client's perspective: "Our experience can bring you tremendous value. By finishing this feature in 5 hours, you would get far more than $5,000."
+
+   This is the A-ha moment for me: if we need to "justify" our pricing from the perspective of value, then why not give a pricing based on value, so we don't need to "justify" it anymore?
+
+* Bill by the value we've generated, not the time we've spent
+
+The solution to the coupling problem is easy and simple: just decouple time and money and stop charging by hours.
+
+So how to decide how much we are going to charge? Again, we need to start from our client's perspective: how do they convince themselves to pay.
+
+Our clients are paying us for a solution to make their lives better. In another word, they are paying for the value this solution brings to them. So the decision process is actually simple: if the value is higher than the cost, then it's a good deal.
+
+This decision process gives us a clear way to set our pricing. Following this thinking, my programmer mindset shifts from writing code to a more complete one:
+
+1. Identify the real problem first.
+2. Come up with multiple solutions with their own trade-offs.
+3. Compare different solutions and choose the best one in the current situation.
+4. Implement the solution.
+5. Review to see if the real problem get solved.
+6. Iterate.
+
+And this magical thinking is just a simple sentence: *Our pricing is proportional to the value we generated.*

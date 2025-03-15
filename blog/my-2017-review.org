@@ -1,0 +1,314 @@
+#+TITLE: My 2017 Review
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-02-17]
+#+URI:         blog/2018/02/17/my-2017-review/index.html
+#+TAGS:        Yearly Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+2017 年已经正式过去了，在此用一篇博客简单回顾一下自己的 2017.
+
+* Daily Review
+
+我从 2015 年开始用 org-mode 记录自己的时间花销[fn:1]，但是一直觉得自己 review 的部分做的不够到位。
+
+因为 org-mode 记录时间太过自动化了，即使完整地记录了一天的时间都用到哪了，不及时回顾、做出相应的调整，对当天时间的分配也没有很清楚的概念。导致这个记录时间的习惯对我的帮助也有限。
+
+因此，我从 2017 年的第一天开始给自己订下几个小目标：
+
+1. 每天都进行一次 Daily Review
+
+   - 用 Org Agenda 浏览回顾当天的时间分配
+   - 选出当天发生的三件积极的事，和三件有待提高的事
+   - P.S. 这个方法来自于 [[https://alexdenning.com/five-minute-journal/][Five minute journal: how could today have been even
+better?]]
+
+2. 每月进行一次 Monthly Review
+
+   - 用 Org Clock Report 分析当月的时间分配
+
+3. 每年进行一次 Yearly Review
+
+   - 同样用 Org Clock Report 分析当年的时间分配
+   - 清理 journal.org 并 archive
+
+以下是简单的成果小结：
+
+1. Daily Review
+
+   - 前 6 个月没有做到每天都 Review，平均每个月只有 20 天被覆盖到
+   - 在 6 个月以后终于养成了每天打卡的习惯，保证了下半年每一天都有一定的小结
+   - 因为 Org Agenda 记录的存在，Daily Review 可以不用在当天的固定时间进行，实在没有时间的话可以推迟几天
+   - 每日的时间分析可以借助番茄工作法（org-pomodoro[fn:2]）进行
+
+     - 给自己的目标是一天花在学习、Coding 的番茄至少要有 8 个
+     - P.S. 这个 Idea 来自于 Soft Skills: The software developer's life manual
+
+2. Monthly Review
+
+   - 因为分析一个月的 Org Clock Report 比较耗时，Monthly Review 算是个比较艰巨的任务，总是会从月初拖到月中才完成
+   - 另外，单纯的时间分析比较没有目的性，即使做了回顾，也很难得出结论要如何改进
+   - 最后一个月，决定抛弃每月时间分析（毕竟已经有每日时间分析 cover 到），改用目标系统进行简化，以下是我 2017 年 12 月的目标（及总结）
+
+#+begin_quote
+
+     - Exercise [1/2]
+
+       - [X] 去 8 次健身房
+       - [ ] 72kg
+
+         - 73kg
+
+     - Books [0/3]
+
+       - [ ] Smalltalk Best Practice Patterns - Kent Beck
+       - [ ] Fearless Rails Refactoring
+       - [ ] Harry Potter and The Philosopher Stone
+
+     - Conferences [0/2]
+
+       - [ ] ElixirConf 2017
+       - [ ] RubyConf 2017 - YouTube - YouTube
+
+     - Blog Posts [8/10]
+
+       - [X] Write Custom RSpec Matchers to Simplify Your Specs - dsdshome
+       - [X] 给小白解释「面向对象」（问答体） - dsdshome
+       - [X] Add STI to a Legacy ActiveRecord Model - dsdshome
+       - [X] Book Review: 99 Bottles of OOP - dsdshome
+       - [X] As the tests get more specific, the code gets more generic - dsdshome
+       - [X] Error message really matters
+       - [X] Leanings from playing with FizzBuzz for 3 days
+       - [X] Notes from Programming Phoenix
+       - [ ] Notes from Crafting Rails 4 Applications
+       - [ ] Notes from 最好的告别
+
+     - Clippings
+
+       - 20 clippings
+
+     - Side Projects
+
+       - exercism.io
+
+         - 16 days
+         - ~30 exercises
+
+#+end_quote
+
+3. Yearly Review
+
+   - 在 17 年初对 16 年进行了一次 Org Clock Report Review
+   - 效果也不是很理想
+   - 18 年我打算同 Monthly Review 一样，对 Yearly Review 采取目标制，年初制定目标，年末回顾总结
+
+** Ledger
+
+另外，在 17 年 7 月份时我开始用 Ledger[fn:3] 记账，和 Daily Review 一起每天固定时间把支付宝、微信、银行卡的花销同步到一个文本文件中，用 ledger-mode[fn:4] 进行分析。
+
+经过一些探索，目前基本能使这个账本与各个账户中的余额、花销保持同步。
+
+同时间一样，18 年我也希望能引入预算（目标）系统，对记账这件事进行更好的优化。
+
+* Graduated from Fudan University
+
+6 月份从复旦正式毕业了。
+
+水了一份毕业论文[fn:5]，算是对大学四年自己学到的、读到的程序语言关于「抽象」这一概念的小结。
+
+原本打算毕业后写的大学总结，也因为任务量看上去比较繁重迟迟没有动笔，希望能在 2018 年写掉。
+
+因为性格的原因，加上转专业降级的关系，大学里交到的朋友很少，毕业后还在联系的大学同学只有一位一起在 Strikingly 实习的 Data Science 大佬[fn:6]，其他一直有联系的朋友都是高中的室友、同学。
+
+* Career
+
+毕业后因为种种原因没有继续在 Strikingly 工作，来到了 Ekohe 工作。
+
+在 Ekohe 工作还算顺利，收获可以说得上颇丰，不过主要是在 Knowledge Sharing 这一块：
+
+1. Creative Friday Sharing
+
+   Ekohe 每周五有组织一次分享，每个人都可以上台分享自己的知识、见闻。我也鼓起勇气做了两次分享：
+
+   1. [[http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi Metz's Rules for OOP - dsdshome]]
+   2. [[http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture/][Thoughts on "Implementing a Strong Code-Review Culture" - dsdshome]]
+
+2. Web Team Meeting
+
+   每两周会组织一次 Web Team Meeting，形式上有点类似 Creative Friday，不过每个 web developer 都可以分享自己这两周学到的技术、踩到的坑。
+
+   以下是我做的几次分享：
+
+   1. [[http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/][Build an Image Resizing Microservice on AWS Lambda - dsdshome]]
+   2. [[http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs/][Write Custom RSpec Matchers to Simplify Your Specs - dsdshome]]
+   3. [[http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/as-the-tests-get-more-specific-the-code-gets-more-generic/][As the tests get more specific, the code gets more generic - dsdshome]]
+
+3. Blogging
+
+   因为 Creative Friday Sharing 的分享也有写成博客，同事觉得不错就分享到 Ekohe 自己的 Medium Publication 上了：
+
+   1. [[https://medium.com/ekohe/how-to-write-good-code-an-introduction-to-sandi-metz-s-rules-89bb3d749d53][How to Write Good Code — An Introduction to Sandi Metz’ s Rules]]
+   2. [[https://medium.com/ekohe/the-secret-to-object-oriented-programming-3f68c5553565][The Secret to Object-Oriented Programming – Ekohe – Medium]]
+
+总的来说，在 Ekohe 的这些经历让我发现了更多和别人分享自己知识的喜悦，这也可以说是我现在维护这个博客的动力之一吧。
+
+希望 2018 年能有更多、更好的分享，去更大的舞台演讲、写出更好的博客。
+
+* Fitness
+
+2017 年依然在坚持健身（平均每月 9 次左右），并且使用 StrongLifts 5x5 和 nsuns 5/3/1 这类 App 来系统化自己的健身计划，虽然体重上并没有什么变化，但是力量增长很明显，可以说总算是入了健身的门。
+
+- 第一次 StrongLifts 5x5
+
+  ||  |Squat |Bench Press |Barbell Row | |
+  ||[2017-03-17 Fri] |5x5 40kg |5x5 40kg |5x5 40kg | |
+- 最后一次 nsuns 5/3/1
+
+  - Bench Press
+
+    - 8 x 50kg
+    - 6 x 60kg
+    - 4 x 70kg
+    - 4 x 70kg
+    - 3 x 70kg
+    - 4 x 65kg
+    - 4 x 60kg
+    - 7 x 55kg
+    - 7 x 50kg
+
+  - Overhead press
+
+    - 6 x 20kg
+    - 5 x 20kg
+    - 3 x 25kg
+    - 5 x 25kg
+    - 7 x 25kg
+    - 4 x 25kg
+    - 6 x 25kg
+    - 8 x 25kg
+
+  - Ab Crunch Machine
+
+    - 8 x 52.5kg
+    - 8 x 52.5kg
+    - 8 x 55kg
+
+可以说，现在健身已经成为我生活中的一个重要的部分了吧（几天不去健身房会有点焦虑）。
+
+另外，还在年底体会了一次健身房跑路[fn:7]的心酸。
+
+* Linux -> macOS
+
+上半年（[2017-01-24 Tue]–[2017-04-24 Mon]）使用了三个月 openSUSE 作为主力操作系统，最终还是回到了 macOS 的怀抱。
+
+- Linux 吸引我的点[fn:8]
+
+  1. Emacs Performance
+
+     Linux 毕竟是 Emacs 的大本营，Emacs 在 Linux 上的性能表现远远超过在 macOS 上的表现。使用过 Linux 上的 Emacs 再切换回 macOS 会有很明显的延迟感。
+
+     而我一开始切换到 Linux 也主要是为了这一点性能的优势。毕竟我只要有 Emacs 这个操作系统就可以了，Linux/macOS 只是不同的 bootloader 罢了（当然，后面发现纯用 Emacs 这个操作系统还是不太现实）。
+
+  2. (Tiling) Window Manager
+
+     之前一直想在 macOS 上达到类似 Tiling Window Manager 的效果，在 Linux 上只要使用 i3 就能很稳定地实现了，而且没有 macOS 拖拖拉拉的动画效果，干净简洁。
+
+- 回到 macOS 的原因
+
+  1. *不想折腾*
+
+     Linux 相比 macOS 还是更需要用户去花更多的时间调教的。而我则更希望节省一些时间以花在读书、写代码、陪家人这些更重要的事情上（毕竟已经有个 Emacs 够我折腾了），而不是花在学习打印机的配置、字体的配置等等不太重要的、操作系统理应处理好的事情上。
+
+  2. Emacs 和 Window Manager 以外的体验
+
+     可以说在 Emacs 和 Window Manager 之外，Linux 的体验还是比不上 macOS。
+
+     1. 文本编辑快捷键
+
+        macOS 下几乎所有的 Cocoa 文本编辑区域都提供有内置的类 Emacs 快捷键位（C-a, C-d, etc.），而在 Linux 下由于 GTK2, GTK3, QT 等不同框架的存在，以及 Ctrl 键已经被大量占用，很难提供类似的体验。
+
+     2. 字体渲染、回退
+
+        在 Linux 下花费我比较多时间的是字体渲染和回退的机制。
+
+        困扰我比较久的一个 issue 是在 Chrome 等 GUI app 下的中文简体字会使用日文字体渲染，虽然最终得以解决，但至今我还未完全搞清楚 fontconfig 的配置原理。
+
+        另外，Linux 的渲染效果也不如 macOS 的柔和、好看（当然，有可能是我习惯了 macOS 的效果）
+
+     3. App 生态
+
+        生活中不可避免的要用到编辑器以外的 App，以聊天 App 为例，Telegram, Slack 等 App 对 Linux 的支持比较糟糕，像 WeChat 则干脆没有提供官方支持。
+
+        而 macOS 下各个 App 的质量都有一定的保证，而且有 Dash 这类优秀的 App。
+
+     4. 操作系统的完整性
+
+        这一点可能与我选择的发行版比较追求简单有关（Archlinux, openSUSE Tumbleweed）。但是 macOS 总有一些基本的功能让用户不用太操心就能用得很舒服，而在 Linux 上则需要自己找第三方的 App 来实现。比如：
+
+        - Night Shift
+        - Spotlight
+        - Do Not Disturb
+
+     5. 和 iPhone 的协作
+
+        虽然我切换回 macOS 时还没切换到 iPhone，但不得不说，Handoff, Airdrop, Messages 同步等确实是能够锦上添花的功能（当然，不 Work 的时候也很让人恼火）。
+
+然而 macOS 在下半年爆出了好多 bug[fn:9]，而且使用时总是有种延迟的感觉（即使换了高配 15 寸还是一样），还是不能说得上完美。
+
+接下来有机会的话，希望能尝试 PixelBook + Crouton 的方案吧（当然，本着不折腾的原则，可能还是会继续用 MacBook）。
+
+* Android -> iOS
+
+作为一个铁杆的 Android 粉丝，同样出于「不折腾」的思想以及受到 Face ID 的蛊惑，入手了 iPhone X。
+
+[2017-10-27 Fri] 抢到了 iPhone X 的首发订单，[2017-11-03 Fri] 如愿收到了 iPhone X。亮点和槽点颇多，限于篇幅，此处就不做 Review 了，放在以后的博客吧。
+
+* Goals for 2018
+
+2018，简单来说，要更加「目标驱动」，在此列下 2018 年的目标，供年末回顾。
+
+Coding (Side Project)
+    Deploy at least one web application (Phoenix + Elm)
+Fitness
+    减重到 70kg
+Blogging
+    平均一个月 8 篇（维持目前的水准）
+
+* Footnotes
+[fn:1]
+
+起因是《奇特的一生》这本书，见 [[http://dsdshcym.github.io/blog/2018/01/19/book-review-%E5%A5%87%E7%89%B9%E7%9A%84%E4%B8%80%E7%94%9F/][Book Review: 奇特的一生 - dsdshome]]
+
+[fn:2]
+
+[[https://github.com/lolownia/org-pomodoro][lolownia/org-pomodoro: pomodoro technique for org-mode]]
+
+[fn:3]
+
+[[http://www.ledger-cli.org][Ledger]]
+
+[fn:4]
+
+[[https://github.com/ledger/ledger-mode][ledger/ledger-mode: Emacs Lisp files for interacting with the C++Ledger accounting system]]
+
+[fn:5]
+
+[[http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/][我看程序语言的历史、现在与将来 - dsdshome]]
+
+[fn:6]
+
+他目前在 CMU 读 Master，已经拿到 Google Offer，这是他的博客：[[https://dnc1994.com/][Wille]]
+
+[fn:7]
+
+[[https://www.zhihu.com/question/263491132][如何看待奥森健身老板跑路？ - 知乎]]
+
+[fn:8]
+
+[[http://dsdshcym.github.io/blog/2016/01/14/why-did-i-switch-to-arch-linux/][Why did I switch to Arch Linux - dsdshome]]
+
+[fn:9]
+
+比如 [[https://www.theverge.com/2017/11/28/16711782/apple-macos-high-sierra-critical-password-security-flaw][Major Apple security flaw grants admin access on macOS High Sierra
+without password - The Verge]]

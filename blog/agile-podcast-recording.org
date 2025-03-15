@@ -1,0 +1,96 @@
+#+TITLE: Agile Podcast Recording
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-03-29]
+#+URI:         blog/2019/03/29/agile-podcast-recording/index.html
+#+TAGS:        Agile, Podcast
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I recorded my first podcast episode ([[https://hyperbola.link/3][Hyperbola Episode 3: From Agile
+to Beyond]]) this month. My friend Linghao and I discussed Agile software development (in Chinese).
+
+What's interesting was that we encountered several issues in the recording process. And these issues reminded me of Agile software development. I thought Agile methodologies may help here as well. I didn't get the chance to discuss this topic in that episode, so I'm sharing these thoughts here.
+
+* Issues We Encountered
+
+Here are some of the issues we had during the recording:
+
+1. Sound recording issue
+
+   We have a weird setup recording our audio:
+
+   - We have a FaceTime call.
+   - Linghao uses Audio Hijack to record both of our voices. But once Audio Hijack takes control over FaceTime, my voice would only be channeled to Audio Hijack, but not to Linghao's speaker. This means that Linghao can't hear me over FaceTime anymore.
+   - So we have another WeChat audio call so that Linghao can hear me.
+
+   This setup is way more fragile than a single FaceTime call.
+
+   Two points of failure
+       Either one of WeChat or FaceTime call fails, our recording fails. So the possibility of an accident basically doubled.
+   Lack of feedback loop
+       If FaceTime call fails, we won't notice it because my voice is channeled through Audio Hijack and Linghao is talking to me through WeChat.
+
+   Aware of this issue upfront, we did a trial run for half an hour and made sure several times our audios were recorded before we started the official recording.
+
+   Unfortunately, my voice was not recorded when we started our official recording. And we didn't notice it until 15mins later, I lost my internet connection due to a short power outage.
+
+2. Network/Power issue
+
+   I'm in China and Linghao's in U.S. The internet connection between us was not good. But it's acceptable to let the audio go through.
+
+   The real issue came when my house got a short power outage. And my network got cut due to the outage.
+
+   Then I used my cellphone's Personal Hotspot to connect to FaceTime. But it didn't work at all (and we didn't test it before).
+
+   Thankfully, the electricity came back on pretty soon, and we can continue our recording.
+
+3. My AirPods ran out of power
+
+   At this time, we've recorded for about 1 hour and my AirPods was running out of power. So I switched to EarPods in the middle of the recording.
+
+4. Delivery came during the recording
+
+   Finally, just before we wrapped up. A delivery came and I had to open the door for it. It broke my flow of recording and left a long silence that Linghao needed to edit out.
+
+In retrospect, the process of this recording is just like a software development process.
+
+Using FaceTime + WeChat
+    Due to some external constraints, we had to make some trade-offs right at the beginning. And these trade-offs added complexity to our whole process.
+Personal Hotspot didn't work
+    Though we had a backup plan, we didn't test it at all. It's like having a backup database but never testing it.
+AirPods running out of power
+    Due to a wrong estimation, we had to switch implementations.
+Delivery
+    External world continued impacting our process after we started and forced us to change accordingly.
+
+* How to Record Podcast in an Agile Way
+
+After I realized the similarities between these two process, it's natural for me to think about solving the recording problem with ideas from software engineering.
+
+1. Record short pieces and publish often
+
+   - If we think of a piece of recording as a deliverable feature, then it makes perfect sense to record short pieces.
+   - Just like releasing small features, publishing short episodes let us gather feedback quickly and reduce the possibilities of recording issues I encountered.
+   - And recording short pieces doesn't mean the episode need to be short as well. We can put multiple pieces together as an episode later. The benefits of recording short pieces is worth the editing overhead IMHO.
+
+2. Go through trial runs
+
+   - When writing code, I find that if I redesign/rewrite a class/module/function, the result would usually be better.
+   - It's the same for recording.
+
+     - recording multiple trial runs means that we can choose the best one
+     - trail runs will get better and better since we keep learning during the recording process
+
+3. Always be more agile
+
+   - And remember, [[https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/][we can always be more agile]]
+   - So always look for ways to improve the recording process. Gather feedback and try new ways.
+
+* Another example: [[http://yakshave.fm/12][12: A new cat named Merb! - The Yak Shave]]
+
+Another real world example is from [[http://yakshave.fm/][The Yak Shave]]:
+
+In episode 12, I heard that they lost two whole episodes completely due to the same reason as my first run (one host's voice was not recorded). Unfortunately, they didn't have a power outage to give them a break and check. And they had to record the same episode again.
+
+So, to prevent this kind of mistakes again, take smaller steps and look for agility. Happy podcasting!

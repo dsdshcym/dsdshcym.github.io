@@ -1,0 +1,68 @@
+#+TITLE: The Paper First Illustrated Waterfall: 40 Years Later
+
+In 1970, Winston W. Rovce wrote a paper about MANAGING THE DEVELOPMENT OF LARGE SOFTWARE SYSTEMS. In this paper, he illustrated a typical process to build software, which is called "Waterfall".
+
+[[https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/cb418b06ea9391affd557cd96e063271c22b9bdd/assets/hongyan_waterfall.jpg]]
+
+It's almost 2020 now, which means 40 years have passed. "Waterfall" has become an unpopular word. Nobody says she's using "Waterfall". Agile, the opposite of "Waterfall", has become the buzzword. Everyone says she's doing "Agile". But I'm still fighting a lot of "Waterfally" processes in various projects. Why is that? How can "Waterfall" hide behind "Agile"? After reading this "original paper of Waterfall", I found an answer.
+
+* The paper illustrated "Waterfall" is against "Waterfall"
+
+Before answering that question, I must reveal the biggest surprise from this paper. Most people think this paper describes "Waterfall" to preach it, but it's quite the opposite. This paper is against "Waterfall". As you can see from the excerpt below:
+
+#+begin_quote
+
+- The implementation described above is risky and invites failure.
+
+  - The testing phase which occurs at the end of the development cycle is the first event for which timing, storage input/output transfers, etc., are experienced as distinguished from analyzed
+  - These phenomena are not precisely analyzable.
+  - A simple octal patch or redo of some isolated code will not fix these kinds of difficulties.
+
+#+end_quote
+
+The goal of defining "Waterfall" in this paper is to adjust this model so we can gather feedback early and often.
+
+#+begin_quote
+
+- Five additional features that must be added to this basic approach to eliminate most of the development risks.
+
+  1. Program design comes first (before analysis)
+  2. Document the design
+  3. Do it twice
+  4. Plan, control and monitor testing
+  5. Involve the customer
+
+     - The involvement should be formal, in-depth, and continuing
+
+       1. System Requirements Generation
+       2. Preliminary Software Review
+       3. Critical Software Review
+       4. Final Software Acceptance Review
+
+#+end_quote
+
+This paper, at its core, is about Agile software development.
+
+1. Test Driven Development is about "design before analysis" and "plan, control and monitor testing".
+2. Continuous Delivery is about doing it twice, constantly.
+3. Short feedback loop must involve the customer:
+
+   ||Ways to involve the customer |Equivalent in "Agile" | |
+   ||System Requirements Generation |Behaviour Driven Development | |
+   ||Preliminary Software Review |Minimum Viable Product | |
+   ||Critical Software Review |Code Review / Tech Plan Review | |
+   ||Final Software Acceptance Review |Quality Assurance | |
+
+So why many people still misinterpret this paper as pro-waterfall? Some may say that people don't read. But I believe a more important reason is that "Agile" and "Waterfall" are so similar.
+
+* "Agile" is just shorter "Waterfalls"
+
+After all, whether you are doing "Agile" or "Waterfall", you need to do the same stuffs: defining requirements, designing architecture, coding, testing, etc.
+
+The root difference between these two methodologies is not what you do or don't do, it is *how often you collect feedback* for everything you do.
+
+Jon Kern summarizes that [[https://twitter.com/JonKernPA/status/1062427606723846146]["Agile" is just shorter "Waterfalls"]]. I think it's [[https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/][the first step toward "Agile"]] because a shorter "Waterfall" cycle increases the frequency we gather feedback for the features we deliver.
+
+But the problem then becomes how to define "shorter". Is a six-month cycle shorter? Is a six-hour cycle shorter? There is no clear definition.
+
+So people may think they are doing "Agile" while actually they have a long feedback cycle and they've lost their sight on feedback and improvement. This is how "Waterfall" hides behind "Agile".

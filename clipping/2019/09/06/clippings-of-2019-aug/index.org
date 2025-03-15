@@ -1,0 +1,288 @@
+#+TITLE: Clippings of 2019 Aug
+* Table of Contents
+
+- [[#orgc266c8c][Programmer Test Principles – Kent Beck – Medium   ]]
+- [[#orgc021947][What is Software Design? by Jack W. Reeves ©1992 C++ Journal   ]]
+- [[#org9813125][Going off the Rails into Elixir - Technical.ly Baltimore   ]]
+- [[#org0f37d1e][Why learning more isn’t always better - The Startup - Medium   ]]
+- [[#orgd8d673f][Big Ball of Mud   ]]
+- [[#orgd3b7b0e][Things Nobody Told Me About Being a Software Engineer · Ana Ulin   ]]
+- [[#org7db4f88][The Parable of the Two Programmers · RealMensch   ]]
+- [[#org1988327][How to Slow Down to Go Faster Than Ever in Software Development   ]]
+- [[#org93c9dcc][The Most Common Type of Incompetent Leader and Make Them Your Anti-Mentor   ]]
+- [[#org44b9622][Level Up - a curated newsletter for leaders in tech.   ]]
+- [[#org9869bc2][#73：新晋管理者的自我修养 - UX Coffee 设计咖   ]]
+
+* [[https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934][Programmer Test Principles – Kent Beck – Medium]]   Testing
+
+As always, a masterpiece from Kent Beck. Following the same ideas as [[https://dsdshcym.github.io/clipping/2019/04/11/values-and-practices/][Values and Practices in XP]], there are Principles vs. Details in Testing. In this post, Kent explained why discussing testing principles is more effective and listed some common principles.
+
+#+begin_quote
+
+- Minimize programmer waiting.
+- Run reliably.
+- Predict deployability.
+- Respond to behavior changes.
+- Not respond to structure changes.
+- Be cheap to write.
+- Be cheap to read.
+- Be cheap to change.
+
+#+end_quote
+* [[http://user.it.uu.se/~carle/softcraft/notes/Reeve_SourceCodeIsTheDesign.pdf][What is Software Design? by Jack W. Reeves ©1992 C++ Journal]]   Design Software
+
+From my personal experiences, software engineering is very different from other types of engineering, say buildings or mechanics. I found reasons for these differences in this paper.
+
+#+begin_quote
+
+- Engineering is more about *how you do the process* than it is about what the final product looks like.
+- The goal of any engineering design project is *the production of some documentation.*
+- To summarize:
+
+  1. Real software runs on computers.
+
+     - It is a sequence of ones and zeros that is stored on some magnetic media.
+     - It is not a program listing in C++ (or any other programming language).
+
+  2. A program listing is a document that represents a software design.
+
+     - Compilers and linkers actually build software designs.
+
+  3. Real software is incredibly cheap to build, and getting cheaper all the time as computers get faster.
+  4. Real software is incredibly expensive to design.
+
+     - Given that software designs are relatively easy to turn out, and essentially free to build, an unsurprising revelation is that software designs tend to be incredibly large and complex.
+     - Additionally, software designs are almost always constantly evolving.
+
+  5. Programming is a design activity
+
+     1. a good software design process recognizes this
+     2. a good software design process does not hesitate to code when coding makes sense.
+
+        - Coding actually makes sense more often than believed.
+
+          - Often the process of rendering the design in code will reveal oversights and the need for additional design effort.
+          - The earlier this occurs, the better the design will be.
+
+  6. Since software is so cheap to build,
+
+     - formal engineering validation methods are not of much use in real world software development.
+     - It is easier and cheaper to just build the design and test it than to try to prove it.
+
+  7. Testing and debugging are design activities
+
+     - they are the software equivalent of the design validation and refinement processes of other engineering disciplines.
+     - A good software design process recognizes this and does not try to short change the steps.
+
+  8. There are other design activities -- call them top level design, module design, structural design, architectural design, or whatever.
+
+     - A good software design process recognizes this and deliberately includes the steps.
+
+  9. All design activities interact.
+
+     - A good software design process recognizes this
+     - A good software design process allows the design to change, sometimes radically, as various design steps reveal the need.
+
+  10. Many different software design notations are potentially useful -- as auxiliary documentation and as tools to help facilitate the design process.
+  11. Software development is still more a craft than an engineering discipline.
+
+      - This is primarily because of a lack of rigor in the critical processes of validating and improving a design.
+
+  12. Ultimately, *real advances in software development depend upon advances in programming techniques* , which in turn mean advances in programming languages.
+
+      - C++ is such an advance. It has exploded in popularity because it is a mainstream programming language that directly supports better software design.
+      - C++ is a step in the right direction, but still more advances are needed.
+
+#+end_quote
+* [[https://technical.ly/baltimore/2019/07/25/going-off-the-rails-into-elixir/][Going off the Rails into Elixir - Technical.ly Baltimore]]   Elixir
+
+I've read so many articles that preaches Elixir. Most of them are just focusing on the language features, like pipe operators, pattern matching, etc.. I'm not saying these languages features are not good, but I think we are missing the key point here: *the business value* of switching to Elixir.
+
+That's why I'm excited to see this post, as it explains exactly the business value of switching to Elixir and the ecosystem around this new language.
+
+#+begin_quote
+
+- Elixir: *a toolset that is perfect for data-driven applications.*
+
+  - Most modern web applications are just that, data driven. The application’s flow is a function of the data:
+
+    1. data provided by external systems,
+    2. data provided by the user,
+    3. data that is computed.
+
+  - Elixir ecosystem is a great environment for building today’s web applications.
+
+    - Elixir’s functional programming,
+    - Erlang’s solid foundation
+    - the power and ease of use of Phoenix
+
+- Elixir helps our clients and ourselves by lowering several costs in several ways.
+
+  1. the language is stable and won’t change drastically on the developers while they are building your application
+  2. resource utilization and fault-tolerance
+  3. the developer friendly syntax and functional programming
+  4. with Elixir, you are sure to attract the best staff.
+
+#+end_quote
+* [[https://medium.com/swlh/why-learning-more-isnt-always-better-2154f75a71d6][Why learning more isn’t always better - The Startup - Medium]]   Learning
+
+I have this feeling that learning is my own biggest enemy now. I spend most of my time reading books, listening to podcasts, watching conference videos. I have little time to write or build new things.
+
+After reading this post, I'm more certain about my feeling.
+
+#+begin_quote
+
+- Knowledge has no power without action.
+- The key to success appears to be regulating our knowledge intake, while putting the information we acquire into action.
+- The less we obsess about staying up to date on the latest books, podcasts and informational trends, the more time we have to create.
+
+#+end_quote
+
+Now, I'm trying to reduce my time spent on learning by skimming through blog posts, quitting Twitter/RSS, etc.
+
+With the time freed from learning, I can write more and create more. And it feels better!
+
+If you are interested in similar ideas, [[https://tjcx.me/posts/consumption-distraction/][Consume less, create more]] would be a great read.
+
+* [[http://www.laputan.org/mud/mud.html][Big Ball of Mud]]   Software Engineering
+
+Again, a great paper from the past. The most impressive thing I learned from it is that *Maintenance is learning.*
+
+#+begin_quote
+
+- Three levels of learning in the context of systems.
+
+  1. This first is *habit* , where a system dutifully serves its function within the parameters for which it was designed.
+  2. The second level comes into play when *the system must adapt to change* . Here, it usually must be modified, and its capacity to sustain such modification determines its degree of adaptability.
+  3. The third level is the most interesting: *learning to learn* . With buildings, adding a raised floor is an example. Having had to sustain a major upheaval, the system adapts so that subsequent adaptations will be much less painful.
+
+#+end_quote
+
+It resonates with my current understanding of Agile. To me, Agile = Continuous Learning.
+
+* [[https://anaulin.org/blog/things-nobody-told-me-about-being-a-software-engineer/][Things Nobody Told Me About Being a Software Engineer · Ana Ulin]]   Software Engineering Career
+#+begin_quote
+
+That, 15-ish years in, my main professional contributions could be summarized as:
+
+1. *nudging folks to write better and/or more tests* ,
+2. getting people to talk to each other.
+
+#+end_quote
+
+This summary resonates with my personal experiences perfectly.
+
+1. I learned TDD at school so I thought everyone must had been doing it all the time. But it turned out not to be the case at all. Then *learning how to write better tests and how to nudge others to write more tests* became the major parts of my career.
+2. But testing is not the end of the story. It's just the beginning. Even if developers write enough tests, project could still fail. I learned this lesson the hard way. Then I found the root cause: team members don't talk to each other often enough. So naturally, I started *learning [[https://dsdshcym.github.io/blog/2019/06/14/make-it-safe-book-review-crucial-conversations/][how to talk to people]] and [[https://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/][how to get
+people to talk to each other]].*
+
+I am and still will be in this great journey. If you have similar experiences, I'm more than happy to hear them.
+
+* [[https://realmensch.org/2017/08/25/the-parable-of-the-two-programmers/][The Parable of the Two Programmers · RealMensch]]   Software Engineering Career
+
+I've been wondering this for quite some time: why are some experienced programmers less skillful? This parable is an interesting read if you have the same question.
+
+#+begin_quote
+
+*Experience does matter. But so does underlying skill.*
+
+#+end_quote
+
+- [[https://mp.weixin.qq.com/s/Wsu6l5vmJs0SG78sEA9-dg][【专访】太多企业只做敏捷表面功夫，一线程序员水平太差]]
+
+  这篇对 ThoughtWorks 总监咨询师熊节的采访也讨论了类似的话题： *基本功可能比经验更加重要* 。
+
+#+begin_quote
+
+  如果有一个程序员他开始意识到，我每天的工作是什么，我的基本功（如何），对我开发效率有影响的事情是什么。我们讲：理解需求、拆分任务、编写测试、高质量的代码实现——所有这些动作能够很快的做出来。这五个要素很少有企业去考他。
+
+  但是如果程序员自己意识到了这些东西很重要，去练习这方面的能力，他就会在这个团队中鹤立鸡群。他做的工作会更快、更好。
+
+  这会带来什么效应呢？别人会看到这个人价值很大。比如我 2013 年培养的毕业生，在我这培养了 1 年，他就可以去某知名大公司做咨询，去教该公司那些号称有多少年经验的程序员怎么做软件，这些老程序员还很服他。在我这工作 3 年，这家大公司出高薪去挖他，结果还没挖动。所以这个对个人价值的提升是非常明显的。
+
+#+end_quote
+
+* [[https://www.infoq.com/articles/slow-down-go-faster/][How to Slow Down to Go Faster Than Ever in Software Development]]   Software Engineering
+#+begin_quote
+
+- The only way of going faster at a sustainable pace is slowing down, in three important areas:
+
+  1. People for improving professionalism and craftsmanship
+  2. The process for improving adaptation and efficiency
+  3. Product for improving automation and quality
+
+#+end_quote
+
+I encountered similar ideas in many different places recently:
+
+- [[https://basecamp.com/shapeup][SHAPE UP: Stop Running in Circles and Ship Work that Matters]]
+- [[https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&qid=1525875626&sr=8-2&keywords=company+of+one&linkCode=sl1&tag=eik05-20&linkId=470605f6117f60ed70b3b4268f0e78d1][Company of One: Why Staying Small Is the Next Big Thing for Business]]
+- [[https://pragprog.com/book/rjnsd/the-nature-of-software-development][The Nature of Software Development: Keep It Simple, Make It
+Valuable, Build It Piece by Piece by Ron Jeffries]]
+
+* [[https://hbr.org/2018/03/the-most-common-type-of-incompetent-leader][The Most Common Type of Incompetent Leader]] and [[https://knowyourteam.com/blog/2019/02/13/the-anti-mentor-how-a-bad-boss-influences-our-leadership-style/][Make Them Your Anti-Mentor]]   Leadership
+
+Being a leader is hard. Being promoted to a leadership role without noticing it is even harder. As you can see from [[https://hbr.org/2018/03/the-most-common-type-of-incompetent-leader][this report]]:
+
+#+begin_quote
+
+- The key derailment characteristics of bad managers are well documented and fall into three broad behavioral categories:
+
+  “moving away behaviors”
+      which create distance from others through hyper-emotionality, diminished communication, and skepticism that erodes trust;
+  “moving against behaviors”
+      which overpower and manipulate people while aggrandizing the self;
+  “moving toward behaviors”
+      which include being ingratiating, overly conforming, and reluctant to take chances or stand up for one’s team.
+
+- Absentee Leadership
+
+  - Absentee leaders are people in leadership roles who are psychologically absent from them.
+  - Research shows that it is the most common form of incompetent leadership.
+  - Research shows that being ignored by one’s boss is more alienating than being treated poorly.
+
+#+end_quote
+
+I can tell you how hard it is to be led by an absentee leader. But the more important lesson is to learn from their behaviors and don't become a leader like them, like Claire Lew explained in [[https://knowyourteam.com/blog/2019/02/13/the-anti-mentor-how-a-bad-boss-influences-our-leadership-style/][this post]]:
+
+#+begin_quote
+
+- "negative morality"
+
+  - Seeing what you don’t want to be like is more powerful than what you do want to be.
+  - The push is greater than the pull.
+  - *learning from mistakes is markedly more powerful than learning from successes*
+
+- Ask yourself:
+
+  1. Who is the worst boss I’ve ever had? Then reflect.
+  2. In what ways are you consciously or unconsciously reacting to your experience with this person?
+  3. Are those reactions to this person – your "anti-mentor" – helping your team? Or, are they hurting?
+
+#+end_quote
+* [[http://levelup.thekua.com/][Level Up - a curated newsletter for leaders in tech.]]   Leadership
+
+Speaking of leadership, I would recommend this newsletter from Patrick Kua. I learned a lot from [[https://www.youtube.com/watch?v=iLS6NXMXtLI][his]] [[https://www.youtube.com/watch?v=N9UPW-2wL5U][talks]] and [[https://www.thekua.com/atwork/2014/11/the-definition-of-a-tech-lead/][blog]] [[https://www.thekua.com/atwork/2015/06/tech-lead-circles-of-responsibility/][posts]] before. Then, he started publishing this newsletter about tech leadership. So I became a subscriber naturally. If you are also interested in tech, leadership, management, subscribe it!
+
+* [[https://uxcoffee.simplecast.com/episodes/73-a8BBjaVZ][#73：新晋管理者的自我修养 - UX Coffee 设计咖]]   Leadership Management
+
+最后，推荐这一期 UX Coffee，他们讨论了设计师转至设计经理岗位时遇到的种种问题。虽然是来自设计师的讨论，但是管理的思路都是相通的，同样的问题在开发、项目管理上都会碰到，这些讨论都很有借鉴的价值。
+
+#+begin_quote
+
+- 好的管理者是个「聚宝盆」
+
+  - 里面的宝物可能每一个价值都更高
+  - 但是聚宝盆能把他们圈在一起
+
+- 一线员工可能不了解公司战略信息，1:1 的时候给到
+- 三个放手
+
+  1. 对项目放手
+  2. 对团队管理放手
+  3. 对不合适的人放手
+
+- 通过提要求、定标准来保证产出质量（军训教官）
+- IC (Individual Contributor) 要站在更高的层次看自己的工作
+
+#+end_quote

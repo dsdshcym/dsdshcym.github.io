@@ -1,0 +1,47 @@
+#+TITLE: Add org-store-link Entry for elfeed
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2016-01-28]
+#+URI:         blog/2016/01/28/add-org-store-link-entry-for-elfeed/index.html
+#+TAGS:        Emacs, Org
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Elfeed
+
+Elfeed is a RSS client for Emacs. I've been using elfeed to read all my rss feeds for a long time. And I really wish it can have some integrations with org-mode like mu4e. So that I can capture a link to a RSS news entry to my notes and jump to this directly using the link.
+
+* A Hack Way
+
+So I posted a feature request on Elfeed's github page. And I got this note from @heikkil: [[http://heikkil.github.io/blog/2015/05/09/notes-from-elfeed-entries/][Note taking 3: Notes from elfeed entries - Heikki @ home]]. This solution can do the trick for me, but this is not what I want.
+
+* The ideal way
+
+Then I spent 30 minutes to improve his codes. And I got this based on [[http://orgmode.org/manual/Adding-hyperlink-types.html][Adding
+hyperlink types - The Org Manual]]:
+
+#+begin_src emacslisp
+;; ---------------------
+;; org capture in elfeed
+;; ---------------------
+(defun private/org-elfeed-entry-store-link ()
+  (when elfeed-show-entry
+    (let* ((link (elfeed-entry-link elfeed-show-entry))
+           (title (elfeed-entry-title elfeed-show-entry)))
+      (org-store-link-props
+       :link link
+       :description title)
+      )))
+
+(add-hook 'org-store-link-functions
+          'private/org-elfeed-entry-store-link)
+#+end_src
+
+After adding this hook, I can now use a template like this to capture what I am reading in elfeed to an org-mode entry in my refile.org file:
+
+#+begin_src emacslisp
+(setq org-capture-templates
+          '(("l" "Link" entry
+             (file "~/Org/refile.org")
+             "* %a\n%U")
+            ))
+#+end_src

@@ -1,0 +1,42 @@
+#+TITLE: What is an Effective OKR?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-02-26]
+#+URI:         blog/2020/02/26/what-is-an-effective-okr/index.html
+#+TAGS:        OKR
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Let's say we've identified a gap between strategy and execution in your team. And [[https://yiming.dev/blog/2019/12/17/why-do-we-need-okr-objectives-and-key-results/][we were convinced to use OKR]] to fill that gap. The next step is to define OKRs for your team. But how to define an effective OKR? To do that, we need to first know what is an effective OKR.
+
+As explained above, the purpose of using OKR is to fill the gap between strategy and execution. Once the gap is filled, our strategy would be crystal clear to everyone in the team and our execution would be perfectly targeting our strategy. In another word, everyone is aligned to execute on the same strategy. So an effective OKR needs to *clarify strategy* and *guide execution* .
+
+* Clarify Strategy
+
+According to [[https://lethain.com/strategies-visions/][visions and strategies by Will Larson]], a strategy is an approach to a specific challenge, it needs to be practical, accurate, and detailed.
+
+So an effective OKR needs to explain our challenge, and our approach to tackle it. An effective OKR doesn't need to be detailed strategy documentation because it's not. But it does need to remind people which strategy it's about.
+
+We do that by defining an Objective that reflects the strategy. An effective Objective summarize the challenge we are facing and the big picture of how we are gonna solve it. A simple sentence like "We are going to do X (approach) in order to Y (tackle the challenge)" is sufficient.
+
+* Guide Execution
+
+After clarifying the strategy in our Objective, we can guide execution by defining our Key Results. To "guide" effectively, Key Results need to be inspiring but not restricting.
+
+1. Key Results should inspire us to take actions.
+
+   When getting a list of effective Key Results, we should be able to come up with plans easily. Effective Key Results set clear directions for us to search and try different plans.
+
+   And effective Key Results can motivate people to take actions. When we feel the goal is reachable, we perform better. Like running a marathon, we will run faster when we can see the finish line.
+
+2. Key Results should not restrict our actions.
+
+   Although effective Key Results give us clear directions on what actions we need to take, they should not restrict us from coming up with creative plans and experimenting with different solutions.
+
+So a good rule of thumb is to think 3 different plans to achieve this Key Result, if you can do that easily, you are good to go.
+
+* Summary
+
+An effective OKR is an OKR that can *clarify strategy* and *guide execution* . Knowing these two characteristics is the first step to define an effective OKR. In the future, I would write more about my OKR experiences, so stay tuned!
+
+If you want to learn more, I'ld recommand this [[https://www.youtube.com/watch?v=XQy-h_LugpM&feature=youtu.be][OKR Workshop]], you can find more examples from it.

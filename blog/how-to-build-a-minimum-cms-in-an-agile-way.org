@@ -1,0 +1,147 @@
+#+TITLE: How to build a Minimum CMS in an Agile way
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-05-11]
+#+URI:         blog/2019/05/11/how-to-build-a-minimum-cms-in-an-agile-way/index.html
+#+TAGS:        Agile
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I just finished building a minimum CMS (Content Management System) recently. I only used Rails itself, without any CMS gems. This post is my retrospect of its development process and how the process could be improved.
+
+* TL;DR
+
+How to build a CMS in an Agile way:
+
+1. Build a static site first, ship it.
+2. Extract CMS features upon the static site, ship it.
+
+Here are how features/code transfer:
+
+- From frontend to backend
+- [[https://dsdshcym.github.io/clipping/2019/04/24/%E4%BB%8E%E5%85%B7%E8%B1%A1%E5%88%B0%E6%8A%BD%E8%B1%A1/][From specific to general]]
+- From flexible to stable
+
+* Why Not Just Using a CMS Library?
+
+You must be wondering why I chose building a CMS by myself rather than using an existing CMS library (like [[https://www.faecms.com/][Fae CMS]] or [[https://www.spinacms.com/][Spina CMS]]). Here is why:
+
+When I started building this project, the goal was simple and clear: to build a well designed official site for a company, with an admin page to allow the client to update contents on the site.
+
+Besides this goal, I also want to achieve some personal (and private) goals:
+
+1. Build an example for the whole company to explain how to break down features and build MVPs.
+2. Give the newly joined intern a chance to practice Rails, testing, refactoring, etc.
+
+(P.S. It turned out later having three goals at the same time was a really bad idea.)
+
+And my team members didn't have any experience with any existing CMS libraries. So I decided to build the CMS without a library (as a learning opportunity).
+
+* My Original Plan to Build a CMS
+
+To achieve the project goal and my personal goals, I came up with this plan:
+
+1. Design a wireframe for the website.
+2. Implement the frontend with only HTML and CSS.
+3. Add the backend logic to integrate the database with the frontend.
+4. Add admin page to update contents on the site.
+
+To me, this plan was agile, simple, and clear. The whole point was to *deliver value to the client as quickly as possible* .
+
+1. Spend a few days (or even just a few hours?) designing the wireframe.
+
+   - To decide the UI direction for the site.
+   - It may not generate any value to the client but it's necessary to put this communication effort upfront, or it would cost more if we find out the UI direction is wrong.
+   - And it's a good chance for the team getting familiar with the client's work style.
+
+2. Build the frontend site first and deploy it to production so the client can start showing it to their users.
+
+   - From this step, we start delivering values to the client.
+   - The idea was to ship the viewable site as quickly as possible.
+   - Even the site is completely static, it can provide the same level of value as a backend powered site.
+   - If the client wants to update any content, our frontend developer can do this easily. And by doing this manually, we can get a sense of which contents need to be changed often.
+
+3. Extract content as database entities (or models) one by one based on demands (change frequency, priority, etc.)
+
+   - With the knowledge gained from updating content manually, we get a sense of what contents are updated frequently and what are not. So we can prioritize them and extract them as database entities.
+   - This eases the pain of manually updating contents, and shifts the burden from frontend to backend.
+   - If the client wants to update content now, the backend developer can do it for him.
+
+4. Build the admin interface for the client to update contents by himself.
+
+   - This is another value we can provide to our client.
+   - At this time, the frontend is quite stable and the backend is getting into a shape, adding the admin interface would be easy.
+
+But unfortunately, things didn't go as planned.
+
+* How We Did it and Why
+
+Here is what happened in hindsight:
+
+1. We spent some time (about 1 week) designing the wireframe.
+2. Then we spent most of our time in this project (about 3 weeks) implementing the frontend.
+3. Finally, we used the last two weeks to build both the backend and the admin interface.
+
+As you can imagine, the last two weeks are hard for the backend engineers. We worked overtime to build features on backend, fix issues for frontend, and build an admin interface in the end.
+
+(I even burned out partly due to this tight schedule. But that's another story.)
+
+After the project was finished, I thought these things went wrong:
+
+1. I didn't explain my 4-step plan to the whole team really well.
+
+   - I only mentioned briefly to the team that we are going to design first, then build the frontend, the backend, and the admin in the end.
+   - And people naturally followed this plan completely by finishing them one by one, rather than shipping them one by one. *Shipping value incrementally* is the key here.
+
+2. Aiming for multiple goals at the same time means that non of them would be achieved fully.
+
+   - I did less work explaining my two private goals to the team. They were like two hidden meeting agendas, and no hidden agendas would be finished well.
+   - In the end, almost all of my original goals were failed:
+
+     1. The site was delivered, but it was not easy for developers.
+     2. This project cannot be used as an example for the company because of bad execution.
+     3. The intern also struggled with learning and development. Because I couldn't spend enough time mentoring or pairing.
+
+3. There were multiple schedule issues.
+
+   - We had our Spring Festival holidays between the plan phase and design phase.
+   - I was off for vacation when the team started designing the site. So I couldn't fix the waterfall issue earlier.
+
+* How Could We Do Better
+
+So how to do this in a better way?
+
+1. Communicate, communicate, communicate!
+
+   I can't emphasize more about the importance of communication. Only by keeping everyone on the same page, can we execute a plan well.
+
+2. Do one thing at a time, and do it well
+
+   This principle is borrowed from software engineering.
+
+   When writing programs, classes, functions, modules, we need to keep them simple: each one of them should do just one thing and do it well.
+
+   It turns out to be the same for project managements: any project should only has one goal and finish it well.
+
+3. Just use a CMS framework
+
+   If the goal was set clearly, I may have chosen to just use a CMS framework. (But that would still cause other problems.)
+
+4. More parallelism
+
+   To ship the value incrementally, the whole pipeline needs to be paralleled. For example, when frontend is being developed, the backend need to build the deploy pipeline and make sure CI/CD is working.
+
+5. Smaller feedback loop. One page at a time.
+
+   To being more parallelized, we can even ship one page at a time. So we can get a pipeline like this:
+
+#+begin_src awk
+
+Homepage:      User Story ----> Design    ----> Frontend
+                                          \---> Backend
+
+Products page:                  User Story ---> Design    ---> Frontend
+                                                          \--> Backend
+#+end_src
+
+From this experience, I learned that implementing Agile methodology is much harder than talking. It's easy for me to talk about Agile and read more books about Agile. But when it comes to aligning people, and building a project in an Agile way together, it's way much harder.

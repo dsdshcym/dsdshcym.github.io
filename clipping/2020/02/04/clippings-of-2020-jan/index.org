@@ -1,0 +1,139 @@
+#+TITLE: Clippings of 2020 Jan
+* [[https://www.rightattitudes.com/2017/06/16/rapoport-rules-criticism/][Rapoport’s Rules to Criticize Someone Constructively]]
+#+begin_quote
+
+1. You should attempt to re-express your target’s position so clearly, vividly, and fairly that your target says, “Thanks, I wish I’d thought of putting it that way.”
+2. You should list any points of agreement (especially if they are not matters of general or widespread agreement).
+3. You should mention anything you have learned from your target.
+4. Only then are you permitted to say so much as a word of rebuttal or criticism.
+
+#+end_quote
+
+As I mentioned in [[https://yiming.dev/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/][my Review for Nonviolent Communication]], NVC still feels a bit vague for me even after reading the book. Because I still don't know exactly how to apply NVC in my life.
+
+Rapoport's Rules to Criticize, on the other hand, is such a practical steps to follow. And I can tell from my experience that it definitely works. Before learning Rapoport's Rules, I've been using similar techniques already: I always try to re-express what I received and what I agree before I say what I don't. And most of the time, people would accept my opinions better.
+
+After learning Rapoport's Rules, I would re-express more and start mentioning what I've learned. Maybe you can do the same and see if it helps with your communication?
+
+* [[https://t.co/UkYsUjQ2TO][I’ve never had a goal - Signal v. Noise]]
+#+begin_quote
+
+- A goal is something that goes away when you hit it.
+
+  - Once you’ve reached it, it’s gone.
+  - You could always set another one, but I just don’t function in steps like that.
+
+- I just worked at whatever I was working on and ended up wherever I am.
+
+#+end_quote
+
+As I learn to become goal-driven (a.k.a [[https://yiming.dev/blog/2019/12/31/growing-a-result-driven-mindset/][result-driven]]), I am also aware of the downside of goals: setting goals in itself doesn't mean anything, *what really matters is execution.*
+
+Another interesting quote from this article is:
+
+#+begin_quote
+
+The reason that most of us are unhappy most of the time is that we set our goals not for the person we’re going to be when we reach them, but we set our goals for the person we are when we set them.
+
+#+end_quote
+
+From my current understanding, it's impossible to "set our goals not for the person we’re going to be when we reach them". So shall we stop setting goals once and for all?
+
+That being said, I still believe in the power of goals: [[http://billhennessy.com/simple-strategies/2015/09/09/i-wish-drucker-never-said-it][what gets measured gets managed]]. What we need to do is to set goals for what really matters to us. Use a few goals to help us focus on things really matter. And learn the goal-setting skills from practices.
+
+* [[https://thoughtbot.com/blog/the-case-for-wet-tests][The Case for WET Tests]]
+#+begin_quote
+
+- Writing tests that scale with your team
+
+  - Abstractions can be useful tools
+  - Abstractions can also increase the cognitive load on the next person to work with your code
+
+- Minimizing dependencies between tests
+- Requirements change, abstractions break
+- Writing untested logic
+
+  - we shouldn’t spend time testing that language features work as expected
+
+- Making the right abstractions
+
+  - DRY test code should be a means to achieving the goals of your test suite, rather than a goal in and of itself.
+
+#+end_quote
+
+When writing tests, we should strive for being [[https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests][DAMP (Descriptive And Meaningful Phrases)]], rather than DRY (Don't Repeat Yourself). It's way easier to build a [[https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction][Wrong Abstraction]] when writing tests. And it doesn't cost much to have duplicated code in our tests.
+
+* [[https://www.youtube.com/watch?v=_f2LYPpueAY&feature=share][RubyConf 2018 - Inheritance, Composition, Ruby and You by Cody Stringham - YouTube]]
+#+begin_quote
+
+- Inheritance
+
+  - When? *Object Specialization*
+
+    - A child should be a specialized version of its parent
+    - Not to share behaviour
+
+  - Pros (when done correctly)
+
+    - Reusable
+    - Extensible
+
+  - Cons
+
+    - Coupling
+    - Reduced Readability
+    - Easy to Abuse
+    - Complicates Unit Testing
+
+      - subclasses are not fully tested
+      - if someone changes superclass and its tests, tests would pass, but the behaviours of subclasses are changed
+
+- Composition
+
+  - When? *As much as possible!*
+
+    - Small classes
+    - Small methods
+
+  - Pros
+
+    - Flexible
+    - Readable
+    - Easily Testable
+
+  - Cons
+
+    - More boilerplate
+
+#+end_quote
+
+I spent quite some time to understand "Composition over Inheritance". Because when I first started learning Object-Oriented Programming, it was one of the core concepts I learned. After reading many articles and books, I was convinced that Composition is actually better. This talk is the best resource you can learn about this idea.
+
+If you want to learn more about "Composition over Inheritance", these are some great reads:
+
+- [[https://twitter.com/mfeathers/status/994661651466010624][Michael Feathers on Twitter: "Inheritance might be the most unjustly maligned language feature."]]
+- [[http://www.yegor256.com/2016/09/13/inheritance-is-procedural.html][Inheritance Is a Procedural Technique for Code Reuse]]
+- [[http://mjk.space/how-to-avoid-inheritance-in-ruby/][How to avoid inheritance in Ruby? – Michał Konarski]]
+- [[http://softwareengineering.stackexchange.com/questions/134097/why-should-i-prefer-composition-over-inheritance][interfaces - Why should I prefer composition over inheritance? - Software Engineering Stack Exchange]]
+
+* [[https://dev.to/kmruiz/to-domain-driven-design-6ao][To Domain Driven Design - DEV Community 👩‍💻👨‍💻]]
+#+begin_quote
+
+- *split your achitecture based on knowledge, not on data.*
+
+  - How a company structures knowledge depends entirely on the people and the business they are on
+  - think in our business as a business platform:
+
+    - we don't have a product, we have a set of products.
+    - Those products are a set of features that apply to a persona.
+
+- Summary
+
+  - Thinking in platforms allows us to split our business better.
+  - Linking products to personas and also to bounded contexts makes boundaries explicit.
+  - State-sourcing and event-driven architectures are essential for building distributed and available platforms.
+  - Teams should not share code, but a common platform.
+
+#+end_quote
+
+How to design a architecture optimized for long-term evolution is the core of software design. This article provides a practical example to explain how to split domains based on knowledge, rather than data.

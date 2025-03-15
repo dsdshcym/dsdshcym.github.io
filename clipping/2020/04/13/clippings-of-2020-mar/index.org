@@ -1,0 +1,326 @@
+#+TITLE: Clippings of 2020 Mar
+* Top 13
+** [[https://refactoringui.com/book/][Refactoring UI: The Book]]
+
+With tons of practical examples, this book helped me better understand principles of design: color, layout, text, depth, etc. Right after reading this book, I applied one of the refactor techniques to my daily work: Add a subtle shadow to various logos to prevent background bleed.
+
+I'd highly recommend this book to every Web developer after they learn some basic concepts of Web UI design.
+
+(BTW, I'd also recommend this video serious from thoughtbot for learning basic Web Design concepts: [[https://thoughtbot.com/upcase/design-for-developers][Design for Developers - Visual Layout Online Tutorial by thoughtbot]])
+
+** [[https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d][We Don’t Sell Saddles Here - Stewart Butterfield - Medium]]
+#+begin_quote
+
+- Sell the innovation, not the product
+
+  - *The best (maybe the only?) real, direct measure of "innovation" is change in human behaviour.*
+  - Innovation is the sum of change across the whole system, not a thing which causes a change in how people behave
+  - That's why what we're selling is organizational transformation
+  - *The best possible way to find product-market fit is to define your own market*
+
+#+end_quote
+
+Tons of valuable startup knowledge in this memo from early days of Slack. No wonder Slack can become such a popular tool.
+
+The biggest takeaway for me is that *"innovation" is change in human behaviour* . If we think of some biggest innovations in the past (computer, Internet, iPhone, and so on), they all dramatically changed human behaviour. Start innovation by changing behaviour of yourself, then your team, your users, and finally change this world.
+
+** [[http://www.gabebrown.co/2018/09/21/3-reasons-why-great-engineers-dont-become-managers/][3 Reasons Why Great Engineers Don’t Become Managers]]
+#+begin_quote
+
+1. People Problems Are Not Engineering Problems
+2. Managers Work With Relationships, Not Politics
+3. Solving Real Technical Issues Is Less Than 30% Of Your Day
+
+#+end_quote
+** [[https://dockyard.com/blog/2019/12/19/lessons-learned-10-years-of-running-a-software-consultancy][Lessons Learned - 10 Years of Running a Software Consultancy - DockYard]]
+#+begin_quote
+
+- Business Development
+
+  - Software consulting above most other things is about trust. (The client wants to trust your ability to spend their money wisely.)
+  - for software services a big part of BD job is process and ensuring that things are getting done and moving forward.
+  - Promote from within, someone with either engineering or PM experience.
+
+- Design
+
+  - allow design to collaborate and receive feedback from other departments during design phases of contracts.
+
+- Delegating
+
+  - people who are hired specifically for a job are better at doing that job 100% of the time than I was trying to do that job 10% of the time.
+
+- Open Source development has had no real meaningful and direct contribution to DockYard’s revenue. Ever.
+
+  - Marketing is not sales.
+  - We primarily capture sales leads because of our expertise.
+
+- A software consultancy at some point always becomes a people management firm.
+
+  - The headcount is much higher for revenue than it is at most other types of companies because we are directly selling our people’s time.
+  - The only way to scale that is to either
+
+    1. find more time to sell, which we try very hard not to do,
+    2. increase the cost of that time to our clients, which we have more or less settled in for the past few years,
+    3. or add more people, assuming you have the projects to put them on.
+
+- The reality is that the brand a company projects outward is never what is happening internally.
+
+  - Consulting is a messy game.
+
+    - There are cut throats.
+    - There are clients that want to steal.
+    - There are jobs that can allow your company to grow one day and nearly put you out of business the next.
+    - There are often many and conflicting roads to success and there are even more to ruin.
+
+- you have to be lucky.
+
+  - your chance at getting lucky is where the skills of running a business come into play.
+
+    - *The longer you can stretch out your business strategy then you increase the potential of luck playing out in your favor.*
+    - if you want to build something that is going to persist and thrive you have to think about the long game.
+
+      - Where do you want your business to be five years from now? Ten years from now?
+      - Figure that out and work backwards from there. *The mental exercise of going backwards from the potential of success allows you to develop a proper strategy to achieve it.*
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=GVSRi9Ki8d8][Devon Estes - Comparing common concurrency patterns in Elixir and Erlang - Lambda Days 2020 - YouTube]]
+#+begin_quote
+
+- Share a common vocabulary like Object-Oriented Design Patterns
+- 4 useful patterns from A Pattern Language for Parallel Application Programming
+
+  Embarrassingly Parallel
+      Simple examples
+
+      - Eagerly evaluated, linear input
+      - No communication with parent
+      - No communication between siblings
+      - No shared dependencies between siblings
+
+  Reduction (async/await)
+      Benchee
+
+      - Eagerly evaluated, linear input
+      - Communication with parent allowed
+      - No communication between siblings
+      - No shared dependencies between siblings
+
+  Asynchronous Decomposition
+      ExUnit
+
+      - Lazily evaluated input of unknown size
+      - Communication with parent allowed
+      - No communication between siblings
+      - No shared dependencies between siblings
+
+  Pipeline Processing
+      GenStage
+
+      - Lazily evaluated input of unknown size
+      - Communication with parent allowed (rare)
+      - Communication between siblings allowed
+      - Shared dependencies allowed (but require management)
+
+- Summary
+
+  |  |Input evaluation |Communication w/ parent |Communication w/ siblings |Shared dependencies |
+  |Embarrassingly Parallel |Eager |No |No |No |
+  |Reduction |Eager |Yes |No |No |
+  |Asynchronous Decomposition |Lazy |Yes |No |No |
+  |Pipeline Processing |Lazy |Yes |Yes |Yes |
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=ftcIcn8AmSY&feature=share][Four Solutions to a Trivial Problem - Guy Steele Jr. - YouTube]]
+#+begin_quote
+
+- the best way to write parallel applications is not to have to think about parallelism (separation of concerns)
+- The issue is not so much parallelism is independence
+- Accumulators are BAD. Divide-and-conquer is GOOD.
+- Certain algebraic properties are very important
+
+  - Programmers need help to ensure these properties
+
+#+end_quote
+** [[https://cutle.fish/blog/12-signs-youre-working-in-a-feature-factory][12 Signs You’re Working in a Feature Factory - @johncutlefish's blog]]
+#+begin_quote
+
+1. No measurement
+2. Rapid shuffling of teams and projects (aka Team Tetris)
+3. Success theater around “shipping” with little discussion about impact
+4. Infrequent (acknowledged) failures and scrapped work
+5. No connection to core metrics
+6. No PM retrospectives
+7. Obsessing about prioritization
+8. No tweaking
+9. Culture of hand-offs
+10. Large batches
+11. Chasing upfront revenue
+12. Shiny objects
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=XhN6fJYG81A&feature=share][🚀 DevTernity 2019: J.B. Rainsberger – The Well-Balanced Programmer - YouTube]]
+#+begin_quote
+
+- [[https://en.wikipedia.org/wiki/Theory_of_constraints][Theory of constraints - Wikipedia]]
+- Do not have enough time -> Have too many things to do -> Do less
+
+  - Code: Evolutionary Design
+
+    - (TDD is one of the technique)
+    - Make design decisions as close to the moment when we need to make them
+    - Slow down when you make a mistake
+
+      - TCR (Test && Commit || revert)
+
+  - [[https://www.amazon.com/Slack-Getting-Burnout-Busywork-Efficiency/dp/0767907698][Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency: Tom DeMarco: 9780767907699: Books]]
+  - Casino Technique:
+
+    - Spend 10% of your work time to learn/practice on something that may be useful for the company
+    - And wait for angry emails
+    - Try 20%, 30%, ...
+
+  - [[https://www.amazon.com/gp/product/0142000280/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0142000280&linkCode=as2&tag=jbrains.ca-20][Getting Things Done: The Art of Stress-Free Productivity: David Allen: 9780142000281: Amazon.com]]
+
+    - Two-minutes technique -> Everything needs to go into plan (because few things can be done in two minutes)
+    - Inbox technique
+    - Monotasking (single-tasking) -> Focus is the key
+    - Pomodoro
+
+- Navigating the People
+
+  - 95% of problems you have to deal with have nothing to do with computers
+  - Satir Interaction Model ([[https://www.infoq.com/articles/satir-communication-model-teams][Don't Let Miscommunication Spiral Out Of Control]])
+  - Try to offer others (& yourself) another way to interpret you
+
+#+end_quote
+** [[https://no-kill-switch.ghost.io/are-the-software-product-companies-doomed-to-collapse/][Are the software product companies doomed to collapse under the weight of their creations?]]
+#+begin_quote
+
+- Different kinds of companies deal with that in a varying way - it depends mainly on their culture & dynamics.
+
+  - The most ambitious & modern-thinking ones usually try to outgrow the problem: they invest in a massive increase of manpower to accelerate development, so their causative power remains higher than their inertia
+  - The more enlightened ones create software in a rewrite-friendly way: once debt (of whatever sort) gets too high within a component or a sub-system, it's getting scrapped & re-written (Productivity in the age of hypergrowth)
+
+- How can we at least increase our odds in the fight for long-term technical excellence?
+
+  Negative Delta
+      more stuff is being SCRAPPED than ADDED
+  No Open Fire
+      make sure you're out of fire-fighting mode (e.g. daily outages, unstable environments, excessively buggy apps that affect business).
+  WIP of 1 / secure (exclusive) capacity
+      when certain people are working on goals related to technical debt, they should work ONLY on that
+  Talk is cheap, show me the numbers
+      Be precise when it comes to what you're struggling with
+  Consider thrice before building anything
+      maybe some products/tools/services should be scrapped w/o re-writing.
+  Unlock capacity first
+      Companies suffocate not because of the technical debt, but usually due to *how it constraints their development agility*
+
+      - These are the topics you should probably look at first:
+
+        - build time (incl. dependencies & redundant compilation)
+        - everyday dependencies between teams
+        - frequency of change integration between collaborating teams
+        - stability of test environments & the repeatability of deployment process
+
+#+end_quote
+
+Reminds me of [[https://itrevolution.com/the-unicorn-project/][The Unicorn Project]]
+
+** [[https://twitter.com/dan_abramov/status/1236420932157177861][A rewrite that only changes one layer is rarely worth its cost.]]
+#+begin_quote
+
+It’s no use abstracting away an ORM library if five years later you think that ORM was a bad idea.
+
+It’s no use abstracting away an MVC helper if five years later you think there are better approaches than MVC.
+
+A rewrite that only changes one layer is rarely worth its cost.
+
+— Dan Abramov (@dan_abramov) [[https://twitter.com/dan_abramov/status/1236421890119327745?ref_src=twsrc%5Etfw][March 7, 2020]] #+end_quote
+** [[https://www.youtube.com/watch?v=mOtKD7ml0NU&feature=youtu.be][Edwin Brady - Idris 2: Type-driven development of Idris - Code Mesh LDN 18 - YouTube]]
+#+begin_quote
+
+- Filling the type holes (manually/automatically)
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=ilyLxczuHiY][From puzzles to products, Jessica Kerr (Atomist) - YouTube]]
+#+begin_quote
+
+- code is a detail
+- the point is to *design change*
+
+  - where to next?
+  - whole system route
+  - how will we see its effects?
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=pW-SOdj4Kkk][Jonathan Blow - Preventing the Collapse of Civilization (English only) - YouTube]]
+#+begin_quote
+
+- Technology automatically degrades (if no one works on it) We have this idea of technology marching forward, but it goes backward all the time
+
+  - Space program
+  - The Lycurgus Cup (300 AD)
+  - Antikythera Mechanism (200-80 BC) (mechanical calendar)
+
+- Why technology degrades?
+
+  - It takes a lot of energy to communicate from generation to generation,
+  - there are loses (in that communication process).
+  - Without generational transfer, civilization dies
+
+- Thesis: Software is in decline
+
+  - Collapses look slow from the inside
+  - Software has been riding on immense hardware improvement, so it *looks* like it's doing okay
+  - *We don't expect software to work anymore*
+
+- software startups are about stumbling into a market, not doing software technology well
+- Sequence of Abstraction
+
+  - Converse: Loss of Capability
+  - This is "for productivity", but productivity is approaching 0
+
+- The Argument that software is advancing us obviously false
+
+  - Robustness is declining
+  - Productivity is declining
+
+- Why is it so bad? We are adding so much complication
+
+#+end_quote
+* Non-Top
+
+- [[https://clojure.org/about/state#actors][Clojure - Values and Change: Clojure's approach to Identity and State]]
+- [[https://blog.bullettrain.co/teams-should-be-an-mvp-feature/][Teams should be an MVP feature!]]
+- [[http://joelcalifa.com/work/digitalocean-teams/][Team Accounts (How Teams was designed & added to Digital Ocean)]]
+- [[https://artori.us/arthur-s-2019-summary/][Arthur 的 2019 年总结]]
+- [[https://lethain.com/joining-calm/][Joining Calm.]]
+- [[https://blog.gitprime.com/camille-fournier-on-scaling-structure-and-growing-as-an-engineering-manager/][Camille Fournier on Scaling, Structure, and Growing as an Engineering Manager]]
+- [[https://leanpub.com/generalsystemsthinking][An Introduction to General Systems Thinking by Gerald M. Weinberg]]
+- [[https://jamesclear.com/repetitions][Why Aiming for Perfection Won’t Help You Achieve Your Goals]]
+- [[https://book.douban.com/subject/1292405/][自私的基因]]
+- [[https://book.douban.com/subject/26949210/][如果没有今天，明天会不会有昨天？]]
+- [[https://www.monterail.com/blog/famous-companies-using-elixir][Six Famous Companies Using Elixir—And Why They Made the Switch]]
+- [[https://underjord.io/why-am-i-still-excited-about-elixir.html][Why am I still excited about Elixir? - Underjord]]
+- [[https://stephenbussey.com/2019/12/30/verifying-queries-with-ecto-s-prepare_query.html][Stephen Bussey - Verifying Queries with Ecto's prepare_query Callback]]
+- [[https://moboudra.com/whistle-interactive-web-apps-with-elixir/][Introducing Whistle, a different approach to building interactive web apps in Elixir]]
+- [[https://github.com/actions/setup-elixir][actions/setup-elixir: Set up your GitHub Actions workflow with OTP and Elixir]]
+- [[https://pl-rants.net/posts/compile-to-closures/][Compiling to Closures · pl-rants]]
+- [[https://gist.github.com/wojtekmach/4e04cbda82ba88af3f84c44ec746b7ca][import2alias.exs]]
+- [[https://gist.github.com/devonestes/90e966050f9c70f544c02f5e25afe013][Further refactoring of a with statement]]
+- [[https://keathley.io/blog/reusable-libraries.html][Reusable Elixir Libraries]]
+- [[https://lethain.com/share-stories-not-advice/][Share stories, not advice.]]
+- [[https://www.ituring.com.cn/article/118072][一位匠人的中州韵——专访Rime输入法作者佛振（图灵访谈）-图灵社区]]
+- [[https://blog.aaronbieber.com/2020/01/30/is-windows-tolerable-in-2020.html][Is Windows Tolerable in 2020? - The Chronicle]]
+- [[https://timingapp.com/blog/why-you-should-schedule-breaks-into-your-day/][How to Schedule Breaks Into Your Workday]]
+- [[https://www.theguardian.com/lifeandstyle/2020/jan/01/surprising-psychology-behind-being-perpetually-late][Beat the clock: the surprising psychology behind being perpetually late - Life and style - The Guardian]]
+- [[https://blog.acolyer.org/2020/01/08/ironies-of-automation/][Ironies of automation – the morning paper]]
+- [[https://mp.weixin.qq.com/s/R-4E_r_pPBMmVTH9TVGFWw][Tubi 远程办公实践指南]]
+- [[https://build.affinity.co/engineering-onboarding-at-affinity-67d7741f25b6][Designing Engineer Onboarding at Affinity - Affinity]]
+- [[https://product.hubspot.com/blog/building-products-across-multiple-teams][Building Products Across Multiple Teams]]
+- [[https://mp.weixin.qq.com/s/rGvA5N0c22N7t97V0E8hUg?][【粉丝会回顾】第一届HHKB中国粉丝大会圆满结束]]
+- [[https://towardsdatascience.com/20-predictions-about-software-development-trends-in-2020-afb8b110d9a0][20 Predictions about Software Development trends in 2020]]
+- [[https://www.firehydrant.io/blog/how-firehydrant-creates-data-in-rails/][How FireHydrant Creates Data in Rails - FireHydrant]]
+- [[https://theawesomer.com/zelda-the-blood-moon/558784/]["Zelda: The Blood Moon" Is an Epic Fan Film That Envisions Link as an Old Man]]
+- [[https://www.bilibili.com/video/av39404181?from=search&seid=12517644901633173849][存在即是传奇的游戏！《任天堂明星大乱斗特别版》鉴赏【就知道玩游戏45】_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili]]

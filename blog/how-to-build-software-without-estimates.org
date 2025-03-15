@@ -1,0 +1,63 @@
+#+TITLE: How to Build Software Without Estimates
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-10-09]
+#+URI:         blog/2019/10/09/how-to-build-software-without-estimates/index.html
+#+TAGS:        Software Engineering, Communication
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Do you know how much time you need to brush your teeth tomorrow? I do: 4 minutes. I can give this estimation with confidence because it's based on my records from the past three years.
+
+[[https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/f6aa7c3bcdc8c8033fc4aa9de8e42ee6a48e5763/assets/brush_teeth_logbook.png]]
+
+But estimating in software is hard.
+
+I was once asked how long it would take to extract all the configurations in a codebase to an yaml file. I said "I just need to write a grep script to do that. So two days, at most!" Guess what happened next? I spent *two months* on this refactoring task.
+
+* Why is estimating in software hard?
+
+So why is estimating software features harder than estimating brushing teeth? The answer is simple: because predicting the future is hard.
+
+But we can learn from our past, just record all the time spent on every feature! Yes, our past experience can help a lot, but only when we are estimating how long it would take to finish a repetitive task, like brushing teeth.
+
+Building software is more complicated than brushing teeth. In particular, every software is new and [[https://www.jrothman.com/mpd/project-management/2013/10/why-do-we-estimate-anyway/][we have not built   this
+software before]] (if not, we would extract it as a library or framework). So every estimate we make involves some future predictions. And these future predictions can be inaccurate.[fn:1]
+
+* Shipping values is the key
+
+So how to build software without estimates? Remember, estimate is about predicting the future, and [[https://www.goodreads.com/quotes/328848-the-best-way-to-predict-your-future-is-to-create]["the best way to predict the future
+is to create it"]]. *Focus on shipping values* , which is the only way we create the future for our software.
+
+** Manage risks (a.k.a. Shape Up your ideas)
+
+To ship values, we need a tool for managing potential risks. Without estimates as a gateway to talk about risks, how do we manage risks?
+
+Let's set a deadline first, and bet on tasks that seem to be feasible within this time range. Then keep reducing risks that may prevent us shipping before the deadline. This is what [[https://basecamp.com/shapeup][Shape Up]] means to Basecamp. (And I also wrote a post about the same idea before: [[https://dsdshcym.github.io/blog/2019/05/27/estimating-is-hard-lets-cut-scope/][Estimating is Hard, Let's Cut Scope!]])
+
+Basically, it reverts the estimation process.
+
+- When estimating, we have a fix design/spec, then we estimate how long it would take.
+- When shaping up, we fix the deadline, then we find a solution that can fit into the time range.
+
+Why it works better than time estimations? For every problem, we have infinite possible solutions. While time is equal to everyone, no one can earn back another second. So the scope of the solution is more flexible than time. We can and should cut the scope if we know we are not gonna make it. With scopes reduced, our risks are reduced too. On the other hand, estimating has this natural assumption that the scope is fixed, and should not be modified (though it's often expanded). Then we can't manage risks after an estimate is given.
+
+** Help stakeholders get rid of estimates
+
+But if you are working with someone who is used to asking for estimations and you can't transfer to the Shape Up method, you need to help her to shift her mindset. You have two powerful tools to do that.
+
+1. Build trust with your communication skills.
+2. Ship values steadily with your coding skills.
+
+[[http://blog.hut8labs.com/no-deadlines-for-you.html][This article from Dan Milstein]] uses a real-world example to show what good communication skills look like.
+
+The key idea is that we can build trust with the business people by understanding the real business value/problem behind a proposed solution. Sounds familiar? It's the same idea of Shape Up or Cut Scopes. It's also a key idea from [[https://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/][Nonviolent Communication]]: *asking for what they really want and be creative about the solution* .
+
+In order to know their real needs, we need to communicate it in a skillful way. The most important skill is echoing back what others just said. [[https://www.google.com/search?client=firefox-b-d&q=ampp+crucial+conversations][The Ask, Mirror, Paraphrase, or Prime (AMPP) method]] from [[https://www.amazon.com/Crucial-Conversations-Talking-Stakes-Second/dp/1469266822][Crucial Conversations]] taught me how to do it well.
+
+After this trust is built, we can focus on shipping values steadily. As long as we ship new features/bug fixes every day, every week, the stakeholder won't ask us for estimates anymore. How to do that? Well, you need engineering practices like automated testing, continuous integration, and so on. But that's a topic for another day.
+
+* Footnotes
+[fn:1]
+
+Since our estimations are so inaccurate, some says "we don't trust the estimate result, it doesn't matter if you need 1 hour or 1 week. We use estimate point like Small, Large, Extra Large. And the goal is to make sure everyone understands the risk equally. If one estimates XL but I estimate S, then we need to talk." I don't believe in this idea. If we need to know the potential risks, just ask for them! Plus, different people hold different understandings of S, L, XL, so good luck making sure everyone uses them equally beforehand.

@@ -1,0 +1,328 @@
+#+TITLE: Clippings of 2019 Jun
+* Table of Contents
+
+- [[#org19a830d][Services are Not a Silver Bullet]]
+- [[#orgfd375e1][In Pursuit of Production Minimalism — Brandur Leach]]
+- [[#org99790b2][Is High Quality Software Worth the Cost?]]
+- [[#org03023ff][How to run an effective meeting: avoid process performances — Quartz at Work]]
+- [[#org17b1a88][GeePaw Hill on Twitter: " "]]
+- [[#org1c649a8][Secure Early Wins in the First 3 Months – New Tech Leader Series - kate{mats}]]
+- [[#orge6ea9b2][OKRs seem like the stupidest idea ever : TechLeader]]
+- [[#org2325a44][Leveling Up - Taking your engineering & operations role to the next level - YouTube]]
+
+* [[https://thoughtbot.com/blog/services-are-not-a-silver-bullet][Services are Not a Silver Bullet]]
+#+begin_quote
+
+- What (seemingly innocuous) process problems get cited most often as reasons why a company wants to move to a service-oriented architecture?
+
+  - “It takes a lot longer to add new features because there’s so much code.”
+  - “The codebase is so large that even code review takes a long time when we add new features.”
+  - “A small change I made introduced an odd bug in a totally unrelated area of the application.”
+  - “The code is so complex that our test suite takes hours to run.”
+
+- In practice, this is not easy. It requires a level of rigor that many teams might not be accustomed to, and in frameworks like Rails, the easiest thing to do might be to modify a value in session or update a record directly without giving it much thought. Over time, dependencies begin to bleed into one another and the result is a tangled mess.
+- Work against this entropy by considering how areas of the application are meant to interact, and write software to streamline these paths of communication.
+
+#+end_quote
+
+"Do we need to migrate to technology X or not?" is an evergreen topic in software development. And microservices (or service-oriented architecture, SOA) is a typical hyped example of "technology X".
+
+And the answer is as always: "It depends." It depends on your own context. So unless you've already finished your analysis and come to the conclusion that microservices can solve the problems you are facing, I would not recommend you to try it.
+
+P.S. I found this article when I was listening to an episode of the Bike Shed: [[http://bikeshed.fm/197][197: Don't Go Chasing Waterfalls - The Bike Shed]]. And I remembered they've talked about similar topics for more than once. Here is another one that I like:
+
+#+begin_quote
+
+- microservice is a joke: trying to solve an organization/culture problem with a technical solution
+
+#+end_quote
+
+-- from [[http://bikeshed.fm/203][203: A Blessed Monkeypatch (Eileen M. Uchitelle) - The Bike Shed]]
+
+* [[https://brandur.org/minimalism][In Pursuit of Production Minimalism — Brandur Leach]]
+#+begin_quote
+
+- Over time, technologies are added, but are rarely removed.
+- This effect is dangerous:
+
+  1. More parts means more cognitive complexity.
+  2. Nothing operates flawlessly once it hits production.
+
+     - Every component in the stack is a candidate for failure
+     - With sufficient scale, something will be failing all the time.
+
+  3. With more technologies engineers will tend to become jacks of all trades, but masters of none.
+
+- Achieve Production Minimalism through ephemeralization
+
+  - ephemeralization from [[https://www.amazon.com/Nine-Chains-Moon-Buckminster-Fuller/dp/0385011490][Nine Chains to the Moon]]
+
+    Do more and more with less and less until eventually you can do everything with nothing.
+
+  - building a stack that scales to more users and more activity while the people and infrastructure supporting it stay fixed.
+  - This is accomplished by building systems that are more robust, more automatic, and less prone to problems because the tendency to grow in complexity that’s inherent to them has been understood, harnessed, and reversed.
+  - Realistic? Probably not. Useful? Yes. *Even falling short of an incredibly ambitious goal tends to leave you somewhere good.*
+
+#+end_quote
+
+The idea of ephemeralization resonates with my current world view perfectly. I believe that we need to simplify our life, work, product, software, codebase, and you name it, by abstracting constantly so that we can do more with less. It's not easy (simple != easy), but rather extremely hard. So we need to try our best.
+
+I've been reading [[https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&qid=1525875626&sr=8-2&keywords=company+of+one&linkCode=sl1&tag=eik05-20&linkId=470605f6117f60ed70b3b4268f0e78d1][Company of One: Why Staying Small Is the Next Big
+Thing for Business]] this month. And ephemeralization is an important idea behind it as well. Given all the possible technologies we have nowadays, we can get more business outcomes without adding more to the company, to our work. Instead, we can achieve more by doing less, and focusing on improving our core product, providing more values to our existing customers.
+
+* [[https://martinfowler.com/articles/is-quality-worth-cost.html][Is High Quality Software Worth the Cost?]]
+#+begin_quote
+
+- The question assumes the common trade-off between quality and cost. This trade-off does not apply to software - that *high quality software is actually cheaper to produce.*
+- Software quality means many things. I thus divide software quality attributes into
+
+  external quality
+      such as the UI and defects that users and customers can see
+  internal quality
+      architecture that users and customers can't tell
+
+- Internal quality makes it easier to enhance software
+- Customers do care that new features come quickly
+- High quality software is cheaper to produce
+
+  - Neglecting internal quality leads to rapid build up of cruft
+  - This cruft slows down feature development
+  - Even a great team produces cruft, but by keeping internal quality high, is able to keep it under control
+  - High internal quality keeps cruft to a minimum, allowing a team to add features with less effort, time, and cost.
+
+#+end_quote
+
+A great summarize of my current understanding of software engineering. I hope I could write an article like this someday.
+
+BTW, I think the same idea can be applied to company growth as well. As it's explained in [[https://www.amazon.com/Company-One-Staying-Small-Business-ebook/dp/B078962RHQ/ref=as_li_ss_tl?ie=UTF8&qid=1525875626&sr=8-2&keywords=company+of+one&linkCode=sl1&tag=eik05-20&linkId=470605f6117f60ed70b3b4268f0e78d1][Company of One: Why Staying Small Is the
+Next Big Thing for Business]], building better product with all the resources we have now is a way of improving a company's internal quality. And just like software, only with a great internal quality, can a company last longer and become more successful.
+
+* [[https://qz.com/work/1389468/how-to-run-an-effective-meeting-avoid-process-performances/][How to run an effective meeting: avoid process performances — Quartz at Work]]
+#+begin_quote
+
+Understanding how process impacts outcome can help avoid useless meetings
+
+- understanding the outcome and keeping it in mind throughout the entire process.
+
+  - If the team isn’t focused on the outcome, than they’re just performing a process.
+  - Management is full of mechanics that could easily become process performances.
+
+    - One-on-one meetings
+    - Feedback cycles
+    - Team meetings
+    - Retrospectives
+
+  - These are not inherently useful activities
+  - *They are useful only in service of some kind of outcome.*
+  - The key is to
+
+    1. *consider the outcome as you design the process* ,
+    2. pay close attention to the behaviors that emerge as you introduce the process.
+
+       - Behaviors are the link between processes and outcomes
+       - *processes encourage behaviors that create outcomes* .
+
+- Linking process and outcome
+
+  - Good process is sometimes invisible.
+
+    - It often gets called “culture”
+    - because *the behaviors and outcomes are so much bigger than the process itself* .
+
+      - If the behaviors we encourage in standup meetings are corrosive and micro-managey, we’ll encourage people to hide their struggles behind overwork and excuses.
+      - If the behavior we create in one-on-one meetings is to diminish or judge, we’ll erode (or never build) trust.
+      - If we turn retrospectives into forums for blame, we’ll create a corrosive environment on the team.
+
+  - Process itself is only useful when it serves some kind of outcome, and that must be kept in mind from the beginning, and re-enforced in the behaviors we encourage (or discourage).
+  - As teams discuss process, or leaders introduce it, it’s important to talk about what purpose the process is supposed to serve, including the underlying problems or desired outcomes it is supposed to address.
+  - Then we need to be willing to review and adjust as we see what happens when the theory meets reality—a process that is faster and easier with the constant of an outcome in mind.
+
+#+end_quote
+#+begin_quote
+
+TFW you read a blog post that says exactly the same topic as you wrote yesterday 🤣🤣🤣[[https://t.co/u6AeyHRQWS][https://t.co/u6AeyHRQWS]] [[https://t.co/Y1vMUfte14][https://t.co/Y1vMUfte14]]
+
+— Yiming Chen (@dsdshcym) [[https://twitter.com/dsdshcym/status/1138410957313495045?ref_src=twsrc%5Etfw][June 11, 2019]]#+end_quote
+
+Only one day after I published [[https://dsdshcym.github.io/clipping/2019/06/10/say-no-to-processes/][Say NO to Processes]], I read this article. And it advocated basically the same idea: *Process itself is only useful when it serves some kind of outcome* .
+
+And if you want to know more about how I want to arrange a meeting, you can check this article I wrote: [[https://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management/][Similarities between TDD and
+Management - dsdshome]]
+
+* [[https://twitter.com/GeePawHill/status/1141046100348067840][GeePaw Hill on Twitter: " "]]
+#+begin_quote
+
+Yes. And we say "sometimes", but in fact it's far more common than a naive take would have it. My motto is "create experiences, not reasons". [[https://t.co/u7rLEVmQZ1][https://t.co/u7rLEVmQZ1]]
+
+— GeePaw Hill (@GeePawHill) [[https://twitter.com/GeePawHill/status/1141046100348067840?ref_src=twsrc%5Etfw][June 18, 2019]]#+end_quote
+
+I can definitely resonate with this motto after several failed attempts to advocate testing, TDD or code reviews to other developers in my team. Most of the time, it's not enough to give reasons for a transition, even if these reasons are logically perfect.
+
+The most efficient way I found is to:
+
+1. Do it by yourself first and set an example.
+2. Do it with others together and create experiences for him/her.
+
+* [[http://katemats.com/secure-early-wins-tech-leader-series/][Secure Early Wins in the First 3 Months – New Tech Leader Series - kate{mats}]]
+#+begin_quote
+
+- Your beginning impressions will set the tone for the relationships, culture, and environment for the future in this company and role – so be sure you make them good ones!
+- In order to the set the right tone and get started on the best path, it is key to secure early wins.
+
+  1. Understand the state of the company and organization
+  2. Come up with a plan
+
+- Regardless of your approach though, focus on showing some results and progress within the first 2-3 months on any time. It will help make sure you set yourself up as a leader for your tenure in that role.
+
+#+end_quote
+
+It can be extremely hard to successfully join a team as a leader.
+
+This article gives some useful tasks that you can work on to secure some early wins. From my experience of working on hiring and training, they are not easy, but they are super useful. I'd highly recommend them if you also just started your leadership journey as well.
+
+* [[https://www.reddit.com/r/TechLeader/comments/brphrq/okrs_seem_like_the_stupidest_idea_ever/][OKRs seem like the stupidest idea ever : TechLeader]]
+#+begin_quote
+
+- OKRs, and many other frameworks are just a reframe around a very old and basic concept.
+
+  1. What are your goals,
+  2. How will you know you have hit them,
+  3. We should check in on that periodically.
+
+- The point of frameworks shouldn't be process, the point should be *common tools that provide a platform for clearly communicating intent.*
+- OKRs are a great tool, but like any great tool, *there is a time, place, and manner in which to use it.* Wielded improperly, people suffer.
+
+#+end_quote
+
+I've been [[https://dsdshcym.github.io/clipping/2019/05/07/clippings-from-measure-what-matters/][learning]] and [[https://dsdshcym.github.io/blog/2019/05/16/defining-a-mvp-by-setting-okrs/][practicing]] OKRs recently. Like any tools and processes, OKR cannot guarantee a great outcome (which is why we should [[https://dsdshcym.github.io/clipping/2019/06/10/say-no-to-processes/][Say NO to Processes]]). It all comes down to the people who are using it. To learn a process like OKR or Scrum, we really need to learn the [[https://dsdshcym.github.io/clipping/2019/04/11/values-and-practices/][values behind its practices]].
+
+I think this comment really grabs the core of OKR, it's all about knowing:
+
+1. What are your goals,
+2. How will you know you have hit them,
+3. We should check in on that periodically.
+
+* [[https://www.youtube.com/watch?v=lgxEmiMJVq4][Leveling Up - Taking your engineering & operations role to the next level - YouTube]]
+#+begin_quote
+
+Work isn't just about your outputs and contributions. Work isn't about what you do, but how you do it.
+
+1. Strategy
+
+   - Clarity
+
+     - Choosing your game (what you excite about)
+     - Breadth and depth (what you are good/bad at)
+     - Do you have a target?
+     - Charting your path
+
+   - Goals
+
+     1. Identify success
+     2. Be specific about steps
+     3. Identify obstacles
+
+        - Write If-Then (backup plans) for them
+
+     4. Plan to follow up
+
+   - Be open to change
+
+2. Game play
+
+   - Contributions
+
+     - Become indispensable to your team
+     - Full the gaps (Look for places to contribute)
+     - Do the right things
+     - [[http://katemats.com/how-to-manage-your-manager/][Managing your manager]]
+
+       1. It's your job to give your manager Status (Does your manager know what you are doing?)
+
+          - It's hard to assess performance
+
+            - Hours?
+            - LoC?
+            - Bugs?
+            - Features?
+
+          - It all comes down to Trust & Integrity
+
+       2. Build trust (Deliver on your commitments, act authentically and consistently)
+
+          - Know the timing (Write down your estimations, confidences)
+          - Do the hardest work first
+
+     - Manage your time
+     - Practice
+
+   - Coachability
+
+     - Feedback is hard. People don't volunteer giving feedback.
+     - 6 keys to receiving feedback
+
+       1. Don't be defensive
+       2. Fight the urge to jump in (just listen)
+       3. Ask for clarification
+       4. Listen for emotion
+       5. Be gracious and thankful
+       6. Change and adapt
+
+3. Teaming up
+
+   - Charisma
+
+     - Be open
+     - Bring solutions
+     - Empathy & attitude
+
+       - Think about long term
+       - See the conflict as a chance for growth
+
+   - Communication
+
+     - Improve written messages
+
+       1. Know your audience
+       2. Lead with what is important (TL;DR)
+       3. Be concise
+
+     - Make it easy to understand
+
+   - Connecting (4 keys to making people feel they are important)
+
+     1. Be present
+     2. Repeat what you heard
+     3. Ask questions
+     4. Don't interrupt
+
+   - Collaboration
+
+     - Set an example
+
+       - Influence (No one cares how much you know, until they know how much you care.)
+       - Improve relationships
+
+     - Rebuild burned bridges
+
+       - Relationships are film strips (create positive frames)
+       - Find your common ground
+       - Focus on the long term
+       - Don't give up
+
+- Summary
+
+  - 7 C's
+
+    1. Clarity
+    2. Contribution
+    3. Collaboration
+    4. Coachability
+    5. Communication
+    6. Charisma
+    7. Connection
+
+  - It all comes to *choices*
+  - You can't become who you want to be by staying who you are
+
+#+end_quote

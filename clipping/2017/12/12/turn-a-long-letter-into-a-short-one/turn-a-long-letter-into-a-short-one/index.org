@@ -1,0 +1,22 @@
+#+TITLE: Turn a long letter into a short one
+
+[[http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/][Writing code is just like writing a letter to other developers or your
+future self]].
+
+It takes time to write this letter short and abstract so it can be read easily.
+
+#+begin_quote
+
+Take the time to turn a long letter into a short one.
+
+#+end_quote
+
+-- from [[https://m.signalvnoise.com/the-majestic-monolith-29166d022228][The Majestic Monolith – Signal v. Noise]]
+
+#+begin_quote
+
+I didn't have time to write a short letter, so I wrote a long one instead.
+
+#+end_quote
+
+-- from [[https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so][Quote by Mark Twain: “I didn't have time to write a short letter, so ...”]]

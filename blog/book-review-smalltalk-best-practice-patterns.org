@@ -1,0 +1,34 @@
+#+TITLE: Book Review: Smalltalk Best Practice Patterns
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-02-24]
+#+URI:         blog/2018/02/24/book-review-smalltalk-best-practice-patterns/index.html
+#+TAGS:        Book Review, Object-Oriented, Smalltalk
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This is my short review for the book Smalltalk Best Practice Patterns. You can check the notes I took at [[http://dsdshcym.github.io/clipping/2018/02/10/clippings-from-smalltalk-best-practice-patterns/][Clippings from Smalltalk Best Practice Patterns -
+dsdshome]].
+
+To me (a Ruby/Elixir developer), this book reads more like a guide about how to write cleaner code (like Clean Code by Robert Cecil Martin).
+
+But it's not a magic book like DHH promoted[fn:1].
+
+I think the best way to use this book[fn:2] is to:
+
+1. Do a quick Inspectional Reading to know these patterns exist and when you need to use them.
+2. Write your code as usual.
+3. Check the specific pattern when you need to use it.
+
+These books are like dictionaries, you can't just read them, you need to reference it when you are practicing. And only in this way, you can understand these patterns better.
+
+* Footnotes
+[fn:1]
+
+Smalltalk Best Practice Patterns was listed [[https://signalvnoise.com/posts/3375-the-five-programming-books-that-meant-most-to-me][The five programming books
+that meant most to me (DHH) – Signal v. Noise]]
+
+[fn:2]
+
+And other reference books like this, e.g. [[http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/][Refactoring: Improving the
+Design of Existing Code]]

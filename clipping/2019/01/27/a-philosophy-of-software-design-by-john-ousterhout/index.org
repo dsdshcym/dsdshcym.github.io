@@ -1,0 +1,178 @@
+#+TITLE: "A Philosophy of Software Design" by John Ousterhout
+#+begin_quote
+
+- *Decomposition* is the single most important concept for software design
+- *Practice* is the only way to become a good software designer
+
+  - Difference between 10x and 1x
+
+- What are the Secrets (for good design)?
+
+  - A few overall concepts:
+
+    - Working code isn't enough: must minimize complexity
+    - Complexity comes from dependencies and obscurity
+    - Strategic vs. tactical programming
+    - Classes should be deep
+    - General-purpose classes are deeper
+    - New layer, new abstraction
+    - Comments should describe things that are not obvious from the code
+    - Define errors out of existence
+    - Pull complexity downwards
+
+  - Most constructive in the context of code reviews (too abstract if given upfront)
+  - Course is more about red flags than recipes
+
+- Classes should be deep
+
+  - Information hiding (Reformulation of classic paper [[https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf][On the Criteria To Be Used in
+Decomposing Systems into Modules]])
+  - Class
+
+    - Interface
+
+      - Everything that must be known to users
+      - Seen as cost
+
+    - Implementation
+
+      - Useful functionality provided by class
+      - Seen as benefit
+
+  - Deep Class
+
+    - Great benefit (deep functionality)
+    - Low cost (simple interface)
+
+  - Can be applied to anything that has Interface/Implementation
+
+    - Methods/Functions
+    - Interface
+
+  - Classitis
+
+    - People create too many shallow classes/methods because they were taught "classes and methods should be *small* "
+    - Length is not the issue, it's abstraction
+
+  - A Deep Interface
+
+    - Unix file I/O
+    - Hidden below the interface
+
+      - On-disk representation, disk block allocation
+      - Directory management, path lookup
+      - Permission management
+      - Disk scheduling
+      - Block caching
+      - Device independence
+
+- Define Errors Out of Existence
+
+  - Exceptions are a huge source of complexity
+  - Common wisdom (defensive): detect and throw as many errors as possible
+  - Better approach: define semantics to eliminate exceptions
+  - Overall goal: *minimize the number of places where exceptions must be handled*
+  - Examples
+
+    - File deletions (Windows v.s. Unix)
+    - substrings (out of range)
+
+  - It's really hard to keep people from making mistakes
+
+    - *When you try to build a system to keep people from making mistakes, you'll add tons of extra complexities*
+
+  - When to raise an exception
+
+    - If you fundamentally can't carry out your contract with your caller
+    - If you can't implement your interface
+
+  - A lot of software design is *figuring out what matters and what doesn't matter*
+
+    - Ideally, make as little matter as possible
+    - as little dependencies as possible
+
+  - Exceptions vs Return values
+
+    - *Exceptions provide the most value when you throw then farthest*
+    - Exceptions all have clunky syntax
+
+  - Crashing is fine for some programs
+
+- Tactical vs. Strategic Programming
+
+  - Tactical programming
+
+    - Goal: get next feature/bug fix working ASAP
+    - Result: bad design, high complexity
+    - Complexity is incremental
+    - Working code isn't enough
+    - ([[https://ronjeffries.com/xprog/articles/refactoring-not-on-the-backlog/][Refactoring -- Not on the backlog! -> Incremental Refactoring]])
+
+  - Strategic programming
+
+    - Goal: produce a great design
+    - Simplify future development
+    - Minimize complexity
+    - Must sweat the small stuff ( *zero tolerance* )
+
+  - Investment mindset
+
+    - Take extra time today
+    - Pays back in the long run (it always pays back)
+
+  - How much to invest?
+
+    - Most startups are totally tactical
+
+      - Pressure to get first products out quickly ("We can clean this up later")
+      - Code base quickly turns to spaghetti
+      - Extremely difficult/expensive to repair damage
+
+    - Facebook: "Move fast and break things"
+
+      - Empowered developers
+      - Code base notoriously incomprehensible/unstable
+      - Eventually changed to "Move quickly with solid infrastructure"
+
+    - Can succeed with strong design culture: Google and VMware
+
+      - Attracted best engineers
+
+    - Make continual small investments: 10-20% overhead
+    - When writing new code
+
+      - Careful design
+      - Good documentation
+
+    - When changing existing code
+
+      - Always find something to improve
+      - Don't settle for fewest modified lines of code
+      - Goal: *after change, system is the way it would have been if designed that way from the start*
+
+- Conclusion
+
+  - It is possible to teach software design But not currently scalable
+  - Principles gradually emerging
+  - Long-term goal: increase design awareness in the software community
+  - Can we agree on a set of software design principles?
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=bmSAYlu0NcY][John Ousterhout: "A Philosophy of Software Design" - Talks at Google - YouTube]]
+
+- The concept of "Deep Class" from this talk reminds me of [[http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi
+Metz's Rules for OOP]].
+
+  By following heuristics like *a class can be no longer than 100 lines of code* , we push our code to a "deeper" structure. And that's why these rules are so useful.
+
+- And the book A Philosophy of Software Design is now available as a Kindle ebook on Amazon. I'm planning to read it, and I think you should do so as well.
+
+#+begin_quote
+
+[[https://twitter.com/JohnOusterhout/status/1088487517936992256][John Ousterhout on Twitter: "I'm excited to announce that #APOSD is
+now available as a Kindle ebook on Amazon. This is a new version
+(1.01) as well as a new format: no major changes from 1.0, but several
+wording improvements, clarifications, and typo fixes...."]]
+
+#+end_quote

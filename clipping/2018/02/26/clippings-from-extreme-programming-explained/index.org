@@ -1,0 +1,844 @@
+#+TITLE: Clippings from Extreme Programming Explained
+* Chapter 1. What is XP?
+
+- XP addresses both technique and good relationships for you to be successful
+
+  - Good relationships
+
+    - The more humanely I treated myself and others, the more productive we all became
+    - XP is an attempt to reconcile humanity and productivity
+
+  - Technique
+
+    - Technique supports trust relationships
+
+      - If you can accurately estimate your work, deliver quality the first time, and create rapid feedback loops; then you can be a trustworthy partner.
+
+    - XP demands that participants learn a high level of technique in service of the team's goals
+
+- XP can be described this way
+
+  Lightweight
+      only do what you need to do to creat value for the customer
+  A methodology based on addressing constraints in software development
+      but different team does XP differently
+  Can work with teams of any size
+      the values and principles behind XP are applicable at any scale
+  Adapts to vague or rapidly changing requirements
+
+- XP is a software development discipline that addresses risk at all levels of the development process.
+- What is XP?
+
+  - XP is giving up old, ineffective technical and social habits in favor of new ones that work.
+  - XP is fully appreciating yourself for total effort today.
+  - XP is striving to do better tomorrow.
+  - XP is evaluating yourself by your contribution to the team's shared goals.
+  - XP is asking to get some of your human needs met through software development.
+
+* Section 1: Exploring XP [12/15]
+** Chapter 2. Learning to Drive
+#+begin_quote
+
+"Driving is not about getting the car going in the right direction. Driving is about constantly paying attention, making a little correction this way, a little correction that way."
+
+#+end_quote
+
+- The paradigm for XP
+
+  1. Stay aware
+  2. Adapt
+  3. Change
+
+- The problem isn't change, because change is going to happen; the problem, rather, is our inability to cope with change.
+- driving metaphor
+
+  1. Customers drive the content of the system
+
+     - But customers don't usually know exactly what the software should do
+
+  2. The whole team drives the development process
+
+     - As development continues, the team becomes aware of which of their practices enhance and which of their practices detract from their goals.
+
+** Chapter 3. Values, Principles, and Practices
+
+- Values, Principles, and Practices
+
+  1. Knowledge and understanding practices
+
+     - Practices are clear and objective
+     - Practices give you a place to start (before you understand software development in a deeper way)
+
+  2. Knowledge and understanding values
+
+     - Values are the roots of the things we like and don't like in a situation
+     - Values are the large-scale criteria we use to judge what we see, think, and do
+     - Values bring purpose to practices.
+     - Practices are evidence of values.
+
+       - Communicating in the most effective way I can shows I value communication
+
+     - Practices bring accountability to values
+
+       - Practices are clear
+       - Values are fuzzy
+
+  3. Principles bridge the gap between values and practices
+
+- How to be an extreme programmer
+
+  1. Program in the extreme style
+  2. Participate in the community of people who share these values and at least some of your practices
+  3. Share what you know with others
+
+** Chapter 4. Values
+
+- different people values different things
+- XP embraces 5 values to guide development
+
+  1. Communication
+
+     - matters the most
+     - motion without communicating is not progress
+     - ask if the problem was caused by a lack of communication
+     - communication is important for creating a sense of team and effective cooperation
+
+  2. Simplicity
+
+     - Ask "What is the simplest thing that could possibly work?"
+     - Simplicity only makes sense in context
+     - The values balance and support each other
+
+       - Improving communication helps achieve simplicity by eliminating unneeded or deferrable requirements from today's concerns
+       - Achieving simplicity gives you that much less to communicate about
+
+  3. Feedback
+
+     - "Wouldn't it be easier just to do it right in the first place?" -> *Being satisfied with improvement rather than expecting instant perfection*
+
+       1. We may not know how to do it "right".
+       2. What's right for today may be wrong for tomorrow.
+       3. Doing everything "right" today might take so long that changing circumstances tomorrow invalidate today's solution before it is even finished.
+
+     - Feedback forms
+
+       - Opinions about an idea, yours or your teammates'
+       - How the code looks when you implement the idea
+       - Whether the tests were easy to write
+       - Whether the tests run
+       - How the idea works once it has been deployed
+
+     - *The sooner you know, the sooner you can adapt.*
+     - Too much feedback
+
+       - If the team is ignoring important feedback; it needs to slow down
+
+     - Connections with other values
+
+       - Feedback is a critical part of communication.
+       - Feedback also contributes to simplicity.
+       - The simpler the system, the easier it is to get feedback about it.
+
+  4. Courage
+
+     - Courage is effective action in the face of fear.
+     - Connections with other values Courage as a primary value without counterbalancing values is dangerous.
+
+       - The courage to speak truths, pleasant or unpleasant, fosters communication and trust.
+       - The courage to discard failing solutions and seek new ones encourages simplicity.
+       - The courage to seek real, concrete answers creates feedback.
+
+  5. Respect
+
+     - Respect each other
+     - Respect the project
+     - No one is intrinsically worth more than anyone else.
+
+- Others
+
+  - Your organization, your team, and you yourself may choose other values
+  - What is most important is *aligning team behavior to team values.*
+
+** Chapter 5. Principles
+
+- Why do we need principles?
+
+  - Values are too abstract to directly guide behavior
+
+- Principles that guide XP
+
+  1. Humanity
+
+     - What do people need to be good developers?
+
+       Basic safety
+           freedom from hunger, physical harm, and threats to loved ones. Fear of job loss threatens this need.
+       Accomplishment
+           the opportunity and ability to contribute to their society.
+       Belonging
+           the ability to identify with a group from which they receive validation and accountability and contribute to its shared goals.
+       Growth
+           the opportunity to expand their skills and perspective.
+       Intimacy
+           the ability to understand and be understood deeply by others.
+
+     - Part of the challenge of team software development is balancing the needs of the individual with the needs of the team
+
+       - The magic of great teams is that after the team members develop trust they find that *they are free to be more themselves as a result of their work together*
+
+  2. Economics
+
+     - *Make sure what you are doing has business value, meets business goals, and serves business needs*
+     - 2 aspects of economics that affect software development
+
+       1. The time value of money
+
+          - A dollar today is worth more than a dollar tomorrow (Development is more valuable when it *earns money sooner and spends money later* )
+          - Incremental design explicitly *defers design investment until the last responsible moment* in an effort to spend money later
+          - Pay-per-use provides a way of realizing revenue from features as soon as they are deployed
+
+       2. The option value of systems and teams
+
+          - Reusable software is more valuable than non-reusable software
+          - Keep in mind the time value of money by *not investing in speculative flexibility*
+
+  3. Mutual Benefit
+
+     - *The computer business is really a people business* and maintaining working relationships is important
+     - Communication-with-the-future problem
+
+       - Extensive internal documentation is an example of violating mutual benefit
+       - XP solves it in mutually beneficial ways:
+
+         1. Automated tests
+         2. Refactor to remove accidental complexity
+         3. Choose names from a coherent and explicit set of metaphors
+
+     - Mutual benefit in XP is searching for practices that *benefit me now, me later, and my customer as well*
+
+  4. Self-Similarity
+
+     - Try copying the structure of one solution into a new context, even at different scales
+
+       - TDD at different scales
+
+     - Just because you copy a structure that works in one context doesn't mean it will work in another. It is a good place to start, though.
+
+  5. Improvement
+
+     - In software development, "perfect" is a verb, not an adjective
+
+       - No perfect process -> Perfect your process
+       - No perfect design -> Perfect your design
+       - No perfect stories -> Perfect your stories
+
+     - XP doesn't mean waiting for perfection in order to begin
+
+       1. Do the best you can today
+       2. Striving for awareness and understanding necessary to do better tomorrow
+
+     - *The key to improvement is using newfound technological efficiency to enable new, more effective social relationships*
+
+  6. Diversity
+
+     - How do you choose between two solutions?
+
+       - Two ideas about a design present an opportunity, not a problem.
+
+         1. work together on the problem
+         2. both opinions should be valued
+
+       - Resolve conflicts productively
+
+         - respecting others and maintaining myself smooths communication in times of stress
+
+  7. Reflection
+
+     - Good teams think about
+
+       1. how they are working
+       2. why they are working
+
+     - Reflection should not be limited to "official" opportunities
+     - Reflection isn't a purely intellectual exercise
+
+       1. Analyze data
+       2. Learn from your gut ("negative" emotions)
+
+     - Reflection comes after action
+
+       - Don't take reflection too far
+       - Software development has a long tradition of people so busy thinking about software development they don't have time to develop software.
+
+  8. Flow (CI/CD)
+
+     - Deliver a steady flow of valuable software by engaging in all the activities of development simultaneously.
+     - XP is biased towards *a continuous flow of activities* rather than discrete phases.
+     - The more things are deferred, the larger the chunk, the higher the risk.
+     - Resolve the problems that disrupted your flow and get back to weekly deployment as soon as you can.
+
+  9. Opportunity
+
+     - See problems as opportunities for change.
+     - Part of being extreme is consciously choosing to transform each problem into an opportunity: *an opportunity for personal growth, deepening relationships, and improved software.*
+
+  10. Redundancy
+
+      - The critical, difficult problems in software development should be solved several different ways.
+      - While redundancy can be wasteful, be careful not to remove redundancy that serves a valid purpose.
+
+  11. Failure
+
+      - Failure may not be avoidable waste.
+
+        - Failure can impart knowledge
+        - Knowledge is valuable and sometimes hard to come by.
+
+      - Fail instead of talk
+      - *When you don't know what to do though, risking failure can be the shortest, surest road to success.*
+
+  12. Quality
+
+      - Sacrificing quality is not effective as a means of control.
+
+        - Projects don't go faster by accepting lower quality. -> lowering quality standards often results in later, less predictable delivery.
+        - Projects don't go slower by demanding higher quality. -> Pushing quality higher often results in faster delivery
+
+      - Quality isn't a purely economic factor. (but also a humanity factor)
+
+        - People need to do work they are proud of.
+
+      - XP chooses *scope* (instead of quality) as the primary means of planning, tracking, and steering projects.
+      - A concern for quality is no excuse for inaction.
+
+  13. Baby Steps
+
+      - "What's the least you could do that is recognizably in the right direction?"
+      - The overhead of small steps is much less than when a team wastefully recoils from aborted big changes.
+      - Practices
+
+        - TDD
+        - CI/CD
+
+  14. Accepted Responsibility
+
+      - Responsibility cannot be assigned; it can only be accepted.
+
+- Conclusion
+
+  - The principles give you a better idea of what the practice is intended to accomplish.
+  - Understanding the principles gives you the opportunity to create practices that work in harmony with your existing practices and your overall goals.
+
+** Chapter 6. Practices
+
+- Practices need to be guided by values
+
+  - Practices should not be just a thing to do to check off a checkbox
+
+- Practices are situation dependent
+- Practices are stated as absolutes
+
+  - Make progress towards this ideal state of effective development
+
+- Applying a practice is a choice
+
+** Chapter 7. Primary Practices
+
+1. Sit Together
+
+   - Open Space
+   - *It's always a people problem*
+   - Sit together -> Communicate with all our senses
+
+2. Whole Team
+
+   - Include on the team people with all the skills and perspectives necessary for the project to succeed.
+   - People need a sense of "team"
+
+     - We belong
+     - We are in this together
+     - We support each others' work, growth, and learning
+
+   - The ideal team size from The Tipping Point
+
+     12
+         the number of people who can comfortably interact with each other in a day
+     150
+         with more than 150 people on a team, you can no longer recognize the faces of everyone on your team
+
+   - Fractional people (multiple projects per developer)
+
+     - Much time is wasted on task-switching
+     - Fractured thinking destroys the sense of "team"
+
+       - People need acceptance and belonging
+
+3. Informative Workspace
+
+   - Make your workspace about your work
+
+#+begin_src awk
+
+Put story cards on a wall
+#+end_src
+   - Provide for other human needs
+   - Big, visible charts.
+
+     - For issues that require steady progress
+     - Take the chart down if the issue is resolved
+
+4. Energized Work
+
+   - Work only as many hours as you can sustain and be productive
+   - Software development is a game of insight
+
+     - Insight comes to the prepared, rested, relaxed mind
+
+   - It's easy to remove value from a software project
+
+     - When you are tired, it's hard to recognize you're removing value
+
+5. Pair Programming
+
+   - Pair programming is a dialog between two people simultaneously programming (analyzing, designing, testing) and trying to program better
+   - Pair programmers
+
+     1. Keep each other on task
+     2. Brainstorm refinements to the system
+     3. Clarify ideas
+     4. Take initiative when their partner is stuck
+     5. Hold each other accountable to the team's practices
+
+   - Tiring but satisfying
+   - Rotate pairs frequently
+   - Pairing and Personal Space
+
+     - Personal space must be respected
+     - Individual differences must be respected
+
+6. Stories
+
+   - Plan using units of customer-visible functionality
+   - Give stories short names in addition to a short prose or graphical description
+   - Estimate stories very early in their life
+
+     - Gets everyone thinking about how to get the greatest return from the smallest investment
+     - Know your constraints
+
+       1. Cost
+       2. Intended use
+
+7. Weekly Cycle
+
+   - Weekly Meeting
+
+     1. Review last week
+     2. Plan stories for this week
+     3. Break the stories into tasks
+
+   - Write system test for this week's stories first
+   - Planning is a form of necessary waste
+
+     - Gradually reduce the percentage of time you spend planning (1 day -> 1 hour)
+
+8. Quarterly Cycle
+
+   - Quarterly planning
+
+     1. Identify bottlenecks
+     2. Initiate repairs
+     3. Plan the theme or themes for the quarter
+     4. Pick a quarter's worth of stories to address those themes
+     5. Focus on the big picture, where the project fits within the organization
+
+9. Slack
+
+   - In any plan, include some minor tasks that can be dropped if you get behind
+   - A few met commitments go a long way toward rebuilding relationships
+   - Clear, honest communication relieves tension and improves credibility
+   - Different ways of slack
+
+     1. Geek Week
+     2. 20%
+
+10. 10-minute Build
+
+    - 10 minutes includes running all of the tests
+    - Any guess about what parts of the system need to be built and what parts need to be tested introduces the risk of error
+    - *Practices should lower stress*
+
+11. Continuous Integration
+
+    - *Team programming is a divide, conquer, and integrate program*
+    - Waiting for the compiler and the tests is a natural time to communication
+
+      1. What we've just done
+      2. How we might have done it better
+
+    - Integration and build a complete product
+
+      - Continuous integration should be complete enough that the eventual first deployment of the system is no big deal.
+
+12. Test-First Programming
+
+    - Problems TDD solves
+
+      1. Scope creep
+      2. Coupling and cohesion
+      3. Trust
+      4. Rhythm (Get lost for hours when coding)
+
+    - Continuous testing (run tests on every program change)
+
+13. Incremental Design
+
+    - XP teams work hard to create conditions under which the cost of changing the software doesn't rise catastrophically
+    - XP teams are confident in their ability to adapt the design to future requirements
+    - Keep the design investment in proportion to the needs of the system so far
+    - Incremental Design -> *The most effective time to design is in the light of experience* (design as close to when it is used as possible)
+
+** Chapter 8. Getting Started
+
+- How to adapt XP?
+
+  - Change begins with awareness
+  - Metrics can lead to awareness
+  - Change always starts at home
+
+    - *The only person you can actually change is yourself*
+
+** Chapter 9. Corollary Practices
+
+Corollary Practices are difficult or dangerous to implement before completing the preliminary work of the primary practices.
+
+1. Real Customer Involvement
+
+   - *Software reflects the organization that builds it*
+
+2. Incremental Deployment
+
+   - *When replacing a legacy system, gradually take over its workload beginning very early in the project*
+
+     1. Find a little piece of functionality or a limited data set you can handle right away
+     2. Deploy it
+     3. Run both programs in parallel (price you pay for insurance)
+
+3. Team Continuity
+
+   - Keep effective teams together
+   - Value in software is created not just by what people know and do, but also by *their relationships and what they accomplish together*
+   - Also encourage a reasonable amount of rotation -> consistently spread knowledge and experience
+
+4. Shrinking Teams
+
+   - Keep the workload constant but gradually reduce team's size (as the team grows in capability)
+
+5. Root-Cause Analysis
+
+   - Process for responding to a defect in XP:
+
+     1. Write an automated system-level test that demonstrates the defect, including the desired behaviour
+     2. Write a unit test with the smallest possible scope that also reproduces the defect
+     3. Fix the system so the unit test works
+
+        - This should fix the system test also
+        - If not, return to 2
+
+     4. Figure out why the defect was created and wasn't caught. Initiate the necessary changes to prevent this kind of defect in the future
+
+        - The Five Whys from Taiichi Ohno: *Ask five times why a problem occured*
+
+#+begin_src awk
+
+1. Why did we miss this defect?
+2. Why didn't we know?
+3. Why isn't she part of the team?
+4. Why doesn't anyone else know how?
+5. Why isn't it a management priority?
+#+end_src
+
+6. Shared Code
+
+   - Anyone on the team can improve any part of the system at any time
+
+7. Code and Tests (generated documentations)
+
+   - Maintain only the code and the tests as permanent artifacts
+   - *Customers pay for the what the system does today and what the team can make the system do tomorrow.*
+   - *The valuable decisions in software development* are
+
+     - What are we going to do?
+     - What aren't we going to do?
+     - How are we going to do what we do?
+
+8. Single Code Base
+
+   - Single branch
+
+     - Temporary branch never lives longer than a few hours
+
+   - Single repo
+
+     - *Move the variation into configuration files*
+     - *Fix the underlying design problem that is preventing you from running from a single code base*
+
+9. Daily Deployment
+
+   - *Any gap between what is on a programmer's desk and what is in production is a risk*
+   - Whatever the barrier (technical, psychological, social, or business related), working to remove it and then letting more frequent deployment come as a natural consequence will help you improve development.
+
+10. Negotiated Scope Contract
+
+    - Write contracts for software development that fix time, costs, and quality but call for an ongoing negotiation of the precise scope of the system.
+
+11. Pay-Per-Use
+
+    - charge for every time the system is used.
+    - Even if you can't implement pay-per-use, you might be able to go to a *subscription model*
+
+** Chapter 10. The Whole XP Team
+** Chapter 11. The Theory of Constraints
+
+- Find opportunities for improvement in software development by first figuring out which problems are development problems.
+
+  - XP isn't intended to solve marketing, sales, or management problems.
+  - *XP is a coherent body of values, principles, and practices for addressing software development problems.*
+
+- The Theory of Constraints: One approach to looking at the throughput of entire systems
+
+#+begin_quote
+
+*In any system there is one constraint at a time (occasionally two).*
+
+#+end_quote
+
+  - Looking for work piling up to find the bottleneck
+
+- Pull model vs Push model
+
+  - XP uses a "pull" model
+
+    1. Stories are specified in detail immediately before they are implemented.
+    2. The tests are pulled from the specifications.
+    3. The programming interface is designed to match the needs of the test.
+    4. The code is written to match the tests and the interface.
+    5. The design is refined to match the needs of the code as written.
+    6. This leads to a decision about which story to specify next.
+
+- Work is pulled through the system based on actual demand, not pushed through the system based on projected demand.
+
+** Chapter 12. Planning: Managing Scope
+
+- Planning makes goals and directions clear and explicit
+- Plans are not predictions of the future
+
+  - At best, they express everything you know today about what might happen tomorrow
+
+- *4 variables by which to manage projects*
+
+  1. Speed
+  2. Quality
+  3. Price
+  4. *Scope*
+
+- *Make scope explicit*
+
+  - We have a safe way to adapt
+  - We have a way to negotiate
+  - We have a limit to ridiculous and unnecessary demands
+
+- How to plan
+
+  1. List the items of work that may need to be done
+  2. Estimate the items
+  3. Set a budget for the planning cycle
+  4. Agree on the work that needs to be done within the budget. (As you negotiate, don't change the estimates or the budget)
+
+- How to estimate
+
+  - Imagine, given everything you know about similar stories, how many hours or days it will take a pair to complete the story.
+  - Estimates based on experience are more accurate.
+  - Adjust estimations when you get more feedback
+  - More time at the desk does not equal increased productivity for creative work.
+  - "yesterday's weather" by Martin Fowler
+
+#+begin_quote
+
+    Plan in any given week for exactly as much work as you actually accomplished in the previous week.
+
+#+end_quote
+
+- *Write stories on index cards and put the cards on a prominent wall.*
+
+  - Nobody believes stories more because they are on a computer.
+
+** Chapter 13. Testing: Early, Often, and Automated   TDD
+
+- Defects destroy the trust required for effective software development
+
+  - *Without trust, people spend much of their time defending themselves against the possibility that someone else may have made a mistake*
+
+- Defects are unavoidable
+- Two goals of reducing the occurrence of defects
+
+  1. Reduce it to an economically sustainable level
+  2. Reduce it to a level where trust can reasonably grow on the team
+
+- Two principles to increase the cost-effectiveness of testing
+
+  1. Double-checking
+
+     - Software testing
+
+  2. The Defect Cost Increase (DCI)
+
+     - *the sooner you find a defect, the cheaper it is to fix*
+     - DCI -> Software development styles with long feedback loops will be expensive and have many residual defects
+     - Automated testing helps fix defects sooner and more cheaply
+
+- Several implications to more frequent testing
+
+  1. The same people who make the mistakes have to write the tests
+
+     - If the time interval between creating and detecting a defect is months, it's possible that those two activities belong to different people
+     - If the gap is minutes, the communication cost is much lower
+
+  2. Tests must be automated
+
+     - Automated tests break the stress cycle
+
+       With manual testing
+           the more stressed the team, the more mistakes the team members make in both coding and testing
+       With automated testing
+           running the tests themselves is a stress-reliever
+
+- Different perspectives
+
+  - Double-checking works best when two distinct thought processes arrive at the same answer (-> it's dangerous to copy the results of a calculation as its expected value)
+  - Two sets of tests in XP
+
+    - System tests
+
+      - written from the perspective of the programmers
+      - Testing the operation of the system as a whole
+
+    - Unit tests
+
+      - written from the perspective of the customers or users
+      - Testing the system's components exhaustively
+
+- *Beta testing is a symptom of weak testing practices and poor communication with customers*
+- *The physical metaphor behind the word "testing" is misleading*
+
+  - Because software is a virtual world, *"testing" before or after makes equal sense*
+
+- Tests can provide a measure of progress
+- Testing is as important as programming
+
+  1. Writing and running the tests gives the team a chance to do work it can be proud of
+  2. Running tests gives the team a valid basis for confidence as it moves quickly in unanticipated directions
+
+e.g. 3. Tests contribute value to development by strengthening the trust relationships within the team and with customers.
+
+** Chapter 14. Designing: The Value of Time
+
+*Technical, Economic, and human reasons for embracing incremental design*
+
+- Incremental Design
+
+  - XP pushes incrementalism of design to its limit
+  - Software elements can be replicated endlessly at no cost
+
+#+begin_quote
+
+    In ten years the pendulum has swung from 'design everything' to 'design nothing.' But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF).
+
+#+end_quote
+  - We are often writing applications for the first time
+
+    - There is always a better way to design the software
+    - There is an art to designing just enough to get feedback, and then using that feed back to improve the design enough to get the next round of feedback
+
+  - There are usually many designs that are good enough for the software to be successful.
+
+    - Design quality doesn't ensure success,
+    - But design failure can ensure failure.
+
+- Permaculture
+
+  - Think of design as *a system of beneficially related elements*
+
+    Elements
+        systems can't be comprehended only as wholes
+    Related
+        elements in a design don't stand alone but rather come together in relation to each other
+    Beneficially
+        the relationships can strengthen the elements, making each more powerful than it would be alone
+
+- Once and only Once (DRY)
+- As you modify code, clean up a little. (The Boy Scout Rule - What Is Clean Code? - InformIT)
+- *The shift to XP-style design is a shift in the timing of design decisions.*
+
+  - *Design is deferred until it can be made in the light of experience and the decisions can be used immediately.* (Carlo Pescio: Delaying Decisions)
+  - Allows team to
+
+    - Deploy software sooner.
+    - Make decisions with certainty.
+    - Avoid living with bad decisions.
+    - Maintain the pace of development as the original design assumptions are superseded.
+
+*** Simplicity
+
+Appropriate for the intended audience.
+    Readability
+Communicative
+    Readability
+Factored
+    DRY
+Minimal
+    Fewest elements possible
+
+** Chapter 15. Scaling XP
+** Chapter 16. Interview
+* Section 2: Philosophy of XP [5/7]
+
+How I see some of the ideas from other domains that connect to XP
+
+** Chapter 17. Creation Story
+
+- The basics of XP
+
+#+begin_quote
+
+  An always deployable system to which features, chosen by the customer, are added and automatically tested on a fixed heartbeat
+
+#+end_quote
+
+** Chapter 18. Taylorism and Software
+** Chapter 21. Purity
+
+- *Are the team members doing all the things that make sense to them in a sustainable way?*
+- Saying that your team is extreme sets other people's expectations for your style of communication, your development practices, and the speed and quality of your results.
+
+*** Certification and Accreditation
+** Chapter 22. Offshore Development
+** Chapter 23. The Timeless Way of Programming
+
+- *Software development can't be "the programmers and a bunch of other people" if the goal is excellence.*
+- Harmony and balance are the aims of XP.
+- XP relies on the growth of powerful programmers; able to quickly estimate, implement, and deploy reliable software.
+
+** Chapter 24. Community and XP
+
+- Community is important because everyone needs support sometimes.
+- Communities can also be a place to study together.
+- Communities also provide accountability, a place to be held to your word.
+- Communities are a place for questioning and doubt.
+
+** Chapter 25. Conclusion
+
+- *There is no improvement without first improving myself.*
+- The key to XP is integrity, acting in harmony with my true values.
+- With XP, I work to become worthy of respect and offer respect to others.
+- *XP values are worth putting into practice in the business world.*
+- If you are looking for a world in which you can be comfortable, live in balance and do good business; XP is a way of thinking about and acting on your ideals.

@@ -1,0 +1,31 @@
+#+TITLE: Show PR-like commits log in Magit
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-08-30]
+#+URI:         blog/2017/08/30/show-pr-like-commits-log-in-magit/index.html
+#+TAGS:        Emacs, Magit, Git
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* What's PR like commits log?
+
+When we submit a new merge request on GitLab (or a pull request on GitHub, the UI is alike), it will show us a nice commits log only contains commits introduced in the Source Branch.
+
+It's extremely helpful for code review, since it keeps us focused on the new commits and nothing else.
+
+* How to get the same results in Magit?
+
+It would be great if we can do the same thing in Magit so that we can use the same review workflow on local.
+
+Magit does not provide an action to do this directly in magit-log-popup.
+
+But since GitLab, GitHub, Magit are just simple wrappers for Git commands, it turns out to be pretty simple to get the same result.
+
+- Git command for showing the new commits
+
+#+begin_src awk
+git log <target_branch>..<source_branch>
+#+end_src
+- Magit
+
+  1. Call magit-log or invoke Log other in magit-log-popup
+  2. Type in <target_branch>..<source_branch>

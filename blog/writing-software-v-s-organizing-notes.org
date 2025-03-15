@@ -1,0 +1,152 @@
+#+TITLE: Writing Software v.s. Organizing Notes
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-01-18]
+#+URI:         blog/2019/01/18/writing-software-v-s-organizing-notes/index.html
+#+TAGS:        Org, Clean Code
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+[[https://twitter.com/searls/status/1075802549796638721][Justin Searls on Twitter: "Most people imagine the difficulty of
+software development as knowing how to technically accomplish
+something, but for me it's almost entirely about organizing
+information thoughtfully and consistently."]]
+
+#+end_quote
+
+I think this statement is more than correct in our industry. The hard part of writing good software is how to organize all the information about our business domain in our codebases.
+
+Because we are all humans, and we can't put all the information about our application in our head. We need to split it into pieces and organize them in somewhere. So that they can be more understandable to us.
+
+* Writing Software
+
+As many developers have said, [[https://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code/]["our software is a place for us to
+live"]]. Most of the development work we do, from designing to refactoring, is to make our codebase more organized. So that we can have a better life in this cleaner codebase.
+
+This is especially true in the information-technology[fn:1] sub-domain.
+
+- Rails was built exactly for this sub-domain.[fn:2]
+
+  - Rails uses MVC models to organize information about models/views/controllers in different places.
+  - Rails uses ActiveRecord for modeling database related concerns. So that
+
+    1. These concerns are well organized.
+    2. The concerns about how a specific database works are hidden behind the ActiveRecord layer, and we as application developers don't have to worry about them.
+
+  - And so on and so on.
+
+- Even for more serious areas, this idea about organizing information thoughtfully is also important.
+
+  - Data structures and algorithms are all about extracting information about the data out.
+  - Libraries are all about extracting domain unrelated information out.
+  - A well organized codebase is a prerequisite for improving performance.[fn:3]
+  - Large scale applications need [[https://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design/][Domain-Driven Design]] to help organize info.
+
+Based on the assumption that building software is almost entirely about organizing information, I did a comparison between software development and how I organize my notes using Org mode.
+
+* Organizing Notes
+
+After 3 years of accumulating, I now have about 18,686 entries spread in my Org files. And I can navigate between them efficiently.
+
+- Here is how I organize them:
+
+  1. I have a top folder (Org) in my home directory, storing all my notes files.
+  2. In this Org directory, I have several .org files, each contains a separate topic.
+
+#+begin_src awk
+tree ~/Org -L 1
+#+end_src
+#+begin_src awk
+
+~/Org
+.
+├── blogs.org
+├── contacts.org
+├── inbox-mobile.org
+├── inbox.org
+├── journal.org
+├── lists.org
+├── mobile-journal.org
+├── notes.org
+├── people.org
+├── personal.org
+├── resume.org
+├── review.org
+├── rss_feed.org
+├── side_projects.org
+`── work.org
+#+end_src
+  3. In every .org file, I have different levels of headings:
+
+#+begin_src awk
+* Communication                                               :Communication:
+** Meetings                                                       :Meetings:
+*** TODO A silent meeting is worth a thousand words – Square Corner Blog – Medium :Documentation:
+#+end_src
+
+     - This structure is basically an index that built from ground-zero: I can now locate this link and my notes for it by just searching for communication/meetings/ silent meeting.
+     - With this structure, I can [[http://dsdshcym.github.io/blog/2018/03/02/my-org-refile-workflow/][use ]] to refile my notes and move around between these notes very efficiently.
+     - Note that I also use tags like :Meetings:, :Documentation: to let me find common things in another way.
+
+       - Sometimes a sub heading can belong to multiple top headings. For example, this Silent Meeting article can belong to both Documentation and Meetings.
+       - In this case, I would use tags to let me connect them together.
+
+- And if we map these organization techniques to programming, we can get a perfect match:
+
+  Use folders to organize note files
+      Use applications to define boundaries.
+  Use files for different topics
+      Use contexts/sub-domains to group classes/modules and set boundaries in an application.
+  Use headings to store notes for a sub-topic
+      Use modules/classes to organize domain logic.
+  Use tags when a heading belongs to more than one headings
+      Multiple inheritance techniques in OOP.
+
+  The list can go on and go on. But I think you've got the idea about the similarities between software development and notes organizing.
+
+- That being said, there are many differences between these two activities. And they make software development much more difficult than notes organizing:
+
+  1. Notes have much more clear boundaries than software domain logic.
+
+     - Oftentimes, I take notes for a blog post or book.
+
+       - And the post/book itself is already categorized by the author/editor. I can easily see which file/heading it belongs to.
+       - Even if the post/book is not categorized, I can easily see where it should go because I've been reading similar contents for some time.
+
+     - But software doesn't work like this. Most application we work on are somehow a green field. No one out side the team can help us to define the broundry and no one in our team has the experience to split these concepts before. That's why [[https://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design/][Domain-Driven Design]] is a very useful methodology.
+
+  2. Notes are only read by myself. Code is read by all team members.
+
+     - My notes are only written for myself and read by myself. I only need to communicate the information to myself. The way I organize my notes works well for me, but may not work for others.
+     - Modern software is completely different. It requires a lot of collaborations. Our code need to be read not only by ourselves, but also for other team members. So the way we organize our code should be understood and make sense to all team members.
+
+  3. Software need to work. Notes don't.
+
+     - Though it is not as hard as organizing domain information, making software work is still very important (sometimes more important than organizing info). Our users won't care a broken piece of software is how "well-organized". And it's obviously harder to make our software work *and* well-organized at the same time.
+     - And since most developers were taught to make software work, rather than well-organized first. It's easy to be trapped to the mindset that "we only need to make it work". This mindset plus point 2 (communication overhead) makes the scenario worse.
+
+  Of course there are many other differences. But these are my top-3 reasons for why writing software is harder.
+
+* My experience
+
+After organizing my notes for 3 years, I can feel that sometimes I'm "refactoring" my notes, sometimes I'm "reorganizing" my code. The experience from notes organizing are transformed to software development, and vice versa. So I would recommend every developer to have a notebook and try to keep it organized.
+
+* Footnotes
+[fn:1]
+
+The term "information-technology" was mentioned by DHH multiple times. The last time I heard this term from him was on [[http://www.chasejarvis.com/blog/go-grain-david-heinemeier-hansson/][Go Against the
+Grain with David Heinemeier Hansson - Chase Jarvis Photography]]
+
+[fn:2]
+
+From [[http://rubyonrails.org/doctrine/][Ruby on Rails: Doctrine]]
+
+#+begin_quote
+
+I created Rails for me. To make me smile, first and foremost. Its utility was to many degrees subservient to its ability to make me enjoy my life more. To enrich my daily toil of wrangling requirements and requests for web information systems.
+
+#+end_quote
+[fn:3]
+
+[[https://drewdevault.com/2018/07/09/Simple-correct-fast.html][Simple, correct, fast: in that order - Drew DeVault’s Blog]]

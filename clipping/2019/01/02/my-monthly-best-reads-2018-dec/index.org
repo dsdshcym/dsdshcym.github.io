@@ -1,0 +1,186 @@
+#+TITLE: My Monthly Best Reads (2018 Dec)
+
+1. [[https://jaceju.net/be-a-senior-engineer/][如何才有資格稱為資深工程師 - 網站製作學習誌]]
+
+#+begin_quote
+
+   - 技术能力层面
+
+     - 对工具技术有深入的掌握度
+     - 能写出可理解可维护的程式码
+     - 选择技术的能力
+     - 软体架构分析与设计能力
+     - 图像解说能力
+     - 文件编写能力
+     - 能综观全局的能力
+     - 尝试导入对团队更好的流程
+
+   - 心理素质层面
+
+     - 真正能完成一件事的自信
+     - 不断地自我提升
+     - 临危不乱
+     - 乐于分享所知
+     - 沟通受人敬重
+     - 勇于认错、自我反省
+
+#+end_quote
+2. [[https://devrain.io/posts/using-phoenix-pubsub-to-manage-side-effects/?utm_source=elixirweekly&utm_medium=email&utm_campaign=featured][Using Phoenix.PubSub to manage side effects - DevRain]]
+
+   - [[https://github.com/DefactoSoftware/assert_async][DefactoSoftware/assert_async: Elixir library to assert in tests for async calls]]
+
+#+begin_src lua
+# insert/1 and params_for/1 are done with ExMachina
+test "handle_call of event subscribers are called with :created, the course and the actor" do
+  EventCenter.subscribe()
+
+  user = insert(:user, roles: ["roles", "that", "are", "needed"])
+
+  {:ok, %Course{} = course} = Courses.create_course(params_for(:course), user)
+
+  assert_received({:created, ^course, ^user})
+end
+
+test "create an audit after broadcasting it" do
+  start_supervised(AppName.Audits.EventSubscriber)
+  course = insert(:course, status: "draft")
+  actor = insert(:user)
+
+  EventCenter.broadcast(:updated, course, %{course | status: "published"}, actor)
+
+  assert_eventually(Repo.exists?(Audit))
+  stop_supervised(AppName.Audits.EventSubscriber)
+end
+#+end_src
+3. [[http://blog.plataformatec.com.br/2014/09/writing-assertive-code-with-elixir/][Writing assertive code with Elixir « Plataformatec Blog]]
+
+#+begin_quote
+
+   - *Polymorphism is opt-in*
+
+     - Before adding protocols to our code, we should ask if we really intend to open our function to all types.
+     - However, if we are confident we want a protocol, then we should indeed use the protocol and write a test case that guarantees our function works for at least a couple types that implement such protocol.
+
+       - Such tests are extremely important to guarantee we don’t make a different assumption somewhere in the same function.
+
+#+end_quote
+4. [[https://twitter.com/david_perell/status/1071836429058232320][ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ on Twitter: "Thread! Productivity tricks that work for me..."]]
+
+#+begin_quote
+
+   - I like @sama's approach to prioritization:
+
+     1. Make sure to get the important stuff done
+     2. Don't waste time on stupid things
+     3. Make a lot of lists (Make lists of what you want to achieve each year, each month, and each day.)
+
+#+end_quote
+5. [[https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript][Phoenix.LiveView: Interactive, Real-Time Apps. No Need to Write JavaScript. - DockYard]]
+
+   - 35 LOC for autocomplete
+
+#+begin_src ruby
+defmodule DemoWeb.SearchView do
+  use Phoenix.LiveView
+
+  def render(assigns) do
+    ~L"""
+    <form phx-change="suggest" phx-submit="search">
+      <input type="text" name="q" value="<%= @query %>" list="matches"
+             placeholder="Search..."
+             <%= if @loading, do: "readonly" %>/>
+      <datalist id="matches">
+        <%= for match <- @matches do %>
+          <option value="<%= match %>"><%= match %></option>
+        <% end %>
+      </datalist>
+      <%= if @result do %><pre><%= @result %></pre><% end %>
+    </form>
+    """
+  end
+
+  def mount(_session, socket) do
+    {:ok, assign(socket, query: nil, result: nil, loading: false, matches: [])}
+  end
+
+  def handle_event("suggest", %{"q" => q}, socket) when byte_size(q) <= 100 do
+    {words, _} = System.cmd("grep", ~w"^#{q}.* -m 5 /usr/share/dict/words")
+    {:noreply, assign(socket, matches: String.split(words, "\n"))}
+  end
+
+  def handle_event("search", %{"q" => q}, socket) when byte_size(q) <= 100 do
+    send(self(), {:search, q})
+    {:noreply, assign(socket, query: q, result: "…", loading: true, matches: [])}
+  end
+
+  def handle_info({:search, query}, socket) do
+    {result, _} = System.cmd("dict", ["#{query}"], stderr_to_stdout: true)
+    {:noreply, assign(socket, loading: false, result: result, matches: [])}
+  end
+end
+#+end_src
+
+6. [[http://www.perell.com/blog/writing][Riding the Writing Wave — David Perell]]
+
+#+begin_quote
+
+*Writing doesn’t just communicate ideas; it generates new ones*
+
+#+end_quote
+7. [[https://lemire.me/blog/2018/12/06/asking-the-right-question-is-more-important-than-getting-the-right-answer/?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website][Asking the right question is more important than getting the right answer – Daniel Lemire's blog]]
+
+#+begin_quote
+
+   - Knowing too much can harm you
+
+     - some of the very best researchers and innovators were average students.
+     - to find good questions, you have to maintain some distance from the material.
+
+       - Pick a scholarly field, any field, then spend two weeks reading everything about it that you can. Next, write down 5 questions. I can almost guarantee you that these 5 questions will be already covered by sources you read. They will be “known” questions.
+
+     - *Our minds tend to frame everything in terms of the patterns we have learned.*
+
+       - Spend two years studying Marxism and every single problem will feel like a Marxist problem to you.
+       - It becomes difficult for you to come up with new questions outside of the frame.
+
+#+end_quote
+8. [[https://medium.com/darius-foroux/want-to-make-better-decisions-do-this-13ccc94da024][Want To Make Better Decisions? Do This – The Blog Of Darius Foroux – Medium]]
+
+#+begin_quote
+
+   - Do This Instead: *Make Small Decisions.* Decide Often.
+
+     The difference between a good business and a bad business is that good businesses throw up one easy decision after another. The bad businesses throw up painful decisions time after time.
+
+     - When you make small decisions early, before they become big — it’s easy. When you put off decisions, they become big — and painful.
+
+#+end_quote
+9. [[https://twitter.com/searls/status/1075802549796638721][Justin Searls on Twitter: "Most people imagine the difficulty of
+software development as knowing how to technically accomplish
+something, but for me it's almost entirely about organizing
+information thoughtfully and consistently."]]
+10. [[https://drewdevault.com/2018/07/09/Simple-correct-fast.html][Simple, correct, fast: in that order - Drew DeVault’s Blog]]
+
+#+begin_quote
+
+    - When you are faced with these problems, you must seek out the simplest way they can be solved.
+
+      1. take problems apart,
+      2. identify smaller problems within them
+      3. ruthlessly remove scope until you find the basic problem you can apply a basic solution to.
+      4. The complex problem comes later, and it'll be better served by *the composition of simple solutions than with the application of a complex solution.*
+
+#+end_quote
+11. [[https://blog.coinbase.com/bar-raisers-at-coinbase-if-youre-not-a-hell-yes-you-re-a-no-68145c6fbe60][Bar Raisers at Coinbase: If you’re not a hell yes, you’re a no]]
+
+#+begin_quote
+
+    - How do you know you’re a hell yes?
+
+      - Did I leave the interview with more energy than when I went in? Did I leave inspired?
+      - Did I learn something from this candidate?
+      - Is this person much better than me in at least one area?
+      - Could this person start adding value right away? Would they take work off my plate or create more work for me?
+      - Does this person raise the average at Coinbase? Does them starting Monday make me want to work here more or less?
+
+#+end_quote

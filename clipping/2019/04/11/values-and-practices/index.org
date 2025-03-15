@@ -1,0 +1,66 @@
+#+TITLE: Values and Practices
+#+begin_quote
+
+- The problem with Software Engineering (SE)
+
+  - Many universities treat software engineering as a course where they should give students some directly practical useful skills that future employers will ask for.
+
+    - Consequently, software engineering becomes just a course trying to cover whatever methods and tools the industry needs.
+    - This is something that universities cannot, in principle, teach very well.
+    - It's impossible to keep up with industry
+
+  - Why teach SE at all
+
+    - We teach algorithms, complexity theory and other computer science subjects because they will largely remain valid in 100 years
+    - [[https://dsdshcym.github.io/clipping/2018/12/12/the_point_of_a_degree/][The Point of A Degree - dsdshome]]
+    - A good Software Engineering curriculum needs to address this issue: What are fundamental insights about software development?
+
+- Fundamental Software Engineering knowledge
+
+  - What I believe is unchanging is (a historically situated analysis of Software Engineering)
+
+    1. the motivation behind software engineering
+    2. the reasoning that led to those particular methods tools in the face of particular problems that the industry was attempting to address
+
+  - We should teach (the reasoning behind Waterfall, UML, Scrum or TDD)
+
+    1. how different circumstances, problems and goals motivate these
+    2. why the various methods are a reasonable response to the challenge
+    3. circumstances where they do not work
+
+#+end_quote
+
+-- from [[http://tomasp.net/blog/2019/software-engineering/][What should a Software Engineering course look like? - Tomas Petricek]]
+
+I think this article is really good. Everyone in the software industry should read it. It's not only for teachers or professors.
+
+It reminded me of the relationship between Values and Practices mentioned in [[https://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#orgf020d8d][Extreme Programming Explained]]:
+
+#+begin_quote
+
+- Values are the roots of the things we like and don't like in a situation
+- Values are the large-scale criteria we use to judge what we see, think, and do
+- Values bring purpose to practices.
+- Practices are evidence of values.
+
+  - Communicating in the most effective way I can shows I value communication
+
+- Practices bring accountability to values
+
+  - Practices are clear
+  - Values are fuzzy
+
+#+end_quote
+
+Translate this into what we should be teaching in Software Engineering courses:
+
+- We should not focus on Software Engineering Practices or practical skills because they are unstable and constantly changing. Furthermore, even knowing how to apply these practices but without knowing the reasoning behind them, students wouldn't fully understand them or apply them well.
+- Instead, we should teach Values behind these Practices. Because they are stable and valid in 100 years. Equipped with these Values, students can learn practices later after they join the industry. And they will find learning the practices would be easier.
+
+Also, [[https://twitter.com/dsdshcym/status/1103086787738533888][the same idea can be applied to other courses as well.]] Take Algorithms for example, instead of focusing on learning details of each algorithm, we should teach:
+
+1. how different circumstances, problems and goals motivate these (algorithms)
+2. why the various methods are a reasonable response to the challenge
+3. circumstances where they do not work
+
+Last but not the least, it doesn't mean we should not learn Practices at all. Actually, they are equally important. It's just that from my own experience, the education I received focused too much on Practices than Values.

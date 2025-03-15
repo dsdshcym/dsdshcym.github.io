@@ -1,0 +1,33 @@
+#+TITLE: Difficulties in Abstraction
+#+begin_quote
+
+- Designing an abstraction is an inverse problem
+
+  - There is opacity of the structure of the system from observational perspective.
+  - An inverse problem in science is the process of calculating from a set of observations the causal factors that produced them.
+
+- Abstraction as a [[https://en.wikipedia.org/wiki/Inverse_problem][Inverse Problem]]
+
+  - Most of the business requirements we deal with, consists of multiple parts interacting with each other.
+  - For a given business requirement, it is generally difficult to figure out its components and their interactions accurately based on observations about the system.
+  - It is difficult to reverse engineer a system compared to building one
+
+- Abstraction depends on context
+
+  - "A lock is a lock because of the key"
+
+    - when we design abstractions for lock, we are also parallelly designing abstractions for key.
+    - We are always designing abstraction in pair most of the time sub-consciously.
+
+  - The abstraction we derive is nothing but interactions between the two components of the coupling.
+
+    - As coupling changes the abstraction should also change.
+    - But since only a part of the coupling is exhibited in code, *the other part is often left to interpretations and assumptions.*
+
+  - *Our abstraction is always incomplete.*
+
+#+end_quote
+
+-- from [[https://shripad-agashe.github.io/2018/03/19/abstractions/][Difficulties in abstraction • Random Sparks]]
+
+Abstraction is a great power that we programmers possessed when we code. But as uncle Ben said, "with great power comes great responsibility." We need to be careful with abstracting our code and business rules. Otherwise, we would probably shoot ourselves in our foot when a wrong abstraction was built and we find that it’s hard to reverse it.

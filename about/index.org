@@ -1,0 +1,56 @@
+#+TITLE: About
+* Table of Contents
+
+- [[#orgfbe4990][1. 2019 Ver.]]
+- [[#org0482a0c][2. 2015 Ver.]]
+
+  - [[#org2af4a74][2.1. Basics]]
+  - [[#org3fef369][2.2. Social Networks]]
+  - [[#orgb90346f][2.3. Thanks]]
+
+* 1 2019 Ver.
+
+Hi, there! I'm Yiming Chen, a software engineer. I live in Shanghai currently.
+
+I strongly believe that [[http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life/][the meaning of life is to learn and grow]]. So I want to be a life-long learner. This blog is the collection of what I've learned along the way.
+
+As a software engineer who want to make the world a little bit more Agile, I want to focus on these topics here.
+
+[[https://dsdshcym.github.io/tags/agile/][Agile Software Development]]
+    Even though "Agile" is a word that comes with many widely different understandings, I still want to advocate for it in this blog. I wish more and more companies will apply the Agile Methodology to every level (from company management to writing code). Hopefully, this blog can push the needle a bit.
+[[https://dsdshcym.github.io/tags/tdd/][TDD]]
+    Without learning TDD, I wouldn't make up my mind to become a software engineer. So I wouldn't stop talking about this topic here.
+[[https://dsdshcym.github.io/tags/ruby/][Ruby]]
+    Ruby introduced my to this industry (by helping me find my first internship at Strikingly Co.). More importantly, I would never forget the idea of focusing on programmer happiness, which is the goal Ruby was created for.
+[[https://dsdshcym.github.io/tags/elixir/][Elixir]]
+    Elixir is my current favorite programming language right now. It provides great efficiency. Meanwhile, it still keeps the goal of programming happiness in its core.
+[[https://dsdshcym.github.io/tags/management/][Management]]
+    To learn *the power of Change* , I started being involved in more management work since the end of 2018. I learned a lot stuffs that are out of the scope of coding, but are about the essence of software engineering (people).
+
+You can find me on [[https://twitter.com/dsdshcym][Twitter]] and [[https://github.com/dsdshcym][GitHub]].
+
+Huge thanks to [[https://utteranc.es/][utterances]] and [[https://pages.github.com/][GitHub Pages]], which are the backend of the comment system of this blog.
+
+* 2 2015 Ver.
+** 2.1 Basics
+
+- 陈一鸣 aka dsdshcym
+- 现在上海五角场某大学 张江分校读大三
+- Mac user / Vim user / Spacemacser ([[https://github.com/syl20bnr/spacemacs][syl20bnr/spacemacs]])
+
+** 2.2 Social Networks
+
+Twitter
+[[https://twitter.com/dsdshcym][Yiming Chen (@dsdshcym) | Twitter]]
+Zhihu
+[[http://www.zhihu.com/people/dsdshcym][陈一鸣 - 知乎]]
+Weibo
+[[http://weibo.com/1841667330/profile?topnav=1&wvr=6][dsdshcym 的微博]]
+Wechat/Telegram
+    @dsdshcym
+
+** 2.3 Thanks
+
+这个博客全部在 [[http://www.gnu.org/software/emacs/][Emacs]] / [[https://github.com/syl20bnr/spacemacs][Spacemacs]] 中完成，使用 [[http://orgmode.org/][Org mode]] 编写， [[https://github.com/kelvinh/org-page][org-page]] 生成导出，在此特别感谢！
+
+This blog is completed by [[http://www.gnu.org/software/emacs/][Emacs]] / [[https://github.com/syl20bnr/spacemacs][Spacemacs]], written in [[http://orgmode.org/][Org mode]], built by [[https://github.com/kelvinh/org-page][org-page]]. Thanks to these awesome projects!

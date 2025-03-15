@@ -1,0 +1,33 @@
+#+TITLE: OKR Case Study #2 - Reduce emails from clients?!
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-04-23]
+#+URI:         blog/2020/04/23/okr-case-study-2-reduce-emails-from-clients/index.html
+#+TAGS:        OKR, Management, OKR Case Study
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+*Objective* : Inspire more client confidence by anticipating their needs
+
+- KR 1: Reduce number of emails from clients
+
+#+end_quote
+
+1. Is "number of emails" referring to angry emails from clients?
+
+Because we may not want to reduce happy emails or new-contract emails from clients, right?
+
+1. I'm not sure if we should use *reduction* of this number as a Key Result.
+
+   My concern is that the number of these emails doesn't show a consistent pattern overtime. It might be a random thing, 2 emails this month due to various reasons, 20 emails next month due to other various reasons.
+
+   So aiming for *reduction* may not make sense for this metric. My suggestion is to just set a goal of 0 angry emails from clients in 2020 Q2 (if it's not too stretching).
+
+2. Since "number of angry emails" is a thing, "number of happy emails" can also be a good Key Result.
+3. I think the focus here is the feedback from clients, so maybe we don't need to be restricted to only one medium (email)? Angry/happy feedback from phone/meeting/etc. should also count, too? (Though it might add some work when reviewing this key result.)
+
+So the KR might be something like:
+
+- 0 annoyed/angry/bug emails from client in 2020 Q2
+- 1 good feedback communication from client every month in 2020 Q2

@@ -1,0 +1,220 @@
+#+TITLE: Compare Doom-emacs, Spacemacs, and vanilla Emacs
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-22]
+#+URI:         blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/index.html
+#+TAGS:        Emacs
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I've been using Emacs for about 3 years. Within these 3 years, I used different configurations and frameworks:
+
+Spacemacs (v0.50 to v0.200)
+    [2015-01-04 Sun]–[2017-07-25 Tue]
+My vanila .emacs.d
+    [2017-07-25 Tue]–[2017-12-26 Tue]
+Spacemacs (v0.300)
+    [2017-12-26 Tue]–[2018-01-04 Thu]
+My customized Doom-emacs
+    [2018-01-04 Thu]–[2018-01-22 Mon] (Now)
+
+I think I can write some of my thoughts on these 3 different kind of frameworks and it might be helpful for someone out there.
+
+* Spacemacs
+
+IMHO, Spacemacs was and still is the best Emacs+Evil distribution, it's just not suit me anymore.
+
+** Best Emacs+Evil distribution
+
+1. When I started using Spacemacs, I've been using Vim for about 1 year and I just wanted to use org-mode while still keeping my Vim experiences. There were few distributions providing this kind of full Vim-like using experience out there. Spacemacs did this by providing the evilify macros and automatically bind as many Vim keybindings as possible.
+2. Spacemacs had and still has the best documentations for learning Emacs, evil-mode, writing layers.
+
+** Why I'm leaving Spacemacs
+
+1. Spacemacs is getting overwhelmed by more and more users.
+
+   Spacemacs is a pretty popular Emacs distributions now, which also means there are more and more Spacemacs users who have little Emacs experience and cannot debug issues by themselves.
+
+   1. Spacemacs now has 1642 opening issues and it's been like this for a long time, even after several rounds of Autumnal Cleanup.
+
+      - It's a project that's pretty difficult to maintain by a few people now (thanks to these maintainers!).
+      - I also helped in Spacemacs Autumnal Cleanup 2015[fn:1]. There were already many issues then and it was pretty difficult to even check every issues. Some of them were caused by broken packages, some of them were questions, some of them were feature requests.
+
+   2. Another drawback caused by its popularity is that *the new stable release takes longer time* .
+
+      - The last stable release (v0.200.8) was released 10 months ago.
+      - The next stable release number is v0.300.0, which will break many things compared to current master branch.
+      - Since there are a lot of users using Spacemacs now, it's hard to release a new stable version with many break changes. The master branch becomes inactive now.
+      - Although I can use develop branch, but it's not stable enough and I need to check updates manually every now and then.
+
+2. I started building my own layers instead of using the default ones
+
+   - After learning Emacs for 3 years, I've realized that the main point of using Emacs is to build a text editor that suits my personal needs perfectly.
+   - Spacemacs is used by many users so it cannot be a personal configuration.
+
+     1. I don't like some keybindings defined in some layer, so I need to reset them again.
+     2. I don't need some packages provided by a layer I'm using (e.g. evil-escape), so I need to exclude them.
+     3. Although it's the best evil distribution, it's still not enough sometimes.
+
+#+begin_quote
+
+        For example, no layer is setting evil-declare-ignore-repeat so that the unrepeatable commands or commands that's not editing the texts like save-buffer, rspec-rerun are interfering with the repeat commands list.
+
+#+end_quote
+
+     So I started building my own layers instead of using the default one, my customization to Spacemacs becomes another heavy Emacs configuration. The point of using Spacemacs to share a reasonable configuration with the Spacemacs community has lost its sense to me.
+
+3. *Spacemacs is not a good Emacs configuration framework yet*
+
+   The next thing I need to consider is whether Spacemacs is a good framework to build my own configuration on. Unfortunately, the answer is no.
+
+   1. Although the layer system was designed to separate different features, they are still coupled within the current system.
+
+      1. package loading coupling
+
+         Take spacemacs|use-package-add-hook for example, I have a layer called post-config to customize some packages behavior, this hook system doesn't work very well:
+
+#+begin_src emacslisp
+(defun post-config/pre-init-company ()
+  (spacemacs|use-package-add-hook
+      company :post-config
+      (define-key company-active-map (kbd "C-n") 'company-select-next)
+      (define-key company-active-map (kbd "C-p") 'company-select-previous)
+      (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word)))
+#+end_src
+
+         If I want to add a post-config for company, I need to define a post-config/pre-init-company function first, which doesn't make much sense to me.
+
+      2. package config coupling
+
+         I have another post-config for evil-lion:
+
+#+begin_src emacslisp
+(defun post-config/pre-init-evil-lion ()
+  (spacemacs|use-package-add-hook evil-lion
+    :pre-init
+    (progn
+      (evil-lion-mode)
+      ;; overwrite spacemacs config for evil-lion to use gl and gL keybindings
+      ;; for evil-lion
+      nil)))
+#+end_src
+
+         I need to prevent Spacemacs' config for evil-lion to run to prevent it to use the default evil-lion keybindings.
+
+   2. The base ground is not clean enough (even with spacemacs-base)
+
+      There are many packages I don't need from many layers. They do add some improvements here and there, but also introduce bugs/performance issues here and there.
+
+      I ended up with excluding ~50 packages from my Spacemacs. Then I think, why not just install what I need and build my personal emacs configuration.
+
+   3. The performance is not the best
+
+      Spacemacs came out way before use-package came out, so many packages were not lazy loaded properly. Although it's migrating to use-package, it's still feels slow sometimes due to too many packages.
+
+* My vanila emacs
+
+Thanks to the evil packages extracted from Spacemacs or arose from the evil community these years, I can get most of the Spacemacs experience by just adding some packages[fn:2]. So I started building my own .emacs.d[fn:3], here are the pros and cons I found:
+
+- Pros
+
+  1. Performance is good.
+  2. Everything is configured by myself. So I know almost everything about it.
+  3. It's easy to test a new package and see if it suits me and my workflow.
+
+- Cons
+
+  1. There are a lot of *redundant works* .
+
+     I learned Emacs basically by using Spacemacs and I'm quite familiar with the Space key as the leader key style keybindings. So I used [[https://github.com/noctuid/general.el][general]][fn:4] to set these leader keys.
+
+     Most of the time, I was just copying config from Spacemacs and modify a little bit.
+
+  2. There are a lot of *maintenance works* to do.
+
+     Since I need to keep my .emacs.d under version control and I tend to keep commits small, sometimes it's easy to get it out of control. (I still have 12 unstaged files on my local machine in this directory.)
+
+     Aside from this maintenance burden, it's also harder to build a better Vim experience without the help of spacemacs helper functions/macros like evilify-state.
+
+  3. It's just time consuming.
+
+     I want to put most of my free time on coding, reading, writing, instead of giving it back to emacs. So I started to looking for better frameworks to build upon.
+
+* doom-emacs
+
+Luckily, doom-emacs is a great configuration that I can easily customize and extend. Here are the pros and cons I found:
+
+- Pros
+
+  1. Performance is the best.
+
+     With the optimizations[fn:5] done by hlissner, doom-emacs (~3s) starts way faster than Spacemacs (~12s) or my .emacs.d (~8s). And it feels snappier when I'm using it.
+
+  2. Upstream updates frequently
+
+     The maintainer of doom-emacs, hlissner, commits and pushes his changes pretty often. (~100 commits per weekend) I learned a lot from reading his code and asking for his advice on my PRs.
+
+  3. It's a more hard-core Emacs+Evil distribution
+
+     As it's said in its description, doom-emacs is *an Emacs configuration for the stubborn martian vimmer* .
+
+     For example, [[https://github.com/hlissner/doom-emacs/blob/eef6ed3d11f8f721eb55593ae954fb4476b7cb8a/modules/feature/evil/config.el#L108]] makes the evil ex commands auto completion behavior more likes vim. And so many other evil patches (sometimes I really wish they can become the default behavior of evil)
+
+  4. It's *a great framework to build upon* .
+
+     doom-emacs provides many macros making configuring emacs easier, like package!, def-package!, map!, etc..
+
+     And one of the most important feature is that it lets user to bind the keybindings, instead of providing a default one.
+
+- Cons
+
+  1. The default keybindings are not very Spacemacy.
+
+     But since I only use it as a configuration framework, and build my own modules upon its core. So I can take that.
+
+  2. Excluding packages is not easy.
+
+     Although doom-emacs provides package! macros, I still couldn't find a easy way to exclude a package completely.
+
+  3. Module ecosystem is not as good as Spacemacs
+
+* My final solution
+
+So I ended up with this solution: *maintaining my own fork of doom-emacs* .
+
+I also tried to maintain my own fork of Spacemacs but failed because it's a larger project and I was not very good at using Git at that time.
+
+Maintaining my own fork lets me:
+
+1. Exclude unneeded packages easily.
+2. Fix issues quickly.
+3. Merge optimizations from upstream easily.
+
+Of course, at the same time, I'm also pushing my fixes for broken packages to upstream and trying to make doom-emacs better.
+
+As it was said, *your editor configuration is the biggest project in your life* [fn:6]. I hope I can build an editor that suits me perfectly in this life. And a million thanks to the maintainers of these great distributions!
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/syl20bnr/spacemacs/wiki/Autumnal-Cleanup-2015][Autumnal Cleanup 2015 · syl20bnr/spacemacs Wiki]]
+
+[fn:2]
+
+Like [[https://github.com/JorisE/evil-mu4e][JorisE/evil-mu4e: Evil keybindings for mu4e]] and [[https://github.com/jojojames/evil-collection][jojojames/evil-collection: A set of keybindings for evil-mode]]
+
+[fn:3]
+
+[[https://github.com/dsdshcym/.emacs.d][dsdshcym/.emacs.d]]
+
+[fn:4]
+
+[[https://github.com/noctuid/general.el][noctuid/general.el: More convenient key definitions in emacs]]
+
+[fn:5]
+
+[[https://github.com/hlissner/doom-emacs/wiki/FAQ#how-is-dooms-startup-so-fast][FAQ - How is Doom’s startup so fast? · hlissner/doom-emacs Wiki]]
+
+[fn:6]
+
+[[http://dsdshcym.github.io/clipping/2018/01/09/your-editor-configuration-is-the-biggest-project-in-your-life/][Your editor configuration is the biggest project in your life - dsdshome]]

@@ -1,0 +1,61 @@
+#+TITLE: "Pattern Matching" When Rendering Views in Rails
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-04-09]
+#+URI:         blog/2019/04/09/pattern-matching-when-rendering-views-in-rails/index.html
+#+TAGS:        Rails
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* What's Pattern Matching?
+
+Pattern matching is a useful feature provided by many programming languages. It can help because it reduces conditional statements like if in our code and thus make our code more straightforward and easier to understand.
+
+Here is a quick example of pattern matching in Elixir:
+
+#+begin_src ruby
+def string_based_on_locale("en") do
+  "Hello, World!"
+end
+
+def string_based_on_locale("zh") do
+  "你好，世界！"
+end
+#+end_src
+* Usage in Rails View Rendering
+
+Pattern matching is so powerful that I even applied it unconsciously when I worked in a Ruby/Rails app after I've dived into Elixir/Phoenix world for some time.
+
+Here is the case:
+
+- The app support two locales: English and Chinese.
+- And there are some UI differences other than translations in these two versions.
+- An example is navbar dropdown. So I turned dropdown into two partials: dropdown_zh.html.slim and dropdown_en.html.slim. Then render one of them based on current locale:
+
+#+begin_src awk
+render "dropdown_#{I18n.locale}"
+#+end_src
+- After I've written this code, I realized this is exactly like a pattern matching. In Elixir, I would write:
+
+#+begin_src ruby
+def render_dropdown("zh") do
+end
+
+def render_dropdown("en") do
+end
+#+end_src
+- Of course, this is a basic case for pattern matching. And Ruby and Rails still don't more advanced pattern matching. But it's still useful enough to show some strength:
+
+  1. We don't need if statements like
+
+#+begin_src ruby
+if I18n.locale == "zh"
+  # ...
+else
+  # ...
+end
+#+end_src
+  2. If we want to add a dropdown for a new locale, we just add a new template named after that locale, say dropdown_de.html.slim
+
+* Summary
+
+Pattern matching is a language feature to achieve certain level of polymorphism. We can still use the same technique in Ruby/Rails even they don't provide such feature at language level. Let me know in the comments below if you know any example like this.

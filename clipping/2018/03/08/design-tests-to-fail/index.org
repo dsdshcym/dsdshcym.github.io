@@ -1,0 +1,101 @@
+#+TITLE: Design Tests to Fail
+#+begin_quote
+
+Tests are supposed to fail.
+
+If a test never, ever fails in the thousands of times that you run it, that test has told you effectively nothing.
+
+#+end_quote
+
+-- from [[http://blog.testdouble.com/posts/2018-03-06-please-dont-mock-me][Test Double - Our Thinking - Please don't mock me]]
+
+This statement is very counterintuitive but I think it totally makes sense.
+
+1. If the test's purpose is to prevent the code to do the wrong thing (regression test), it is supposed to fail when the code is doing the wrong thing. (If it does not fail, then it's a false positive test.)
+2. If the test's purpose is to drive your design, it's supposed to fail before you write your code and guide you through the whole development cycle.
+
+In either of these two cases, we should both *design our failure messages well* , so that the message can guide us:
+
+1. To find the defect faster.
+2. To decide what to write next faster.
+
+* Notes from that talk
+
+- 9 abuses of mocks
+
+  1. *Design tests to fail*
+
+     - Don't fake parts of the thing being tested
+
+  2. Realistic vs Mockist
+
+#+begin_quote
+
+     Instead of treating 'realness' as a virtue to be maximized, we should clarify what *our test is trying to prove* and then use all of our tools, mocks included, to ensure we have sufficient experimental control
+
+#+end_quote
+  3. *Hard to mock code is hard to use code* -> Wrap 3rd party code
+  4. *Tests are not going to make change safe*
+
+     - Purposes of tests
+
+       Test logic functions (pure functions) without mocked dependencies
+           test specifies logic rules
+       Test with mocked dependencies
+           test specifies relationships
+
+     - Mixed levels of abstraction are bad -> *Functions should do or delegate, never both*
+
+  5. Don't mock intermediate data providers (when there are many layers)
+
+     - Mock direct dependencies in isolated unit tests
+     - Mock external system (be as real as possible) in regression tests
+
+  6. *If isolated unit tests won't inform your design, don't bother with them*
+
+     - Mock dependencies, but pass real values
+     - Don't write unit test for a system you know has design problems
+
+       - If you know it has design problems, what can unit test tell you
+
+     - Write integration/feature tests for the safety net
+
+  7. *Layering != Abstraction*
+
+     - Make *meaningfully* small things
+
+  8. Tools save time by reducing our thoughts and actions, but *beware when tools reduce necessary thoughts*
+
+     - Many users abuse snapshot tests
+     - Being able to verify calls may discourage pure functions
+
+       - *Only verify calls to the outside world*
+
+  9. Don't neglect tests' design feedback
+  10. Mocks are there for giving you design feedback
+  11. Hard to test code is hard to use code
+
+- *The only good way to of mocks*
+
+  - Growing Object-Oriented Software Guided by Tests
+
+    - Ease
+    - Confidence
+    - Doubt
+
+  - Outside-in Steps
+
+    1. Write the code you wish you had (in your tests)
+
+       1. Design messages to guide your actions
+
+    2. Follow the errors
+
+  - Benefits
+
+    1. *Reliable incremental progress*
+    2. *Single-responsibility units*
+    3. *Intention-revealing names*
+    4. *Discoverable organization*
+    5. *Separate values and logic*
+    6. *Mostly sync pure functions*

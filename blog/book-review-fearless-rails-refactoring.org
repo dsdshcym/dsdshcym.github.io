@@ -1,0 +1,42 @@
+#+TITLE: Book Review: Fearless Rails Refactoring
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-02-27]
+#+URI:         blog/2018/02/27/book-review-fearless-rails-refactoring/index.html
+#+TAGS:        Rails, Service Object, Refactor
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This is my short review of the book [[http://rails-refactoring.com/][Fearless Rails Refactoring]], you can also check my notes taken from it here: [[http://dsdshcym.github.io/clipping/2018/02/11/clippings-from-fearless-rails-refactoring/][Clippings from Fearless Rails Refactoring -
+dsdshome]].
+
+* It's all about Single Responsibility
+
+When I first started working as a Rails developer, a senior developer told me this idea of Service Object (and also Form Object, Query Object). And I was really really confusing about it. I spent a lot of time searching for this name[fn:1] and got few tutorials about it (apparently, it's not in the official guidelines).
+
+After about a year of struggling, I think I finally understand it now: *Service Object* is just Pure Old Ruby Object (PORO).
+
+- Put and only put your model related logic in your ActiveRecord classes
+- Put and only put your request related logic in your ActionController classes
+- Put everything else in pure old ruby objects (service objects, form objects, you name it)
+
+From this pattern, we can also see that the idea of Service Object is actually only about Single Responsibility Principle (SRP).
+
+- You need to define your class's responsibility.
+- No matter if it's inherited from ActiveRecord or ActionController, this inheritance is just an implementation detail.
+
+And I think this book explained this idea pretty well. This book also provides many real-world examples to help your understand this idea better.
+
+Although I think some of the examples can still be refactored, it's still a great book about Service Object.
+
+If you are like me (one-year-ago), wondering what's Service Object and how to write them, please do read this book.
+
+* Footnotes
+[fn:1]
+
+Here is what I got:
+
+- [[https://ruby-china.org/topics/23892][Service Object 整理和小结 · Ruby China]]
+- [[http://brewhouse.io/blog/2014/04/30/gourmet-service-objects.html][Gourmet Service Objects]]
+- [[https://www.netguru.co/blog/service-objects-in-rails-will-help][Service objects in Rails will help you design clean and maintainable code. Here's how.]]
+- [[https://blog.pivotal.io/pivotal-labs/labs/object-oriented-rails-writing-better-controllers][Object Oriented Rails – Writing better controllers - Pivotal]]

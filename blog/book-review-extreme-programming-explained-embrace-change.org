@@ -1,0 +1,137 @@
+#+TITLE: Book Review: Extreme Programming Explained: Embrace Change
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-03-06]
+#+URI:         blog/2018/03/06/book-review-extreme-programming-explained-embrace-change/index.html
+#+TAGS:        Agile, Extreme Programming
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Table of Contents
+
+- [[#orgc61abda][Embrace Change]]
+
+  - [[#org5f53a39][Change is inevitable in software development]]
+  - [[#orgb7a64c9][XP is about how to embrace change well]]
+
+- [[#orgb25277b][Practices resonate with my experiences]]
+
+  - [[#org7cd4ae8][Incremental Deployment]]
+  - [[#org8e59c2b][Root Cause Analysis]]
+  - [[#orgdc3832a][Single Code Base]]
+  - [[#org230f359][Testing: Early, Often, and Automated]]
+
+    - [[#orgc569e73][Tests give you trust]]
+    - [[#org1ec7c51][Staging/Beta testing is not good]]
+
+This is my review of [[https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658][Extreme Programming Explained: Embrace
+Change]][fn:1], you can read my notes [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/][here]][fn:2].
+
+* Embrace Change
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org6c07dd7][Change is inevitable in software development]]
+
+Because of the nature of the software building activity, change is inevitable.
+
+1. Customers/Users don't know what they want until they can see the end-result.
+2. Almost always, some (domain/application/framework) knowledge is unknown to the team. This knowledge can only become clear to them, until they have made this product.
+
+And this book uses driving as the metaphor for software development, and I think this metaphor is perfect.
+
+The road condition is constantly changing
+    The development condition is also changing all the time.
+The road condition may change the next time you drive on the same road.
+    The development conditions are also not the same even if you are developing the same system for the second time.
+You don't know what the road condition is like until you have driven this road for several times.
+    There are too many unknown domain knowledge to the team.
+
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#outline-container-orgef6807f][XP is about how to embrace change well]]
+
+Since change is inevitable, how to embrace change is one of the biggest problems we are facing in software development.
+
+XP is a software development discipline that helps us to embrace change well.
+
+The goal of XP is to build good relationships in which people trust each other deeply so they can achieve anything to become successful.
+
+In order to achieve this goal, XP teaches us its values, principles and practices to fully embrace change.
+
+If we can adapt XP, we can cope any change appears in the development process. Thus we become trustworthy to each other because we can
+
+1. Estimate work accurately
+2. Deliver quality the first time
+3. Create rapid feedback loops
+
+* Practices resonate with my experiences
+
+I'll not talk about values and principles in this post, because you really should read this book to fully understand them. I'll just put several practices that resonate with my past development experiences.
+
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c][Incremental Deployment]]
+
+I've failed[fn:3] to deploy several refactoring projects smoothly because I didn't deploy the change incrementally.
+
+What I really should do is to keep both the old/new system running and start porting features from old system to new system, then deploy small changes everyday, redirecting requests to the new system step by step.
+
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c][Root Cause Analysis]]
+
+Postmortem meetings are really important for collecting feedback and learning from failures.
+
+I regret that I didn't take the chance to look back and learn from my failures before and I'll try to dig deeper the next time I fail.
+
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#text-orge3f948c][Single Code Base]]
+
+Unfortunately, most projects I've worked on all have this kind of problem: not having a single code base.
+
+- One project maintains two repos for localization/feature sets reasons
+- Another project has at least 3 repos
+
+  1. One repo for its JSON API interface (This repo also has two "main" branch for different feature sets)
+  2. One repo for its web HTML interface
+  3. Another repo for its admin web interface
+
+It's a horrible experience when I need to keep features in sync between these different code bases.
+
+I really wish we can move the feature variations into configuration files, or even more importantly, fix the underlying design problem that encourages people to split a single code base into several ones.
+
+** [[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/#org4469005][Testing: Early, Often, and Automated]]
+*** Tests give you trust
+#+begin_quote
+
+Without trust, people spend much of their time defending themselves against the possibility that someone else may have made a mistake.
+
+#+end_quote
+
+This reminds me of a co-worker who promoted defensive programming a lot. When I asked him why he needed to be so defensive in his code, he said: "I think all people make mistakes, and I don't trust developers, even if he/she is my colleague." I don't think this is sustainable in any means.
+
+I really believe trust is one of the most important prerequisite for a successful team/product, more than ever after I've read this book.
+
+- Trustworthy objects are a joy to work with, because they always behave as you expect.[fn:4]
+- We need to at lease trust our colleagues that they can produce trustworthy results. Otherwise, why are we still working with them?
+
+And a passing test suite gives you a start point to trust your code base and your colleagues.
+
+*** Staging/Beta testing is not good
+#+begin_quote
+
+Beta testing is a symptom of weak testing practices and poor communication with customers
+
+#+end_quote
+
+I always hate to testing new features in a staging environment. I think what this practice really means is that we have a huge problem with our test suite:
+
+1. The test suite is not fully automated. (At least not at feature test level)
+2. The test suite doesn't provide us enough confidence to deploy to production directly.
+
+* Footnotes
+[fn:1]
+
+[[https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658][Extreme Programming Explained: Embrace Change, 2nd Edition (The XP Series): Kent Beck, Cynthia Andres: 9780321278654: Amazon.com: Books]]
+
+[fn:2]
+
+[[http://dsdshcym.github.io/clipping/2018/02/26/clippings-from-extreme-programming-explained/][Clippings from Extreme Programming Explained - dsdshome]]
+
+[fn:3]
+
+I may talk about these failures in a later blog post.
+
+[fn:4]
+
+From [[https://www.sandimetz.com/99bottles/][99 Bottles - Sandi Metz]]

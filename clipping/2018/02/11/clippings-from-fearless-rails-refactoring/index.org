@@ -1,0 +1,1064 @@
+#+TITLE: Clippings from Fearless Rails Refactoring
+* Table of Contents
+
+- [[#orgc480f17][Rails controllers]]
+
+  - [[#orgdcfce70][What is the problem with Rails controllers?]]
+  - [[#org89691fb][Why service objects?]]
+  - [[#orgfc51f58][What is a Rails service object?]]
+  - [[#org2f78e9b][Refactoring]]
+  - [[#orgbcf55da][Refactoring and the human factor]]
+  - [[#org473c624][Tools]]
+  - [[#orgfbeb513][How to use this book]]
+
+- [[#orgbac93e2][Refactoring recipes]]
+
+  - [[#org9b6bfdd][Inline controller filters]]
+  - [[#org4d651b9][Explicitly render views with locals]]
+  - [[#org3ac436d][Extract render/redirect methods]]
+  - [[#orgc422506][Extract a Single Action Controller class]]
+  - [[#orgc44bda9][Extract routing constraint   ]]
+  - [[#orgf39c68d][Extract an adapter object]]
+  - [[#orge6f5169][Extract a repository object]]
+  - [[#orgca04592][Extract a service object using the SimpleDelegator]]
+  - [[#org157ae87][Extract conditional validation into Service Object]]
+  - [[#org6a5b0e0][Extract a form object]]
+
+- [[#orgfd7c1a3][Example: TripReservationsController#create]]
+- [[#org1ccd622][Example: logging time]]
+- [[#org1081a04][Patterns]]
+
+  - [[#org6308081][Instantiating service objects]]
+
+    - [[#orga428a37][Boring Style]]
+    - [[#org0f8213b][Modules]]
+    - [[#orgdf0fa2b][Dependor]]
+
+  - [[#org33a4ce1][The repository pattern]]
+
+    - [[#org132acea][ActiveRecord class as a repository]]
+    - [[#org3511aca][Explicit repository object]]
+    - [[#org97664e2][No logic in repos]]
+    - [[#org51f0129][Transactions]]
+    - [[#org4915534][The danger of too small repositories]]
+    - [[#orga36b46d][In-memory repository]]
+
+  - [[#org9cedbad][Wrap external API with an adapter]]
+  - [[#org8469304][In-Memory Fake Adapters]]
+  - [[#org93aa59b][4 ways to early return from a rails controller]]
+  - [[#org0dbf680][Service::Input]]
+  - [[#org6235db0][Validations: Contexts]]
+  - [[#org128796f][Validations: Objectify]]
+
+- [[#org7e811da][Testing]]
+
+  - [[#org98bdb95][Introduction]]
+  - [[#org0d58a75][Good test tells a story]]
+  - [[#orgafbef5e][Unit tests vs class tests]]
+  - [[#org5969081][Techniques]]
+
+    - [[#org02f16c0][Service objects as a way of testing Rails apps (without factory_girl)]]
+
+- [[#orgc7a8b2f][Related topics]]
+
+  - [[#org8fd233b][Service controller communication]]
+  - [[#org462a57e][Naming Conventions]]
+  - [[#orge0b7e25][Where to keep services]]
+  - [[#org7fa996c][Routing constraints]]
+  - [[#org528560a][Rails controller - the lifecycle]]
+
+- [[#org4aaa211][Bonus]]
+
+  - [[#org7cdac35][Thanks to repositories]]
+
+* Rails controllers
+** What is the problem with Rails controllers?
+
+- The problem with Rails controllers:
+
+  - It grows quickly.
+  - Typical patterns are all good on their own, but things start to be difficult when they are grouped together
+
+    - before_filter
+    - multiple, nested if-branches
+    - setting @ivars to access them in the view
+    - Controller inheritance
+    - Controller mixins/concerns
+
+- Why the focus on controllers?
+
+  1. *Controllers are the entry points to your app*
+  2. When the controller contains a mix of concerns, then it's harder to make other places (views, models) really clean
+  3. There's a lot of win (mostly testing), when you make a clear isolation between the controller and your application (Though this book tries to be neutral)
+
+- Focus on making the tests run as quickly as possible
+- Start with small steps (service objects)
+- The Boy Scout rule
+- Inspiration
+
+  - Refactoring: Improving the Design of Existing Code
+  - Working Effectively with Legacy Code
+  - Refactoring to Patterns
+  - Clean Code
+  - Ruby Midwest 2011 - Keynote: Architecture the Lost Years by Robert Martin - YouTube
+  - Growing Object-Oriented Software Guided by Tests
+  - Lean Architecture: for Agile Software Development
+
+** Why service objects?
+
+- Rails is fast at the beginning, but starts to slow down later:
+
+  1. The build is slow
+  2. Developer write less tests
+  3. Changes cause new bugs
+  4. It feels like the app is a monolith instead of a set of nicely integrated components
+
+- Services are not the silver bullet
+
+  - Goals of services
+
+    1. isolate from the Rails HTTP-related parts
+    2. faster build time
+    3. easier testing
+    4. easier reuse for API
+    5. less coupling
+    6. thinner controllers
+
+  - Services are a nice trigger for the whole team
+
+    - encourages discussion
+
+- Why not service objects?
+
+  - Small app (mostly CRUD)
+  - No frequent bugs
+  - Tests are fast enough
+  - Changes are easy
+
+** What is a Rails service object?
+
+- P of EAA: Service Layer
+- 7 Patterns to Refactor Fat ActiveRecord Models - Code Climate Blog
+- DDD
+- In the Rails world
+
+#+begin_quote
+
+  Everything that happens in the controller without all the HTTP-related stuff (params, render, redirect)
+
+#+end_quote
+
+  - A single process of the business logic
+
+- What it's not
+
+  - SOA
+  - Microservices
+
+** Refactoring
+
+- *The real skill of refactoring is in balancing the delivery with maintainability*
+- Use *small, focused transformations*
+
+  - The Transformation Priority Premise - 8th Light
+
+- Introduce temporary duplication when refactoring
+
+  1. Safety
+  2. Explicit
+
+** Refactoring and the human factor
+
+- A project is a team work
+
+  - People have different perceptions of the goal and the path that leads to this goal
+  - People have different perceptions of which code is actually good
+
+- Don't refactor for the sake of refactoring
+
+  - Too many bugs?
+  - Too hard to change?
+  - Too slow to run?
+
+- Keep improving refactoring skills to refactor quicker
+
+  - Split the bigger changes into multiple smaller ones
+
+- Time is the measurement
+
+  - Spend time in the best way
+
+** Tools
+
+- Recommend RubyMine for Refactoring/Reviewing Ruby code
+
+** How to use this book
+
+- Recipes
+
+  - Prerequisite
+  - Algorithm (Step-by-step)
+  - Examples
+  - Warnings
+  - Benefits
+  - Next Steps
+
+- Examples
+
+  - Typical Rails action refactoring
+  - Real-world controllers
+
+- Patterns
+
+  - Many of the concepts that appeared
+
+* Refactoring recipes
+** Inline controller filters
+
+- The filters introduce coupling between the controller action and the result of the filters.
+
+  - Global state (instance variables)
+
+- Inline Method
+- Benefits
+
+  - Eliminate Rails magic
+  - Help reasoning about the code in one place
+  - Move the code that belongs together as a whole
+
+- Warnings
+
+  - Dependencies between filters
+  - It's best to start inlining filter with the last filter
+  - render=/=redirect > =render; return=/=redirect; return
+
+** Explicitly render views with locals
+
+- The Rails way is to call render implicitly (by following conventions)
+
+  1. The call to render itself
+  2. The path to the view file
+  3. The way the data is passed to the views
+
+- Algorithm
+
+  1. Go to the view
+  2. Replace all @foo with foo
+  3. *Repeat 1~2 for all the partials*
+  4. The same in the controller
+  5. Call render 'products/new', locals: { foo: foo } at the end of the action
+  6. Repeat 1~5 for other instance variables (bar)
+
+- Benefits
+
+  1. A clear interface to the view layer
+  2. The view behaves more like a proper object
+  3. Ease future refactoring
+
+     1. Extract Service Object with SimpleDelegator
+     2. Extract Single Action Controller class
+
+- Warnings
+
+  - The locals will not be automatically available in partials, action view, layout
+  - Look out for methods like instance_variable_get
+  - Change tests that check assigns
+  - It's better to test controller+view as a black box
+
+** Extract render/redirect methods
+
+- Calls to render and redirect are usually very verbose
+- Explicitly show your intention with method names
+- Extract methods
+- We can even go further
+
+  Simplify locals with Facade after this refactoring
+
+  - From
+
+#+begin_src groovy
+def render_tree(users)
+  render 'tree', locals: { user_count: users.length, users_by_parent: users.group_by(&:invited_by_user_id) }
+end
+#+end_src
+  - To
+
+#+begin_src ruby
+def render_tree(users_facade)
+  render 'tree', locals: { users_facade: users_facade }
+end
+#+end_src
+
+** Extract a Single Action Controller class
+
+- Each action is usually a separate responsibility
+- Breaking down huge controllers
+- Reducing the fear of breaking changes
+
+** Extract routing constraint   SRP
+
+- One controller action may grow to do more than one thing
+- Prerequisites
+
+  - Explicitly render views with locals
+
+- SRP
+- Specifying Constraints - Rails Routing from the Outside In — Ruby on Rails Guides
+- Routing constraints
+
+** Extract an adapter object
+
+- Wrap external API with an adapter
+- A layer of abstraction around your external libraries
+- Alistair.Cockburn.us - Hexagonal architecture
+- Refactoring with Hexagonal Rails
+
+** Extract a repository object
+
+- Prerequisites:
+
+  - Inline controller filters
+
+- Benefits
+
+  1. A clear persistence API
+  2. A new layer (Repositories), a contract to the database
+
+- Warnings
+
+** Extract a service object using the SimpleDelegator
+
+- New features tend to be added to controllers
+
+  1. Don't quite fit any model
+  2. Developers still haven't figured out the domain exactly
+
+- Prerequisites
+
+  1. Public Methods
+
+     - Delegator does not delegate protected methods
+     - overwriting method access level after its definition
+
+  2. Inline controller filters
+
+- Algorithm
+
+  1. Move the action definition into new class and inherit from SimpleDelegator.
+
+#+begin_src ruby
+class PyamentGatewayController < ApplicationController
+  class ServiceObject < SimpleDelegator
+    def callback
+      # copy/pasted method
+    end
+  end
+
+  def callback
+    ServiceObject.new(self).callback
+  end
+end
+#+end_src
+  2. Step by step bring back controller responsibilities (render, redirect_to, etc.) into the controller
+  3. Remove inheriting from SimpleDelegator (pass in parameters into service object)
+  4. (Optional) Use exceptions for control flow in unhappy paths
+
+     - Performance concern for using exceptions?
+
+       1. Cost of using exceptions is negligable when the exception doesn’t occur.
+       2. When the exception occurs its performance cost is 3-4x times lower compared to one simple SQL statement.
+
+     - [[https://gist.github.com/paneq/a643b9a3cc694ba3eb6e][cost of using exceptions for control flow compared to one SQL statement
+(ruby 2.1.4, rails 4.1.7, sqlite) for rails-refactoring.com]]
+
+- Benefits
+
+  1. Extract objects decoupled from HTTP aspect of your application
+  2. Cleaner code
+  3. A nice boundary between Controller/Service Object
+  4. Service objects as a way of testing Rails apps (without factory_girl)
+
+** Extract conditional validation into Service Object
+
+- Introduction (Conditions)
+
+  1. if=/=unless statements in validation methods
+  2. Using virtual attr_accessor to enable/disable a validation
+  3. on: :create (if: :new_record?)
+
+- Prerequisites
+
+  - *Conditional validation is used only in one place*
+
+- Algorithm
+
+  1. Make a Validator object from the validation DSL
+  2. Assign the validation object to constant
+  3. Split save! into validation and saving separately
+
+     - Validator.validate doesn't raise any error, so extracting it from model to service object will break this behavior
+     - Maybe it's better to add a #validate! method to Validator?
+
+  4. Use the validation in service object
+
+     1. Call the validation after calling valid?
+
+        - *valid? is cleaning errors* so we need to call it first
+
+     2. Remove the validation from model
+     3. Remove the accessor (validator toggle) from model
+
+- Benefits
+
+  - Model tends to accumulate knowledge about all the contexts (service objects) using it
+  - *Drop the conditional aspect of the validation*
+  - Let the higher level object deal with nuances of this particular interaction and its business requirement
+
+- Warnings
+
+  - Validations need to be order-independent
+  - If your validations perform SQL queries, you might need to manually wrap this with the save transaction
+
+** Extract a form object
+
+- Introduction
+
+  - *Complicated validation logic in your model* just to accept proper parameters submitted by user
+  - Form objects are like *boarder guards* . Data passed through are assumed as correct and not examined again
+
+- Algorithm
+
+#+begin_src ruby
+class Signup
+  include ActiveModel::Model
+  attr_reader :name, :email, :password
+
+  def initialize(params = {})
+    @name     = params[:name]
+    @email    = params[:email]
+    @password = params[:password]
+  end
+
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, length: { within: 8..255 }
+
+  def persisted?
+    false
+  end
+end
+#+end_src
+
+  - [[https://github.com/solnic/virtus][solnic/virtus: Attributes on Steroids for Plain Old Ruby Objects]]
+
+- Benefits
+
+  1. Remove conditional validations from models
+  2. More explicit code
+  3. Domain is expressed better
+
+- Warnings
+
+  1. ActiveModel::Model was introduced in Rails 4
+  2. *Do not add #save method*
+
+     - It violates SRP
+     - Persistence is a separate concern and a different object (like service object) should take care of that
+
+* Example: TripReservationsController#create
+
+- Extract a service object
+
+  - It’s usually not a good idea to use a pattern name as part of a class name.
+  - Explicit dependencies
+
+    - Be *smell-driven*
+    - What are suitable for constructor parameters?
+
+      - External dependencies that don't belong to the main logic of application
+
+        - External API
+        - File system
+        - Storage
+
+      - Static dependencies that don't change for every call to the service
+
+    - *Good OOP is about sending messages not accessing properties*
+
+- Service-Controller communication
+
+  - The main purpose of a service object: *do a certain thing*
+
+    1. registering a user
+    2. submitting an order
+
+  - How do we deal with failures
+
+    - Exception examples
+
+      NotAllowedToBook
+          You’re not allowed to book from this agency.
+      NoTicketsAvailable
+          No free tickets available.
+      ReservationError
+          Reservation error.
+      PaymentProblem
+          Payment error.
+
+    - Extracting exceptions
+
+      1. Add the exception class
+
+         - *Add the exception class under the service namespace*
+
+      2. Raise the exception
+      3. Catch the exception in the controller and move the redirect_to back to the controller
+
+* Example: logging time
+
+- Change CRUD name to the domain one (CreateTimeEntry -> LogTime)
+
+* Patterns
+** Instantiating service objects
+*** Boring Style
+
+- Controller
+
+  - Unlike in desktop application, every Rails controller action is an entry point into the system (main() method)
+  - *Keep controller actions to be very thin*
+
+    1. instantiating the right kind of objects
+    2. giving them access to the input
+    3. putting the whole world in motion
+
+  - Controller Testing
+
+    - *Controllers are the hardest beasts when it come to testing*
+    - Its purpose is *not to determine whether the service is doing its job, but whether controller is*
+    - *Controller's concerns* :
+
+      1. passing params, request and session (subsets of) data for the services when they need it
+      2. controlling the flow of the interaction by using redirect_to or render
+      3. Updating the long-living parts of user interaction with our system such as session and cookies
+      4. ( *Optional because it is more of a view's responsibility* ) Notifying user about the achieved result of the actions (flash or flash.now)
+
+    - Example
+
+#+begin_src ruby
+describe ProductsController do
+  specify '#create' do
+    product_attributes = {
+      "name" => "Product Name",
+      "price" => "123.45"
+    }
+
+    metrics = double(:metrics)
+    expect(MetricsAdapter).to receive(:new).with("testApiKey").and_return(metrics)
+
+    create_product_service = double(:register_user_service,
+                                    call: Product.new.tap { |p| p.id = 10 })
+    expect(CreateProductService).to receive(:new).with(metrics).and_return(create_product_service)
+  end
+end
+#+end_src
+
+- Service
+
+  - unit test it
+  - Use dependency injection
+  - Example
+
+#+begin_src ruby
+describe CreateProducteService do
+  let(:metrics_adapter) { FakeMetricsAdapter.new }
+  subject(:create_product_service) { described_class.new(metrics_adapter) }
+
+  specify "something something" do
+    create_product_service.call(..)
+    expect(..)
+  end
+end
+#+end_src
+
+*** Modules
+
+- Extract the process of creating the full object into an injector *when instantiating becomes more complicated*
+
+  1. make it easy to create new instance everywhere
+  2. make it trivial to overwrite the dependencies by overwriting methods
+
+- Example
+
+#+begin_src ruby
+module CreateProductServiceInjector
+  def metrics_adapter
+    @metrics_adapter ||= MetricsAdapter.new( METRICS_CONFIG.fetch(Rails.env) )
+  end
+
+  def create_product_service
+    @create_product_service ||= CreateProductService.new(metrics_adapter)
+  end
+end
+
+class ProductsController
+  include CreateProductServiceInjector
+end
+#+end_src
+- Testing
+
+  Injector
+      Test that we can inject the objects and change the dependencies
+  Controller
+
+      It doesn't care how to setup services
+
+#+begin_src prolog
+expect(controller.create_product_service).to receive(:call).with().and_return
+#+end_src
+  Service Object
+      Include Injector in the test will make dependency implicit
+
+*** Dependor
+
+- [[https://github.com/psyho/dependor][psyho/dependor: Simple Dependency Injection/Service Locator framework for Rails-like applications.]]
+
+** The repository pattern
+
+*Very similar to Ecto.Repo*
+
+- ActiveRecord is a good library for simple database access, but *we need to move business logic into other places after our application grows*
+
+*** ActiveRecord class as a repository
+
+- ActiveRecord classes are already repositories
+- Example
+
+#+begin_src ruby
+class Post < ActiveRecord::Base
+end
+
+class PostController < ApplicationController
+  def create
+    CreatePostService.new(Post).call(title, content)
+    redirect_to :index
+  end
+end
+
+class CreatePostService
+  def initialize(posts_repo)
+    @posts_repo = posts_repo
+  end
+
+  def call(title, content)
+    @posts_repo.create(title: title, content: content)
+  end
+end
+#+end_src
+
+*** Explicit repository object
+#+begin_src ruby
+class PostsRepository
+  def index
+    Post.all
+  end
+
+  def show(id)
+    Post.find(id)
+  end
+
+  def create(title, content)
+    Post.create(title: title, content: content)
+  end
+end
+#+end_src
+
+- *Never talk to ActiveRecord outside of the repository object*
+- Hide ActiveRecord as a repository implementation detail
+
+*** No logic in repos
+
+- Repository objects should have no logic at all
+
+  Ideally
+      They don't deal with any typical validations
+  In practice
+      A temporary situation where your AR classes still have validations and are hidden behind the repo
+
+- Repositories let you manipulate and retrieve the data (just some CRUD operations)
+- The goal is: *to make the whole data layer logic-less*
+
+  - *Move all callbacks out from the models*
+
+*** Transactions
+
+- It's not the job of the repo object to build transactions (it's service objects' job)
+- The repo object can expose a in_transaction method to let caller be explicit about the boundary
+
+*** The danger of too small repositories
+
+- Service objects taking multiple repositories is a common code smell
+
+*** In-memory repository
+
+- Replace a real repo with stubs:
+
+#+begin_src ruby
+class InMemoryPostsRepo
+  def initialize
+    @posts = []
+  end
+
+  def create(title, content)
+    @posts << Post.new(generate_id, title, content)
+  end
+
+  def find(id)
+    @posts.detect { |post| post.id == id }
+  end
+end
+#+end_src
+
+** Wrap external API with an adapter
+
+- Your app is built upon APIs
+
+  1. 3rd party integration (Twitter, Facebook, internal company API)
+  2. Contacting DB
+  3. Sending emails
+
+- Wrap internal API exceptions with our own protocol layer
+
+  - Adapters of the same type need to throw the same exceptions
+  - *What exceptions are raised is part of the interface* (Java)
+  - If you want to communicate something domain specific via the exception you can’t relay on 3rd party exceptions
+
+- Benefits
+
+  1. Protect ourselves from the dependency (library/3rd party API), we are free to change it later
+  2. *Separate our interface from the implementation*
+  3. The API is suitable for our app
+  4. Adapters are pluggable
+
+- Describe the interface (duck-typing) using tests
+- Test interface
+
+#+begin_src prolog
+expect(described_class.instance_method(:notify).arity).to eq(2)
+#+end_src
+- Warnings
+
+  1. Adapters' interfaces tends to be lowest common denominator between features supported by implementations
+  2. You won't easily extract Async adapter if you care about the result
+
+     - *Async is architectural decision here*
+
+  3. *Getting the right level of abstraction for adapter might not be easy*
+
+     - [[https://www.youtube.com/watch?v=yTkzNHF6rMs][RubyConf 12 - Boundaries by Gary Bernhardt - YouTube]]
+     - The closer the adapter is to the domain of adaptee, the easier it is to write it.
+     - The closer it is to the domain of the client, of your app, the harder it is, the more it will know about your usecases.
+
+- Use adapters wisely to decouple core of your app from 3rd party code for whatever reason you have.
+
+  - Speed
+  - Readability
+  - Testability
+  - Isolation
+  - Interchangeability
+
+** In-Memory Fake Adapters
+
+- 3 techniques for specifying in a test the behavior of a 3rd party system
+
+  1. stubbing adapter/gem methods
+  2. stubbing the HTTP requests triggered by those adapters/gems
+  3. In-Memory Fake Adapters
+
+- Why?
+
+  - It can tell a better story in our tests
+  - Often used as a step of building [[http://www.growing-object-oriented-software.com/][a walking skeleton]]
+
+- No need to stub every call
+- How to keep the fake adapter and the real one in sync?
+
+  1. Use the same test scenarios
+  2. Stub HTTP API responses in real adapter tests
+
+- When to use Fake Adapters?
+
+  - The more your API calls and business logic depend on previous API calls and the state of the external system.
+
+** 4 ways to early return from a rails controller
+
+Why not before_filter? Because you may need to extract service objects out of it.
+
+1. redirect_to path and return (classic)
+2. extracted_method and/or return
+
+   - extracted_method needs to return true
+
+3. extracted_method { return }
+
+#+begin_src ruby
+class Controller
+  def show
+    verify_order { return }
+  end
+
+  private
+
+  def verify_order
+    unless @order.awaiting_payment? || @order.failed?
+      redirect_to edit_order_path(@order) and yield
+    end
+
+    if invalid_order?
+      redirect_to tickets_path(@order) and yield
+    end
+  end
+end
+#+end_src
+
+   - this can work but it's too implicit (because the second yield may not be run)
+
+4. extracted_method; return if performed?
+
+   - Use ActionController::Metal#performed? to check whether render or redirect already happened
+
+** Service::Input
+
+- The Issue
+
+  - *To see what attributes are being updated in the controller and for what reason we would have to have a look at the views*
+
+- The Solution
+
+  - *Be explicit about arguments that your service can take*
+  - Service::Input Example
+
+#+begin_src ruby
+class OrderConfirmationService
+  class Input < Struct.new(:full_name, :email_address)
+  end
+end
+#+end_src
+  - Providing basic validation
+  - Freeze input objects when all the attributes are set
+
+** Validations: Contexts
+
+- Use context to control when to call a validation
+
+#+begin_src ruby
+class User
+  validates_length_of :slug, minimum: 3, on: :user
+  validates_length_of :slug, minimum: 1, on: :admin
+end
+
+class Admin::UsersController
+  def edit
+    # ...
+    @user.save(context: :admin)
+    # ...
+  end
+end
+#+end_src
+- Use Object#with_options provided by Rails to group validations
+
+#+begin_src ruby
+class User
+  with_options({on: :user}) do |for_user|
+    for_user.validates_length_of :slug, minimum: 3
+    for_user.validates_acceptance_of :terms_of_service
+  end
+
+  with_options({on: :admin}) do |for_admin|
+    for_admin.validates_length_of :slug, minimum: 1
+  end
+end
+#+end_src
+- *But it conflicts with on: :create and on: :update, so you may need call valid? more than once*
+- It can be used to add validations on: :destroy
+
+** Validations: Objectify
+
+1. Using SimpleDelegator to create a Validator
+
+#+begin_src ruby
+class UserEditedByAdminValidator < SimpleDelegator
+  include ActiveModel::Validations
+
+  validates_length_of :slug, minimum: 1
+end
+#+end_src
+2. Pass an object into validates_with
+
+#+begin_src ruby
+class UserEditedByAdminValidator < SimpleDelegator
+  include ActiveModel::Validations
+
+  validates_with LengthValidator, attributes: [:slug], minimum: 1
+end
+#+end_src
+3. Initiate an validator object using validate
+
+#+begin_src ruby
+class UserEditedByAdminValidator < SimpleDelegator
+  include ActiveModel::Validations
+
+  validate LengthValidator.new(attributes: [:slug], minimum: 1)
+end
+#+end_src
+4. Rule as an global object
+
+#+begin_src ruby
+SlugMustHaveAtLeastOneCharacter =
+  ActiveModel::Validations::LengthValidator.new(
+    attributes: [:slug],
+    minimum: 1
+  )
+
+class UserEditedByAdminValidator < SimpleDelegator
+  include ActiveModel::Validations
+
+  validate SlugMustHaveAtLeastOneCharacter
+end
+#+end_src
+5. and more...
+
+* Testing
+** Introduction
+
+*Distinguish tests by its stability*
+
+System tests
+    Stable
+Unit tests
+    Unstable
+
+** Good test tells a story
+
+1. User adds a product to the cart
+2. User looks at the cart to see the current total amount
+3. User changes the amount
+4. User goes to checkout
+
+** Unit tests vs class tests
+
+- Test units, not classes
+
+  - [[http://andrzejonsoftware.blogspot.hk/2014/04/tdd-and-rails-what-makes-good-unit.html][Andrzej on Software: TDD and Rails - what makes a good Unit?]]
+  - *A class doesn’t usually make a good Unit, it’s usually a collection of classes that is interesting.*
+
+- Benefits
+
+  1. I have the freedom of refactoring
+  2. I can think about the whole module as a black-box
+
+- *By writing low-level tests, you may be damaging the project*
+
+  - Tests are code that you need to maintain
+  - It also builds a more complex mental model
+
+** Techniques
+*** Service objects as a way of testing Rails apps (without factory_girl)
+
+- Misuse of factories
+
+  - We *try to build the state directly* (it's like using instance_variable_set)
+  - But factory_girl is actually just sending attribute= message
+
+- Solution
+
+  - *Setup tests by directly interacting with the system* using Service Objects
+  - Extract them into smaller test helpers
+  - Use InMemoryRepositoy to speed up data setup
+
+* Related topics
+** Service controller communication
+
+1. true=/=false
+
+   - good for simple cases
+   - breaks "Tell, don't Ask" (need to query created AR object again)
+
+2. return the object created/updated
+
+   - combined with 1
+
+3. return a response object that contains all the data and/or errors
+
+   - UserCreationResponse
+   - successful?, failed?
+
+4. carry data through exceptions
+5. controllers passes callback methods
+
+   - pass self to services
+
+** Naming Conventions
+
+- Class
+
+  - RegisterUserService
+  - RegisterUserUseCase
+  - RegisterUser
+  - UserRegister
+
+- Method
+
+  - call
+  - execute
+  - process
+  - perform
+  - run
+  - custom name like register
+
+- .call is special
+
+#+begin_src ruby
+RegisterUser.new.call(foo, bar)
+
+RegisterUser.new.(foo, bar)
+#+end_src
+
+** Where to keep services
+
+- Physical location
+
+  1. keep them in the app/models directory first
+  2. consider other places after becoming more familiar with it
+
+     1. app/models
+     2. app/services
+     3. app/feature_name
+     4. lib/feature_name
+
+  3. feature at the highest-level (like Phoenix.Context)
+
+     1. time_tracking/models
+     2. time_tracking/services
+
+- Namespaces
+
+  - *Group your services according to the feature*
+  - *Surround them with a proper namespace*
+  - Examples
+
+    - TimeTracking::LogTimeService
+
+** Routing constraints
+
+- Use routing constraints for situations where you need to choose different actions based on some params
+- Useful when:
+
+  1. Refactoring controller without touching frontend
+  2. No power over incoming WebHook
+
+** Rails controller - the lifecycle
+
+- [[http://andrewberls.com/blog/post/rails-from-request-to-response-part-1--introduction][Rails from Request to Response: Part 1 - Introduction - Andrew Berls]]
+
+* Bonus
+** Thanks to repositories

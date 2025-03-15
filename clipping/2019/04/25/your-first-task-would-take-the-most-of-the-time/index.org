@@ -1,0 +1,22 @@
+#+TITLE: Your First Task Would Take the Most of The Time
+#+begin_quote
+
+- No meeting ever made it through an agenda
+
+  - If your meeting has n > 1 agenda items to work through you will not make it past the first couple.
+  - If your agenda for an entire meeting is just one item, then reconsider "world peace" as an agenda.
+  - The physics of meetings are such that the first agenda item you talk about (which half the time might not even be item 1) will expand to fill all available time.
+
+#+end_quote
+
+-- from [[https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a][Reaching Peak Meeting Efficiency – Learning By Shipping]]
+
+I think this idea of "the first item (on your agenda) would take the most of the meeting time" can be applied to project management as well: "the first task (on your backlog) would take the most of the development time".
+
+When a project is just started, if the goal and timeline are not clear enough, there seems to be more than enough time to do the work. So people tend to spend more time on the first task.
+
+Plus, team members need time to get familiar with each other, the project, the feature, etc.
+
+(Of course, it's not necessary that the first task would take the most of the time. But the first task for sure would take more time than expected.)
+
+P.S. There are a lot of useful advice about meetings from [[https://medium.learningbyshipping.com/reaching-peak-meeting-efficiency-f8e47c93317a][this article]] as well. Be sure to check it out!

@@ -1,0 +1,48 @@
+#+TITLE: I don't know how to code without TDD
+#+begin_quote
+
+- I don't know how to work effectively in other ways, because I don't know when I'm done
+- Rails has done many heavy lifting so that it skips many TDD cycles for you (which may not be a good thing)
+- Commit when a test fails as expected and use it as the todo reminder
+- Approaching your work with a process is important
+
+  - TDD is one of the best processes to work
+
+    1. It's repeatable
+    2. It's a habit you can get into
+
+#+end_quote
+
+-- from [[http://bikeshed.fm/139][139: Red, Green, Refactor (Alex Clark & Sean Doyle) - The Bike Shed]]
+
+I have the similar feeling for TDD as well, if I don't code in TDD, I would be lost pretty quickly without the fast feedback loop and the clear goal set by my tests.
+
+It might be hard to imagine if you haven't tried TDD, yet. This quick talk might help you to understand that a little bit.
+
+#+begin_quote
+
+- 5 underplayed premises
+
+  Money
+      We're in this for the money TDD is about *Ship More Value Faster*
+  Judgement
+      We reply on human judgment
+  Correlation
+*Internal Quality and Productivity Correlate*
+  Chaining
+      Test a chain by testing links Chain (Mock-style) tests are the cheapest tests
+  Steering
+      Testability helps steer our designs
+
+      1. Is this testable?
+      2. Is the test cheap?
+      3. Can we make it cheaper?
+
+- Underplayed? *Visible outside, Invisible Inside*
+
+  - Inside TDD, they’re almost invisible to us. They’re the air we breathe.
+  - That means they don’t pay a lot of attention to explaining to them.
+
+#+end_quote
+
+-- from [[http://geepawhill.org/five-underplayed-premises-of-tdd-2/][Five Underplayed Premises Of TDD - GeePawHill.Org]]

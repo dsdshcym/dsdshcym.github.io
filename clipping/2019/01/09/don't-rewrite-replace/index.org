@@ -1,0 +1,53 @@
+#+TITLE: Don't Rewrite, Replace
+#+begin_quote
+
+- Don't change things
+
+  1. add new things (via copy/paste)
+  2. migrate the clients
+  3. remove old things
+
+#+end_quote
+
+-- from [[https://online-training.jbrains.ca/courses/wbitdd-01/lectures/133486][Add Fractions in Java Part 2 - The World's Best Intro to TDD, Level 1: TDD Done Right - jbrains.c]]
+
+#+begin_quote
+
+1. Introduce an abstraction around the code that is to be replaced, and commit that for all to see.
+2. Write a second implementation of the abstraction for the to-be-introduced code, and commit that,
+3. Flip the software 'off' switch to 'on' for the rest of the team, and commit/push that.
+4. Remove the to-be-replaced implementation
+5. Remove the abstraction
+
+#+end_quote
+
+-- from [[https://trunkbaseddevelopment.com/branch-by-abstraction/][Branch by Abstraction - Trunk Based Development]]
+
+This 3-step rule is the safest way I know to change software. Because in every step, we make sure the app still works:
+
+1. Add a new thing
+
+   - If no client is using the new thing, adding it won't affect any of our old code.
+   - If the adding action is also "safe", the existing behaviour won't change in any way.
+
+2. Migrate the clients
+
+   - We can migrate the clients one by one. And after each migration, we run the tests and deploy the new tested version.
+   - We repeat this process until all clients have been migrated.
+
+3. Remove the old thing
+
+   - Then, since no client is using the old thing, removing it won't affect any behaviour.
+   - If the removing action is also "safe", the existing behaviour won't change.
+
+And this rule can be applied in various scales of development activities.
+
+1. Code-level refactor (i.e. Extract method, extract class, etc.)
+2. Dependency-level replacement (i.e. 3rd-party library switch)
+3. Application-level upgrade (i.e. replace a microservice)
+
+This rule is also the core idea behind [[http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/][Refactoring: Improving the
+Design of Existing Code]], and that's why this book is so valuable. Learn this rule to change your app in a controllable way. Happy Hacking!
+
+EDIT: If I've learned this rule before, I would be much more confident when facing the two problems in [[http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way/][Learn Incremental Deployment the Hard
+Way - dsdshome]]

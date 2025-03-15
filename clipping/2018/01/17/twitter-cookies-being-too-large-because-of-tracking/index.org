@@ -1,0 +1,11 @@
+#+TITLE: Twitter cookies being too large because of tracking
+
+This made me really laugh when I heard it.
+
+#+begin_quote
+
+Twitter has stocked too much tracking shit inside the cookie that the server was then rejecting the cookie header for being too large. And the server responded with 413 Request entity too large
+
+#+end_quote
+
+-- from [[http://bikeshed.fm/138][138: I Don't Know How the World Works Anymore - The Bike Shed]]

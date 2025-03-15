@@ -1,0 +1,111 @@
+#+TITLE: Add STI to a Legacy ActiveRecord Model
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-07]
+#+URI:         blog/2017/12/07/add-sti-to-a-legacy-activerecord-model/index.html
+#+TAGS:        ActiveRecord, Rails
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I need to add STI (Single Table Inheritance[fn:1]) to a long-existing table.
+
+This table already uses a column (token_type) to distinguish between two different types of data. And token_type can only be either ios (for IosDevice) or android (for AndroidDevice).
+
+I thought this would be a simple task but I could found few resources about how to do it. So I'll explain how I did this in this post.
+
+* Set inheritance_column
+
+To change the column STI uses, we need to set inheritance_column in our Base Model like this:
+
+#+begin_src ruby
+class Device::Base < ActiveRecord::Base
+  self.inheritance_column = 'token_type'
+end
+#+end_src
+
+This behavior is already documented in ActiveRecord's [[http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-inheritance_column][documentation]]:
+
+#+begin_quote
+
+Defines the name of the table column which will store the class name on single-table inheritance situations.
+
+The default inheritance column name is type, which means it's a reserved word inside Active Record. To be able to use single-table inheritance with another column name, or to use the column type in your own model for something else, you can set inheritance_column:
+
+#+end_quote
+* Hack How ActiveRecord Finds the Sub-classes
+
+Then comes the most important part of our solution. We need to make ActiveRecord finds our sub-class based on the existing value
+
+- ios -> IosDevice
+- android -> AndroidDevice
+
+After reading ActiveRecord's [[https://github.com/rails/rails/blob/633e9745f8eafb0d1d5523ec761fdee420bcbc91/activerecord/lib/active_record/inheritance.rb#L188][source code]], we need to follow these steps:
+
+1. Overwriting self.find_sti_class method in the base model:
+
+#+begin_src ruby
+class Device::Base < ActiveRecord::Base
+  def self.find_sti_class(type_name)
+    super("Device::#{type_name.classify}Device")
+  end
+end
+#+end_src
+
+   - Originally, find_sti_class was expecting some type_name more like a class name (e.g. Device::AndroidDevice)
+   - Using our hacker, we can still find Device::AndroidDevice even if the type value is android
+
+2. Setting store_full_sti_class to false in sub-classes (Optional)
+
+#+begin_src ruby
+class Device::AndroidDevice < Device::Base
+  self.store_full_sti_class = false
+end
+#+end_src
+
+   - store_full_sti_class is a class_attribute in ActiveRecord::Inheritance
+   - Setting it to false means that we are not storing the full class name in the type column
+   - But actually we don't need to do this because we've already extend it to the full class name in find_sti_class
+
+3. Setting sti_name for sub-classes
+
+#+begin_src ruby
+class Device::AndroidDevice < Device::Base
+  def self.sti_name
+    'android'
+  end
+end
+#+end_src
+
+   - This sti_name will be used to construct [[https://github.com/rails/rails/blob/633e9745f8eafb0d1d5523ec761fdee420bcbc91/activerecord/lib/active_record/inheritance.rb#L209]]
+   - Then type_condition will be used in [[https://github.com/rails/rails/blob/eeaf9cf61c3cd14929583878785c31dab79e2196/activerecord/lib/active_record/core.rb#L279-L280]] to add constraints on inheritance_column when querying
+
+* Caveats
+
+There are some caveats for using this hack. (That's why it's called a hack and there are few resources introducing this.)
+
+1. find_sti_class is a private method
+
+   - Which means it might be changed or even removed in the future
+   - This possibility makes our hack pretty unstable
+   - Fortunately, we are just calling super and giving it a different input.
+   - So that, as long as this method is not removed and it's still used to find a class to initialize the ActiveRecord object, this hack will continue to work.
+
+2. *sti_name is also a private method*
+
+   - It's more unstable than find_sti_class because it's used in a place far from ActiveRecord::Inheritance and is more possible to be changed
+   - More importantly, we are overwriting the whole method instead of calling super, which means we will very likely break this code in a future upgrade
+
+3. token_type is doing more than one thing
+
+   - The reason I wanted to use token_type as the inheritance_column was that we've already been using it to distinguish iOS devices and Android devices.
+   - But still, after we add the responsibility of finding the STI class for this column. It's doing more than one thing.
+   - If we need to change the original values of token_type, it will affect the STI mechanism for these classes.
+   - It's definitely better to use a separate type column for STI. (Or remove the old responsibility to make it only responsible for STI)
+   - Again, fortunately, both token_type (ios and android) are both stable enough and won't be changed in any foreseeable future.
+
+So, think about these trade-offs before you try out my hack to STI. (I've made the decision to use this because I'm willing to take this risk for the convenience this quick STI hack brings to the project)
+
+* Footnotes
+[fn:1]
+
+[[https://martinfowler.com/eaaCatalog/singleTableInheritance.html][P of EAA: Single Table Inheritance]]

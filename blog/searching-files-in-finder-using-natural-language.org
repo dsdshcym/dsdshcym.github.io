@@ -1,0 +1,30 @@
+#+TITLE: Searching Files in Finder using Natural Language
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-29]
+#+URI:         blog/2018/01/29/searching-files-in-finder-using-natural-language/index.html
+#+TAGS:        macOS
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Yet another day, I wanted to find some images for testing our image uploading feature. I found that Finder/Spotlight can accept queries in natural language: images smaller than 2MB.
+
+[[https://i.loli.net/2018/01/29/5a6f19bca9323.jpg]]
+
+Of course we can also use find in command line to filter files as well:
+
+- Find files equals to a specific size
+
+#+begin_src awk
+find . -size 2M
+#+end_src
+- Find files larger than a specific size
+
+#+begin_src awk
+find . -size +2M
+#+end_src
+- Find files smaller than a specific size
+
+#+begin_src awk
+find . -size -2M
+#+end_src

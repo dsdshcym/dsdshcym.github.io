@@ -1,0 +1,134 @@
+#+TITLE: Test Suite as a Complexity Measuring Tool
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-03-12]
+#+URI:         blog/2019/03/12/test-suite-as-a-complexity-measuring-tool/index.html
+#+TAGS:        Software Engineering, Elixir
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Why this post
+
+Complexity is the top enemy to software development. Because not only is reducing complexity difficult, but also measuring complexity is probably more difficult.[fn:1]
+
+There were many attempts to measure software complexity but they all failed in some way. For example:
+
+- Lines of Code
+- [[https://en.wikipedia.org/wiki/Cyclomatic_complexity][Cyclomatic complexity]]
+- Assignments, Branches and Conditions (ABC) Metric
+
+But this post is not about these metrics. The main focus of this post is to discuss a "new" complexity measuring tool: our test suite (if written well).
+
+* Why do we need to listen to our tests?
+
+Some test advocates (including myself) often say that we should "listen to your tests!" But they seldom tell us why.
+
+I think the reason behind this statement is that *our tests (if written well) is a reflection of our code's (external) complexity.* But I didn't see people make this point clear. (That's why I used "new" when introducing test suite as a complexity measuring tool.)
+
+To discuss this, we need to define what are well written tests first. In this post, well written tests are tests that cover all the cases of the SUT (subject under test). Some general cases can use one typical test point to represent or be written as property-based tests, but they all count as only one test.
+
+For example, if you want to test a Fibonacci function, you may write test cases like this:
+
+#+begin_src matlab
+defmodule FibonacciTest do
+  use ExUnit.Case
+  use ExUnitProperties
+
+  test "F(0) = 0" do
+    assert Fibonacci.calc(0) == 0
+  end
+
+  test "F(1) = 1" do
+    assert Fibonacci.calc(1) == 1
+  end
+
+  property "F(n) = F(n - 1) + F(n - 2), for n > 1" do
+    check all n <- positive_integer(),
+              n = n + 1,
+              n < 1_000_000_000 do
+      assert Fibonacci.calc(n) == Fibonacci.calc(n - 1) + Fibonacci.calc(n - 2)
+    end
+  end
+end
+#+end_src
+
+These test cases represent the behavior of the Fibonacci.calc/1 function perfectly. Because they are translated directly from the definition of Fibonacci numbers. And they matches the complexity of the problem this function wants to solve:
+
+1. The tests number is like a Cyclomatic Complexity measurement, representing the conditions of the function.
+2. The expressions in these tests are real world examples of how to use the interface. (what parameters to pass, what outputs would be returned, etc.)
+3. The test descriptions document the intention of these different cases.
+
+But these tests can only represent the external complexity (behavior) of the function. We can easily have two or more completely different implementations (internal complexities).
+
+- A naive implementation:
+
+#+begin_src ruby
+defmodule Fibonacci do
+  def calc(0), do: 0
+  def calc(1), do: 1
+  def calc(n) when n > 1, do: calc(n - 1) + calc(n - 2)
+end
+#+end_src
+- A faster implementation[fn:2]:
+
+#+begin_src ruby
+defmodule Fibonacci do
+  require Integer
+
+  def calc(0), do: 0
+  def calc(1), do: 1
+
+  def calc(n) when n > 0 and Integer.is_odd(n) do
+    k = div(n - 1, 2)
+
+    f_k = calc(k)
+    f_k_plus_1 = calc(k + 1)
+
+    f_k_plus_1 * f_k_plus_1 + f_k * f_k
+  end
+
+  def calc(n) when n > 0 and Integer.is_even(n) do
+    k = div(n, 2)
+
+    f_k = calc(k)
+    f_k_plus_1 = calc(k + 1)
+
+    f_k * (2 * f_k_plus_1 - f_k)
+  end
+end
+#+end_src
+
+The thing is that external complexity matters much more than internal complexity. Here is why:
+
+1. External complexity is the only thing matters because it's the behavior of your code/app.
+
+   - It doesn't matter to other developers how you structure your code internally, as long as it can do what it's supposed to do.
+   - It doesn't matter to your user how you organize your modules/classes internally, as long as your app can do what user told it to do.
+
+2. If you have a piece of code, whose internal complexity is much higher than its external complexity, and you have a thorough test suite covering the external complexity, you can always rewrite the internal and get a simpler implementation.
+3. It's the combination of all the external complexities of every modules in your application that make it complicated. That's why [[http://dsdshcym.github.io/blog/2017/04/05/my-summary-for-object-oriented-programming/][OOP is all about messaging]].
+
+Furthermore, you can surely have different implementations for your test suite as well. That means testing as a complexity measuring tool can give us different results. How's that possible and how to understand this issue with the thinking of complexity?
+
+* Different styles of testing are just different perspectives
+
+Just like different people can understand the same thing in completely different ways, testing can give us different complexity measurement results. (And that's also why measuring complexity is so hard. Because there are no universal and objective standards yet.)
+
+Take [[https://github.com/testdouble/contributing-tests/wiki][Detroit-style TDD and London-style TDD]] for example:
+
+Detroit-style
+    Every test written is designed to maximize regression safety. (Be as realistic as possible. test doubles are seldom used.)
+London-style
+    Focuses on communications between objects and uses test doubles to direct the design of systems.
+
+They are just two ways of understanding the same SUT. Detroit-style says the SUT needs to do stuff a, b, c. London-style says the SUT needs to send messages to dependencies A, B, C to do stuff a, b, c. And they are both right. They are just two different perspectives of the same thing.
+
+How to decide which understanding is better? Well, it depends. And I don't have a quantitative formula for deciding which one is better either. But at least, I know that when I write my tests first, I'm thinking about the complexity of my code already. And that's why I should listen to my tests. Maybe with a different view (test strategy), I can simplify my understanding of the code by a lot.
+
+* Footnotes
+[fn:1]
+
+See also [[https://martinfowler.com/bliki/CannotMeasureProductivity.html][CannotMeasureProductivity]] for why measuring complexity is hard.
+
+[fn:2]
+
+Check [[https://www.nayuki.io/page/fast-fibonacci-algorithms][Fast Fibonacci algorithms]] for more details about this algorithm

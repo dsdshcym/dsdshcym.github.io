@@ -1,0 +1,118 @@
+#+TITLE: Create Experiences When Coaching
+
+[[https://yiming.dev/clipping/2019/09/06/clippings-of-2019-aug/#orgd3b7b0e][Since the beginning of my career, I've been nudging people to write
+more tests.]] I learned one thing from these coaching experiences: *coaching is hard.* Because coaching requires one to *change* another's existing knowledge, and changing another individual is really hard. So how to coach (a.k.a change people) more effectively? *Creating experience and let people change themselves* is the best way I can tell.
+
+* Create Experience, Not Arguments
+#+begin_quote
+
+Change Pro-Tip: When I can give people an experience, I get dramatically better results than when I give them reasoning. [[https://t.co/qe4RGOQqHT][pic.twitter.com/qe4RGOQqHT]]
+
+— GeePaw Hill (@GeePawHill) [[https://twitter.com/GeePawHill/status/1150791416492240896?ref_src=twsrc%5Etfw][July 15, 2019]]#+end_quote
+
+In this thread, GeePaw explains why creating experiences is the best and how to do that.
+
+#+begin_quote
+
+- Nothing works to persuade like having a winning experience (Why?)
+
+  - humans don't mostly decide what to do based on reasons
+  - they decide what to do and use reasons to justify it
+
+- An experience (What?)
+
+  - is a short period of a particular activity
+  - is intended to put the problem and its solution "under the fingers"
+
+- Ways to have an experience (How?)
+
+  a toy
+      short exercises or games that give a person a taste of the better.
+  a small portion of the day-job problem & solution
+      situations from the dayjob world that you've vetted to be sure you'll get the "better".
+  the full day-job problem & solution
+      live-action
+
+- *"Create experiences, not arguments."*
+
+#+end_quote
+
+I can tell the same from my TDD-coaching journey[fn:1]:
+
+1. Presentation (no experiences) can hardly work
+
+   When I just started teaching developers about TDD, I thought it was easy: just gave a presentation with beautiful slides and fancy gifs, developers would realize TDD as a great tool and become so excited to learn it by themselves.
+
+   It turned out that I was too naive. Nothing changed after my first presentation about testing. Developers still didn't write automated tests. "Okay, let me try presenting Code Review next time." Again, nothing changed. Developers still merged others merge requests without a glance.
+
+2. Workshop (a toy) is slightly better
+
+   Well, I learned the lesson of [[https://twitter.com/GeePawHill/status/1151429663413145602]["Try Different, Not Harder"]] from my failed presentations. So I began to try different methods.
+
+   I hosted several workshops around TDD and refactoring. I chose a small problem beforehand (e.g. [[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32][99 Bottles]], [[https://github.com/thoughtbot-upcase-exercises/extract-class][thoughtbot-upcase-exercises/extract-class]], etc.). Then I organized developers to work on them in the workshop. After everyone finished their implementation, we discussed about tradeoffs around different solutions.
+
+   Developers enjoyed it. But still, not many tests were added or refactoring were made in our real projects after the workshop.
+
+   I wondered why.
+
+   1. The topic was not focused.
+
+      During the discussion, We were just exchanging our own opinions. One developer proposed "don't write your own email regex expression". Another said "we should plan before coding". So naturally, people couldn't get the point of testing or refactoring.
+
+   2. Toy problems were different from real problems.
+
+      The problems I chose were small enough to be fitted into a short time frame. The drawback was that they couldn't reflect what to do in a real project.
+
+      - How to start adding tests in a legacy application with no existing tests?
+      - How to refactor a complex piece of business logic?
+      - etc.
+
+      This is the main reason that "toy experiences" work poorly.
+
+3. Code review (a small portion of the day-job) move the needle
+
+   "Toy experiences" didn't work well. Thus I started nudging people to do code reviews (which was as hard as nudging people to write tests, if not harder.) Then in the code review session, I left comments about how to adding tests with examples.
+
+   Code review moved the needle. Developers saw the benefits of having some automated tests and another person to check the code before merging. They started adding tests and assigning merge requests to me for my suggestions.
+
+4. Pair programming (the full day-job) is the king
+
+   Pair programming worked the best. Without mentioning I was trying to teach TDD or refactoring, I just sit down with a developer to pair with him. Then we wrote some tests, refactored some code together. Often, he would see the benefits of testing and refactoring by himself. And after the pairing session, he would started writing more tests and refactoring more, without me told him so.
+
+   This is the power of creating experiences when coaching.
+
+* Research on Learning Says the Same
+
+If you need more proofs, check out this report from Farnam Street: [[https://fs.blog/2013/01/how-people-learn/][Arguments Are For Learning, Not Winning]].
+
+#+begin_quote
+
+- More instruction wasn’t helping students advance from novice to expert.
+
+  - In fact, the data indicated the opposite: *students had more novice-like beliefs after they completed a course than they had when they started.*
+
+- Improved teaching and learning
+
+  - A lot of educational and cognitive research can be reduced to this basic principle: *People learn by creating their own understanding.*
+  - Effective teaching facilitates that creation by getting students engaged in thinking deeply about the subject at an appropriate level and then monitoring that thinking and guiding it to be more expert-like.
+
+    - Reducing Cognitive Load
+    - Addressing Beliefs
+    - Stimulating and Guiding Thinking
+
+#+end_quote
+
+Note that *people learn by creating their own understanding.* How can a person create her own understanding? From her own experiences!
+
+So, please remember this when coaching others, *bring less instructions, create more experiences!*
+
+* Footnotes
+[fn:1]
+
+BTW, this journey is also a real world example for THE LAW OF RASPBERRY JAM from [[https://www.amazon.com/gp/product/B004J35LHQ/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=jbrains.ca-20&linkId=0ebeca4e7ca4d1a13bbf43b332282562][The Secrets of Consulting by Gerald Weinberg]].
+
+#+begin_quote
+
+The wider you spread it, the thinner it gets.
+
+#+end_quote

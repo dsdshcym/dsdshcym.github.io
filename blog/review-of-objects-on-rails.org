@@ -1,0 +1,75 @@
+#+TITLE: Review of Objects on Rails
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-04-07]
+#+URI:         blog/2017/04/07/review-of-objects-on-rails/index.html
+#+TAGS:        Book Review, Rails, Ruby, Object-Oriented
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This is my review of the book [[http://objectsonrails.com/][Objects on Rails]].
+
+- This book shows us another way to build a web application based on Rails: Write domain objects first, then use AR as an implementation detail. And use patterns like dependency injection (DI) and Data-Context-Interaction (DCI) to keep everything thin.
+- I think treating AR as an implementation detail is a great way to build Rails application.
+
+  1. Even "Fat model, thin controller" can lead to really fat model classes. We need to keep everything thin and follow SRP.
+  2. If we don't do this, then the model will violate SRP. Since it's both responsible for data persistence and business logic. So let AR handle the data persistence and let model object handle your business logic.
+  3. Another way to do this is to use composition. For every business model, build a class for it and it don't inheritant from AR. If it needs to persistent some data, build another AR class and composite it into the business model object. It's more complicated than this solution but it makes the responsibility separation more clear.
+
+- And there's another article about what framework can influence the software complexity: [[https://hackernoon.com/complexity-and-strategy-325cd7f59a92#.kgw67pysv][Complexity and Strategy]]
+
+  - Rails can help us to build the software faster at the beginning of the project.
+  - But once the project becomes into a huge application, Rails will slow us down.
+
+    1. As it says in Complexity and Strategy: Framework can take us to a higher point at the beginning, but it won't change the complexity curve (the relation between functionality and cost). So the cost will become higher as the app grows.
+    2. As it says in this book:
+
+#+begin_quote
+
+       The dark side of having sensible framework conventions is that after a while, those conventions turn into assumptions
+
+#+end_quote
+
+  - Designing application in the way this book describes can let us understand our domain problems better. And it won't use Rails until it's necessary. So we'll start at a lower point in the complexity curve and can move faster later.
+
+- For the Exhibit pattern, I agree with the idea to extract logic from view.
+
+  - But I just feel the Exhibit pattern in this book is too much. It's like another framework just for view layer.
+  - If another new dev joins the team, he/she needs to learn this whole new view framework to get into work.
+  - And we can't get that many benifits from this framework.
+  - In my current understanding, A facade between view and controller is good enough. A controller builds a facade which contains all the information the view needs. A view reference this facade object by access method.
+
+- Decoration vs Extension
+
+  - For the DCI part (extend Taggable on an instance object), I'm against it at first. I think this is where we need to follow Prefer composition over inheritance principle.
+
+    - Decorator (or something similar using composition) can easily do the same thing as the Taggable module did in this book.
+    - For the reasons to not use decorator in this book, I think it's not enough to convince me to use DCI. But I can understand the reason behind this: since AR is an implementation detail, and #save method is private, a decorator cannot access #save method.
+
+#+begin_quote
+
+      - Why use mixin instead of decorator?
+
+        - we need the tight integration that only a module can give us.
+        - For instance, intercepting #save within the object
+
+#+end_quote
+
+  - But after I read [[../../Org/notes/software_engineering.html#ID-cde797bd-afc4-4769-a7e7-c44e4e8c9c75][Appendix C: Decoration vs. Dynamic Module Extension]], I get the idea of extension here.
+
+    - Decoration can fall apart when an undecorated method needs to call a decorated method (it can't, it can only call the undecorated version)
+    - How to choose between Decoration and Extension
+
+      Decoration
+          For applications where you want to adorn an object with some extra functionality, or modify how it presents itself, a decorator is probably the best bet. Decorators are great for creating Presenters, where we just want to change an object’s “face” in a specific context.
+      Extension
+          On the other hand, when building up a composite object at runtime object out of individual “aspects” or “facets”, module extension may make more sense. Judicious use of module extension can lead to a kind of “emergent behavior” which is hard to replicate with decoration or delegation.
+
+- Conclusion
+
+  - There's more than one way to do it
+
+    - Your project is not a Rails project; it is a software project, which uses Rails to satisfy the need of projecting your business objects onto the web.
+    - Rails is not the framework; it is a part of your overall project architecture.
+    - So don't be afraid to build up your project's architecture.
+    - There is very little new under the sun; whatever the problem you are facing, chances are Kent Beck already solved it in Smalltalk.

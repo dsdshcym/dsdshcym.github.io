@@ -1,0 +1,2459 @@
+#+TITLE: Clippings from Measure What Matters
+* FOREWORD Larry Page, Alphabet CEO and Google Cofounder
+
+- OKRs are a simple process that helps drive varied organizations forward.
+
+  - *Take it as a blueprint and make it yours, based on what you want to see happen!*
+
+- For leaders, OKRs give a lot of visibility into an organization.
+
+  - They also provide a productive way to push back.
+
+#+begin_src ruby
+
+Why can't users load a video on YouTube almost instantly? Isn't that
+more important than this other goal you're planning to do next
+quarter?
+#+end_src
+
+- OKRs have helped lead us to 10x growth, many times over.
+
+  - They've helped make our crazily bold mission of “organizing the world's information” perhaps even achievable.
+  - They've kept me and the rest of the company on time and on track when it mattered the most.
+
+* PART ONE: OKRs in Action
+** 1 Google, Meet OKRs (How OKRs came to Google, and the superpowers they convey.)
+#+begin_quote
+
+If you don't know where you're going, you might not get there.
+
+#+end_quote
+
+- The founders were quintessential visionaries, with extreme entrepreneurial energy. What they lacked was management experience.
+
+  - For Google to have real impact, or even to reach liftoff, they would have to learn to make tough choices and keep their team on track.
+  - Given their healthy appetite for risk, they'd need to pull the plug on losers—to fail fast.
+
+- Ideas are easy. Execution is everything.
+- OKR
+
+  - Short for Objectives and Key Results.
+  - It is a collaborative goal-setting protocol for companies, teams, and individuals.
+
+- OKRs are not a silver bullet
+
+  - They cannot substitute for sound judgment, strong leadership, or a creative workplace culture.
+  - But if those fundamentals are in place, OKRs can guide you to the mountaintop.
+
+- Definitions (when first introduced to Google)
+
+  - A management methodology that helps to ensure that the company focuses efforts on the same important issues throughout the organization.
+  - An OBJECTIVE
+
+    - simply WHAT is to be achieved, no more and no less.
+    - By definition, objectives are significant, concrete, action oriented, and (ideally) inspirational.
+    - When properly designed and deployed, they're a vaccine against fuzzy thinking—and fuzzy execution.
+
+  - KEY RESULTS
+
+    - benchmark and monitor HOW we get to the objective.
+    - Effective KRs are specific and time-bound, aggressive yet realistic.
+    - Most of all, they are measurable and verifiable.
+
+#+begin_quote
+
+      It's not a key result unless it has a number.
+
+#+end_quote
+    - You either meet a key result's requirements or you don't;
+    - Where an objective can be long-lived, rolled over for a year or longer, key results evolve as the work progresses.
+
+      - Once they are all completed, the objective is necessarily achieved.
+      - And if it isn't, the OKR was poorly designed in the first place.
+
+- Use care when applying goals in your organization.
+
+  - Goals may cause systematic problems in organizations due to narrowed focus, unethical behavior, increased risk taking, decreased cooperation, and decreased motivation.
+
+- For anyone striving for high performance in the workplace, goals are very necessary things.
+
+  - Performance
+
+    - "hard goals" drive performance more effectively than easy goals.
+    - specific hard goals "produce a higher level of output" than vaguely worded ones.
+
+  - how do you build engagement?
+
+    - no single factor has more impact than clearly defined goals that are written down and shared freely.
+    - Goals create alignment, clarity, and job satisfaction.
+
+- Goal setting isn't bulletproof:
+
+  - When people have conflicting priorities or unclear, meaningless, or arbitrarily shifting goals, they become frustrated, cynical, and demotivated.
+
+- An effective goal management system links goals to a team's broader mission.
+
+  - It respects targets and deadlines while adapting to circumstances.
+  - It promotes feedback and celebrates wins, large and small.
+  - Most important, it expands our limits. (It moves us to strive for what might seem beyond our reach.)
+
+- goals "can inspire employees and improve performance."
+- In today's economy, change is a fact of life.
+
+  - We cannot cling to what's worked and hope for the best.
+  - We need a trusty scythe to carve a path ahead of the curve.
+
+- OKRs are Swiss Army knives, suited to any environment.
+
+  - At smaller start-ups, where people absolutely need to be pulling in the same direction, OKRs are a survival tool.
+
+    - Structured goals give backers a yardstick for success: We're going to build this product, and we've proven the market by talking to twenty-five customers, and here's how much they're willing to pay.
+
+  - At medium-size, rapidly scaling organizations, OKRs are a shared language for execution.
+
+    - They clarify expectations: What do we need to get done (and fast), and who's working on it?
+    - They keep employees aligned, vertically and horizontally.
+
+  - In larger enterprises, OKRs are neon-lit road signs.
+
+    - They demolish silos and cultivate connections among far-flung contributors.
+    - By enabling frontline autonomy, they give rise to fresh solutions.
+    - And they keep even the most successful organizations stretching for more.
+
+- objectives and key results drive clarity, accountability, and the uninhibited pursuit of greatness.
+- If this book were an OKR, I'd call its objective aspirational: to make people's lives, your life, more fulfilling.
+- this book comes in two complementary sections.
+
+  1. the system's cardinal features and how it turns good ideas into superior execution and workplace satisfaction.
+
+     1. OKRs' origin story at Andy Grove's Intel
+     2. Then come the four OKR "superpowers":
+
+        1. *Focus* and Commit to Priorities
+        2. *Align* and Connect for Teamwork
+        3. *Track* for Accountability
+        4. *Stretch* for Amazing
+
+  2. OKRs' applications and implications for the new world of work
+
+     1. CFRs
+     2. Continuous Improvement
+     3. The Importance of Culture
+
+** 2 The Father of OKRs (Andy Grove creates and inculcates a new way of structured goal setting.)
+#+begin_quote
+
+There are so many people working so hard and achieving so little.—Andy Grove
+
+#+end_quote
+
+- they match the two purposes.
+
+  - The objective is the direction:
+  - The key results are milestones
+
+    - The key result has to be measurable.
+    - But at the end you can look, and without any arguments: Did I do that or did I not do it? Yes? No? Simple. No judgments in it.
+
+*** Our MBO Ancestors: the first great "modern" business management thinker: Peter Drucker.
+
+- A corporation should be a community "built on trust and respect for the workers—not just a profit machine."
+- management by objectives (MBOs)
+
+  - At many companies, goals were centrally planned and sluggishly trickled down the hierarchy.
+  - At others, they became stagnant for lack of frequent updating;
+  - or trapped and obscured in silos;
+  - or reduced to key performance indicators (KPIs), numbers without soul or context.
+
+- Most deadly of all, MBOs were commonly tied to salaries and bonuses.
+
+*** Measuring Output
+
+- Andy Grove's quantum leap was to apply manufacturing production principles to the "soft professions", the administrative, professional, and managerial ranks.
+- He sought to
+
+  - "create an environment that values and emphasizes output"
+  - avoid what Drucker termed the "activity trap": "[S]tressing output is the key to increasing productivity, while looking to increase activity can result in just the opposite."
+
+- Grove wrestled with two riddles:
+
+  - How can we define and measure output by knowledge workers?
+  - And what can be done to increase it?
+
+- At Intel,
+
+  - Andy recruited "aggressive introverts" in his own image, people who solved problems quickly, objectively, systematically, and permanently.
+  - Following his lead, they were skilled at confronting a problem without attacking the person.
+  - They set politics aside to make faster, sounder, more collective decisions.
+
+- In nearly every respect, the new method (OKRs) negated the old (MBOs):
+
+  ||MBOs |Intel OKRs | |
+  ||"What" |"What" and "How" | |
+  ||Annual |Quarterly or Monthly | |
+  ||Private and Siloed |Public and Transparent | |
+  ||Top-down |Bottom-up or Sideways (~50%) | |
+  ||Tied to Compensation |Mostly Divorced from Compensation | |
+  ||Risk Averse |Aggressive and Aspirational | |
+
+*** Intel's Lifeblood
+
+- I'd never worked at a place where you wrote down your goals, much less where you could see everybody else's, on up to the CEO.
+
+  - I found it illuminating, a beacon of focus.
+  - And it was liberating, too.
+
+    - When people came to me mid-quarter with requests to draft new data sheets, I felt I could say no without fear of repercussion.
+    - My OKRs backed me.
+    - They spelled out my priorities for all to see.
+
+- Through the Andy Grove era, OKRs were Intel’s lifeblood.
+
+  - They stood front and center at weekly one-on-ones, biweekly staff meetings, monthly and quarterly divisional reviews.
+  - That was how Intel managed tens of thousands of people to etch a million lines of silicon or copper to within a millionth of a meter in accuracy.
+
+*** Andy Grove, OKR Incarnate
+*** Andy Grove's Legacy
+*** Dr.Grove's Basic OKR Hygiene
+
+- The essence of a healthy OKR culture:
+
+  - ruthless intellectual honesty
+  - a disregard for self-interest
+  - deep allegiance to the team
+
+- Lessons learned
+
+  - Less is more (4 Superpower #1: Focus and Commit to Priorities)
+  - Set goals from the bottom up (7 Superpower #2: Align and Connect for Teamwork)
+  - No dictating (7 Superpower #2: Align and Connect for Teamwork)
+  - Stay flexible (10 Superpower #3: Track for Accountability)
+  - Dare to fail (12 Superpower #4: Stretch for Amazing)
+  - A tool, not a weapon (15 Continuous Performance Management: OKRs and CFRs)
+  - Be patient; be resolute
+
+    - An organization may need up to four or five quarterly cycles to fully embrace the system,
+    - and even more than that to build mature goal muscle.
+
+** 3 Operation Crush: An Intel Story (How OKRs won the microprocessor wars.)
+
+- When you’re really high up in management, you’re teaching
+- if you measured it, things got better.
+
+*** Intel's Urgency
+*** Turning on a Dime
+
+- I can’t tell you how many times I’ve seen people walk out of meetings saying, “I’m going to conquer the world” . . . and three months later, nothing has happened.
+- You get people whipped up with enthusiasm, but they don’t know what to do with it.
+- In a crisis, you need a system that can drive transformation—quickly.
+- That’s what the key result system did for Intel.
+- *It gave management a tool for rapid implementation.*
+
+  - And when people reported on what they’d gotten done, we had black-and-white criteria for assessment.
+
+- Crush was a thoroughly cascaded set of OKRs, heavily driven from the top, but with input from below.
+
+  - You can tell people to clean up a mess, but should you be telling them which broom to use?
+  - When top management was saying “We’ve got to crush Motorola!” somebody at the bottom might have said “Our benchmarks are lousy; I think I’ll write some better benchmarks.”
+
+*** The Greater Good
+
+- Culture counts
+
+  - Andy always wanted people to bring problems to management’s attention.
+  - A field engineer tells his general manager, “You turkeys don’t understand what’s happening in the market,” and within two weeks, the whole company is realigned, top to bottom.
+
+- Crisis and different companies
+
+  - Bad companies are destroyed by crisis
+  - Good companies survive them
+  - Great companies are improved by them
+
+** 4 Superpower #1: Focus and Commit to Priorities (OKRs help us choose what matters most.)
+#+begin_quote
+
+It is our choices ... that show what we truly are, far more than our abilities.
+
+#+end_quote
+
+- Measuring what matters begins with the question:
+
+#+begin_quote
+
+  What is most important for the next three (or six, or twelve) months?
+
+#+end_quote
+
+  - What are our main priorities for the coming period?
+  - Where should people concentrate their efforts?
+
+- Successful organization
+
+  - focus on the handful of initiatives that can make a real difference
+  - deferring less urgent ones
+
+- Their leaders commit to those choices in word and deed
+- By standing firmly behind a few top-line OKRs, they give their teams a compass and a baseline for assessment.
+
+  - Wrong decisions can be corrected once results begin to roll in.
+  - Nondecisions—or hastily abandoned ones—teach us nothing
+
+- An effective goal-setting system starts with
+
+  1. disciplined thinking at the top
+  2. leaders who invest the time and energy to choose what counts
+
+- While paring back a list of goals is invariably a challenge, it is well worth the effort.
+
+  - No one individual—or company—can "do it all."
+  - With a select set of OKRs, we can highlight a few things—the vital things—that must get done, as planned and on time.
+
+*** In the Beginning...
+
+- For organization-level OKRs, the buck stops with senior leadership. They must personally commit to the process.
+- The most powerful and energizing OKRs often originate with frontline contributors.
+- Regardless of how leaders choose a company's top-line goals, they also need goals of their own.
+
+#+begin_quote
+
+  "When you're the CEO or the founder of a company ... you've got to say 'This is what we're doing,' and then you have to model it. Because if you don't model it, no one's going to do it."
+
+#+end_quote
+
+*** Communicate with Clarity
+
+- For sound decision making, esprit de corps, and superior performance, *top-line goals must be clearly understood throughout the organization.*
+- Yet by their own admission, two of three companies fail to communicate these goals consistently.
+
+  - In a survey of eleven thousand senior executives and managers, a majority couldn’t name their company’s top priorities.
+  - Only half could name even one.
+
+- Leaders must get across the why as well as the what.
+
+  - Their people need more than milestones for motivation.
+  - They are thirsting for meaning, to understand how their goals relate to the mission.
+
+- And the process can't stop with unveiling top-line OKRs at a quarterly all-hands meeting.
+
+#+begin_quote
+
+  "When you are tired of saying it, people are starting to hear it."
+
+#+end_quote
+
+*** Key Results: Care and Feeding
+
+- Objectives and key results are the yin and yang of goal setting—principle and practice, vision and execution.
+
+  - Objectives are the stuff of inspiration and far horizons.
+  - Key results are more earthbound and metric-driven.
+
+    - They typically include hard numbers for one or more gauges:
+
+      - revenue
+      - growth
+      - active users
+      - quality
+      - safety
+      - market share
+      - customer engagement
+
+    - To make reliable progress, a manager must be able to measure performance and results against the goal
+
+- If an objective is well framed, three to five KRs will usually be adequate to reach it
+
+  - Too many (KRs) can dilute focus and obscure progress
+
+- Besides, each key result should be a challenge in its own right
+
+  - if you're certain you're going to nail it, you're probably not pushing hard enough
+
+*** What, How, When (to introduce OKRs)
+
+- Since OKRs are a shock to the established order, it may make sense to ease into them
+- The best practice may be a parallel, dual cadence, with short-horizon OKRs (for the here and now) supporting annual OKRs and longer-term strategies
+- Keep in mind, though, that it’s the shorter-term goals that drive the actual work.
+- Clear-cut time frames intensify our focus and commitment;
+
+  - nothing moves us forward like a deadline.
+
+- To win in the global marketplace, organizations need to be more nimble than ever before
+
+  - In my experience, a quarterly OKR cadence is best suited to keep pace with today’s fast-changing markets.
+  - A three-month horizon curbs procrastination and leads to real performance gains.
+  - [[https://www.amazon.cn/dp/B015VACHOK/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1486535630&sr=1-2&keywords=high+output+management][High Output Management]]
+
+#+begin_quote
+
+    For the feedback to be effective, it must be received very soon after the activity it is measuring occurs. Accordingly, an [OKR] system should set objectives for a relatively short period. For example, if we plan on a yearly basis, the corresponding [OKR] time should be at least as often as quarterly or perhaps even monthly.
+
+#+end_quote
+
+- *The best OKR cadence is the one that fits the context and culture of your business.*
+
+*** Pairing Key Results
+
+- Ford's Example
+
+#+begin_src sql
+
+The specific, challenging goals were met (speed to market, fuel
+efficiency, and cost) at the expense of other important features that
+were not specified (safety, ethical behavior, and company reputation)
+#+end_src
+- The more ambitious the OKR, the greater the risk of overlooking a vital criterion.
+- To safeguard quality while pushing for quantitative deliverables, one solution is to pair key results—to measure "both effect and counter-effect"
+
+*** The Perfect and the Good
+#+begin_quote
+
+Don't allow the perfect to be the enemy of the good.
+
+#+end_quote
+
+- Remember that an OKR can be modified or even scrapped at any point in its cycle.
+- Sometimes the "right" key results surface weeks or months after a goal is put into play.
+- A few goal-setting ground rules:
+
+  1. Key results should be succinct, specific, and measurable
+  2. A mix of outputs and inputs is helpful
+  3. Completion of all key results must result in attainment of the objective. If not, it's not an OKR
+
+*** Less Is More
+#+begin_quote
+
+Innovation means saying no to one thousand things
+
+#+end_quote
+
+- In most cases, the ideal number of quarterly OKRs will range between three and five.
+
+  - Too many objectives can blur our focus on what counts, or distract us into chasing the next shiny thing.
+
+- For individuals, *selective goal setting is the first line of defense against getting overextended.*
+
+  - How does the new goal stack up against my existing ones?
+  - Should something be dropped to make room for the new commitment?
+  - *What matters most?*
+
+- We must realize—and act on the realization—that *if we try to focus on everything, we focus on nothing.*
+- Above all, top-line objectives must be significant
+
+#+begin_quote
+
+  The art of management, lies in the capacity to select from the many activities of seemingly comparable significance the one or two or three that provide leverage well beyond the others and concentrate on them.
+
+#+end_quote
+#+begin_quote
+
+  Winning organizations need to "put more wood behind fewer arrows."
+
+#+end_quote
+
+** 5 Focus: The Remind Story (Brett Kopf used OKRs to overcome attention deficit disorder.)
+
+- You can only do one big thing at a time really well, and so you better know what that one thing is.
+- As companies scale,
+
+  - people need to see the CEO’s priorities and how they can align for maximum impact.
+  - And they need to see it’s okay to make a mistake, to correct it and move on.
+
+    - You can’t fear screwing up.
+    - That squelches innovation.
+
+- At a fast-growing start-up, effective leaders keep firing themselves from jobs they did at the beginning.
+
+** 6 Commit: The Nuna Story (Jini Kim's personal commitment to transform health care.)
+
+- In implementing OKRs, leaders must *publicly commit to their objectives and stay steadfast.*
+- For structured goal setting to prosper, executives need to commit to the process.
+- It may take a quarter or two to overcome your managers' resistance and get them acclimated to OKRs, to view them
+
+  - not as a necessary evil, or some perfunctory exercise
+  - but as a practical tool to fulfill your organization's top priorities.
+
+- The more challenging an objective, the more tempting it may be to abandon it.
+
+  - People naturally look to their bosses in setting goals and following through.
+
+- To inspire true commitment, leaders must practice what they teach.
+- By definition, start-ups wrestle with ambiguity.
+
+  - Our whole team needs sharper focus and clearer priorities, the prerequisites for deeper commitment.
+  - OKRs have forced a bunch of conversations in the company that otherwise would not have happened.
+  - We're getting more alignment.
+  - Instead of reacting to external events on the fly, we're acting purposefully on our plans for each quarter.
+
+- Commitment feeds on itself
+
+#+begin_quote
+
+  You’re not going to get the system just right the first time around. It’s not going to be perfect the second or third time, either. But don’t get discouraged. Persevere. You need to adapt it and make it your own
+
+#+end_quote
+- The hairier the mission, the more important your OKRs.
+
+** 7 Superpower #2: Align and Connect for Teamwork (Public, transparent OKRs spark and strengthen collaboration.)
+#+begin_quote
+
+We don't hire smart people to tell them what to do. We hire smart people so they can tell us what to do.
+
+#+end_quote
+
+- Public goals are more likely to be attained than goals held in private.
+- In an OKR system, the most junior staff can look at everyone's goals, on up to the CEO.
+- When people write down “This is what I'm working on,” it's easier to see where the best ideas are coming from.
+
+  - Soon it's apparent that the individuals moving up are the ones doing what the company most values.
+  - Organizational poisons—suspicion, sandbagging, politicking—lose their toxic power.
+
+- OKRs make objectives objective, in black and white.
+- Transparency seeds collaboration.
+
+  - Say Employee A is struggling to reach a quarterly objective. Because she has publicly tracked her progress, colleagues can see she needs help.
+  - Equally important, work relationships are deepened, even transformed.
+
+- In larger organizations, it's common to find several people unwittingly working on the same thing.
+
+  - By clearing a line of sight to everyone's objectives, OKRs expose redundant efforts and save time and money.
+
+*** The Same Page
+
+- According to the Harvard Business Review, companies with highly *aligned* employees are more than twice as likely to be top performers.
+- Studies suggest that only 7 percent of employees "fully understand their company's business strategies and what's expected of them in order to help achieve the common goals."
+
+  - Everything seems important; everything seems urgent. But what really needs to get done?
+
+- As a species, we crave connection.
+
+  - In the workplace, we're naturally curious about what our leaders are doing and how our work weaves into theirs.
+  - OKRs are the vehicle of choice for *vertical alignment* .
+
+*** The Grand Cascade
+
+- Cascaded goals corral lower-level employees and guarantee that they're working on the company's chief concerns
+- Follow along as we cascade a set of OKRs from top to bottom
+- With our top-level OKRs set, we work our way down the organization.
+
+#+begin_quote
+
+  - Objective (WHAT): Make $ for (football club) owner
+  - Key results (HOW)
+
+    - Win Super Bowl
+    - Fill home stands to 90%+
+
+#+end_quote
+
+  - As general manager, I cascade my goal down to the next level of management,
+  - My key results become their objectives.
+
+- In moderation, cascading makes an operation more coherent.
+- But when all objectives are cascaded, the process can degrade into a mechanical, color-by-numbers exercise, with four adverse effects:
+
+  1. A loss of agility
+
+     - Even medium-size companies can have six or seven reporting levels.
+     - As everyone waits for the waterfall to trickle down from above, and meetings and reviews sprout like weeds, each goal cycle can take weeks or even months to administer.
+     - *Tightly cascading organizations tend to resist fast and frequent goal setting.*
+     - Implementation is so cumbersome that quarterly OKRs may prove impractical.
+
+  2. A lack of flexibility
+
+     - Since it takes so much effort to formulate cascaded goals, people are reluctant to revise them mid-cycle.
+     - Even minor updates can burden those downstream, who are scrambling to keep their goals aligned.
+     - Over time, the system grows onerous to maintain.
+
+  3. Marginalized contributors
+
+     - Rigidly cascaded systems tend to shut out input from frontline employees.
+     - In a top-down ecosystem, contributors will hesitate to share goal-related concerns or promising ideas.
+
+  4. One-dimensional linkages
+
+     - While cascading locks in vertical alignment, it's less effective in connecting peers horizontally, across departmental lines.
+
+*** Bottoms Up!
+
+- Precisely because OKRs are transparent, they can be shared without cascading them in lockstep.
+
+  - an objective might jump from the CEO straight to a manager, or from a director to an individual contributor.
+  - Or the company's leadership might present its OKRs to everyone at once and trust people to say, “Okay, now I see where we're going, and I'll adapt my goals to that.”
+
+- To avoid compulsive, soul-killing overalignment, healthy organizations encourage some goals to emerge from the bottom up.
+
+  - Innovation tends to dwell less at the center of an organization than at its edges.
+  - The most powerful OKRs typically stem from insights outside the C-suite.
+
+#+begin_quote
+
+    - People in the trenches are usually in touch with impending changes early.
+
+      - Salespeople understand shifting customer demands before management does;
+      - financial analysts are the earliest to know when the fundamentals of a business change
+
+#+end_quote
+
+- Micromanagement is mismanagement
+
+  - A healthy OKR environment strikes a balance between
+
+    - alignment and autonomy,
+    - common purpose and creative latitude.
+
+  - An optimal OKR system frees contributors to set at least
+
+    - some of their own objectives
+    - most or all of their key results
+
+  - When our how is defined by others, the goal won't engage us to the same degree.
+
+    - People who choose their destination will own a deeper awareness of what it takes to get there.
+
+  - In business, I have found, *there is rarely a single right answer.*
+
+    - By loosening the reins and backing people to find their right answers, we help everybody win.
+
+- High-functioning teams thrive on a creative tension between top-down and bottom-up goal setting, a mix of aligned and unaligned OKRs.
+
+  - In times of operational urgency, when simple doing takes precedence, organizations may choose to be more directive.
+  - But when the numbers are strong and a company has grown too cautious and buttoned-up, a lighter touch may be just right.
+  - When leaders are attuned to the fluctuating needs of both the business and their employees, the mix of top-down and bottom-up goals generally settles at around half-and-half.
+
+*** Cross-functional Coordination
+
+- Even as modern goal setting successfully transcends the org chart, unacknowledged dependencies remain the number one cause of project slippage.
+
+  - The cure is lateral, cross-functional connectivity, peer-to-peer and team-to-team.
+  - For innovation and advanced problem solving, isolated individuals cannot match a connected group.
+
+- Connected companies are quicker companies.
+
+  - To grab a competitive advantage, both leaders and contributors need to link up horizontally, breaking through barriers.
+  - When goals are public and visible to all, a "team of teams" can attack trouble spots wherever they surface.
+
+#+begin_quote
+
+    Transparency creates very clear signals for everyone. You kick off virtuous cycles that reinforce your ability to actually get your work done. And the management tax is zero—it's amazing.
+
+#+end_quote
+
+** 8 Align: The MyFitnessPal Story (Alignment via OKRs is more challenging—and rewarding—than Mike Lee anticipated.)
+
+- OKRs are not islands.
+
+  - To the contrary, they create networks—vertical, horizontal, diagonal—to connect an organization's most vital work.
+  - When employees align with a company's top-line goals, their impact is amplified. They stop duplicating efforts or working counterproductively against the grain.
+
+- a glaring lack of alignment.
+
+  - I'd have no clue as to
+
+    - what other teams were doing,
+    - how we might work together toward a common objective.
+
+  - We'd try to compensate with more meetings, which only wasted time.
+
+- When you're defining a company's strategy on your own, with just one other person working on products, alignment is simple.
+- Entropy begins when you have two great people directly under you.
+
+  - You want to give each of them something big and purposeful to work on,
+  - and they both naturally want to move their piece of the project,
+  - and soon they're pulling out of alignment and charging in different directions.
+
+*** Cross-team Integration
+
+- Alignment is about *helping people understand what you want them to do.*
+- Without buy-in from the engineers, the OKR was doomed before it started
+- Each quarter our department heads presented their goals and identified dependencies. No one left the room until we'd answered some basic questions:
+
+  1. Are we meeting everyone's needs for buy-in?
+  2. Is a team overstretched?
+  3. If so, how can we make their objectives more realistic?
+
+- Alignment doesn't mean redundancy
+
+  - At MyFitnessPal, every OKR has a single owner, with other teams linking up as needed.
+
+    - *co-ownership weakens accountability*
+    - If an OKR fails, I don’t want two people blaming each other.
+    - Even when two or more teams have parallel objectives, their key results should be distinct.
+
+- Each time we went through the OKR process, we did a little better.
+
+  - Our objectives got more precise,
+  - our key results more measurable,
+  - our achievement rate higher.
+
+*** Unacknowledged Dependencies, Writ Larger
+
+- There were unacknowledged dependencies wherever we looked.
+
+  - Nor could anyone see how their targets might align with our own growth objectives, much less the bigger company picture.
+
+- “If we take this one off the road map this quarter, what happens? Would it really affect the user experience?”
+
+  - More often than not, the feature in question wouldn’t make a big difference.
+  - These calls are not subjective; we have metrics to measure impact.
+
+- Focus and alignment are binary stars.
+
+  - It couldn’t happen until we openly admitted, “Look, we can’t get all of these things done. We have to choose.”
+
+*** North Star Alignment
+
+- The larger the organization, the more value the system offers.
+- alignment contains a deeper meaning.
+
+  - Beyond making objectives more consistent within a company,
+  - It’s about keeping your goals true to your North Star values.
+  - *Every decision we make needs to square with our vision.*
+
+    - When we face a trade-off between our customers and a business goal, we align with the customer.
+    - When an objective seems out of line with our mantra, it gets extra scrutiny. Before moving forward, we make sure it lines up with our North Star.
+
+** 9 Connect: The Intuit Story (Atticus Tysen uses OKR transparency to fortify a software pioneer's open culture.)
+
+- People can't connect with what they cannot see;
+
+  - By definition, OKRs are open and visible to all parts of an organization, to each level of every department.
+  - As a result, companies that stick with them become more coherent.
+
+- Adaptable organizations tend to be more openly connected ones.
+- After the Lasik surgery of OKRs, contributors see clearer links between their own day-to-day work, their colleagues' priorities, their team's quarterly objectives, and the company's "True North" mission.
+- connected goal setting "is critical to enabling employees to do the best work of their lives."
+
+  - Today, every employee in my department owns three to five business objectives per quarter, along with one or two personal ones.
+  - The system is powerful precisely because it is so simple—and so transparent. For our OKRs to be effective, I knew they'd have to be visible
+  - I wanted everyone in the company to know exactly what we were doing, and how, and why.
+  - When people understand your priorities and constraints, they're more apt to trust you when something goes sideways.
+
+*** Live Data from the Cloud
+
+- OKRs can be deployed to even greater effect in the cloud era.
+
+  - At a desktop software company, leaders look at operations through a twentieth-century retail lens.
+
+    - They postmortem sales reports and channel flow.
+    - While they do their best to predict where the business might be headed, their line of sight is largely limited to the rearview mirror.
+
+  - By contrast, a cloud-based business wants to know what is happening now.
+
+*** A Tool for Global Collaboration
+
+- It's a dynamic system.
+
+  - You're always adjusting the altitude.
+  - "Yes, I want us to focus on that one right now as a top-level objective. When it no longer needs the extra attention, we'll let it drift back down into a KR."
+
+- Studies have told us forever that frontline employees thrive when they can see how their work aligns to the company's overall goals.
+
+  - Thanks to structured, visible goal setting, our boundaries have melted away.
+
+*** Horizontal Connections
+
+- the best idea should win, not the biggest title,
+- OKRs have opened our department horizontally, across teams.
+
+  - Now, with horizontally transparent OKRs, our engineers intentionally connect as they link to each other's objectives.
+  - We're trending away from senior committee mandates and toward real autonomy.
+
+    - Our EBS leaders still set the context, ask the big questions, and furnish relevant data.
+    - But it's our interconnected groups whose insights are propelling us forward—together.
+
+** 10 Superpower #3: Track for Accountability (OKRs help us monitor progress and course-correct.)
+
+- One underrated virtue of OKRs is that they can be tracked
+
+  - and then revised or adapted as circumstances dictate.
+
+- Their life cycle unfolds in three phases,
+
+  - The Setup
+  - OKR Shepherd
+  - Midlife Tracking
+
+*** The Setup
+
+- *If you share a goal that nobody sees, is the system truly transparent?*
+- Without frequent status updates, goals slide into irrelevance;
+
+  - the gap between plan and reality widens by the day.
+  - At quarter's end (or worse, year's end), we're left with zombie OKRs, on-paper what s and how s devoid of life or meaning.
+
+- Contributors are most engaged when they can actually see how their work contributes to the company's success.
+- OKRs speak to something more powerful, the intrinsic value of the work itself.
+- As the bar for structured goal setting rises, more organizations are adopting robust, dedicated, cloud-based OKR management software.
+
+  - The best-in-class platforms feature mobile apps, automatic updating, analytics reporting tools, real-time alerts, and integration with Salesforce, JIRA, and Zendesk.
+  - These platforms deliver transformative OKR values:
+
+    - They make everyone's goals more visible.
+    - They drive engagement.
+
+      - When you know you're working on the right things, it's easier to stay motivated.
+
+    - They promote internal networking.
+    - They save time, money, and frustration.
+
+      - In conventional goal setting, hours are wasted digging for documentation in meeting notes, emails, Word documents, and PowerPoint slides.
+      - With an OKR management platform, all relevant information is ready when you are.
+
+  - The upshot, Pence says, was radical transparency, real-time connection, and a company that coordinated operations as a matter of course.
+
+*** OKR Shepherd
+
+- For an OKR system to function effectively, the team deploying it must adopt it universally
+- A best practice is to designate one or more OKR shepherds
+
+*** Midlife Tracking
+
+- Research suggests that making measured headway can be more incentivizing than public recognition, monetary inducements, or even achieving the goal itself.
+
+  - *The single greatest motivator is "making progress in one's work"*
+  - The days that people make progress are the days they feel most motivated and engaged
+
+- Most goal management platforms use visual aids to show progress toward objectives and key results.
+- OKRs don't require daily tracking. But regular check-ins—preferably weekly—are essential to prevent slippage.
+
+#+begin_src awk
+
+Without an action plan, the executive becomes a prisoner of
+events. And without check-ins to reexamine the plan as events unfold,
+the executive has no way of knowing which events really matter and
+which are only noise
+#+end_src
+- *the simple act of writing down a goal increases your chances of reaching it.*
+
+  - Your odds are better still if you monitor progress while sharing the goal with colleagues
+  - In one California study, people who recorded their goals and sent weekly progress reports to a friend attained 43 percent more of their objectives than those who merely thought about goals without sharing them.
+
+- As we track and audit our OKRs, we have four options at any point in the cycle:
+
+  Continue
+      If a green zone ("on track") goal isn't broken, don't fix it.
+  Update
+      Modify a yellow zone ("needs attention") key result or objective to respond to changes in the workflow or external environment. What could be done differently to get the goal on track? Does it need a revised time line? Do we back-burner other initiatives to free up resources for this one?
+  Start
+      Launch a new OKR mid-cycle, whenever the need arises.
+  Stop
+      When a red zone ("at risk") goal has outlived its usefulness, the best solution may be to drop it
+
+- The point of a real-time dashboard is to
+
+  1. quantify progress against a target
+  2. flag what needs attention
+
+     - While OKRs are primarily a positive force for more, they also stop us from persisting in the wrong direction.
+
+#+begin_quote
+
+       If the ladder is not leaning against the right wall, every step we take just gets us to the wrong place faster
+
+#+end_quote
+     - Late-in-game surprises are less likely when you track your OKRs for continuous feedback.
+     - Whenever a key result or objective becomes obsolete or impractical, feel free to end it midstream.
+     - One proviso:
+
+       - When an objective gets dropped before the end of the OKR interval, it's important to notify everyone depending on it.
+       - Then comes reflection:
+
+         - What did I learn that I didn't foresee at the beginning of the quarter?
+         - How will I apply this lesson in the future?
+
+- For best results, *OKRs are scrutinized several times per quarter* by contributors and their managers.
+
+  - Progress is reported,
+  - obstacles identified,
+  - key results refined.
+
+- Whenever a committed OKR is failing, a rescue plan is devised.
+
+*** Wrap-up: Rinse and Repeat
+
+- OKRs do not expire with completion of the work.
+- As in any data-driven system, tremendous value can be gained from post hoc evaluation and analysis.
+- In both one-on-ones and team meetings, these wrap-ups consist of three parts:
+
+  1. objective scoring
+
+     - In scoring our OKRs, we mark what we've achieved and address how we might do it differently next time.
+     - A low score forces reassessment:
+
+       - Is the objective still worth pursuing?
+       - If so, what can we change to achieve it?
+
+     - The simplest, cleanest way to score an objective is by averaging the percentage completion rates of its associated key results.
+     - Google uses a scale of 0 to 1.0:
+
+       0.7 to 1.0 = green.
+           We delivered.
+       0.4 to 0.6 = yellow.
+           We made progress, but fell short of completion.
+       0.0 to 0.3 = red.
+           We failed to make real progress.
+
+  2. subjective self-assessment
+
+     - By itself, the data doesn't afford us much insight.
+     - Googlers are encouraged to use their OKRs in self-assessments—as guides, not as grades.
+     - The point of objectives and key results, after all, is to *get everyone working on the right things.*
+     - In the end, *the numbers are probably less important than contextual feedback and a broader discussion within the team.*
+     - There are no judgments, only learnings.
+
+  3. reflection
+
+     - OKRs are inherently action oriented.
+     - In my view, *the key to satisfaction* is to
+
+       1. set aggressive goals,
+       2. achieve most of them,
+       3. pause to reflect on the achievement,
+       4. and then repeat the cycle.
+
+     - Learning from direct experience can be more effective if coupled with reflection
+
+       - reflection: the intentional attempt to synthesize, abstract, and articulate the key lessons taught by experience
+       - *We do not learn from experience, we learn from reflecting on experience.* - John Dewey
+
+     - Here are some reflections for closing out an OKR cycle:
+
+       - Did I accomplish all of my objectives? If so, what contributed to my success?
+       - If not, what obstacles did I encounter?
+       - If I were to rewrite a goal achieved in full, what would I change?
+       - What have I learned that might alter my approach to the next cycle’s OKRs?
+
+     - OKR wrap-ups are retrospective and forward-looking at the same time.
+
+       - An unfinished objective might be rolled over to the next quarter, with a fresh set of key results
+       - or perhaps its moment has passed, and it is appropriately dropped.
+       - Either way, *sound management judgment comes first* .
+
+     - Throw a party with the team to celebrate your growing OKR superpowers. You've earned it.
+
+** 11 Track: The Gates Foundation Story (A $20 billion start-up wields OKRs to fight devastating diseases.)
+
+- We aimed higher.
+- The higher the stakes, the more important it is to track progress—to flag looming problems, double back from dead ends, and modify goals on the run.
+
+*** Making Goals Concrete
+
+- When a goal is too aspirational, it's bad for credibility.
+- I see people confusing objectives with missions all the time.
+
+  - A mission is directional.
+  - An objective has a set of concrete steps that you're intentionally engaged in and actually trying to go for.
+
+- Having a good mission is not enough.
+
+  - You need a concrete objective,
+  - and you need to know how you're going to get there.
+
+- OKRs allowed us to be ambitious and disciplined at the same time.
+
+** 12 Superpower #4: Stretch for Amazing (OKRs empower us to achieve the seemingly impossible.)
+#+begin_quote
+
+The biggest risk of all is not taking one.
+
+#+end_quote
+
+- OKRs push us far beyond our comfort zones.
+- For companies seeking to live long and prosper, stretching to new heights is compulsory.
+- Conservative goal setting stymies innovation.
+- When stretch goals are chosen wisely, the payoff merits the risk
+
+  - [[https://www.amazon.com/Good-Great-Some-Companies-Others-ebook/dp/B0058DRUV6][Good to Great]]
+  - The studies found that “stretched” workers were not only more productive, but more motivated and engaged:
+
+- By pushing people past old limits, they are forces for operating excellence.
+- Aspirational goals draw on every OKR superpower.
+
+  - Focus and commitment are a must for targeting goals that make a real difference.
+  - Only a transparent, collaborative, aligned, and connected organization can achieve so far beyond the norm.
+  - And without quantifiable tracking, how can you know when you've reached that amazing stretch objective?
+
+*** Two OKR Baskets
+
+- Google divides its OKRs into two categories,
+
+  1. committed goals
+
+     - tied to Google's metrics:
+
+       - product releases,
+       - bookings,
+       - hiring,
+       - customers.
+
+     - Management sets them at the company level, employees at the departmental level.
+     - In general, these committed objectives are to be achieved in full (100 percent) within a set time frame.
+
+  2. aspirational (or “stretch”) goals.
+
+     - reflect bigger-picture, higher-risk, more future-tilting ideas.
+     - They originate from any tier and aim to mobilize the entire organization.
+     - By definition, they are challenging to achieve.
+
+- The relative weighting of these two baskets is a cultural question.
+
+  - It will vary from one organization to the next, and from quarter to quarter.
+  - Leaders must ask themselves:
+
+    - What type of company do we need to be in the coming year?
+
+      - Agile and daring, to crack a new market
+      - or more conservative and operational, to firm up our existing position
+
+    - Are we in survival mode, or is there cash on hand to bet big for a big reward?
+    - What does our business require, right now?
+
+*** Our Need to Stretch
+
+- Hierarchy of needs
+
+  - some people, with no prompting, were consistently driven to “try to test the outer limits of their abilities” and achieve their “personal best.” These employees were a manager’s dream; they were never self-satisfied.
+  - not everyone was a natural-born achiever.
+
+    - “stretched” goals could elicit maximum output:
+    - “Such goal-setting is extremely important if you want peak performance from yourself and your subordinates.”
+
+*** The Gospel of 10x
+
+- Most people, Larry Page observes, “tend to assume that things are impossible, rather than starting from real-world physics and figuring out what’s actually possible.”
+- a ten percent improvement means that you’re doing the same thing as everybody else.
+
+  - You probably won’t fail spectacularly,
+  - but you are guaranteed not to succeed wildly.
+
+- Thousand percent improvement requires rethinking problems, exploring what’s technically possible and having fun in the process.
+- At the start of the period, not a single goal may look possible. And so the Googlers are pushed to ask harder questions:
+
+  - What radical, high-risk action needs to be considered?
+  - What do they need to stop doing?
+  - Where can they move resources or find new partners?
+
+*** Stretch Variables
+
+- In pursuing high-effort, high-risk goals, employee commitment is essential
+- Leaders must convey two things:
+
+  1. The importance of the outcome
+  2. The belief that it's attainable
+
+- The greater the margin for error, the more a company can extend itself.
+- If you seek to achieve greatness, stretching for amazing is a great place to start.
+
+  - How can your team create maximum value?
+  - What would amazing look like?
+
+- But by no means, is it the place to stop
+
+#+begin_quote
+
+  You know, in our business we have to set ourselves uncomfortably tough objectives, and then we have to meet them. And then after ten milliseconds of celebration we have to set ourselves another [set of] highly difficult-to-reach objectives and we have to meet them. And the reward of having met one of these challenging goals is that you get to play again.
+
+#+end_quote
+
+** 13 Stretch: The Google Chrome Story (CEO Sundar Pichai uses OKRs to build the world's leading web browser.)
+
+- If you set a crazy, ambitious goal and miss it, you'll still achieve something remarkable.
+
+*** The New Applications Platform
+
+- Google Toolbar
+
+*** Rethinking the Browser
+
+- By 2006, we were beginning to rethink the browser as a computing platform, almost like an operating system, so that people could write applications on the web itself. That fundamental insight gave birth to Chrome.
+- If Chrome wasn't going to be dramatically different and better and faster than the traditional browsers already on the market, there was no point in moving ahead.
+
+  - a top-level annual objective that would have an enduring influence on Google's future: to "develop the next-generation client platform for web applications."
+  - The main key result: "Chrome reaches 20 million seven-day active users."
+
+*** Upping the Goal
+
+- Larry was always good about upping the goals for the company OKRs.
+
+  - "uncomfortably excited."
+  - "a healthy disregard for the impossible."
+
+- As a leader, you must try to *challenge the team without making them feel the goal is unachievable* .
+
+  - Our stretch OKR gave the team direction and a barometer to measure our progress.
+
+*** Digging Deeper
+
+- Sometimes a stretch goal is not as wildly aspirational as it may seem.
+- Stretch OKRs are an intense exercise in problem solving.
+- They (OKRs) give us clear, quantitative targets on the road to those qualitative leaps.
+
+  - when you set a measurable objective for the year and chunk the problem, quarter by quarter, moonshots become more doable.
+
+*** Try-Fail, Try-Succeed
+
+- OKRs are the way we think about everything at Google, the way we've always done it.
+
+*** The Next Frontier
+
+- At Google, from very early on, I internalized the need to constantly imagine the next frontier—from Toolbar to Chrome, for example.
+- You can never stop stretching.
+
+** 14 Stretch: The YouTube Story (CEO Susan Wojcicki and an audacious billion-hour goal.)
+
+- *Once you brake, it's not easy to reaccelerate.*
+- By committing to radical, qualitative improvement, an established organization can renew its sense of urgency and reap tremendous dividends.
+- Susan Wojcicki
+
+  - OKRs are especially useful for young companies just starting to build their culture.
+
+    - When you’re little, with fewer resources, it’s even more vital to be clear on where you’re going.
+    - If possible, it's better to have rules from the start.
+
+  - No company is too young to adopt OKRs, and for no company is it too late.
+
+    - I’ve seen mature companies do turnarounds and change people and processes.
+
+  - OKRs require organization
+  - The guidance for OKRs at Google was often top-down, but with lots of discussion with experts on the team and significant give-and-take on key results: This is the direction we want to go, now tell us how you’re going to get there.
+  - We still conduct our all-hands, top-level OKR meeting in a special videocast each quarter,
+
+    - though Google is now so large and multifaceted that it’s hard to communicate everything we do to everyone
+    - the more detailed discussions take place within our teams.
+
+*** If You Can't Beat 'Em
+*** Big Rocks
+
+- Engineers struggle with goal setting in two big ways.
+
+  1. They hate crossing off anything they think is a good idea,
+  2. they habitually underestimate how long it takes to get things done.
+
+- *It took discipline for people to narrow their lists to three or four objectives for their team, but it made a huge difference.*
+
+  - Our OKRs became more rigorous.
+  - Everybody knew what counted most.
+
+- a metaphor called (to bring focus to the whole company)
+
+#+begin_quote
+
+  Say you have some rocks, and a bunch of pebbles, and some sand, and your goal is to fit as much of everything as you can into a wide-mouth, one-gallon jar. If you start with the sand, and then the pebbles, the jar will run out of room for all the rocks. But when you start with the rocks, add the pebbles, and save the sand for last, the sand fills the spaces between the rocks—everything fits.
+
+#+end_quote
+
+  - In other words, *the most important things need to get done first or they won't get done at all.*
+
+*** A Better Metric
+#+begin_quote
+
+The true scarce commodity is increasingly human attention (In a world where computing power is nearly limitless)
+
+#+end_quote
+
+- YouTube needed a new core metric.
+- It's a virtuous circle: More satisfied viewership (watch time) begets more advertising, which incentivizes more content creators, which draws more viewership.
+- Our true currency wasn't views or clicks—it was *watch time* .
+
+*** Watch Time, and Only Watch Time
+
+- YouTube's mission was fundamentally divergent (from Google Search's).
+- Our job was to keep people engaged and hanging out with us.
+
+*** A Big Round Number
+
+- OBJECTIVE: Reach 1 billion hours of watch time per day [by 2016], with growth driven by:
+- KEY RESULTS
+
+  - Search team + Main App (+XX%), Living Room (+XX%).
+  - Grow kids’ engagement and gaming watch time (X watch hours per day).
+  - Launch YouTube VR experience and grow VR catalog from X to Y videos.
+
+*** Principled Stretching
+
+- Stretch goals can be crushing if people don't believe they're achievable
+- The art of framing (There was another thing out there way bigger than us, and we were trying to scale up to it.)
+
+#+begin_src awk
+
+While one billion daily hours sounded like an awful lot, it
+represented less than 20 percent of the world’s total television watch
+time.
+#+end_src
+- In pursuing our mission over the next four years, we weren't 10x absolutists.
+
+  - cut down on click bait,
+  - reflected our principle of growing responsibly.
+
+- Once the billion-hour BHAG was set, however, we never did anything without measuring impact on watch time.
+
+*** Getting Up to Speed
+
+- Maybe the best thing about OKRs is *how they track your progress to a target, especially when you're behind schedule.*
+
+  - The updates were opportunities to gather the leadership team and say, “Okay, I want each of you to name five projects you can implement to bring us closer to our goal.”
+
+*** Mutual Support
+
+- Stretch OKRs tend to set powerful forces into motion, and you can never be sure where they’ll lead.
+
+*** Thinking Bigger
+
+- Everybody started thinking bigger (under a stretch OKR)
+- People need a benchmark to know how they're performing against it. The catch is to *find the right one* .
+
+* PART TWO: The New World of Work
+** 15 Continuous Performance Management: OKRs and CFRs (How conversations, feedback, and recognition help to achieve excellence.)
+
+- We need a new HR model for the new world of work.
+
+  - Annual performance reviews are costly, exhausting, and mostly futile.
+  - *individuals cannot be reduced to numbers.*
+
+- That transformational system, the contemporary alternative to annual reviews, is continuous performance management
+- It is implemented with an instrument called CFRs, for:
+
+  Conversations
+      an authentic, richly textured exchange between manager and contributor, aimed at driving performance
+  Feedback
+      bidirectional or networked communication among peers to evaluate progress and guide future improvement
+  Recognition
+      expressions of appreciation to deserving individuals for contributions of all sizes
+
+- Like OKRs, CFRs champion transparency, accountability, empowerment, and teamwork, at all levels of the organization.
+- As communication stimuli, CFRs ignite OKRs and then boost them into orbit;
+
+  - they're a complete delivery system for measuring what matters.
+  - They capture the full richness and power of Andy Grove's innovative method.
+  - They give OKRs their human voice.
+
+- Best of all, OKRs and CFRs are mutually reinforcing.
+
+  - You need continuous performance management to surface the critical questions:
+
+    - Was the goal harder to achieve than you'd thought when you set it?
+    - Was it the right goal in the first place?
+    - Is it motivating?
+    - Should we double down on the two or three things that really worked for us last quarter, or is it time to consider a pivot?
+
+  - On the other hand, if you don't have goals,
+
+    - what the heck are you talking about?
+    - What did you achieve, and how?
+
+*** Reinventing HR
+
+- We're at the point where nearly every HR custom needs to be reimagined.
+- Annual Performance Management Versus Continuous Performance Management
+
+  ||Annual Performance Management |Continuous Performance Management | |
+  ||Annual feedback |Continuous feedback | |
+  ||Tied to compensation |Decoupled from compensation | |
+  ||Directing/autocratic |Coaching/democratic | |
+  ||Outcome focused |Process focused | |
+  ||Weakness based |Strength based | |
+  ||Prone to bias |Fact driven | |
+
+*** Continuous Performance Management at Pact
+
+1. one-on-one conversations
+
+   - Monthly
+   - between employees and their managers
+   - about how things are going.
+
+2. review of progress against our OKRs.
+
+   - Quarterly
+   - What did you set out to accomplish this quarter?
+   - What were you able to do—and what weren't you able to do?
+   - Why or why not?
+   - What can we change?
+
+3. professional development conversation.
+
+   - semiannual
+   - Employees talk about their career trajectory
+
+     - where they've been,
+     - where they are,
+     - where they want to go.
+
+   - how their managers and the organization can support their new direction.
+
+4. self-driven insight.
+
+   - Ongoing
+   - We're constantly surrounded by positive reinforcement and feedback, but many of us haven't been trained to seek it out.
+
+#+begin_src awk
+
+Thank you. What one thing did you like about it?
+#+end_src
+   - The idea is to capture more specific feedback in real time.
+
+*** An Amicable Divorce (The first step to move to continuous performance management)
+
+- *Divorce compensation (both raises and bonuses) from OKRs.*
+
+  1. Compensation
+
+     - a backward-looking assessment
+     - typically held at year’s end.
+
+  2. OKRs
+
+     - a forward-looking dialogue
+     - ongoing
+     - between leaders and contributors
+     - It centers on five questions
+
+       1. What are you working on?
+       2. How are you doing; how are your OKRs coming along?
+       3. Is there anything impeding your work?
+       4. What do you need from me to be (more) successful?
+       5. How do you need to grow to achieve your career goals?
+
+- But when goals are used and abused to set compensation, employees can be counted on to sandbag. And the organization suffers most of all.
+
+  - They start playing defense;
+  - They stop stretching for amazing.
+  - They get bored for lack of challenge.
+
+- The formula has yet to be invented for complex human behavior, because that’s where human judgment comes in.
+
+*** Conversations
+
+- Regular one-on-one meetings between managers and their direct reports
+
+  - The point of the meeting, he (Andy Grove) wrote
+
+    1. mutual teaching
+    2. exchange of information
+
+  - A key point about a one-on-one: *It should be regarded as the subordinate's meeting* ,
+
+    - with its agenda and tone set by him
+    - the supervisor is there to learn and coach
+
+  - The supervisor should also encourage the discussion of heart-to-heart issues during one-on-ones
+
+    - Is he satisfied with his own performance?
+    - Does some frustration or obstacle gnaw at him?
+    - Does he have doubts about where he is going?
+
+- Five critical areas
+
+  Goal setting and reflection
+      the employee's OKR plan is set for the coming cycle. The discussion focuses on how best to align individual objectives and key results with organizational priorities.
+  Ongoing progress updates
+      the brief and data-driven check-ins on the employee’s real-time progress, with problem solving as needed.
+  Two-way coaching
+      to help contributors reach their potential and managers do a better job.
+  Career growth
+      to develop skills, identify growth opportunities, and expand employees’ vision of their future at the company.
+  Lightweight performance reviews
+      a feedback mechanism to gather inputs and summarize what the employee has accomplished since the last meeting, in the context of the organization’s needs.
+
+*** Feedback
+
+- To reap the full benefits of OKRs, feedback must be integral to the process.
+
+  - *If you don’t know how well you’re performing, how can you possibly get better?*
+
+- Today’s workers want to be ‘empowered’ and ‘inspired,’ not told what to do.
+
+  - They want to provide feedback to their managers, not wait for a year to receive feedback from their managers.
+  - They want to discuss their goals on a regular basis, share them with others, and track progress from peers.
+
+- Public, transparent OKRs will trigger good questions from all directions:
+
+  - Are these the right things for me/you/us to be focused on?
+  - If I/you/we complete them, will it be seen as a huge success?
+  - Do you have any feedback on how I/we could stretch even more?
+
+- Feedback can be highly constructive—but only if it is *specific* .
+- *Feedback is ad hoc, real-time, and multidirectional, an open dialogue between people anywhere in the organization.*
+- By fostering connections among teams, peer feedback is especially valuable in cross-functional initiatives.
+
+  - When horizontal communication blows open, interdepartmental teamwork becomes the new normal.
+  - As OKRs are combined with 360-degree feedback, the silo will soon be a relic of the past.
+
+*** Recognition
+
+- Modern recognition is performance-based and horizontal.
+- Here are some ways to implement it:
+
+  - *Institute peer-to-peer recognition*
+
+    - When employee achievements are consistently recognized by peers, a culture of gratitude is born.
+
+  - *Establish clear criteria*
+
+    - *Recognize people for actions and results* :
+
+      - completion of special projects
+      - achievement of company goals
+      - demonstrations of company values
+
+    - Replace “Employee of the Month” with “Achievement of the Month.”
+
+  - *Share recognition stories*
+
+    - Newsletters or company blogs can supply the narrative behind the accomplishment, giving recognition more meaning.
+
+  - *Make recognition frequent and attainable*
+
+    - Hail smaller accomplishments, too:
+
+      - that extra effort to meet a deadline,
+      - that special polish on a proposal,
+
+    - the little things a manager might take for granted.
+
+  - *Tie recognition to company goals and strategies*
+
+- OKR platforms are custom-built for peer-to-peer recognition
+- Once teams and departments start connecting in this fashion, more and more people get on board, and a recognition engine revs up an entire company.
+- Every cheer is a step toward operating excellence, the crowning purpose of OKRs and CFRs.
+
+** 16 Ditching Annual Performance Reviews: The Adobe Story (Adobe affirms core values with conversations and feedback.)
+
+- In all, the company devoted a total of eighty thousand manager hours—the equivalent of nearly forty full-time hires—to a mechanical process that created no discernible value.
+- Lightweight, flexible, and transparent, with minimal structure and no tracking or paperwork, Check-in features three focus areas:
+
+  1. Quarterly "goals and expectations" (Adobe's term for OKRs),
+  2. Regular feedback
+  3. Career development and growth
+
+- Since the fall of 2012, when Check-in was installed, Adobe's voluntary attrition has dropped sharply.
+- a continuous performance management system has three requirements.
+
+  1. executive support.
+  2. clarity on company objectives and how they align with individual priorities
+  3. an investment in training to equip managers and leaders to be more effective.
+
+     - We're not shipping people out to courses.
+     - We're steering them to one-hour sessions online, with role-played vignettes: "Do you need to give difficult feedback? Here are the steps."
+
+- Corrective feedback is naturally difficult for people. But when done well, it's also the greatest gift you can give to someone—because it can change people's mindset and modify their behavior in the most positive, valuable way.
+- As Check-in makes clear, HR leaders exist for the success of the business.
+
+  - Our role is to consult with other leaders on how to make all of our constituents successful in fulfilling the company's mission.
+  - Success isn't built by forms and rankings and ratings.
+  - It's not driven by policies and programs that bog people down and get in their way.
+  - The true mechanisms for success are the ones that *build capabilities and enable people to deliver for the company.*
+
+*** Adobe Performance Management, Then and Now
+
+||  |BEFORE: The annual performance review |AFTER: Check-in | |
+||Setting priorities |Employee priorities set at the start of the year and often not revisited. |Priorities set and adjusted with manager regularly. | |
+||Feedback process |Long process of submitting accomplishments, soliciting feedback, and writing reviews. |Ongoing process of feedback and dialog with no formal written review of documentation. | |
+||Compensation decisions |Onerous process of rating and ranking each employee to determine salary increase and equity. |No formal rating or ranking: manager determines salary and equity annually based on performance. | |
+||Cadence of meetings |Feedback sessions inconsistent and not monitored. Spike in employee productivity at the end of the year, timed with performance review discussions. |Feedback conversations expected quarterly, with ongoing feedback becoming the norm. Consistent employee productivity based on ongoing discussions and feedback throughout the year. | |
+||HR team role |HR team managed paperwork and processes to ensure all steps were completed. |HR team equips employees and managers to have constructive conversations. | |
+||Training and Resources |Managed coaching and resources came from HR partners who couldn't always reach everyone. |A centralized Employee Resource Center provides help and answers whenever needed. | |
+
+- For a service business, nothing is more valuable than engaged employees who feel they can make a difference and want to stay with the organization.
+- Turnover is costly.
+
+  - *The best turnover is internal turnover* , where people are growing their careers within your enterprise rather than moving someplace else.
+  - People aren't wired to be nomads. They just need to find a place where they feel they can make a real impact.
+
+** 17 Baking Better Every Day: The Zume Pizza Story (A robotics pioneer leverages OKRs for teamwork and leadership—and to create the perfect pizza.)   Top
+
+- They also have more subtle, internal, quotidian effects
+
+  1. grooming better executives
+
+     - Leaders become better communicators and motivators
+
+  2. giving less vocal contributors an opportunity to shine
+
+     - Contributors grow into more disciplined, rigorous thinkers
+
+- When imbued with meaningful conversations and feedback, structured goal setting teaches people how to work within constraints even as they push against them
+- Neither JIRA nor LiquidPlanner could answer one big question: What's the most important thing to do?
+
+*** Achieving What's Real
+
+- OKRs are a superb training tool for executives and managers.
+
+  - *They teach you how to manage your business within existing limits.*
+
+- OKRs can't be effective unless the people at the top are unconditionally committed—like a religious calling.
+
+  - And proselytizing is hard and thankless work.
+  - Your people may not like you very much through the adoption curve, which can take up to a year. But it's worth it.
+
+*** Better Discipline
+
+- If we're talking about the intrinsic value of OKRs, what comes before anything is *the discipline that they instill in us* as co-CEOs.
+
+  - be *thoughtful about what we can actually achieve*
+  - install the same outlook in our executive team and their teams
+
+- Individual contributors -> Managers
+
+  - Let's assume you do well and move up to manage more and more people.
+
+    - Now you're no longer paid for the amount of work you do;
+    - *you're paid for the quality of decisions you make.*
+
+  - But no one tells you the rules have changed.
+
+    - When you hit a wall, you think, I'll just work harder—that's what got me here.
+    - What you should do is more counterintuitive: *Stop for a moment and shut out the noise.*
+
+      1. Close your eyes to really see what's in front of you,
+      2. and then pick the best way forward for you and your team, relative to the organization's needs.
+
+- What's neat about OKRs is that they *formalize reflection* .
+
+  - At least once each quarter, they make contributors step back into a quiet place and consider how their decisions align with the company.
+  - People start thinking in the macro.
+
+    - They become more pointed and precise, because
+
+      - you can’t write a ninety-page OKR dissertation.
+      - You have to choose three to five things and exactly how they should be measured.
+
+    - Then when the day comes and someone says, “Okay, you’re a manager,” you’ve already learned how to think like one.
+
+  - Most start-ups aren’t too eager to plunge into structured goal setting: We don’t need that. We go super-fast. We just figure stuff out.
+
+    - But I think they’re missing an opportunity to teach people how to be executives before the company scales.
+    - If those habits aren’t ingrained early on, one of two things happens:
+
+      1. Unsuccessful companies scale beyond the leadership team’s capacity, and they die.
+      2. Successful companies scale beyond the team’s abilities and the team gets replaced.
+
+    - *The better way is to train people to think like leaders from the start, when their departments have a staff of one.*
+
+- When we implemented OKRs at Zume, the immediate benefit was the process itself.
+
+  - *The simple act of forcing people to think about the business* —thoughtfully, transparently, interdependently—was a huge accelerant to their performance.
+
+*** Better Engagement
+
+- The OKR framework gives equal voice and weight to each department.
+
+  - No one needs to suffer in silence
+
+    - Truthfully, no one has that option (to be silent)
+    - Your objectives will get their turn up on the screen, like everyone else’s, for comment and support.
+
+  - a really good company values different opinions.
+
+    - It mines for dissent, and it finds a way to bring it up to the surface and mine it out.
+    - That’s how we foster a meritocracy.
+
+- *Before rolling OKRs out to our individual contributors, we put in two full quarters at the exec level.* We had to establish the culture first.
+- What we’ve found, oddly enough, is that our most active participants are the ones who were initially most skeptical.
+
+  - It felt like bookkeeping, one more administrative exercise.
+  - But OKRs had an effect on me I didn’t expect.
+
+    - When I did my biweekly check-ins, it gave me a couple minutes to think about
+
+      1. what I was doing,
+      2. how my goals rolled up to what the company needed for the quarter.
+
+    - those OKR meditations helped me reset my compass: How do I contribute to the scheme of things?
+
+      - Then it’s not just another report or campaign or field event.
+      - It connects to something bigger and more meaningful.
+
+*** Better Transparency
+
+- From the beginning, the process forced us to clarify who's in charge of what.
+
+  - When something isn't clearly delineated, it shows up right away.
+  - You can't miss it.
+
+- When a fly ball is hit between two outfielders, somebody's got to call for it
+
+  - or else the ball drops in,
+  - or both people dive for it and crash into each other.
+
+*** Better Teamwork
+
+- We used OKRs as a teaching tool to impart a culture of consideration.
+
+  - They make you start thinking reflexively about
+
+    - how the work you're doing affects those around you,
+    - how you're dependent on them
+
+- OKRs were our Esperanto, our shared vocabulary.
+- When you say instead, “My KR is at risk,” it's less charged and more constructive.
+
+  - In another life, Mike might have called out the manufacturing lead: “What the hell, can you hurry up and get this done? I've been waiting forever!”
+  - Since our company has total alignment, the entire team has already agreed to the key result and the dependency it entails.
+  - There's no judgment, just a problem to be solved.
+  - And guess what else happens? The two leads will advocate for each other to get more resources from Alex and me.
+
+- My deadline's built into a key result.
+
+  - I can see the bigger picture more clearly.
+
+- It's definitely a team-building process.
+
+  - It reminds you that you're a part of this little, weird community.
+  - It's easy to get caught up in your own issues, especially when you're working in the kitchen.
+  - But OKRs get people to think, Oh yeah, we're working together on this, we're working together on everything.
+
+*** Better Conversations
+
+- Every two weeks, each person at Zume has a one-hour, one-on-one conversation with whomever they report to.
+
+  - You cannot be late;
+  - You cannot cancel.
+  - You don't talk about work.
+
+    - *The agenda is you, the individual* ,
+
+      1. what you are trying to accomplish personally over the next two to three years,
+      2. how you're breaking that into a two-week plan.
+
+    - I like to start with three questions:
+
+      1. What makes you very happy?
+      2. What saps your energy?
+      3. How would you describe your dream job?
+
+    - Then I say,
+
+#+begin_src awk
+
+“Look, I want to tell you what my expectations
+are. Number one, always tell the truth. Number two, always do
+the right thing. If you meet those expectations, we'll
+unconditionally back you, one hundred percent of the time. And I
+will personally guarantee you that you're going to achieve your
+next set of personal and professional goals over the next three
+years.”
+#+end_src
+
+      1. Always tell the truth
+      2. Always do the right thing
+
+- People might see this as altruism, but it's actually a powerful way to get people connected to the business—and to keep them from churning out.
+
+  - It gives them insights around obstacles.
+
+    - "This goal seems very important to you, but you didn't make a lot of progress on it the last two weeks. Why is that?"
+
+  - It may seem paradoxical, but these nonwork, touchpoint one-on-ones are a forum for ongoing performance feedback.
+  - In talking about people's pursuit of personal goals, you end up learning a lot about what moves them forward—or holds them back—in their careers.
+
+- When you're having regular, deeper conversations, you get a sense of when you need to turn the dial and give people a chance to charge their batteries.
+
+  - After the organization has completed an all-out sprint, you might dial up contributors' time for personal development goals—say, from 5 percent to 15 or 20 percent—the next quarter.
+  - It might sound like a huge tax, but it will set up the company's two or three quarters of execution.
+
+*** Better Culture
+
+- Culture is the common language that allows for individuals in an organization to be sure they're all talking about the same thing—and that what they're talking about has meaning.
+- Beyond that, culture establishes a common framework for decision making.
+- In its absence, people are at a loss for how to make key functions replicable and scalable.
+- Then there's the more aspirational layer of culture: the values conversation.
+
+  - Who do we want to be as an organization?
+  - How do we want people to feel about their work, and about our product?
+  - What's the impact we want to make on the world?
+
+#+begin_src awk
+
+OBJECTIVE: Delight customers.
+
+DETAIL:
+Feeding people is a sacred trust. To maintain that trust, we have to
+deliver the very best customer service and the very best food
+quality. To succeed as a business, we must ensure that our customers
+are so happy with our service and product that they have no choice but
+to order more pizza and to rave about the experience with their
+friends.
+
+KEY RESULTS:
+1. Net Promoter Score of 42 or better.
+2. Order Rating of 4.6/5.0 or better.
+3. 75% of customers prefer Zume to competitor in blind taste test.
+#+end_src
+- Every new employee goes through mission and values training as part of their onboarding.
+
+*** Better Leaders
+
+- They were all very different, but one thing they (great leaders) had in common was this *cold, sober focus*
+
+  - If you sat down with them for twenty minutes, they were completely uncluttered in their thinking.
+  - They could drill down very clearly on what needed to be done.
+
+- It can feel a little frenetic at times. But *when you know your company objectives like you know your last name, it's very calming.*
+- OKRs help me to be that focused, clear-headed leader.
+
+  - No matter how crazy things get, I can always default back to what matters.
+
+** 18 Culture (OKRs catalyze culture; CFRs nourish it.)
+#+begin_quote
+
+You need a culture that high-fives small and innovative ideas.
+
+#+end_quote
+
+- [[https://www.managementcentre.co.uk/culture-eats-strategy-for-breakfast/][Culture eats strategy for breakfast]]
+
+  - It's our stake in the ground; it's what makes meaning of work.
+  - Leaders are rightly obsessed with culture.
+  - Founders ask how they can protect their companies' cultural values as they grow.
+  - Chiefs of large companies are turning to OKRs and CFRs as tools for culture change
+  - And growing numbers of job seekers and career builders are making the right cultural fit their top criterion.
+
+- But goals cannot be attained in a vacuum.
+
+  - Like sound waves, they require a medium.
+  - For OKRs and CFRs, the medium is an organization's culture, the living expression of its most cherished values and beliefs.
+
+- How do companies define and build a positive culture?
+
+  - While I have no simple answer, *OKRs and CFRs provide a blueprint.*
+  - By aligning teams to work toward a handful of common objectives, then uniting them through lightweight, goal-oriented communications, OKRs and CFRs create transparency and accountability, the tent poles for sustained high performance.
+  - *Healthy culture and structured goal setting are interdependent.*
+
+    - They're natural partners in the quest for operating excellence.
+
+- In Project Aristotle, an internal Google study of 180 teams, standout performance correlated to affirmative responses to these five questions:
+
+  Structure and clarity
+      Are goals, roles, and execution plans on our team clear?
+  Psychological safety
+      Can we take risks on this team without feeling insecure or embarrassed?
+  Meaning of work
+      Are we working on something that is personally important for each of us?
+  Dependability
+      Can we count on each other to do high-quality work on time?
+  Impact of work
+      Do we fundamentally believe that the work we're doing matters?
+
+- An OKR culture is an accountable culture
+
+#+begin_quote
+
+  I can't imagine where we would be without OKRs. The discipline forces us to look back every quarter and hold ourselves accountable, and to look ahead every quarter to imagine how we can better live our values.
+
+#+end_quote
+
+  - You don't push toward a goal just because the boss gave you an order.
+  - You do it because every OKR is transparently important to the company, and to the colleagues who count on you.
+
+    - Nobody wants to be seen as the one holding back the team.
+    - Everybody takes pride in moving progress forward.
+    - It's a social contract, but a self-governed one.
+
+- In The Progress Principle, Teresa Amabile and Steven Kramer analyzed 26 project teams, 238 individuals, and 12,000 employee diary entries.
+
+  - High-motivation cultures rely on a mix of two elements.
+
+    Catalysts
+        actions that support work
+
+        - Sound much like OKRs
+        - They include setting clear goals, allowing autonomy, providing sufficient resources and time, helping with the work, openly learning from problems and successes, and allowing a free exchange of ideas
+
+    Nourishers
+        acts of interpersonal support
+
+        - Bear a striking resemblance to CFRs
+        - respect and recognition, encouragement, emotional comfort, and opportunities for affiliation
+
+  - In the high-stakes arena of culture change
+
+    - OKRs lend us purpose and clarity as we plunge into the new
+    - CFRs supply the energy we need for the journey
+
+- Where people have authentic conversations and get constructive feedback and recognition for superior accomplishment,
+
+  - enthusiasm becomes infectious.
+  - The same goes for stretch thinking and a commitment to daily improvement.
+
+- The companies that treat their people as valued partners are the ones with the best customer service.
+
+  - They have the best products and strongest sales growth.
+  - They're the ones who are going to win.
+
+- As continuous performance management rises to the fore, once-a-year employee surveys are giving way to *real-time feedback* .
+
+  - One frontier is pulsing, an online snapshot of your workplace culture.
+
+    - These signal-capturing questionnaires may be scheduled weekly or monthly by HR or made part of an ongoing “drip” campaign.
+    - Either way, pulses are simple, quick, and wide-ranging.
+    - For example:
+
+      - Are you getting enough sleep?
+      - Have you met recently with your manager to discuss goals and expectations?
+      - Do you have a clear sense of your career path?
+      - Are you getting enough challenge and motivation and energy—are you feeling “in the zone”?
+
+  - Feedback is a listening system.
+
+    - *They (leaders) need to listen and capture signals as they are emitted.*
+    - We're not far away from software that will prompt a manager: "Talk to Bob, something's going on with his team."
+
+      - What if a goal-setting platform could pulse two or three questions to employees whenever they log in?
+      - What if it merged quantitative data on goal progress with qualitative input from frequent conversations and pulsing feedback?
+
+  - OKRs & CFRs & Pulsing
+
+    - OKRs build goal muscle
+    - CFRs make those sinews more flexible and responsive
+    - Pulsing gauges the organization's real-time health -- body and soul, work and culture
+
+- [[https://www.amazon.com/How-Why-Anything-Means-Everything/dp/1118106377][How: Why How We Do Anything Means Everything: Dov Seidman, President Bill Clinton]]
+
+  - In our open-sourced, hyperconnected world, behavior defines a company more meaningfully than product lines or market share
+  - "It's the one thing that can't be copied or commoditized."
+  - Companies that "out-behave" their competition will also outperform them.
+
+    - These organizations don't merely engage their workers. They inspire them.
+    - They replace rules with shared principles; carrots and sticks are supplanted by a common sense of purpose.
+    - They are built around trust, which enables risk taking, which spurs innovation, which drives performance and productivity.
+
+  - "In the past," Dov told me, "when employees just needed to do the next thing right—to follow orders to the letter—culture didn't matter so much. But now we're living in a world where we're asking people to do the next right thing. A rulebook can tell me what I can or can't do. *I need culture to tell me what I should do.* "
+  - It's one thing to proclaim values like courage or compassion or creativity. It's another to scale them.
+
+    - Scaling requires a system, with metrics
+    - "What we choose to measure is a window into our values, and into what we value,” Dov says. “Because if you measure something, you’re telling people that it matters.”
+
+  - There was no more powerful cultural force than “active transparency,” where “human beings are opening up, sharing the truth, bringing others in, being vulnerable,”
+
+    - An OKR/CFR culture is above all a transparent culture.
+
+  - *At the end, it's all about knitting ourselves to one another.*
+
+#+begin_quote
+
+    “Collaboration itself— our ability to connect —is an engine of growth and innovation.”
+
+#+end_quote
+
+- Given the chance, OKRs and CFRs will build top-down alignment, team-first networking, and bottom-up autonomy and engagement—the pillars of any vibrant, value-driven culture.
+- Our final two stories explore this rich interrelationship between culture change and structured goal setting.
+
+** 19 Culture Change: The Lumeris Story (Overcoming OKR resistance with a culture makeover.)
+
+- *When an organization isn’t yet ready for total openness and accountability, culture work may be needed* before OKRs are implemented.
+
+  - As Jim Collins observes in [[https://www.amazon.com/Good-Great-Some-Companies-Others-ebook/dp/B0058DRUV6][Good to Great]], first you need to get “the right people on the bus, the wrong people off the bus, and the right people in the right seats.”
+  - Without cultural alignment, the world’s best operational strategy will fail.
+
+*** HR Transformation
+
+- *People watch what you do more than what you say.*
+- At each and every culture meeting, we told our employees: “You have the right—no, the obligation—to hold your executive team accountable for what we’re saying our culture should be. If we’re not following through, make an appointment or send an email. Or just walk up to us in the hallway and tell us we are not getting it done.”
+- “Why would anybody want to work in an environment with a fear of holding each other accountable?”
+- But culture change can be very personal.
+
+  - It took one conversation at a time to convince our employees that collaboration, shared accountability, and transparency would be rewarded.
+  - And to show they had nothing to fear from the new Lumeris.
+
+- HR can be a potent vehicle for operating excellence.
+
+  - *At the end of the day, culture is about the people you recruit and the values they bring to bear.*
+
+- Time is the enemy of transformation
+
+  - That’s typically a three-year process, from start to steady state.
+  - When it’s complete, your new culture is assured.
+
+#+begin_src awk
+
+OBJECTIVE
+Institute a culture that attracts and retains A players.
+
+KEY RESULTS
+
+1. Focus on hiring A player managers/leaders.
+2. Optimize recruitment function to attract A player talent.
+3. Scrub all job descriptions.
+4. Retrain everyone engaged in the interviewing process.
+5. Ensure ongoing mentoring/coaching opportunities.
+6. Create a culture of learning for development of new and existing employees.
+#+end_src
+*** OKR Resurrection
+
+- Winning our troops over to OKRs wasn’t easy or instantaneous, far from it.
+
+  - Transparency is scary.
+  - Admitting your failures—visibly, publicly—can be terrifying.
+  - We had to rewire people from how they’d been raised since kindergarten.
+
+- Once you start having honest, vulnerable, two-way conversations with your direct reports,
+
+  - you begin to see what makes them tick.
+  - You feel their yearning to connect to things bigger than themselves.
+  - You hear their need for recognition that what they’re doing matters.
+
+- Through the open window of objectives and key results,
+
+  - each of you gets to know the other’s weaknesses with no worry of getting caught out.
+  - For managers, one particular benefit of OKRs is to lead them to hires who can compensate for their own limitations.
+  - They began to realize there was no shame in trying your hardest and failing, not when OKRs help you fail smart and fail fast.
+
+*** Transparency Without Judgment
+
+- brutal transparency without judgment
+
+  - In Q3, as OKRs were rolled out to all 800 Lumeris employees, we created our own coaches’ training program.
+
+- Goal setting is more art than science.
+
+  - We weren’t just teaching people how to refine an objective or a measurable key result.
+  - We had a cultural agenda, as well
+
+    - Why is transparency important?
+
+      - Why would you want people across other departments to know your goals?
+      - And why does what we’re doing matter?
+
+    - What is true accountability?
+
+      - What’s the difference between accountability with respect (for others’ failings) and accountability with vulnerability (for our own)?
+
+    - How can OKRs help managers “get work done through others”?
+
+      - (That’s a big factor for scalability in a growing company.)
+      - How do we engage other teams to adopt our objective as a priority and help assure that we reach it?
+
+    - When is it time to stretch a team’s workload—or to ease off on the throttle?
+
+      - When do you shift an objective to a different team member, or rewrite a goal to make it clearer, or remove it completely?
+      - In building contributors’ confidence, timing is everything.
+
+  - There is no handbook to address these questions. The wisdom resides in leaders with personal connections to their teams, to managers who can show what success looks like and know when to declare victory. (My advice: Not too soon.)
+
+*** Selling Your Reds
+
+- “selling your reds” is a unique use of OKRs, and one well worth emulating.
+
+  1. The team votes on the most important at-risk OKRs for the company as a whole,
+  2. then brainstorms together as long as it takes to get the objectives back on track
+
+- “OKRs make you focus on working on the business, instead of just working in the business,”
+
+  - *Moving from hero culture to team culture*
+
+#+begin_src haskell
+
+In the past, Smith said, “You’d hear things like, ‘I’m in delivery,
+you’re in sales, just do your damn job.’ Now it’s more like calling in
+a wide receiver to run a play: ‘I’m here, let me help you.’ That was a
+result of the OKR process I never expected.”
+#+end_src
+
+- Once people experienced the new company under the surface, they couldn’t resist the temptation to keep diving back into it.
+
+** 20 Culture Change: Bono's ONE Campaign Story (The world's greatest rock star deploys OKRs to save lives in Africa.)
+
+- structured goal setting can also springboard an enriching cultural reset.
+
+*** Picking Our Fights
+
+- First you needed to be able to describe it. Then you could climb it.
+
+*** Growing Up with OKRs
+
+- *We had so many brilliant, gifted people, but our problem was way too many goals*
+- If you don't have clear sign-offs to your goals, you get overlap and dissonance. People get confused about their jobs.
+- We never thought small. The stretch was always there
+
+  - *OKRs forced us to think clearly and agree on what we could achieve with the resources we had.*
+  - They gave us a frame to hang our passion on.
+
+    - And you need that framework because, without it, your brain is just too abstract.
+
+  - The OKR traffic lights, the color coding—they transformed our board meetings.
+
+    - They sharpened our strategy, our execution, our results.
+    - They made us a more effective weapon in the fight against extreme poverty.
+
+*** The Pivot
+
+- Be careful if you think you know what we (the client) want.
+
+  - Because we know what we want.
+  - You're not African, and this messiah complex hasn't always turned out so well.
+
+*** Measuring Passion
+
+- Nobody has ever before measured activists' passion. It sounds odd, but it's totally OKR. So you're passionate—how passionate? What actions does your passion lead you to do?
+
+*** An OKR Framework
+
+- Is there a downside to OKRs?
+- if you read them incorrectly, I suppose you could get too organized.
+- *"If everything's at green, you failed."*
+
+  - We needed more big ambitions because that's what we're good at.
+  - We're less good at the incremental stuff.
+
+- The OKR framework cultivates the madness, the chemistry contained inside it.
+
+  - It gives us an environment for risk, for trust, where failing is not a fireable offense—you know, a safe place to be yourself.
+  - And when you have that sort of structure and environment, and the right people, magic is around the corner.
+
+** 21 The Goals to Come
+#+begin_quote
+
+What keeps me going is goals.
+
+#+end_quote
+
+- Ideas are easy; execution is everything.
+- We're getting glimpses of that future through forward thinkers like Orly Friedman, who has introduced OKRs to every elementary schoolchild at the Khan Lab School in Mountain View, California. (Imagine you are five or six years old and setting your own goals for learning—your own objectives and key results!—as you learn to reason and read.)
+- I'm convinced that if structured goal setting and continuous communication were to be widely deployed, with rigor and imagination, we could see exponentially greater productivity and innovation throughout society.
+- OKRs have such enormous potential because they are so adaptable.
+
+  - There is no dogma, no one right way to use them.
+  - Different organizations have fluctuating needs at various phases of their life cycle.
+
+    - For some, the simple act of making goals open and transparent is a big leap forward.
+    - For others, a quarterly planning cadence will change the game.
+
+  - It’s up to you to find your points of emphasis and to make the tool your own.
+
+* Dedication
+* Resources
+** 1 Google's OKR Playbook
+
+- This is Google's approach to OKRs. Your approach may—and should—differ.
+- Our actions determine Google's future.
+
+  - Thus it is crucial that as Google employees and managers we make conscious, careful, and informed choices about how we allocate our time and energy—as individuals and as members of teams.
+  - OKRs are the manifestation of those careful choices, and the means by which we coordinate the actions of individuals to achieve great collective goals.
+
+    1. We use OKRs to plan what people are going to produce, track their progress vs. plan, and coordinate priorities and milestones between people and teams.
+    2. We also use OKRs to help people stay focused on the most important goals, and help them avoid being distracted by urgent but less important goals.
+
+- OKRs are big, not incremental—we don't expect to hit all of them.
+
+  - (If we do, we're not setting them aggressively enough.)
+  - We grade them with a color scale to measure how well we did:
+
+    - 0.0–0.3 is red
+    - 0.4–0.6 is yellow
+    - 0.7–1.0 is green
+
+*** Writing Effective OKRs
+
+- Poorly done/managed OKRs are a waste of time, an empty management gesture.
+- Well done OKRs are a motivational management tool that helps make it clear to teams:
+
+  - what's important,
+  - what to optimize,
+  - what tradeoffs to make during their day-to-day work.
+
+- Simple rules:
+
+  - Objectives are the "Whats." They:
+
+    - express goals and intents;
+    - are aggressive yet realistic;
+    - must be tangible, objective, and unambiguous; should be obvious to a rational observer whether an objective has been achieved.
+    - The successful achievement of an objective must provide clear value for Google.
+
+  - Key Results are the "Hows." They:
+
+    - express measurable milestones which, if achieved, will advance objective(s) in a useful manner to their constituents;
+    - must describe outcomes, not activities.
+
+      - If your KRs include words like "consult," "help," "analyze," or "participate," they describe activities.
+      - Instead, describe the end-user impact of these activities: "publish average and tail latency measurements from six Colossus cells by March 7," rather than "assess Colossus latency";
+
+    - must include evidence of completion.
+
+      - This evidence must be available, credible, and easily discoverable.
+      - Examples of evidence include change lists, links to docs, notes, and published metrics reports.
+
+*** Cross-team OKRs
+
+- Cross-team OKRs should include all the groups who must materially participate in the OKR, and OKRs committing to each group's contribution should appear explicitly in each such group's OKRs
+- For example, if Ads Development and Ads SRE and Network Deployment must deliver to support a new ads service, then all three teams should have OKRs describing their commitment to deliver their part of the project.
+
+*** Committed vs. Aspirational OKRs
+
+Committed OKRs
+    OKRs that we agree will be achieved, and we will be willing to adjust schedules and resources to ensure that they are delivered
+
+    - The expected score for a committed OKR is 1.0
+    - a score of less than 1.0 requires explanation for the miss, as it shows errors in planning and/or execution
+
+Aspirational OKRs
+    Express how we'd like the world to look, even though we have no clear idea how to get there and/or the resources necessary to deliver the OKR
+
+    - The expected score is 0.7, with high variance
+
+*** Classic OKR-Writing Mistakes and Traps
+
+1. Failing to differentiate between committed and aspirational OKRs.
+
+   - Marking a committed OKR as aspirational
+
+     - increases the chance of failure.
+     - Teams may not take it seriously and may not change their other priorities to focus on delivering the OKR.
+
+   - Marking an aspirational OKR as committed
+
+     - creates defensiveness in teams who cannot find a way to deliver the OKR
+     - invites priority inversion as committed OKRs are de-staffed to focus on the aspirational OKR.
+
+2. Business-as-usual OKRs.
+
+   - OKRs are often written principally based on what the team believes it can achieve without changing anything they're currently doing,
+   - as opposed to what the team or its customers really want.
+
+3. Timid aspirational OKRs
+
+   - Aspirational OKRs very often start from the current state and effectively ask, "What could we do if we had extra staff and got a bit lucky?"
+
+     - An alternative and better approach is to start with, "What could my [or my customers'] world look like in several years if we were freed from most constraints?"
+     - By definition, you're not going to know how to achieve this state when the OKR is first formulated—that is why it is an aspirational OKR.
+     - But without understanding and articulating the desired end state, you guarantee that you are not going to be able to achieve it.
+
+   - The litmus test for timid aspirational OKRs:
+
+#+begin_quote
+
+     If you ask your customers what they really want, does your aspirational objective meet or exceed their request?
+
+#+end_quote
+
+4. Sandbagging
+
+   - A team's committed OKRs should credibly consume most but not all of their available resources.
+   - Their committed + aspirational OKRs should credibly consume somewhat more than their available resources. (Otherwise they're effectively commits.)
+   - Teams who can meet all of their OKRs without needing all of their team's headcount/capital . . . are assumed to either be hoarding resources or not pushing their teams, or both. This is a cue for senior management to reassign headcount and other resources to groups who will make more effective use of them.
+
+5. Low Value Objectives (aka the "Who cares" OKR)
+
+   - OKRs must promise clear business value—otherwise, there's no reason to expend resources doing them.
+   - Low Value Objectives (LVOs) are those for which, even if the Objective is completed with a 1.0, no one will notice or care.
+
+#+begin_src awk
+
+LVO: Increase task CPU utilization by 3 percent.
+
+Better: Decrease quantity of cores required to serve peak queries by 3
+percent with no change to quality/latency/ . . . and return resulting
+excess cores to the free pool
+#+end_src
+   - The litmus test for LVO:
+
+#+begin_quote
+
+     Could the OKR get a 1.0 under reasonable circumstances without providing direct end-user or economic benefit?
+
+#+end_quote
+
+     - If so, then reword the OKR to focus on the tangible benefit.
+
+#+begin_src prolog
+
+LVO: Launch X
+
+Better: Double fleet-wide Y by launching X to 90+ percent of borg
+cells
+#+end_src
+
+6. Insufficient KRs for committed Os
+
+   - OKRs are divided into
+
+     the objective
+         The desired outcome
+     the key results
+         The measurable steps required to achieve that outcome
+
+   - It is critical that KRs are written such that scoring 1.0 on all key results generates a 1.0 score for the objective
+   - A common error is writing key results that are necessary but not sufficient to collectively complete the objective
+
+     - The error is tempting because it allows a team to avoid the difficult (resource/priority/risk) commitments needed to deliver "hard" key results.
+
+   - This trap is particularly pernicious because it delays both the discovery of the resource requirements for the objective, and the discovery that the objective will not be completed on schedule.
+   - The litmus test for Insufficient KRs:
+
+#+begin_quote
+
+     Is it reasonably possible to score 1.0 on all the key results but still not achieve the intent of the objective?
+
+#+end_quote
+
+     - If so, add or rework the key results until their successful completion guarantees that the objective is also successfully completed.
+
+*** Reading, Interpreting, and Acting on OKRs
+
+- For committed OKRs
+
+  1. Teams are expected to rearrange their other priorities to ensure an on-schedule 1.0 delivery.
+  2. Teams who cannot credibly promise to deliver a 1.0 on a committed OKR must escalate promptly.
+
+     - Escalating in this (common) situation is not only OK, it is required.
+     - *It allows the team's management to develop options and resolve conflicts.*
+     - The corollary is that every new OKR is likely to involve some amount of escalation,
+
+       - since it requires a change to existing priorities and commitments.
+       - An OKR that requires no changes to any group's activities is a business-as-usual OKR
+
+  3. A committed OKR that fails to achieve a 1.0 by its due date requires a postmortem.
+
+     - This is not intended to punish teams.
+     - It is intended to understand what occurred in the planning and/or execution of the OKR, so that teams may improve their ability to reliably hit 1.0 on committed OKRs.
+
+  4. Examples
+
+     1. ensuring that a service meets its SLA (service level agreement) for the quarter;
+     2. delivering a defined feature or improvement to an infrastructure system by a set date;
+     3. manufacturing and delivering a quantity of servers at a cost point.
+
+- For aspirational OKRs
+
+  - The OKRs' priority should inform team members' decisions on where to spend the remaining time they have after the group's commitments are met.
+
+    - In general, higher priority OKRs should be completed before lower priority OKRs.
+
+  - Aspirational OKRs and their associated priorities should remain on a team's OKR list until they are completed, carrying them forward from quarter to quarter as necessary
+
+    - Dropping them from the OKR list because of lack of progress is a mistake, as it disguises persistent problems of prioritization, resource availability, or a lack of understanding of the problem/solution.
+    - Corollary: It is good to move an aspirational OKR to a different team's list if that team has both the expertise and bandwidth to accomplish the OKR more effectively than the current OKR owner.
+
+  - Team managers are expected to assess the resources required to accomplish their aspirational OKRs and ask for them each quarter, fulfilling their duty to express known demand to the business.
+
+    - Managers should not expect to receive all the required resources, however, unless their aspirational OKRs are the highest priority goals in the company after the committed OKRs.
+
+*** More Litmus Tests
+
+- If you wrote them down in five minutes, they probably aren't good. Think.
+- If your objective doesn't fit on one line, it probably isn't crisp enough.
+- If your KRs are expressed in team-internal terms ("Launch Foo 4.1"), they probably aren't good.
+
+  - What matters isn't the launch, but its impact.
+
+    - Why is Foo 4.1 important?
+
+  - Better: "Launch Foo 4.1 to improve sign-ups by 25 percent."
+  - Or simply: "Improve sign-ups by 25 percent."
+
+- Use real dates.
+
+  - If every key result happens on the last day of the quarter, you likely don't have a real plan.
+
+- Make sure your key results are measurable: It must be possible to objectively assign a grade at the end of the quarter.
+
+  - "Improve sign-ups" isn't a good key result.
+  - Better: "Improve daily sign-ups by 25 percent by May 1."
+
+- Make sure the metrics are unambiguous.
+
+  - If you say "1 million users," is that all-time users or seven-day actives?
+
+- If there are important activities on your team (or a significant fraction of its effort) that aren't covered by OKRs, add more.
+- For larger groups, make OKRs hierarchical—have high-level ones for the entire team, more detailed ones for subteams. Make sure that the "horizontal" OKRs (projects that need multiple teams to contribute) have supporting key results in each subteam.
+
+** 2 A Typical OKR Cycle
+
+4-6 weeks before quarter
+    Brainstorm Annual and Q1 OKRs for Company
+
+    - Senior leaders start brainstorming top-line company OKRs.
+    - If you're setting OKRs for Q1, this is also the time to set your annual plan, which can help guide the direction of company
+
+2 weeks before quarter
+    Communicate Company-wide OKRs for Upcoming Year and Q1
+
+    - Finalize company OKRs
+    - Communicate them to everyone
+
+Start of quarter
+    Communicate Team Q1 OKRs
+
+    - Based on the company's OKRs, teams develop their own OKRs and share them eat their meetings
+
+1 week after Start of quarter
+    Share Employee Q1 OKRs
+
+    - One week after team OKRs are communicated, contributors share their own OKRs
+    - This may require negotiation between contributors and their managers, typically in one-on-one meetings
+
+Throughout quarter
+    Employees Track Progress and Check-in
+
+    - Throughout the quarter, employees measure and share their progress, checking in regularly with their managers.
+    - Periodically through the quarter, contributors assess how likely they are to fully achieve their OKRs.
+    - If attainment appears unlikely, they may need to re-calibrate.
+
+Near end of quarter
+    Employees Reflect and Score Q1 OKRs
+
+    - Toward the end of the quarter, contributors score their OKRs, perform a self-assessment, and reflect on what they have accomplished.
+
+** 3 All Talk: Performance Conversations
+
+- Continuous performance management is a two-part, interwoven process.
+
+  1. setting OKRs;
+  2. regular and ongoing conversations, tailored to your needs.
+
+     Goal Planning and Reflection
+*To help facilitate this conversation* , a manager might ask a contributor the following:
+
+         - What OKRs do you plan to focus on to drive the greatest value for your role, your team, and/or the company?
+         - Which of these OKRs aligns to key initiatives in the organization?
+
+     Progress Updates
+*To get the contributor talking* , a manager might pose these questions:
+
+         - How are your OKRs coming along?
+         - What critical capabilities do you need to be successful?
+         - Is there anything stopping you from attaining your objectives?
+         - What OKRs need to be adjusted—or added, or eliminated—in light of shifting priorities?
+
+     Manager-led Coaching
+*To prepare for this conversation* , the manager should consider the following questions:
+
+         - What behaviors or values do I want my report to continue to exhibit?
+         - What behaviors or values do I want the report to start or stop exhibiting?
+         - What coaching can I provide to help the report fully realize his or her potential?
+         - During the conversation, the leader might ask:
+
+           - What part of your job most excites you?
+           - What (if any) aspect of your role would you like to change?
+
+     Upward Feedback
+*To elicit candid input from a contributor* , the manager might ask:
+
+         - What are you getting from me that you find helpful?
+         - What are you getting from me that impedes your ability to be effective?
+         - What could I do for you that would help you to be more successful?
+
+     Career Growth
+*To tease out a contributor’s career aspirations* , a manager might ask:
+
+         - What skills or capabilities would you like to develop to improve in your current role?
+         - In what areas do you want to grow to achieve your career goals?
+         - What skills or capabilities would you like to develop for a future role?
+         - From a learning, growth, and development standpoint, how can I and the company help you get there?
+
+     Prepping for Performance Conversations
+*Before launching a performance conversation with a contributor, some prep work is in order.*
+
+         - Specifically, leaders should consider the following:
+
+           - What were the contributor’s main objectives and responsibilities in the period in question?
+           - How has the contributor performed?
+           - If the contributor is underperforming, how should he or she course-correct?
+           - If the contributor is performing well or exceeding expectations, what can I do to sustain a high level of performance without burnout?
+           - When is the contributor most engaged?
+           - When is the contributor least engaged?
+           - What strengths does the contributor bring to the work?
+           - What types of learning experience might benefit this contributor?
+           - Over the next six months, what should the contributor’s focus be? Meeting expectations in his or her current role? Maximizing contributions in the current role? Or preparing for the next opportunity—be it a new project, expanded responsibility, or new role?
+
+         - Contributors, too, should prepare for performance conversations. Specifically, they can ask themselves:
+
+           - Am I on track to meet my objectives?
+           - Have I identified areas of opportunity?
+           - Do I understand how my work connects to broader milestones?
+           - What feedback can I give my manager?
+
+** 4 In Sum
+
+- Four Superpowers of OKRs
+
+  1. Focus and Commit to Priorities
+
+     - Set the appropriate cadence for your OKR cycle.
+
+       - I recommend dual tracking,
+
+         1. quarterly OKRs (for shorter-term goals)
+         2. annual OKRs (keyed to longer-term strategies)
+
+       - deployed in parallel.
+
+     - To work out implementation kinks and strengthen leaders’ commitment, *phase in your rollout of OKRs with upper management first.*
+
+       - Allow the process to gain momentum before enlisting individual contributors to join in.
+
+     - Designate an OKR shepherd to make sure that every individual devotes the time each cycle to choosing what matters most.
+     - *Commit to three to five top objectives— what you need to achieve—per cycle.*
+
+       - Too many OKRs dilute and scatter people’s efforts.
+       - Expand your effective capacity by deciding what not to do, and discard, defer, or deemphasize accordingly.
+
+     - In choosing OKRs, look for objectives with the most leverage for outstanding performance.
+     - Find the raw material for top-line OKRs in the organization’s mission statement, strategic plan, or a broad theme chosen by leadership.
+     - To emphasize a departmental objective and enlist lateral support, elevate it to a company OKR.
+     - For each objective, settle on no more than five measurable, unambiguous, time-bound key results— how the objective will be attained.
+
+       - By definition, completion of all key results equates to the attainment of the objective.
+
+     - For balance and quality control, pair qualitative and quantitative key results.
+     - When a key result requires extra attention, elevate it into an objective for one or more cycles.
+     - *The single most important element for OKR success is conviction and buy-in by the organization’s leaders.*
+
+  2. Align and Connect for Teamwork
+
+     - Incentivize employees by showing how their objectives relate to the leader’s vision and the company’s top priorities. The express route to operating excellence is lined with transparent, public goals, on up to the CEO.
+     - Use all-hands meetings to explain why an OKR is important to the organization. Then keep repeating the message until you’re tired of hearing it yourself.
+     - When deploying cascaded OKRs, with objectives driven from the top, welcome give-and-take on key results from frontline contributors. Innovation dwells less at a company’s center than at its edges.
+     - Encourage a healthy proportion of bottom-up OKRs—roughly half.
+     - Smash departmental silos by connecting teams with horizontally shared OKRs. Cross-functional operations enable quick and coordinated decisions, the basis for seizing a competitive advantage.
+     - Make all lateral, cross-functional dependencies explicit.
+     - When an OKR is revised or dropped, see to it that all stakeholders know about it.
+
+  3. Track for Accountability
+
+     - To build a culture of accountability, install continuous reassessment and honest and objective grading—and start at the top. When leaders openly admit their missteps, contributors feel freer to take healthy risks.
+     - Motivate contributors less with extrinsic rewards and more with open, tangible measures of their achievement.
+     - To keep OKRs timely and relevant, have the designated shepherd ride herd over regular check-ins and progress updates. Frequent check-ins enable teams and individuals to course-correct with agility, or to fail fast.
+     - To sustain high performance, encourage weekly one-on-one OKR meetings between contributors and managers, plus monthly departmental meetings.
+     - As conditions change, feel free to revise, add, or delete OKRs as appropriate—even in mid-cycle. Goals are not written in stone. It’s counterproductive to hold stubbornly to objectives that are no longer relevant or attainable.
+     - At the cycle’s end, use OKR grades plus subjective self-assessments to evaluate past performance, celebrate achievements, and plan and improve for the future. Before pushing into the next cycle, take a moment to reflect upon and savor what you’ve accomplished in the last one.
+     - To keep OKRs up-to-date and on point, invest in a dedicated, automated, cloud-based platform. Public, collaborative, real-time goal-setting systems work best.
+
+  4. Stretch for Amazing
+
+     - At the beginning of each cycle, distinguish between goals that must be attained 100 percent (committed OKRs) and those that are stretching for a Big Hairy Audacious Goal (a BHAG, or aspirational OKR).
+     - Establish an environment where individuals are free to fail without judgment.
+     - To stimulate problem solving and spur people to greater achievement, set ambitious goals—even if it means some quarterly targets will be missed. But don’t set the bar so high that an OKR is obviously unrealistic. Morale suffers when people know they can’t succeed.
+     - To get leaps in productivity or innovation, follow Google’s “Gospel of 10x” and replace incremental OKRs with exponential ones. That’s how industries get disrupted and categories reinvented.
+     - Design stretch OKRs to fit the organization’s culture. A company’s optimal “stretch” may vary over time, depending on the operating needs of the coming cycle.
+     - When a team fails to attain a stretch OKR, consider rolling the objective over to the next cycle—assuming the goal is still relevant.
+
+- Continuous Performance Management
+
+  - To address issues before they become problems and give struggling contributors the support they need, move from annual performance management to continuous performance management.
+  - Unleash ambitious goal setting by divorcing forward-looking OKRs from backward-looking annual reviews. Equating goal attainment to bonus checks will invite sandbagging and risk-averse behavior.
+  - Replace competitive ratings and stack rankings with transparent, strength-based, multidimensional criteria for performance evaluations. Beyond the numbers, consider a contributor’s team play, communication, and ambition in goal setting.
+  - Rely on intrinsic motivations—purposeful work and opportunities for growth—over financial incentives. They’re far more powerful.
+  - To power positive business results, implement ongoing CFRs (conversations, feedback, and recognition) in concert with structured goal setting. Transparent OKRs make coaching more concrete and useful. Continuous CFRs keep day-to-day work on point and genuinely collaborative.
+  - In performance-driving conversations between managers and contributors, allow the contributor to set the agenda. The manager’s role is to learn and coach.
+  - Make performance feedback two-way, ad hoc, and multidirectional, unconstrained by the org chart.
+  - Use anonymous “pulse” surveys for real-time feedback on particular operations or general morale.
+  - Strengthen connections between teams and departments with peer-to-peer feedback, in conjunction with cross-functional OKRs.
+  - Employ peer recognition to enhance employee engagement and performance. For maximum impact, recognition should be frequent, specific, highly visible, and tied to top-line OKRs.
+
+- Importance of Culture
+
+  - Align top-line OKRs with an organization’s mission, vision, and North Star values.
+  - Convey cultural values by word, but most of all by deed.
+  - Promote peak performance with collaboration and accountability. When OKRs are collective, assign key results to individuals—and hold them accountable.
+  - To develop a high-motivation culture, balance OKR “catalysts,” actions that support the work, with CFR “nourishers,” acts of interpersonal support or even random acts of kindness.
+  - Use OKRs to promote transparency, clarity, purpose, and big-picture orientation. Deploy CFRs to build positivity, enthusiasm, stretch thinking, and daily improvement.
+  - Be alert to the need to address cultural barriers, especially issues of accountability and trust, before implementing OKRs.
+
+** 5 For Further Reading
+
+- [[https://www.amazon.cn/dp/B015VACHOK/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1486535630&sr=1-2&keywords=high+output+management][High Output Management-Kindle 商店 - 亚马逊中国]]
+- [[https://www.amazon.com/How-Why-Anything-Means-Everything/dp/1118106377][How: Why How We Do Anything Means Everything: Dov Seidman, President Bill Clinton: 9781118106372: Amazon.com: Books]]
+- [[https://www.amazon.com/Radical-Candor-Kickass-Without-Humanity/dp/1250103509][Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity: Kim Scott: 9781250103505: Amazon.com: Books]]
+- [[https://www.amazon.com/Good-Great-Some-Companies-Others-ebook/dp/B0058DRUV6][Amazon.com: Good to Great: Why Some Companies Make the Leap...And Others Don't eBook: Jim Collins: Kindle Store]]

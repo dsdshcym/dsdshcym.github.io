@@ -1,0 +1,408 @@
+#+TITLE: Clippings from Understanding the Four Rules of Simple Design
+* Table of Contents
+
+- [[#org3668486][Foreword: Kent Beck]]
+- [[#org65c1c84][This Book]]
+- [[#orgad13f86][Where do these thoughts come from?]]
+
+  - [[#orgd28356a][Good Design?]]
+  - [[#orgfa7f339][Coderetreats]]
+  - [[#orgaa811b8][Conway's Game of Life]]
+  - [[#orgbbeecba][4 Rules of Simple Design]]
+
+- [[#org47eab2f][Examples]]
+
+  - [[#org2c73a08][Test Names Should Influence Object's API]]
+  - [[#org5febda4][Duplication of Knowledge about Topology]]
+  - [[#orgb16d377][Behavior Attractors]]
+  - [[#org30d7d89][Testing State vs Testing Behavior]]
+  - [[#org68b1237][Don't Have Tests Depend on Previous Tests]]
+  - [[#org2f2768e][Breaking Abstraction Level]]
+  - [[#org80ffd70][Naive Duplication]]
+  - [[#orgeb56d69][Procedural Polymorphism]]
+  - [[#orgab098b1][Making Assumptions About Usage]]
+  - [[#org54e5c68][Unwrapping an Object]]
+  - [[#orged54df1][Inverted Composition as a Replacement for Inheritance]]
+
+- [[#org4f5492b][Other Good Stuff]]
+
+  - [[#orgb1edd54][Other Design Guidlines]]
+  - [[#orgf15ca54][Example constraints]]
+  - [[#org4ac9966][Some Thoughts On Pair-Programming Styles]]
+  - [[#orgb8cc014][Further Reading]]
+
+* Foreword: Kent Beck
+
+- The more change I anticipated, the harder it got to make changes
+
+* This Book
+
+- Who it is for
+
+  - Developers
+  - Beginners
+  - Intermediate developers
+  - Advanced practitioners
+
+- What it is (and isn't) about
+
+  - About
+
+    - The examples here are low-level, focused on decisions that are made in the minute-by-minute rush of writing code
+    - The fundamentals of writing adaptable code
+
+  - Not about
+
+    - Any particular technique
+    - Any particular language
+    - a step-by-step guide to building Conway's Game of Life
+
+* Where do these thoughts come from?
+** Good Design?
+
+- Prefer to talk about "Better Design" over "Good Design"
+
+  - A more concrete footing
+  - There are perhaps more than one design that works, depending on the situation
+  - Removes the conflict inherent in "bad v.s. good" when talking
+  - *Find some fundamental ideas about "better"*
+
+- The one constant in software development is that *things are going to change*
+- *Simple design is one that is easy to change*
+
+** Coderetreats
+
+- Coderetreat is a day-long workshop focused on analyzing and practicing the decisions we make when writing code.
+- The format of a standard coderetreat is simple:
+
+  - Full day (5 to 6 sessions)
+  - Participants write code in pairs (pair programming)
+  - 45-minute sessions
+  - Conway's Game of Life is the problem
+  - Code is deleted after each session
+  - New pairs each session
+  - At the end of the day, we do a short retrospective where everyone answers the following questions
+
+    - What, if anything, did you learn today?
+    - What, if anything, surprised you today?
+    - What, if anything, will you do differently moving forward?
+
+- For each session, a set of constraints is given (to remove the ability to code in a familiar, comfortable way).
+
+  - Example constraints
+
+- A transform of code ownership
+
+  - The separation of identity from code frees them to experiment with new ideas.
+  - When value isn't tied to amount (or quality) of code, they can more readily accept that an attempt isn't working and discard it.
+
+** Conway's Game of Life
+
+- [[https://github.com/vorce/golux][vorce/golux: Elixir game of life with Scenic demo]]
+- [[https://game-of-life.isaacbfsanders.com/][Conway's Game of Life in Elixir]]
+
+** 4 Rules of Simple Design
+
+- 4 Rules of Simple Design
+
+  1. Tests Pass
+
+     - if you can’t verify that your system works, then it doesn’t really matter how great your design is
+     - It is about correctness and verification.
+     - notice that the rule doesn’t say “Automated Tests Pass,” just “Tests Pass.”
+     - When looking at your testing strategy, tend towards automated, and tend towards making them fast(er).
+
+#+begin_quote
+
+       If you have to ask how fast your test suite should be, it should be faster.
+
+#+end_quote
+
+  2. Expresses Intent
+
+     - it is easy for the names we give things to stray from what they represent.
+     - One of the most important qualities of a codebase, when it comes time to change, is how quickly you can find the part that should be changed.
+     - The difficulty in finding an expressive name is a red flag that it is doing too much and should be refactored.
+
+  3. No Duplication (DRY)
+
+     - it is about knowledge duplication, not code duplication
+     - Instead of looking for code duplication, always ask yourself whether or not the duplication you see is an example of core knowledge in the system.
+
+  4. Small
+
+     - Do I have any vestigial code that is no longer used?
+     - Do I have any duplicate abstractions?
+     - Have I extracted too far?
+
+- These rules iterate over each other
+
+  - Frequently,
+
+    1. fixing a naming issue will uncover some duplication.
+    2. eliminating that duplication will then reveal some expressiveness that can be improved.
+
+  - [[http://blog.thecodewhisperer.com/permalink/putting-an-age-old-battle-to-rest][Putting An Age-Old Battle To Rest - The Code Whisperer]]
+
+* Examples
+** Test Names Should Influence Object's API
+
+- Use our test names to influence and mold our API
+
+#+begin_src ruby
+def test_a_new_world_is_empty
+  world = World.new
+  assert_equal 0, world.living_cells.count
+end
+
+def test_a_new_world_is_empty
+  world = World.new
+  assert_true world.empty?
+end
+#+end_src
+- Think of the test as the first consumer of the component, interacting with the object the same way as the rest of the system.
+- Think about *letting the code in the test be a mirror of the test description* .
+
+** Duplication of Knowledge about Topology
+
+- A good way to detect knowledge duplication is to *ask what happens if we want to change something* .
+
+  - What effort is required?
+  - How many places will we need to look at and change?
+
+- We can also approach this as a naming problem: *a lack of effectively expressing our intent* .
+
+  - The fact that we "know" what they (x, y) mean is a convention, rather than a result of being explicit.
+  - When encountering poor names, we often can find a missing abstraction by thinking about what the poorly-named variables represent.
+
+- Of course, we could take a small, interim step by making this a tuple on the caller side.
+
+#+begin_src prolog
+world.set_living_at([x, y])
+#+end_src
+
+  - it really just pushes it (the naming issue) elsewhere in the code.
+
+** Behavior Attractors
+
+- You know you need a behavior, but there is a bit of confusion around its proper place.
+
+  - Too often, our solution is to punt on really analyzing the problem. Instead, we just put it in whatever file is open at the time. After all, we can always justify it later.
+  - Or, we tell ourselves we’ll move it later, once we have more information.
+  - Once it starts getting used, though, moving it becomes less and less likely.
+
+- Behavior Attractor
+
+  - By aggressively eliminating knowledge duplication through reification, we often find that we have built classes that naturally accept new behaviors that arise.
+  - They not only accept, but attract them;
+  - by the time we are looking to implement a new behavior, there is already a type that is an obvious place to put it.
+
+- Corollary: use this idea to notice potentially missing abstractions.
+
+  - If we are working on a new behavior, but are not sure where to place it —what object it belongs to —this might be an indication that we have a concept that isn’t expressed well in our system.
+
+** Testing State vs Testing Behavior
+
+- state-focused: We are doing something, then checking what, if any, state change occurred.
+- behavior-focuses: Think about what behaviors you expect and have our tests center around those.
+- Building our system in a behavior-focused way is about only building the things that are absolutely needed and only at the time they are needed.
+- When I think there is something I want to build, I ask myself a simple question: “What behaviour of my system requires this?”
+- Once I answer that question, I move to building that behavior.
+
+** Don't Have Tests Depend on Previous Tests
+
+- This test implicitly depends on the validity of a different, previous test: there is an assumption here that new worlds are empty.
+
+#+begin_src ruby
+def test_an_empty_world_stays_empty_after_a_tick
+  world = World.new
+  next_world = world.tick
+  assert_true next_world.empty?
+end
+#+end_src
+
+  - Test Names Should Influence Object's API
+
+#+begin_src ruby
+def test_an_empty_world_stays_empty_after_a_tick
+  world = World.empty
+  next_world = world.tick
+  assert_true next_world.empty?
+end
+#+end_src
+
+- A guideline for myself that external callers can’t actually use the base constructor for an object
+
+** Breaking Abstraction Level
+#+begin_src ruby
+def test_world_is_not_empty_after_adding_a_cell
+  world = World.empty
+  world.set_living_at(Location.new(1,1))
+  assert_false world.empty?
+end
+#+end_src
+
+- This coupling can be seen as another example of duplication: spreading the knowledge (of the topology) not just throughout the code, but also throughout the test suite.
+- Two ways to solve this (hide the details):
+
+  1. use a stand-in, a test double for the location object
+
+     1. it highlights that we aren't using any specific attributes of the doubled object
+     2. if we find that we need some interaction with it, we can specify it as constraints on the double.
+     3. If we want to be even more explicit, we can give the test double a name.
+     4. By using a test double, we gain feedback that can help minimize the coupling of the behavior under test: *we must be explicit about every interaction.*
+
+  2. use a builder method that provides a location without exposing implementation details.
+
+** Naive Duplication
+
+- The Don't Repeat Yourself, or DRY, principle states:
+
+#+begin_quote
+
+  Every piece of knowledge has one and only one representation
+
+#+end_quote
+
+  - Just looking at code that appears similar and combining them misses the point of the DRY principle.
+
+- One good technique to keep from mistaking similar-looking code as actual knowledge duplication is to *explicitly name the concepts* before you try to eliminate the duplication.
+
+** Procedural Polymorphism
+
+- Variables named state are also a huge red flag for expressiveness.
+- Polymorphism is about being able to call a method/send a message to an object and have more than one possible behavior.
+- Procedural Polymorphism
+
+  - if statements (or other branching constructs)
+  - leads to tightly-coupled code, joining these often unrelated behaviors together.
+
+- Type-Based Polymorphism (OOP)
+
+  - *use different types for the different branches.*
+  - The general approach is to analyze what the branching condition is, identify the concepts, and reify them into first-class concepts in our system.
+
+** Making Assumptions About Usage
+
+inside-out development
+    do we need this abstraction?
+
+    - We start somewhere in our domain, making a very large assumption that the abstractions we are building will be needed sometime.
+
+outside-in development
+    use influences structure
+
+    - So many answers not just disappear but never come up when building abstractions and behaviors through actual usage.
+
+** Unwrapping an Object
+
+- unwrapping
+
+#+begin_src ruby
+class Location
+  attr_reader :x, :y
+
+  def equals?(other_location)
+    other_location.equals_coordinate?(self.x,
+                                      self.y)
+  end
+
+  def equals_coordinate?(other_x, other_y)
+    self.x == other_x && self.y == other_y
+  end
+end
+#+end_src
+#+begin_src java
+public class Location {
+    private int x;
+    private int y;
+    public boolean Equals(Location otherLocation) {
+        return otherLocation.Equals(this.x, this.y);
+    }
+
+    public boolean Equals(int otherX, int otherY) {
+        return this.x == otherX && this.y == otherY;
+    }
+}
+#+end_src
+
+  - Double Dispatch
+
+- no return values
+
+#+begin_src ruby
+class Location
+  attr_reader :x, :y
+
+  def equals?(other_location, if_equal)
+    other_location.equals_coordinate?(self.x, self.y, if_equal)
+    nil
+  end
+
+  def equals_coordinate?(other_x, other_y, if_equal)
+    if self.x == other_x && self.y == other_y
+      if_equal.()
+    end
+    nil
+  end
+end
+#+end_src
+
+** Inverted Composition as a Replacement for Inheritance
+
+- *Base classes extracted entirely to eliminate apparent duplication can have a tendency to hide actual duplication.*
+
+  - Also, it is very common for these base classes to become buckets of unrelated behavior.
+
+* Other Good Stuff
+** Other Design Guidlines
+
+- SOLID Principle
+- Law of Demeter
+
+** Example constraints
+
+- Lines of code per method <= 3
+- No in-method branching statements
+- No primitives across method boundaries (input or output)
+- Mute ping-pong pairing
+- Find the loophole (the pair working to get the tests passing writes the wrong production-level code)
+- No return values
+- Program like it's 1969 (only run your code twice)
+- Object Calisthenics
+
+** Some Thoughts On Pair-Programming Styles
+
+- Driver-Navigator
+
+  - Unfortunately, too often this form of pair-programming leads to what I call the "Driver-Twitterer" style of collaboration.
+  - As with every aspect of development, communication is key here.
+
+- Ping-Pong Pairing
+
+  - Form 1
+
+    ||member 1 |member 2 | |
+    ||write test |  | |
+    ||  |make test green | |
+    ||write test |  | |
+    ||  |make test green | |
+  - Form 2
+
+    ||member 1 |member 2 | |
+    ||write test |  | |
+    ||  |make test green | |
+    ||  |write next test | |
+    ||make test green |  | |
+    ||write next test |  | |
+    ||  |make test green | |
+    ||  |write next test | |
+
+** Further Reading
+
+- [[file:///Users/dsdshcym/Dropbox/Calibre%20Library/Sandi%20Metz/Practical%20Object-Oriented%20Design%20in%20Ruby_%20An%20Agile%20Primer%20(58)/Practical%20Object-Oriented%20Design%20in%20Ruby_%20-%20Sandi%20Metz.pdf][Practical Object-Oriented Design in Ruby]]
+- [[https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf][On the Criteria To Be Used in Decomposing Systems into Modules]]
+- [[http://www.growing-object-oriented-software.com/][Growing Object-Oriented Software Guided by Tests (GOOS)]]
+- [[https://pragprog.com/screencasts/v-kbtdd/test-driven-development][Test Driven Development by Kent Beck - The Pragmatic Bookshelf]]
+- [[http://jmock.org/oopsla2004.pdf][Mock Roles, not Objects]]
+- The Pragmatic Programmer

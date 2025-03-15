@@ -1,0 +1,157 @@
+#+TITLE: Ruthless Prioritization - The Core of Management
+
+[[https://dsdshcym.github.io/clipping/2019/04/12/why-do-we-need-managers/][The only job of a manager is to make the team more effective.]]
+
+To achieve this goal, we need to make the team more focused. And nothing except clear priorities can do that.
+
+That's why I'm learning frameworks like [[https://dsdshcym.github.io/blog/2019/05/16/defining-a-mvp-by-setting-okrs/][OKRs]] recently, trying to get a sense of how to set priorities for a team/company. But OKRs don't tell us how to do that for product management. The article below gives some great instructions on how to do that. And these can be applied to team level management as well.
+
+#+begin_quote
+
+- The best teams are the ones where
+
+  1. everyone is maniacally prioritizing towards the same goal,
+  2. doing so in a way that’s consistent with each other.
+
+- A Framework for Prioritization
+
+  - Prioritization in product management can be broken down into two scopes:
+
+    Prioritization between projects
+        This is about determining what project your team should do next
+    Prioritizing work within a project
+        This is about how efficiently you can execute a project
+
+  - They are each driving at different types of decisions.
+
+    - When prioritizing between projects, you have to make one big decision: what will my team invest in next?
+
+      - Apply a rigorous process to find all the pieces, and the answer is in how they all fit together.
+
+    - When prioritizing work within a project, you have to make the same decision hundreds of times: is this absolutely necessary to do?
+
+      - accepting the *chaotic* nature of building products
+      - develop a *ruthless mindset* to make quick decisions about what’s absolutely necessary.
+
+- Prioritizing between projects
+
+  1. Estimate return on investment for each project
+
+     - The basis for all project prioritization is return on investment (ROI),
+     - ROI is measured as the amount of customer value your team creates for a unit of time.
+     - Your goal with prioritization is to *always be doing the work that maximizes customer value created over time.*
+     - Estimate two data points
+
+       1. the amount of customer value that will be produced
+       2. the amount of time it will take to finish the project
+
+     - Mechanically this is what you're trying to do
+
+       ||Project |Customer Value |Time to build |ROI | |
+       ||A |? |? |? | |
+       ||B |? |? |? | |
+       ||C |? |? |? | |
+       ||D |? |? |? | |
+     - Pro-tip: *double the effort and halve the impact of any estimates, and you’ll be much closer to reality.*
+
+  2. Apply three constraints:
+
+     - Dependencies
+
+       - A dependency is created when a unit of work needs to be complete in order for another unit of work to progress.
+       - Dependencies are everywhere when building products, and it gets worse the more successful your product becomes, as scale creates more complex systems.
+       - As an aside, most people think startups are fast because they work harder and are more ambitious.
+
+         - The truth is that *most of the speed difference comes from having far fewer dependencies* (and few customers to upset if something screws up), so it’s just easier to get stuff done.
+
+     - Reverse Dependencies
+
+       - If you’re optimizing for the company’s ROI above your product’s you’ll now need to assess the cumulative ROI of not just your project, but the dependent projects that you unblock in order to make the correct prioritization decision for your team.
+       - Whenever I see teams working to unblock other teams they earn a lot of respect from me, and it signals maturity in their product thinking.
+
+     - Timelines
+
+       - Timelines are the canonical constraint, one we’ve all experienced.
+       - A particularly serious one is when your startup will run out of cash and die before the highest ROI feature will ship.
+       - When this happens, the correct prioritization decision of course is to *do the highest ROI project that is achievable within the timeframe.*
+
+     - Team composition
+
+       - An example is having a team that is full of brand new people to the company, like a gaggle of interns
+       - In these situations you should be wary of prioritizing a project that has a lot of risks to customers, even if it’s the highest ROI.
+
+  3. Put the puzzle together — sequence projects based ROI + constraints
+
+- Prioritizing work within a project
+
+  - The only way to combat the speed and chaos of building products is to develop a *ruthless mindset* , *one that is constantly aware of the work a team is doing and challenges them on the necessity of that work.*
+
+    - Having a ruthless mindset means accepting reality.
+
+      1. It’s a realization that you will have to make hard choices every day on where to focus.
+      2. It’s a realization that shipping the perfect product is an illusion, and that trade-offs are always required to ship.
+
+    - Having a ruthless mindset is about the will to ship.
+
+*Show me a team that has no bugs at launch, and I’ll show you one that should have shipped a long time ago.*
+
+  - In reality, the chaotic nature of prioritizing work within a project means that defining a process around it is foolhardy.
+
+    - A more productive strategy is to *help teams internalize product development concepts* that aid them in ruthlessly answering “is this absolutely necessary?”.
+    - How?
+
+      1. Building prioritization systems
+
+         - *All software is a liability.*
+
+           - It has bugs now, and it will develop more over time.
+           - When faced with a new bug, if your team can’t quickly figure out if they should fix it or not, their ability to focus on the most important work will be constantly disrupted.
+
+         - You can’t afford to have a prioritization meeting every time a bug pops up, so one of the highest leverage things you can do is to *create a system that determines when to fix bugs or when to move on* .
+
+           ||  |0% of users |5% of users |100% of users | |
+           ||Users Can't Report |Backlog |  |Fix next sprint | |
+           ||Users Can't Pay |  |  |  | |
+           ||Users Can't Login |Fix next sprint |  |Fix immediately | |
+
+           - The X axis represents the frequency that a bug affects users,
+           - and the Y axis represents the severity of that bug.
+
+      2. Using product assumptions to make quality vs. speed trade offs
+
+         - *In order to ship, every team invariably makes some sacrifices to quality.* Teams have to choose when enough is enough, and that comes down to a prioritization decision about what is essential to the quality of a product.
+         - *base it around your product assumptions.*
+         - If you think about your product, there are three situations you can be in with respect to these product assumptions:
+
+           Speed is important
+               The problem you’re trying to solve is an assumption
+           Middle ground between speed and quality
+               The solution to fulfill a known problem is an assumption
+           Quality is important
+               Neither are assumptions (you know exactly what’s needed and why)
+
+      3. The Time Value of Shipping
+
+         - *Software only creates value for customers once it’s shipped.*
+         - Ship faster for 80%, do extra 20% after
+
+           - 28 效应 Pareto principle - Wikipedia
+           - building the final 20% requires a lot of niche functionality, which takes double the time to build (as the first 80%).
+           - when faced with this choice I usually encourage teams to be ruthless and ship it. Here’s why:
+
+             1. If customers knew the full context and could make the decision for us, the majority of them would want us to ship it.
+             2. In the long run, if a team consistently follows this strategy, the number of times a customer will fall on the good side of that 80%|20% will even out, and as a result, relative to a company that always waits for 100%, customers will get exponentially more value over time as the effect of constantly getting features earlier compounds.
+
+  - Ruthless mindsets are unnatural
+
+    - most teams in the industry aren’t incentivized to be ruthless prioritizers, despite it being a core meme of product companies.
+    - Challenge your team to be better. Challenge them to be ruthless.
+
+- Prioritization is a craft
+
+  - *there is always a way to accomplish your goal faster than you currently plan to.*
+  - You just have to ask, “How can we do this in half the time?” at the end of that planning meeting, and miraculously — the team will find a way.
+
+#+end_quote
+
+-- from [[https://blackboxofpm.com/ruthless-prioritization-e4256e3520a9][Ruthless Prioritization – The Black Box of Product Management]]

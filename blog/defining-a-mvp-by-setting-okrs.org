@@ -1,0 +1,109 @@
+#+TITLE: Defining a MVP by Setting OKRs
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-05-16]
+#+URI:         blog/2019/05/16/defining-a-mvp-by-setting-okrs/index.html
+#+TAGS:        Agile, Product, Management
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+When working on software-based products, it's hard to not hear about MVP (Most Viable Product).
+
+#+begin_quote
+
+A minimum viable product is a product with just enough features to satisfy early customers, and to provide feedback for future product development.
+
+#+end_quote
+
+-- from [[https://en.wikipedia.org/wiki/Minimum_viable_product][Minimum viable product - Wikipedia]]
+
+But it's so much easier to understand this concept than to define your own MVP when building a real product. (I just failed once [[https://dsdshcym.github.io/blog/2019/05/11/how-to-build-a-minimum-cms-in-an-agile-way/][to build a
+MVP for a CMS]].) So how to really define a MVP?
+
+I think we need to turn to the management side for some inspirations. And I recently learned about OKR (Objectives, Key Results) and how it helps with management:
+
+#+begin_quote
+
+Objectives and key results (OKR) is a framework for defining and tracking objectives and their outcomes.
+
+#+end_quote
+
+-- from [[https://en.wikipedia.org/wiki/OKR][OKR - Wikipedia]]
+
+In this post, I'd like to explain why OKR is a good fit for manage a MVP project and how to do it.
+
+* Why OKR is a good fit?
+
+This idea of applying OKRs for building MVPs when I was reading [[https://dsdshcym.github.io/clipping/2019/05/07/clippings-from-measure-what-matters/#org432980a][the
+chapter about Big Rocks Theory from Measure what Matters]]:
+
+#+begin_quote
+
+- Engineers struggle with goal setting in two big ways.
+
+  1. They hate crossing off anything they think is a good idea,
+  2. they habitually underestimate how long it takes to get things done.
+
+- *It took discipline for people to narrow their lists to three or four objectives for their team, but it made a huge difference.*
+
+  - Our OKRs became more rigorous.
+  - Everybody knew what counted most.
+
+- Use a metaphor called the Big Rocks Theory (to bring focus to the whole company)
+
+  Say you have some rocks, and a bunch of pebbles, and some sand, and your goal is to fit as much of everything as you can into a wide-mouth, one-gallon jar. If you start with the sand, and then the pebbles, the jar will run out of room for all the rocks. But when you start with the rocks, add the pebbles, and save the sand for last, the sand fills the spaces between the rocks—everything fits.
+
+- In other words, *the most important things need to get done first or they won't get done at all.*
+
+#+end_quote
+** The Big Rocks theory matches with MVP pretty well
+
+As you can see from the definitions above, the Big Rocks theory is a perfect match for MVP.
+
+- The most important things that need to be done when building a product are the rocks.
+- The less important are the pebbles.
+- The least important are the sand.
+- The process of building the product is the process of putting these things into the jar.
+
+Given that non of us has [[https://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things/][unlimited resources]], we have to focus on the most important things first. And remember, [[https://dsdshcym.github.io/clipping/2019/04/25/your-first-task-would-take-the-most-of-the-time/][your first task would take
+the most of the time]].
+
+** Engineers' struggles
+
+Another good reason is that OKRs are aimed for solving the engineers' struggles here. And these two struggles are exactly why building a MVP is hard.
+
+1. We hate crossing off anything we think is a good idea. So we add every fancy feature to our backlog. And everything seems to be both important and urgent. Then finally nothing can get done.
+2. We habitually underestimate how long it takes to get things done. Then we give short estimations. We let more items get into our roadmap. Since each one of them is just another one-day of work, right?
+
+** How does OKR fix these problems?
+
+By setting Objectives, we make the purpose of our Big Rocks crystally clear.
+
+By setting Key Results, we can tackle the two struggles above easily
+
+1. We can focus on three to five key results that really matter. So the OKR setting process forces us to cross off things that are less important.
+2. We give clear deadlines and constantly check the progress along the way. So that even if we underestimate, we can get more practice on estimation and update the progress more often.
+
+* How to define a MVP with OKRs?
+
+I want to give an more concrete example of setting OKRs for a MVP: let's say we are defining a MVP for the CMS product I mentioned in [[https://dsdshcym.github.io/blog/2019/05/11/how-to-build-a-minimum-cms-in-an-agile-way/][How
+to build a Minimum CMS in an Agile way]]. The OKRs for this product can be:
+
+#+begin_quote
+
+- *Objective* : Build an official site for the company to boost sales
+- *Key Results*
+
+  1. 100% of our products are listed on the site by May 1st.
+  2. 50 new sales opportunities are created within 3 months after the website is launched.
+  3. 100% of the new products developed in May can be added in time (before May 31st).
+
+#+end_quote
+
+With this OKR defined, our MVP's scope is set clearly. And each key result covers one core feature we need to focus on:
+
+1. The first key result covers the development of the main site. Only if the main site is well designed and developed, can we put all of our products there.
+2. The second key result leads to the SEO (Search Engine Optimization) work we need to do. Without a good SEO strategy, even a well developed site cannot bring much value to the company.
+3. Our last key result makes sure we won't forget the usability for admins of this site.
+
+Hopefully, you can get some of the idea behind defining a MVP with OKRs with this simple example. And if you want to discuss more about this topic, feel free to leave comments below.

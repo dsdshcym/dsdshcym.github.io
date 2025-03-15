@@ -1,0 +1,203 @@
+#+TITLE: Clippings of 2020 Feb
+* Table of Contents
+
+- [[#orgdd786a2][Top 6]]
+
+  - [[#orgb4414df][如果没有今天，明天会不会有昨天？]]
+  - [[#org4bf281a][GOTO 2019 • Lies, Damned Lies, and Metrics • Roy Osherove - YouTube]]
+  - [[#orgf2d9cd5][Work Is Work - codahale.com]]
+  - [[#org7da2bef][Growing a Language, by Guy Steele - YouTube]]
+  - [[#orgf348519][From 15,000 database connections to under 100: DigitalOcean's tale of tech debt]]
+  - [[#org6e0ea9d][How to Estimate Feature Development Time: Maybe Don't]]
+
+- [[#org05dc7b0][Others]]
+
+* Top 6
+** [[https://book.douban.com/subject/26949210/][如果没有今天，明天会不会有昨天？]]
+#+begin_quote
+
+- 提出疑问及为之寻找完善的解答，就是推动哲学前进的力量。
+
+  - 思辨的时候，我们首先交换的并不是立场，而是论证。
+  - 哲学家们特别致力于追求的，是理解与明晰性。
+  - 对每一个哲学问题，只有在理解了问题及其中包含的概念之后，我们才能启程寻找解答。
+  - 所以，哲学也总是试着厘清本身使用的基本概念，并借此对人类生命与思想的根本范畴进行理解，这就是哲学家们的核心任务。
+
+- 但是哲学概念该怎么厘清呢？哲学观点又该如何论证？哲学家如何思索人生的重大问题？他们具体来说怎样进行这些工作
+
+  - 哲学的方法，就是完全靠思索。
+  - 他们有秘密武器，就是思想实验（Gedanken experimente）。
+
+    - 哲学家们让真实与不真实的情境在思想中上演，从中探查出根本概念的意涵，推翻不同的理论，或者为新的思想建筑打下基柱。
+    - 借由这些具体的例子，我们得以认识重要的哲学立场，包括它们有什么长处与缺点
+    - 但是最重要的一点是：思想实验给我们提供了独立思考的空间。
+
+#+end_quote
+** [[https://www.youtube.com/watch?v=goihWvyqRow][GOTO 2019 • Lies, Damned Lies, and Metrics • Roy Osherove - YouTube]]
+#+begin_quote
+
+- Leading & Lagging Indicators
+
+  Leading
+      Influence future performance
+
+      - Inputs
+      - We have direct control
+      - Fast feedback
+
+  Lagging
+      Analyze past performance
+
+      - Outputs (outcomes)
+      - no direct control
+
+- Recommendations
+
+  Don't treat leading indicators as goals
+      Do pair leading indicators to lagging indicators
+  Don't measure just one lagging indicator
+      Do understand how lagging indicators affect each other
+  Don't measure things without a dilemma that drives them
+      Do decide what is your reason for using metrics, and what you are trying to change
+
+#+end_quote
+
+When defining OKRs, I find it hard to choose which key results to measure. This talk shed some lights for me by teaching me the differences between leading and lagging indicators.
+
+- Lagging indicators are great candidates for Key Results, since they are out of our direct control but still can be influenced by our hard work.
+- Leading indicators are not very suited for Key Results, since they are controlled by us directly and thus can be cheated easily.
+
+That being said, leading indicators are still useful. We can use them to guide our actions. The message here is don't treat them as our goals.
+
+If you want to learn more about metrics, I'd highly recommend this talk.
+
+** [[https://codahale.com/work-is-work/][Work Is Work - codahale.com]]
+#+begin_quote
+
+- Principles From Beyond Space And Time
+
+  - Keep the work parallel, the groups small, and the resources local.
+  - Prioritize the development of force multipliers.
+  - If possible, factor work products into independent modules; if not, grow slowly and optimize.
+  - Scale organizational efforts across a portfolio of synergistic products.
+  - Keep responsibility assignment matrices small, sparse, and local.
+  - Prioritize asynchronous information distribution over synchronous.
+  - What happens inside the boundaries is important.
+
+    - Companies are groups of people being compensated for having to spend some of their finite lifetimes not being with their partners, children, pets, or super weird hobbies.
+    - They deserve to be members of organizations which honor that time by ensuring that their work has value and meaning.
+
+#+end_quote
+
+IMHO, most management problems come from scaling (a.k.a managing more people). When your team has only 10 people, everything's fine and moving fast. When you grow to 50, that's another problem. When 100, another completely different problem. This post explains why scaling is the root cause of these problems (from a mathematical perspective) and more importantly, some principles to guide us fight these problems.
+
+** [[https://www.youtube.com/watch?v=_ahvzDzKdB0][Growing a Language, by Guy Steele - YouTube]]
+#+begin_quote
+
+If I want to help other persons to write all sorts of programs, should I design a small programming language or a large one?
+
+#+end_quote
+
+In this interesting talk, the speaker demonstrates the power of a small language with the talk itself.
+
+#+begin_quote
+
+- A good programmer does not write program
+
+  - a good programmer builds a working vocabulary
+  - a good programmer does language design
+
+#+end_quote
+
+This quote resonates with me the most.
+
+** [[https://blog.digitalocean.com/from-15-000-database-connections-to-under-100-digitaloceans-tale-of-tech-debt/][From 15,000 database connections to under 100: DigitalOcean's tale of tech debt]]
+#+begin_quote
+
+- “What does DigitalOcean’s tech debt look like?”
+
+  - Software engineers asking about a company’s tech debt is the equivalent of asking about a credit score.
+  - It’s their way of gauging a company’s questionable past and what baggage they’re carrying.
+
+- simply because something is “legacy” does not mean it is dysfunctional and should be replaced.
+- a three-pronged plan for rectifying the situation:
+
+  1. Decrease the number of direct connections on the database
+  2. Refactor Scheduler’s ranking algorithm to improve availability
+  3. Absolve the database of its message queue responsibilities
+
+     - [[https://martinfowler.com/bliki/StranglerFigApplication.html][StranglerApplication]]
+     - MySQL -> RabbitMQ
+
+#+end_quote
+
+A great post to learn how engineers at DigitalOcean deal with tech debts.
+
+** [[https://thoughtbot.com/blog/how-to-estimate-feature-development-time-maybe-don-t][How to Estimate Feature Development Time: Maybe Don't]]
+#+begin_quote
+
+Should I make an estimate?
+
+- Is time estimation the right tool for your team?
+
+  - One consequence of time estimates is that they create a de-facto deadline
+
+    - "lurking deadlines"
+
+      - not explicit
+      - often arbitraty
+
+    - there are no real consequences for taking an extra week to get it right, and many stakeholders are happy wait a week for a stronger product.
+
+  - The problem arises when estimating becomes a default part of the process for every new feature, regardless of what (if any) value it adds.
+
+#+end_quote
+
+Two takeaways from this post:
+
+1. Maybe you don't need estimate when developing a feature: [[https://yiming.dev/blog/2019/10/09/how-to-build-software-without-estimates/][How to Build Software Without Estimates]]
+2. Always question the process: [[https://yiming.dev/clipping/2019/06/10/say-no-to-processes/][Say NO to Processes]]
+
+* Others
+
+Below are what I've read/watched in 2020 Feb. You may find some of them interesting to you. :)
+
+- [[https://vimeo.com/393580241/82c6d7c5f6][Tailwind UI Preview on Vimeo]]
+- [[https://www.techradar.com/news/the-nintendo-switch-was-a-masterstroke-in-a-decade-of-ups-and-downs][The Nintendo Switch was a masterstroke in a decade of ups and downs - TechRadar]]
+- [[https://m.signalvnoise.com/only-15-of-the-basecamp-operations-budget-is-spent-on-ruby/][Only 15% of the Basecamp operations budget is spent on Ruby - Signal v. Noise]]
+- [[https://jesor.me/2020/shi/][拾 - 大破进击]]
+- [[https://jesor.me/2020/jesses-best-of-2019/][Jesse‘s best of 2019 - 大破进击]]
+- [[http://shop.oreilly.com/product/0636920030331.do][Becoming Functional - O'Reilly Media]]
+- [[https://shapeofdesignbook.com/][The Shape of Design · Home]]
+- [[https://itrevolution.com/the-unicorn-project/][The Unicorn Project - by Gene Kim (author of The Phoenix Project)]]
+- [[https://www.masteringemacs.org/][Mastering Emacs]]
+- [[https://www.theengineeringmanager.com/book/my-book-has-been-released-in-beta/][My book has been released in beta - The Engineering Manager]]
+- [[https://joearms.github.io/published/2013-03-28-solving-the-wrong-problem.html][Solving the wrong problem - <h1>Joe Armstrong - Erlang and other stuff</h1>]]
+- [[https://www.theerlangelist.com/article/periodic][The Erlangelist - Periodic jobs]]
+- [[https://medium.com/@iacobson/piping-phoenix-contexts-3d54dbba8df9][Piping Phoenix Contexts - iacobson - Medium]]
+- [[https://elixirschool.com/blog/live-view-live-component/][LiveView Design Patterns - LiveComponent and the Single Responsibility Principle · Elixir School]]
+- [[https://blog.jola.dev/building-hex-diff][Building Hex Diff]]
+- [[http://www.dr-qubit.org/Lost_undo-tree_history.html][Toby 'qubit' Cubitt - Lost or corrupted undo-tree history]]
+- [[https://blog.aaronbieber.com/2015/01/17/learning-to-love-emacs.html][Learning to Love Emacs - The Chronicle]]
+- [[https://hacks.mozilla.org/2020/01/how-we-built-picture-in-picture-in-firefox-desktop/][How we built Picture-in-Picture in Firefox Desktop with more control over video - Mozilla Hacks - the Web developer blog]]
+- [[https://signalvnoise.com/posts/3124-give-it-five-minutes][Give it five minutes – Signal v. Noise]]
+- [[https://blog.vjeux.com/2020/uncategorized/reflections-on-excalidraw.html][Vjeux » Reflections on Excalidraw]]
+- [[https://twitter.com/tobi/status/1210242184341000192][Tobi Lutke 🌳🌲🛒🕹 on Twitter: "I realize everyone's twitter feed looks different. But I'll go ahead and subtweet two conversations that I see going by right now: Thread/" / Twitter]]
+- [[https://medium.com/@joulee/10-questions-i-wish-id-asked-more-to-turbocharge-my-career-afad1b0fa501][10 questions I wish I’d asked more to turbocharge my career]]
+- [[https://blog.pragmaticengineer.com/a-team-where-everyone-is-a-leader/][An Engineering Team where Everyone is a Leader]]
+- [[https://panum.dk/blog/nixos_the_distribution_i_got_to_love/][NixOS: The distribution I got to love - Thomas Kobber Panum]]
+- [[https://mobile.twitter.com/rjs/status/1217947689473601536][Ryan Singer on Twitter: "An affordance is a piece of supply that, when integrated by the one with demand, gives them a new ability." / Twitter]]
+- [[https://twitter.com/chris_herd/status/1212412869251350529][Chris Herd on Twitter: "The 2020s will be known as the Remote Work decade A few predictions of what is likely to emerge [ a thread ] 💻🏠🌍" / Twitter]]
+- [[http://www.rosspettit.com/2019/12/but-is-it-really-tech-firm.html][The Agile Manager: But Is It Really a Tech Firm?]]
+- [[https://twitter.com/bcantrill/status/1216491216356823040][Bryan Cantrill on Twitter: "So, my thoughts on engineering performance management have always been a bit idiosyncratic, but Matt's tweets today have me reflecting, so... storytime. 1/ https://t.co/Jr9Kf23WZZ" / Twitter]]
+- [[https://codahale.com/work-is-work/][Work Is Work - codahale.com (The math of organization scaling)]]
+- [[https://t.co/sCiHMhh7Zf][The Next Experiment? Starting My Own Venture - patkua@work]]
+- [[https://til.hashrocket.com/posts/e65bb49204-lower-is-faster-than-ilike][Lower Is Faster Than ilike - Today I Learned]]
+- [[https://glitch.com/culture/the-year-in-glitches/][The Year in Glitches]]
+- [[https://blog.digitalocean.com/from-15-000-database-connections-to-under-100-digitaloceans-tale-of-tech-debt/][From 15,000 database connections to under 100: DigitalOcean's tale of tech debt]]
+- [[https://adamconrad.dev/blog/how-to-improve-on-naming-contexts-in-domain-driven-design/][How to Improve on Naming Contexts in Domain-Driven Design - Adam C. Conrad]]
+- [[https://thoughtbot.com/blog/how-to-estimate-feature-development-time-maybe-don-t][How to Estimate Feature Development Time: Maybe Don't]]
+- [[https://overreacted.io/goodbye-clean-code/][Goodbye, Clean Code — Overreacted]]
+- [[https://rauchg.com/2020/2019-in-review][2019 in Review (Next.js & Zeit)]]
+- [[https://t.co/sA9sh0Ih0G][Good times create weak men @ tonsky.me]]
+- [[https://jesor.me/2019/sex-education-review/][《Sex Education》：性的迷思和爱的教育 - 大破进击]]

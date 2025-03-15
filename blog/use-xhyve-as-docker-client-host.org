@@ -1,0 +1,40 @@
+#+TITLE: Use xhyve as Docker client host
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2016-04-25]
+#+URI:         blog/2016/04/25/use-xhyve-as-docker-client-host/index.html
+#+TAGS:        Docker, Mac, xhyve
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+When using Docker on a Mac, we need to use a Virtual Machine as the host of the Docker client. (This is due to the differences between the kernel of Mac and Linux) And most of the time, people will choose virtualbox. But it seems too heavy comparing to the lightwight of Docker.
+
+That's why the new Docker for Mac chooses to use xhyve as the new host of the Docker client. But Docker for Mac is still in beta. Here is how to use xhyve via docker-machine. It may not be as efficient as Docker for Mac Beta. But it's good enough for a taste.
+
+- xhyve
+
+  Follow the instruction [[https://github.com/mist64/xhyve#installation][here]].
+
+#+begin_src awk
+brew install --HEAD xhyve
+#+end_src
+- docker-machine-driver-xhyve
+
+  Follow the instruction [[https://github.com/zchee/docker-machine-driver-xhyve#install][here]].
+
+#+begin_src shell
+brew install docker-machine-driver-xhyve
+
+# docker-machine-driver-xhyve need root owner and uid
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+#+end_src
+- docker-machine create
+
+  Use this instruction to create a xhyve VM. Remember to add the --xhyve-experimental-nfs-share option to enable the file sharing.
+
+#+begin_src awk
+docker-machine create --driver xhyve --xhyve-experimental-nfs-share dev-xhyve
+#+end_src
+
+The experience using xhyve is absolutly better than virtualbox. I hope I can use Docker for Mac soon.

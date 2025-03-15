@@ -1,0 +1,88 @@
+#+TITLE: Retrospect on Image Processing Using AWS Lambda
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-11-24]
+#+URI:         blog/2017/11/24/retrospect-on-image-processing-using-aws-lambda/index.html
+#+TAGS:        Serverless, AWS, Lambda
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I wrote a post about [[http://dsdshcym.github.io/blog/2017/10/31/build-an-image-resizing-microservice-on-aws-lambda/][processing images using AWS Lambda]]. I finished this project and deployed the changes to the production this week, and I find that I have more to say on this topic. So, this post is basically a followup on my previous one.
+
+* TL;DR
+
+I *DO NOT* recommend using Lambda to process images in your S3 bucket and generate different versions for your applications.
+
+Two better choices are:
+
+1. Process images on frontend, upload them directly to S3
+2. Upload images to S3, trigger a Lambda function to generate different versions (Just do not dynamically generate new versions when the requests come)
+
+* Drawbacks of using Lambda to processing images on S3
+
+An important step for setting up a image processing lambda in my previous post is to setup Static Website Hosting for the S3 bucket to allow it redirect requests to API Gateway when the requested image does not exist.
+
+This name of this feature, actually was a huge warning. Static Website Hosting, is it only for hosting static websites like blogs?
+
+** Key Differences Between the Amazon Website and the REST API Endpoint
+
+Most of the time, when we use S3 as the storage solution for our application, we are using the REST API Endpoint to access the S3 bucket.
+
+But for Static Website Hosting, we are using the Website Endpoint for the S3 bucket.
+
+You can see the key differences between these two APIs below[fn:1]:
+
+||Key Difference |REST API Endpoint |Website Endpoint | |
+||Access control |Supports both public and private content. |*Supports only publicly readable content.*  | |
+||Error message handling |Returns an XML-formatted error response. |Returns an HTML document. | |
+||Redirection support |*Not applicable*  |Supports both object-level and bucket-level redirects. | |
+||Requests supported |Supports all bucket and object operations |*Supports only GET and HEAD requests on objects.*  | |
+||Responses to GET and HEAD requests at the root of a bucket |Returns a list of the object keys in the bucket. |Returns the index document that is specified in the website configuration. | |
+||Secure Sockets Layer (SSL) support |Supports SSL connections. |*Does not support SSL connections.*  | |
+
+I also highlighted some of the differences in this table. Let me explain them one by one:
+
+** Supports only publicly readable content
+
+A S3 bucket for Static Website Hosting only supports publicly readable content.
+
+Before we migrated our image processing service to AWS Lambda, our S3 bucket was private all the time. Even when I was setting up the Lambda function, I still thought the S3 bucket could still be private. We didn't realize this issue until we tried to update the CloudFront configuration for the S3 bucket:
+
+*The CloudFront configuration won't treat a Static Website Hosting S3 bucket URL as a S3 bucket* . So that, it cannot use an Origin Access Identity to access a private S3 bucket, which forces us to make the S3 bucket public. (We were able to do that because it was basically public before since user can access any files in this bucket via CloudFront.)
+
+But this is completely unacceptable for applications that need more privacy control over user generated contents (images, videos, etc.).
+
+** Support only GET and HEAD requests on objects
+
+This limit makes it impossible to use the same endpoint for image hosting and uploading.
+
+My solution to this issue was adding a new endpoint for uploading, which means we need to make our application setup more complicated by
+
+1. Creating an extra CloudFront Distribution for uploading.
+2. Adding a new endpoint to our config files.
+
+A better solution is to use multiple Origins on CloudFront. So that the default Origin can still use S3 RESTful API, and a new Origin can use the Website Hosting API. And CloudFront can dispatch requests to these 2 Origins based on the requested URL pattern. For example:
+
+- original_images/* will fallback to the default Origin, which allows users to get original images and upload images to S3.
+- processed_images/* will be dispatched to the Website Hosting Origin. And the Lambda function will get called. But users cannot upload anything to this folder through your application.
+
+(Note that even if you choose this solution, you still need to make processed_images folder public to allow CloudFront to get images from it.)
+
+We couldn't use this solution because we needed to keep backward compatibility for our images URL pattern so that this upgrade would not break anything.
+
+** Does not support SSL connections
+
+This is another unacceptable limitation because the whole web is migrating to HTTPS now.
+
+* Summary
+
+I think with even one drawback listed above, this solution will not be suitable for a modern web application. With all these limitations, I guess this architecture can only be used for static sites like blogs to add a bit more dynamical behavior to its assets.
+
+I really hope AWS can reduce their constraints on Static Website Endpoints for S3 buckets, or add a trigger by requests for a non-existing file on S3. But I don't think either of them is possible in the near future.
+
+So, think if you can really afford the drawbacks above before you choose this solution.
+
+* Footnotes
+[fn:1]
+
+[[http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html][Website Endpoints - Amazon Simple Storage Service]]

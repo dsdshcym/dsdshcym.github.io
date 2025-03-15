@@ -1,0 +1,63 @@
+#+TITLE: Making Audit Logs on Hex.pm Public
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-06-29]
+#+URI:         blog/2020/06/29/making-audit-logs-on-hex-pm-public/index.html
+#+TAGS:        Hex, Package Manager, Elixir, Security
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Third-party libraries are one of the most important building blocks for modern software development. We can hardly build anything useful without depending on other's work. But this dependency introduces a significant security risk: malicious code can be injected to these third party libraries and get pulled into our application.
+
+One way to inject malicious code is through the package manager. We've seen many such accidents in various package managers in the past years:
+
+- [[https://github.com/rest-client/rest-client/issues/713#issuecomment-522735093][event-stream (from NPM) got injected in 2018 Nov]];
+- [[https://github.com/rest-client/rest-client/issues/713][rest-client (from RubyGems) got injected in 2019]].
+
+This security threat is out there targeting every language and every ecosystem.
+
+And this is why Hex team has been working on securing the Elixir/Erlang package manager for so long.
+
+1. [[https://github.com/hexpm/hexpm/pull/551][Hex.pm displays the package tarball checksum since 2017 Aug.]]
+2. [[https://github.com/hexpm/hexpm/pull/836/files][A new outer checksum mechanism was introduced in 2019 July.]]
+3. [[https://hex.pm/blog/announcing-hex-diff][Hex package differ was introduced in 2020 Jan.]]
+
+All these features are aimed to help Elixir/Erlang developers to audit a package.[fn:1] Most importantly, Hexpm has been recording user actions as audit logs since 2016 Jan. These audit logs include info about what actions are performed on packages, when these actions are performed, and who performed these actions. So with these audit logs in place, we can know what actions are performed after an user account was compromised (if they published any new packages, added new owners to packages, etc.).
+
+Now you can check these audit logs on Hexpm:
+
+1. Check who owns a package and who published a release.
+
+   In a package's show page, Hexpm displays its owner and publishers for its releases.
+
+[[https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/owners.png]]
+
+2. Check all actions performed around a package.
+
+   Hexpm displays all recent activities for a package:
+
+[[https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_recent_activities.png]]
+
+   And you can see all activities related to this package in a dedicated page:
+
+[[https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/package_all_activities.png]]
+
+3. Check all actions taken by your own user account.
+
+   You can go to your account dashboard and check all your recent activities:
+
+[[https://yiming.imfast.io/images/making-audit-logs-on-hex-pm-public/user_activities.png]]
+
+4. Check all these audit logs via Hexpm API. If you have access to Hexpm API endpoints, you can fetch audit logs from the following endpoints:
+
+   - GET /api/users/me/audit_logs
+   - GET /api/orgs/:organization/audit_logs
+   - GET /api/packages/:name/audit_logs
+   - GET /api/repos/:repository/packages/:name/audit_logs
+
+By making audit information public, everyone can review the full history of a package on Hexpm. Hopefully by doing so, we can bring more transparency to Hexpm and make our ecosystem more secure together.
+
+* Footnotes
+[fn:1]
+
+As a side note, [[https://hex.pm/blog/announcing-two-factor-auth][Two Factor Auth was added to Hex.pm in 2020 May]] to help developers better secure their accounts.

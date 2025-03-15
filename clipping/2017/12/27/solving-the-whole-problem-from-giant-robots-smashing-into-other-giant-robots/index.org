@@ -1,0 +1,14 @@
+#+TITLE: Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots
+
+It's important to celebrate after finishing a task/sub-task, it's easier to tackle down the whole task if we get enough power in this celebration process.
+
+#+begin_quote
+
+1. Break it down
+2. Finish the next thing
+3. *Celebrate* (Say "Yay!")
+4. Go on to the next thing
+
+#+end_quote
+
+-- from [[http://giantrobots.fm/255][255: Solving the Whole Problem (Maria Parker) - Giant Robots Smashing Into Other Giant Robots]]

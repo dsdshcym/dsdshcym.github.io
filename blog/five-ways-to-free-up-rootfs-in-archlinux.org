@@ -1,0 +1,36 @@
+#+TITLE: Five ways to free up rootfs in Arch Linux
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2016-05-25]
+#+URI:         blog/2016/05/25/five-ways-to-free-up-rootfs-in-archlinux/index.html
+#+TAGS:        Arch Linux
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+1. Cleanup Pacman cache
+
+#+begin_src awk
+paccache -k 0 -r
+#+end_src
+2. Cleanup orphan packages
+
+#+begin_src awk
+pac -Qtd
+#+end_src
+3. Cleanup journal
+
+#+begin_src awk
+journalctl --vaccum-time=1w
+#+end_src
+4. Set max disk capacity for journals
+
+   - Change SystemMaxUse to 100M in /etc/systemd/journald.conf
+   - Then restart journald service
+
+#+begin_src awk
+sudo systemctl restart systemd-journald.service
+#+end_src
+
+5. Use ncdu to see which file uses most of the disk
+
+   - Cleanup unused fonts

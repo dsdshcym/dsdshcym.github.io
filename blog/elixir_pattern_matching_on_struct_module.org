@@ -1,0 +1,22 @@
+#+TITLE: Elixir Pattern Matching on Struct Module
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-06-14]
+#+URI:         blog/2018/06/14/elixir_pattern_matching_on_struct_module/index.html
+#+TAGS:        Elixir, TIL
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+TIL:
+
+Elixir's Pattern Matching can also match on the Struct Module:
+
+#+begin_src ruby
+%struct_module{} = %User{}
+
+struct_module # => User
+#+end_src
+
+Elixir just keeps doing these things that blows my mind. This kind of features is completely surprising when I discovered them but after some thoughts, it completely makes sense.
+
+I guess this is why I love Elixir and its Pattern Matching feature so much.

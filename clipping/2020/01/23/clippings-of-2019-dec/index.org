@@ -1,0 +1,229 @@
+#+TITLE: Clippings of 2019 Dec
+* [[https://www.amazon.com/Radical-Candor-Kickass-Without-Humanity/dp/1250103509][Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity: Kim Scott]]
+#+begin_quote
+
+- RELATIONSHIPS, NOT POWER, DRIVE YOU FORWARD
+
+  - establishing a trusting relationship with each person who reports directly to you.
+  - three responsibilities as a manager:
+
+    1. to create a culture of guidance (praise and criticism) that will keep everyone moving in the right direction;
+    2. to understand what motivates each person on your team well enough to avoid burnout or boredom and keep the team cohesive;
+    3. to drive results collaboratively.
+
+- RADICAL CANDOR
+
+  - two dimensions that, when paired, will help you move in a positive direction. (To develop trust)
+
+    1. “Care Personally.”
+
+       - be your whole self and care about each of the people who work for you as a human being.
+
+    2. “Challenge Directly.”
+
+       - challenging people is often the best way to show them that you care when you’re the boss.
+       - Delivering hard feedback, making hard calls about who does what on a team, and holding a high bar for results—isn’t
+
+  - “Radical Candor” is what happens when you put “Care Personally” and “Challenge Directly” together.
+  - when people trust you and believe you care about them, they are much more likely to
+
+    1. accept and act on your praise and criticism;
+    2. tell you what they really think about what you are doing well and, more importantly, not doing so well;
+    3. engage in this same behavior with one another, meaning less pushing the rock up the hill again and again;
+    4. embrace their role on the team;
+    5. focus on getting results.
+
+#+end_quote
+
+Just like [[https://yiming.dev/blog/2019/11/01/every-business-is-a-relationships-business-million-dollar-consulting-review/][consulting]], management is also about people. It's about relationship between you and your direct reports. It's about building trust between you and your direct reports.
+
+Care Personally and Challenge Directly are the two essential skills to build this trust. And they are not only for bosses. Read it if you want to build healthy work relationships!
+
+* [[https://thoughtbot.com/blog/lets-not-misuse-refactoring][Let's Not Misuse Refactoring]]
+#+begin_quote
+
+- refactoring is about changing the structure of the code *without* changing its observable behavior.
+- the observable behavior of code depends on who is doing the observing.
+
+  - when we change a public interface — as long as we control all the calling code — we can safely refactor.
+  - If we have a published interface, however, we do not have control over the code that observes the behavior of our code. And there we cannot safely refactor.
+
+#+end_quote
+
+I've seen so many times when people misuse the word "refactor". People often use "refactoring" as a shorthand for "changing code". Sometimes this "refactoring" would change the behaviour of our code, and more often than not, change the behaviour of the part we don't want to touch. So it's safer to refactor our code without changing its behaviour. And by doing so, we can move faster in smaller steps.
+
+* [[https://joearms.github.io/published/2014-06-25-minimal-viable-program.html][Minimal Viable Programs - <h1>Joe Armstrong - Erlang and other stuff</h1>]]
+#+begin_quote
+
+- A minimal viable program is the smallest program that solves a particular problem.
+
+  - If you removed a single feature it would be totally useless.
+  - If you added a new feature that feature would not be essential, you could use the program without making use of the new feature.
+
+- I really like systems that do one essential thing and do it well.
+
+  - Dropbox
+  - Twitter
+
+#+end_quote
+
+Minimal Viable Program reminds me one of the Unix philosophy: [[https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well][Do One Thing and Do It Well]].
+
+* [[https://thoughtbot.com/blog/solving-real-problems-with-design][Solving Real Problems With Design]]
+#+begin_quote
+
+- identify a need
+
+  - JTBD
+  - testing at the end trend to test from creator's perspective, instead of user's
+
+- Learn quickly
+
+  - similar to science method
+
+    - hypothesis
+    - Experiment
+    - Observe
+
+- Minimize waste
+
+  - *Waste refers to all elements of production that increase cost without adding value*
+  - Measurable Resources
+
+    - Time
+    - Money
+    - Labor
+    - Thought (brainpower)
+    - Deviance (acceptable)
+    - Novelty
+
+#+end_quote
+
+A great introduction to Jobs To Be Done (JTBD) theory. I've found that JTBD theory very similar to OKR. I think in the end, they are all variants of scientific method:
+
+1. defining a clear hypothesis
+2. designing experiments to prove it
+3. observing the results (and learning from them)
+4. adjusting the hypothesis
+
+* [[https://jamesclear.com/3-stages-of-failure][The 3 Stages of Failure in Life and Work (And How to Fix Them)]]
+#+begin_quote
+
+*How do you know when to give up and when to stick with it?*
+
+- The 3 Stages of Failure
+
+  1. Failure of Tactics (How)
+
+     1. Record your process
+     2. Measure your outcomes
+     3. Review and adjust your tactics
+
+  2. Failure of Strategy (What)
+
+     1. Launch it quickly
+
+        - Nobody really knows which ideas work until you try them.
+        - The faster you test a strategy in the real world, the faster you get feedback on whether or not it works.
+
+     2. Do it cheaply
+
+        - Failing cheaply increases your surface area for success because it means that you can test more ideas.
+        - It reduces your attachment to a particular idea.
+
+     3. Revise it rapidly
+
+        - [[https://jamesclear.com/stay-on-the-bus][Stay On the Bus: The Proven Path to Doing Unique and Meaningful Work]]
+
+  3. Failure of Vision (Why)
+
+     1. Take stock of your life
+
+        - *If you never decide on a vision for your life, you'll often find yourself living someone else's dream.*
+
+     2. Determine your non-negotiable
+     3. Navigate criticism
+
+  4. Failure of Opportunity (Who)
+
+#+end_quote
+
+My biggest take-away from this article is that: *different stages of failure need different solutions.*
+
+When facing a management problem or a engineering problem, we should also think about its stage, and use the suitable solution.
+
+* [[https://adamwathan.me/css-utility-classes-and-separation-of-concerns/][CSS Utility Classes and "Separation of Concerns"]]
+#+begin_quote
+
+"Separation of concerns" is a straw man. *Think about dependency direction instead.*
+
+1. CSS that depends on HTML ([[http://www.csszengarden.com/][CSS Zen Garden: The Beauty of CSS Design]])
+
+   - The HTML is independent;
+
+     - it doesn't care how you make it look,
+     - it just exposes hooks like .author-bio that the HTML controls.
+
+   - Your CSS on the other hand is not independent;
+
+     - it needs to know what classes your HTML has decided to expose,
+     - and it needs to target those classes to style the HTML.
+
+   - In this model, your HTML is restyleable, but your CSS is not reusable.
+
+2. HTML that depends on CSS (Bootstrap)
+
+   - The CSS is independent;
+
+     - it doesn't care what content it's being applied to,
+     - it just exposes a set of building blocks that you can apply to your markup.
+
+   - Your HTML is not independent;
+
+     - it's making use of classes that have been provided by the CSS,
+     - and it needs to know what classes exist so that it combine them however it needs to to achieve the desired design.
+
+#+end_quote
+
+I used Tailwind CSS in a project and found it really pleasant to use. This article is the rationale behind the design of Tailwind CSS.
+
+And it reminded me of [[https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction][The Wrong Abstraction — Sandi Metz]]. There are tons of wrong abstractions I've seen in our CSS files. So maybe we should really think about the dependency direction first and hold off before we de-duplicate our style sheets.
+
+One scenario that Utility classes framework doesn't work well is static sites, especially static blogs. And this scenario is well-suited for traditional CSS classes, because blogs need restyleable HTML, not reusable CSS. When world-wide web first started, this kind of static sites is the majority of Internet. So it made perfect sense to have the traditional CSS classes architecture.
+
+But for most modern applications, the HTML markups are not independent, i.e. most components' structure and style are highly coupled by nature. So Utility classes framework is a perfect fit. It provides reusable and composable CSS classes as a intermediate layer between our applications and the vanilla "magical" CSS.
+
+In 2020, I'm definitely gonna learn and use Tailwind in my side-projects.
+
+* [[https://no-kill-switch.ghost.io/why-pools-are-better-than-deadlines-in-a-disciplined-delivery-of-value/][Why pools are better than deadlines in a disciplined delivery of value?]]
+#+begin_quote
+
+- What's a "pool"?
+
+  - A pool is an investment the organization decides to make to get value within a particular topic
+  - instead of telling what kind of final effect you want first (and then estimate effort to get it done), you'll telling how much you'd like to spend (and then make the best effort to reap value out of the investment).
+
+- Working with pools is the quintessence of Agility:
+
+  - "understandability" of items (expressing them in the ubiquitous language) from the outline boosts transparency
+  - fine-grained split assures that our product is technically in a releasable state nearly all the time
+  - no fixed plan provides the flexibility of choice - especially valuable when some of your initial assumptions have failed and a little pivot is required
+  - the concept of the pool (& its size) helps with prioritizing topics & investments in them - e.g. more important topics before less important ones or topic X getting twice as big pool as Y, because it is expected to deliver more value
+
+#+end_quote
+
+Another definition for Basecamp's work style: [[https://basecamp.com/shapeup][SHAPE UP: Stop Running in Circles and Ship Work that Matters]]
+
+* [[https://bertrandmeyer.com/2019/11/01/theorem-software-engineering/][A theorem of software engineering - Bertrand Meyer's technology+ blog]]
+#+begin_quote
+
+- Shortest Possible Schedule:
+
+  - spending can decrease time,
+  - the maximal reduction will not exceed 25%.
+
+- The Shortest Possible Schedule theorem confirms what good project managers know: *you can, within limits, shorten delivery times by bringing all hands on deck.*
+
+#+end_quote
+
+The 25% limit is for developing the same features. To really speed things up, we need to cut features and prioritize. [[https://yiming.dev/clipping/2019/04/19/good-fast-and-featureful-pick-two/][Good, Fast, and Featureful. Pick Two!]]

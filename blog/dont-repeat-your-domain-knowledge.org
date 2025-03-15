@@ -1,0 +1,112 @@
+#+TITLE: Don't Repeat Your Domain Knowledge
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-10-26]
+#+URI:         blog/2018/10/26/dont-repeat-your-domain-knowledge/index.html
+#+TAGS:        Clean Code
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Origin
+
+This blog post started from a pull request I reviewed months ago.
+
+1. Say we are building a blog system. In this system, some blogs might only allow an anonymous user to comment once. And anonymous users are identified by their phone numbers.
+2. I saw some code similar to this in the PR:
+
+#+begin_src ruby
+defmodule SomeBlogValidator do
+  # ...
+
+  def validate_phone_num(phone_num, blog_id) do
+    blog = Blogs.get_blog(blog_id)
+
+    if !blog.allow_multiple_comments && phone_num_exists?(blog_id, phone_num),
+      do: {:ok, true},
+      else: {:error, false}
+  end
+
+  defp phone_num_exists?(blog_id, phone_num) do
+    from(c in Comment,
+      join: b in Blog,
+      where: b.id == ^blog_id,
+      where: c.phone_num == ^phone_num
+    )
+    |> Repo.one()
+  end
+end
+#+end_src
+3. The if statement feels off to me, so I suggested to extract this logic to another module function:
+
+#+begin_src ruby
+defmodule Blogs do
+  # ...
+
+  def allow_comments_from(phone_num: phone_num) do
+    !blog.allow_multiple_comments && phone_num_exists?(blog_id, phone_num)
+  end
+
+  defp phone_num_exists?(blog_id, phone_num) do
+    # ...
+  end
+end
+#+end_src
+4. My colleague (who submitted the PR) thought this was a bit overkill, because:
+
+   1. The allow_comments_from/1 would be only used in a single place (validate_phone_num/2), and he preferred extracting this function later when it needs to be used in multiple places (maybe until it was repeated more than 3 times).
+   2. We needed to create a new module for this single function in our case. (I didn't/couldn't show this in the simple Blog example above)
+
+* Abstraction is not only for DRY
+
+Here is how I replied him (translated from Chinese):
+
+#+begin_quote
+
+1. I think the abstraction tools we have - like variables, functions, modules, etc. - are not only tools to eliminate repetitions (DRY) in our code base, but also powerful tools for us to extract our domain knowledge and represent it as executable code.
+2. Let's take a step back: *Why do we need to DRY?*
+
+   I believe what DRY really means is to eliminate the *duplication of knowledge* in our code base.[fn:1]
+
+   We need DRY because some *domain knowledge* is used multiple times, and we need to put it in a single place, so that it's easy to update or maintain.
+
+   Abstracting some piece of code that's repeated 3 times is a great heuristic because 3 repetitions almost always means that there's some domain knowledge that we ignored.
+
+3. Go back to this PR, I think it's okay to extract this function early because this knowledge was discussed heavily by you and another dev and this logic has a lot of background knowledge with it (why we don't allow multiple comments), so I think it's a piece of important knowledge in our domain and it's worth it to give it more attention (separate module/function, good name, documentation, etc.).
+
+#+end_quote
+
+This might be a common problem among many programmers. Most of us as programmers were told that duplication was evil when we just started learning programming. But nobody told us why we are eliminating them and when to do it. Thus there are two extremes:
+
+1. Abstract early and try to prevent duplication in the first place.
+2. Abstract later when duplication is so obvious and forces us to do so.
+
+These two extremes both have their flaws, and I've explained why "abstract later" is bad in this section. Let's look at "abstract early".
+
+I was also an extremist who tried to prevent duplication but was hurt by the complications I created later, until I read [[https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction][The Wrong
+Abstraction by Sandi Metz]].
+
+- It's easy to build the wrong abstraction when we have little knowledge about our domain.
+- And the most important thing I learned from this post was:
+
+#+begin_quote
+
+*Merging things is way more easier than splitting a wrong abstraction.*
+
+#+end_quote
+
+* Summary
+
+- We need DRY because we need to eliminate the *duplication of knowledge* .
+- Both "abstract later" and "abstract early" are bad.
+- What we really should do is to *look out for our domain knowledge* and persist them as part of our code.[fn:2]
+
+In a word: *Don't repeat your domain knowledge* , but when you spot a piece of knowledge without duplication, *do not hesitate to extract it* to an abstract level it deserves.
+
+* Footnotes
+[fn:1]
+
+It was also mentioned in [[https://www.deconstructconf.com/2017/brian-marick-patterns-failed-why-should-we-care][Patterns Failed. Why? Should We Care?
+by Brian Marick – Deconstruct]]
+
+[fn:2]
+
+And it's called Domain-Driven Design. (You can read my [[https://dsdshcym.github.io/clipping/2018/08/07/clippings-from-domain-driven-design/][Clippings from the DDD book]])

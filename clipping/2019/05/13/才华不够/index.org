@@ -1,0 +1,69 @@
+#+TITLE: 才华不够
+#+begin_quote
+
+- 真正有才华的人，能够洞悉自己的缺陷
+- [[https://www.amazon.com/Peter-Principle-Things-Always-Wrong-ebook/dp/B00IRCZHXI][彼得定律]]：每个人都停留在自己不能胜任的位置
+- 努力能决定你走多快，才华能决定你走多远
+- 勤奋能让你过上体面的生活，成功完全要靠运气
+
+#+end_quote
+
+-- from [[http://hardimage.pro/65][硬影像 Episode 65: 陷入虚无主义泥潭：才华不够]]
+
+「才华」是个很神秘的东西。无论是拍电影，写代码，还是做产品，人们似乎都还没能掌握成功的秘密，最终只能将之归结为「才华」。
+
+我也不知道成功的秘密是什么，只相信「努力」和「持续改进」是成功的两个必要条件：
+
+1. 努力：
+
+#+begin_quote
+
+   - 努力只是成功的必要条件之一。
+   - 这种诉求其实就是一种只要使力只要拼命了就可以成功的心理诉求，
+
+     - 因为这类人基本上都是能力有限，不知道怎么提升自己的人，当他们看到只要拼命使力就可以成功的观点时，他们就会有共鸣，就会感到，不用学习那些晦涩难懂高级的知识，不用掌握和练习哪些高级技能，自己只需要在低级的事情上拼命和努力，加更多的班和干更多活，自己就会像电影中的那些小人物一样，总有一天会成功的……
+     - 不但符合那些低级管理者的利益诉求，同样符合那些能力不足不愿意学习和成长的人的诉求。因为，他们混淆了行动与进展，忙碌与多产，他们以为能靠蛮力可以弥补思维上的惰性，靠拼命可以弥补能力上的不足……
+
+   - 当一件事的难度超过一定程度的时候，那些聪明的人会找到更省力的方法，而能力上有问题的，还是在那使蛮力。
+   - 我的职业生涯的成长， *最根本的不是你有多努力，有多勤奋，而是你能搞定很多人搞不定的事！*
+
+     - 而我失败的时候，总是因为我搞不定事，即便是加班拼命努力也无济于事！
+     - 再回想一下我以前在职场上的很多关键点，不是因为我加班了，而是因为在某些关键问题上，我跳出来解决了其它人都解决不了的问题
+
+   - 同样是一个简单的 for-loop 语句，有人写的就值 1 万元一行，而你写的则一文不值。关键不在于谁写的代码多，关键在于我们解决了什么样的问题。
+   - *无法通过努力工作改善我思维的不足*
+
+#+end_quote
+
+   -- from [[https://coolshell.cn/articles/19271.html][“努力就会成功”]]
+
+2. 持续改进
+
+#+begin_quote
+
+   - People who were right a lot of the time were people who often changed their minds.
+   - The smartest people are
+
+     - constantly revising their understanding, reconsidering a problem they thought they’d already solved.
+     - open to new points of view, new information, new ideas, contradictions, and challenges to their own way of thinking.
+
+   - This doesn’t mean you shouldn’t have a well formed point of view, but it means you should consider your point of view as temporary.
+   - What trait signified someone who was wrong a lot of the time?
+
+     - Someone obsessed with details that only support one point of view.
+     - If someone can’t climb out of the details, and see the bigger picture from multiple angles, they’re often wrong most of the time.
+
+#+end_quote
+
+   -- from [[https://signalvnoise.com/posts/3289-some-advice-from-jeff-bezos][Some advice from Jeff Bezos – Signal v. Noise]]
+
+#+begin_quote
+
+   - Leadership isn’t about avoiding every mistake in the book – that’s impossible.
+
+     - Rather, *the best leaders are unendingly curious to know what their mistakes could be* , and deeply rigorous about trying to spot them in advance the next time around.
+
+#+end_quote
+
+   -- from [[https://knowyourteam.com/blog/2019/02/28/the-9-leadership-mistakes-you-dont-know-youre-making-as-a-new-manager/][The 9 leadership mistakes you don't know you're making as a
+new manager - Know Your Team - Blog]]

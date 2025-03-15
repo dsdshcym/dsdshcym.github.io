@@ -1,0 +1,42 @@
+#+TITLE: Book Review: A Philosophy of Software Design
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-05-14]
+#+URI:         blog/2019/05/14/book-review-a-philosophy-of-software-design/index.html
+#+TAGS:        Book Review, Software Engineering, Game, TDD
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I agree to almost every word in this book: [[https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/][A Philosophy of Software
+Design]]. I think this is a must-read book for all developers, designers, and even PMs who work in software industry.
+
+This post is my two more cents when I read the book.
+
+* Mock Objects and General-purpose Classes
+
+A very important trade-off we need to make when writing software is between straightforwardness and generality. This book advocates [[https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org2cfee25][finding a sweet-spot of  .]]
+
+Then it came to my mind that using Mock Objects is a great way to write somewhat general-purpose code.
+
+If we follow the concept of Need-Driven Development from [[http://jmock.org/oopsla2004.pdf][Mock Roles,
+not Objects]], we can easily answer the questions we need to ask ourselves to write somewhat general-purpose code:
+
+What is the simplest interface that will cover all my current needs?
+    Because the mock are driven by the need, we will naturally come up with the simplest interface to cover the needs.
+In how many situations will this method be used?
+    Typically, we would only have one use case when we write a mock. But with the mock in mind, we can easily reuse the mock in other places even before the mocked part is implemented. This gives us a great advantage to see more use cases before we start the implementation.
+Is this API easy to use for my current needs?
+    We wouldn't write a hard to use mock for the current needs if the mock is driven by the needs.
+
+* Shallow Interface, Deep Module and Game Design
+
+Another core idea from this book is that [[https://dsdshcym.github.io/clipping/2019/04/12/clippings-from-a-philosophy-of-software-design/#org7cd2cad][Modules Should Be Deep]].
+
+Which reminds me of this clip from [[https://youtu.be/z_KVEjhT4wQ?t=184][The Design Behind Super Mario
+Odyssey]]. If we think of the game control as an interface, then the same idea can be applied to game design as well:
+
+- The control design of Super Mario Odyssey is deep. It only uses several buttons to achieve what players want to do depending on the context.
+- On the other hand, some other games' interface is really shallow (as it was illustrated in the video): they need more than ten keys or even combinations of keys to control the character.
+
+From this example, we can see that the idea of *Deep Interface* can be applied to many more areas other than software design. And hopefully, you would learn similar ideas like this from this book. So go check it out. Or if you don't have enough time, you can watch [[https://www.youtube.com/watch?v=bmSAYlu0NcY][the author's talk
+at Google]] ([[https://dsdshcym.github.io/clipping/2019/01/27/a-philosophy-of-software-design-by-john-ousterhout/][my notes]]) about this book.

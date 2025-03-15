@@ -1,0 +1,155 @@
+#+TITLE: Fault-Tolerant GTD
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-11-19]
+#+URI:         blog/2019/11/19/fault-tolerant-gtd/index.html
+#+TAGS:        GTD, Erlang, Project Management
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Table of Contents
+
+- [[#org779c642][How to do "Fault-Tolerant GTD"]]
+- [[#org6c30ce7]["Fault-Tolerant GTD" in real life]]
+
+  - [[#org744485f][From blogging to micro-blogging]]
+  - [[#orgf3e9236][Break a book apart]]
+  - [[#org5bfd0d0][Contribute to open source]]
+
+- [[#org64b2450][Take it one step further]]
+- [[#org02af1df][When "Fault-Tolerant GTD" is not a good choice]]
+- [[#org7e3bbf8][Why it's called "Fault-Tolerant GTD"]]
+
+I use [[https://yiming.dev/blog/2019/05/22/my-gtd-workflow-2019-ver/][deadlines to urge me to finish tasks in time]]. In an ideal world, I can always finish a task before its deadline. My todo list won't explode due to the accumulated overdue tasks. And I won't declare todo bankruptcy.
+
+But the real world is not ideal. I'm often over-optimized when setting a deadline for a task, since [[https://yiming.dev/blog/2019/05/27/estimating-is-hard-lets-cut-scope/][estimating is hard]]. I'm often not motivated to work on a boring task, but I have to finish it. I'm often just too busy to finish all the tasks.
+
+Due to these various reasons, I always find I haven't finished, or even haven't started some of my tasks when they are already overdue.
+
+This situation happens to project management as well. Often, a team cannot ship all the features they've promised before. (And it's totally fine, because we are stretching!)
+
+But then what shall we do with these overdue tasks? Postponing them to the next cycle? No, it will lead to todo bankruptcy. Putting them back to the backlog? No, we need to finish some of them before a "hard" deadline.
+
+Here is a useful method for you in this kind of situation. And I call it "Fault-Tolerant GTD".
+
+* How to do "Fault-Tolerant GTD"
+
+The basic idea of "Fault-Tolerant GTD" is to use deadlines as an opportunity to review the task, and fallback to a sub-task, thus push the progress forward.
+
+When a task is overdue, often the reason is that the task is too large. Maybe the task is too large so we have some steps left unfinished. Maybe the task is too daunting so we don't have enough motivation to start it. Maybe the task is low priority so we choose to work on other things first.
+
+No matter what the reason is, let's take a few minutes to find an easier sub-task. The sub-task may be small enough. So we can finish it immediately and make some progress. The sub-task can be put into next cycle. So our next cycle is less daunting, and the smaller sub-task is more likely to get worked on. The sub-task can also be some planning work. [[https://yiming.dev/blog/2019/05/22/my-gtd-workflow-2019-ver/][Maybe the task isn't worth doing at all, so we can cancel it.]] Maybe our priorities need to change so we can execute on the right things.
+
+In this way, we *eat the elephant one bite at a +time+ deadline.*
+
+* "Fault-Tolerant GTD" in real life
+
+I've been using this method for quite some time. Here are some examples from my real experiences:
+
+** From blogging to micro-blogging
+
+[[https://yiming.dev/clipping/2019/08/18/ideas-are-cheap/][Ideas are cheap.]] I can come up with three blog ideas a day, if I'm lucky. So I have many ideas I want to write about.
+
+But writing a blog post is time-consuming. I need at least 2 hours to organize my words, polish them as a while, and finally publish it. And I can hardly write more than two blog posts every week.
+
+So I have way more ideas than I can write about. Solving this problem with "Fault-Tolerant GTD" is simple. The only thing you need is a fallback chain.
+
+Whenever a post idea is overdue, I'll consider the following actions:
+
+1. Write it as a short [[https://yiming.dev/clipping/][Clipping]]
+2. Write it briefly in a [[https://yiming.dev/tags/newsletter/][collection post]]
+3. Post it on [[https://twitter.com/dsdshcym][Twitter]]
+
+Notice that these options are getting easier in order, so it's more likely for my idea to be out than stale in my notes.
+
+** Break a book apart
+
+[[https://yiming.dev/clipping/2019/11/15/how-to-start-consuming-less-and-creating-more/][Reading is also a time consuming activity.]] My personal goal for reading is to finish 3 books every month. But what if the month ends but I haven't finished the book I want to read?
+
+I would also find some easier sub-tasks for reading a book:
+
+1. Read inspectionally to grasp the concept of this book, instead of reading the whole book word by word.
+2. Extract chapters from the table of content and setting deadlines for each of them. Because chapters are the natural sub-tasks of a book, so this is easy.
+3. Stop reading a book because it's not interesting enough for me.
+
+With these two options, I can always finish a book without worrying if I would miss something important.
+
+** Contribute to open source
+
+Working part-time on open source is not easy. I'm not pushed by a boss. The only thing I can rely on is my own motivations and disciplines.
+
+Take contributing to [[https://github.com/hexpm/hexpm/issues?utf8=%E2%9C%93&q=author:dsdshcym+][hexpm]] for example. I would first take [[https://github.com/hexpm/hexpm/issues/753][an issue]] as a task and set a deadline for it. When the deadline comes, and I didn't make much progress on the issue, I would fallback to an easier task: investigate the issue. Basically, it's about [[https://yiming.dev/blog/2019/07/11/%E7%94%A8-tech-plan-%E6%9D%A5%E4%B8%BA%E5%BC%80%E5%8F%91%E6%8F%90%E9%80%9F/][doing the planning work]].
+
+1. Understanding the background of the issue
+2. Writing down the plan for how to solve this issue ([[https://github.com/hexpm/hexpm/issues/753#issuecomment-442475571][example: store and display publisher of package version]])
+3. Replacing the original task with the first step in the next cycle (replace store and display publisher of package version with Add release_publishers table)
+
+After these planning works are finished, the issue will no longer be intimidating anymore. Execution becomes smooth and easy.
+
+* Take it one step further
+
+We've already seen the power and benefits of "Fault-Tolerant GTD". But it's not the end of the story. "Fault-Tolerant GTD" is about using deadline as an opportunity to review our task. We can take this idea one step further. Deadline is not merely an opportunity to review the task, but also an opportunity to review ourselves.
+
+Whenever I apply "Fault-Tolerant GTD" to a task, I learn a bit more about myself.
+
+- "I may not be interested in this kind of task."
+- "I didn't plan well for unexpected events."
+- "I was over-optimistic of myself to finish all these tasks."
+
+As I know myself better, I can plan better next time.
+
+- I may reject a type of tasks, because I know I'm not interested and I won't take any actions.
+- I may break a huge task down upfront, rather than waiting for the deadline to come.
+- I may put less tasks in my next cycles because I know how much I can take.
+
+As I know more about myself, I can prevent these "faults" from happening in the future. In this way, I become more effective at getting things done.
+
+* When "Fault-Tolerant GTD" is not a good choice
+
+Enough goodies, what are the drawbacks of this method? Or when shall we choose another GTD method?
+
+1. The task has a hard deadline.
+
+   Obviously, this method cannot be used if we have a hard deadline. Because we cannot fallback to another task after the deadline passes.
+
+   "Fault-Tolerant GTD" works the best when the task has a soft deadline.[fn:1] Like reading books, writing blog posts, and contributing to open source projects.
+
+2. The review cycle is too long.
+
+   When we have a deadline that's far away (several months from now), we may have trouble applying "Fault-Tolerant GTD".
+
+   "Fault-Tolerant GTD" only contributes to your productivity when deadline is here. So if we keep doing nothing and just wait several months for the deadline, we will waste all the wait time.
+
+   When we are in this kind of situation, we may consider two options:
+
+   1. [[https://yiming.dev/blog/2019/09/16/agile-is-continuous-learning/][Shorten the feedback cycle.]]
+   2. Break the task down upfront.
+   3. Only use "Fault-Tolerant GTD" as a backstop to prevent doing absolutely nothing.
+
+3. The review cycle is too short.
+
+   But "Fault-Tolerant GTD" also won't work if the cycle is too short.
+
+   Let's take it to the extreme. Say the review cycle is 1 second. That means every second is a deadline for a task. And we need to constantly review and fallback. Then we'll have no time for us to execute.
+
+   After all, "Fault-Tolerant GTD" or any GTD methods are only planning work. We'll need time to really dive into the real work and finish it.
+
+After considering these drawbacks, I now only use "Fault-Tolerant GTD" for tasks without a hard deadline. [[https://yiming.dev/blog/2019/05/22/my-gtd-workflow-2019-ver/][I also follow a combination of 1-day, 1-week, 1-month, and 1-year cycles.]] And it works flawlessly.
+
+If you have any questions implementing "Fault-Tolerant GTD", I'd be glad to help.
+
+* Why it's called "Fault-Tolerant GTD"
+
+After all these explanations about "Fault-Tolerant GTD", you may still be wondering, why is it called "Fault-Tolerant GTD"?
+
+Both the name and the idea of "Fault-Tolerant GTD" are inspired by Erlang.
+
+[[https://yiming.dev/clipping/2019/09/04/3-key-ideas-behind-the-erlang-thesis/][Erlang is designed to be a "fault-tolerant" programming language.]] (Here, "fault" means errors or exceptions that occur in our programs.) What Erlang does when a program fault occurs is to fallback to an easier program task, like restarting the task.
+
+I'm just applying the same idea to daily task management. A "fault" occurs in task management when a task dues. And to "tolerate" this "fault", we fallback to an easier task.
+
+Most of the time, we apply what we learned from our life to programming, but we can also do the opposite. You may find some programming paradigm helpful with your life, too!
+
+* Footnotes
+[fn:1]
+
+This restriction also reminds me of [[http://www.structuredprocrastination.com/][Structured Procrastination]], a GTD tactic that also requires us to choose tasks wisely.

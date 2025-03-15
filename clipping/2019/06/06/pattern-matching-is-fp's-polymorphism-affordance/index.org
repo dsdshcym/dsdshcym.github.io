@@ -1,0 +1,54 @@
+#+TITLE: Pattern Matching is FP's Polymorphism Affordance
+* What's Affordance
+
+From [[https://www.sandimetz.com/blog/2018/21/what-does-oo-afford][What Does OO Afford?]] by Sandi Metz,
+
+#+begin_quote
+
+- (OO) Affordance is:
+
+  1. the qualities or properties of an object that define its possible uses or make clear how it can or should be used.
+  2. a potential action enabled by an object.
+
+- Different Programming Languages Offer Different Affordances
+
+  - programming languages are explicitly designed to "enable" certain kinds of thinking.
+  - Languages have points-of-view: they're designed to be used in certain stylized ways.
+
+#+end_quote
+
+Basically, a programming language affordance is a language feature that enables programmer to think in a certain way.
+
+* Why Pattern Matching is FP's Polymorphism Affordance
+
+Take Elixir for example, Pattern Matching is how an Elixir function provides different behavior for different structs (data structures). Furthermore, it's the secret sauce behind Protocol, which is one of the official ways to support Polymorphism in Elixir.
+
+And this idea was also mentioned in the talk [[https://www.youtube.com/watch?v=S2-1Rt-R2cY][ElixirConf 2017 - Its
+Better Unstated - TJ Stankus]]:
+
+#+begin_quote
+
+- Affordances in Elixir for avoiding conditionals
+
+  1. Lists
+  2. Pattern matching
+  3. Guard clauses
+  4. Recursion
+
+#+end_quote
+* Bonus: FP and OOP are compatible
+
+Polymorphism Affordance in FP also proves the point that [[http://dsdshcym.github.io/clipping/2018/04/26/fp_and_oop_are_compatible_and_should_be/][FP and OOP
+are compatible]]:
+
+FP and OO are just two programming preferences. They offer different affordances when they first started. And both modern FP languages and modern OO languages can provide affordances from the other paradigm.
+
+And that's why this tweet came out:
+
+#+begin_quote
+
+Shower thought: Smalltalk (and to some extent other OO languages) replace pattern matching with dynamic dispatch.
+
+I miss pattern matching in Lisp dialects without a good implementation, but I haven't noticed its absence in Smalltalk.
+
+— Wilfred Hughes (@_wilfredh) [[https://twitter.com/_wilfredh/status/1133100857602510848?ref_src=twsrc%5Etfw][May 27, 2019]]#+end_quote

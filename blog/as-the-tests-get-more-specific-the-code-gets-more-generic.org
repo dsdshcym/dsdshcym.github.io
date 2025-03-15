@@ -1,0 +1,264 @@
+#+TITLE: As the tests get more specific, the code gets more generic
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-18]
+#+URI:         blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/index.html
+#+TAGS:        Clipping, TDD, Clean Code
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+- [[http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata][Prime Factors Kata]]
+- Test code and production code *do not grow at the same rate* (The test code grows faster)
+
+  1. Sometimes the production code stays the same as the test code grows
+
+     - You are done with the code but you still write the tests because they are part of the specifications
+
+  2. Sometimes the production code shrinks as the test code grows
+
+     - Because the programmers moves a load of functionality out of the code and into the data
+     - Or comes up with some kind of more general algorithm that satisfies the tests without looking anything like them.
+
+#+end_quote
+
+-- from [[https://sites.google.com/site/unclebobconsultingllc/home/articles/as-the-tests-get-more-specific-the-code-gets-more-generic][As the Tests get more Specific, the Code gets more Generic - Clean Coder]]
+
+* FizzBuzz Kata
+
+I started practicing Coding Katas[fn:1] to sharp my TDD/OOD skills several days ago.
+
+When I was doing this first Kata, one of my colleagues (non-programmer) was watching me. So I explained TDD to her.
+
+She asked this question later: "But your tests cannot cover all the cases (all the integers), how can you ensure your code is absolutely right?"
+
+"As the tests get more specific, the code gets more generic" is a part of my answer. (For other reasons, like programmer confidence stuffs, I may talk about them in another post.)
+
+** Case #1
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_1_is_1
+  assert_equal '1', FizzBuzz.for(1)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(_number)
+  '1'
+end
+#+end_src
+
+At this point, we only have one specification, so the code is pretty simple. (We are following TDD here, so this silly code is completely acceptable because it's green code.)
+
+** Case #2
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_2_is_2
+  assert_equal '2', FizzBuzz.for(2)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(number)
+  if number == 2
+    '2'
+  else
+    '1'
+  end
+end
+#+end_src
+
+We are able to see a pattern here (number -> number.to_s). But I chose to using if and wait for the next test. Because the next test seems to be very different.
+
+** Case #3
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_3_is_Fizz
+  assert_equal 'Fizz', FizzBuzz.for(3)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(number)
+  if number == 3
+    'Fizz'
+  elsif number == 2
+    '2'
+  else
+    '1'
+  end
+end
+#+end_src
+
+The code starts to look ugly now, but fortunately it's still green. Let's move to our next test.
+
+** Case #4
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_4_is_4
+  assert_equal '4', FizzBuzz.for(4)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(number)
+  if number == 3
+    'Fizz'
+  else
+    number.to_s
+  end
+end
+#+end_src
+
+We got our third case for number.to_s and at this point I decide to refactor it this way (Because of the magic number 3).
+
+We can see here that *the code gets more generic* (it handles more cases), while *the test gets more specific* (it adds a new specification for input 4).
+
+** Case #5
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_5_is_Buzz
+  assert_equal 'Buzz', FizzBuzz.for(5)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(number)
+  if number == 3
+    'Fizz'
+  elsif number == 5
+    'Buzz'
+  else
+    number.to_s
+  end
+end
+#+end_src
+
+The same things goes with 5, Buzz pairs as 3, Fizz pairs. The code starts from being very specific (only deals with 3 or 5), as the test gets more specific (case 6 or 10 are added), it gets more generic (deals with numbers have factor 3 or 5).
+
+** Case #6
+
+- Test
+
+#+begin_src ruby
+def test_sound_for_6_is_Fizz
+  assert_equal 'Fizz', FizzBuzz.for(6)
+end
+#+end_src
+- Code
+
+#+begin_src ruby
+def self.for(number)
+  if number % 3 == 0
+    'Fizz'
+  elsif number == 5
+    'Buzz'
+  else
+    number.to_s
+  end
+end
+#+end_src
+
+Again, *the code gets more generic while the test gets more specific* .
+
+* Extracting logic to other classes
+
+Later, when the logic for FizzBuzz gets more and more complicated, I decided to push logic out of FizzBuzz class and extract some new concepts in our app.
+
+#+begin_src ruby
+class FizzBuzz
+  def initialize(sounds)
+    @sounds = sounds
+  end
+
+  def for(number)
+    sounds
+      .detect { |sound| sound.convertable?(number) }
+      .for(number)
+  end
+
+  private
+
+  attr_reader :sounds
+end
+#+end_src
+
+I'll explain more about this refactoring in another post. But the basic idea is letting sounds to deal with different conversion rules (Factor3Sound for converting number to Fizz, StringSound for converting number to number.to_s, etc.)
+
+Again, the FizzBuzz code gets more and more generic. Because it's now a sound rules chain, delegating conversion rules to sound objects, and just returning the result from the first sound that can handle the input number.
+
+I'll stop our FizzBuzz journey here as it has taken us so long. And I will talk about "what I learned after I played with FizzBuzz for 3 days" (Chain of Responsibility, and Elixir solution, etc.) in a future blog post.
+
+* DRY is not that important for tests
+
+We programmers often says that our code needs to be *DRY (Don't Repeat Yourself)* . And I think we can also say "as the tests get more specific, the code gets more generic" in this way:
+
+#+begin_quote
+
+*DRY up your code as your tests repeat more times.*
+
+#+end_quote
+
+When we dry up our code, we are actually making our code more generic/abstract. This is good because it lets us handle as many possible cases on production as possible.
+
+But our test doesn't need to be as DRY as our production code. After all, a test case should be as specific as possible, because it should be a specification for a case.
+
+The most important thing we need to think about when we write a test should be *making this test as clear as possible* . I should be able to understand what this specification is talking about by *only looking at this test itself* .
+
+If we try to DRY our test cases as well (like using let or before in RSpec), we may introduce too many Mystery Guests[fn:2] and making these tests unreadable.
+
+However, this doesn't mean we should not DRY our tests at all. It's still necessary to extract common assertions/matchers[fn:3] to make your tests more readable. *Our tests need to be DRY as well, but in a different way from the production DRY.*
+
+* A healthy Test-to-Code Ratio
+
+With this principle being said, I think the Test-to-Code ratio can be a pretty good guide for us to decide when to refactor our code. (Alongside with [[http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi Metz's Rules]])
+
+IMHO, a good Test-to-Code ratio for a Rails project should be between 1:1 to 2:1. But the ratio definitely differ between different languages/frameworks/test tools.
+
+** Use Test-to-Code Ratio to guide your TDD cycle
+
+(I'll use 1:1 to 2:1 in the following explanations.)
+
+- When Test-to-Code Ratio is lower than 1:1
+
+  1. Consider to add more test cases.
+  2. Consider if the production code is too DRY.
+
+- When Test-to-Code Ratio is higher than 2:1
+
+  1. Consider to DRY the production code by.
+  2. Consider if the production code has too many responsibilities and needs to be split.
+
+** TDD is a process guided by this thinking
+
+As I wrote in [[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32][Book Review: 99 Bottles of OOP]], we can only achieve Shameless Green by following the TDD cycle and make our code a step more abstract (generic) in each cycle.
+
+I think this thinking explained this methodology pretty well.
+
+* Footnotes
+[fn:1]
+
+[[https://leanpub.com/codingdojohandbook][The Coding Dojo Handbook by Emily Bache {Leanpub PDF/iPad/Kindle}]]
+
+[fn:2]
+
+[[https://robots.thoughtbot.com/mystery-guest][Mystery Guest]]
+
+[fn:3]
+
+[[http://dsdshcym.github.io/blog/2017/12/01/write-custom-rspec-matchers-to-simplify-your-specs/][Write Custom RSpec Matchers to Simplify Your Specs - dsdshome]]

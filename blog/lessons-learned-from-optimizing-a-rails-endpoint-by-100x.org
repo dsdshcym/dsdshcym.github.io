@@ -1,0 +1,105 @@
+#+TITLE: Lessons Learned from Optimizing a Rails Endpoint by 100x
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-04-03]
+#+URI:         blog/2020/04/03/lessons-learned-from-optimizing-a-rails-endpoint-by-100x/index.html
+#+TAGS:        Performance, Software Engineering, Theory of Constraints, Rails
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I optimized the search speed by 100x in a data-intensive Ruby on Rails project. Before the optimization, many search requests get 408 Response Timeout from our server because the db query costs more than 60s; the slowest query takes ~250s to run. After the optimization, running the slowest query before only takes ~3s, which is a huge improvements. This post is about the lessons I learned from this project.
+
+* TL;DR
+
+1. Performance optimization is a process of continuously identifying the constraint and resolving the constraint.
+
+   1. Collect performance data to analyze
+   2. Analyze performance data to identify the constraint
+   3. Find a better alternative solution to resolve the constraint
+
+2. The constraint at a lower level may not be the constraint for the whole system, we need to think at the system level. (e.g. a slow SQL query is the constraint for a single request, but might not be the constraint for loading the whole page.)
+
+* Identify the constraint
+
+According to [[https://en.wikipedia.org/wiki/Theory_of_constraints][Theory of Constraints]], every manageable system is limited by at least one constraint (a.k.a constraint).
+
+#+begin_quote
+
+Only by increasing flow through the constraint can overall throughput be increased.
+
+#+end_quote
+
+Our web application is definitely a manageable system. To optimize our application's performance, we need to increase flow through the constraint. So once I realized I need to optimize the page loading performance, I went straight to identify the constraint.
+
+Application Performance Monitoring (APM) tool is one of the most popular solution to identify the performance constraint. But unfortunately, this project didn't have an APM tool setup. I need to find another way to collect performance data and analyze them. Otherwise, I have to set up an APM tool and wait for several days until the tool gathers enough data for analyzing.
+
+I noticed that we've accumulated several GBs of request log file on production. So I decided to use this gem [[https://github.com/wvanbergen/request-log-analyzer][request-log-analyzer]] to create reports based on these valuable data.
+
+First, I needed to see the overall performance of the app. Because more often than not, performance issues were not only caused by only one request, but were influenced by so many different issues that we had to analyze it from a statistical perspective. By running request-log-analyzer as below, I got a well-structured HTML report:
+
+#+begin_src awk
+request-log-analyzer --format rails3 /path/to/rails_log_file --file report.html --output HTML
+#+end_src
+
+And one of the summary table looked like this:
+
+#+begin_quote
+
+||Request duration - by sum |Hits |Sum |Mean |StdDev |Min |Max |95 %tile | |
+||DummyController#data.*/* |9193 |3h02m20s |1.40s |5.40s |0ms |5m27s |30ms-9.96s | |
+||DummyController#index.*/* |819 |1h01m55s |4.52s |1.01s |9ms |9.35s |1.31s-6.56s | |
+||DummyController#show.HTML |3240 |12m52s |255ms |564ms |0ms |30.16s |43ms-593ms | |
+#+end_quote
+
+By looking at this table (and also all the other summaries), I identified the slowest endpoint ( *the constraint* ) that drew back the overall performance: DummyController#data.
+
+To diagnose the performance issue in this endpoint, I needed to find some concrete examples to reproduce the performance issue, which was not included in the HTML report. Fortunately, request-log-analyzer provided a way to dump all the request info into a database so I could run custom SQL queries. By running the command below, I got a SQLite database that contains all the requests in the log file:
+
+#+begin_src awk
+request-log-analyzer --format rails3 /path/to/rails_log_file -d request.db
+#+end_src
+
+Then, I could locate the slowest 100 queries from endpoint DummyController#data:
+
+#+begin_src sql
+SELECT c.duration, pm.params
+FROM requests r
+INNER JOIN processing_lines p ON (r.id = p.request_id)
+INNER JOIN completed_lines c ON (r.id = c.request_id)
+INNER JOIN parameters_lines pm ON (r.id = pm.request_id)
+WHERE c.duration > 5 AND p.controller = 'DummyController' AND p.action = 'data'
+ORDER BY c.duration DESC
+LIMIT 100;
+#+end_src
+
+With the parameters I got, I could test in a staging environment[fn:1] to *identify the constraint* in this endpoint. The endpoint constraint turned out to be a COUNT(*) SQL query. After extracting the COUNT(*) query out to an async call, this endpoint feels snappy again (an example query went from 20s to 60ms).
+
+* Meet the unexpected constraint
+
+When I thought this optimization was done, we received an email from the user that complained about the performance issue again. After some investigations, I found the bottleneck was the async COUNT(*) call.
+
+Here is the sad story: Before user types in a search query, our app would send several requests for the search result COUNT. And these requests still took seconds at least. More importantly, when processing several COUNT requests at the same time, the rails application would be blocked since the database was blocked by these long queries. So even when user hits the search button, the search request would still be blocked and take several seconds to respond even though the query itself is fast.
+
+I didn't notice this issue before because I was testing the endpoint by sending the search request with curl directly (which would skip all the COUNT queries before this query). But the user still needs go through the whole workflow to send the search query and thus hits the COUNT blocks.
+
+So the lesson for me is to always think and test from user's perspective. After all, a local constraint in a controller endpoint may not be the constraint of the whole system.
+
+* Move on to the next constraint
+
+After the optimizations above, the original constraint (COUNT queries) is gone. Then the second slowest factor becomes the constraint. Here are the further optimizations I did:
+
+1. Change from using ILIKE to Full Text Search. (an example search query went from 25s to 7s)
+2. Use [[https://github.com/ohler55/oj][ohler55/oj: Optimized JSON]] to encode JSON API response. (reduced ~1s from view rendering time)
+
+At this point, the page loading performance is good enough for the user. In another word, the performance is no longer the constraint for this application. So I move on to other constraint (feature development).
+
+Performance optimization and application development are both an endless pursuit. And we can always apply the constraint theory to help us prioritize work:
+
+1. Identify one and the only constraint
+2. Resolve the constraint
+3. Repeat
+
+* Footnotes
+[fn:1]
+
+I also did [[https://yiming.dev/blog/2020/01/13/how-to-partially-restore-a-postgre-sql-database/][a Partial Restore]] on staging so I can use the real production data for performance testing.

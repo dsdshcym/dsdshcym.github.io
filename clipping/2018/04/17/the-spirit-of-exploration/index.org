@@ -1,0 +1,26 @@
+#+TITLE: 做产品要有探索精神
+#+begin_quote
+
+- 中美员工的两个差异点
+
+  1. 探索精神
+
+     - 国人对工作工具（如 Workday）不会自己探索学习，以更好地使用
+     - 用户很懒，不想自己找信息
+
+  2. 男女平等（gender stereotyping）
+
+#+end_quote
+
+-- from [[http://www.uxcoffee.com/9cb18cf4][#44：Airbnb 进中国，不只是「汉化」这么简单（Airbnb China 设计经理 Vivian Wang - 下） - UX Coffee 设计咖]]
+
+- Takeaways
+
+  1. 作为 Developer, Designer, Maker 等角色，做产品时自己要具备足够的探索精神，Master your tools。
+
+#+begin_src awk
+
+1. 折腾 Emacs 等编辑器
+2. 研究如何改善 Workflow 提高自己的效率
+#+end_src
+  2. 为用户做产品时可能需要更迁就客户，考虑到不同用户的特点，为自己的目标用户设计合适的探索难度。

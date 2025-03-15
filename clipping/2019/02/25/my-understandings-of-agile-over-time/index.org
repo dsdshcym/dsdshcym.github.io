@@ -1,0 +1,111 @@
+#+TITLE: My Understandings of Agile Over Time
+
+This post is a short summary of my understanding of Agile over the past several years:
+
+1. "I don't need to learn Agile. I just need to write code."
+
+   This is my thought when I first learned the concept of Agile in my college.
+
+   It turns out to be really wrong.
+
+2. "Agile is just shorter waterfalls."
+
+#+begin_quote
+
+[[https://twitter.com/JonKernPA/status/1062427606723846146][Jon Kern on Twitter: "Start with doing waterfall in really short timeframes.… "]]
+
+#+end_quote
+3. "Agile is to do things in smaller steps and to gather feedback as much as possible."
+
+#+begin_quote
+
+   - *Courage*
+
+     1. Take small steps
+     2. Get feedback
+     3. Refine
+     4. Repeat
+
+#+end_quote
+
+   -- from [[https://www.youtube.com/watch?v=a-BOSpxYJ9M][GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas - YouTube]]
+
+4. "Agile is to validate your actions before you take them."
+
+#+begin_quote
+
+   - Design
+
+     - What makes agile and waterfall different
+
+       1. Iteration length
+       2. *If you make the iteration short enough, behavior has to change*
+
+     - Design is just a fancy word for organize
+
+       1. I don't know which part I need to change (Design)
+       2. I don't know if I did it correctly (Test)
+
+     - The reason for agile software development: *Cash in my pocket sooner*
+     - Reverse the order and repeat
+
+#+begin_src awk
+
+Investment -> Requirement -> Analysis -> Design -> Coding -> Testing -> Operations
+Operations -> Testing -> Coding -> Design -> Analysis -> Requirement -> Investment
+#+end_src
+
+   - Almost every problem boils down to *long feedback cycles* (two people don't like to talk to each other)
+
+     - Cut it in half
+
+       - It's already hard enough to change the way you work
+       - It's challenging enough that make you energized enough to work on it
+
+     - Repeat when half the length feels long again
+
+#+end_quote
+
+   -- from [[https://dev.tube/video/TQ9rng6YFeY][DevTernity 2018: J.B. Rainsberger - The Economics of Software Design]]
+
+5. "You can always be more Agile." ("Agile is not a noun, it's an adjective.")
+
+#+begin_quote
+
+   Agile is about Change.
+
+   - Takeaway message
+
+     - Agility is a journey
+     - Always inspect and adapt the process
+     - It is a continuous investment
+     - Don't be afraid, there is hope
+
+   - The heart of being agile
+
+     - Growth mindset
+     - Inspect and adapt
+     - Flexibility
+
+#+end_quote
+
+   -- from [[https://www.youtube.com/watch?v=sFb1wpdn5Ys&t=0s&index=6&list=PLEx5khR4g7PKqVew27D3jvMknjxjowoKl][GOTO 2018 • Polyglot Agile • Aino Vonge Corry - YouTube]]
+
+   - That being said, "doing Agile" (Agile as a noun) is still important
+
+#+begin_quote
+
+     - THE IMPORTANCE OF "DOING"
+
+       - The practices are needed to help understand the principles
+       - The principles are needed to help guide towards new or stronger practices
+       - "The activities (practices) are what you do. The values are how you decide if you are doing it right."
+       - In situations where I don't quite know what to do, I fall back on the practices, trusting that they will carry me forward until I figure out which way to go.
+
+#+end_quote
+
+     -- from [[https://blog.jbrains.ca/permalink/embrace-doing-agile][Embrace 'Doing Agile']]
+
+As it was said in the last point, I can always be more agile as well. And I think this summary is also a great reflect on this point.
+
+Hope you can also learn more about "Agile" from these great talks and articles, or share your experiences with "Agile" in the comments below.

@@ -1,0 +1,119 @@
+#+TITLE: Clippings of 2019 Oct
+* Table of Contents
+
+- [[#org3a2c834][Functional architecture - The pits of success - Mark Seemann - YouTube   ]]
+- [[#org81557ef][Railway oriented programming - F# for fun and profit   ]]
+- [[#org8d94021][The art of the one-on-one meeting   ]]
+- [[#org73d807e][The Power of “Yes, if”: Iterating on our RFC Process — Squarespace / Engineering   ]]
+- [[#org39aa2b9][Tesler's Law (The Law of Conservation of Complexity) - Laws of UX   ]]
+- [[#org43cec0f][Resource Efficiency vs. Flow Efficiency   ]]
+
+* [[https://www.youtube.com/watch?v=US8QG9I1XW0][Functional architecture - The pits of success - Mark Seemann - YouTube]]   FunctionalProgramming
+#+begin_quote
+
+Functional programming forms pits of success where you naturally fall into the same ‘best practices’ that you have to deliberately work for in object-oriented programming.
+
+#+end_quote
+
+Every programming paradigm is opinionated. Different paradigm have different best practices. Take the example from the talk, ports and Adapters pattern might be a perfect fit in a language (F#), but it may have a hard time in another language (C#).
+
+So the analogy of "bell" vs. "bowl" is really powerful. Think before you make a technical choice: Is this technology a "bowl" that can keep me in the stable state I want? Or is it a "bell" that I need to fight to stay in the stable state?
+
+* [[https://fsharpforfunandprofit.com/posts/recipe-part2/][Railway oriented programming - F# for fun and profit]]   FunctionalProgramming
+#+begin_quote
+
+- Using railway track as a metaphor, we have created a number of useful building blocks that will work with any data-flow style application.
+
+  “constructors”
+      are used to create new track.
+  “adapters”
+      convert one kind of track into another.
+  “combiners”
+      link sections of track together to make a bigger piece of track.
+
+#+end_quote
+
+Another great thinking from F# community. (Maybe I should look into F# someday.) At its core, it's the power of composable functions.
+
+In Elixir, we use with statement to write railway oriented programs:
+
+#+begin_src erlang
+with {:ok, result1} <- step1(),
+     {:ok, result2} <- step2(result1) do
+  # ...
+else
+  {:error, error1} ->
+    # ...
+  {:error, error2} ->
+    # ...
+end
+#+end_src
+* [[https://www.fellow.app/blog/2019/one-on-one-meeting-definitive-guide/][The art of the one-on-one meeting]]   Management
+
+One-on-one meeting is one of the most important management tool.[fn:1] It's mentioned and recommended in tons of management books. But most of these books are about management in general, not one-on-one in specific. So I was really happy when this book went public. Because this book focuses on this single topic, and does a great job to explain what one-on-one meeting is, why one-on-one meeting is important, and how to host one-on-one meeting.
+
+I would recommend this book to anyone who want to learn more about one-on-one meetings.
+
+* [[https://engineering.squarespace.com/blog/2019/the-power-of-yes-if][The Power of “Yes, if”: Iterating on our RFC Process — Squarespace / Engineering]]   Process RFC
+#+begin_quote
+
+- What's "Yes, if"?
+
+#+begin_src awk
+
+Yes, if you can show that each iteration was a useable milestone.
+#+end_src
+- Benefits of "Yes, if"?
+
+  - This sort of “yes, if” approval means that the design author isn’t blocked and doesn’t need to wait for the approver to read again later.
+  - It’s also more encouraging than a flat “no.” The approver is working with the author to get the best possible design; they’re not gate-keeping.
+
+#+end_quote
+
+When projects get bigger and bigger, when more and more people get involved, we can't just hack some code together and ship it randomly. We need some change management process, to plan what to change and how to change it. RFC is a battle-tested process to do that. (See [[https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/][Scaling Engineering Teams via Writing Things Down and Sharing - aka RFCs]])
+
+You may not follow the RFC way strictly. But at the end of the day, change management is all about communicating and discussing
+
+1. *Why* do we need this change? (Goals and non-Goals, Background and Motivation)
+2. *What* are we gonna change? (Current state, Desired state)
+3. *How* are we gonna implement the change? (Steps, Timeline, Dependencies, Alternatives)
+4. *Who* are gonna implement the change? (Leader, Members, Collaborators)
+
+* [[https://lawsofux.com/teslers-law][Tesler's Law (The Law of Conservation of Complexity) - Laws of UX]]   Product
+#+begin_quote
+
+for any system there is a certain amount of complexity which cannot be reduced.
+
+#+end_quote
+
+Every feature, every product, every system comes with its own complexity. Even 1+1=2 is extremely complex if we dig deeper into Group theory or Abstract Algebra. We take it for granted because we've learned it early on. If 1+1=2 is complex, what about our fancy new features? That's why we should be extremely careful and conservative when adding new features.
+
+Here are some great posts explaining Tesler's Law.
+
+- [[https://blog.marvelapp.com/simplicity-is-overrated/][Simplicity is Overrated - Marvel Blog]]
+- [[http://www.humanist.co/blog/law-of-conservation-of-complexity/][Explaining the Law of Conservation of Complexity - Humanist]]
+- [[https://avdi.codes/simple-is-complex/][Simple is Complex – avdi.codes]] (which does not mention Tesler's Law directly, but it's the same thinking)
+
+* [[https://www.jrothman.com/mpd/agile/2015/09/resource-efficiency-vs-flow-efficiency-part-1-seeing-your-system/][Resource Efficiency vs. Flow Efficiency]]   Management
+#+begin_quote
+
+- Resource efficiency is about optimizing at the level of the individual.
+- Flow efficiency is about optimizing for the feature (for the team).
+
+  - Your customers buy features. They don't buy your busy-ness.
+
+#+end_quote
+
+A great series about why we should optimize for the team efficiency (rather than individual efficiency), and how to do that.
+
+Optimizing for team efficiency is also a value-driven thinking. "Your customers buy features" reminds me of a similar quote from [[https://yiming.dev/blog/2019/11/01/every-business-is-a-relationships-business-million-dollar-consulting-review/][Million Dollar Consulting]]:
+
+#+begin_quote
+
+No one is paid to take action, people are paid to achieve results.
+
+#+end_quote
+* Footnotes
+[fn:1]
+
+I am definitely biased to preferring one-on-one. Because I find myself perform better when there are few people around. Your mileage may vary.

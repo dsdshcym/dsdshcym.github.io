@@ -1,0 +1,22 @@
+#+TITLE: 「鲸鱼」用户和 28 效应
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-11]
+#+URI:         blog/2017/12/11/28-effect-and-whale-watching/index.html
+#+TAGS:        Clipping
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+以社交类休闲游戏开发商 Zynga 为例，在 2016 年 20% 的付费玩家平均花费 571 美元，而其余 80% 的付费玩家平均一年花费只有 19 美元，而 1% 的付费玩家每人花费超过 4000 美元。
+
+#+end_quote
+
+这应该也是 28 效应[fn:1]的一个体现吧。
+
+-- from: [[http://www.solidot.org/story?sid=54798][很多公司的收入依赖于“鲸鱼”]]
+
+* Footnotes
+[fn:1]
+
+[[https://en.wikipedia.org/wiki/Pareto_principle][Pareto principle - Wikipedia]]

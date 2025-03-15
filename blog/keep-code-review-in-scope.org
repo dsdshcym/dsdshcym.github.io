@@ -1,0 +1,65 @@
+#+TITLE: Keep Code Review In Scope
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-03-17]
+#+URI:         blog/2019/03/17/keep-code-review-in-scope/index.html
+#+TAGS:        Code Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Code Review is one of the most important activity in software development. Yet it's the most difficult as well. The intense communication involved in the review process makes it much harder than coding.
+
+I wrote a [[https://dsdshcym.github.io/blog/2017/10/30/how-to-do-code-review-correctly/][post]] in 2017 to summarize my thoughts on how to do code review at that time. But clearly it cannot summarize all the things we need to do during code reviews. So I guess there will be more articles under this topic in the future.
+
+This post is about the importance of keeping the scope within the code changes.
+
+* An Example
+
+The PR that made me think about the scope of code review is like this:
+
+1. The author of the PR changed a content_tag(:script, "...", type: "text/javascript") to a javascript_tag("...")
+2. I knew that in another issue, we discovered that this piece of JS code didn't have any effect.
+3. So I asked the author to check if the JS code still wouldn't work after the javascript_tag change, and proposed to remove it.
+4. The author replied that javascript_tag is the same as content_tag(:script, ...).
+
+As you can see, this code review session didn't go well.
+
+- I introduced an issue that was almost completely irrelevant to the PR.
+- The author didn't get my intention to improve the codebase more.
+- The conversation between us may even cause some misunderstanding between us.
+
+I thought it was the author's fault that he didn't understand my point. But after I put more thoughts into this conversation, I realized that it was totally on me. If I kept the scope down, none of these would happen and everything would be better.
+
+The code is already in a better shape with the javascript_tag change. And I shouldn't have questioned it.
+
+And the JS issue was already being discussed in another issue. It didn't make any sense either to fix it in this PR.
+
+* Lesson Learned
+
+The lesson I learned from this experience is that:
+
+#+begin_quote
+
+As the reviewer, I need to keep the scope of the discussion within the original changes, and never reach for any topic out of this scope.
+
+#+end_quote
+
+As I said in [[https://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things/][Only With Limited Resources Can We Finish Things]], unlimited time only brings us procrastination and unlimited scoping, which make it impossible to deliver anything.
+
+It's the same for Code Reviews. If we don't limit the scope of the code review session, we would easily expand the scope to other areas of the code. Because we've known more stuffs than we did when we wrote the code, so that there would be many areas we can improve. In another word, if we don't limit the scope, the PR can take longer time to be merged, which would slow down the delivery pace.
+
+And the out of scope discussions would not get any results as well. Because the author's mind is focused on his/her change only, and would be confused by the out of scope discussions.
+
+So what should we do when we find anything worth discuss? We open new issues/PRs for them, and discuss them in another thread. And remember, we should limit the scope in this new thread as well. *Only solve one problem at a time, and solve it well.*
+
+* Further Readings
+
+If you want to know more about how to do code reviews well, these resources are worth checking out:
+
+- [[https://www.youtube.com/watch?v=9tC7p2UTLsU][Professional programmers always need a second opinion, to make sure
+their code is good enough - YouTube]]
+- [[https://www.ibm.com/developerworks/rational/library/11-proven-practices-for-peer-review/][11 proven practices for more effective, efficient peer code review]]
+- [[https://mtlynch.io/human-code-reviews-1/][How to Do Code Reviews Like a Human (Part One) - Silly Bits]]
+- [[https://mtlynch.io/human-code-reviews-2/][How to Do Code Reviews Like a Human (Part Two) - Silly Bits]]
+- [[https://medium.com/palantir/code-review-best-practices-19e02780015f][Code Review Best Practices – Palantir Blog – Medium]]
+- [[https://cyle.tumblr.com/post/170039642535/how-i-review-code][cyle — How I review code]]

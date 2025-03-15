@@ -1,0 +1,96 @@
+#+TITLE: How to pattern match a function in Elixir
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-01-03]
+#+URI:         blog/2019/01/03/how-to-pattern-match-a-function-in-elixir/index.html
+#+TAGS:        Elixir
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I ran into this problem of pattern matching a function when using [[https://github.com/plataformatec/mox][mox]]. I wanted to check that a function is injected into another function as a dependency. Here is a simplified example:
+
+#+begin_src rust
+test "calls Dependency.do_something with AnotherModule.function/1" do
+  Mox.expect(DependencyMock, :do_something, fn ^(&AnotherModule.function/1) -> nil end)
+
+  Module.call()
+
+  Mox.verify!()
+end
+#+end_src
+
+But this code doesn't work in Elixir:
+
+#+begin_src python
+
+(CompileError) invalid argument for unary operator ^, expected an existing variable, got: ^(&AnotherModule.function/1)
+#+end_src
+
+After some research, I found how to do this correctly in Elixir: [[https://github.com/elixir-lang/elixir/issues/5649#issuecomment-272259876][Improve error messages for invalid expression in match · Issue #5649 ·
+elixir-lang/elixir]]
+
+#+begin_src fsharp
+x = &List.first/1
+case &List.first/1 do
+  ^x -> true
+end
+#+end_src
+
+So my use case only needs a small fix:
+
+#+begin_src rust
+test "calls Dependency.do_something with AnotherModule.function/1" do
+  expected_fun = &AnotherModule.function/1
+  Mox.expect(DependencyMock, :do_something, fn ^expected_fun -> nil end)
+
+  Module.call()
+
+  Mox.verify!()
+end
+#+end_src
+
+One caveat is that it doesn't work for anonymous functions even if they have the same body and arity. Because they are completely unrelated and Elixir doesn't know how to check if they can match:
+
+#+begin_src rust
+fun1 = fn _ -> nil end
+fun2 = fn _ -> nil end
+
+case fun2 do
+  ^fun1 -> true
+  _ -> false
+end
+#+end_src
+#+begin_src awk
+
+false
+#+end_src
+
+Pattern matching is a really useful feature in functional languages. But Elixir's implementation does have some unexpected behaviour. For example:
+
+- Pattern match functions like explained above
+- Pattern match an empty map %{}
+
+#+begin_src erlang
+empty = %{}
+case %{} do
+  ^empty -> true
+end
+#+end_src
+#+begin_src awk
+
+true
+#+end_src
+- Pattern match a pid
+
+#+begin_src erlang
+pid = self()
+case self() do
+  ^pid -> true
+end
+#+end_src
+#+begin_src awk
+
+true
+#+end_src
+
+I guess we need to get used to them for quite some time, because as José Valim explained in that issue: "There is very little interest in making functions valid patterns in Elixir."

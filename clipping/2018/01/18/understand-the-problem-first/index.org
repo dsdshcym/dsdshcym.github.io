@@ -1,0 +1,20 @@
+#+TITLE: Understand the problem first
+#+begin_quote
+
+1. try things (languages/tools/frameworks/libraries) and decide if it suit yourself
+2. understand the problem that needs to be solved before writing code
+
+#+end_quote
+
+-- from [[https://devchat.tv/ruby-rogues/8463][RR 344: What Are You Working On? - Devchat.tv]]
+
+It reminds me of the book Are your lights on?.[fn:1]
+
+Sometimes we really need to fully understand the problem first and then we can start thinking about writing the first line of code.
+
+Most of the time, no code is better than hundreds of lines of code.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2017/02/19/review-of-are-your-lights-on/][Review of   - dsdshome]]

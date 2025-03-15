@@ -1,0 +1,73 @@
+#+TITLE: RSpec failures caused by I18n.locale
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-09-17]
+#+URI:         blog/2017/09/17/rspec-failures-caused-by-i18nlocale/index.html
+#+TAGS:        Rails, Ruby, RSpec
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I ran into a RSpec issue that an example failed when running with all the tests, but it can pass when it's ran separately.
+
+It's obvious that this test was affected by some other tests. Then I found this interesting RSpec failure caused by I18n.
+
+This blog post is a note about how I found the issue and how I solved it.
+
+* Find the order dependent failures
+
+Since there were not many tests in this project, and they were not running randomly, it was easy for me to find the test files that caused the failing example.
+
+But during my research, I also found that RSpec has a more elegant way to find the order dependent failures: rspec --bisect
+
+** rspec --bisect
+
+When we run rspec --bisect, RSpec will:
+
+1. run all the tests to find the failing examples
+2. run failing examples independently to check if it's order-dependent
+3. bisect all the examples to find the minimum example set to reproduce the issue
+
+It's way faster than testing it by hand.
+
+#+begin_src ruby
+rspec --seed 51012 --bisect
+# Bisect started using options: "--seed 51012"
+# Running suite to find failures... (18.73 seconds)
+# Starting bisect with 1 failing example and 39 non-failing examples.
+# Checking that failure(s) are order-dependent... failure appears to be order-dependent
+
+# Round 1: bisecting over non-failing examples 1-39 .. ignoring examples 21-39 (21.18 seconds)
+# Round 2: bisecting over non-failing examples 1-20 .. ignoring examples 11-20 (21.46 seconds)
+# Round 3: bisecting over non-failing examples 1-10 . ignoring examples 1-5 (9.71 seconds)
+# Round 4: bisecting over non-failing examples 6-10 . ignoring examples 6-8 (9.49 seconds)
+# Round 5: bisecting over non-failing examples 9-10 .. ignoring example 10 (18.34 seconds)
+# Bisect complete! Reduced necessary non-failing examples from 39 to 1 in 1 minute 30.53 seconds.
+
+# The minimal reproduction command is:
+#   rspec './spec/controllers/children_controller_spec.rb[1:1:5:1]' './spec/features/section_spec.rb[1:1:1]' --seed 51012
+#+end_src
+** minitest-bisect
+
+Turns out minitest also provides an extra package that does the same thing: [[https://github.com/seattlerb/minitest-bisect][seattlerb/minitest-bisect]]. Check it out if you are using minitest.
+
+* Failing examples caused by i18n.locale
+
+After I found the example that caused my feature spec to fail, I started debugging the issue. Turns out, it's pretty simple:
+
+1. A controller spec created some account fixtures, and set its language to French
+2. We're setting the i18n.locale value according to user account's language, so i18n.locale = :fr now
+3. My feature spec is using Capybara to find a button with text "Create", but since now the i18n.locale is :fr, the button is not showing "Create" (which is for :en locale). Thus this feature spec failed.
+
+And this seems to be an old issue for i18n: [[https://github.com/svenfuchs/i18n/issues/256][I18n.locale cached in
+rspec · Issue #256 · svenfuchs/i18n]]
+
+We have no choice but to reset i18n.locale for every test (by setting it directly or setting account fixture's default language to :en so that i18n.locale is set to :en every time).
+
+* One More Thing: git bisect
+
+Since the i18n.locale behavior in our controller was introduced long time ago, I didn't get the chance to use git bisect, which can help us to find the commit that caused the test to fail.
+
+If you are interested in this command, you can also check these documents:
+
+- [[https://git-scm.com/docs/git-bisect][Git - git-bisect Documentation]]
+- [[https://robots.thoughtbot.com/git-bisect][git bisect - thoughtbot]]

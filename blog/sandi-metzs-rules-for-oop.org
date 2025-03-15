@@ -1,0 +1,422 @@
+#+TITLE: Sandi Metz's Rules for OOP
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-08-23]
+#+URI:         blog/2017/08/23/sandi-metzs-rules-for-oop/index.html
+#+TAGS:        Object-Oriented, Sandi Metz
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Table of Contents
+
+- [[#orgda11695][Write short code with good names]]
+
+  - [[#orgd10030d][We need short code because of our bad memories]]
+  - [[#orga4873fb][We need better names for better abstractions]]
+  - [[#org0b96a6c][How Sandi Metz's Rules help us write shorter code]]
+
+- [[#orgca15553][Sandi Metz's 5 Rules]]
+
+  - [[#orgf9800e1][100 lines per class]]
+  - [[#org30afdda][5 lines per method]]
+  - [[#org6b80b38][4 parameters per method]]
+  - [[#orgbe314c2][1 object per view]]
+  - [[#orgcd90864][2 class names per controller action]]
+
+- [[#org3caf9b3][Why do we need these rules?]]
+
+  - [[#org5cec13a][These Rules are just simplified versions of code metrics.]]
+  - [[#org7bd4981][Rules help us to make better trade-offs]]
+
+- [[#org53314f7][When to break the rule]]
+- [[#orgdda583b][Further Reading]]
+
+* Write short code with good names
+
+If I can only use a sentence to describe how to write clean code, I would say "Write short code with good names".
+
+According to my experiences, short code is almost always easier to understand than longer code. When it is not more readable, it does not have a good name.
+
+** We need short code because of our bad memories
+
+- Memory comparison between PC and human
+
+  - Computer with large RAMs
+
+    A modern computer can easily remember several gigabytes of information since they have these many of RAM. And it can even remember more since it can move the data between RAM and disks.
+
+    That's why a single server can run a huge application with thousands of hundreds codes without any problems.
+
+  - Human beings with normal brains
+
+    But for us, the normal human being, we can hardly remember even hundreds of code. That's a huge disadvantage compared to our machines.
+
+- Screen Restriction
+
+  In my editor, one page can only show 54 lines (font with 14 pixel size), so it needs 2 pages to show 100 lines of code.
+
+  Even if there are only 2 pages of code, I still need to scroll back and forth to check the code.
+
+  So a shorter class, function is easier for us to read and understand.
+
+- Abstractions
+
+  Due to our bad memories, we need variables, functions, and classes to help us to abstract the code.
+
+  So that a single line of source code can represent more concepts and we can only think about this single line of source code and forget about all the things behind it.
+
+  - Source code pyramid
+
+    The process of abstraction is like building a source code tree or a pyramid for a project.
+
+    - At the top, there are the higher level of concepts, built from the blocks below it.
+    - At the bottom, there are the real working code.
+
+** We need better names for better abstractions
+
+- Short code can be a disaster when it has a bad name.
+
+  Consider the following code:
+
+#+begin_src ruby
+class User
+  def post_a_new_feed
+    step_1
+    step_2
+    step_3
+  end
+
+  private
+
+  def step_1
+    # 25 lines of code
+  end
+
+  def step_2
+    # 25 lines of code
+  end
+
+  def step_3
+    # 25 lines of code
+  end
+end
+#+end_src
+
+  Though this class extracted three steps in post_a_new_feed into private methods, I would not say this class is a well-written class. Because it doesn't give clear names to these private methods. step_1, step_2, step_3 are nearly meaningless, and no better than split post_a_new_feed into three parts using empty lines. It's just rearranging the mess in somewhere else, like hiding the dirt under the carpet[fn:1].
+
+  It would be better if we give these private methods clearer names, like prepare_feed_for_publishing, send_emails_to_subscribers, and these abstractions will become more obvious and may help us rearrange our code better.
+
+- Naming things is what we do
+
+  Abstraction is the only way for us to manage a large code repository. But We need to name things better to create better abstractions.
+
+  Actually, naming things is almost all what we do as software developers[fn:2].
+
+  - When we create a new project, we need to name it.
+  - When we create a new variable, we need to name it.
+  - When we create a new method, we need to name it.
+  - When we create a new class, we need to name it.
+
+  Since it's an activity that's so common, no wonder it's one of the two hardest things in programming.[fn:3]
+
+  Every abstraction we make relies on a name, so if we can name things better and explain the concept behind this name well, we can have better abstractions.
+
+** How Sandi Metz's Rules help us write shorter code
+
+Sandi Metz's Rules for OOP are some heuristics to force us to write shorter code, so that our code cannot grow wildly and become a giant piece of mess.
+
+* Sandi Metz's 5 Rules
+** 100 lines per class
+
+*A class can be no longer than 100 lines of code.*
+
+- Single Responsibility Principle
+
+#+begin_quote
+
+  A class should only have one reason to change
+
+#+end_quote
+
+  - If a class has more than 100 lines of code, the possibility for this class to have more than one reason to change is pretty high
+  - A class that has single responsibility is highly cohesive
+
+** 5 lines per method
+
+*A method can be no longer than 5 lines of code.*
+
+- Some quotes
+
+  - Clean Code by Robert Martin
+
+#+begin_quote
+
+    The first rule of functions is that they should *be small* . The second rule of functions is that they should *be smaller than that* .
+
+#+end_quote
+  - Ben Orenstein from thoughtbot
+
+#+begin_quote
+
+    Methods with 1 line is better than 2 lines.[fn:4]
+
+#+end_quote
+
+- 5 lines of code equals to 1 if statement
+
+#+begin_src ruby
+def foo
+  if condition
+    do_something
+  else
+    do_another_thing
+  end
+end
+#+end_src
+
+  So this rule is asking us to
+
+  1. Do not write logic more complicated than an if statement
+  2. Write only 1 line per branch
+  3. Never use elsif
+
+  Actually, if you look into [[https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/scaffold_controller/templates/controller.rb#L39-L45][the update action in Rails controller
+scaffolding template]], you will find a perfect example for this kind of 5-line-method
+
+- Every method we write can actually split into 4 basic steps and 2 optional steps[fn:5]
+
+  1. Collecting input
+  2. Performing work
+  3. Delivering output
+  4. Handling failures
+  5. (Optional) Diagnostics
+  6. (Optional) Cleanup
+
+  Base on this assumption, we can extract every step into a helper method and make every method tell a nice story. And every method will only contain ~5 lines of method calls.
+
+** 4 parameters per method
+
+*Pass no more than 4 parameters into a method.*
+
+- Hash options are also parameters Do not fool ourselves with a hash parameter like this
+
+#+begin_src ruby
+def foo(option)
+  arg_a = option.fetch(:a)
+  arg_b = option.fetch(:b)
+  arg_c = option.fetch(:c)
+  arg_d = option.fetch(:d)
+  # ...
+  # do something with arg_{a, b, c, d}
+end
+#+end_src
+- Parameters are dependencies
+
+  - An extra parameter is an extra dependency for our class
+  - If a method needs 4 parameters, then whenever one of their API is changed, this method might need to change too, so we need to check it when we do the change, which is an extra work for us.
+  - So, the less parameters a method need, the easier for us to maintain this method
+
+- If there are more than 4 parameters, most of the time we can pull a new object out of some of the parameters
+
+  - A typical example would be date ranges
+
+#+begin_src ruby
+class AnalyticsQuery
+  def initialize(label, filter, starts_at, ends_at)
+    # ...
+    @starts_at = starts_at
+    @ends_at = ends_at
+    # ...
+    @interval = ends_at - starts_at
+  end
+end
+#+end_src
+
+    We can then refactor this data pair (starts_at and ends_at) to a new class of object (DateRange)
+
+#+begin_src ruby
+class DateRange
+  def initialize(starts_at, ends_at)
+    @starts_at = starts_at
+    @ends_at = ends_at
+  end
+
+  def interval
+    @ends_at - @starts_at
+  end
+end
+#+end_src
+  - As we can see in the above example, this rule actually leads us to a new abstraction
+
+    1. The new abstraction consolidate code into a single place
+    2. The new abstraction names this consolidated code
+    3. The new abstraction tells you where your code relies upon an idea
+
+** 1 object per view
+
+*A view template should only refer to 1 object*
+
+- Facade Pattern
+
+#+begin_quote
+
+  A facade is an object that provides a simplified interface to a larger body of code
+
+#+end_quote
+
+  - In Rails world, it's usually called Presenter
+
+- We can use a Facade object in view template to reduce the dependency between view template and controller actions
+
+  1. Easier to test
+
+     - When we need to test a view, we can simply setup a mock facade object rather than a bunch of mock objects to test it
+
+  2. Encourages abstractions
+
+     - We can use a facade object to wrap many objects for a view
+     - Then this view dispatches objects in this facade object to different partials
+
+** 2 class names per controller action
+
+*A controller action can only use 2 classes* .
+
+- The purpose for these 2 classes
+
+  - One Service Object for business logic.
+  - One Facade Object for presentation.
+
+- Use Service Object to make a controller thin
+
+  - A Rails controller is always hard to unit test
+  - Rails is moving away from controller test to integration test as well[fn:6]
+  - Use Service Object to wrap the controller logic
+
+    1. Integration test controller action
+    2. Unit test service object
+
+- Facade is explained in [[#orgbe314c2][1 object per view]]
+
+* Why do we need these rules?
+** These Rules are just simplified versions of code metrics.
+
+- We don't have a perfect standard to measure good code and bad code.
+
+  - Because
+
+    1. The abstraction level of the code is hard to quantify
+    2. Sometimes we as the developer even cannot tell the better code is better in which ways
+
+  - We only have some metrics that can act as heuristics to help us measure our code [fn:7]
+
+    Source Line of Code (SLOC or LOC)
+        The number of lines in text of the source code
+    Cyclomatic Complexity
+        The number of linearly independent paths through a program's source code
+    Assignments, Branches and Conditions (ABC) Metric
+        count of variable Assignments, Branches of control (function calls or message sends), and count of Conditional logic
+    (no term)
+        etc.
+
+- But it requires some work to calculate these metrics and some of the metrics are hard to understand for junior developers
+- So we can use these rules as simplified versions of the metrics to help us write cleaner code
+
+  100 lines per class
+      Simplified version of SLOC
+  5 lines per method
+      Simplified version of SLOC and Cyclomatic Complexity
+  4 parameters per method
+      Simplified version of ABC metric
+  1 object per view
+      Simplified version of ABC metric
+  2 class names per controller action
+      Simplified version of ABC metric
+
+** Rules help us to make better trade-offs
+
+- Writing code is about making trade-offs
+
+  - Different solution to a software problem makes different trade-offs.[fn:8]
+
+    - Even DRY comes with some cost
+
+  - The best solution chooses what benefits us the most and hurts us the least.
+
+- But when we first started writing software, most of us don't know how to make the best trade-off
+- These rules can serve as a good guideline for those developers in their early career, and help them make better decisions[fn:9]
+
+* When to break the rule
+
+*Until you have good reasons to break them*
+
+- As we said in the previous section, these rules are just simplified metrics and guidelines for junior developers who can not make good trade-offs
+- These rules are not absolutely right
+- So if you find a good reason and can explain it clearly to other developers, feel confident to break them
+
+* Further Reading
+
+- You can find more discussions about these Rules in these places:
+
+  - [[https://devchat.tv/ruby-rogues/087-rr-book-club-practical-object-oriented-design-in-ruby-with-sandi-metz][087 RR Book Club: Practical Object-Oriented Design in Ruby with Sandi Metz - Devchat.tv]] Where Sandi Metz first talked about her 5 Rules
+  - [[../../Org/lists/mooc.html#ID-A7E40342-B5E2-4D67-B682-6D68FF33F2EA][Baruco 2013: Rules, by Sandi Metz - YouTube]] Where Sandi Metz talked more about the Rules more officially
+  - [[http://bikeshed.fm/8203c121][1: Sandi & Derek's Rules | The Bike Shed]]
+  - [[http://bikeshed.fm/3ae8f5a0][70: Make Small Things (Sandi Metz) | The Bike Shed]]
+  - [[../../Org/lists/mooc.html#ID-3f76c18c-8f28-443f-babd-4f8df3137d7a][Sandi Metz's Rules - Online Video Tutorial by thoughtbot]]
+  - [[https://robots.thoughtbot.com/sandi-metz-rules-for-developers][Sandi Metz's Rules For Developers]]
+
+- If you want to know more about short code, you can read these books:
+
+[[https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882][Clean Code: A Handbook of Agile Software Craftsmanship]]
+      The importance of short code
+[[https://martinfowler.com/books/refactoring.html][Refactoring by Martin Fowler]]
+      How to shorten your code (long classes, long methods, etc.)
+
+- Please read these 2 books Sandi wrote, they are just purely great:
+
+  1. [[http://www.poodr.com/][Practical Object-Oriented Design in Ruby]]
+  2. [[https://www.sandimetz.com/99bottles/][99 Bottles — Sandi Metz]]
+
+- Sandi also gave a lot of talks on multiple conferences, go to YouTube and watch them all if you have time:
+
+  - [[https://www.youtube.com/watch?v=v-2yFMzxqwU][GORUCO 2009 - SOLID Object-Oriented Design by Sandi Metz - YouTube]]
+  - [[../../Org/lists/mooc.html#ID-A7E40342-B5E2-4D67-B682-6D68FF33F2EA][Baruco 2013: Rules, by Sandi Metz - YouTube]]
+  - [[https://www.youtube.com/watch?v=URSWYvyc42M][Rails Conf 2013 The Magic Tricks of Testing by Sandi Metz - YouTube]]
+  - [[https://www.youtube.com/watch?v=JOM5_V5jLAs][RubyConf 2014 - Madam Sandi Tells Your Future by Sandi Metz - YouTube]]
+  - [[https://www.youtube.com/watch?v=8bZh5LMaSmE][RailsConf 2014 - All the Little Things by Sandi Metz - YouTube]]
+  - [[https://www.youtube.com/watch?v=PJjHfa5yxlU][RailsConf 2016 - Get a Whiff of This by Sandi Metz - YouTube]]
+
+* Footnotes
+[fn:1]
+
+[[http://wiki.c2.com/?HideTheDirtUnderTheCarpet][Hide The Dirt Under The Carpet]]
+
+[fn:2]
+
+[[http://bikeshed.fm/3ae8f5a0][70: Make Small Things (Sandi Metz) | The Bike Shed]]
+
+[fn:3]
+
+[[https://twitter.com/timbray/status/506146595650699264][Tim Bray on Twitter: \"@marcoskirsch @codinghorror Phil said it, I reported it, someone else added on the “off-by-one”.\"]]
+
+[fn:4]
+
+[[https://www.youtube.com/watch?v=DC-pQPq0acs][Aloha Ruby Conf 2012 Refactoring from Good to Great by Ben Orenstein - YouTube]]
+
+[fn:5]
+
+[[http://www.confidentruby.com/][Confident Ruby]]
+
+[fn:6]
+
+[[../../Org/notes/ruby.html#ID-CE963F38-D99D-4861-99F8-56C9D1D11705][Changes to test controllers in Rails 5 - BigBinary Blog]]
+
+[fn:7]
+
+[[https://www.sandimetz.com/99bottles/][99 Bottles — Sandi Metz]] [[../../Org/notes/books.html#ID-EBB36066-25F3-4ECC-BB1D-3E47F8F91DB1][Judging Code]]
+
+[fn:8]
+
+[[https://www.sandimetz.com/99bottles/][99 Bottles — Sandi Metz]] [[../../Org/notes/books.html#ID-3605F2DC-D6A6-4C11-B72B-95DAADA6F282][Rediscovering Simplicity]]
+
+[fn:9]
+
+[[https://devchat.tv/ruby-rogues/087-rr-book-club-practical-object-oriented-design-in-ruby-with-sandi-metz][087 RR Book Club: Practical Object-Oriented Design in Ruby with Sandi Metz - Devchat.tv]]

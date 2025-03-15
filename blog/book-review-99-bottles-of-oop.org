@@ -1,0 +1,176 @@
+#+TITLE: Book Review: 99 Bottles of OOP
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-08]
+#+URI:         blog/2017/12/08/book-review-99-bottles-of-oop/index.html
+#+TAGS:        Book Review, Object-Oriented, TDD, Refactor
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I bought [[https://www.sandimetz.com/99bottles/][99 Bottles of OOP]] (99 Bottles) right after its first sale started (40% off until Dec 13th). Buy it now and I promise you that you won't regret it.
+
+* TL;DR
+
+This book taught me how to do [[#orge99e82f][step-by-step refactoring]].
+
+* Connections with earlier books
+** [[http://www.poodr.com/][Practical Object-Oriented Design in Ruby]] (POODR)
+
+I wrote my review[fn:1] for POODR several months ago and I said it was the best book about Object-Oriented Design. This comment may need to change since 99 Bottles comes out.
+
+POODR is truly a wonderful book and it opens my mind to the messages in the Object-Oriented world and helps me to finally switch my mindset from a procedural one to a more object-oriented one.
+
+What POODR lacks is a good example to demonstrate how to finally get to a well designed application step by step. It does provides some examples (like Bicycle and Gear), but it's still unclear how to get these results.
+
+99 Bottles basically takes most of the great ideas from POODR and puts them together into a great example: Printing out lyrics for a song (original requirement) and changing some parts of the lyrics (new feature requirement).
+
+In this example, the book explains how to do TDD and refactoring step by step, then finally get a well-designed application.
+
+** [[https://martinfowler.com/books/refactoring.html][Refactoring: Improving the Design of Existing Code]]
+
+(I also wrote my review for Refactoring[fn:2])
+
+In 99 Bottles, they directly mention a lot of Code Smell names and Refactoring Techniques from the Refactoring book.
+
+That's why I felt very familiar when reading this book. Because I had already known the techniques from the Refactoring book. And 99 Bottles provided more specific example (in Ruby) for these code smells and refactoring techniques.
+
+And more importantly, 99 Bottles taught me how to really apply the step-by-step refactoring idea from the Refactoring book to my daily work.
+
+I used to think the step-by-step refactoring idea is too time-consuming and not worth it. But 99 Bottles tells me that it's important to land on a stable point every time when refactoring and shows that it's easier to refactor in this way. So I tried this style of refactoring and now I find I'm doing more tiny step refactorings in my daily work.
+
+** [[http://www.growing-object-oriented-software.com/][Growing Object-Oriented Software Guided by Tests]]
+
+(I wrote my review for GOOS[fn:3] as well)
+
+GOOS taught me how to build a faster feedback loop via TDD. And it's invaluable.
+
+The problem with GOOS is that its example is a Java application and seems to be pretty old.
+
+99 Bottles provides this simple Ruby application example for us. And it shows me how to do TDD in Ruby correctly.
+
+* Simplicity Matters
+
+First of all, 99 Bottles defines what is the best code:
+
+#+begin_quote
+
+The best solution lies at *the sweet spot that represents the perfect compromise between comprehension and changeability*
+
+#+end_quote
+
+So, the best solution needs to be
+
+- Concrete enough to be understood
+- Abstract enough to allow for change
+
+We can then call this kind of solutions "simple". (which reminds me of the talk about Simplicity given by Rich Hickey[fn:4])
+
+Guided by this thinking, we can get the simplest code (Shameless Green) to solve our current problem using TDD.
+
+(Thanks to my previous reading on POODR, I wrote a similar solution to Shameless Green in 30 mins)
+
+** Test Driven Shameless Green
+
+So how to TDD the Shameless Green solution? Of course, we need to follow the red/green/refactor cycle.
+
+1. Write a failing test
+2. Make Transformations[fn:5] to production code to make it more generic, thus pass the test
+3. Refactor
+
+When making the test pass, we need to use simplest transformation to pass the tests.
+
+Since
+
+1. We start our production code as concrete as possible (e.g. returning nil at first)
+2. Every transformation is making our production code more generic (abstract)
+3. We choose the simplest transformation every time (which make our code more generic, but as less as possible to just pass the test)
+
+The result we get would be both concrete enough and abstract enough. (Shameless Green)
+
+* Make the change easy first
+
+Then comes the most important part of this book: How to embrace changes?
+
+When a new feature requirement comes, all we need to do is to "make the change easy first, then make the easy change" (by Kent Beck[fn:6])
+
+This is the exact strategy 99 bottles follows:
+
+1. Refactor the code first based on the feature requirement
+2. Make the easy change to achieve the new feature
+
+* Step-by-step Refactoring
+
+But how to refactor the code? 99 Bottles shows some great examples on how to refactor our code confidently.
+
+We need to:
+
+1. Take small steps
+2. Refactor under green
+3. Seek stable landing points
+
+A great exercise I learned from this book is that:
+
+#+begin_quote
+
+*Only change 1 line of your code/test at a time, and keep your tests passing.*
+
+#+end_quote
+
+- 1 line of code is the smallest possible step when changing our code (if you can only change a word or a character, that would better)
+- There are some useful tips to keep your tests green while only changing 1 line of your code, like
+
+  1. Returning a new value at the end of the method while still keeping the old code untouched
+  2. Adding a new argument with a default value that lead to the old conditional path.
+
+     - We can pass in the new argument in the new test.
+     - And the default value will keep the old tests passing.
+     - Choose meaningful defaults like :FIXME when no other better defaults can use.
+
+Doing all this will make sure we are *only one Undo away from the green code* . This makes the refactoring process no longer that stressful and I think I can take any refactoring project down applying this strategy.
+
+I then take bigger steps after I'm more familiar with this style of refactoring. But I'll always make sure that I can go back to green in one step (by leveraging git).
+
+* Fix the easy problems first
+
+Another important lesson I learned from this book is to *focus on the easy problems first* .
+
+Sometimes, a refactoring looks scary only because we are thinking too many small refactorings at the same time.
+
+All we need to do is to focus on the horizontal refactoring[fn:7] at our hand and ignore the vertical refactorings we discover (or maybe take notes down so that we can still remember them later).
+
+After all the horizontal refactorings are done, the easy path will appear by itself automatically.
+
+* Summary
+
+There are still many topics discussed in this book that I didn't mention in this post but they are all useful advice for developing enjoyable software. They all help you write a better story with your code.
+
+More importantly, you'll fall in love with polymorphism after you read this book. (I know I did.)
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2017/05/12/my-review-of-POODR/][My Review of Practical Object-Oriented Design in Ruby - dsdshome]]
+
+[fn:2]
+
+[[http://dsdshcym.github.io/blog/2017/04/09/review-of-refactoring-improving-the-design-of-existing-code/][Review of Refactoring: Improving the Design of Existing Code - dsdshome]]
+
+[fn:3]
+
+[[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/][GOOS: Build a Faster Feedback Loop - dsdshome]]
+
+[fn:4]
+
+[[https://www.infoq.com/presentations/Simple-Made-Easy][Simple Made Easy]]
+
+[fn:5]
+
+[[https://8thlight.com/blog/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html][The Transformation Priority Premise - 8th Light]]
+
+[fn:6]
+
+[[https://twitter.com/KentBeck/status/250733358307500032][Kent Beck on Twitter: "for each desired change, make the change easy (warning: this may be hard), then make the easy change"]]
+
+[fn:7]
+
+[[https://www.facebook.com/notes/kent-beck/dont-cross-the-beams-avoiding-interference-between-horizontal-and-vertical-refac/260531380646400/][Don't Cross the Beams: Avoiding Interference Between Horizontal and Vertical Refactorings]]

@@ -1,0 +1,40 @@
+#+TITLE: You may implicitly and strongly believe something wrong
+#+begin_quote
+
+- Ideology
+
+  - Unknown Known
+  - *You don't know you are implicitly and strongly believe something wrong*
+
+- Types & Tests
+
+  - Static
+
+    - Haskell
+    - Rust
+
+- Dynamic Languages
+
+  - Tests are examples
+  - Extreme (but real) Belief: *Correctness comes exclusively from examples*
+
+- Static Languages
+
+  - Make undefined behavior impossible (compilation error)
+  - Types are categories
+  - Extreme (but real) Belief: *Correctness comes exclusively from categories*
+
+- "Null"
+
+  2015
+      "But I need Null" -> to represent absence -> "Null is the only way to represent absence"
+  2010
+      "FP is slow!" -> Operations on Immutable Data are slow -> "No faster immutable types exist"
+  2000
+      "GC is impractical" -> "No better GC algorithms exist."
+
+#+end_quote
+
+-- from [[https://www.destroyallsoftware.com/talks/ideology][Ideology (Strange Loop 2015) - Destroy All Software]]
+
+Sometimes, our conclusion may based on a completely false presumption, but we may not even notice this wrong presumption exists. I think this is what Gary called the Unknown Known. And we all need to learn more (languages, patterns, etc.) to jump out of this mental set and think out of the box.

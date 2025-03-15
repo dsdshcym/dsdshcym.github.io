@@ -1,0 +1,99 @@
+#+TITLE: CSSKatas: A Better Way to Sharpen Your CSS Skills
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-07-24]
+#+URI:         blog/2020/07/24/css-katas-a-better-way-to-sharpen-your-css-skills/index.html
+#+TAGS:        CSSKatas, Frontend, CSS
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Learning CSS has always been a scary task to me. I stayed in my comfortable zone as a backend developer for at least 5 years.
+
+Until recently, I started [[https://github.com/dsdshcym/rebuild-x-with-tailwind][re-implementing some popular websites from scratch]]. I learned a ton of CSS along the way. I learned a lot of web design principles. And most importantly, I can now look at a design and think of different ways to implement it.
+
+This is why I started bootstrapping [[https://yiming.dev/css-katas/][CSSKatas]]: to build a platform for you to sharpen your CSS skills, to provide realistic design challenges for you to tackle, to help you tame the scary CSS monster.
+
+* Learning CSS should not be hard
+
+Learning CSS was hard to me for several reasons:
+
+1. Most tutorials are based on CSS properties and values, which are hard to connect to real designs
+2. Interactive CSS games only check if the code is exactly the same as the answer
+3. No playground to practice real world designs
+
+They were the major road blockers for me and I think you may share some of these. So CSSKatas would solve all of these blockers, and provide the most pleasant CSS learning experience for you.
+
+** Property-based tutorials vs. Design-driven katas
+
+First, most CSS tutorials I read focus on how to use a CSS property. For example, a tutorial about display would list all the possible values for this property (block, inline, etc.) and what does each value mean.
+
+#+begin_quote
+
+display is the most important property to control layout.....
+
+- A block element would ...
+- An inline element would ...
+
+#+end_quote
+
+That's great for an experienced frontend developer, who can quickly learn a new property and apply it to work.
+
+But for me, a backend developer, I cannot make that connection just by learning different properties and values. I don't know how to translate a design into a set of CSS properties yet.
+
+So CSSKatas takes a completely opposite direction: a design-driven approach.
+
+CSSKatas would provide various CSS exercises for you, and we call them "Katas". Your goal when practicing a Kata is to re-implement the design pixel-perfectly.
+
+In the demo below, you need to re-implement a button. If you are familiar with CSS, then you will add paddings to the code and you are done. If you are not, then you can check the hints section and see which properties you need to learn.
+
+[[https://yiming.imfast.io/images/css-katas-a-better-way-to-sharpen-your-css-skills/start-from-design-tailwind.png]]
+
+** Closed-ended Exercises vs. Open-ended Katas
+
+Then, what's the differences between CSSKatas and those interesting CSS games out there? I played some great CSS games around topics like flexbox and grid. But the same problem with property-based tutorials still exists: these games would only check if the code I submit is exactly the same as the answer, i.e. the code uses the expected property with the expected value.
+
+But that's not how we check our frontend work in real cases. No user's gonna check our CSS code and see if we use the correct properties and values. All they can see is the final results.
+
+So CSSKatas would not compare your code to a predefined answer at all. Your solution would be accepted, as long as its rendered the same as the design.
+
+[[https://yiming.imfast.io/images/css-katas-a-better-way-to-sharpen-your-css-skills/preview-matches-the-design-tailwind.png]]
+
+And one of the beauties of CSS is that there are different possible solutions for the same design problem. So you can submit different solutions or learn from other's solutions.
+
+[[https://yiming.imfast.io/images/css-katas-a-better-way-to-sharpen-your-css-skills/different-solutions.png]]
+
+** A CSS learning platform
+
+When I started learning programming and algorithms, I relied heavily on the online programming platforms like [[https://leetcode.com/][Leetcode]] and its predecessors. I can get immediate feedback on my solutions so the learning loop is tight:
+
+1. read the problem description
+2. implement a solution in any programming language I'd like to use
+3. submit the code and see the results (if the output matches the expected output)
+
+I cannot find this kind of platforms for learning CSS. The best (and maybe the most popular) platform is [[https://codepen.io/][Codepen]]. But it's lacking the automatic checking mechanism which is the core of this tight feedback loop.
+
+So I decided to build one myself and provide the same (if not tighter) learning loop:
+
+1. see the design
+2. implement a solution with any CSS framework you'd like to use
+3. check if the render result matches the design and submit
+
+That's when CSSKatas was born.
+
+* What's next?
+
+I've already implemented three [[https://yiming.dev/css-katas/#demo][demos]] so you can play with them now.
+
+So what's next for CSSKatas?
+
+I'm building a MVP for CSSKatas. And in the MVP phase, I want to focus on one framework only: [[https://tailwindcss.com/][Tailwind CSS]]. The editor would be optimized for Tailwind CSS. The Katas (course materials) would be built around the topic of how to implement real world designs with Tailwind CSS. Hopefully, I can launch it before the end of 2020.
+
+After the MVP gets launched, I want to add more useful features:
+
+- More CSS frameworks support (Vanilla CSS, Bootstrap, etc.)
+- Editor improvements (code highlighting, autocompletion, etc.)
+- Comparing different solutions
+- Creating your own Katas
+- etc.
+
+If you are interested, please do [[https://yiming.dev/css-katas/#sign-up][subscribe to the newsletter]] so you can get an early access later!

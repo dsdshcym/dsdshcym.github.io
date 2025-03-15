@@ -1,0 +1,68 @@
+#+TITLE: Think of time as a series of timestamps
+
+I've been logging my daily time usage for almost 5 years. And by "daily time usage", I mean "every minute". Every day, I know where I spend every minute (sleeping, working, reading, writing, coding, etc.). As you may expected, it is not an easy task to do.
+
+* Logging daily time usage is not easy
+
+When I first started logging time, I thought of time usage as ranges: every task T has a clock, and it starts from a point t1, ends at a point t2, lasts for m minutes. It's intuitive, but it didn't work well.
+
+- When starting a task, I need to note down what I'm going to do. But it may stop me from doing the real task.
+- When adjusting a range, I need to adjust two data points at the same time: change one of t1 or t2, then recalculate m.
+- When switching from task A to task B, I need to stop task A first, then start task B.
+- When multitasking, I need to keep multiple clocks running at the same time.
+
+After several rounds of iteration, I now think of time usage as just two timestamps: every task T has a start point t1, and an end point t2.
+
+Here is how I do it now:
+
+1. Whenever I need to spend a block of time on something, I jot down a timestamp t1.
+2. Then when I finish the task, I jot down a timestamp t2.
+3. Finally I specify which task T I was working on, and set t1 as its start time, t2 as its end time.
+4. If I start another task T' immediately, t2 is the start time for T'.
+
+It's a more lightweight and flexible workflow.
+
+* Logging code time usage is not easy, either (and how Heroku solves this problem)
+
+More interestingly, if you think of time logging beyond our daily time usage, you'll find many other things that require time logging. One of them is logging time spent in different parts of our program. Heroku faced this exact problem before. In [[https://ferd.ca/clever-functional-design.html][this post]], Fred Hebert shared how they solved it.
+
+Their first straightforward solution was like how I started logging my daily time:
+
+1. note t1
+2. doing the real work T
+3. note t2
+4. calculate the duration m
+
+But this solution would couple the code for time logging and the code for doing the real work together.
+
+Then a better solution was like what I am doing now:
+
+1. note t1 with a label l1: T started
+2. note t2 with a label l2: T stopped
+3. the analyzing library uses t1, l1 and t2, l2 to calculate how long task T took
+4. the analyzing library may use t1 or t2 for other task calculations like T'
+
+With this solution, Heroku now fully decouples how the real work gets done (business logic) from how the time logs are analyzed (logging logic).
+
+* The power of data and deferring decisions
+
+Optimizing time logging reminds me of [[https://yiming.dev/blog/2019/08/16/use-return-value-to-defer-decisions/][Use Return Value to Defer Decisions]].
+
+In the case of Heroku, with the help of additional label l1 and l2, we can defer the decision of how to analyze time logs to later.
+
+Again, this is the beauty of functional programming: constraints breed creativity. To quote Fred:
+
+#+begin_quote
+
+it was the structural constraint of already being in an immutable context that prompted the cleaner design.
+
+#+end_quote
+* Further reading
+
+- [[https://www.geepawhill.org/2018/08/29/tdd-pro-tip-time-needs-technique/][TDD Pro-Tip: Time Needs Technique - GeePawHill.org -- Helping Geeks Produce]]
+
+  This was the first time I learned to think of time as a series of timestamps.
+
+- [[https://www.youtube.com/watch?v=E8I19uA-wGY][Functional programming design patterns by Scott Wlaschin - YouTube]]
+
+  An interesting question after watching this talk: Can we model time with Monoid?

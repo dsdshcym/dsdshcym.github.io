@@ -1,0 +1,254 @@
+#+TITLE: Learnings from playing with FizzBuzz for 3 days
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-22]
+#+URI:         blog/2017/12/22/learnings-from-playing-with-fizz-buzz-for-3-days/index.html
+#+TAGS:        Elixir, Ruby
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+As I wrote in a previous post[fn:1], I've been playing with Coding Katas to practice my TDD/Object-Oriented Design/Functional Programming skills.
+
+And I write several solutions for a very simple Kata (FizzBuzz) in 3 days, here is what I got:
+
+* Elixir: Data transformation pipeline
+
+This is my Elixir solution for FizzBuzz:
+
+#+begin_src ruby
+defmodule FizzBuzz do
+  def convert(number) do
+    ""
+    |> maybe_concat(rem(number, 3) == 0, "Fizz")
+    |> maybe_concat(rem(number, 5) == 0, "Buzz")
+    |> fallback_if_empty(to_string(number))
+  end
+
+  defp maybe_concat(result, true, sound), do: result <> sound
+  defp maybe_concat(result, false, _sound), do: result
+
+  defp fallback_if_empty("", sound), do: sound
+  defp fallback_if_empty(result, _sound), do: result
+end
+#+end_src
+
+Actually, this is my last attempt for FizzBuzz problem. I put it at the first because it's so simple and it literally blew my mind[fn:2].
+
+And I think this solution also is a great example for explaining Elixir's core: *Data Transformation* .
+
+As Dave Thomas said in Programming Elixir:
+
+1. The goal of Elixir is data-transforming.
+
+   FizzBuzz.convert/1 is just converting a string ("") into another string ("Fizz" or ""), and another string , and so on.
+
+2. |> operator makes data transformations explicit.
+
+   All these transformations were put together using the "pipe operator" (|>), which is the perfect match for data-transformation: *data pipes in, new data pipes out* .
+
+3. *Elixir code tries to be declarative, not imperative*
+
+   Finally, if we look at the private methods, they are all declarative:
+
+   1. First, do pattern matching on the inputs
+   2. Then, based on the inputs value, generate some new data as the output
+
+   In Ruby, I always find myself to push the logic out of the code and into the data, something like:
+
+#+begin_src ruby
+SOUNDS = {
+  3: 'Fizz',
+  5: 'Buzz'
+}
+
+def sound(factor)
+  SOUNDS[factor]
+end
+#+end_src
+
+   But with pattern matching, I can do this directly in the function declaration level and don't need to do this by myself anymore. And I find that I use Map in Elixir way less than I would use Hash in Ruby.
+
+   (And I'm also curious if it's still necessary to do that in Elixir. Please leave your thoughts in the comment.)
+
+   If we think a little bit further, in Ruby, we often initialize different classes based on the input and provides different behavior by leveraging the message dispatching (I call this Class Level Dispatch).
+
+   But with pattern matching, we can send messages to different methods based on the input value (I call this Method Level Dispatch).
+
+   Apparently, Method Level Dispatch has smaller granularity than Class Level Dispatch, so that we can write shorter code with it because we can push more message dispatching work to the programming language itself[fn:3].
+
+* Ruby: Data Transformation by Hand
+
+Of course, we can implement the same algorithm in Ruby:
+
+#+begin_src ruby
+class FizzBuzz
+  def convert(number)
+    result = ""
+    result = maybe_concate(result, number % 3 == 0, "Fizz")
+    result = maybe_concate(result, number % 5 == 0, "Buzz")
+    result = fallback_if_empty(result, number.to_s)
+    result
+  end
+
+  def maybe_concate(result, concate?, sound)
+    if concate?
+      result <> sound
+    else
+      result
+    end
+  end
+
+  def fallback_if_empty(result, fallback)
+    if result.empty?
+      fallback
+    else
+      result
+    end
+  end
+end
+#+end_src
+
+But it's not as clear as the Elixir solution:
+
+1. Ruby doesn't have Pattern Matching yet[fn:4]. So we need to handle different execution paths by conditional statements.
+2. Ruby doesn't have the pipe operator. So we need a temporary variable to manually manage this state.
+
+* Ruby: Chain of Responsibility
+
+I also wrote a more complex solution in Ruby. (Because I want to try the Chain of Responsibility pattern and FizzBuzz seems to be a good fit.)
+
+- SoundsChain
+
+#+begin_src ruby
+class SoundsChain
+  def initialize(sound, fallback)
+    @sound = sound
+    @fallback = fallback
+  end
+
+  def for(number)
+    if sound.convertable?
+      sound.for(number)
+    else
+      fallback.for(number)
+    end
+  end
+
+  private
+
+  attr_reader :sound
+end
+#+end_src
+- ConcatenatableSound
+
+#+begin_src ruby
+class ConcatenatableSound
+  def initialize(sounds)
+    @sounds = sounds
+  end
+
+  def convertable?(number)
+    sounds.any? { |sound| sound.convertable?(number) }
+  end
+
+  def for(number)
+    sounds(number).join
+  end
+
+  private
+
+  attr_reader :sounds
+
+  def sounds(number)
+    sounds.map { |sound| sound.for(number) }
+  end
+end
+#+end_src
+- FactorSound
+
+#+begin_src ruby
+class FactorSound
+  def initialize(factor, sound)
+    @factor = factor
+    @sound = sound
+  end
+
+  def convertable?(number)
+    number % sound == 0
+  end
+
+  def for(number)
+    if convertable?(number)
+      sound
+    else
+      ''
+    end
+  end
+
+  private
+
+  attr_reader :sound
+end
+#+end_src
+- StringSound
+
+#+begin_src ruby
+class StringSound
+  def convertable?(_number)
+    true
+  end
+
+  def for(number)
+    number.to_s
+  end
+end
+#+end_src
+
+We have 2 chains here:
+
+SoundsChain
+    It will return the sound if this number is convertable by current sound, otherwise it will ask fallback sound to convert the number.
+ConcatenatableSound
+    This class is not strictly a Chain of Responsibility, since the #for method is concatenating all the converted results in this chain.
+
+It is a complex solution. But we can see a absolutely clean interface here:
+
+convertable?
+    Test if this number can be convert by this object.
+for
+    Return the converted sound for this number if possible.
+
+* Summary
+
+FizzBuzz is a pretty simple problem that can be solved in many different ways, like:
+
+1. Pass in Proc as #for and #convertable?
+2. Use instance variable as the internal state to convert sounds
+3. etc.
+
+I'm not saying that Elixir's solution is better than Ruby's solution. It's just that FizzBuzz is a perfect data transforming question that's a perfect fit for Elixir.
+
+I'm also not saying that Chain of Responsibility is a better solution for FizzBuzz. We can see that it's more complex and needs more lines of code to implement.
+
+It's pretty interesting to do coding katas in these ways to explore different solutions. Give it a try and maybe you can find more useful things from a simple problem.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2017/12/18/as-the-tests-get-more-specific-the-code-gets-more-generic/][As the tests get more specific, the code gets more generic - dsdshome]]
+
+[fn:2]
+
+[[https://twitter.com/dsdshcym/status/941681020042018818][Yiming Chen on Twitter: \"How Pattern Matching literally blows
+my mind #elixir #elixirlang https://t.co/EdPOZIzORr\"]]
+
+[fn:3]
+
+I also mentioned this idea in [[http://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/#org3a82c79][我看程序语言的历史、现在与将来 -
+dsdshome]]
+
+[fn:4]
+
+Pattern Matching might be added in Ruby 3 -- from [[https://www.youtube.com/watch?v=1-A9eRzCBL0&list=PLE7tQUdRKcyayGHjjxZOmVEGsxX-rczZt][RubyConf
+2017: Opening Keynote - Good Change, Bad Change by Yukihiro
+Matsumoto - YouTube]]

@@ -1,0 +1,73 @@
+#+TITLE: 记一个由 Surge 更新发现的 Bug
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-07-24]
+#+URI:         blog/2018/07/24/a-bug-discovered-via-upgrading-Surge/index.html
+#+TAGS:        TDD, False Negative
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* 缘起
+
+我最近在做一个 Phoenix 项目，这个项目在我加入之前就有了不错的测试覆盖率。但是在我开始不久后，其中一个测试用例在我的机器上变得会一直超时（之前则没问题），在 CI 环境和其他开发的机器上都没问题，而我也没有改过相关代码或者测试。
+
+这就让我非常疑惑（但是兴奋？）了，立马开始了调查。
+
+* 调查
+
+经过一番调查后发现，被测试的代码会使用 curl 从一个外链尝试下载，成功后则解析返回的结果并更新数据库。
+
+而我和同事网络环境上唯一的不同是我使用了 Surge[fn:1] 作为代理， *而把 Surge 关闭之后再次尝试，这个测试就不再超时了。*
+
+最终发现引发这个问题的原因是：
+
+1. 为了不在测试环境中使用 curl 对外部环境发起请求，之前在写这个测试时将 curl 用一个私有函数 downloader/2 包装了一下，并当作公共函数的依赖注入进去，在测试时则注入一个构造好的 failure_downloader/2 Stub 失败时的行为。
+2. 而同事在写 Stub 部分时忘记了将 failure_downloader/2 注入进去了，即在测试时依然会正常发起 curl 请求。
+3. 同事又按照测试环境下 curl 对 example.org 的请求返回，写了 assertion 。因此这个测试在 CI 和其他同事的机器上都能正常通过。
+4. 而 Surge 在某一次更新后，对 example.org 的处理与正常情况下并不一致，导致了这个测试在我的机器上正常了一段时间后失败。
+
+种种巧合导致了这个问题，我觉得也算一件趣事。
+
+P.S. 最后，我又好奇问同事这个 Module 在线上有没有出问题，结果他说线上环境还没有用到这个 Module。（YAGNI[fn:2] 的又一体现）
+
+* False Negative
+
+其实这个问题在使用 Mock/Stub/Fake 的测试中非常常见，又被称作 *False Negative Error* [fn:3]。即：
+
+#+begin_quote
+
+测试结果表示一个模块没有正常工作，而实际上这个模块的行为是正常的。
+
+#+end_quote
+
+这个问题说明我们的测试代码写得不够完善。
+
+而解决这个问题最好的办法就是： *Watch the test fail* [fn:4]。
+
+每次写测试时，都确保这个测试能按照我们预想的方式失败：
+
+- TDD 的时候，每次写完测试/代码都运行一遍，并能得到预想的失败信息。
+- 即使写出了一个通过了的测试（为了增加覆盖率），也要对被测试的代码做出修改，保证这个测试覆盖的部分被注释后，这个测试能按我们预想的方式失败，并给出合适的失败信息。
+
+关于 False Negative，我最初是在 [[http://blog.testdouble.com/posts/2015-11-16-how-to-stop-hating-your-tests][How to stop hating your tests.]][fn:5] 这个 Talk 中学到的，其中还有更多写 Test 的技巧，值得一看。
+
+* Footnotes
+[fn:1]
+
+[[../../Org/notes/notes.html#ID-90DBD636-224B-44BA-B418-13BE0AB400E8][Surge Mac - Advanced Web Debugging Proxy for Mac & iOS]]
+
+[fn:2]
+
+[[https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it][You aren't gonna need it - Wikipedia]]
+
+[fn:3]
+
+[[https://en.wikipedia.org/wiki/False_positives_and_false_negatives][False positives and false negatives - Wikipedia]]
+
+[fn:4]
+
+[[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/#org270c3ba][We need to constantly check the test results. - Growing
+Object-Oriented Software Guided by Tests]]
+
+[fn:5]
+
+[[http://blog.testdouble.com/posts/2015-11-16-how-to-stop-hating-your-tests][Test Double - Our Thinking - How to stop hating your tests.]]

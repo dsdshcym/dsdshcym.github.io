@@ -1,0 +1,443 @@
+#+TITLE: How to do Outside-In TDD with Phoenix
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-08-04]
+#+URI:         blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix/index.html
+#+TAGS:        Elixir, TDD, Phoenix
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+As an Outside-In style TDD (Mockist-style TDD, London-school TDD, whatever you call it) advocate, I started learning Phoenix with this question in mind: *How to do Outside-In TDD in a Phoenix App?*
+
+I thought there would be enough resources about this in the Phoenix world. Because Elixir/Phoenix is pure functional compare to Ruby/Rails, the basic building blocks (Plugs) are just functions, which would be super easy to unit test. Though there were some blog posts demonstrating how to mock Context in Controller test using Mox, there were almost no resources teaching how to unit test a Phoenix controller.
+
+This post's main purpose is to *fill the gap on unit testing a controller action* and explain the full TDD cycle, you can find tons of resources on the other details.
+
+After several attempts in the past 6 months or so, I think I've gained enough experiences to answer this question now, and I'm super excited to share this workflow with you.
+
+* 5 Steps to Outside-In a new feature
+
+Here are the basic summary of this workflow.
+
+I try to follow the testing philosophy from the book Growing Object-Oriented Software Guided by Tests.
+
+1. Write a feature test
+2. Write unit tests for your new controller action
+3. Write unit tests for your context functions
+4. Write unit tests for your view rendering
+5. Add the routing rule to connect everything together and pass the feature test
+
+I would not talk about why I'd like to follow this complicated workflow in this blog post. I'll just focus on the "How" part and hope you would find it useful anyway.
+
+* Write a feature test
+
+There are several different options to write a feature test in the Phoenix world, depends on the app you are writing:
+
+||Option |Scenario | |
+||Browser Test |Front-end (JS) heavy application | |
+||phoenix_integration |Server-side rendered application | |
+||Phoenix.ConnTest |JSON API | |
+
+We use feature tests to demonstrate to our client that a feature is completed as they requested, instead of driving our design decisions.
+
+** Browser Test
+
+Browser test would fire up a browser for every test cases you write, and follow the test script you write to navigate through it, then listen to certain DOM events.
+
+It's the most end-to-end test within all the test methods mentioned in this post (which means it's the slowest as well). It can even test your app's front-end behaviour.
+
+There are two popular browser test libraries for Phoenix web development:
+
+1. [[https://github.com/HashNuke/hound][HashNuke/hound]]
+2. [[https://github.com/keathley/wallaby][keathley/wallaby]]
+
+I personally prefer wallaby because it provides a nice API that allows developers to easily chain browser actions and assertions using Pipe.
+
+For a great example on how to write a browser test like a user story, definitely check out [[https://github.com/hashrocket/tilex/blob/9b3a2ba/test/features/developer_edits_post_test.exs][tilex/developer_edits_post_test.exs]]. It's the best feature test I've ever seen and I wish every web developer can write feature tests like this.
+
+** phoenix_integration
+
+[[../../Org/notes/elixir.html#ID-84C4A999-9B39-4CB0-8F60-5E02A976EB7B][phoenix_integration]] is a lightweight server side integration test (feature test) library for Phoenix.
+
+IMHO, it's suitable when your app doesn't have any front-end logic and you don't want to waste your develop/test time on the browser testing.
+
+Though I think this library does have several drawbacks, like:
+
+1. It couples itself to Phoenix's view helpers too much.
+2. It doesn't provide enough APIs to interact with the HTML responses.
+
+I think the best option to fill this gap is to add a browser driver which doesn't have a JS runtime to the browser test libraries I mentioned before. (like what Capybara's default driver RackTest[fn:1] does)
+
+Or we can just choose the Browser Test way for server side rendering applications. Since Phoenix supports concurrent database accesses in the testing environment by default, it won't slow down your test suit much.
+
+** Phoenix.ConnTest
+
+For a JSON API endpoint, the default Phoenix.ConnTest is integrated enough to cover the full request cycle.
+
+It still would be better to separate these ConnTests from the unit ConnTests, like setting up a /test/features directory to save these feature test files.
+
+Here is an example for a simple POST API:
+
+#+begin_src ruby
+describe "POST /teams" do
+  test "authorized user can creates teams" do
+    user = insert(:user)
+
+    conn =
+      build_conn
+      |> login_with(user)
+      |> post("/teams", name: "New Team")
+
+    assert %{
+             "data" => %{
+               "id" => _id,
+               "name" => "New Team"
+             }
+           } = json_response(conn, 201)
+  end
+end
+#+end_src
+* Unit test a controller action
+
+Everything in Elixir/Phoenix is a function, including a Controller action. Controller actions are just some functions that receive a Plug.Conn struct with the parameters parsed by Phoenix framework, and return a Plug.Conn.
+
+** Controller Responsibility
+
+To understand how to unit test a controller action, we need to figure out what is the responsibility of a controller.
+
+IMHO, I think a controller is the glue between the request, our business logic (Context), and our presenting logic (View).
+
+Put this in another way, our controller needs to do following stuffs correctly:
+
+1. Parse the parameters from the request
+2. Pass the correct parameters to a Context module (via function calls), and
+
+   - Ask Context to give back the data our user needs to see
+   - Ask Context to update some user states
+
+3. Repeat 2 until it has all the data it needs to build the response for the client
+4. Set the HTTP status code
+5. Pass all the data the client needs, and ask the View module to render it (via Phoenix.Controller.render/3 and assign)
+6. If something bad happens, this function can choose to return some data structures that's not a Plug.Conn struct, so that the Fallback Controller can kick in and take care the rest.[fn:2]
+
+Now we can clearly see what we need to test our controller as a unit:
+
+1. The correct Context function got called
+
+   1. stub it when Controller is just asking for data
+   2. expect it when Controller wants to change some states
+
+2. The correct HTTP status code were set (given certain Context results)
+3. The correct View got rendered with correct assigns (given certain Context results)
+4. The correct data structure got returned (given certain Context results)
+
+#+begin_quote
+
+   We need to cover these error cases in our controller unit tests, because we don't want to duplicate our tests for these common error cases that are handled by our Fallback Controller.
+
+   In this way, we only need to cover these cases once in our Fallback Controller tests, and our normal Controller can return correct data structures. And leave everything else to our framework.
+
+#+end_quote
+
+** Inject Context dependencies with Mox
+
+All these 4 cases depend on one setup: mocking our Context module.
+
+We choose Mox[fn:3] to do that because it can ensure us won't break the syntax contracts between our Controller and our Context.
+
+Here is a simple example how I do it:
+
+- teams.ex
+
+#+begin_src ruby
+defmodule MyApp.Teams do
+  use MyApp, :context
+
+  defmodule Behaviour do
+    @callback get_team(id :: integer()) :: Team.t()
+
+    @callback create_team(params :: map()) :: %{:ok, Team.t()} | %{:error, Ecto.Changeset.t()}
+  end
+
+  @behaviour __MODULE__.Behaviour
+  @behaviour Bodyguard.Policy
+end
+#+end_src
+- test_helper.exs
+
+#+begin_src awk
+Mox.defmock(MyApp.TeamsMock, for: [MyApp.Teams.Behaviour, Bodyguard.Policy])
+#+end_src
+- team_controller.ex
+
+#+begin_src ruby
+defmodule MyAppWeb.TeamController do
+  use MyAppWeb, :controller
+
+  def create(conn, params, teams_mod \\ MyApp.Teams) do
+    user = conn.assigns.current_user
+
+    with :ok <- Bodyguard.permit(teams_mod, :create_team, user, %{}),
+         {:ok, team} <- teams_mod.create_team(params) do
+      render(conn, "create.json", %{team: team})
+    else
+      {:error, %Ecto.Changeset{} = changeset} ->
+        ...
+      {:error, :unauthorized} ->
+        {:error, :unauthorized}
+    end
+  end
+end
+#+end_src
+- team_controller_test.exs
+
+#+begin_src erlang
+defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+
+  alias MyAppWeb.TeamController
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    test "calls teams_mod.create_team/1" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |> assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -> true end)
+      expect(TeamsMock, :create_team, fn %{"name" => "Test Team"} -> {:ok, %{}} end)
+
+      # 2. Act
+      TeamController.create(conn, %{"name" => "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      verify!(TeamsMock)
+    end
+
+    test "sets status to 201 after teams_mod.create_team/1 returns :ok" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |> assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -> true end)
+      stub(TeamsMock, :create_team, fn %{"name" => "Test Team"} -> {:ok, %{}} end)
+
+      # 2. Act
+      conn = TeamController.create(conn, %{"name" => "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert conn.status == 201
+    end
+
+    test "renders view with correct template and assigns" do
+      # I'll explain this in the next section
+    end
+
+    test "returns {:error, :unauthorized} when user is not authorized" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |> assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -> false end)
+
+      # 2. Act
+      result = TeamController.create(conn, %{"name" => "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert result == {:error, :unauthorized}
+    end
+  end
+end
+#+end_src
+
+** Set View to a ViewMock
+
+I left out the trickiest test case in my last example: test render calls.
+
+I tried 3 different ways to test it and I now believe the best way is to use put_view/2 to pass a mocked view and expect on that:
+
+1. Put a ViewMock
+
+   - view_behaviour.ex
+
+#+begin_src ruby
+defmodule MyAppWeb.ViewBehaviour do
+  @callback render(template :: string, assign :: map) :: any
+end
+#+end_src
+
+     Because Phoenix doesn't define a behaviour for our View module, we need to define it ourselves.
+
+     (I really wish Phoenix can define this behaviour for us.)
+
+   - test_helper.exs
+
+#+begin_src python
+defmock(MyAppWeb.ViewMock, for: MyAppWeb.ViewBehaviour)
+#+end_src
+   - team_controller_test.exs
+
+#+begin_src erlang
+defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+  import Phoenix.Controller, only: [put_view: 2, put_format: 2]
+
+  alias MyAppWeb.TeamController
+  alias MyAppWeb.ViewMock
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    ...
+
+    test "renders view with correct template and assigns" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |> assign(:current_user, user) |> put_view(ViewMock)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -> true end)
+      stub(TeamsMock, :create_team, fn %{"name" => "Test Team"} -> {:ok, %{name: "Test Team"}} end)
+      expect(ViewMock, :render, fn "create.json", %{team: %{name: "Test Team"}} end)
+
+      # 2. Act
+      conn
+      |> put_format("json")
+      |> TeamController.create(%{"name" => "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      verify!(ViewMock)
+    end
+
+    ...
+  end
+end
+#+end_src
+
+2. Assert on conn.private
+
+   - team_controller_test.exs
+
+#+begin_src erlang
+defmodule MyAppWeb.TeamControllerTest do
+  import Mox
+  import Phoenix.Controller, only: [put_view: 2, put_format: 2]
+
+  alias MyAppWeb.TeamController
+  alias MyAppWeb.ViewMock
+  alias MyApp.TeamsMock
+
+  describe "create/3" do
+    ...
+
+    test "renders view with correct template and assigns" do
+      # 1. Arrange
+      user = build(:user)
+      conn = build_conn() |> assign(:current_user, user)
+      stub(TeamsMock, :authorize, fn :create_team, ^user, %{} -> true end)
+      stub(TeamsMock, :create_team, fn %{"name" => "Test Team"} -> {:ok, %{name: "Test Team"}} end)
+
+      # 2. Act
+      conn
+      |> put_format("json")
+      |> TeamController.create(%{"name" => "Test Team"}, TeamsMock)
+
+      # 3. Assert
+      assert %{
+               phoenix_view: MyAppWeb.TeamView,
+               phoenix_template: "create.json"
+             } = conn.private
+    end
+
+    ...
+  end
+end
+#+end_src
+   - team_controller.ex
+
+#+begin_src ruby
+defmodule MyAppWeb.TeamController do
+  use MyAppWeb, :controller
+
+  def create(conn, params, teams_mod \\ MyApp.Teams) do
+    # ...
+    render(MyAppWeb.TeamView, conn, "create.json", %{team: team})
+    # ...
+  end
+end
+#+end_src
+   - Drawbacks
+
+     1. Because we didn't call put_view on the conn we passed into this function, we need to call Phoenix.Controller.render/3 with a View module explicitly.
+     2. We rely on the private fields (phoenix_view and phoenix_template) under Plug.Conn struct, which might be broken during a Phoenix update in the future.
+     3. *We called render on a real View module* . If this View rendering logic depends on some complex assigns, we need to manage these complex setups in our controller unit tests.
+
+3. Inject view as a dependency
+
+   - Similar to our contexts, we inject our view module to our controller functions.
+   - Drawbacks
+
+     1. It seems to be an overkill, compared to put_view/2
+     2. It's a burden for a more classic Phoenix developer
+     3. We still need to pass the view_mod to render/3 function.
+
+* Unit test a context function
+
+After finishing the Controller part, we can apply the same methodology to our Context. You can find tons of code snippets about how to unit test it online.
+
+The only problem I think is about to mock our Repo module or not.
+
+Since this post is getting too long, I decide to discuss this question in a future blog post.
+
+* Unit test a view rendering function
+
+Unit testing the view becomes so much easier with our controller unit tests. Because we don't need to test our view behaviour through ConnTest.
+
+The View test would be super easy to setup and verify:
+
+#+begin_src ruby
+defmodule MyAppWeb.TeamViewTest do
+  describe "render/2 show.json" do
+    test "extracts id and name" do
+      team = %Team{name: "Test Team", id: 23548}
+
+      result = MyAppWeb.TeamView.render("show.json", %{team: team})
+
+      assert result == %{
+        data: %{
+          id: 23548,
+          name: "Test Team"
+        }
+      }
+    end
+  end
+end
+#+end_src
+* Connect the dots (add the routing rule)
+
+Finally, we just need to add the routing rule to our router.ex file to route the POST /teams endpoint to our TeamController.create/2 function, then we can pass the feature test and deliver this feature.
+
+#+begin_src ruby
+resources "/teams", TeamController, only: [:create]
+#+end_src
+
+I also thought about whether or not we need to test our router specifications. I guess I'll write another post discuss about it. (Spoiler alert: don't unit test your router)
+
+* Eliminate dependencies
+
+As it's said in Test-Driven Development By Example by Kent Beck:
+
+#+begin_quote
+
+Dependency is the key problem in software development at all scales.
+
+#+end_quote
+
+All I did above is to eliminate as many dependencies as possible from our Controller, Context, and View. I believe this is also the main purpose of the original MVC architecture, and organizing our code in this way would lead us to a more maintainable codebase.
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/teamcapybara/capybara#racktest][RackTest]]
+
+[fn:2]
+
+[[https://hexdocs.pm/phoenix/Phoenix.Controller.html#action_fallback/1][action_fallback/1 - Phoenix.Controller – Phoenix v1.3.3]]
+
+[fn:3]
+
+[[https://github.com/plataformatec/mox][plataformatec/mox: Mocks and explicit contracts in Elixir]]

@@ -1,0 +1,270 @@
+#+TITLE: Thoughts on "Implementing a Strong Code-Review Culture"
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-26]
+#+URI:         blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture/index.html
+#+TAGS:        Code Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Why Code-Review is so important?
+#+begin_quote
+
+*Programming actually is all about empathy* [fn:1].
+
+#+end_quote
+
+Because our code is for people to read, and we need to stand in our readers' feet to think about our code. Code Review is a great opportunity for us to get a reader to read our code as soon as possible.
+
+And as I explained in this post [[http://dsdshcym.github.io/blog/2017/10/18/build-a-faster-feed-back-loop/][GOOS: Build a Faster Feedback Loop -
+dsdshome]], code review also serves an important role in the life cycle of our project.
+
+* My thoughts on this talk
+
+I think this talk has explained almost everything we need to know about code review pretty well, from Why we need to do code review to What is a strong code review culture, and finally How to do code review well (from both perspectives of author and reviewer).
+
+So, please watch this video if you want to know more about code review.
+
+P.S.
+
+When I watched the part about Chief advantages in code reviews, Derek used a research from Microsoft, which reminds me of a book [[http://shop.oreilly.com/product/9780596808303.do][Making
+Software]]. In this book, Andy Oram and Greg Wilson also took several researches to explain what really works in the software world. It's definitely worth checked out as well.
+
+* Notes from this talk
+
+- Chief advantages in code reviews
+
+  1. Knowledge Transfer
+  2. Increased Team Awareness
+  3. Finding Alternative Solutions
+
+- Code Review Definition
+
+#+begin_quote
+
+  The discipline of explaining your code to your peers
+
+#+end_quote
+
+  - Code Review is the discipline of discussing your code to your peers
+
+- Rules of Engagement
+
+  1. As an author
+
+     - Provide sufficient context
+
+#+begin_quote
+
+       If content is king, then context is God
+
+#+end_quote
+
+       - "Why" is all that matters
+
+         1. Why does the problem happen?
+         2. Quote from docs
+         3. How this commit solves the problem?
+
+  2. As an reviewer
+
+     - shout out for good parts
+     - Ask, don't tell
+
+       - Don't use Command
+
+#+begin_src awk
+
+Extract a service to reduce some of this duplication
+#+end_src
+
+         - Avoid *Just* do something
+
+       - Use Question
+
+#+begin_src awk
+
+What do you think about extracting a service to reduce some of this
+duplication?
+#+end_src
+
+         - Be *Positive*
+
+           - What do you think about...?
+           - Did you consider...?
+           - *Can you clarify...?*
+
+       - *Force technical discussions*
+       - Socratic Method
+
+     - Question All the Things
+
+- In Practice
+
+  - Insist on high quality reviews, but agree to disagree
+  - Review what's important to you
+
+- How to handle disagreements?
+
+  - Conflicts are good
+
+    - Your team
+    - Leads to learning
+
+  - Types
+
+    1. We don't agree on the issue
+
+       - First, have the same bar of quality
+       - Then, Discuss trade-offs
+
+    2. We don't agree on the process
+
+       - Committing directly to master?
+
+         1. comment on the commit and ask for a PR next time
+         2. pull out the commit and create a PR for them
+
+- What should we be reviewing?
+
+  - Everyone reviews their expertise
+  - Example
+
+    1. Single Responsibility Principle
+    2. Naming
+    3. Complexity
+
+       - Squint test
+
+    4. Test Coverage
+
+  - *We are NOT doing QA*
+
+    - Leave that to our tests
+
+- What About Style?
+
+  - Style is important
+  - But people looks down reviewers focus on style
+  - Style guide
+
+    1. Write it down
+    2. Outsource it
+
+       - rubocop
+       - linters
+       - Hound CI
+
+- Benefits of a Strong Code Review Culture
+
+  - A culture that encourages discussion leads us to
+
+    1. Better Code
+    2. Better Developers
+    3. Team Ownership
+    4. Healthy Debate
+
+       - Everybody will own the code now
+       - Everybody will know what's going on now
+
+  - which will make the company a *Better Work Place*
+
+- Questions
+
+  - How to get more reviews from senior devs?
+
+    - Ask them directly.
+    - Keep the conversation going on.
+
+  - How to balance between change size and refactor needs?
+
+    - Keep commits small
+    - Let reviewers walk through the commits log
+
+* Slides for a Sharing on this talk
+
+In this slides, I used YouTube's start and end parameter to cut some parts of a video out to show it to my audience so that they can be guided better and this ~40 mins video can be shorten into ~15 mins.
+
+** Code Review
+*** Why do we do code reviews?
+
+- Quality Assurance? (Catch Bugs?)
+
+  - *NO* , leave that to our test suites
+
+- *It's to improve technical communication in our team*
+
+** Strong Code Review Culture
+*** What is a Strong Code Review Culture?
+
+- The entire team embraces the code review process
+- *Encourages code discussion*
+
+** What to review?
+*** What should we be reviewing?
+
+- Everyone reviews their expertise
+- Examples
+
+  1. Single Responsibility Principle
+  2. Naming
+  3. Complexity
+  4. Test Coverage
+
+- *We are NOT doing QA*
+
+  - Leave that to our tests
+
+** Benefits of Code Review
+*** What's the benefits of a Strong Code Review Culture?
+
+- A culture that encourages discussion leads us to
+
+  1. Better Code
+  2. Better Developers
+  3. Team Ownership
+  4. Healthy Debate
+
+- which will make the company a *Better Work Place*
+
+** Some bad practices I saw
+*** Not all code are reviewed
+
+All changes need to be reviewed in a Merge Request before get merged
+
+*** Test suites are not good enough
+
+It's hard to tell if the changes are correct, which makes code review harder and more time-consuming
+
+*** Most people don't know how to review code
+
+It's another topic but most importantly, it needs practice
+
+** What I want from a Strong Code Review Culture
+*** I want to review others' code
+
+- I can learn how others solve a problem
+- I can discuss my thoughts with others
+- I can know more about this code base
+
+  - via the contexts in a PR
+
+- I can improve my code-review skills
+
+*** I want my code to be reviewed
+
+- I can name things better
+
+  - with the help from other developers
+
+- I can understand my code better
+
+  - by explaining it to others
+
+- I can learn better solutions
+
+  - if there is any
+
+* Footnotes
+[fn:1]
+
+[[https://devchat.tv/ruby-rogues/023-rr-book-club-smalltalk-best-practice-patterns-with-kent-beck][023 RR Book Club: Smalltalk Best Practice Patterns with Kent Beck - Devchat.tv]]

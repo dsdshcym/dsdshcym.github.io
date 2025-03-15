@@ -1,0 +1,324 @@
+#+TITLE: Clippings of 2019 Jul
+* Table of Contents
+
+- [[#org8e62a28][Change Pro-Tips   ]]
+- [[#org549144e][A different kind of new manager checklist: The 4 essential questions to ask yourself as a leader - Know Your Team - Blog   ]]
+- [[#org053deab][Jeff Weinstein on Twitter: "A year in, here are the top 10 things I appreciate about Stripe and I’d suggest mimicking."   ]]
+- [[#org4894f70][Tyler Treat on Twitter: "Let's talk about code reviews (again). I usually encounter two camps when it comes to code reviews: those who think they are necessary and good and those who think they are an unneeded process that slows people down (or a less efficient alternative to pair programming). 1/"   ]]
+- [[#orga4c863c][Why extends is evil - JavaWorld   ]]
+- [[#org138adf1][Domain-Oriented Observability   ]]
+- [[#orgfd9bedf][GOTO 2019 • Deliver Results, Not Just Releases: Control & Observability in CD • Dave Karow - YouTube   ]]
+- [[#org78d2980][Aim Small, Miss Small: Writing Correct Programs by Stuart Halloway – Deconstruct   ]]
+- [[#org76f4700][How to Run a Post-Mortem (With Humans, Not Robots), Velocity 2013   ]]
+- [[#org7b886d6]["Agile" is short feedback loops for everything getting done in your org.   ]]
+- [[#orgccad11b][One Technique to Being Awesome You Aren’t Using Enough: Questions - kate{mats}   ]]
+- [[#orgf0229a7][Pivot or Fail? – AVC   ]]
+
+* Change Pro-Tips   Change Management
+
+1. [[http://geepawhill.org/pro-tip-line-up-the-betters/][Change Pro-Tip: Lining Up The Betters - GeePawHill.org -- Helping
+Geeks Produce]]
+
+#+begin_quote
+
+   - The four ubiquitous “betters” are
+
+     1. better according to my idea.
+     2. better according to some company’s idea.
+     3. better according to a team’s idea.
+     4. better according to an individual’s idea.
+
+   - As a general rule, all four of these betters are different in the beginning.
+   - To align four "betters"
+
+     1. For me, *it starts at the bottom of the pile: with an individual human.*
+     2. Once we get past the individual, to a relationship or a team or a company, it’s even easier: those lists are usually gigantic, with many possible better “selves” implied.
+     3. If I can find the overlap, it’s all over but the crying.
+
+        - when you give people a new experience that tickles their “better”, you have changed the world very successfully.
+
+#+end_quote
+2. [[http://geepawhill.org/pro-tip-what-we-cant-change/][Change Pro-Tip: What We Can’t Change - GeePawHill.org -- Helping
+Geeks Produce]]
+
+#+begin_quote
+
+   1. We can’t (purposefully) change what we don’t sense,
+   2. We can’t (purposefully) change what we don’t talk about,
+   3. We can’t (purposefully) change what we assume can’t be changed.
+
+#+end_quote
+3. [[https://twitter.com/GeePawHill/status/1139913277046214660][GeePaw Hill on Twitter: "Change Pro-Tip: It's common, but mistaken,
+to believe that some change I want to make will be procedural,
+given, sweeping, and final.…  https://t.co/B6i9MNZhvf"]]
+
+#+begin_quote
+
+   - Procedural, Given, Sweeping, Final
+
+     Procedural
+         her plan focuses most heavily on a kind of org-as-machine view
+     Given
+         her approach involves her giving us the system she has in mind
+     Sweeping
+         The changes will touch on every aspect of the org
+     Final
+         It will be the last change, because it's perfect there, there's no need to change
+
+   - Human, Taken, Local, Iterative
+
+     - Instead of a procedural focus, I propose a human one.
+     - Instead of giving the change, let's try taking it.
+     - Instead of sweeping change, let's try local change,
+     - instead of final change, let's iterate.
+
+#+end_quote
+
+* [[https://knowyourteam.com/blog/2019/04/19/a-different-kind-of-new-manager-checklist/][A different kind of new manager checklist: The 4 essential questions to ask yourself as a leader - Know Your Team - Blog]]   Management
+#+begin_quote
+
+1. How can I create an environment for people to do their best work?
+2. How can I create as much clarity and coherence about what needs to get done and why?
+3. How can I personally model the behavior I want to be true across my team?
+4. How can I see things for what they are, instead of what I want them to be?
+
+#+end_quote
+* [[https://twitter.com/jeff_weinstein/status/1141154177944555520][Jeff Weinstein on Twitter: "A year in, here are the top 10 things I appreciate about Stripe and I’d suggest mimicking."]]   Company Job Career
+#+begin_quote
+
+- Every company is a ~disaster. The question is,
+
+  1. is their disaster actionable?
+  2. do you want to action it?
+
+#+end_quote
+* [[https://twitter.com/tyler_treat/status/1137882721211101186][Tyler Treat on Twitter: "Let's talk about code reviews (again). I usually encounter two camps when it comes to code reviews: those who think they are necessary and good and those who think they are an unneeded process that slows people down (or a less efficient alternative to pair programming). 1/"]]   CodeReview
+#+begin_quote
+
+- code reviews, when taken seriously, are important to any team for a few reasons.
+
+  1. Code quality
+  2. level up teams in a way that scales by fostering a culture of continuous improvement.
+  3. when done right, code reviews promote a culture which separates self from code.
+  4. code reviews are critical for regulatory/compliance purposes.
+
+- How to avoid rubber-stamping or people not engaging in code reviews? -> Build it into your org's promotion process!
+- One tactic I've found to be effective is periodic group code reviews, especially for large/important things.
+- *code reviews are only effective if you pursue them with purpose.*
+
+  - If you're just going through the motions, they merely become red tape for getting code merged.
+  - They aren't magic, nor is anything else.
+  - The only process that really matters is one of *continuous improvement* .
+
+#+end_quote
+* [[https://www.javaworld.com/article/2073649/why-extends-is-evil.html][Why extends is evil - JavaWorld]]   OOP
+#+begin_quote
+
+Improve your code by replacing concrete base classes with interfaces
+
+Good designers write most of their code in terms of interfaces, not concrete base classes. This article describes why designers have such odd habits, and also introduces a few interface-based programming basics.
+
+#+end_quote
+* [[https://martinfowler.com/articles/domain-oriented-observability.html][Domain-Oriented Observability]]   Testing Mock Observability
+
+This post not only explains how to add instrumentation to your application code in a domain-oriented way, but also gives great examples of how to write domain-oriented tests with mocks. More importantly, this way of structuring and testing can be applied to other areas out of instrumentation, too.
+
+#+begin_quote
+
+- Domain Probe
+
+#+begin_src javascript
+class DiscountInstrumentation {
+    constructor({logger,metrics,analytics}){
+        this.logger = logger;
+        this.metrics = metrics;
+        this.analytics = analytics;
+    }
+
+    applyingDiscountCode(discountCode){
+        this.logger.log(`attempting to apply discount code: ${discountCode}`);
+    }
+
+    discountCodeLookupFailed(discountCode,error){
+        this.logger.error('discount lookup failed',error);
+        this.metrics.increment(
+            'discount-lookup-failure',
+            {code:discountCode});
+    }
+
+    discountCodeLookupSucceeded(discountCode){
+        this.metrics.increment(
+            'discount-lookup-success',
+            {code:discountCode});
+    }
+
+    discountApplied(discount,amountDiscounted){
+        this.logger.log(`Discount applied, of amount: ${amountDiscounted}`);
+        this.analytics.track('Discount Code Applied',{
+            code:discount.code,
+            discount:discount.amount,
+            amountDiscounted:amountDiscounted
+        });
+    }
+}
+#+end_src
+
+#+end_quote
+* [[https://www.youtube.com/watch?v=s4l0iwa0XHw][GOTO 2019 • Deliver Results, Not Just Releases: Control & Observability in CD • Dave Karow - YouTube]]   Observability ContinuousDelivery DevOps
+#+begin_quote
+
+- It's not about the *pipeline* , it's about the *payload*
+
+  Control of Exposure
+      How do we decouple deploy from release, revert from rollback?
+  Observability of Exposure
+      Who have we released to so far? How is it going for them (and us)?
+
+- Takeaways
+
+  1. Decouple Deployment from Release
+
+     - Deploy is infra
+
+  2. Build-In Observability
+
+     - Know what's rolling out, who is getting what, and why
+     - Align metrics to control plane to learn faster
+     - What two pieces of data make it possible to attribute system and user behavior changes to any deployment?
+
+       1. unique_id
+       2. timestamp of observation
+
+  3. Going beyond MVP yields significant benefits
+
+     - Build for scale: solve for chaos
+     - Make it trustworthy: make it stick
+     - Design for diverse audiences: one source of truth
+
+#+end_quote
+* [[https://www.deconstructconf.com/2018/stuart-halloway-aim-small-miss-small-writing-correct-programs][Aim Small, Miss Small: Writing Correct Programs by Stuart Halloway – Deconstruct]]   SoftwareEngineering
+#+begin_quote
+
+- Aim
+
+  - Thought
+  - Plan
+  - Write it down
+  - [[https://www.youtube.com/watch?v=f84n5oFoZBc][Hammock Driven Development - Rich Hickey - YouTube]]
+
+- Small
+
+  - Simplicity
+  - Generality
+  - [[https://www.infoq.com/presentations/Simple-Made-Easy][Simple Made Easy - Rich Hickey]]
+
+- Miss
+
+  - Evidence
+  - Use persistent data structures
+
+    - Log
+    - Git
+
+- Small
+
+  - Scientific method
+  - [[https://www.youtube.com/watch?v=FihU5JxmnBg][Debugging with the Scientific Method - Stuart Halloway - YouTube]]
+
+- [[https://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152][Why Programs Fail: A Guide to Systematic Debugging: Andreas Zeller:
+9780123745156: Amazon.com: Books]]
+
+#+end_quote
+* [[https://www.slideshare.net/danmil30/how-to-run-a-postmortem-with-humans-not-robots-velocity-2013][How to Run a Post-Mortem (With Humans, Not Robots), Velocity 2013]]   Meeting Management PostMortem
+#+begin_quote
+
+1. What is a Post-Mortem?
+
+   - Something you do when your company has *badly screwed up*
+
+2. What To Do in the Post-Mortem Room
+
+   - Challenge: *Get team out of moral mindset*
+   - Fundamental Tool: *Make 'Em Laugh*
+   - Tips
+
+     1. Share Your Personal "Bad Things"
+     2. Mock Hindsight Bias To Its Face
+     3. Relish Absurdities of Your System
+     4. "Broadest Fixes" vs. "Root Causes"
+
+3. Corrective Actions / Remediations / Fixes
+
+   - Require Small Steps From Your Team
+   - "Automation" vs. "Tooling"
+
+     "Automation"
+         Humans Cause Your Problems
+     "Tooling"
+         Humans Solve Your Problems
+
+4. Read this
+
+   - [[http://web.mit.edu/2.75/resources/random/How%20Complex%20Systems%20Fail.pdf][How Complex Systems Fail - Richard Cooke]]
+   - [[https://www.amazon.com/How-Mind-Works-Steven-Pinker-ebook/dp/B0042XA2XG/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=][Amazon.com: How the Mind Works eBook: Steven Pinker: Kindle Store]]
+   - [[https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555][Thinking, Fast and Slow: Daniel Kahneman: 9780374533557: Amazon.com]]
+   - [[https://www.amazon.com/dp/1472439058/ref=cm_sw_r_cp_awdb_t1_WpAMBbMV54JKW][The Field Guide to Understanding 'Human Error': 9781472439055: Medicine & Health Science Books @ Amazon.com]]
+   - [[https://www.amazon.com/Complications-Surgeons-Notes-Imperfect-Science/dp/0312421702][Complications: A Surgeon's Notes on an Imperfect Science: 8601417061220: Medicine & Health Science Books @ Amazon.com]]
+
+#+end_quote
+* [[https://twitter.com/sanityinc/status/1151225645789147136]["Agile" is short feedback loops for everything getting done in your org.]]   Agile Feedback
+#+begin_quote
+
+This is what I always tell anyone who'll listen. "Agile" is short feedback loops for everything getting done in your org. [[https://t.co/mw8RuIDV3X][https://t.co/mw8RuIDV3X]]
+
+— Steve Purcell 🇪🇺 (@sanityinc) [[https://twitter.com/sanityinc/status/1151225645789147136?ref_src=twsrc%5Etfw][July 16, 2019]]#+end_quote
+* [[http://katemats.com/one-technique-to-being-awesome-you-arent-using-enough-questions/][One Technique to Being Awesome You Aren’t Using Enough: Questions - kate{mats}]]   Management Question
+#+begin_quote
+
+- Your real understanding at work can come from asking good questions.
+
+  - Dealing With Challenges
+  - Working with a Team
+  - Making the Most of a Mentor
+  - Teaching Your Team
+
+- Asking Good Questions
+
+  - Instead of just asking the first question that comes to mind next time, remember: phrasing, timing, and consideration can have a huge impact on the response you receive.
+  - Asking questions is a way of letting people know that their opinion is important to you
+  - [[https://www.amazon.com/Just-Ask-Leadership-Managers-Questions/dp/1259584895][You can categorize your questions for best results by breaking
+them down into four distinct types]]
+
+    #1 Questions that give you perspective
+        These questions help you clarify, and can keep brainstorming sessions and meetings moving forward
+    #2 Questions that help you evaluate
+        Evaluation questions get you concrete answers and narrow your focus to one goal.
+
+        - “Which of these features will be the fastest to produce?”
+        - “Why were your traffic numbers down last month?”
+        - “What members of your team have the most experience with UX design?”
+
+    #3 Questions that lead to action
+        This kind of question is your lead-​in to making changes, motivating teams, and setting future directions.
+
+        - “How can we ship this product in [X] weeks without bringing on new staff?”
+        - “When will the team complete this new feature?”
+        - “What strategies will you implement to ensure your team is aligned?”
+
+    #4 Questions that lead to knowledge
+        Gathering information about current projects, past projects, goals, and technical processes
+
+        - “Can you explain to me how [xyz] process works?”
+        - “What results did we achieve with the last email campaign?”
+        - “What is our customer profile?”
+
+#+end_quote
+* [[https://avc.com/2018/11/pivot-or-fail/][Pivot or Fail? – AVC]]   Startup
+#+begin_quote
+
+- It may be better to let the failing startup fail and start over again from scratch.
+- If that idea fails and you pivot into a new idea, you will take all of those investors, team members, and dilution with it, whether or not they are excited about it.
+- [[https://dsdshcym.github.io/clipping/2019/04/08/what's-right-doesn't-seem-right/][The harder path is often the best path. And the easy path is often
+the harder one.]]
+
+#+end_quote

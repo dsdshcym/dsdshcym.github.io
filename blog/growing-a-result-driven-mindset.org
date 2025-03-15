@@ -1,0 +1,147 @@
+#+TITLE: Growing a Result-Driven Mindset
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-12-31]
+#+URI:         blog/2019/12/31/growing-a-result-driven-mindset/index.html
+#+TAGS:        Yearly Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Today is the last day of 2019. It's time for me to review the last year. Put everything aside, I think the biggest change of me is the mindset transition from a process-focused one to a result-driven one.
+
+* Connecting the dots (that led to a mindset shift)
+
+Inspired by [[https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/][The Engineer/Manager Pendulum]] written by Honeycomb CEO Charity Majors, I've been doing more management work in the past 12 months. Management works like hiring, on-boarding, organizing meetings, planning, and goal setting really opened my mind. When looking back, I realize that I've been unconsciously pushing myself and my team to a more result-driven style of working. Let's see what I've done in a chronological order:
+
+1. Setting up a goal-driven on-boarding program
+
+   On-boarding is the most important thing if we want everyone to become a superstar in this team. So I think of it as the highest leverage task for a team. The goal of on-boarding in my team is to help the new-hire get familiar with our team and our way of work, so he/she can start delivering value as soon as possible.
+
+   After some trial and error, we developed an on-boarding program for our team. This program looks like this:
+
+   1. On the first day a new member joins our team, a mentor would help him define a two-month roadmap. This roadmap would define goals and tasks for the trial period. For most developer roles, one of the most important goals is to deliver a feature to production (within one or two weeks). Tasks are just checklists for guiding the new member to achieve the goals.
+   2. At the end of every week, the mentor would have a catch-up meeting with the new member. In this quick catch-up, they would review the past week, see if goals are achieved and maybe adjust/define the next goal.
+   3. By the end of first month, the new member would join a more formal feedback meeting. In this meeting, we would share feedback to the new member. And the new member can share his/her feedback to the team, or the company.
+   4. By the end of second month, our team would decide whether this new member passes the probation period or not. Note that the decision is mostly based on if he/she has achieved the goal defined previously.
+
+   With this program, we successfully on-boarded four backend developers. They now all work at their full speed in various projects. We also identified a mismatch between another web developer and our team. He/She didn't achieve the goals we defined together even after we adjusted the goals accordingly. Sadly, we had to let him/her go.
+
+   As you can see, the goal plays an important role in the whole on-boarding process. And we found that this process worked the best when the goal is clear and it's reviewed often. If the goal is not clear, on-boarding would take much longer.
+
+2. Defining expected results when writing a Tech Plan
+
+   Turning the focus back to our internal team, I noticed that two of our major projects have the same delivery issue: *a high rework rate.*
+
+   Team members rarely discuss the code change they are gonna make until they need to deploy it to production. So, rework is often required during the code review phase (if there is one). Or worse, sometimes hotfix is needed after deploy the change to production and there is a bug.
+
+   This time, I introduced [[https://yiming.dev/blog/2019/07/11/%E7%94%A8-tech-plan-%E6%9D%A5%E4%B8%BA%E5%BC%80%E5%8F%91%E6%8F%90%E9%80%9F/][Tech Plan]] (or RFC) to the team. The purpose of defining a Tech Plan is for team members to have a common understanding of and how we are going to solve a problem.
+
+   After introduced Tech Plan to more team members, we realized that the most important thing to do when defining a plan is *defining the problem* . Or put it in another way, defining the result we want to achieve. Only when the result is clearly defined, can we come up with different solutions targeting at the same result, compare them, and make tradeoffs.
+
+3. Clarifying expected results for each Sprint
+
+   Next, I found our sprint meeting was not delivering the value as it should be. Team members only go through the todo lists together, report the progress over the past sprint, and finally define the tasks for next sprint. To me, the missing piece is the expectation of results, again. People know what they should do (add sorting to a table), but they don't know why they should do it or what result it is for (users can find the info they want more easily), so they can't provide a better solution (add search functionality).
+
+   So I helped clarify the purpose of sprint meeting: sprint meetings is for reviewing the results from the previous sprint and getting aligned on the goal for the next sprint. Most importantly, the goal here is not only a feature, but a hypothesis that if we ship feature A, then we can get outcome X. Without this hypothesis, we don't know what we are targeting at.
+
+   (And it also led me to [[https://yiming.dev/clipping/2019/06/10/say-no-to-processes/][Say NO to Processes]].)
+
+4. Implementing OKR to define clear expectations
+
+   Finally, I started working at every level of our team to help define OKRs for the next year/quarter.
+
+   The idea is the same as before: to reach a common understanding of what results we want to achieve.
+
+   There are still many challenges along the way, like how to define measurable key results for team building, design, project management. Let's see how we can tackle these obstacles in 2020. :)
+
+* What's the difference?
+
+Hopefully these stories sound interesting to you. But you may ask what's the difference between action-driven (or process-focused) and result-driven, anyway?
+
+When I started working as a developer, I treated process as the heart of our work. As long as we can use a new/fashion/professional process (like TDD), we can improve our efficiency. Better processes can definitely do that, but probably not as efficient as if people are driven by results.
+
+When driven by results, we can experiment with different tools, different processes, compare them, and choose the best one for the current situation. Let's see a few examples:
+
+- Testing or not?
+
+  I used to believe if a project doesn't have good test coverage, then it needs to be fixed. But this thinking changed after I become more result-driven.
+
+  What's the purpose of testing? Or what's the desired results of well-tested code? Correct behaviour and easier refactoring! To achieve these result, we have way more tools than testing. For example, a well defined type system can also help us ensure our code is correct and make refactoring easy. (I guess that's why TypeScript is becoming more and more popular, and strict typed languages like Elm and Haskell can be so appealing.)
+
+  More importantly, every tool has its pros and cons. UI testing is a huge headache for automated tests. Manual testing is probably a more efficient and more cost-effective choice.
+
+  So now, I'm still a proponent of TDD, but also more open to other methods that can achieve the same result.
+
+- Detailed documentation or not?
+
+  I used to ask for comments and documentations for most methods/classes/modules. I used to copy private project discussion from Slack and paste it to our issue trackers. But again, these practices changed after I become more result-driven.
+
+  What's the purpose of writing everything down? Better communication, better understanding, and not forgetting anything! To achieve these results, detailed documentation may not help much. For example, when there's a language barrier (people can hardly read English), descriptive notes can hardly help. When others prefer discussing in person, sending an email can hardly lead to a receipt. When everyone has a different way organizing their notes, documenting everything may not help because it's only useful to the author.
+
+  So now, I still prefer to write things down, but only for myself, and I'll let everyone else to choose his/her preferable way to remember important things.
+
+- Single best solution or not?
+
+  I used to want to write the best code, the best article, etc. I used to think there is a best solution for every problem out there, everything is like an exam. But again, this thinking becomes ridiculous when I become more result-driven.
+
+  For most problems, its solution space is way larger than the problem itself. The best thing we can do is to try as many solutions we can and choose the best one among them. (In a geeky sense, most problems are NP-problems.)
+
+  Because the solution space is so large that we cannot try them all, we can never know if a solution is the best or not. There is always a better solution out there.
+
+  So now, I would start a continuous experiment for a problem if I want to get the best result.
+
+  1. Set a goal for the result.
+  2. Find a hypothesis that may achieve this goal.
+  3. Execute a plan to test the hypothesis.
+  4. Revise the execution and see if the goal is achieved.
+
+As you can see from these examples, being result-driven doesn't equal to not taking actions. On the contrary, it needs more actions being taken.
+
+1. Defining expectations clearly.
+2. Finding different solutions.
+3. Executing and comparing them. (Maybe not taking any action achieves the best result.)
+
+These all requires more efforts than just taking actions as a nobrainer. Taking action is not the goal, achieving a better result is.
+
+Being result-driven doesn't equal to ditching every process, neither. On the contrary, it means to always trying different solutions and always improving.
+
+1. If a process leads to a good result, then use it;
+2. If another process leads to a better result, then switch to it.
+
+Improving process is not the goal, achieving a better result is.
+
+* Drawbacks of result-driven mindset
+
+That being said, result-driven mindset has its cons as well. The biggest one is that the desired results need to be clear and explicit. So when facing a problem that's unclear and requires some explorations, a result-driven mindset won't help us (and may even draw us back).
+
+Another thing is that if a goal is clear but doesn't reflect the result we want, it may lead us to a wrong direction. For example, daily page view is a common metric for marketing. And we set a goal for achieving 10,000 daily page view. But what can we get out of it? Maybe not what we want.
+
+Finally, focusing on the result too much may let us use whatever method to achieve it. Take the same page view example. To achieve the goal of 10,000 daily page view, we can buy a lot of fake clicks. But by doing so, we've already lost what we really want.
+
+So, setting goals is an art on its own. Let me explain it in a future post.
+
+* What I've read
+
+Here are the books that guided me to this mindset in 2019:
+
+[[https://www.amazon.com/gp/product/0996006028/][Radical Focus: Achieving Your Most Important Goals with Objectives and Key Results: Christina R Wodtke, Marty Cagan]]
+    How to set clear OKRs (goals) to help you achieve your desired results.
+[[https://www.amazon.com/Right-Many-Ideas-Yours-Succeed/dp/0062884654/ref=sr_1_1?ie=UTF8&qid=1540239839&sr=8-1&keywords=alberto+savoia][The Right It: Why So Many Ideas Fail and How to Make Sure Yours Succeed]]
+    Experiment quickly and cheaply to test if your hypothesis can bring you your desired results.
+[[https://basecamp.com/shapeup][SHAPE UP: Stop Running in Circles and Ship Work that Matters]]
+    Invest time and human resources once you've made your desired results clear.
+[[https://www.amazon.com/gp/product/1942788290/][The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win]]
+    Find your constraints/bottle-necks when you want to optimize for a better result.
+[[https://jonathanstark.com/hbin][Hourly Billing Is Nuts by Jonathan Stark]]
+[[https://yiming.dev/blog/2019/11/12/why-billing-by-hours-is-a-bad-idea/][Focus on the results you've produced]], instead of the sunk cost.
+
+* From result-driven mindset to growth mindset
+#+begin_quote
+
+A growth mindset is the ability to not be fixed on a single solution, but to be consistently testing and iterating on your idea, and improving upon what you know so that you're focusing on the problem you are trying to solve, not the solution in your head.
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=k__XkwIpiCU&feature=share][Bot Thoughts: Growth Mindset]]
+
+Result-driven mindset is only a start point. My goal for 2020 is to grow a growth mindset. We'll see what results I can achieve then. Happy New Year!

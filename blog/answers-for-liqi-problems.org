@@ -1,0 +1,82 @@
+#+TITLE: Answers for Liqi Problems
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2015-10-30]
+#+URI:         blog/2015/10/30/answers-for-liqi-problems/index.html
+#+TAGS:
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+这篇博客是根据利器的 6 个问题写就的，我觉得根据这 6 个问题能很好地了解一个互联网工作者，因此也拿来当作介绍自己的一个方式了。
+
+* 介绍一下你自己和所做的工作。
+
+我是 dsdshcym ，现在在上海五角场某大学张江分校读本科。
+
+* 你都在使用哪些硬件？
+** OnePlus Two
+
+之前用的是 Nexus 4 ，从此走上了原生系统的康庄大道，可惜屏幕被我摔碎了，刚好 OnePlus Two 出了，又能刷接近原生的 Oxygen OS ，就果断入手了一个。结果现在苦等 Marshmallow 中。
+
+** MacBook Pro (Retina, 13-inch, Late 2013)
+
+当时买的比较早，记得买了不久以后就出了小升级款，再不久，续航又从 8h 提高到了 10h ，虽然后悔没买对时机，但是更后悔的是没有更早买 MacBook ，码农生涯被这台 MacBook 彻底改变了。
+
+** 红轴 Poker II
+
+女朋友送的生日礼物。
+
+唯一的缺点是没有 HHKB 那样的脚架，放到 MacBook 的上用会压到 MacBook 自带的键盘。
+
+** Kindle Paperwhite 3
+
+刚买来不到一个月，买之前各种担心看 pdf 不够方便，但是拿到手后十分满意。不仅可以看书，还可以把 Tl;dr 的文章推送到上面睡前读一读。而且 Kindle 的 Vocabulary Builder 是我用过的最好的生词本软件（同时记录 Definition 和 Usage ）
+
+* 软件呢？
+** Emacs
+
+刚开始用了半年 Vim ，然后发现了 [[https://github.com/syl20bnr/spacemacs][Spacemacs]] 项目，便转用 Emacs ，现在已经快一年了。 Coding, Version-Control, Documentation, GTD, Email 都在 Emacs 里完成。如果 Mac 上只能留一个程序，我肯定是选 Emacs 。
+
+** Org-mode
+
+经常拿来与 Markdown 作对比，但是这显然对 Org-mode 是不公平的，因为它比 Markdown 强太多了。Org-mode 无论是写文档还是写论文都没有问题。而且不仅是一个标记语言，还是强大的 GTD 工具。我一天的大部分时间在干什么都由它来记录、安排。
+
+** Telegram
+
+虽然在 Telegram 上有联系的只有两三个好友，但是它作为一个 IM 工具绝对比微信称职。
+
+** Inoreader / Reeder (iOS) / News (Android)
+
+比 Feedly 好出很多的 RSS 服务提供商，在 iOS 上搭配 Reeder 简直完美，在 Android 上就没有那么好的 App 支持了，毕竟 Press 很久没更新了，只能退而求其次搭配 News （不是 Apple News ）使用，体验还不错，至少不会像官方客户端一样让人完全用不下去。
+
+** Dash
+
+Mac 上最好的文档工具，出 Dash 3 的时候趁降价入了正版。
+
+* 你最理想的工作环境是什么？
+** 优秀的网络环境
+
+- 没有 GFW
+- 没有 GFW
+- 没有 GFW
+
+** 安静
+** 其他的等有工作体验了再加吧
+* 你平时获得工作灵感的方式有哪些？
+
+谈不上工作灵感，就说如何放松吧
+
+1. 刷 RSS
+2. 听 Podcast
+3. 跑步，跳绳
+
+* 推荐一件生活中的利器给大家。
+** 跳绳
+
+不到十块钱一根，每两天跳 20 分钟，非常容易坚持，效果很好。
+
+#+begin_quote
+
+本文参与了「利器社群计划」，发现更多创造者和他们的工具： [[http://liqi.io/community/][http://liqi.io/community/]]
+
+#+end_quote

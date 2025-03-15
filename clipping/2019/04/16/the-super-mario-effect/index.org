@@ -1,0 +1,25 @@
+#+TITLE: The Super Mario Effect
+#+begin_quote
+
+- The Super Mario Effect: *Focusing on the Princess and not the pits, to stick with a task and learn more*
+
+  - Learning firm but not being focusing on the failures
+  - Less failure leads to higher success rate
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=9vJRopau0g0][The Super Mario Effect - Tricking Your Brain into Learning More - Mark Rober - TEDxPenn]]
+
+Nintendo is a great game company. They've built lots of great games with a kind of "magic". Under the effect of this "magic", players like myself would experience a true form of joy and enjoy the game more.
+
+I think The Super Mario Effect aligns with the idea of [[https://www.amazon.com/Flow-The-Psychology-Optimal-Experience/dp/0061339202?tag=effectiveeng-20][Flow]] as well:
+
+- The Flow theory says
+
+  - With a challenge that's a little bit higher than our current ability, we are more likely to get into the flow state and learn/work faster.
+
+- In The Super Mario Effect:
+
+  - The Princess is our clear goal.
+  - The game was designed so that every challenge we face is slightly over our ability, or a little bit harder than the previous challenge.
+  - Then we are easier to get into the flow state, because the goal is clear and the challenge we are facing right now is a low-hanging fruit that requires us to jump to pick.

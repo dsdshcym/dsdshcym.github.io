@@ -1,0 +1,68 @@
+#+TITLE: Agile and Saying "NO"
+#+begin_quote
+
+- The 4Ds Time Management
+
+  1. Delete/Drop
+  2. Delegate
+  3. Defer
+  4. Do
+
+- The First D: Delete or Drop
+
+  1. Maintain a Not-to-do List
+  2. Stop Doing
+  3. You Don't Have To
+  4. Stop Completing Surveys
+  5. Drop That Call
+  6. Stop Starting
+
+     - Start finishing projects that are in-progress
+     - Work on as few major tasks as you can on any given day (This principle is adopted from agile project management.)
+
+#+end_quote
+
+-- from [[https://www.linkedin.com/pulse/4ds-time-management-delete-delegate-defer-do-wan-how][4Ds Time Management: Delete, Delegate, Defer, Do]]
+
+[[https://lifehacker.com/im-david-heinemeier-hansson-basecamp-cto-and-this-is-1820470919][DHH and Basecamp are also great advocates for saying "NO"]]:
+
+#+begin_quote
+
+- What's your best time-saving shortcut for life hack?
+
+  - *Saying no*
+  - I say no to almost everything. Then I can commit myself fully to the few things that I do truly choose to do.
+
+#+end_quote
+
+And there are other quotes for saying "NO":
+
+#+begin_quote
+
+[[https://twitter.com/devoncestes/status/1100371100330950656][Devon C. Estes on Twitter: "My #1 business trick when presented with a
+  specific part of a big feature request that seems like it will be
+  really hard is to ask "Can we not do that?" So often the answer is
+  "Yes" and everyone is happier not having it."]]
+
+#+end_quote
+#+begin_quote
+
+[[https://twitter.com/dsdshcym/status/1080353242691715072][Yiming Chen on Twitter: "Not all posts are worth reading and that's
+  okay… "]]
+
+#+end_quote
+
+I think the mindset to say NO to everything first matches the idea of Agile Software Development pretty well.
+
+To me, part of being Agile is to validate idea before working on it and to say "no" to it as soon as we find it will not work[fn:1].
+
+Being Agile sometimes means pursuing some sorts of minimalism. And achieving the expected results by doing nothing is the best, isn't it?[fn:2]
+
+* Footnotes
+[fn:1]
+
+[[https://dsdshcym.github.io/clipping/2019/02/25/my-understandings-of-agile-over-time/][My Understandings of Agile Over Time - dsdshome]]
+
+[fn:2]
+
+[[https://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code/][No Code is Better Than No-Code - dsdshome]]

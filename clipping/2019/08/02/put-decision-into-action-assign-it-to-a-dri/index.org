@@ -1,0 +1,81 @@
+#+TITLE: Put Decision Into Action - Assign It To a DRI
+
+Many times I go out of the meeting room, feeling so excited about the decisions we've made. But after several weeks, none of these decisions become true. If you are like me, wondering why this happens and how to solve this problem, this post is for you.
+
+* The "Pluralistic Ignorance" Phenomenon
+
+I think the biggest reason that decisions don't get executed as expected is the phenomenon called "Pluralistic Ignorance". In the book [[https://www.amazon.com/Influence-Psychology-Persuasion-Robert-Cialdini/dp/006124189X][Influence: The Psychology of Persuasion]], the phenomenon gets defined, and the book explained why this phenomenon happens:
+
+#+begin_quote
+
+The failure of entire groups of bystanders to aid victims in agonizing need of help.
+
+- For at least two reasons, a bystander to an emergency would be unlikely to help when there were a number of other bystanders present.
+
+  1. With several potential helpers around, the personal responsibility of each individual is reduced.
+  2. Very often an emergency is not obviously an emergency.
+
+#+end_quote
+
+We can easily translate these reasons into the business context.
+
+1. With several meeting attendees around, the personal responsibility of each individual is reduced.
+2. Very often an emergent task is not obviously an emergency.
+
+Then the question becomes "how to fight this Ignorance?"
+
+The book Influence told us to "pick out one person and *assign* the task to that individual."
+
+In another great piece of work, [[https://www.amazon.com/Crucial-Conversations-Talking-Stakes-Second/dp/1469266822][Crucial Conversations]], a similar strategy was given:
+
+#+begin_quote
+
+To avoid common traps, make sure you consider the following four elements:
+
+1. Who?
+
+   - "Everybody’s business is nobody’s business."
+   - When it's time to pass out assignments, remember, there is no "we."
+
+     - "We," when it comes to assignments, actually means, "not me."
+     - Even when individuals are not trying to duck an assignment, the term "we" can lead them to believe that others are taking on the responsibility.
+
+   - *Assign a name to every responsibility*
+
+     - This especially applies at home.
+     - If you assign two or three people to take on a task, appoint one of them the responsible party.
+
+       - Otherwise, any sense of responsibility will be lost in a flurry of finger-pointing later on.
+
+2. Does what?
+3. By when?
+4. How will you follow up?
+
+#+end_quote
+
+These two books are more about overall communications. In the business world, this strategy of assigning tasks to individuals has a dedicated name: Directly Responsible Individuals (DRI).
+
+* Use DRI to Prevent "Pluralistic Ignorance"
+
+The idea of DRI is simple yet super powerful:
+
+#+begin_quote
+
+*making sure someone was responsible for each item on any meeting agenda.*
+
+#+end_quote
+
+-- from [[https://medium.com/@mmamet/directly-responsible-individuals-f5009f465da4][Directly Responsible Individuals – Matthew Mamet – Medium]]
+
+It's used in Apple for many years.[fn:1] And there are many resources to learn it. Here are three articles that I would recommend:
+
+1. [[https://medium.com/@mmamet/directly-responsible-individuals-f5009f465da4][Directly Responsible Individuals – Matthew Mamet – Medium]]
+2. [[https://www.quora.com/How-well-does-Apples-Directly-Responsible-Individual-DRI-model-work-in-practice][How well does Apple's Directly Responsible Individual (DRI) model work in practice? - Quora]]
+3. [[http://chemjobber.blogspot.hk/2011/10/apples-corporate-innovation-directly.html][Chemjobber: Apple's corporate innovation? The 'directly responsible individual']]
+
+It is really easy to give it a try. So why not assign every decisions to an individual in your next meeting?
+
+* Footnotes
+[fn:1]
+
+It's mentioned in a podcast I recommended before: [[https://dsdshcym.github.io/clipping/2019/06/20/apple-ok-rs-and-dri/][Apple, OKRs, and DRI]]

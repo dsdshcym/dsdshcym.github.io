@@ -1,0 +1,116 @@
+#+TITLE: My org-refile workflow
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-03-02]
+#+URI:         blog/2018/03/02/my-org-refile-workflow/index.html
+#+TAGS:        Emacs, Org
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I use Org files as my Calendar/Notes/Time-Tracking tool. I try to use Org-Mode to organize my life with text files. So naturally, I have a lot of Org headings.
+
+And I mainly use org-refile to rearrange these headings and search them.
+
+Here are my org-refile configurations:
+
+* Refile
+
+1. org-refile-targets
+
+#+begin_src emacslisp
+(defun +org/opened-buffer-files ()
+  "Return the list of files currently opened in emacs"
+  (delq nil
+        (mapcar (lambda (x)
+                  (if (and (buffer-file-name x)
+                           (string-match "\\.org$"
+                                         (buffer-file-name x)))
+                      (buffer-file-name x)))
+                (buffer-list))))
+
+(setq org-refile-targets '((+org/opened-buffer-files :maxlevel . 9)))
+#+end_src
+
+   This config lets org-refile searches all the opened org mode files and fetches all the headings in them.
+
+2. Use outline path
+
+#+begin_src emacslisp
+(setq org-refile-use-outline-path 'file)
+;; makes org-refile outline working with helm/ivy
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
+#+end_src
+
+   It tells org refile to use the outline path (like emacs.org/Packages/Org Mode) for the query.
+
+   It's really powerful since we can leverage the powerful org-mode hierarchy and we just need to
+
+   1. Give this heading a meaningful, easy to remember name (like refile)
+   2. Categorize it to a parent heading (like Org-Mode)
+
+   Then we can get this heading in the org-refile interface easily (org mode refile).
+
+You can also read [[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html][this post]][fn:1] for more info about these configurations.
+
+* Search
+
+With the powerful outline filtering, I wondered if org-refile can also be used in searching headings.
+
+I believe this is the most natural way to search org-mode headings. Since our org-mode files are already organized in this tree-like hierarchy.
+
+And it's well supported by the org-refile function itself. When passed in an universal-argument ('(4)), org-refile will just take you to the target heading you select instead of refiling current heading to the target heading.
+
+#+begin_src emacslisp
+(defun +org-search ()
+  (interactive)
+  (org-refile '(4)))
+#+end_src
+* Caching
+
+1. When you have so many org-mode headings (e.g. I have more than 10,000 headings), it's really slow for org-refile to fetch all the headings every time. So I enabled caching for org-refile as well.
+
+#+begin_src emacslisp
+(setq org-refile-use-cache t)
+#+end_src
+2. But then comes the hardest problem with caches: *when to invalidate them* .
+
+   I set a timer to regenerate this cache automatically every time my Emacs has been idled for 5 mins:
+
+#+begin_src lisp
+(run-with-idle-timer 300 t (lambda ()
+                            (org-refile-cache-clear)
+                            (org-refile-get-targets)))
+#+end_src
+
+It's been working pretty well for some time. The only drawbacks are:
+
+1. The cache is not always up-to-date. But it's acceptable since I mostly only jump/refile to old headings.
+2. Emacs may hang for several seconds when I switch back to it because it's regenerating the cache.
+
+** Potential Improvements
+
+Incrementally updating cache table
+
+    My org files change a lot everyday but it's incremental, mostly it's just adding new headings and refile them to an existing heading.
+
+    So I really hope the cache can be smarter to just updates the cache when a heading is added and moved.
+
+    But it's pretty hard to do it in code. (I guess that's why caching is hard.)
+
+Updating cache table in another thread
+    I tried to run (org-refile-get-targets) in a new thread in Emacs 26. But Emacs crashed, I guess the new threading mechanism in Emacs 26 is not strong enough to support this.
+Improve org-refile to speed up
+
+    org-refile is a 175-LOC method and it's quite complicated. I tried to refactor it but failed.
+
+    I also tried to use some other similar functions (like imenu-anywhere[fn:2]) to replace it, but imenu-anywhere can only jump to children headings (leaves) but not parent headings (nodes).
+
+* Footnotes
+[fn:1]
+
+[[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html][Organizing Notes With Refile]]
+
+[fn:2]
+
+[[https://github.com/vspinu/imenu-anywhere][vspinu/imenu-anywhere: ido/ivy/helm imenu tag selection across buffers with the same mode/project etc]]

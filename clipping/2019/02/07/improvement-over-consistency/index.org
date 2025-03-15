@@ -1,0 +1,84 @@
+#+TITLE: Improvement Over Consistency
+#+begin_quote
+
+- Rebuild/rewrite can't fix the real problem - which is the organizational incentives that put you in that place originally
+
+  - Hauling everything away and cleaning up the house doesn't fix people's habits that led to the hoarding.
+  - If you don't change the habits and incentives that led you to that point, you'll end up with a tangled mess of services mirroring your tangled mess of monolith code.
+  - And at that point, all you've accomplished with the money & time they gave you for the rebuild is to shift your problems to the network layer, where they are way harder to see, analyze, test, and fix.
+  - That is not progress. IMO that's engineer malpractice.
+
+- A much more successful treatment for hoarding is to *work intensively one on one with folks* ,
+
+  1. changing their habits slowly over time,
+  2. having THEM clean up the house - one little area at a time.
+
+- This is where communication skills come into play.
+
+  - Because it is not at all trivial to even understand the incentive structure that got you where you are, let alone to negotiate a new, healthier set of incentives.
+  - Pathology in the hoarded codebases
+
+    1. developers don't feel they have time and/or permission to refactor code.
+    2. developers see “refactoring” as a completely separate activity from building features or fixing bugs.
+
+       - A key indicator of this pathology is seeing stories in the backlog like “refactor user class.”
+
+  - Improvement Over Consistency
+
+    - If you had good code, then sure, that (consistency is key to good code.) would be true. But right now you don't.
+    - One book on the shelf and five in the pile is better than six books in the pile.
+
+  - To actually fix it, you need to
+
+    1. negotiate with the individuals who are applying the pressure.
+    2. understand THEIR incentives,
+    3. align your desired changes with those.
+
+  - You don't want begrudging acceptance. You want enthusiastic buy-in.
+  - As you improve your communication skills (by doing it badly at first), you start to get a sense of what works for different people.
+
+- What's limiting your ability to write good code.
+
+  - It is NOT:
+
+    - knowledge of the latest framework
+    - how fast your tests run
+    - your own weak moral fiber
+    - your manager, PM, or CEO
+
+  - It IS:
+
+    - how well you understand & work with people
+
+#+end_quote
+
+-- from [[https://twitter.com/sarahmei/status/1090860150712221698][Sarah Mei on Twitter: "I talk a lot about how you can't be a
+   great developer without great communication skills, but I don't
+   think people grok how   your communication skills are
+   reflected in your codebase. Let me give you an example."]]
+
+It uses the same idea of hoarding from [[https://dsdshcym.github.io/clipping/2018/06/07/livable_and_disposable_code/][Livable and Disposable Code]], and says if we want to have good code, we need to value improvement over consistency.
+
+A similar idea was also explained in [[https://ronjeffries.com/xprog/articles/refactoring-not-on-the-backlog/][Refactoring -- Not on the
+backlog!]]
+
+#+begin_quote
+
+- A big refactoring session is hard to sell, and if sold, it returns less than we hoped, after a long delay.
+
+  Hard to sell
+      We are tempted to ask for time from our product owner to refactor. Often, that time is not granted: *we're asking for time to fix what we screwed up in the past.*
+  Returns less than we hoped
+      We'll clean up what we see, as well as we can in the time available, which will never be enough.
+
+- What should we do?
+
+  - We take the next feature that we are asked to build, and instead of detouring around all the weeds and bushes, we take the time to clear a path through some of them.
+  - *We improve the code where we work, and ignore the code where we don't have to work.*
+  - We get a nice clean path for some of our work. Odds are, *we'll visit this place again* : that's how software development works.
+
+    - Soon, often within the same Sprint where we begin to clean up, we find that a subsequent feature actually uses an area we just previously cleaned.
+
+  - We invest a little time more than we would if we continued to trash the field, but not much more -- and often less.
+
+#+end_quote

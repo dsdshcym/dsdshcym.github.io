@@ -1,0 +1,94 @@
+#+TITLE: OKR Case Study #3 - OKR is not about "YOU"
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-04-26]
+#+URI:         blog/2020/04/26/okr-case-study-3-okr-is-not-about-you/index.html
+#+TAGS:        OKR, Management, OKR Case Study
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+You may already know that an OKR is not a TODO list. But what's the deeper reason behind this rule of thumb? A TODO list is about what you are going to do. But an OKR is not about what to do at all, it's about *what to achieve* . In a deeper sense, OKR is not about "YOU". It's about someone else (your organization, your users, or your future self). It's about *human behavioral changes* you want to introduce to this world.[fn:1]
+
+Take these Key Results for example:
+
+- Clean-up issue tracker every week.
+- Launch a feature X.
+- Read Y articles per week.
+
+At first glance, they all starts with a verb, which makes them TODO tasks naturally. You can complete these sentences by adding a subject:
+
+- You need to clean-up issue tracker every week.
+- You are gonna launch a feature X.
+- You'll read Y articles per week.
+
+If you choose these Key Results, you can only execute them blindly and you'll very likely forget why you are doing these tasks or what you wanted to achieve here. When you dig deeper by *asking why do you want to work on these tasks* and what do you want to achieve, the subject is not about "YOU", but about someone else.
+
+* OKRs for organizational changes
+#+begin_quote
+
+Clean-up issue tracker every week.
+
+#+end_quote
+
+Why do you want to clean-up issue tracker every week? The answer is typically to have a cleaner issue tracker with less opening issues. Why do you have less opening issues? Because your team have too many long-running issues, your team cannot finish all the goals defined in Sprint Meeting, and the issue tracker is blooming. You want this to be *changed* , you want your team to *change* . You want your team to have less Work-In-Progress and thus can deliver outcomes in a stable, predictable, and sustainable pace.
+
+To achieve this *change* , you need to do much more than just "cleaning-up issue tracker every week". You may need to change how you plan a sprint, how your team collaborates, or so on. But you can be creative about what to do, compare different solutions, and choose the best one works for your team.
+
+So to really reflect this *change* , the key result might be:
+
+#+begin_quote
+
+The team can deliver at least 80% of features/fixes defined in Sprint Planning.
+
+#+end_quote
+* OKRs for user behavior changes
+#+begin_quote
+
+Launch a feature X.
+
+#+end_quote
+
+Why do you want to launch this feature? The answer is about users. More users to sign up; more users to pay; or more users to change how they work.
+
+Does feature X contribute to that user behavior change? No one knows. Maybe a smaller feature x (part of X) is enough. Maybe a larger feature X' is needed.
+
+The only thing you know is that you want users to *change* . So to remind us what kind of user behavior change we want to see, the key result might be:
+
+#+begin_quote
+
+- At least x new users sign-up for the product.
+- At least y users pay for subscriptions.
+- At least z users can finish the same task with Z% less time in the app.
+
+#+end_quote
+* OKRs for your own changes
+#+begin_quote
+
+Read Y articles per week.
+
+#+end_quote
+
+Why do you want to read these articles? The answer is about learning. And learning is about your future self. It's what you want yourself to *change* , what knowledge you want your future self to know. And more importantly, learning at work is often more about skills, i.e. what new capability you want to obtain.
+
+To achieve this *change* , reading Y articles might not be enough, or might be too much. What matters is not reading (the action), it's your growth.
+
+So the key result corresponding to this *change* might be:
+
+#+begin_quote
+
+After 3 months, you'll be able to do X because you've learned about Y.
+
+#+end_quote
+* Always ask why
+
+[[https://yiming.dev/blog/2020/02/26/what-is-an-effective-okr/][An effective OKR needs to clarify strategy and guide execution.]] Hopefully, by thinking about your organization, your users, and your future self, you can define a more effective OKR. And more importantly, *always ask why* do you want to achieve a Key Result and find your real goals.
+
+* Footnotes
+[fn:1]
+#+begin_quote
+
+*The best (maybe the only?) real, direct measure of "innovation" is change in human behaviour.*
+
+#+end_quote
+
+-- from [[https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d][We Don’t Sell Saddles Here - Stewart Butterfield - Medium]]

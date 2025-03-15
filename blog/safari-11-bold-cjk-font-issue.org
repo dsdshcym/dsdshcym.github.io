@@ -1,0 +1,33 @@
+#+TITLE: Safari 11 CJK 伪粗体问题
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-11-17]
+#+URI:         blog/2017/11/17/safari-11-bold-cjk-font-issue/index.html
+#+TAGS:        Safari, Font, macOS
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+我个人因为知乎上一些早期文章的影响，对系统 UI 的字体、排版染上了比较严重的强迫症。
+
+最近在尝试把主力浏览器换成 Safari，但是碰到了烦人的伪粗体问题：
+
+- [[https://zhuanlan.zhihu.com/p/29542414][就再说说 macOS 10.13 & iOS 11 & Safari 11 的苹方伪粗体顽疾]]
+
+最近看到这个问题被解决的消息[fn:1]，便更新了 Safari Technology Preview 尝试看看。
+
+果然，这个问题已经在 Safari 11.1, WebKit 13605.1.13.2 里得到修复了：
+
+- Safari 11.0.1
+
+[[https://i.loli.net/2017/11/20/5a12e1756c30e.jpg]]
+
+- Safari 11.1
+
+[[https://i.loli.net/2017/11/20/5a12e1a5cd784.jpg]]
+
+可惜的是，这个修复可能要等到 macOS High Sierra 10.13.2 才会放出了。
+
+* Footnotes
+[fn:1]
+
+[[https://zhuanlan.zhihu.com/p/30251685][苹方伪粗体的问题已内部解决，但尚未推送。]]

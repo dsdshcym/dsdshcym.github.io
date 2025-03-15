@@ -1,0 +1,67 @@
+#+TITLE: Thoughts/Summary for Using Callbacks in Rails Applications
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-25]
+#+URI:         blog/2018/01/25/thoughts-summary-for-using-callbacks-in-rails-applications/index.html
+#+TAGS:        Rails, Clean Code
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Here is my summary for a discussion between another developer and me on the topic of callbacks.
+
+* Callback is a high level abstraction
+
+Callbacks will *always* be called if you don't use options like :only, :except, :if, and :unless. Thus it's actually a pretty high level abstraction, like a method in the base class inherited by other sub-classes but you cannot overwrite it easily.
+
+Since callback is a high level abstraction, it's too easy to put some business logic that doesn't need to be called every time in a callback.
+
+So I think callback needs to be used only for something that must be done.
+
+Take sending emails in a User callback for example:
+
+1. You will find later you need to add if: :created to prevent email to be sent when user is updated
+2. And later you need to create a user but without he/she knowing it, then you need to skip the email callback again
+
+* Callbacks are mostly used for your business logic
+
+Unfortunately, callbacks are usually used by developers for their applications' business logic, like creating a related model, sending an email, etc., because it's a tool so powerful and easy-to-use.
+
+Business logic is very likely to change in the near future, but callbacks are high level abstractions that are hard to change since changing it may force us to change many places in our application.
+
+This mismatch between the nature of callbacks and its most popular usage is the main reason I'm against using it when you are implementing a new feature.
+
+I think callbacks should be only used for logic that really belongs to controller/model's responsibilities:
+
+- Controller Callbacks
+
+  - Authentications
+  - Authorizations
+  - Redirection
+
+- Model Callbacks
+
+  - Setting default values that cannot be set in the database level
+  - Making sure data is correct (data cleanup, etc.)
+
+* Callbacks are hard to test
+
+This is another reason for me to against using callbacks.
+
+- For model callbacks, it's pretty hard to test these callbacks.
+
+  1. Some callbacks are hard to test in our specs.
+
+     - like after_commit, after_rollback
+     - And we cannot use Fixtures/FactoryGirl to set models up in these specs, because they will skip many of these callbacks or do some magical things.
+
+  2. Though we can still test the callback methods, and trust ActiveRecord to do it job well and call the right callbacks every time.
+
+     - The confidence level for me as a developer for this untested after_something :do_something is still pretty low.
+     - And we are coupling our tests for this behavior and the implementations (callback)
+
+- For controller callbacks, we have two choices:
+
+  1. Relying on feature specs / request specs to cover us, to make sure the controller action behavior is always correct.
+  2. Testing the callback methods in the controller specs, and use Shoulda::Matchers::ActionController::CallbackMatchers to test that we are using these callbacks correctly.
+
+     - But this is obviously coupling our tests and our implementations.

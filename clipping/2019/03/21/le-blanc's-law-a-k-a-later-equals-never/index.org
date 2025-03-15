@@ -1,0 +1,94 @@
+#+TITLE: LeBlanc's Law (a.k.a Later Equals Never)
+#+begin_quote
+
+- Suddenly a clever idea strikes you.
+
+  - Maybe it means adding some temporal/implicit dependencies.
+  - Maybe it means throwing in a magic string that will only work until January 3 next year.
+  - Maybe it means breaking the design and making the code untestable.
+  - Maybe it means living with intermittent bugs.
+  - Maybe it means removing one bug and introducing another one.
+
+- Think about the real consequences of this decision.
+
+  - Will you really get back to it later?
+  - What will happen if you don't?
+  - What are the risks you're introducing?
+
+- There are several popular variants of "I'll fix it later":
+
+  - I'll fix that bug later.
+  - I'll verify with the customer that I've built what they actually need later.
+  - I'll write unit tests later.
+  - I'll remove the fragility from the unit tests later.
+  - I'll make the unit tests readable later.
+  - I'll make the unit tests fast later.
+  - I'll integration test later.
+  - I'll usability test later.
+  - I'll remove that copy/paste duplication later.
+  - I'll bounce my idea/design/code off another developer later.
+  - I'll remove that workaround/hot fix/complete hack later.
+  - I'll make the code readable/maintainable later.
+  - I'll worry about performance/reliability later.
+
+- LeBlanc's Law: " *Later equals Never.* "
+- Why?
+
+  1. When you cut corners in order to deliver on time, you're giving management and your customer a false sense of how fast you can reliably deliver.
+
+     1. If there is still work left to be done, you are effectively lying to your customer about how fast you can deliver value.
+     2. Since your customer thinks you can deliver more than you really can, you will be overloaded with work again next time.
+     3. You will start accumulating technical debt. The best way to prevent technical debt from accumulating is to *establish realistic expectations about how fast you can effectively work* .
+
+  2. When you skimp on automated tests, and even when you write tests but don't ensure they are readable, atomic, and easily-maintained unit tests, you limit your ability to effectively refactor.
+
+     - When you can't easily refactor, it begins to get hard to write readable, atomic, and easily-maintained unit tests.
+     - Because it's harder to evolve your design, you will face a stronger temptation to fix bugs with workarounds and hacks that will come back to bite you later.
+     - You will spend more time debugging and bug fixing, leaving you less time to write tests and refactor.
+
+- Definition of done
+
+  - *You are not finished with a feature until it meets the definition of done.*
+  - A definition of done might include things like these:
+
+    - unit tested
+    - verified by customer & customer tests
+    - usability tested
+    - integrated
+    - integration tested
+    - documented
+    - performance tested
+    - peer reviewed (via pair programming or some other mechanism)
+    - refactored, readable, duplication-free
+    - bug-free
+
+  - Start small
+
+    - coded
+    - unit tested
+    - peer reviewed
+    - refactored
+
+- When is it OK to "fix it later"?
+- Where's the fine line between LeBlanc's Law and YAGNI?
+
+#+end_quote
+
+-- from [[http://on-agile.blogspot.com/2007/04/why-you-wont-fix-it-later.html][On Agile: Why You Won't Fix It Later]]
+
+I've seen this problem of "Later = Never" in both of my work life and daily life.
+
+Work life
+    Saying we are going to add a feature, refactor a part of code, add some tests, but they will never be done after the issue was created.
+Daily life
+    Add an article to "Read it later", but never read it again.
+
+But I think I'm getting close to a solution for that, recently. And this solution may also answer the last two questions raised in the article.
+
+This solution basically comes down to three elements:
+
+1. Set deadlines
+2. Have priorities
+3. Review often
+
+I'll write another blog post to describe this solution. Stay tuned!

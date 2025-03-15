@@ -1,0 +1,34 @@
+#+TITLE: Your editor configuration is the biggest project in your life
+
+I've been thinking about whether to use a distribution (like [[https://github.com/syl20bnr/spacemacs][Spacemacs]][fn:1], [[https://github.com/hlissner/doom-emacs][doom-emacs]][fn:2]) or to use my own configurations ([[https://github.com/dsdshcym/.emacs.d][dsdshcym/.emacs.d]]).
+
+Watch this talk if you are facing the similar problem as I'm.
+
+#+begin_quote
+
+- What are the attributes of a good editor?
+
+  1. Community
+  2. Extensibility
+  3. Portability
+
+- How to spot a bad editor?
+
+  1. Close sourced
+  2. Bad plugins
+  3. Bad docs
+
+- *Your editor configuration is the biggest project in your life*
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=aWa0S60f530][LinuxDays 2017 - Why good editors refuse to die - David Bečvařík - YouTube]]
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/syl20bnr/spacemacs][syl20bnr/spacemacs: A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it's Emacs   Vim!]]
+
+[fn:2]
+
+[[https://github.com/hlissner/doom-emacs][hlissner/doom-emacs: An Emacs configuration for the stubborn martian vimmer]]

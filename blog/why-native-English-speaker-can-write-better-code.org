@@ -1,0 +1,51 @@
+#+TITLE: 为什么 Native English Speaker 更容易写好代码？
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-01-30]
+#+URI:         blog/2019/01/30/why-native-English-speaker-can-write-better-code/index.html
+#+TAGS:        English
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+中文程序员圈似乎有一种观点，认为「老外写的代码就是好」。虽然我个人并不赞同这个观点，但还是不得不承认 Native English Speaker 对英语的熟练掌握给他们带来了一些优势，这篇文章就是对这些优势的一个小结，也希望借这篇文章激励自己的英语学习。
+
+* 写作能力上占优
+
+首先，[[http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-youre-writing-a-letter/write-your-code-as-if-you're-writing-a-letter/][写代码犹如写文章]]，又因为主流的程序语言的函数、注释的主要用语都是英语，熟练使用英语写作的人，在使用这些函数，编写注释上自然也有了优势。
+
+而在这之上，更大的优势或许在于「命名」。「命名」在编程领域可以算得上是最难的一件事，而 Native English Speaker 有着更多的词汇量，了解组词、造词的规则，在了解领域相关的知识之后，往往能够给变量、函数、类一个更好、更清晰的「命名」。也因此，写出的代码更容易让人读懂。
+
+* 学习资源上占优
+
+在学习资源上，Native English Speaker 的优势可能就更大了。
+
+1. 编程领域的第一手学习资料（论文、书籍、演讲），几乎都是英文写就的。如果不能读懂、听懂英语资料，需要依靠翻译。而翻译的等待时间可能很长，冷门的资料甚至没有人翻译。更严重的问题是翻译的质量参差不齐，佳作的数量非常少，更造成了资料的缺失。
+2. 另外就是 Google 这一搜索神器，只要愿意搜索，并且问了对的问题[fn:1]，几乎所有领域（不限于编程）都能找到相应的学习资料。在 GFW 和第二语言这两个因素的影响下，国人很难使用 Google 找到合适的学习资料，也造成了可供学习的资源进一步减少。
+
+P.S. 这一小节的灵感来自于和[[http://dnc1994.com/][章凌豪]][fn:2]的讨论，感谢！
+
+#+begin_quote
+
+我觉得是这样，写代码这一块很多真理都存在于英文资料中，而且基本上都出现在 Google 前排（只要搜索关键词用对了）
+
+所以英语好就保证第一你能看懂，第二你愿意去看去搜
+
+这就保证了没有 mentorship 也能走上正轨，因为至少在某一个程度之前网上存在的资料就等于是最正确的 mentor
+
+而在这种方式开始显露局限性的时候，你的能力和阅历已经足够让你去自主解决问题了
+
+#+end_quote
+* 小结
+
+但是即便如此，我们也不必失去信心，在知道了他们为什么会有这些优势之后，我们也能按图索骥。提高自己的词汇量，提高自己的阅读能力，多写多练，语言上的差距也能够被追上。只是在学习技术的同时，不忘提高英语能力就可以了。
+
+Stay Hungry, Stay Foolish!
+
+* Footnotes
+[fn:1]
+
+[[http://www.catb.org/%7Eesr/faqs/smart-questions.html][How To Ask Questions The Smart Way]]
+
+[fn:2]
+
+在此推荐章凌豪写的[[http://dnc1994.com/2017/01/how-to-improve-your-english/][如何提高英语姿势水平]]

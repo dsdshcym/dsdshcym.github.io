@@ -1,0 +1,37 @@
+#+TITLE: Conceptual Compression
+#+begin_quote
+
+The more effectively we compress the concepts of yesterday, the lower the barriers to entry become.
+
+#+end_quote
+
+-- from [[../../Org/rss_feed.html#ID-4DB5015D-3F41-469B-A24A-0EF591B92594][Conceptual compression means beginners don’t need to know SQL
+   — hallelujah!]]
+
+DHH raised this "new" idea of conceptual compression on this year's RailsConf[fn:1].
+
+I quoted "new" because, to me, conceptual compression is just a fancy name for abstractions.
+
+I always believe that extracting abstractions is what we do as software developers.[fn:2] Like DHH said, abstractions help us compress things we ought to know, so that we can have more free mind asset to think about things that's more important for us now. This is exactly how we build large projects:
+
+#+begin_quote
+
+- We've always known how to do big projects.
+
+  - You do big projects by *breaking them up into a bunch of small projects* .
+  - Agile solved the small part of that.
+  - Agile really has nothing to do with the big part.
+
+#+end_quote
+
+-- from [[http://blog.cleancoder.com/uncle-bob/2018/04/02/InTheLarge.html][(Agile) In The Large - Clean Coder Blog]]
+
+* Footnotes
+[fn:1]
+
+[[https://www.youtube.com/watch?v=zKyv-IGvgGE&feature=youtu.be][RailsConf 2018: Opening Keynote: FIXME by David Heinemeier
+Hansson - YouTube]]
+
+[fn:2]
+
+[[https://dsdshcym.github.io/blog/2017/06/18/programming_languages_comparison/#outline-container-orgf1a9ec2][我看程序语言的历史、现在与将来 - dsdshome]]

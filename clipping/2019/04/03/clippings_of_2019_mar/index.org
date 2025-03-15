@@ -1,0 +1,253 @@
+#+TITLE: Clippings of 2019 Mar
+
+1. [[https://www.sandimetz.com/blog/2017/6/1/why-we-argue-style][Why We Argue: Style — Sandi Metz]]
+
+   The best article about code style and arguments around this topic I've ever read.
+
+#+begin_quote
+
+   - Why Have A Style Guide?
+
+     - Code is read more than it's written
+     - Code should be optimized for readability
+     - An application's code should all follow the same style
+
+   - What Style Is Best?
+
+     - many stylistic choices are arbitrary, and purely a matter of personal preference.
+     - Choosing a style guide means building agreements in areas where we have strong differences of opinion about issues of little significance.
+     - *It's not style that matters, but sameness of style.*
+
+   - Why Can't Teams Agree?
+
+     - These "style wars" are ostensibly about formatting code, but are actually about power.
+
+#+end_quote
+2. [[http://www.paulgraham.com/makersschedule.html][Maker's Schedule, Manager's Schedule]]
+
+   It makes me think how to manage my time to work more efficiently and how to better use other people's time.
+
+#+begin_quote
+
+   - Manager's Schedule
+
+     - By default you change what you're doing every hour.
+     - When you use time that way, it's merely a practical problem to meet with someone.
+     - The schedule of command
+
+   - Maker's Schedule
+
+     - Use time in units of half a day at least
+     - Meetings are a disaster
+
+       1. It breaks a whole afternoon in to two pieces each too small to do anything hard in
+       2. When someone on the maker's schedule has a meeting, they have to think about it
+
+   - Two workdays each day
+
+     1. Manager's schedule: 11:00am - dinner (7:00 pm)
+     2. Maker's schedule: dinner (7:00 pm) - 3:00 am
+
+#+end_quote
+3. [[https://www.jamesshore.com/Blog/Dont-Measure-Unit-Test-Code-Coverage.html][James Shore: Don't Measure Unit Test Code Coverage]]
+
+   It resonates with the goal-driven thinking pretty well, reminds me of ideas from [[https://dsdshcym.github.io/blog/2018/11/15/similarities_between_tdd_and_management/][Similarities between TDD and Management]]
+
+#+begin_quote
+
+   - What should you do instead? That depends on what you want to accomplish.
+   - Figure out what you really want to improve and focus directly on that instead.
+
+#+end_quote
+4. [[https://www.pipelinedb.com/blog/three-sales-mistakes-software-engineers-make][Three Sales Mistakes Software Engineers Make]]
+
+   This explains "why we need to build MVPs" and "how to define what features go into MVP" from Sales perspective.
+
+#+begin_quote
+
+   - Everybody is selling something.
+
+     1. selling products directly to customers on the front lines
+     2. selling new product feature ideas internally within an organization
+
+   - Mistakes
+
+     1. Building Before you Start Selling
+     2. Talking Instead of Listening
+     3. Mistaking Interest for Demand
+
+   - This iterative process of talking to customers and building what they need and will pay for is not only an exercise to be conducted before building products, but should also serve as *a continuous feedback loop between customers and developers.*
+   - *Talk to your customers, build what they want and will pay for, and iterate relentlessly.*
+
+#+end_quote
+5. [[https://www.ybrikman.com/writing/2018/08/12/the-10-to-1-rule-of-writing-and-programming/][The 10:1 rule of writing and programming]]
+
+   How to estimate tasks. I usually do an estimation first and tell others I need 2x of that time to finish that task. Maybe I should use 10x instead?
+
+#+begin_quote
+
+   - [[https://en.wikipedia.org/wiki/Hofstadter%27s_law][Hofstadter's law - Wikipedia]]
+
+     It always takes longer than you expect, even when you take into account Hofstadter's Law.
+
+   - The 10:1 rule of writing and programming
+
+*Good software and good writing requires that every line has been rewritten, on average, at least 10 times.*
+
+     1. The ratio of "raw materials" to "finished product" in a book is roughly 10:1. Keep this in mind the next time an editor asks you for a timeline! If you want to write a 300 page book, you’ll probably have to write around 3,000 pages.
+     2. Similarly, the ratio of "code churn" to "lines of code" in mature and non-trivial software is also at least 10:1. Keep this in mind the next time a manager or customer asks you for a time estimate! To build a 10,000 line app, expect to write roughly 100,000 lines.
+
+#+end_quote
+6. [[https://hbr.org/2017/07/stop-using-the-excuse-organizational-change-is-hard%C2%A0][Stop Using the Excuse “Organizational Change Is Hard”]]
+
+   The research result gives me hope on what I'm doing now at work.
+
+#+begin_quote
+
+   - We assume that failure is a more likely outcome than success, and, as a result, we wrongly treat successful outcomes as flukes and bad results as irrefutable proof that change is difficult.
+   - Only "about one in ten admit to having been involved in a transformation that was 'completely' or 'mostly' unsuccessful."
+   - *Adaptation is the rule of human existence, not the exception.*
+
+#+end_quote
+7. [[https://medium.com/@will_80765/startups-start-slow-to-move-fast-and-take-less-money-cb9c3f5ad51][Startups: Start Slow to Move Fast (and Take Less Money)]]
+
+   Another article about MVP.
+
+#+begin_quote
+
+   - No one wins when a startup optimizes all its success for the short term.
+
+     - As a startup, to be successful, you need to
+
+       1. deliver more than just a first product to a handful of customers
+       2. continually deliver to a large number of customers over a long period of time
+
+     - Scaling requires at least some structure and methodology
+     - Especially early on
+
+   - Start Slower, Finish Faster (and Better)
+
+     - Starting slower and more methodically, especially in the early stages as you're vetting your idea and the target market, is the key to shifting the odds of creating a successful startup in your favor.
+
+       1. You'll get to market with a solid, finished product at least as fast (we're being generous here, in all likelihood, faster)
+       2. You'll have more customers lined up to purchase once you deliver your product
+       3. You'll end up with a more solid product that can quickly be modified to meet the needs of an expanding customer base — you'll be able to scale better and faster.
+       4. You'll need less funding along the way.
+
+   - The Vetting Process - Doing the Hard Stuff When it's Easy(ier)
+
+     - By using a methodical approach to vetting your idea, the market and your company, you can grease the rails to success.
+     - You do it by answering a few key questions before you squish the accelerator pedal to the floor.
+
+       1. What is your idea? The problem AND the solution.
+       2. Who are your customers?
+       3. What is your value proposition?
+       4. Do you have product-market fit?
+       5. Can you build a team?
+       6. Can you build the product?
+       7. How will you be different?
+       8. How will you go to market?
+       9. How will you make money?
+       10. Can you get funding?
+
+     - You would have encountered these problems anyway, just later.
+
+       - Asking the questions early doesn’t change the problems, it just makes them apparent earlier.
+       - When you find the problems early, you can deal with them better and make adjustments in stride.
+
+     - To be most effective, it's better to think of these questions forming an iterative loop.
+
+   - The ultimate benefit of starting slow to move faster is that you’ll develop a thorough understanding of customer needs, requirements, and preferences as a result of your deep customer engagement and analysis.
+
+#+end_quote
+8. [[http://algeri-wong.com/yishan/engineering-management.html][Engineering Management]]
+
+   Great idea from 2009 can still be applied to what we are doing today. No wonder great people like Yishan Wang can build great companies like Paypal, Facebook, and Reddit.
+
+   - [[http://algeri-wong.com/yishan/engineering-management-hiring.html][Hiring is number one]]
+   - [[http://algeri-wong.com/yishan/engineering-management-process.html][Let process be implemented by those who practice it]]
+   - [[http://algeri-wong.com/yishan/engineering-management-internal-promotion.html][Promotion from within]]
+   - [[http://algeri-wong.com/yishan/engineering-management-tools-are-top-priority.html][Tools Are Top Priority]]
+   - [[http://algeri-wong.com/yishan/engineering-management-technical-leaders.html][Technical Leaders]]
+
+9. [[http://jmock.org/oopsla2004.pdf][Mock Roles, not Objects]]
+
+   The best paper to learn Mock style testing.
+
+#+begin_quote
+
+   - Mock Objects changes the focus of TDD from thinking about the changes in state of an object to *thinking about its interactions with other objects*
+
+     - We use Mock Objects to let us write the code under test as if it had everything it needs from its environment.
+     - This process shows us what an object's environment should be so we can then provide it.
+
+   - Need-Driven Development
+
+     - A core principle of Lean Development is that *value should be pulled into existence from demand* , rather than pushed from implementation
+     - : the flow of programming with Mock Objects.
+
+       - TDD with Mock Objects guides interface design by the services that an object requires, not just those it provides.
+       - This process results in *a system of narrow interfaces each of which defines a role in an interaction between objects* , rather than wide interfaces that describe all the features provided by a class.
+
+     - We continue this process until we reach a layer that implements real functionality in terms of the system runtime or external libraries.
+     - Our experience is that systems we produce this way tend towards very flat class hierarchies.
+
+       - This avoids well-known problems, such as the Fragile Base Class, which make systems harder to understand and modify.
+
+     - Need-Driven Development helps us stay focussed on the requirements in hand and to develop coherent objects.
+
+       - This process is similar to traditional Top-Down Development
+
+         - The intention is that each layer of code is written in a coherent terminology, defined in terms of the next level of abstraction
+         - This is difficult to achieve in practice because the most important decisions have to be taken early and it is hard to avoid duplication across lower level components
+
+           - TDD mitigates this by including Refactoring in its process.
+
+       - Bottom-Up Development has different risks.
+
+         - developing a supporting class in isolation, as part of a larger task, only to find that the result was not right because we had misunderstood something.
+
+#+end_quote
+10. [[http://www.harukizaemon.com/blog/2010/03/01/functional-programming-in-object-oriented-languages/][Functional programming in object oriented languages]]
+
+    FP and OOP are not orthogonal. They are compatible and it's best to use them according to the problem you are facing.
+
+#+begin_quote
+
+    - Immutable objects good; Mutable objects bad
+
+      Classes should be immutable unless there's a very good reason to make them mutable….If a class cannot be made immutable, limit its mutability as much as possible.
+
+    - An object is a collection of partially applied functions
+
+      - methods MUST operate, in some way, on the state of the object
+      - If they didn't operate on the object's state, they wouldn't be partially applied.
+
+    - An object's API provides a clear separation between Commands and Queries
+
+      Methods should return a value only if they are referentially transparent and hence possess no side effects
+
+      - If we assume we only want to return one thing from a method, and that a change in state necessitates returning a handle to the new state, then *a method can only ever be either a query or command but not both* .
+      - In a sense commands are now queries, eg. that ask the question: "what would a system look like if I asked you to do something?"
+
+    - An object is a snapshot of state and possible outcomes
+
+      - The methods are like the choices we make
+
+    - An object is a persistent data structure
+
+      - each copy is like a delta from the previous, sharing as much state as possible and reducing not only the time to copy but also the amount of memory needed.
+
+#+begin_src ruby
+def add(other)
+  transform do
+    @amount = @amount + currency.convert(other.currency, other.money)
+  end
+end
+#+end_src
+      - In a sense each method describes the delta between the current state and the new state.
+      - It reminds me of branching in a Version Control System.
+
+    - More to explore
+
+#+end_quote

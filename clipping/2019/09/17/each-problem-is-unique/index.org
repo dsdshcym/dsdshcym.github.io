@@ -1,0 +1,102 @@
+#+TITLE: Each Problem Is Unique
+
+I believe that, each problem is unique. To find the best solution, we need to *understand the context* first, apply our knowledge, and finally execute & iterate.
+
+* Each system is unique
+#+begin_quote
+
+Do you prefer unit or integration tests? Everybody has their opinions. We discuss that a lot. I wrote an article which explains why I think those discussion make little sense. Each system is unique. Nobody can tell you how to write the tests for yours. [[https://t.co/ObN5ZVRoHp][https://t.co/ObN5ZVRoHp]]
+
+— Maciej Kaszubowski (@mkaszubowski94) [[https://twitter.com/mkaszubowski94/status/1167046376481599498?ref_src=twsrc%5Etfw][August 29, 2019]]#+end_quote
+#+begin_quote
+
+- Instead of trying to find the “correct” answer, we should try to understand the process of making those decisions.
+
+  1. Identifying assumptions and constraints
+  2. Questioning assumptions
+
+#+end_quote
+
+-- from [[https://medium.com/@mkaszubowski/dont-tell-me-how-to-test-my-software-4b87038ed321][Don’t tell me how to test my software - Maciej Kaszubowski - Medium]]
+
+#+begin_quote
+
+- In software development, most ideas are bad; this is not anyone’s fault.
+
+  - *It is just that the number of possible ideas is so large that any particular idea is probably not going to work* , even if it was chosen very carefully and intelligently.
+  - To make progress, you need to start with a bunch of bad ideas, discard the worst, and evolve the most promising ones.
+
+#+end_quote
+
+-- from [[https://www.csc.gov.sg/articles/how-to-build-good-software][How to Build Good Software]]
+
+* Each software process is unique
+#+begin_quote
+
+- Every software process has to be shaped by context.
+- I deliberately chose to forget everything I knew about software engineering. I just said, “I'm going to try and be a programmer and I'm going to watch what people do. I'm just going to copy what they do. If somebody says this is two diffs since that one, it will be two diffs. If somebody says you need tests for this, I'll write tests. If they say you don't need tests for that. Why are you writing tests? Then I won't write tests, even if I think that's my – that's the natural thing to do
+
+  1. That's the only way one, that I was going to be able to explore this mystery of how this software engineering process worked.
+  2. Two, is the only way that I was going to have any influence, because clearly, nobody was going to listen to me based on reputation.
+
+#+end_quote
+
+-- from [[https://softwareengineeringdaily.com/2019/08/28/facebook-engineering-process-with-kent-beck/][Facebook Engineering Process with Kent Beck - Software Engineering Daily]]
+
+* Each company is unique
+#+begin_quote
+
+- Every company is a ~disaster. The question is,
+
+  1. is their disaster actionable?
+  2. do you want to action it?
+
+#+end_quote
+
+-- from [[https://twitter.com/jeff_weinstein/status/1141154177944555520][Jeff Weinstein on Twitter: "A year in, here are the top 10 things I appreciate about Stripe and I’d suggest mimicking."]]
+
+* How to solve unique problems?
+
+To me, the lesson here is to always try and understand the context first, then come up with a unique solution. Don't see everything as a nail when you have a hammer.
+
+But it's not to say we don't need to learn how to use a hammer at all. Problem solving is a skill that needs practices as well. The [[https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition][Dreyfus model of skill acquisition]] shows the process from learning to use a hammer to identifying nails from other objects.
+
+#+begin_quote
+
+1. Novice
+
+   - Rigid adherence to rules or plans
+   - Little situational perception
+   - No (or limited) discretionary judgment
+
+2. Advanced Beginner
+
+   - Guidelines for action based on attributes and aspects, which are all equal and separate
+   - Limited situational perception
+
+3. Competent
+
+   - Conscious deliberate planning
+   - Standardized and routine procedures
+
+4. Proficient
+
+   - Sees situations holistically rather than as aspects
+   - Perceives deviations from normal patterns
+   - Uses maxims for guidance, whose meanings are contextual
+
+5. Expert
+
+   - No longer relies on rules, guidelines or maxims
+   - Intuitive grasp of situations
+   - Analytic approach used only in novel situations
+
+#+end_quote
+
+-- from [[https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/][On Being A Senior Engineer – Kitchen Soap]]
+
+Based on the Dreyfus model, here is how to solve all the unique problems we are facing:
+
+1. First, recognize that every problem is unique.
+2. Then, learn the rules and try to apply them. Every problem is unique doesn't mean we don't learn from the existing wisdom. Without learning from the past, we can hardly explore the solution space
+3. Finally, practice and iterate over and over again, and learn from these experiences. After enough cycles, you will become expert at solving this type of problems.

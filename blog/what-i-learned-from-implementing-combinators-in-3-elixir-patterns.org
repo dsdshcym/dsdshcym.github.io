@@ -1,0 +1,453 @@
+#+TITLE: What I learned from implementing Combinators in 3 Elixir patterns
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2021-06-13]
+#+URI:         blog/2021/06/13/what-i-learned-from-implementing-combinators-in-3-elixir-patterns/index.html
+#+TAGS:        Elixir, Functional Programming
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I used composition extensively in an Elixir project.
+This project changed how I write functions and how I understand data structures from now on.
+Now I see functions and data structures as *contracts* ,
+we can compose small contracts into a larger contract (compose functions),
+and we can also encapsulate the internal of our data structures behind contracts.
+This post is the summary of this kind of contract-centric thinking.
+
+* The project requirements
+
+The functional requirement of this project is quite simple:
+
+1. Move some large files from storage server A to storage server B.
+2. Insert db records for files on storage server B by duplicating db records for files on storage server A
+
+But the non-functional requirements are complex enough so we need a clever solution:
+
+1. Since the files are quite large, we have different methods to move them to the new server.
+   But each of them has different pros and cons.
+   We need to run experiments to pick the most cost-effective one.
+2. Again, since the files are large, it's easy to corrupt data when moving them through network.
+   We need to compare the new files with the old files with checksums like md5.
+3. We need to insert records into more than one database.
+   It's important for these insertions to be an atomic operation.
+   (i.e. when one insertion failed, the other insertions need to be rolled-back.)
+
+* Data Mover Combinator
+
+Inspired by parser combinator, I came up with the following Data Mover Combinator solution.
+
+#+begin_src ruby
+def run do
+  [
+    FileMover.new() |> CompareAfterwardsMover.new(MD5Comparator.new()),
+    Repo1Mover.new(),
+    Repo2Mover.new()
+  ]
+  |> SequenceMover.new()
+  |> RepoTransactionalMover.new(Repo1)
+  |> RepoTransactionalMover.new(Repo2)
+  |> Mover.run(source, destination)
+end
+#+end_src
+
+All the new functions are chained together to build a mover.
+Then the Mover.run/3 receives this mover, with the source map and destination map so the real work begins.
+Mover.run/3 would return either :ok when the move succeeded, or {:error, reason} when the move failed.
+
+Here are what each Mover module does:
+
+FileMover.new/0
+    returns a mover that moves files from source to destination
+CompareAfterwardsMover.new/2
+    receives an actual_mover and a comparator,
+    returns a mover that calls comparator to diff the data in source and destination if actual_mover returns :ok, making sure that the data on both ends match.
+Repo1Mover.new/0
+    returns a mover that inserts records to Repo1 for destination based on records for source.
+Repo2Mover.new/0
+    returns a mover that inserts records to Repo2 for destination based on records for source.
+SequenceMover.new/1
+    receives a list of mover's, returns a mover that calls each of these mover's in sequence.
+RepoTransactionalMover.new/2
+    receives an actual_mover and an Ecto repo module,
+    returns a mover that wraps the call to actual_mover inside a repo.transaction/2.
+
+** How to implement Combinators?
+
+Now you may be wondering, how to implement the Mover.run/3 function with all these small Mover modules?
+The simplest way is to return anonymous functions from these new functions.
+The "concrete" movers are quite simple:
+they just return an anonymous function that receives a source map and a destination map, then move the data from source to destination.
+(and the data to be moved can be objects, files, or database records.)
+
+#+begin_src ruby
+defmodule FileMover do
+  def new() do
+    fn source, destination ->
+      # move files from source to destination ...
+    end
+  end
+end
+#+end_src
+
+What about the "abstract" movers that wraps around another mover?
+Let's use CompareAfterwardsMover as an example:
+
+#+begin_src ruby
+defmodule CompareAfterwardsMover do
+  def new(actual_mover, comparator) do
+    fn source, destination ->
+      with :ok <- Mover.run(actual_mover, source, destination),
+           :same <- Comparator.run(comparator, source, destination) do
+        :ok
+      else
+        :different -> {:error, :new_files_are_different}
+      end
+    end
+  end
+end
+#+end_src
+
+Note here the actual_mover is passed to Mover.run/3 to get called.
+And the Comparator modules is also a Combinator module just like Mover.
+Following the same pattern, we can implement RepoTransactionalMover, SequenceMover in a similar way:
+Inside the anonymous functions they return, the mover to be wrapper would be passed to Mover.run/3 to do the real work.
+And the "abstract" movers are just adding an extra non-functional layer upon it.
+
+Finally, our Mover.run/3 function receives the anonymous function as mover, along side source and destination.
+Then Mover.run/3 just delegates the work to mover by applying this anonymous function:
+
+#+begin_src ruby
+defmodule Mover do
+  def run(mover, source, destination) do
+    mover.(source, destination)
+  end
+end
+#+end_src
+** The power of Combinators
+
+From the examples above, we can see the power of this Combinator pattern:
+By decomposing the work into smaller parts like CompareAfterwardsMover,
+we composed a complex mover from a bunch of small and isolated mover's.
+This process feels just like *building Lego blocks* .
+
+With these tiny blocks, our Data Mover Combinator pattern meets our non-functional requirements perfectly:
+
+1. We can easily switch between different methods to move files
+   by implementing another AlternativeFileMover module and plugging this module in.
+   If we want, we can easily implement a SplitterMover to randomly pick a method so we can compare different methods.
+2. The comparator's are completely *isolated* from mover's.
+   If I were writing this code before in a more procedural style, I would probably nest the comparing logic with the moving logic.
+   This kind of nesting might make changing one of them harder since the other might be affected by the change.
+3. Non-functional requirements like transactional operations can be encapsulated in separated mover's.
+   So we can reuse this kind of non-functional logic easily,
+   just like what we did with RepoTransactionalMover.
+
+So what's making these Data Mover Combinators so powerful?
+I think the main factor is that
+these tiny blocks are completely *isolated* from each other, yet *composable* so we can build an extremely powerful data moving machine.
+
+Isolated
+    Because each mover only needs to concern its own responsibilities, it can be very small and cohesive.
+    This isolation also brings us a nice side-effect: testability.
+    We can easily test the "concrete" mover's like FileMover since it's completely focusing on moving files.
+    We can also easily test the "abstract" mover's like CompareAfterwardsMover, or RepoTransactionalMover.
+
+    - CompareAfterwardsMoverTest
+
+#+begin_src ruby
+defmodule CompareAfterwardsMoverTest do
+  use ExUnit.Case, async: true
+
+  test "returns :ok when both mover and comparator returns :ok"
+
+  test "returns {:error, :new_files_are_different} when comparator returns :different"
+end
+#+end_src
+    - RepoTransactionalMoverTest
+
+#+begin_src clojure
+defmodule RepoTransactionalMoverTest do
+  use TestSupport.DataCase, async: true
+
+  test "returns result from actual_mover"
+
+  test "reverts changes to repo when actual_mover returns an {:error, reason}"
+
+  test "reverts changes to repo when actual_mover raises an exception"
+
+  test "reverts changes to repo when actual_mover throws an error"
+
+  test "reverts changes to multiple repos when transactions are nested"
+
+  test "raises serialization_failure error when races with another SERIALIZABLE transaction"
+end
+#+end_src
+
+Composable (The Closure Property)
+
+    Mover's share the same API Mover.run/3.
+    So no matter it's a simple concrete mover like FileMover, or a complex composed mover like SequenceMover, as long as it can be accepted by Mover.run/3, it's a valid mover.
+    With this feature, the "depth" of Mover.run/3 is now dynamic:
+
+    - It can be infinitely deep (i.e. moves a lot of data behind the scenes) like what we do on production.
+    - It can also be extremely shallow (i.e. just return :ok) when we test an "abstract" mover, or try to understand a part of the system.
+
+    In another word, each mover can stay relatively simple, yet the whole system can be easily composed from these simple parts.
+
+    Most importantly, the final mover on production is built from ground up, layer by layer.
+    We can easily change the topology of these layers, to adjust the final behaviour with minimum changes.
+    For example, let's say the FileMover would take too much time to run.
+    We definitely don't want to wrap this step in repo transactions.
+    We can just change how we build the final mover to achieve this:
+
+#+begin_src ruby
+def run do
+  [
+    FileMover.new() |> CompareAfterwardsMover.new(MD5Comparator.new()),
+    # Only wrap the following 2 steps in RepoTransactionalMover
+    [
+      Repo1Mover.new(),
+      Repo2Mover.new()
+    ]
+    |> SequenceMover.new()
+    |> RepoTransactionalMover.new(Repo1)
+    |> RepoTransactionalMover.new(Repo2)
+  ]
+  |> SequenceMover.new()
+  |> Mover.run(source, destination)
+end
+#+end_src
+
+* What is function composition?
+
+After finished this work, I started thinking:
+What makes function composition possible?
+Or what is function composition?
+
+Before answering this question, we need to see *what is a function* .
+From my perspective, a function is a contract which specifies:
+
+Inputs
+    A function can only accept a range of inputs.
+Effects
+    Pure functions don't have any side-effect.
+    Impure functions would produce side-effects based on the inputs.
+Outputs
+    Pure functions would return outputs determined by the inputs.
+    Impure functions would return outputs depending on the inputs and the results of the side effects.
+
+But what if we switch to function caller's perspective?
+From the function caller's perspective, inputs and outputs are what matter the most.
+For each effect, the caller function can only guess its result based on the outputs.
+For example, the caller assumes the effect finished if the return value is :ok,
+or the effect failed if the return value is an :error tuple.
+In this sense, the contract between caller and callee only contains the inputs and the outputs.
+
+So, as long as we keep the inputs contract and the outputs contract compatible, we can add as many effects contracts as we want.
+And this is what "function composition" means to me:
+*composing small contracts into a larger contract.*
+
+* 2 alternative ways to implement Data Mover Combinator
+
+Interestingly, I tried 3 different implementations for these Data Mover Combinator's:
+
+1. Anonymous Function (see the example above)
+2. Behaviour
+3. Protocol
+
+Note these 3 implementations all share the same CompareAfterwardsMover.new/2 and Mover.run/3 APIs.
+
+** Behaviour
+
+Actually I first started implementing "concrete" movers with Behaviour modules.
+Because the callback function run(source, destination) was so obvious.
+But with "abstract" movers like CompareAfterwardsMover, we need a more complex data structure:
+
+#+begin_src ruby
+defmodule CompareAfterwardsMover do
+  def new(actual_mover, comparator) do
+    [__MODULE__, actual_mover: actual_mover, comparator: comparator]
+  end
+
+  @impl Mover
+  def run(source, destination, [actual_mover: actual_mover, comparator: comparator]) do
+    with :ok <- Mover.run(actual_mover, source, destination),
+         :same <- Comparator.run(comparator, source, destination) do
+      :ok
+    else
+      :different -> {:error, :new_files_are_different}
+    end
+  end
+end
+
+defmodule Mover do
+  @callback run(source(), destination(), keyword()) :: :ok | {:error, any()}
+
+  def run([mod | opts], source, destination) do
+    mod.run(source, destination, opts)
+  end
+end
+#+end_src
+
+- Pros
+
+  - The contract is explicitly defined via the run/4 callback.
+  - We can use [[https://github.com/dashbitco/mox][Mox]] to define mocks.
+  - We can do some meta analysis in Mover.run/3:
+
+#+begin_src ruby
+defmodule Mover do
+  def run([mod | opts], source, destination) do
+    Logger.info("start mover #{mod}")
+
+    # analyze how much time each mover takes with :time.tc ...
+    mod.run(source, destination, opts)
+  end
+end
+#+end_src
+
+- Cons
+
+  - The callback run/4 needs an extra argument opts so that we can build a mover dynamically.
+  - As you may see below, Behaviour is less flexible than Anonymous Function.
+    Because a valid mover always needs to be a module.
+
+** Anonymous Function
+
+I thought the Behaviour solution was a hack (attaching opts to a mod), and this hack required us to add an extra opts argument to our run callback function.
+So I refactored the code to returned the anonymous functions just like above.
+But the anonymous functions also have their Pros and Cons.
+
+- Pros
+
+  - Extremely flexible:
+    CompareAfterwardsMover can be a module (with function new/2),
+    but it can also be just a function Mover.compare_afterwards/2.
+  - We can create mocks simply by defining an anonymous function in our test:
+
+#+begin_src rust
+fn :source, :destination -> :ok end
+#+end_src
+
+- Cons
+
+  - The contract is implicitly defined as a convention.
+    Meaning: the compiler won't help us detect an API violation if we decide to change the inputs/outputs convention
+    (e.g. from (source, destination -> :ok | {:error | any()}) to (source, destination -> {:ok, any()} | {:error, any()}))
+    This may cause some trouble in the long term.
+  - Dialyzer cannot analyze anonymous functions deeply.
+  - We cannot attach extra info in the anonymous functions.
+    If we want to log when a mover gets called and its arguments, we may need to refactor to a data structure like the one with the callback modules (e.g. [fun, mover_name, opts]),
+    which would take away much of the flexibility.
+
+** Protocol
+
+Finally, I was inspired by this great talk[fn:1] by Quinn Wilton: [[https://www.youtube.com/watch?v=fhheJ5zsXBQ][Atlas Flexible Software Composition using Protocols]]
+I experimented with using Protocol to implement the Combinator pattern:
+
+#+begin_src ruby
+defmodule CompareAfterwardsMover do
+  defstruct [:actual_mover, :comparator]
+
+  def new(actual_mover, comparator) do
+    %__MODULE__{actual_mover: actual_mover, comparator: comparator}
+  end
+
+  defimpl MoverAlike do
+    def run(%__MODULE__{actual_mover: actual_mover, comparator: comparator}, source, destination) do
+      with :ok <- Mover.run(actual_mover, source, destination),
+           :same <- Comparator.run(comparator, source, destination) do
+        :ok
+      else
+        :different -> {:error, :new_files_are_different}
+      end
+    end
+  end
+end
+
+defprotocol MoverAlike do
+  def run(mover, source, destination)
+end
+
+defmodule Mover do
+  defdelegate run(mover, source, destination), to: MoverAlike
+end
+#+end_src
+
+- Pros
+
+  - The contract is defined explicitly via a Protocol.
+  - Unlike Behaviour's, we don't need an extra argument opts to store dynamic config.
+    We can put these dynamic configs in the struct naturally.
+  - We can also run meta analysis in Mover.run/3.
+
+- Cons
+
+  - There is no mock library for Protocols.
+    (which is why I created one: [[https://github.com/dsdshcym/promox][dsdshcym/promox: Protocol-based mocks and explicit contracts in Elixir]])
+  - We cannot define extra functions under Mover module if it's a Protocol module.
+    If we really want to do so, we may need to extract another Protocol module (MoverAlike).
+
+* What is data?
+
+Before I finished the Protocol implementation, I realized these different implementations really didn't matter.
+As long as we keep the same XXXMover.new and Mover.run/3 API, we can choose whatever implementation I like.
+These implementations can even co-exist!
+
+#+begin_src ruby
+defmodule Mover do
+  @callback run(t(), source(), destination(), keyword()) :: :ok | {:error, any()}
+
+  def run(mover, source, destination) when is_function(mover) do
+    mover.(source, destination)
+  end
+
+  def run([mod | opts], source, destination) do
+    mod.run(source, destination, opts)
+  end
+
+  def run(mover, source, destination) when is_struct(mover) do
+    MoverProtocol.run(mover, source, destination)
+  end
+end
+#+end_src
+
+I started wondering:
+What have I done right this time?
+And what is a mover data structure anyway?
+
+Luckily, I was reading Structure and Interpretation of Computer Programs ([[https://mitpress.mit.edu/sicp/full-text/book/book.html][SICP]]) again, and I found the answer:
+
+#+begin_quote
+
+*What Is Meant by Data?*
+
+In general, we can think of data as
+defined by some collection of *selectors* and *constructors* ,
+together with *specified conditions* that these procedures must fulfill in order to be a valid representation.
+
+#+end_quote
+
+The *selectors* , *constructors* , *specified conditions* are all functions.
+And each function is just a contract.
+So, *data is a bundle of different contracts!*
+
+As long as we can construct a CompareAfterwardsMover with CompareAfterwardsMover.new/2,
+and it can be accepted by Mover.run/3 to meet its contract,
+the caller doesn't care about whether a CompareAfterwardsMover is a data structure around a callback module, or an anonymous function, or a struct.
+So we can choose the one that suits our use case the most, and build upon that.
+Or we can choose multiple implementations for different use case, to combine their advantages together in our apps.
+We have infinite choices for how to build Data Mover Combinator's, as many as what we can achieve with Data Mover Combinator's.
+
+* Summary
+
+In this post, we examined a way to compose a complex data mover from several small data mover's.
+The complex data mover is like a large contract, which is composed by these smaller contracts with the same inputs and outputs.
+The larger contract's effects are the sum of the smaller contracts' effects.
+And finally, we can see that a data structure is also a bundle of contracts.
+We can build a data structure in whatever way we want, as long as it can meet the contracts.
+
+* Footnotes
+[fn:1]
+
+Actually, I was inspired by [[https://mobile.twitter.com/wilton_quinn/status/1395864154917937157][this tweet]] before the talk came out

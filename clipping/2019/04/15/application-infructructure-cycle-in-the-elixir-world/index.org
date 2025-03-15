@@ -1,0 +1,62 @@
+#+TITLE: Application-Infructructure Cycle in the Elixir world
+#+begin_quote
+
+- platforms evolve from an iterative cycle of apps=>infrastructure=>apps=>infrastructure and are rarely built in an outside vacuum.
+
+  1. First, apps inspire infrastructure.
+  2. Then that infrastructure enables new apps.
+
+- Apps and infrastructure evolve in responsive cycles, not distinct, separate phases.
+
+  - Light bulbs & electric grid
+
+    - [[https://www.amazon.com/Last-Days-Night-Novel/dp/0812988922][The Last Days of Night: A Novel: Graham Moore]]
+
+  - Planes & airports
+
+    - Sometimes all the infrastructure you need is a beach and some spare parts.
+
+  - Email & Internet
+
+- The Adjacent Possible
+
+  - [[https://www.amazon.com/Where-Good-Ideas-Come-Innovation/dp/1594485380][Where Good Ideas Come From: The Natural History of Innovation:
+Steven Johnson]]
+  - The common theme in the development of each major platform (electricity, cars, planes, the web, mobile, etc.) is that we build what we can given the tools available to us at the moment.
+  - It is hard to successfully build infrastructure that is too far ahead of the apps market.
+  - Each time the apps => infrastructure cycle repeats, new apps are made possible because of the infrastructure that was built in the cycles before.
+  - As there are more and more cycles in each new platform it gets cheaper to build and use those apps.
+
+- Development Frameworks Versus Investing Frameworks
+
+  - The apps=>infrastructure=>apps=>infrastructure cycle explains when apps or infrastructure can be built, but doesn’t necessarily explain when to invest in apps versus when to invest in infrastructure.
+
+- why is it that apps come first in the cycle, and not infrastructure first?
+
+  - it doesn't make sense to create infrastructure until there are apps asking you to solve their infrastructure problems.
+
+#+end_quote
+
+-- from [[https://www.usv.com/blog/the-myth-of-the-infrastructure-phase][The Myth of The Infrastructure Phase - Union Square Ventures]]
+
+There are some real world examples from the Elixir world to prove this:
+
+1. [[https://github.com/elixir-lang/gen_stage][GenStage]] & [[https://github.com/plataformatec/broadway][Broadway]]
+
+   - In [[https://www.youtube.com/watch?v=Fq9hpl7xbWM&feature=youtu.be][The Road to Broadway - Lambda Days 2019]], José showed us the background of developing Broadway.
+
+     - They saw many applications that need a concurrent data processing mechanism with back-pressure, so they built gen_stage.
+     - They saw many projects reimplementing the same feature set using gen_stage, so they built broadway.
+
+       - rate limiting
+       - matching
+       - metrics
+
+   - In these two examples, we can see that the rationales behind these two great libraries are all from a lot of real world applications. And then gen_stage came into life as an important infrastructure block in the Elixir world. A lot of applications were built upon it again. Finally, broadway was extracted as a new building block.
+
+2. [[https://github.com/phoenixframework/phoenix][Phoenix]] & [[https://github.com/phoenixframework/phoenix_live_view][LiveView]]
+
+   - LiveView is built upon Phoenix Channel, which is battle proofed with tons of Phoenix applications.
+   - And the new apps built are made possible because of the infrastructure that was built in the cycles before.
+
+I guess that's also why I like Elixir so much and decide to put a lot of my efforts into it. It's the thoughtful development process that lead to a [[https://www.youtube.com/watch?v=5SbWapbXhKo][solid ground]] based on Erlang, OTP, Elixir, Phoenix, GenStage, and so on. Upon this solid ground, we can build our app with much higher confidence and help the Elixir infrastructure reach the next level.

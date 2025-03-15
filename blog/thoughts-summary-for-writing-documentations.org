@@ -1,0 +1,22 @@
+#+TITLE: Thoughts/Summary for Writing Documentations
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-21]
+#+URI:         blog/2018/01/21/thoughts-summary-for-writing-documentations/index.html
+#+TAGS:        Clean Code, Documentation
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Just another day, another developer asked me for some advice on writing documentations. Here were the four tips I gave him:
+
+1. Try to extract the code you want to document on to a method/class, use the method name /class name as the documentation.
+2. Add comments for hacks or other things that cannot be applied by 1, also add the comments into the commit message for this change.
+3. Use test/spec examples as usage explanations if you want examples on how to use your code.
+4. Use yard/rdoc if you want to export your documentations to other formats (e.g. html).
+
+* Doctest
+
+Some modern languages like Rust and Elixir have native support for doctest (running test examples written in the code documentations).
+
+For Ruby, I only found this Gem for Yard: [[../../Org/notes/ruby.html#ID-C918B5B8-3ECF-47D4-A888-04036000C208][p0deje/yard-doctest: Doctests from
+YARD examples]].

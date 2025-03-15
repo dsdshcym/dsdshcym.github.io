@@ -1,0 +1,32 @@
+#+TITLE: Notes from "Why VSCode is better than Atom? - Teahour.fm"
+#+begin_quote
+
+- 在 Microsoft 可以用 Mac 开发
+- 评价编辑器好坏的几个方面
+
+  1. 足够快
+
+     - 打开文件
+     - 搜索
+
+  2. 语法高亮
+  3. 提高生产力
+
+     - keybinding
+
+  4. 项目契合度
+
+- Atom 比 VSCode 先进的地方
+
+  - 能改动界面（VSC 注重 Performance，不提供 UI API）
+  - 但造成性能问题
+
+- Text Data Structure 对编辑器性能的影响很大
+
+  - Array vs Red/Black Tree
+
+- Electron is the new Flash
+
+#+end_quote
+
+-- from [[http://teahour.fm/2017/12/12/why-vscode-is-better-than-atom.html][Why VSCode is better than Atom? - Teahour.fm]]

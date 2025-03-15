@@ -1,0 +1,136 @@
+#+TITLE: 3 Key Ideas Behind The Erlang Thesis
+
+Elixir, my current favorite programming language, is built upon Erlang. So, to understand many concepts for Elixir, I need to learn more about Erlang. Without any doubt, the paper written by its creator, [[http://erlang.org/download/armstrong_thesis_2003.pdf][making reliable distributed system in the presence of
+software errors]], is the best way to learn why Erlang was designed in this way.
+
+This post is my summary of this paper, which are the key points that make Erlang such a great language.
+
+1. Concurrency Oriented Programming
+2. Abstracting Concurrency Out
+3. The philosophy of falling back to an easier task when an error occurs
+
+* Concurrency Oriented Programming
+
+Erlang is a Concurrency Oriented Programming Language (COPL). That means, "the concurrent structure of the program should follow the concurrent structure of the application." Why this is so important?
+
+Because *our world is full of concurrency.*
+
+As it was explained in the paper, "the real world is concurrent." Every second, there are countless things happening at the same time. Even we pick one simple thing out, it's still composed of many concurrent events.
+
+The activity of walking is a great example. One's walking is a cohesive activity to another. But it actually requires many different muscles to work together, *concurrently* . And if we dig deeper, every muscle needs many different cells to work together, *concurrently* .
+
+Organizations also depend on concurrency to perform well. An organization is a bunch of different people working together, *concurrently* .
+
+Another example, which is more important than all the others, is our computer hardware. Different parts of our computer are working concurrently. The CPU is getting more and more cores, working concurrently. With network, multiple computers can become a cluster, working concurrently.
+
+So, we need a concurrency oriented programming language, to model our hardware and our world. That's why Erlang shines in today's world: it's built for concurrency.
+
+* Abstracting Out Concurrency
+** Concurrent programming is hard
+
+But writing a concurrent program is hard, way harder than writing a sequential program.
+
+1. We as human beings can hardly think concurrently.
+
+   For most tasks, we are used to break them down into steps and compose these small steps back together. And I think that's why most programming languages are designed for this use case.
+
+   When it comes to concurrency, a series of sequential steps won't work. Step 1 may happen after Step 2. Task 4 may finish before Task 3. And so on.
+
+   This incompatibility between how we are used to model problems and how concurrent program works is a main issue that a COP language needs to solve.
+
+2. Concurrent programs have more concerns other than solving the problem itself.
+
+   Besides the problem modeling, concurrent programs have many other concerns we need to deal with.
+
+   For example, when a asynchronous task fails and another task is waiting for its results, what do we do next? Do we just restart the failed task and hope this time it will work? Or do we notice the blocked task and let it fail as well? But then how do we implement these strategies?
+
+   These are just a few concerns that we need to consider when designing concurrent programs. And these concerns are not really related to the problem we are solving, they are there because they are the nature of concurrency. So concurrent programs are orders of magnitude harder than sequential programs.
+
+** Erlang's answer: Abstract out concurrency
+
+So how does Erlang solve this hard problem? The answer from this paper is actually quite simple: we abstract out the concurrent aspects. By doing that, we transform a concurrent problem to a sequential problem.
+
+The best example for this is the gen_server module/behaviour.[fn:1]
+
+- The concurrent issues like storing states, handling failures are all handled by the Erlang/OTP module gen_server. Modules like gen_server are maintained by a bunch of professional developers with tons of experience in concurrent programming. And since Erlang/OTP is open sourced, these modules can be improved with the help from the community.
+- Domain/Business specific problems are solved in application module callbacks like handle_call, handle_cast, init, etc.. These callbacks are implemented by us, the developers, users of the language/framework. Thanks to the hard work behind Erlang/OTP, we are freed from solving the concurrent problems, and only need to focus on our specific problems.
+
+** Anything can be abstracted out
+
+If concurrency, an already abstracted concept, can be abstracted elegantly in Erlang, then I believe anything can be abstracted out as well.
+
+I really like how [[http://shop.oreilly.com/product/0636920024149.do][Designing for Scalability with Erlang/OTP]] demonstrated the way to design a generic module. Here is an example of designing the Generic Finite State Machines:
+
+#+begin_quote
+
+||Generic |Specific | |
+||Spawning the FSM |Initializing the FSM state | |
+||Storing the loop data |The loop data | |
+||Sending events to the FSM |The events | |
+||Sending synchronous requests |Handling events/requests | |
+||Receiving replies |The FSM states | |
+||Timeouts |State transitions | |
+||Stopping the FSM |Cleaning up | |
+#+end_quote
+
+-- from [[http://shop.oreilly.com/product/0636920024149.do][Designing for Scalability with Erlang/OTP]]
+
+By listing the generic and specific characters of a problem side by side, we can clearly see how to abstract out the generic part.
+
+Using the same approach, the only question left when designing a abstract module is how you define your problem to split the generic and the specific. The best way to do that is to write enough specific code and keep in mind to [[https://dsdshcym.github.io/blog/2018/10/26/dont-repeat-your-domain-knowledge/][not repeat your domain language]].
+
+* Fallback, Don't Let It Fail!
+
+The last but not the least gem from this paper is about how to handle failures. It's about the philosophy of how Erlang handles software/hardware failures, or famously known as "Let it crash."
+
+"Let it crash" seems to be a controversial idea. People often misunderstand it as "do nothing when error happens, let it crash and the infrastructure will handle it."
+
+There's already [[https://www.amberbit.com/blog/2019/7/26/the-misunderstanding-of-let-it-crash/][a great explanation about why this is not true from
+Hubert Łępicki]]:
+
+#+begin_quote
+
+"Let it crash" is about *building components of software that do not concern themselves with detailed error handling.*
+
+#+end_quote
+
+And if we dig further in the original paper, "Let it crash" is really about *task isolation* and *fallback* .
+
+1. Isolation:
+
+#+begin_quote
+
+   Each process should only have one "role", perform one "task".
+
+   Supervisor
+       watches other processes and restarts them if they fail.
+   Worker
+       a normal work process (can have errors).
+   Trusted Worker
+       not allowed to have errors.
+
+#+end_quote
+2. Fallback:
+
+#+begin_quote
+
+   A strategy for programming fault-tolerance
+
+   1. fail immediately if you cannot correct an error
+   2. try to do something that is simpler to achieve
+
+#+end_quote
+
+   So "Let it crash" doesn't mean we don't attempt to correct an error at all. It's just that we fallback to a simpler task when we cannot correct an error. Often, this simpler task is to restart the failed task and retry.
+
+* Summary
+
+Hopefully, through this lengthy post, you can get the gist of why Erlang is a great concurrency-oriented and fault-tolerant language. If you want to learn more, I would highly recommend you to read [[http://erlang.org/download/armstrong_thesis_2003.pdf][the
+paper]]. If you don't have enough time, you can read [[https://pragprog.com/articles/erlang][this summary
+written by Joe himself]] or [[https://dockyard.com/blog/2018/07/18/all-for-reliability-reflections-on-the-erlang-thesis][the reflections on this paper from
+DockYard]]. Enjoy!
+
+* Footnotes
+[fn:1]
+
+This idea of abstracting concurrency out is best explained In the book [[http://shop.oreilly.com/product/0636920024149.do][Designing for Scalability with Erlang/OTP]], It used examples like gen_server, gen_fsm, supervisor, etc. to show how Erlang and OTP extract these common part of a problem to simplify a problem. Highly recommended!

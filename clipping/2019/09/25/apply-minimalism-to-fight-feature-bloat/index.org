@@ -1,0 +1,115 @@
+#+TITLE: Apply Minimalism to Fight "Feature Bloat"
+* Table of Contents
+
+- [[#org3eb73ad]["Feature Bloat": What? Why? How?]]
+- [[#orgd95c3dc][The End of iTunes: Do One Thing And Do It Well]]
+- [[#org3c28bc0][Heroku: Apply Minimalism to Product]]
+- [[#org2fe6eae][Emacs & Vim: Text Editor Minimalism]]
+- [[#org7ff79c3][Summary]]
+
+* "Feature Bloat": What? Why? How?
+
+A few days ago, I read [[https://hbswk.hbs.edu/archive/feature-bloat-the-product-manager-s-dilemma][this HBS report about the "Feature Bloat"
+dilemma in product management]].
+
+The problem described in this report resonates with me.
+
+On the development side, a feature-bloated product comes with a codebase that's also bloated, complex, and poorly tested.
+
+On the project management side, a feature-bloated product has so many features that adding a new feature or changing an old behavior may break other features. Thus fewer features get added, fewer changes are made, and the project stales.
+
+#+begin_quote
+
+Developer: *unpublishes 11 lines of JavaScript*
+
+JavaScript:
+
+[[https://t.co/b5lX0fJxha][pic.twitter.com/b5lX0fJxha]]
+
+— swyx (@swyx) [[https://twitter.com/swyx/status/1173260769041035264?ref_src=twsrc%5Etfw][September 15, 2019]]#+end_quote
+
+A feature-bloated product is like the tower in this tweet: changing a small piece of code, and the whole tower is down. (P.S. JavaScript ecosystem is a great example as a feature bloated product.)
+
+But why does "Feature Bloat" exist? And why is it a dilemma?
+
+Turns out the reason is simple:
+
+#+begin_quote
+
+Because consumers perceive value in this Swiss-Army-Knife approach and will pay for the added utility.
+
+#+end_quote
+
+Due to this conflict between consumers' needs for more features and our needs for maintaining the product, "Feature Bloat" becomes a dilemma.
+
+How to break out of this dilemma? The report proposes some solutions.
+
+#+begin_quote
+
+1. Remove features
+2. Build simpler products
+3. Give consumers decision aids
+4. Design products that do one thing very well
+5. Use prototypes and product-​in-​use research
+
+#+end_quote
+
+So far so good, but I'm surprised by a fact, that this report was written in *2006* ! As you may know, I started my career around 2016. So a decade has passed, nothing has changed?!
+
+* The End of iTunes: Do One Thing And Do It Well
+
+Let's take iTunes for example.
+
+iTunes is probably the most famous feature-bloated product in the last 10+ years.
+
+- It plays music, movies, podcasts, audio books.
+- It manages your local music library and your Apple Music subscription.
+- Plus, it also is the tool you use to manage your iPhone/iPod/iPad from your Mac.
+
+It's been years that Mac users complaining about this huge giant. Finally in the upcomming macOS this year, iTunes splits into three apps,: Apple Music, Podcasts, and TV. And iOS devices management is moved into Finder.
+
+From the story of iTunes, we can see that we are still struggling with the "Feature Bloat" dilemma. And by design three products that do one thing well, Apple find a way out.
+
+* Heroku: Apply Minimalism to Product
+
+But breaking iTunes down works because all the features are still there, just not in the same app. What if we can't split our product and we still need to add more features?
+
+Heroku finds a way: [[https://brandur.org/minimalism][pursuing production minimalism]].
+
+#+begin_quote
+
+- Through ephemeralization from [[https://www.amazon.com/Nine-Chains-Moon-Buckminster-Fuller/dp/0385011490][Nine Chains to the Moon]]
+
+  - *"Do more and more with less and less until eventually you can do everything with nothing."*
+  - building a stack that scales to more users and more activity while the people and infrastructure supporting it stay fixed.
+  - This is accomplished by building systems that are more robust, more automatic, and less prone to problems because the tendency to grow in complexity that’s inherent to them has been understood, harnessed, and reversed.
+  - Realistic? Probably not. Useful? Yes. Even falling short of an incredibly ambitious goal tends to leave you somewhere good.
+
+#+end_quote
+
+The idea of "do more with less" sticks with me. In the same post, Brandur Leach gave several examples from Heroku's practice. Please do check them out!
+
+* Emacs & Vim: Text Editor Minimalism
+
+To give product minimalism a close look, you definitely need to know Emacs and Vim.
+
+Emacs and Vim are two of the most powerful text editors in this world. They are powerful because they can do anything you can imagine (or can't imagine) with text editing, and keep the editor core small.
+
+I do these things in Emacs everyday:
+
+- Writing code (in various programming languages)
+- Managing my calendar
+- Receiving and replying emails
+
+While Emacs is so powerful, it is just a Lisp interpreter at its core.
+
+So how can they achieve this? I think it's the same idea of product minimalism as Heroku peruses.
+
+Their cores are all written in C. And they both have a package/plugin system, written in Emacs Lisp / Vim script. Over the time, they extract features from their C cores as scripts. So that their cores become smaller, but they can do more by switching different packages/plugins.
+
+* Summary
+
+"Feature Bloat" is a serious problem when developing products. To break out of this dilemma, we have to options depending on the context:
+
+1. When features are interdependent from each other, break them into separated products that do one thing well. (e.g. iTunes)
+2. When features are intertwined with each other, extract additional features as plugins, and keep the core system small. So that we can add more features via new plugins, and change existing behavior by switching plugins.

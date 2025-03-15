@@ -1,0 +1,107 @@
+#+TITLE: Learning = Being Inconsistent Consistently
+
+I believe [[http://dsdshcym.github.io/blog/2017/12/05/meaning-of-life/][the whole purpose of life is to learn]]. Then what is learning? I've read many articles about the topic of learning. And it seems that they all point to the same direction: learning means to have a *growth mindset* , which means to be inconsistent consistently.
+
+* Growth Mindset vs. Fixed Mindset
+
+The term "growth mindset" and "fixed mindset" came from the researches done by Carol Dweck: [[https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322][Mindset: The New Psychology of Success]].
+
+- [[file:///clipping/2019/02/05/clippings-from-the-effective-enginner/#orgba942ac][The Effective Enginner - Adopt a Growth Mindset]]
+
+#+begin_quote
+
+  - *How we view our own effectiveness impacts how much effort we invest in improving it*
+  - Two mindsets
+
+    Fixed mindset
+        human qualities are carved in stone
+    Growth mindset
+        human can cultivate and grieve their intelligence and skills through effort
+
+#+end_quote
+
+* Being Inconsistent
+
+A growth mindset means that through effort, we can improve and become a better version of ourselves.
+
+The definition of "improve": make or become better. This means we need to be inconsistent with our past selves.
+
+- [[https://fs.blog/2012/10/the-art-of-learning/][The Art of Learning]]
+
+#+begin_quote
+
+  - Be willing to lose to win
+  - Don't be locked in a need to be correct
+
+#+end_quote
+- [[https://joel.is/want-to-be-successful-be-inconsistent/][Want to be successful? Be inconsistent]]
+
+#+begin_quote
+
+  - [[https://medium.com/@ctaylormpearson/how-to-stop-procrastinating-using-the-70-rule-f2f79c87c380][Entrepreneurs make fast decisions and move forward knowing that at
+best 70% of their decisions are going to be right.]]
+  - Embrace being inconsistent
+
+    - be open to making adjustments as you learn more.
+
+#+end_quote
+- [[https://signalvnoise.com/posts/3289-some-advice-from-jeff-bezos][Some advice from Jeff Bezos – Signal v. Noise]]
+
+#+begin_quote
+
+  - People who were right a lot of the time were people who often changed their minds.
+  - The smartest people are
+
+    - constantly revising their understanding, reconsidering a problem they thought they’d already solved.
+    - open to new points of view, new information, new ideas, contradictions, and challenges to their own way of thinking.
+
+  - This doesn’t mean you shouldn’t have a well formed point of view, but it means you should consider your point of view as temporary.
+  - What trait signified someone who was wrong a lot of the time?
+
+    - Someone obsessed with details that only support one point of view.
+    - If someone can’t climb out of the details, and see the bigger picture from multiple angles, they’re often wrong most of the time.
+
+#+end_quote
+
+* How to Adopt a Growth Mindset
+
+If you think it's definitely possible to change from a fixed mindset to a growth mindset, then you are already thinking in a growth mindset.
+
+To do that, we just need to recognize when we are thinking in a fixed mindset, and rephrase the situation with a growth mindset.
+
+- [[http://akaptur.com/blog/2015/10/10/effective-learning-strategies-for-programmers/][Effective Learning Strategies for Programmers - Allison Kaptur]]
+
+#+begin_quote
+
+  - Does anyone believe in a fixed mindset?
+
+    - 10x engineers
+    - Hero worship
+
+  - Can you change a fixed mindset? Heck yes
+  - How do you identify a fixed mindset?
+
+    - “I am ..”
+    - “Some people are just …”
+
+  - How do you change a fixed mindset?
+
+    - Reframe praise & success
+
+      - when you get the wrong kind of compliments, turn them into growth-​mindset compliments.
+      - “wow, great job on that project, you’re so smart,” translate it to “yeah, it was great, I worked really hard on that project
+      - “Of course that went well because I’m awesome.” Instead think, “I used an effective strategy on that project! I should do that more often”
+
+    - Reframe failure
+
+      - If you’re saying, “Maybe I’m not cut out for this job after all,” treat that as a red flag.
+      - Instead, ask what you learned from your unsuccessful attempt or what strategies you could have used instead
+
+    - Celebrate challenges
+    - Ask about processes
+
+      - Sometimes, I’ll try to fix a tricky bug and won’t be able to, and then one of them will be able to fix it right away.
+      - In these situations I’ve tried to be really disciplined about asking how they did it.
+      - This is a much more useful strategy in the long term than saying “Oh, of course, that person got the bug because they are a wizard.
+
+#+end_quote

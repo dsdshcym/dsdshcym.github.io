@@ -1,0 +1,120 @@
+#+TITLE: Asking the Right Question
+
+Finding a solution doesn't require as much creativity as asking a right question.
+
+Finding a solution is not that hard, because
+
+1. Many questions have been answered before.
+
+   No matter your question is coding-related, management-related, or whatever. As long as you spend time searching, you will find that you question has been asked thousands of times before.
+
+   (I guess that's also the reason why search engines like Google is so important nowadays.)
+
+2. Even if the exactly same question has never been asked, you can still find a solution based on the experiences from similar questions.
+
+Asking the right question is much harder, because
+
+1. We often don't know what we really want.
+
+   We want to solve a problem for ourselves, but we often don't know how to define the question. The "unknown unknowns" are preventing us to ask the right question.
+
+*We need to learn more about the problem we are solving along the way we are solving it.*
+
+2. We might be targeting a wrong goal.
+
+   When building products, our users often point us to the wrong direction.
+
+So when building products or solving problems, we need to not only iterate on the solution we have, but more importantly, iterate on the question we ask. That's why we need to treat the development process as a learning process.
+
+* Ask the right questions that help you find the scalable solution
+#+begin_quote
+
+- Avoid building power user features — features that increase the complexity of your product for everyone but only get used by a minority of users.
+
+  1. User requests operate within the local maxima that your product sits in.
+
+     - Inevitably, they’ll ask for features that add complexity to the product, making it harder to understand for a new person who’s trying it out for the first time.
+
+  2. The features they request are often band-aids on symptoms, not real solutions.
+
+     - When you dig deeper, the request is a symptom of a root cause
+     - Your job is not to build the features your users ask for, it’s to *ask the right questions that help you find the scalable solution*  — the solution that the majority of users will do.
+
+  3. the resources that these types of feature requests can consume.
+
+     - When you’re working in a resource constrained environment, which all startups are, you always need to make trade-offs of building features that increase engagement of existing users vs help grow the user base.
+
+       - The latter doesn’t just mean growth hacking, it can mean
+
+         - making the product simpler,
+         - adding more use cases,
+         - increasing conversion of new users to retained users,
+         - etc.
+
+#+end_quote
+
+-- from [[https://news.greylock.com/five-lessons-from-scaling-pinterest-6a699a889b08][Five Lessons from Scaling Pinterest – Greylock Perspectives]]
+
+* Asking the right question is more important than getting the right answer
+#+begin_quote
+
+- more often than not, the difficult part is to find the right question.
+
+  - To make a remarkable contribution, you need to start by asking the right question.
+  - the questions you are asking might define who you are.
+
+- What is a good question?
+
+  - The great questions are tractable and fruitful.
+
+    - They *lead you on a path of discovery.*
+    - It is easy to ask how to cure cancer, but that's not a good question because it does not help anyone do medical research.
+
+  - Secret questions are the best
+
+    - if you are the only one with this question in mind, then you may be holding a gold mine.
+    - Questions that everyone is having are proportionally worthless.
+    - [[https://www.amazon.com/dp/0804139296/?tag=daniellemires-20][Zero to One: Notes on Startups, or How to Build the Future: Peter Thiel, Blake Masters: 9780804139298: Amazon.com: Books]]
+
+- Knowing too much can harm you
+
+  - some of the very best researchers and innovators were average students.
+  - to find good questions, you have to maintain some distance from the material.
+
+    - Pick a scholarly field, any field, then spend two weeks reading everything about it that you can. Next, write down 5 questions. I can almost guarantee you that these 5 questions will be already covered by sources you read. They will be “known” questions.
+
+  - *Our minds tend to frame everything in terms of the patterns we have learned.*
+
+    - Spend two years studying Marxism and every single problem will feel like a Marxist problem to you.
+    - It becomes difficult for you to come up with new questions outside of the frame.
+
+- Yet here is how many researchers work.
+
+  1. They make sure that they can repeat the most popular questions and answers
+  2. They look at the papers, look for holes or possibilities for improvement and work from there.
+  3. What this ensures that there are a few leaders (people writing about genuine novel ideas) followed by a long and nearly endless stream of “me too” papers that offer minor and inconsequential variations.
+
+- *People are happy to be handed out questions and will often rush out to provide highly sophisticated thorough answers* … whether or not the question is the right one.
+- How might we ask better questions?
+
+  1. Pay attention to what is around you and violates your worldview.
+  2. Be patient.
+
+     It's Not That I'm so Smart, It's Just That I Stay with Problems Longer. -- Einstein
+
+     - The longer you work on a problem, the more likely you are to find interesting questions.
+     - The easiest way to miss the great questions is to dismiss the problems as uninteresting and move on too quickly.
+
+  3. Be physically active, go for a walk.
+  4. Don’t be too social.
+
+     - Social pressure toward conformity trigger intense instinctive reactions.
+     - *It is simply hard to go against the herd.* Thus you are better off not know too much about where the herd is.
+
+  5. Ask a lot of questions.
+  6. *Always question your own thoughts and work.*
+
+#+end_quote
+
+-- from [[https://lemire.me/blog/2018/12/06/asking-the-right-question-is-more-important-than-getting-the-right-answer/?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website][Asking the right question is more important than getting the
+  right answer – Daniel Lemire's blog]]

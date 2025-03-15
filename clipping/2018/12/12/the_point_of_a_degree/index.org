@@ -1,0 +1,19 @@
+#+TITLE: The Point of A Degree
+#+begin_quote
+
+The point of a degree is more of teaching you how to learn.
+
+#+end_quote
+
+-- From [[http://bikeshed.fm/160][160: Praise Hands Emoji 🙌 (Vaidehi Joshi) - The Bike Shed]]
+
+I'm really grateful that I somehow taught myself how to learn in my college.
+
+Knowing how to learn a new technology/framework/language is one of the core skills of a developer. I also believe that the meaning of life is to explore the world around us and learn who we really are.[fn:1]
+
+I'm still in this journey of learning and hope to learn more stuffs.
+
+* Footnotes
+[fn:1]
+
+[[https://dsdshcym.github.io/blog/2017/12/05/meaning-of-life/][人活着的意义和人生的价值就在于提升心性、磨炼灵魂。]]

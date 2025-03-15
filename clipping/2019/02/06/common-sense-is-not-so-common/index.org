@@ -1,0 +1,25 @@
+#+TITLE: Common Sense is Not So Common
+#+begin_quote
+
+Common sense is not so common. - Voltaire, Dictionnaire Philosophique (1764)
+
+- It is different from person to person
+- Don't consider your position, or the position that you agree with, or even a position that has consensus, to be "common sense", because it's nothing more than your perception.
+- Your idea of common sense is likely to contradict someone else's idea of common sense.
+- Instead of relying on "common sense" to make decisions, you should instead rely on building consensus for your position and perception, and work with other people to reach a conclusion most people can accept.
+- By assuming your position is "common sense" and acting upon it, all you're doing is insulting the people who disagree with you.
+
+#+end_quote
+
+-- from [[https://en.wikipedia.org/wiki/Wikipedia:Common_sense_is_not_common][Wikipedia:Common sense is not common]]
+
+I think this is also one of the reasons that make human communications hard.
+
+1. Our communications are based on some "common senses" like
+
+   - words
+   - grammars
+   - back ground knowledge
+   - etc.
+
+2. If two people have different "common senses", the communication between them become hard.

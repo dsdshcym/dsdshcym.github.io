@@ -1,0 +1,45 @@
+#+TITLE: Reason is the only thing that's important
+#+begin_quote
+
+- Reasons are always important
+
+  - Git commits (reasons for code changing)
+  - Business reasons
+  - Infrastructure reasons
+
+#+end_quote
+
+-- from [[https://player.fm/1lLXBP][254: Deploying Changelog.com with Gerhard Lazu by The Changelog]]
+
+#+begin_quote
+
+- So many technologies only presented just the how, but not the why
+
+  - So that people are hard to see why they choose this solution over another one
+  - "Why this concept makes sense?"
+
+#+end_quote
+
+-- from [[https://changelog.com/podcast/286][The Changelog #286: JavaScript sprinkles in Basecamp turned Stimulus - News and podcasts for developers - Changelog]]
+
+This is an important lesson I learned from my several years of product making experiences:
+
+*The reason behind a change is more important than this change itself* .
+
+- Thinking about Why do I make this code change? guides me to write better commit messages
+
+  1. What issue led to this change?
+
+     - Preferably attached with a GitHub/GitLab issue link or reference
+
+  2. Why this change can fix this issue?
+
+     - Preferably attached with a StackOverflow link or other references
+
+  3. What's the reason behind this refactoring?
+
+     - Preferably attached with a comparison between the code before this refactoring and after
+
+- Thinking about Why do I make this deployment process change? forces me to follow *Infrastructure as code* principle
+
+  - So that the infrastructure of a project can be versioned and reasoned about as our code

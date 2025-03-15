@@ -1,0 +1,127 @@
+#+TITLE: My Summary for Object-Oriented Programming
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-04-05]
+#+URI:         blog/2017/04/05/my-summary-for-object-oriented-programming/index.html
+#+TAGS:        Object-Oriented
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I have been written Object-Oriented code (in C++, Python, Ruby) for almost 3 years. But I only got to know Object-Oriented Programming until recently.
+
+After writing Ruby code for several months in a huge codebase, I started feeling the pain brought by my procedural programming habits. Then I read several books about clean code and object-oriented programming: Clean Code, Refactoring: Improving the Design of Existing Code, Practical Object-Oriented Design in Ruby, and Objects on Rails. I also watched many video tutorials from Upcase and RubyTapas. They really helped me understand what a good design is and how to achieve it.
+
+This article is a summary for my current understanding.
+
+* What is Object-Oriented Programming
+
+A mind blown point for me to this problem is when I read what Alan Kay said about the meaning of Object-Oriented Programming[fn:1]:
+
+#+begin_quote
+
+OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things. It can be done in Smalltalk and in LISP. There are possibly other systems in which this is possible, but I'm not aware of them.
+
+#+end_quote
+
+So, basically, there are three fundamental things about OOP:
+
+Messaging
+    Some people may think class is the fundamental component of OOP. But if we think further, a class is just data and the behaviors related to these data. And here, behavior is just another expression for "message".
+Local retention and protection and hiding of state-process
+
+    I will choose another word for this part - *Encapsulation* .
+
+    Think about the data in a class. They are all encapsulated into an instance so that the user of this instance doesn't need to know what data it holds, but only needs to know what messages it responds to.
+
+Extreme late-binding of all things
+
+    Both messaging and encapsulation serve this purpose. And almost all the techniques we are using in Object-Oriented Programming - Inheritance, Delegation, Composition, Polymorphism, you name it - are aimed for this purpose, too.
+
+    With this, you don't need to know what object responds to your message when you send it to an object. The response can happen anywhere: the object itself (within its singleton class), its mixins, its superclass, etc.
+
+But what can late-binding help us in programming?
+
+* Why Object-Oriented Programming?
+** Embrace Change
+
+Change is the biggest problem in software engineering.
+
+If we are not going to change a program after it's working fine. Then we can write it in whatever the way we want, as long as it's working.
+
+But this cannot be the case most of the time. We always need to support different input/output. We always need to tweak some algorithms. We always need to add some new features.
+
+With the inevitable changes in our mind, we need to be agile, we need to embrace change and be prepared for them.
+
+** Code for Readability
+
+I remembered this quote from SICP:
+
+#+begin_quote
+
+Programs must be written for people to read, and only incidentally for machines to execute
+
+#+end_quote
+
+And there are many other experienced programmers like Martin Fowler, emphasis the same thing.
+
+If our program is readable enough so that a programmer can debug/tweak it with enough confidence. No matter this programmer is someone else or the same programmer several months later, he will admit it is good code.
+
+** Late-binding to the rescue
+
+Late-binding can help us to write readable code.
+
+With late-binding, you can just send a message to an object and let it do its job. And you don't even need to know how it get the job done or which part of your codebase is handling this job. This is a really helpful feature when you read code. If you can always think in the same abstration layer and don't need to worry about things happen underneath, you can understand the whole project more easily.
+
+Without late-binding, we need to know almost everything else in this program. Unlike a CEO just leading the whole company towards a common goal, you need to be a manager that needs to know everything going on in the company. This can be a huge burden when we read the code.
+
+* How to design good Object-Oriented Program?
+
+Object-Oriented Programming is not a new idea. It've existed for more than half a century (Simula came out in 1967).
+
+And I was suprised that most of the design problems in Object-Oriented Programming have already been solved/expained in 1980s[fn:2].
+
+** Know the principles
+
+First, you need to know the design principles. Without them, you don't know what is a well designed application. Among all these principles, I found that SOLID principle is the most powerful but the hardest to learn. I still have not seen any project follows SOLID principle entirely. And I'm still finding my way to fully understand these principles.
+
+There are several greate resources for these principles:
+
+- [[http://webpro.github.io/programming-principles/][Programming Principles]]
+- [[http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod][ArticleS.UncleBob.PrinciplesOfOod]]
+- A series of video tutorials explaining SOLID on Upcase
+
+** Refactor
+
+After a feature is implemented
+
+    One thing I realize is that we cannot write a well designed program at the first time.
+
+    Only when we finish the program, can we gain the better understanding of the scope of this project and rearrange the code better.
+
+    Of course, this doesn't only apply to features. It also can apply to functions, classes, and tests. After I finish any of them, I'll go back and see if there is any way to make this code cleaner and more clear.
+
+Before adding a new feature
+
+    I often found myself adding a new feature by just adding a few line of if statements before. And as time went by, the function became too long, the class became too large, the whole project became nearly unmaintainable.
+
+    But if we refactor every time before we add a new feature, so that adding this new feature can be easily done after the refactoring. The code will stay clean much longer.
+
+** UML
+
+When I first learned about UML, I was fully unaware about the power of these tools. "These are just simple diagrams, what a waste of time to draw these." But I was wrong.
+
+They are really helpful when we design or refactor our system.
+    Actually, they are the cheapest way to do software design I've ever known.
+They are important when we need to communicate over different design solutions.
+    They are a standard for teammates to communicate over the same page. It's really hard to get on the same page if the two people are using different graphical languages when they discuss things like modeling.
+
+I haven't done any design on UML in a real project yet. But I really hope to apply this in my daily design works.
+
+* Footnotes
+[fn:1]
+
+[[http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en][Dr. Alan Kay on the Meaning of "Object-Oriented Programming"]]
+
+[fn:2]
+
+[[http://www.laputan.org/drc/drc.html][Designing Reusable Classes]]

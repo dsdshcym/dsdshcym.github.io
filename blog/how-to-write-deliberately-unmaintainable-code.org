@@ -1,0 +1,16 @@
+#+TITLE: How to write deliberately unmaintainable code?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-05]
+#+URI:         blog/2017/12/05/how-to-write-deliberately-unmaintainable-code/index.html
+#+TAGS:        Clipping
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+You have to be able to write maintainable code to be able to write deliberately unmaintainable code
+
+#+end_quote
+
+-- from [[https://softskills.audio/2017/11/09/episode-82-blow-ups-and-job-security/][Episode 82: Blow Ups and Job Security – Soft Skills
+  Engineering Podcast]]

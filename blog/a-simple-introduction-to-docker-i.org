@@ -1,0 +1,95 @@
+#+TITLE: A Simple Introduction to Docker I
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2015-11-13]
+#+URI:         blog/2015/11/13/a-simple-introduction-to-docker-i/index.html
+#+TAGS:        Docker, Container
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Why do we need Virtualization?
+
+I believe everyone have used a virtual machine before. And I think you know how convenient a virtual machine is under a personal usage sceanario. Here, we mainly focus on the power of virtualization on the server side.
+
+** Snapshots
+
+Imagine how much work you need to do to backup a physical machine.
+
+A snapshot is the state of a virtual machine at an exact time point. You can create a snapshot for a virtual machine in minutes.
+
+We can use this snapshot as a *backup* . So that we can restore it on almost any machine we want. This is a really useful backup technique.
+
+Further more, it provides more convenience to *migrate* a virtual machine to another host.
+
+** Isolation
+
+In the real world, we often isolate apps that we want to run to provide more reliabilities. If an app fails, it won't cause any effect to any other apps, except for some errors.
+
+Imagine again, how many machines do you need to provide isolated apps for a website.
+
+In the virtualization world, you can just put these apps into several different virtual machines.
+
+** Cost/Energy Saving
+
+Since we can provide isolation via virtualization, we can use a single machine to provide same functionality as hundreds physical machines thanks to the powerful enough compute abilities a PC can provide nowadays.
+
+Thus we can save our unneeded cost on these physical machines.
+
+* What's the Container?
+** Operating-system-level virtualization
+
+Container, also called operating-system-level virtualization, is a server-virtualization method where the kernel of an operating system allows for multiple isolated user-space instances, instead of just one. Such instances may look and feel like a real server from the point of view of its owners and users.
+
+- Container is an instance of Operating-System-Level Virtualization
+- Docker and LXC are both implementations of Operating-System-Level Virtualization
+
+** Compare with VM
+
+Basically, a container is way more lightweight than a virtual machine. Thus, it can boot more quickly, use CPU and RAM more efficiently and have smaller image size.
+
+- Structure differences
+
+  We can show the structure differences using these two pictures:
+
+  |Virtual Machine |Container |
+  |[[https://www.docker.com/sites/default/files/what-is-docker-diagram.png]] |[[https://www.docker.com/sites/default/files/what-is-vm-diagram.png]] |
+[[https://www.docker.com/sites/default/files/what-is-docker-diagram.png]][[https://www.docker.com/sites/default/files/what-is-vm-diagram.png]]
+- Feature differences
+
+  We now illustrate the difference between a virtual machine and a container using this table below:
+
+  |  |Container |VM |
+  |Interfaces |Directly Access |Emulate |
+  |OS |Mainly Linux (Why?) |Almost any OS |
+  |Running Level |Kernel level |User level |
+  |Isolation Strategy |CGroups |Hypervisor |
+  |CPU Resources |0-5% |5-15% |
+  |Boot Speed |Seconds |Minutes |
+  |Image Sizes |KB-MB |GB-TB |
+  |Cluster Sizes |Over 10,000 |Hundreds |
+  |HA (High Availability) |Elastic Load, Dynamic Load |Backup, Restore |
+
+*** Why can a container be so lightweight?
+
+Containers include the application and all of its dependencies, but share the kernel with other containers. They run as an isolated process in userspace on the host operating system. They're also not tied to any specific infrastructure
+
+And because the kernel running in a container is the same as the hosts.[fn:1] You can run different Linux distributions in the container. Since they are using the same kernel.
+
+For virtual machines, they all includes the application, the necessary binaries and libraries and an entire guest operating system - all of which may be tens of GBs in size.
+
+** How does container help you build better software?
+*** Eliminate Environment Inconsistencies
+
+You can package your container into one little config file. And it can run on another machine as the way you want it to. So you don't need to spend extra time to install package A, B, C, D... in your test machine or even working machine.
+
+*** Accelerate Developer Onboarding
+
+You can just give your new partner a container config file. And he can run it on his machine without any problems. Then he can start to work. It just works.
+
+*** Empower Developer Creativity
+
+You don't need to worry about what language you should use. You can use any language you want in a container, as long as you provide a simple API through this container. And this will not cause any conflicts.
+
+* Footnotes
+[fn:1]
+
+[[http://stackoverflow.com/questions/25444099/why-docker-has-ability-to-run-different-linux-distribution][Why docker has ability to run different linux distribution? - Stack Overflow]]

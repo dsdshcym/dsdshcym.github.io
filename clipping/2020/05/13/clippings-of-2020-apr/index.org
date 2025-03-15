@@ -1,0 +1,385 @@
+#+TITLE: Clippings of 2020 Apr
+* Top 10
+** [[https://www.youtube.com/watch?v=MZvmYaFkNJI&feature=emb_title][Build a real-time Twitter clone in 15 minutes with LiveView and Phoenix 1.5 - YouTube]]
+
+[[https://www.youtube.com/watch?v=Gzj723LkRJY&feature=youtu.be][Using Rails to build a blog engine]] felt like cheating in 2005. Now, 15 years after, using Phoenix to build a real-time application feels like cheating.
+
+** [[https://www.ted.com/talks/celeste_headlee_10_ways_to_have_a_better_conversation/up-next][Celeste Headlee: 10 ways to have a better conversation - TED Talk]]
+#+begin_quote
+
+A balance between talking and listening
+
+- Techniques about "how to interview people" lead to better conversations
+
+  1. Don't multitask, be present
+  2. Don't pontificate, enter a conversation assuming you have something to learn
+  3. Use open-ended questions, let them describe it (what when how why who)
+  4. Go with the flow
+
+     - Let thoughts go out of your mind
+     - Keep listening and stay in the conversation
+
+  5. If you don't know, say you don't know
+  6. Don't equate your experience with theirs,
+
+     - all experiences are individual,
+     - it's not about you, it's about them
+
+  7. Try not to repeat yourself
+
+     - Don't rephrase a point over and over
+
+  8. Stay out of the weeds.
+
+     - Forget details, leave them out.
+     - It's about them & you. They care about what you're like, what you have in common
+
+  9. Listen. Listen with the intent to understand, not reply.
+
+     When your mouth is open, you are not learning.
+
+  10. Be brief.
+
+- Be interested in other people. *Be prepared to be amazed.* ([[https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034][How to Win Friends & Influence People]])
+
+#+end_quote
+** [[https://svpg.com/team-objectives-overview/][Team Objectives - Overview - Silicon Valley Product Group]]
+#+begin_quote
+
+- I have stopped recommending the practice (OKR).
+
+  - That’s because, in so many companies, even though conceptually the technique is simple and sound, it ends up proving a waste of time and effort, and yields little if any results.
+  - most companies are not set up to effectively apply this technique. Why?
+
+    1. Feature Teams vs. Product Teams
+
+       - The main idea is to give product teams real problems to solve, and then to give the teams the space to solve them.
+       - companies think they can “check the empowerment box” by giving the team objectives, yet still continue to tell them the solutions they are supposed to deliver (nearly always in the form of a roadmap of features and projects with expected release dates. )
+       - successful companies aren’t successful because they use OKR’s. *They use OKR’s because it is designed to leverage the empowered product team model.*
+       - You can’t take your old organization based on feature teams, roadmaps and passive managers, then overlay a technique from a radically different culture, and expect that will work or change anything.
+
+    2. Manager's Objectives vs. Product Team Objectives
+
+       - the purpose of a cross-functional, empowered product team is to *work together to solve hard problems.*
+       - Yet, in so many companies, each manager – the manager of engineers, the manager of designers and the manager of product managers – creates their own organizational objectives, which are then cascaded down to their employees.
+
+         - in practice this means that these employees – when working with their cross-functional colleagues in a product team – are all working on their own objectives, rather than working collaboratively on the team objectives.
+
+       - To make matters even worse, in many companies, there’s an additional level of complexity and dilution because they also try to implement individual objectives, so not only does the engineer inherit the objectives from her manager, but she also has to work on her own personal objectives.
+
+    3. The Role of Leadership (is missing in action)
+
+       - They literally think that the idea is to let teams identify a set of objectives, and then let them pursue those objectives, and we’ll see where we are at the end of the quarter.
+       - They think that empowered product teams, and this technique especially, is about less management. But it’s actually about better management.
+
+- So in terms of actually getting the benefits of OKR’s, there are three critical prerequisites:
+
+  1. Move from the feature team model to the empowered product team model
+  2. Stop doing manager objectives and individual objectives, and focus on team objectives
+  3. Leaders need to step up and do their part to turn product strategy into action
+
+- in the upcoming series of articles on team objectives, we’ll discuss *the role of leadership in effective team objectives.*
+
+#+end_quote
+
+The main idea of Product Teams is similar to [[https://basecamp.com/shapeup][SHAPE UP]]: give teams real problems to solve, and the space to solve these problems. To me, OKR is just a tool, or a wrapper around this main idea. Whether to use OKR or not, as long as we can create an environment that empowers the team to solve more hard problems, we success.
+
+** [[https://changelog.com/posts/monoliths-are-the-future][Monoliths are the future -> News and podcasts for developers -> Changelog]]
+#+begin_quote
+
+- the problem people are trying to solve with microservices doesn’t really line up with reality.
+
+  We’re gonna break it up and *somehow find the engineering discipline we never had in the first place* .
+
+- *Now you went from writing bad code to building bad infrastructure* that you deploy the bad code on top of.
+
+#+end_quote
+
+The debate between Monolith and Microservice need to happen under a specific context (or perspective). After all, our application is just a monolith to the end user, no matter how many servers and services we set up to support it. And we can always break a monolithic codebase into smaller services (classes, modules, functions, etc.).
+
+So, don't choose an architecture only because someone else is using it to solve their problems, always choose the right tool for the problem you want to solve.
+
+** [[https://www.geepawhill.org/2020/03/11/tdd-on-the-front-end/][TDD on the Front End - GeePawHill.org]]
+
+To consider whether to test our front end code, GeePaw gave a general answer about when to use TDD, and when to not:
+
+#+begin_quote
+
+- To TDD or not?
+
+  - Do TDD
+
+#+begin_src awk
+
+our branching logic
+#+end_src
+
+    1. we wrote it
+    2. it has branching logic
+    3. fool me once, shame on you, fool me 371 consecutive times, shame on me.
+
+  - Don't TDD
+
+#+begin_src go
+
+one-liner data declarations that are acted on by their code and gotten once right don’t go wrong
+#+end_src
+
+    1. It generally “just works”.
+    2. It generally is expensive to roll tests against.
+    3. It generally isn’t fixable by me if it’s broken.
+
+#+end_quote
+** [[https://medium.com/@frankmt/on-accountability-in-software-development-7e80cc6226aa][On Accountability in Software Development - Francisco Trindade - Medium]]
+#+begin_quote
+
+*Why is it (when accountability is misused, it turns into strict deadlines) the case and why is it so hard?*
+
+- To start, if you want accountability, you better get predictability first.
+
+  - how to make teams more predictable, and thus able to be accountable for results.
+  - On predictability in software, there are two topics that are worth discussing:
+
+    1. Variation in production processes
+
+       - The output of a system results from two types of variation: common cause and special cause variation
+       - We usually overestimate special causes over common causes.
+
+    2. How to tackle variation in software delivery
+
+       - The specific challenge with it is that every feature adds more code, more logic, and *increases the complexity* of the whole system.
+       - Instead of dealing with complexity, we deal with bad estimates.
+
+         - Stricter deadlines and demand for “better” estimates means treating common causes as a special causes.
+         - We then create and perpetuate a vicious cycle. One that will only increase variation and reduce predictability.
+
+           1. Bad estimates / results
+           2. Pressure to deliver
+           3. No time for quality / increased complexity
+           4. Less predictability
+
+- What's the alternative? *reduce complexity and increase predictability, by acting on the system (common causes).*
+
+  - Establishing better quality
+  - Reducing code size and complexity
+  - Simplifying solutions
+
+#+end_quote
+
+Sometimes, we need to [[https://www.amazon.com/Obliquity-Goals-Best-Achieved-Indirectly/dp/0143120557][solve problem in an oblique way]]. Chasing accountability or predictability on its own may not work out so well. What we should do is to focus on reducing complexity, then predictability and accountability will follow.
+
+** [[https://mobile.twitter.com/dan_abramov/status/1247713330808193026][Bisecting & Debugging]]
+#+begin_quote
+
+Bisecting is one of the most effective ways to debug problems. Therefore, to onboard someone to a codebase you need to teach them to bisect problems in it. You need to know the layers and their order so you can cut them in half and see where exactly the assumptions failed.
+
+— Dan Abramov (@dan_abramov) [[https://twitter.com/dan_abramov/status/1247713330808193026?ref_src=twsrc%5Etfw][April 8, 2020]]#+end_quote
+
+Bisecting is such a useful debugging technique that I use it all the time:
+
+1. Debugging an issue in my Emacs config by commenting out half of the config.
+2. Find out when a bug was first introduced via git-bisect.
+3. ...
+
+** [[https://www.deconstructconf.com/2019/dan-abramov-the-wet-codebase][The Wet Codebase by Dan Abramov – Deconstruct]]
+#+begin_quote
+
+- Best practices?
+
+  - developers learn best practices from the previous generation and they try to follow them. Because there were concrete problems and concrete solutions that were born out of experience. And so the next generation tries to pass them on. But it's hard to explain all this context and all this trade off, so they just get flattened into these ideas of best practices and anti-patterns.
+  - [[https://twitter.com/naval/status/1246859029843808257?s=20][Naval on Twitter: "A permanent solution to a temporary problem becomes a permanent problem." / Twitter]]
+
+- Benefits of abstraction
+
+  1. Focusing on intent
+  2. Code reuse
+  3. Avoiding some bugs
+
+- Costs of abstraction
+
+  1. Accidental coupling
+  2. Extra indirection
+  3. Inertia
+
+- Abstract responsibly
+
+  1. Test concrete code
+  2. Delay adding layers
+  3. Be ready to inline it
+
+- See also
+
+  - [[https://www.youtube.com/watch?v=8bZh5LMaSmE][RailsConf 2014 - All the Little Things by Sandi Metz - YouTube]]
+  - [[https://www.youtube.com/watch?v=4anAwXYqLG8][Sebastian Markbage: Minimal API Surface Area - JSConf EU 2014 - YouTube]]
+  - [[https://www.youtube.com/watch?v=mVVNJKv9esE&feature=youtu.be][Cheng Lou - On the Spectrum of Abstraction at react-europe 2016 - YouTube]]
+
+#+end_quote
+#+begin_quote
+
+> But it's hard to explain all this context and all this trade off, so they just get flattened into these ideas of best practices and anti-patterns.
+
+Reminded me of "how a temporary solution becomes a permanent problem": [[https://t.co/5iBXTpXMZE][https://t.co/5iBXTpXMZE]] [[https://t.co/PABzs8ux69][https://t.co/PABzs8ux69]]
+
+— Yiming Chen (@dsdshcym) [[https://twitter.com/dsdshcym/status/1249650289121964032?ref_src=twsrc%5Etfw][April 13, 2020]]#+end_quote
+** [[https://www.tengbao.me/blog/simplicity-computation-economics/][Simplicity, Computation, and Economics - Teng Bao]]
+
+This article has so many wonderful thoughts and is so well written, you must read it!
+
+#+begin_quote
+
+Once we understand how design “works”, we can approach it as an engineering problem.
+
+What is simplicity anyway? And how do we actually build it?
+
+- Nature is Lazy
+
+  - Everything in the universe has a goal, and everything drives toward that goal in the laziest way possible.
+
+    - Lightning follows the path of least resistance.
+    - Water conforms to the shape of its container.
+    - Bees build hexagons to store the most honey with the least amount of wax.
+
+  - Why expend any more effort than necessary? Users are no different.
+  - Simplicity in design is helping them get there. So what’s stopping them?
+
+- Cognitive Load
+
+  - Software takes effort to use.
+  - “Simplicity” is a problem of optimizing for limited brainpower.
+  - In fact, we should be able to identify and even quantify brainpower “costs.” This is the economic approach to product design.
+
+    1. Eliminate hard decisions
+
+       - Common wisdom says optionality is good — it lets the user customize their experience. But this only works if the user knows what each option means, the consequences it carries, and if there aren’t too many to pick from. Each time you present your user with choices, you’re forcing them to use some brainpower.
+       - Sometimes, the best solution is to remove the decision entirely by selecting a common default.
+
+         - If optionality is needed, make sure the options are few, easily understood, and easily differentiated.
+         - Don’t present options until the user actively needs them or is already thinking of them.
+         - And if possible, make the decision easy to undo.
+
+    2. Reuse systems
+
+       - *A system is just the set of rules for how something works.*
+       - The key property of systems is that they can be reused and extended. One system can support many functions, as long as those functions “work the same way.”
+       - It’s even better to use systems that the user already learned somewhere else.
+       - A common mistake designers make is introducing too many systems needlessly, whipping up all sorts of widgets and components without considering learning cost. It might look beautiful and it might be fun to design, but it’s not fun for the user.
+       - To minimize the brainpower cost,
+
+         1. Use systems the user already knows and
+         2. When introducing new systems, keep them easy-to-learn and reusable to get the most bang for your buck.
+
+    3. Scrub away distractions
+
+       - Likewise in your product, every unnecessary word, line, or even pixel is a chance to distract your user, something they have to process whether they want to or not. They’re the stains of your application.
+
+- Empathy
+
+  - the designer should run a profiler on the virtual user’s mind to see how much processing power and memory they’d need.
+  - *Design errors come from the disconnect between how the user thinks and how you think the user thinks.*
+  - Simplicity is the result of using empathy to decrease cognitive burden.
+
+- Hidden costs
+
+#+begin_src shell
+
+YOUR ORDER:
+Drag-and-drop component editor
+
+COST:
+1 man-month development time
+1 average brainpower per user to just look at the drag and drop UI even if they don't use it (subconscious)
+10 average brainpower per user to learn how the drag and drop system works
+20 average brainpower per user to decide what layout they want
+#+end_src
+
+  - Some interesting lessons will emerge:
+
+    - If a feature is only used by 10% of your audience, the remaining 90% still needs to understand what it does and decide if they need it. You can’t just add optionality everywhere.
+    - Development cost is fixed, but brainpower cost is per-user. If you have (or will have) lots of users, the total brainpower cost of your app will dominate and development cost may seem cheap by comparison.
+    - Different users have different tolerances for brainpower use. A power feature might be great for a power user, but might be a huge turn-off for a casual user. You can use barriers to funnel your users down to different features. Barriers can be “advanced” menus, unlockables, or even a paywall.
+
+  - Understanding these hidden costs is a powerful check against feature creep.
+
+- Simplicity everywhere
+
+  - Simplicity is a way of life.
+  - Just step into the user’s shoes and look for mental costs you can cut.
+
+#+end_quote
+** [[https://randsinrepose.com/archives/the-one-about-feedback-pt-2/][The One About Feedback (Pt. 2) – Rands in Repose]]
+#+begin_quote
+
+- feedback is useful for relationship building
+- start a feedback conversation with:
+
+  1. Giver: I have some feedback for you
+  2. Receiver: thanks for the feedback
+
+- give feedback as soon as possible
+- 1:1s
+
+  - assume they have something to teach/surprise you
+
+#+end_quote
+
+[[https://yiming.dev/blog/2019/07/07/how-to-give-receive-feedback/][How to Give/Receive Feedback?]]
+
+* Non-Top
+
+- [[https://github.blog/2020-02-12-supercharge-your-command-line-experience-github-cli-is-now-in-beta/][Supercharge your command line experience: GitHub CLI is now in beta - The GitHub Blog]]
+- [[https://www.productboard.com/blog/how-medium-highlights-feature-changed-publishing/][From 0 to 100 million readers: How Highlights on Medium changed publishing forever - productboard]]
+- [[https://lethain.com/eng-brand/][How to build your company's engineering brand.]]
+- [[https://lethain.com/tech-company/][Do you work at a tech company?]]
+- [[https://moboudra.com/growing-side-project-900-month/][How I Bootstrapped my Side Project to $900/mo Revenue While Working a Full-time Job]]
+- [[https://masteringpostgresql.com/][Mastering PostgreSQL in Application Development]]
+- [[https://thoughtbot.com/blog/how-we-ve-been-using-basecamp-s-shape-up-process-to-inform-our-work-on-thoughtbot-com][Changes we've made to our process and work on thoughtbot.com and how Basecamp's Shape Up informed it]]
+- [[https://en.wikipedia.org/wiki/Theory_of_constraints][Theory of constraints - Wikipedia]]
+- [[https://samuelmullen.com/articles/elixir-poolboy-and-littles-law/][Elixir, Poolboy, and Little's Law - Samuel Mullen]]
+- [[https://thoughtbot.com/blog/breaking-out-of-ecto-schemas][Breaking Out of Ecto Schemas]]
+- [[https://pragmaticstudio.com/phoenix-liveview][Phoenix LiveView - The Pragmatic Studio]]
+- [[https://elixirforum.com/t/tz-time-zone-support-for-elixir-alternative-to-tzdata-that-comes-with-a-lot-of-bugfixes/29358][Tz, time zone support for Elixir (alternative to Tzdata that comes with a lot of bugfixes) - Your Libraries & Projects / Libraries - Elixir Forum]]
+- [[http://www.devonestes.com/writing-and-testing-a-custom-credo-check][Writing (and testing) a custom Credo check]]
+- [[https://elixirforum.com/t/code-inspections-vs-unit-tests/29610][Code inspections vs unit tests - Chat / Discussions - Elixir Forum]]
+- [[https://medium.com/@theesit/my-elixir-journey-in-go-exchange-3d9934e53790][My Elixir journey in GO.Exchange - Theesit Konkaew - Medium]]
+- [[https://blog.smartlogic.io/lonestar-elixir-2020-recap/][Lonestar Elixir 2020 Recap]]
+- [[https://ben.munat.com/blog/2020-02-08-ditch-that-umbrella/][Let it Rain - Ditch that Umbrella App! - Commence the Rocking!]]
+- [[https://mobile.twitter.com/sasajuric/status/1226922505392328706][Saša Jurić on Twitter: "I've been helping out team at https://t.co/XzvCdomobw for more than 6 months. One repeated issue I saw on all project was related to config scripts & operator configuration. We've made a small helper to make our life easier. Here's a brief demo." / Twitter]]
+- [[https://elixirforum.com/t/yet-another-elixir-and-erlang-docker-image/28740][Yet another Elixir and Erlang docker image - Chat / Discussions - Elixir Forum]]
+- [[https://github.com/elixir-lang/elixir/tree/242abd40e71dab39b305e9853fd6b1429b08fb0d][The Object Model - elixir-lang/elixir at 242abd40e71dab39b305e9853fd6b1429b08fb0d (2011)]]
+- [[https://elixirforum.com/t/why-keyword-lists-for-opts-instead-of-maps/29654][Why keyword lists for opts instead of maps? - Questions / Help - Elixir Forum]]
+- [[https://blog.binchen.org/posts/how-to-speed-up-lsp-mode.html][How to speed up lsp-mode - Chen's blog]]
+- [[http://www.wilfred.me.uk/blog/2018/01/06/the-emacs-guru-guide-to-key-bindings/][The Emacs Guru Guide to Key Bindings – Wilfred Hughes::Blog]]
+- [[https://news.ycombinator.com/item?id=22515681][> Not having a general text editor at your disposal for when you have to input/m... - Hacker News]]
+- [[https://blog.repl.it/clui][Repl.it - CLUI: Building a Graphical Command Line]]
+- [[https://tailwindcss.com/resources/][Resources & Assets - Tailwind CSS]]
+- [[https://daringfireball.net/2020/03/the_2020_ipad_pros][Daring Fireball: The 2020 iPad Pros]]
+- [[https://lethain.com/mailbag-beyond-career-level/][Evolving your engineer career beyond the career level.]]
+- [[https://www.4ourthmobile.com/publications/onboarding-class-for-your-new-job][Onboarding Class for Your New Job — 4ourth Mobile]]
+- [[https://www.facebook.com/notes/kent-beck/not-saying-winter-is-coming-but-wheres-your-coat/1225914144108114/][Not Saying Winter is Coming, But Where’s Your Coat? - Facebook]]
+- [[https://www.verywellmind.com/what-is-transformational-leadership-2795313][Transformational Leadership: Inspire and Motivate]]
+- [[https://thoughtbot.com/blog/the-stuff-users-cant-see-matters-too][The Stuff Users Can't See Matters Too]]
+- [[https://m.signalvnoise.com/keep-digging/][Keep digging - Signal v. Noise]]
+- [[https://www.pscp.tv/w/1OyKAYOreqgKb][Jason Fried: "Going Remote: Basecamp Walkthrough Livestream with Jason Fried and David Heinemeier Hansson"]]
+- [[https://blog.testdouble.com/posts/2020-03-19-remote-but-not-alone/][Test Double - Our Blog - Remote, but not alone]]
+- [[https://martinfowler.com/articles/effective-video-calls.html][How to do effective video calls]]
+- [[https://lethain.com/interviewing-senior-eng-leaders/][Interviewing senior engineering leaders.]]
+- [[https://lyncredible.com/2020/02/23/effective-career-conversations/][Effective career conversations · Lyncredible]]
+- [[https://medium.com/@cwodtke/cascading-okrs-at-scale-5b1335812a32][Cascading OKRs at scale - Christina Wodtke - Medium]]
+- [[https://www.paperplanes.de/2020/1/31/on-drafting-an-engineering-strategy.html][paperplanes. On Drafting an Engineering Strategy]]
+- [[https://sarahtaraporewalla.com/agile/design/architecture/Defining-a-Tech-Strategy][Defining a Tech Strategy - Sarah Taraporewalla]]
+- [[https://johngrahamdev.com/Building-An-Engineering-Roadmap/][Maximize your team. How I created an Engineering Roadmap – John Graham]]
+- [[http://www.paulgraham.com/genius.html][The Bus Ticket Theory of Genius]]
+- [[https://mobile.twitter.com/yuqing737499/status/1241749713981820928][小圆米 on Twitter: "趁着长时间的暑假自己跑出去打了个工，直接去坐流水线工人。 家长很生气..说我给你钱你去旅游，别去干这个，我没听。 同学问我为什么选择这么没排面的活，我给他讲我要去看看工人👷是怎么生活的，我想学到另一个视角看这个世界。 刚去几天真的不适应..饭吃不惯，集体宿舍睡不香（还好室友都是学生工）" / Twitter]]
+- [[https://mastery.games/post/the-difference-between-width-and-flex-basis/][The Difference Between Width and Flex Basis]]
+- [[https://thoughtbot.com/blog/going-through-changes-with-typescript][Going through changes with TypeScript]]
+- [[https://no-kill-switch.ghost.io/how-badly-broken-is-the-web/][How (badly) broken is the web?]]
+- [[https://stackoverflow.com/questions/1565164/what-is-the-rationale-for-all-comparisons-returning-false-for-ieee754-nan-values/1573715#1573715][floating point - What is the rationale for all comparisons returning false for IEEE754 NaN values? - Stack Overflow]]
+- [[https://www.alexhudson.com/2020/01/13/the-no-code-delusion/][The 'No Code' Delusion – Alex Hudson]]
+- [[https://blog.testdouble.com/posts/2020-02-25-necessary-and-sufficient/][Test Double - Our Blog - Necessary & Sufficient]]
+- [[https://engineering.shopify.com/blogs/engineering/refactoring-legacy-code-strangler-fig-pattern][Refactoring Legacy Code with the Strangler Fig Pattern – Shopify Engineering]]
+- [[https://empear.com/blog/bumpy-road-code-complexity-in-context/][The Bumpy Road Code Smell: Measuring Code Complexity by its Shape and Distribution - Empear]]
+- [[https://tpierrain.blogspot.com/2020/03/hexagonal-architecture-dont-get-lost-on.html][use case driven: Hexagonal architecture: don't get lost on your right-side]]
+- [[https://www.namingthings.co/naming-things-principles][The 7 principles of naming - Naming Things]]
+- [[https://amplitude.com/blog/12-signs-youre-working-in-a-feature-factory-3-years-later][12 Signs You’re Working in a Feature Factory - 3 Years Later]]
+- [[https://www.christianblavier.com/boring-is-the-new-black/][Boring is the new Black]]
+- [[https://www.ted.com/talks/joe_smith_how_to_use_a_paper_towel?language=en][Joe Smith: How to use a paper towel - TED Talk]]

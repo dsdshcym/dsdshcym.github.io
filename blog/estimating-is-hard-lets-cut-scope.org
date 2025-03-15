@@ -1,0 +1,176 @@
+#+TITLE: Estimating is Hard, Let's Cut Scope!
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-05-27]
+#+URI:         blog/2019/05/27/estimating-is-hard-lets-cut-scope/index.html
+#+TAGS:        Project Management
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+When building products nowadays, [[https://dsdshcym.github.io/clipping/2019/05/15/why-do-we-need-a-plan/][we need a plan]]. We need to answer five questions in this plan:
+
+Why?
+    Why are we building this product?
+Who?
+    Who's gonna be involved and build this product?
+How?
+    How to build this product?
+When?
+    When will we deliver this product?
+What?
+    What features does this product have?
+
+Typically, the first three questions have been answered before we start planning for the project.
+
+- If you don't know *why* you are working on this project now, you'd better find that out first.
+- If you don't know *who* is going to join the project for sure, at least you are involved for sure now.
+- If you don't know *how* to build this project, it would be a lot harder to plan. But I assume you already have your own way of work, your own familiar tech stacks, and your own collaborating style between team members already.
+
+But finding answers for the rest two questions is the most difficult job when planning.
+
+- How to give estimation for a feature?
+- How to define the scope for your project?
+
+We all struggled on these questions before. And we've come up with different Agile frameworks. They all encourage us to set deadlines for tasks. (Sprint for Scrum, Due date for Kanban, etc.) Why is that the case for all kinds of different frameworks?
+
+In this post, I want to give a hypothetical formula to explain the relationship between these elements. Based on this formula, I'll explain why I believe setting deadlines + cutting scope is the way to solve this puzzle.
+
+* The Project Management Formula
+
+When I tried to explain why software development is hard to others, I came up with this formula (inspired by [[https://www.feltpresence.com/functions.html][Ryan Singer: Products Are
+Functions]]) to demonstrate the relationship between several constraints in our daily work:
+
+#+begin_quote
+
+F(when, how, who) = what
+
+#+end_quote
+
+Or put it in another way: what features you finally get is a function of how much time you put into it (when), how you organize the work, and who are going to do it.
+
+The relationships between them are of course more complex than a simple linear function like when * how * who = what. So let me explain a bit more:
+
+- *What* (What features you can get.)
+
+  We want our products to be good. And products are mainly defined by its features. So our main focus would be the features we build for our product.
+
+  And it contains two aspects:
+
+  1. Quantity: How many features this product has.
+  2. Quality: How good each feature is.
+
+     - Details
+     - Performance
+     - Interactions
+     - Security
+
+  These two aspects would be reflected in the specification or the scopes we are going to define. Basically, we are going to define what we are going to build and how well they are in the plan phase.
+
+- *When* (How much time you put into it.)
+
+  Typically, given the same people and workflow, the more time we put into a project, the more features, the better feature we can get.
+
+  We need to [[https://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things/][give a deadline]] for the scope we defined. Without an agreed schedule, a plan would not be called a plan.
+
+So given the assumption that we are certain about how to work and who to join, the formula become much simpler: F(when) = what.
+
+So how can we solve this formula to finish our plan? Or how are we going to decide when and what? Shall we define the scope first, then do the estimation? Or set a deadline first, then give the scope based on this deadline?
+
+My answer is to *set a deadline first.*
+
+* Why Define the Deadline First?
+
+I proclaim here that by deciding when (the deadline) before what (the scope), we would come up with a better plan and execute it in a more efficient way. Here are several reasons behind this bold claim:
+
+1. We are more used to planning based on deadlines than giving estimations based on scopes.
+
+   Everyone is familiar with time and date. We've been living with them everyday since we were born. We know the time we are going to have dinner. We know the date we are going to school. And we plan for them with the time info in our mind. So every one of us has the skill to make a plan based on a deadline.
+
+   On the other hand, product scope is quite a stranger to most of us and we don't estimate often in our daily life. It's not common to ask how much time you still need to finish that meal. Therefore, if we are only required to give time estimations in our projects, we are lacking a lot of practices.
+
+2. Embrace scope change, not deadline change.
+
+   1. Deadlines are easier to agree upon than scopes.
+
+      Time and date are not only familiar to most people but also well defined and agreed upon. Next Monday of "[2019-05-29 Wed]" is "[2019-06-03 Mon]" to everyone. A timestamp always means the same.
+
+      But it's not the case for features, or scopes.
+
+      What do you mean by "Users can search blog posts by keywords"?
+
+      - What's the definition for "search"? Is it Fuzzy search or exact match?
+      - What's the performance requirement? Respond in 1 second or 100 millisecond?
+      - What's the UI/UX requirement? How fancy the search box we need it to be? (Or do we even need a search box?)
+
+      As we can see in this example, features or scopes are extremely hard to define.
+
+      1. Even if we have pages of detailed specifications, one can still easily come up with a new aspect that's not mentioned at all.
+      2. Even if we write down all these specifications, different people can still have different understanding of the same statement.
+
+      That's part of why giving time estimation is hard: how can you give an accurate estimation for an inaccurate (and never will be accurate) specification?
+
+   2. Scopes are more prone to change than deadlines.
+
+      Due to the fact that we can never have a well-defined scope, we tend to and have to change the scope on the go. It's (almost if not absolutely) impossible to keep the scope unchanged after the real work is started.
+
+      1. We have to change the scope even after it's defined.
+
+         We will always learn more about the domain we are working on, the technology we are using, the assumptions we are making. And as we learn more, it's just a matter of time to find our "well-defined" scope needs to be refined in one way or another.
+
+      2. We tend to change the scope even after it's defined.
+
+         Since everyone has a different understanding on specs, it's easy for us to just add another detail to this feature to make it more polished, more performant, or more user-friendly. But the scope is expanded. And after several small additions like this, we will have a scope that's much larger than what we have in the beginning.
+
+      So what happens after this kind of scope change? We have to work more to produce this bigger what (remember the formula F(when) = what?). There are only two possible outcome:
+
+      1. People work overtime to make it up. Then someone gets burned out or the project quality gets sacrificed.
+      2. The deadline has to be postponed to buy us more time. Then the project would never end. Because if you postpone once, you will postpone again.
+
+   3. It's easy to adjust scope against a static deadline than to adjust deadlines due to an unexpected scope change.
+
+      So let's embrace the fact that scopes are going to be changed anyway. And you'll find stakeholders understand this fact or accept this fact better than you do:
+
+      - When the scope is expanded, stakeholders are more than happy to do so. Because they will get more results.
+      - When the scope is reduced, stakeholders are often okay with that. After all, nobody's gonna use all of the features you built. They just want the 20% core features that matters to them are working well.
+
+      On the other hand, stakeholders won't be that nice when it comes to project delays. When deadline is postponed, it will almost always affect stakeholder's stakeholder and that chain continues. Finally one of them would not accept this delay and you are in trouble.
+
+* How to "Define A Deadline First"?
+
+To conclude, scopes are meant to be changed, let's embrace that fact. Furthermore, let's change the scope intentionally. Here is how to do that:
+
+1. Set a deadline for your project/feature.
+
+   (I guess that's Agile frameworks like Scrum would use time boxes. That's how they set deadlines!)
+
+2. Cut scopes based on your deadline.
+
+   (I would always recommend [[https://open.buffer.com/product-scope/][Product Scope: The Path to a Minimum
+Lovable Product]] as a reference for how to cut scopes.)
+
+3. Start doing real works.
+
+   Note down all the ideas that are out of the scope in your backlog. Discuss them in the next plan session.
+
+4. Cut scopes along the way (optional)
+
+   Sometimes, even we've cut the scope in the beginning, we would still put too much stuffs in our plate and not being able to finish all of them before the deadline. Then we have to cut the scope again. The goal is to *always deliver values before the deadline* , even these values are small.
+
+5. Review and improve.
+
+   Always review our work. See how to deliver more core-related values before the next deadline or how to define our scope better next time.
+
+* It is Always Easier Said Than Done
+
+After saying all of these, this methodology is still easier said than done. Because we will always tend to add more stuffs to our plate and this methodology is only a way to fight that temptation and get things that really matter done.
+
+To learn more about this thinking, I would recommend several clippings of mine and the great articles and books behind them:
+
+- [[https://dsdshcym.github.io/clipping/2019/02/27/only-with-limited-resources-can-we-finish-things/][Only With Limited Resources Can We Finish Things - dsdshome]]
+- [[https://dsdshcym.github.io/clipping/2019/04/19/good-fast-and-featureful-pick-two/][Good, Fast, and Featureful. Pick Two! - dsdshome]]
+- [[http://dsdshcym.github.io/clipping/2018/03/30/what-agility-really-means/][What Agility Really Means - dsdshome]]
+- [[http://dsdshcym.github.io/clipping/2018/03/24/clippings-from-the-mythical-man-month/][Clippings from The Mythical Man-Month - dsdshome]]
+- [[http://dsdshcym.github.io/clipping/2017/12/27/solving-the-whole-problem-from-giant-robots-smashing-into-other-giant-robots/][Solving the Whole Problem from Giant Robots Smashing Into Other Giant Robots - dsdshome]]
+- [[https://dsdshcym.github.io/clipping/2019/01/02/my-monthly-best-reads-2018-dec/][Make sure to get the important stuff done - dsdshome]]
+
+If you have any similar experience on this topic, please let me know in the comments below!

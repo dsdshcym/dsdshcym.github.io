@@ -1,0 +1,93 @@
+#+TITLE: Discuss Ruby 3 and Open Source with Matz at RubyConf China 2019
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-09-05]
+#+URI:         blog/2019/09/05/discuss-ruby-3-and-open-source-with-matz-at-rubyconf-china-2019/index.html
+#+TAGS:        Ruby, Conf
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+Meeting with [[https://twitter.com/yukihiro_matz?ref_src=twsrc%5Etfw][@yukihiro_matz]] is like a dream come true for me.
+
+Thank you for your talk, your book, and all the work you’ve done for Ruby! [[https://t.co/RjGBBhy0BK][pic.twitter.com/RjGBBhy0BK]]
+
+— Yiming Chen (@dsdshcym) [[https://twitter.com/dsdshcym/status/1165999258568257536?ref_src=twsrc%5Etfw][August 26, 2019]]#+end_quote
+
+I was really excited to see Matz at this year's RubyConf China. Chatting with him was a great experience for sure. This post is a quick summary of my discussions with him.
+
+* Concurrent programming in Ruby 3
+
+Matz gave [[https://www.youtube.com/watch?v=flTdbrF0yuA][a talk about "The future of Ruby"]] at the conference.
+
+After this talk, I asked:
+
+"You mentioned in your talk: other languages, like Go and Elixir, can use one single entity for concurrency abstraction. Why can't Ruby do that? Could you elaborate on the legacy issues we have in Ruby?"
+
+#+begin_quote
+
+Languages like Elixir use immutable data structures by default. They don't need to worry about shared data being modified. So they can use one single type of abstraction for concurrency, like Process.
+
+But objects in Ruby are mutable. So we have this legacy problem of sharing mutable data in a concurrent Ruby program.
+
+In Ruby 3, we'll introduce Guilds and AutoFiber as the solution. In Guilds, data are immutable and isolated, but it's not easy to use. AutoFiber will be the successor for Threads in Ruby, which will be simpler than Guilds but not as powerful.
+
+#+end_quote
+
+在 Matz 演讲结束后，我提问说：“您在演讲中提到，其他编程语言（例如 Go, Elixir）可以只用一种方案作为并发（Concurrency）的抽象，但 Ruby 需要 Guilds 和 AutoFiber 两种方案。这是为什么呢？您能介绍一下背后的历史遗留问题吗？”
+
+Matz 的回答是这样的：“Elixir 中的数据结构都是不可变的（Immutable），因此他们可以放心地共享数据，不用担心在并发过程中共享数据被修改的问题。一种对并发的抽象便足够了。比如 Elixir 中的 Processes。但 Ruby 中的数据结构都是可变的（Mutable），在对 Concurrency 进行抽象时会遇到共享数据的问题。因此，我们打算在 Ruby3 中引入两类抽象机制，Guilds 和 AutoFiber。 Guilds 可以通过数据隔离的方式来解决可变数据的问题，但比较繁琐。 AutoFiber 则提供了一个比较简单的解决方案，作为当前 Ruby 中 Threads 实现的延续。”
+
+* Experience at this year's RubyConf China
+
+During the interlude, I got the chance to ask Matz some questions.
+
+"How's your RubyConf China experience today?"
+
+#+begin_quote
+
+People are nice here. But unfortunately, I don't understand Chinese, so it's a bit hard for me to get involved.
+
+#+end_quote
+
+"Yes, people in the Ruby community are so nice. There's an old saying: 'Matz is nice, so we are nice.' You are the model we all look up to."
+
+在茶歇时，我又跟 Matz 聊起了维护 Ruby 这样巨大的开源项目是什么体验：
+
+- 我：“您能分享一下今天参加 RubyConf China 的体验吗？”
+- Matz：“我很高兴能参加这次大会。中国的 Ruby 开发者都很友好（Nice）。”
+- 我：“是的，Matz is nice so we are nice。您一直是我们的榜样。”
+
+* Maintaining an open source project like Ruby
+
+Then I asked several questions about the experience of maintaining a huge open source project, how to deal with different people, different opinions, etc.
+
+"How does maintaining open source project feel nowadays, especially for a huge project like Ruby?"
+
+#+begin_quote
+
+It's definitely better than 20 years ago, when Ruby just got started. Back then, people didn't understand what open source is, so we needed to explain it. Now, open source is a common sense. Many people have joined to contribute, too.
+
+#+end_quote
+
+"Yeah, I think all the contributors around the world must be very helpful. But people can also be hard sometimes. How to deal with different opinions from different people? For example, there was a controversial discussion around the Pipe Operator you added recently."
+
+#+begin_quote
+
+Yes. People actually have good intentions. It's just that we have different opinions. So I would focus on the reason behind their thinking. Always ask "why".
+
+#+end_quote
+
+- 我：“现在维护 Ruby 这样的开源项目是什么体验呢？”
+- Matz：“相比于 20 年前已经好太多了。20 年前，Ruby 刚开始开发的时候，大家还不知道「开源」是一个什么概念，还需要解释、探索。现在，大家都参与到了开源项目中来，很多人都为 Ruby 项目做出了贡献。”
+- 我：“相信大家的参与也是和您一起承担起了维护的重任。但您是如何处理来自社区不同的声音的呢？比如不久之前加入的 Pipe Operator 就引起了很多争议。”
+- Matz：“有不同的声音是件好事。对待不同的声音、意见，我会探求背后的原因：提出这个意见的人为什么会这么想。了解了这个之后，再做决定。”
+
+* Thank you, Matz!
+#+begin_quote
+
+Ruby literally changed my life. [[https://twitter.com/hashtag/Ruby25?src=hash&ref_src=twsrc%5Etfw][#Ruby25]] [[https://t.co/cEeScmvhys][https://t.co/cEeScmvhys]]
+
+— Yiming Chen (@dsdshcym) [[https://twitter.com/dsdshcym/status/941320400062967808?ref_src=twsrc%5Etfw][December 14, 2017]]#+end_quote
+
+I want to thank Matz in this post again. Without your great work, I would not learn so much about programming. Thank you!

@@ -1,0 +1,24 @@
+#+TITLE: Apple, OKRs, and DRI
+#+begin_quote
+
+- Top-down Leadership, bottom-up contributions
+
+  - OKRs
+  - Regular demos
+  - Focus on great products
+
+- Everyone is a product manager
+
+  - DRI
+
+#+end_quote
+
+-- from [[https://m.soundcloud.com/a16z/inside-apple-software-design][a16z Podcast: Inside Apple Software Design by a16z on SoundCloud - Hear the world’s sounds]]
+
+This is a great interview from a16z podcast. In this episode, Ken Kocienda, a longtime Apple software enginner, shared his experience in Apple. I learned a lot about how Apple manages product development.
+
+The regular demos reminded me of the OKR framework I've been learning these days. This kind of constantly progress checking makes sure we are on the right track and gives us the momentum to go forward.
+
+Another interesting idea is DRI (Directly Responsible Individuals). Every project, every task, every action needs to be assigned to a single person. Otherwise, it's easy for people dragging on progress because everyone thinks another person is responsible for it, not me.
+
+If you are interested in similar topics, I highly recommend listening to this episode. It's much more interesting to listen to these anecdotes inside Apple. :)

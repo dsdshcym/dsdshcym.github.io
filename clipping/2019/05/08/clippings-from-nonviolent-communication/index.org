@@ -1,0 +1,2635 @@
+#+TITLE: Clippings from Nonviolent Communication
+* Table of Contents
+
+- [[#orgb260d12][Foreword by Deepak Chopra, MD]]
+- [[#org117760b][Acknowledgments]]
+- [[#org1347c01][1 Giving From the Heart]]
+
+  - [[#orgffa84be][Introduction]]
+  - [[#orga2c50ba][A Way to Focus Attention]]
+  - [[#org502ef4c][The NVC Process]]
+  - [[#org4d3d52b][Applying NVC in Our Lives and the World]]
+  - [[#org06afe3a][Summary & NVC in Action: “Murderer, Assassin, Child-Killer!”]]
+
+- [[#org3558a91][2 Communication That Blocks Compassion]]
+
+  - [[#org1a6f9d1][Moralistic Judgments]]
+  - [[#org6419787][Making Comparisons]]
+  - [[#orgb2b3883][Denial of Responsibility]]
+  - [[#org3627d5e][Other Forms of Life-Alienating Communication]]
+
+- [[#orgb811177][3 Observing Without Evaluating]]
+
+  - [[#org6041def][The Highest Form of Human Intelligence]]
+  - [[#org9ecc703][Distinguishing Observations From Evaluations]]
+  - [[#orgdb11017][NVC in Action: "The Most Arrogant Speaker We've Ever Had!"]]
+  - [[#orgefe6913][Exercise 1: Observation or Evaluation?]]
+
+- [[#org77eb6bf][4 Identifying and Expressing Feelings]]
+
+  - [[#org8feb32c][The Heavy Cost of Unexpressed Feelings]]
+  - [[#orgede8213][Feelings versus Non-Feelings]]
+  - [[#org8aab520][Building a Vocabulary for Feelings]]
+  - [[#orgba592c8][Exercise 2: Expressing Feelings]]
+
+- [[#orgaeee762][5 Taking Responsibility for Our Feelings]]
+
+  - [[#org18fdf5b][Hearing a Negative Message: Four Options]]
+  - [[#orga26e51f][The Needs at the Roots of Feelings]]
+  - [[#org74386ab][The Pain of Expressing Our Needs versus the Pain of Not Expressing Our Needs]]
+  - [[#org9551d34][From Emotional Slavery to Emotional Liberation   ]]
+  - [[#orgbad5d80][Summary]]
+  - [[#org5b33eac][NVC in Action: “Bring Back the Stigma of Illegitimacy!”]]
+  - [[#orge32f6f7][Exercise 3: Acknowledging Needs]]
+
+- [[#orgae5bff0][6 Requesting That Which Would Enrich Life]]
+
+  - [[#org6957a59][Using Positive Action Language]]
+  - [[#orgf0fa708][Making Requests Consciously]]
+  - [[#org1a4bc30][Asking for a Reflection]]
+  - [[#org58e7a58][Requesting Honesty]]
+  - [[#org0db3390][Making Requests of a Group]]
+  - [[#orgf5126ed][Requests versus Demands]]
+  - [[#org1c9827e][Defining Our Objective When Making Requests]]
+  - [[#org33d47b3][Summary]]
+  - [[#orga452b44][NVC in Action: Sharing Fears About a Best Friend's Smoking]]
+  - [[#orgd135cd5][Exercise 4: Expressing Requests]]
+
+- [[#orga44afc1][7 Receiving Empathically]]
+
+  - [[#org0bf377d][Presence: Don’t Just Do Something, Stand There]]
+  - [[#orgb071732][Listening for Feelings and Needs]]
+  - [[#org98ed3c2][Paraphrasing]]
+  - [[#org412facc][Sustaining Empathy]]
+  - [[#orge4eaa84][When Pain Blocks Our Ability to Empathize]]
+  - [[#orgebf0ee4][Summary]]
+  - [[#orgbd9de06][NVC in Action: A Wife Connects With Her Dying Husband]]
+  - [[#orgbbe99ac][Exercise 5: Receiving Empathically versus Non-Empathically]]
+
+- [[#orgbe6a2c6][8 The Power of Empathy]]
+
+  - [[#org58e2d2b][Empathy That Heals]]
+  - [[#org0761423][Empathy and the Ability to Be Vulnerable]]
+  - [[#orgfbbe802][Using Empathy to Defuse Danger]]
+  - [[#orge6a17fb][Empathy in Hearing Someone's "No!"]]
+  - [[#org5f45814][Empathy to Revive a Lifeless Conversation]]
+  - [[#orge4bd5eb][Empathy for Silence]]
+  - [[#org3b40396][Summary]]
+
+- [[#orga11d2c1][9 Connecting Compassionately With Ourselves]]
+
+  - [[#org59841e5][Remembering the Specialness of What We Are]]
+  - [[#orgc694baa][Evaluating Ourselves When We’ve Been Less Than Perfect]]
+  - [[#org4754356][Translating Self-Judgments and Inner Demands]]
+  - [[#org81454fd][NVC Mourning]]
+  - [[#orgb1170f9][Self-Forgiveness]]
+  - [[#org26c4b72][The Lesson of the Polka-Dotted Suit]]
+  - [[#org065df08][Don’t Do Anything That Isn’t Play!]]
+  - [[#orgc1d5e97][Translating “Have to” to “Choose to”]]
+  - [[#org2231517][Cultivating Awareness of the Energy Behind Our Actions]]
+  - [[#org9554996][Summary]]
+
+- [[#orge97c3b4][10 Expressing Anger Fully]]
+
+  - [[#orge806cd6][Distinguishing Stimulus From Cause]]
+  - [[#orge3e0b9d][All Anger Has a Life-Serving Core]]
+  - [[#org3315d8f][Stimulus versus Cause: Practical Implications]]
+  - [[#org22a9d77][Four Steps to Expressing Anger]]
+  - [[#orgc297526][Offering Empathy First]]
+  - [[#orgf23bd09][Taking Our Time]]
+  - [[#org6a23bd0][NVC in Action: Parent and Teen Dialogue A Life-Threatening Issue]]
+
+- [[#org2189817][11 Conflict Resolution and Mediation]]
+
+  - [[#orgb99d381][Human Connection]]
+  - [[#orgf493faa][NVC Conflict Resolution versus Traditional Mediation]]
+  - [[#orgb209162][NVC Conflict Resolution Steps—A Quick Overview]]
+  - [[#orgbf56897][On Needs, Strategies, and Analysis]]
+
+    - [[#orgf4edf44][Sensing Others' Needs, No Matter What They're Saying]]
+    - [[#org2df2dd6][Have the Needs Been Heard?]]
+
+  - [[#org2ce6e47][Empathy to Ease the Pain That Prevents Hearing]]
+  - [[#org24a64c3][Using Present and Positive Action Language to Resolve Conflict]]
+  - [[#org5062231][Using Action Verbs]]
+  - [[#org34c7a49][Translating "No"]]
+  - [[#orga8d5b54][NVC and the Mediator Role]]
+  - [[#org47c3d4b][When People Say "No" to Meeting Face to Face]]
+  - [[#org2293341][Informal Mediation: Sticking Our Nose in Other People's Business]]
+  - [[#org881ed93][Summary]]
+
+- [[#orgd96433c][12 The Protective Use of Force]]
+
+  - [[#orgda1443c][When the Use of Force Is Unavoidable]]
+  - [[#orgb03617b][The Thinking Behind the Use of Force]]
+  - [[#org4a6dcd4][Types of Punitive Force]]
+  - [[#org5d5554b][The Costs of Punishment]]
+  - [[#orgca21763][Two Questions That Reveal the Limitations of Punishment]]
+  - [[#org0c25cac][The Protective Use of Force in Schools]]
+  - [[#org63c5f1d][Summary]]
+
+- [[#orgedcc171][13 Liberating Ourselves and Counseling Others]]
+
+  - [[#org861f6c8][Freeing Ourselves From Old Programming]]
+  - [[#org00d65cf][Resolving Internal Conflicts]]
+  - [[#org423bd8e][Caring for Our Inner Environment]]
+  - [[#org0aa3d12][Replacing Diagnosis With NVC]]
+  - [[#orge69f692][Summary]]
+  - [[#org4fec54a][NVC in Action: Dealing With Resentment and Self-Judgment]]
+
+- [[#org8a430a5][14 Expressing Appreciation in Nonviolent Communication]]
+
+  - [[#org0bddfa1][The Intention Behind the Appreciation]]
+  - [[#orgfc084e4][The Three Components of Appreciation]]
+  - [[#org139ec0e][Receiving Appreciation]]
+  - [[#org745f173][The Hunger for Appreciation]]
+  - [[#org092e313][Overcoming the Reluctance to Express Appreciation]]
+  - [[#orgff30ae7][Summary]]
+
+- [[#orgea787cc][Epilogue]]
+- [[#orgb5b02be][The Four-Part Nonviolent Communication Process]]
+- [[#org636ed67][Some Basic Feelings We All Have]]
+- [[#org16d40f5][Some Basic Needs We All Have]]
+
+* Foreword by Deepak Chopra, MD
+
+- Personal reality always contains a story, and the story we live, beginning from infancy, is based on language.
+
+  - This became the foundation of Marshall’s approach to conflict resolution, getting people to exchange words in a way that excludes judgments, blame, and violence.
+
+* Acknowledgments
+* 1 Giving From the Heart
+
+- The Heart of Nonviolent Communication
+
+#+begin_quote
+
+  What I want in my life is compassion, a flow between myself and others based on a mutual giving from the heart.
+
+#+end_quote
+
+** Introduction
+
+- Believing that it is our nature to enjoy giving and receiving in a compassionate manner, I have been preoccupied most of my life with two questions:
+
+  1. What happens to disconnect us from our compassionate nature, leading us to behave violently and exploitatively?
+  2. And conversely, what allows some people to stay connected to their compassionate nature under even the most trying circumstances?
+
+- While studying the factors that affect our ability to stay compassionate,
+
+  - I was struck by the crucial role of language and our use of words
+  - I have since identified a specific approach to communicating that *leads us to give from the heart* , connecting us with ourselves and with each other in a way that allows natural compassion to flourish
+  - I call this approach Nonviolent Communication (NVC)
+
+    - using the term nonviolence as Gandhi used it
+    - to refer to our natural state of compassion when violence has subsided from the heart
+
+** A Way to Focus Attention
+
+- It contains nothing new;
+
+  - all that has been integrated into NVC has been known for centuries
+  - The intent is to
+
+    1. remind us about what we already know (how we humans were meant to relate to one another)
+    2. assist us in living in a way that concretely manifests this knowledge
+
+- NVC guides us in reframing how we express ourselves and hear others
+
+  - Instead of habitual, automatic reactions, our words become conscious responses based firmly on awareness of what we are perceiving, feeling, and wanting
+  - We are led to express ourselves with honesty and clarity, while simultaneously paying others a respectful and empathetic attention.
+  - In any exchange, we come to hear our own deeper needs and those of others
+
+- NVC trains us to observe carefully, and to be able to specify behaviors and conditions that are affecting us.
+
+  - We learn to identify and clearly articulate what we are concretely wanting in any given situation
+  - The form is simple, yet powerfully transformative
+
+- As NVC replaces our old patterns of defending, withdrawing, or attacking in the face of judgment and criticism, we come to perceive ourselves and others, as well as our intentions and relationships, in a new light
+- On a deeper level, it is an ongoing reminder to *keep our attention focused on a place where we are more likely to get what we are seeking.*
+- When we give from the heart, we do so out of the joy that springs forth whenever we willingly enrich another person’s life. This kind of giving benefits both the giver and the receiver.
+
+  - The receiver enjoys the gift without worrying about the consequences that accompany gifts given out of fear, guilt, shame, or desire for gain.
+  - The giver benefits from the enhanced self-esteem that results when we see our efforts contributing to someone’s well-being.
+
+- The use of NVC does not require that the persons with whom we are communicating be literate in NVC or even motivated to relate to us compassionately.
+
+** The NVC Process
+
+- Four components of NVC:
+
+  observations
+      The concrete actions we observe that affect our well-being
+
+      - The trick is to be able to articulate this observation without introducing any judgment or evaluation
+      - to simply say what people are doing that we either like or don’t like
+
+  feelings
+      How we feel in relation to what we observe
+
+      - we state how we feel when we observe this action:
+      - are we hurt, scared, joyful, amused, irritated?
+
+  needs
+      The needs, values, desires, etc. that create our feelings
+
+      - we say what needs of ours are connected to the feelings we have identified.
+
+  requests
+      The concrete actions we request in order to enrich our lives
+
+      - a very specific request
+      - what we are wanting from the other person that would enrich our lives or make life more wonderful for us.
+
+- Two parts of NVC:
+
+  1. expressing honestly through the four components
+  2. receiving empathically through the four components
+
+- As we keep our attention focused on the areas mentioned, and help others do likewise, we establish a flow of communication, back and forth, until compassion manifests naturally:
+
+  1. what I am observing, feeling, and needing; what I am requesting to enrich my life;
+  2. what you are observing, feeling, and needing; what you are requesting to enrich your life …
+
+- The essence of NVC is in our consciousness of the four components, not in the actual words that are exchanged.
+
+#+begin_src awk
+
+1. Felix, when I see two balls of soiled socks under the coffee table and another three next to the TV,
+2. I feel irritated
+3. because I am needing more order in the rooms that we share in common.
+4. Would you be willing to put your socks in your room or in the washing machine?
+#+end_src
+** Applying NVC in Our Lives and the World
+
+- It is therefore an approach that can be effectively applied at all levels of communication and in diverse situations:
+
+  - intimate relationships
+  - families
+  - schools
+  - organizations and institutions
+  - therapy and counseling relationships
+  - diplomatic and business negotiations
+  - disputes and conflicts of any nature
+
+** Summary & NVC in Action: “Murderer, Assassin, Child-Killer!”
+
+- NVC helps us connect with each other and ourselves in a way that allows our natural compassion to flourish.
+
+  - It guides us to reframe the way we express ourselves and listen to others by focusing our consciousness on four areas: what we are observing, feeling, and needing, and what we are requesting to enrich our lives
+
+- NVC fosters deep listening, respect, and empathy and engenders a mutual desire to give from the heart.
+- NVC is not simply a language or a set of techniques for using words; the consciousness and intent that it embraces may be expressed through silence, a quality of presence, as well as through facial expressions and body language
+
+* 2 Communication That Blocks Compassion
+
+- Specific forms of language and communication that I believe contribute to our behaving violently toward each other and ourselves.
+- I use the term life-alienating communication to refer to these forms of communication.
+
+** Moralistic Judgments
+
+- One kind of life-alienating communication is the use of moralistic judgments that imply wrongness or badness on the part of people who don't act in harmony with our values.
+- Such judgments are reflected in language:
+
+  - "The problem with you is that you're too selfish."
+  - "She's lazy."
+  - "They're prejudiced."
+  - "It's inappropriate."
+
+- All forms of judgment
+
+  - blame
+  - insults
+  - put-downs
+  - labels
+  - criticism
+  - comparisons
+  - diagnoses
+
+- In the world of judgments, our concern centers on "who is what."
+
+  - It is a language rich with words that classify and dichotomize people and their actions.
+  - When we speak this language, we judge others and their behavior while preoccupying ourselves with who's good, bad, normal, abnormal, responsible, irresponsible, smart, ignorant, etc.
+
+- When we speak this language, we think and communicate in terms of what's wrong with others for behaving in certain ways or, occasionally, what's wrong with ourselves for not understanding or responding as we would like.
+
+  - Our attention is focused on classifying, analyzing, and determining levels of wrongness rather than on what we and others need and are not getting.
+
+- Analyses of others are actually expressions of our own needs and values.
+
+  - They are tragic because when we express our values and needs in this form, we increase defensiveness and resistance among the very people whose behaviors are of concern to us.
+  - Or, if people do agree to act in harmony with our values, they will likely do so out of fear, guilt, or shame because they concur with our analysis of their wrongness.
+
+    - We all pay dearly when people respond to our values and needs not out of a desire to give from the heart, but out of fear, guilt, or shame.
+
+      - Sooner or later, we will experience the consequences of diminished goodwill on the part of those who comply with our values out of a sense of either external or internal coercion.
+      - They, too, pay emotionally, for they are likely to feel resentment and decreased self-esteem when they respond to us out of fear, guilt, or shame.
+      - Furthermore, each time others associate us in their minds with any of those feelings, the likelihood of their responding compassionately to our needs and values in the future decreases.
+
+- It is important here not to confuse value judgments and moralistic judgments.
+
+  - All of us make value judgments as to the qualities we value in life;
+
+    - we might value honesty, freedom, or peace.
+    - Value judgments reflect our beliefs of how life can best be served.
+
+  - We make moralistic judgments of people and behaviors that fail to support our value judgments;
+
+    - "Violence is bad. People who kill others are evil."
+
+  - Had we been raised speaking a language that facilitated the expression of compassion, we would have learned to articulate our needs and values directly, rather than to insinuate wrongness when they have not been met.
+
+    - instead of "Violence is bad," we might say instead, "I am fearful of the use of violence to resolve conflicts; I value the resolution of human conflicts through other means."
+
+- The relationship between language and violence
+
+  - study shows a high correlation between frequent use of such words (that classify and judge people) and frequency of incidents.
+  - there is considerably less violence in cultures where people think in terms of human needs than in cultures where people label one another as "good" or "bad" and believe that the "bad" ones deserve to be punished.
+
+- Classifying and judging people promotes violence.
+- At the root of much, if not all, violence is
+
+  - *a kind of thinking that attributes the cause of conflict to wrongness in one's adversaries* ,
+  - a corresponding inability to think of oneself or others in terms of vulnerability—that is, what one might be feeling, fearing, yearning for, missing, etc.
+
+** Making Comparisons
+
+- Another form of judgment is the use of comparisons.
+- In his book How to Make Yourself Miserable,
+
+  - Dan Greenburg demonstrates through humor the insidious power that comparative thinking can exert over us.
+  - He suggests that if readers have a sincere desire to make life miserable for themselves, they might learn to compare themselves to other people.
+
+** Denial of Responsibility
+
+- Communication is life-alienating when it clouds our awareness that we are each responsible for our own thoughts, feelings, and actions.
+- Our language obscures awareness of personal responsibility.
+
+  have to
+
+      illustrates how personal responsibility for our actions can be obscured in speech.
+
+#+begin_src ruby
+
+There are some things you have to do, whether you like it or not
+#+end_src
+  makes one feel
+
+      another example of how language facilitates denial of personal responsibility for our own feelings and thoughts.
+
+#+begin_src awk
+
+You make me feel guilty
+#+end_src
+
+- We deny responsibility for our actions when we attribute their cause to factors outside ourselves:
+
+  Vague, impersonal forces
+      "I cleaned my room because I had to."
+  Our condition, diagnosis, or personal or psychological history
+      "I drink because I am an alcoholic."
+  The actions of others
+      "I hit my child because he ran into the street."
+  The dictates of authority
+      "I lied to the client because the boss told me to."
+  Group pressure
+      "I started smoking because all my friends did."
+  Institutional policies, rules, and regulations
+      "I have to suspend you for this infraction because it's the school policy."
+  Gender roles, social roles, or age roles
+      "I hate going to work, but I do it because I am a husband and a father."
+  Uncontrollable impulses
+      "I was overcome by my urge to eat the candy bar."
+
+- We can replace language that implies lack of choice with language that acknowledges choice.
+
+#+begin_src awk
+
+I suggested that the teacher translate the statement "I have to give
+grades because it's district policy" to "I choose to give grades
+because I want … " She answered without hesitation, "I choose to give
+grades because I want to keep my job," while hastening to add, "But I
+don't like saying it that way. It makes me feel so responsible for
+what I'm doing."
+#+end_src
+- We are dangerous when we are not conscious of our responsibility for how we behave, think, and feel.
+
+** Other Forms of Life-Alienating Communication
+
+- Communicating our desires as demands
+
+  - A demand explicitly or implicitly threatens listeners with blame or punishment if they fail to comply.
+
+    - I couldn't make them do anything.
+    - All I could do was make them wish they had—through punishment.
+
+  - It is a common form of communication in our culture, especially among those who hold positions of authority.
+  - We will examine this subject again when we learn to differentiate requests from demands
+
+- The concept that certain actions merit reward while others merit punishment
+
+  - This thinking is expressed by the word deserve as in "He deserves to be punished for what he did."
+  - Thinking based on "who deserves what" blocks compassionate communication.
+  - It assumes "badness" on the part of people who behave in certain ways,
+  - it calls for punishment to make them repent and change their behavior.
+  - *it is in everyone's interest that people change, not in order to avoid punishment, but because they see the change as benefiting themselves.*
+
+- Life-alienating communication has deep philosophical and political roots.
+
+  - Most of us grew up speaking a language that encourages us to label, compare, demand, and pronounce judgments rather than to be aware of what we are feeling and needing.
+  - I believe life-alienating communication is rooted in views of human nature that have exerted their influence for several centuries.
+
+    - These views stress humans' innate evil and deficiency, and a need for education to control our inherently undesirable nature.
+    - Such education often leaves us questioning whether there is something wrong with whatever feelings and needs we may be experiencing.
+    - We learn early to cut ourselves off from what's going on within ourselves.
+
+  - Life-alienating communication both stems from and supports hierarchical or domination societies, where large populations are controlled by a small number of individuals to those individuals, own benefit.
+
+    - It would be in the interest of kings, czars, nobles, and so forth that the masses be educated in a way that renders them slavelike in mentality.
+    - The language of wrongness, should, and have to is perfectly suited for this purpose:
+    - the more people are trained to think in terms of moralistic judgments that imply wrongness and badness, the more they are being trained to look outside themselves—to outside authorities—for the definition of what constitutes right, wrong, good, and bad.
+    - When we are in contact with our feelings and needs, we humans no longer make good slaves and underlings.
+
+- Summary
+
+  - It is our nature to enjoy giving and receiving compassionately.
+  - We have, however, learned many forms of life-alienating communication that lead us to speak and behave in ways that injure others and ourselves.
+
+* 3 Observing Without Evaluating
+
+- We need to clearly observe what we are seeing, hearing, or touching that is affecting our sense of well-being, without mixing in any evaluation.
+- When we combine observation with evaluation, we decrease the likelihood that others will hear our intended message. Instead, they are apt to hear criticism and thus resist whatever we are saying.
+- NVC does not mandate that we remain completely objective and refrain from evaluating.
+
+  - It only requires that we maintain a separation between our observations and our evaluations.
+
+    - NVC is a process language that discourages static generalizations;
+
+      - instead, evaluations are to be based on observations specific to time and context.
+      - we create many problems for ourselves by using static language to express or capture a reality that is ever changing:
+
+- While the effects of negative labels such as "lazy" and "stupid" may be more obvious, even a positive or an apparently neutral label such as "cook" limits our perception of the totality of another person's being.
+
+** The Highest Form of Human Intelligence
+
+- Observing without evaluating is the highest form of human intelligence.
+
+  - For most of us, it is difficult to make observations, especially of people and their behavior, that are free of judgment, criticism, or other forms of analysis.
+
+- Example from a school
+
+  - while "big mouth" gave me information on how this teacher evaluated the principal, it failed to describe what the principal said or did that led to the interpretation that he had a "big mouth."
+  - inferring what another person is thinking is not the same as observing his behavior.
+
+** Distinguishing Observations From Evaluations
+
+- The following table distinguishes observations that are separate from evaluation from those that have evaluation mixed in.
+
+  ||Communication |Example of observation with evaluation mixed in |Example of observation separate from evaluation | |
+  ||1. Use of verb to be without indication that the evaluator takes responsibility for the evaluation |You are too generous. |When I see you give all your lunch money to others, I think you are being too generous. | |
+  ||2. Use of verbs with evaluative connotations |Doug procrastinates. |Doug only studies for exams the night before. | |
+  ||3. Implication that one's inferences about another person's thoughts, feelings, intentions, or desires are the only ones possible |She won't get her work in. |I don't think she'll get her work in. or She said, “I won't get my work in.” | |
+  ||4. Confusion of prediction with certainty |If you don't eat balanced meals, your health will be impaired. |If you don't eat balanced meals, I fear your health may be impaired. | |
+  ||5. Failure to be specific about referents |Immigrants don't take care of their property. |I have not seen the immigrant family living at 1679 Ross shovel the snow on their sidewalk. | |
+  ||6. Use of words denoting ability without indicating that an evaluation is being made |Hank Smith is a poor soccer player. |Hank Smith has not scored a goal in twenty games. | |
+  ||7. Use of adverbs and adjectives in ways that do not indicate an evaluation has been made |Jim is ugly. |Jim's looks don't appeal to me. | |
+- Some words can be used in both situations depending on the context
+
+  - The words always, never, ever, whenever, etc.
+
+    - express observations when used in the following ways:
+
+      - Whenever I have observed Jack on the phone, he has spoken for at least thirty minutes.
+      - I cannot recall your ever writing to me.
+
+    - used as exaggerations, in which case observations and evaluations are being mixed:
+
+      - You are always busy.
+      - She is never there when she's needed.
+
+  - Words like frequently and seldom can also contribute to confusing observation with evaluation.
+
+    ||Evaluations |Observations | |
+    ||You seldom do what I want. |The last three times I initiated an activity, you said you didn't want to do it. | |
+    ||He frequently comes over. |He comes over at least three times a week. | |
+
+** NVC in Action: "The Most Arrogant Speaker We've Ever Had!"
+** Exercise 1: Observation or Evaluation?
+* 4 Identifying and Expressing Feelings
+
+- Psychoanalyst Rollo May suggests that "the mature person becomes able to differentiate feelings into as many nuances, strong and passionate experiences, or delicate and sensitive ones as in the different passages of music in a symphony."
+
+  - For many of us, however, our feelings are, as May would describe it, "limited like notes in a bugle call."
+
+** The Heavy Cost of Unexpressed Feelings
+
+- Feelings were simply not considered important. (In modern education)
+
+  - What was valued was "the right way to think"—as defined by those who held positions of rank and authority.
+  - We are trained to be "other-directed" rather than to be in contact with ourselves.
+  - We learn to be "up in our head," wondering, "What is it that others think is right for me to say and do?"
+
+- when he followed the word feel with the word that, he was expressing an opinion but not revealing his feelings.
+- This difficulty in identifying and expressing feelings is common,
+- The benefits of strengthening our feelings vocabulary are evident not only in intimate relationships but also in the professional world.
+
+  - I have often heard people say they cannot imagine ever expressing feelings at their workplace.
+  - *Expressing our vulnerability can help resolve conflicts.*
+
+- the effects of hiding our feelings.
+
+** Feelings versus Non-Feelings
+
+- *Distinguish feelings from thoughts*
+
+  - A common confusion, generated by the English language, is our use of the word feel without actually expressing a feeling.
+  - In general, feelings are not being clearly expressed when the word feel is followed by:
+
+    1. Words such as that, like, as if
+
+       - "I feel that you should know better."
+       - "I feel like a failure."
+       - "I feel as if I’m living with a wall."
+
+    2. The pronouns I, you, he, she, they, it
+
+       - "I feel I am constantly on call."
+       - "I feel it is useless."
+
+    3. Names or nouns referring to people
+
+       - "I feel Amy has been pretty responsible."
+       - "I feel my boss is being manipulative."
+
+- Distinguish between what we feel and what we think we are.
+
+  - Conversely, in the English language, it is not necessary to use the word feel at all when we are actually expressing a feeling:
+
+    - we can say, "I’m feeling irritated,"
+    - or simply, "I’m irritated."
+
+  - In NVC, we distinguish between words that express actual feelings and those that describe what we think we are.
+
+    1. Description of what we think we are
+
+       - "I feel inadequate as a guitar player."
+
+    2. Expressions of actual feelings
+
+       - "I feel disappointed in myself as a guitar player."
+       - "I feel impatient with myself as a guitar player."
+       - "I feel frustrated with myself as a guitar player."
+
+- Distinguish between what we feel and how we think others react or behave toward us.
+
+  - Likewise, it is helpful to differentiate between words that describe what we think others are doing around us, and words that describe actual feelings.
+  - The following are examples of statements that are easily mistaken as expressions of feelings: in fact they reveal more how we think others are behaving than what we are actually feeling ourselves.
+
+    1. "I feel unimportant to the people with whom I work."
+    2. "I feel misunderstood."
+    3. "I feel ignored."
+
+  - Words like ignored express how we interpret others, rather than how we feel.
+
+    - abandoned
+    - abused
+    - attacked
+    - betrayed
+    - boxed-in
+    - bullied
+    - cheated
+    - coerced
+    - co-opted
+    - cornered
+    - diminished
+    - distrusted
+    - interrupted
+    - intimidated
+    - let down
+    - manipulated
+    - misunderstood
+    - neglected
+    - overworked
+    - patronized
+    - pressured
+    - provoked
+    - put down
+    - rejected
+    - taken for granted
+    - threatened
+    - unappreciated
+    - unheard
+    - unseen
+    - unsupported
+    - unwanted
+    - used
+
+** Building a Vocabulary for Feelings
+
+- In expressing our feelings, it helps to *use words that refer to specific emotions* , rather than words that are vague or general.
+- The following lists have been compiled to help you increase your power to articulate feelings and clearly describe a whole range of emotional states.
+
+  - How we are likely to feel when our needs are being met
+
+    - absorbed
+    - adventurous
+    - affectionate
+    - alert
+    - alive
+    - amazed
+    - amused
+    - animated
+    - appreciative
+    - ardent
+    - aroused
+    - astonished
+    - blissful
+    - breathless
+    - buoyant
+    - calm
+    - carefree
+    - cheerful
+    - comfortable
+    - complacent
+    - composed
+    - concerned
+    - confident
+    - contented
+    - cool
+    - curious
+    - dazzled
+    - delighted
+    - eager
+    - ebullient
+    - ecstatic
+    - effervescent
+    - elated
+    - enchanted
+    - encouraged
+    - energetic
+    - engrossed
+    - enlivened
+    - enthusiastic
+    - excited
+    - exhilarated
+    - expansive
+    - expectant
+    - exultant
+    - fascinated
+    - free
+    - friendly
+    - fulfilled
+    - glad
+    - gleeful
+    - glorious
+    - glowing
+    - good
+    - humored
+    - grateful
+    - gratified
+    - happy
+    - helpful
+    - hopeful
+    - inquisitive
+    - inspired
+    - intense
+    - interested
+    - intrigued
+    - invigorated
+    - involved
+    - joyous
+    - joyful
+    - jubilant
+    - keyed-up
+    - loving
+    - mellow
+    - merry
+    - mirthful
+    - moved
+    - optimistic
+    - overjoyed
+    - overwhelmed
+    - peaceful
+    - perky
+    - pleasant
+    - pleased
+    - proud
+    - quiet
+    - radiant
+    - rapturous
+    - refreshed
+    - relaxed
+    - relieved
+    - satisfied
+    - secure
+    - sensitive
+    - serene
+    - spellbound
+    - splendid
+    - stimulated
+    - surprised
+    - tender
+    - thankful
+    - thrilled
+    - touched
+    - tranquil
+    - trusting
+    - upbeat
+    - warm
+    - wide
+    - awake
+    - wonderful
+    - zestful
+
+  - How we are likely to feel when our needs are not being met
+
+    - afraid
+    - aggravated
+    - agitated
+    - alarmed
+    - aloof
+    - angry
+    - anguished
+    - annoyed
+    - anxious
+    - apathetic
+    - apprehensive
+    - aroused
+    - ashamed
+    - beat
+    - bewildered
+    - bitter
+    - blah
+    - blue
+    - bored
+    - brokenhearted
+    - chagrined
+    - cold
+    - concerned
+    - confused
+    - cool
+    - cross
+    - dejected
+    - depressed
+    - despairing
+    - despondent
+    - detached
+    - disaffected
+    - disappointed
+    - discouraged
+    - disenchanted
+    - disgruntled
+    - disgusted
+    - disheartened
+    - dismayed
+    - displeased
+    - disquieted
+    - distressed
+    - disturbed
+    - downcast
+    - downhearted
+    - dull
+    - edgy
+    - embarrassed
+    - embittered
+    - exasperated
+    - exhausted
+    - fatigued
+    - fearful
+    - fidgety
+    - forlorn
+    - frightened
+    - frustrated
+    - furious
+    - gloomy
+    - guilty
+    - harried
+    - heavy
+    - helpless
+    - hesitant
+    - horrible
+    - horrified
+    - hostile
+    - hot
+    - humdrum
+    - hurt
+    - impatient
+    - indifferent
+    - intense
+    - irate
+    - irked
+    - irritated
+    - jealous
+    - jittery
+    - keyed-up
+    - lazy
+    - leery
+    - lethargic
+    - listless
+    - lonely
+    - mad
+    - mean
+    - miserable
+    - mopey
+    - morose
+    - mournful
+    - nervous
+    - nettled
+    - numb
+    - overwhelmed
+    - panicky
+    - passive
+    - perplexed
+    - pessimistic
+    - puzzled
+    - rancorous
+    - reluctant
+    - repelled
+    - resentful
+    - restless
+    - sad
+    - scared
+    - sensitive
+    - shaky
+    - shocked
+    - skeptical
+    - sleepy
+    - sorrowful
+    - sorry
+    - spiritless
+    - startled
+    - surprised
+    - suspicious
+    - tepid
+    - terrified
+    - tired
+    - troubled
+    - uncomfortable
+    - unconcerned
+    - uneasy
+    - unglued
+    - unhappy
+    - unnerved
+    - unsteady
+    - upset
+    - uptight
+    - vexed
+    - weary
+    - wistful
+    - withdrawn
+    - woeful
+    - worried
+    - wretched
+
+** Exercise 2: Expressing Feelings
+
+2 3 5
+
+* 5 Taking Responsibility for Our Feelings
+#+begin_quote
+
+People are disturbed not by things, but by the view they take of them.
+
+#+end_quote
+** Hearing a Negative Message: Four Options
+
+- The third component of NVC entails *the acknowledgment of the root of our feelings* .
+
+  - *What others say and do may be the stimulus, but never the cause, of our feelings.*
+  - We see that our feelings result from
+
+    1. how we choose to receive what others say and do
+    2. our particular needs and expectations in that moment
+
+- Four options for receiving negative messages:
+
+#+begin_src awk
+
+You're the most self-centered person I've ever met!
+#+end_src
+
+  1. blame ourselves
+
+#+begin_src awk
+
+Oh, I should've been more sensitive!
+#+end_src
+
+     - take it (negative message) personally by hearing blame and criticism.
+     - accept the other person's judgment and blame ourselves.
+     - *We choose this option at great cost to our self-esteem, for it inclines us toward feelings of guilt, shame, and depression.*
+
+  2. blame others
+
+#+begin_src awk
+
+You have no right to say that! I am always considering your
+needs. You're the one who is really self-centered.
+#+end_src
+
+     - When we receive messages this way, we are likely to feel anger
+
+  3. sense our own feelings and needs
+
+#+begin_src awk
+
+When I hear you say that I am the most self-centered person you've
+ever met, I feel hurt, because I need some recognition of my efforts
+to be considerate of your preferences.
+#+end_src
+
+     - By focusing attention on our own feelings and needs, we become conscious that our current feeling of hurt derives from a need for our efforts to be recognized.
+
+  4. sense others' feelings and needs
+
+#+begin_src awk
+
+Are you feeling hurt because you need more consideration for your
+preferences?
+#+end_src
+
+- We accept responsibility for our feelings, rather than blame other people, *by acknowledging our own needs, desires, expectations, values, or thoughts.*
+- Connect your feeling with your need: "I feel...because I need..."
+
+  - As we shall see, the more we are able to connect our feelings to our own needs, *the easier it is for others to respond compassionately.*
+  - It is helpful to recognize a number of common speech patterns that tend to mask accountability for our own feelings:
+
+    1. Use of impersonal pronouns such as it and that:
+
+#+begin_quote
+
+       - "It really infuriates me when spelling mistakes appear in our public brochures."
+       - "That bugs me a lot."
+
+#+end_quote
+    2. The use of the expression "I feel (an emotion) because … " followed by a person or personal pronoun other than I:
+
+#+begin_quote
+
+       - "I feel hurt because you said you don't love me."
+       - "I feel angry because the supervisor broke her promise."
+
+#+end_quote
+    3. Statements that mention only the actions of others:
+
+#+begin_quote
+
+       - "When you don't call me on my birthday, I feel hurt."
+       - "Mommy is disappointed when you don't finish your food."
+
+#+end_quote
+
+  - In each of these instances, we can deepen our awareness of our own responsibility by substituting the phrase, "I feel … because I … "
+
+#+begin_quote
+
+    1. "I feel really infuriated when spelling mistakes like that appear in our public brochures, because I want our company to project a professional image."
+    2. "I feel angry that the supervisor broke her promise, because I was counting on getting that long weekend to visit my brother."
+    3. "Mommy feels disappointed when you don't finish your food, because I want you to grow up strong and healthy."
+
+#+end_quote
+
+- Distinguish between giving from the heart and being motivated by guilt.
+
+  - The basic mechanism of motivating by guilt is to attribute the responsibility for one's own feelings to others.
+
+    - When parents say, "It hurts Mommy and Daddy when you get poor grades at school," they are implying that the child's actions are the cause of the parents' happiness or unhappiness.
+    - On the surface, taking responsibility for the feelings of others can easily be mistaken for positive caring.
+
+      - It may appear that the child cares for the parent and feels bad because the parent is suffering.
+
+    - However, if children who assume this kind of responsibility change their behavior in accordance with parental wishes, they are not acting from the heart, but acting to avoid guilt.
+
+** The Needs at the Roots of Feelings
+
+- *Judgments of others are alienated expressions of our own unmet needs.*
+- If we express our needs, we have a better chance of getting them met.
+
+  - When we express our needs indirectly through the use of evaluations, interpretations, and images, others are likely to hear criticism.
+  - And when people hear anything that sounds like criticism, they tend to invest their energy in self-defense or counterattack.
+  - If we wish for a compassionate response from others, it is self-defeating to express our needs by interpreting or diagnosing their behavior.
+  - Instead, the more directly we can connect our feelings to our own needs, the easier it is for others to respond to us compassionately.
+  - Unfortunately, most of us have never been taught to think in terms of needs.
+
+    - We are accustomed to thinking about what’s wrong with other people when our needs aren’t being fulfilled.
+
+      - Thus, if we want coats to be hung up in the closet, we may characterize our children as lazy for leaving them on the couch.
+      - Or we may interpret our co-workers as irresponsible when they don’t go about their tasks the way we would prefer them to.
+
+  - From the moment people begin talking about what they need rather than what’s wrong with one another, the possibility of finding ways to meet everybody’s needs is greatly increased.
+  - The following are some of the basic human needs we all share
+
+    - Autonomy
+
+      - to choose one’s dreams, goals, values
+      - to choose one’s plan for fulfilling one’s dreams, goals, values
+
+    - Celebration
+
+      - to celebrate the creation of life and dreams fulfilled
+      - to celebrate losses: loved ones, dreams, etc. (mourning)
+
+    - Integrity
+
+      - authenticity
+      - creativity
+      - meaning
+      - self-worth
+
+    - Interdependence
+
+      - acceptance
+      - appreciation
+      - closeness
+      - community
+      - consideration
+      - contribution to the enrichment of life (to exercise one’s power by giving that which contributes to life)
+      - emotional safety
+      - empathy
+      - honesty (the empowering honesty that enables us to learn from our limitations)
+      - love
+      - reassurance
+      - respect
+      - support
+      - trust
+      - understanding
+      - warmth
+
+    - Play
+
+      - fun
+      - laughter
+
+    - Spiritual Communion
+
+      - beauty
+      - harmony
+      - inspiration
+      - order
+      - peace
+
+    - Physical Nurturance
+
+      - air
+      - food
+      - movement, exercise
+      - protection from life-threatening forms of life: viruses, bacteria, insects, predatory animals
+      - rest
+      - sexual expression
+      - shelter
+      - touch
+      - water
+
+** The Pain of Expressing Our Needs versus the Pain of Not Expressing Our Needs
+
+- *If we don't value our needs, others may not either.*
+- Because women are socialized to view the caretaking of others as their highest duty, they often learn to ignore their own needs.
+
+** From Emotional Slavery to Emotional Liberation   Top
+
+- In our development toward a state of emotional liberation, most of us experience three stages in the way we relate to others
+
+  Emotional slavery
+      We see ourselves responsible for others' feelings
+
+      - We think we must constantly strive to keep everyone happy. If they don’t appear happy, we feel responsible and compelled to do something about it.
+      - This can easily lead us to see the very people who are closest to us as burdens.
+      - Taking responsibility for the feelings of others can be very detrimental to intimate relationships.
+
+#+begin_src awk
+
+“I’m really scared to be in a relationship. Every time I see my
+partner in pain or needing something, I feel overwhelmed. I feel like
+I’m in prison, that I’m being smothered—and I just have to get out of
+the relationship as fast as possible.”
+#+end_src
+
+        - This response is common among those who experience love as denial of one’s own needs in order to attend to the needs of the beloved.
+        - In the early days of a relationship, partners typically relate joyfully and compassionately to each other out of a sense of freedom.
+        - The relationship is exhilarating, spontaneous, wonderful.
+        - Eventually, however, as the relationship becomes “serious,” partners may begin to assume responsibility for each other’s feelings.
+
+  The obnoxious stage
+      We feel angry; we no longer want to be responsible for others' feelings
+
+      - We are clear what we are not responsible for, but have yet to learn how to be responsible to others in a way that is not emotionally enslaving.
+
+        - In this stage, we become aware of the high costs of assuming responsibility for others’ feelings and trying to accommodate them at our own expense.
+        - When we notice how much of our lives we’ve missed and how little we have responded to the call of our own soul, we may get angry.
+
+      - As we emerge from the stage of emotional slavery, we may continue to carry remnants of fear and guilt around having our own needs.
+
+        - Thus it is not surprising that we end up expressing our needs in ways that sound rigid and unyielding to the ears of others.
+
+      - *Honesty would be a gift more precious to others than accommodating them to prevent their upset.*
+      - empathize with people when they were upset without taking responsibility for their feelings.
+
+  Emotional liberation
+      We take responsibility for our intentions and actions
+
+      - We respond to the needs of others out of compassion, never out of fear, guilt, or shame.
+
+        - Our actions are therefore fulfilling to us, as well as to those who receive our efforts.
+        - We accept full responsibility for our own intentions and actions, but not for the feelings of others.
+
+      - At this stage, we are aware that *we can never meet our own needs at the expense of others.*
+      - Emotional liberation involves
+
+        1. stating clearly what we need
+        2. in a way that communicates we are equally concerned that the needs of others be fulfilled.
+
+      - NVC is designed to support us in relating at this level.
+
+** Summary
+** NVC in Action: “Bring Back the Stigma of Illegitimacy!”
+
+- *We have the option of listening for the feelings and needs behind the words that have shocked us.*
+- As often happens when there is a mixture of feelings present,
+
+  - the speaker will return to those that have not received empathic attention.
+  - It is not necessary for the listener to reflect back a complex mixture of feelings all at once; the flow of compassion will continue as each feeling comes up again in its turn.
+
+** Exercise 3: Acknowledging Needs
+
+2 4 6 10
+
+* 6 Requesting That Which Would Enrich Life
+
+- The fourth and final component of this process addresses what we would like to request of others in order to enrich life for us.
+- How do we express our requests so that others are more willing to respond compassionately to our needs?
+
+** Using Positive Action Language
+
+- express what we are requesting rather than what we are not requesting.
+
+  - "All I know is I feel won't when I'm told to do a don't."
+  - People are often confused as to what is actually being requested,
+  - negative requests are likely to provoke resistance.
+
+- *Making requests in clear, positive, concrete action language reveals what we really want.*
+
+  - In addition to using positive language, we also want to word our requests in the form of concrete actions that others can undertake and to avoid vague, abstract, or ambiguous phrasing.
+  - Often, the use of vague and abstract language can mask oppressive interpersonal games.
+  - we often use vague and abstract language to indicate how we want other people to feel or be without naming a concrete action they could take to reach that state.
+  - Vague language contributes to internal confusion.
+
+- Depression is the reward we get for being "good."
+
+  - we're not getting what we want because we have never been taught to get what we want.
+  - Instead, we've been taught to be good little boys and girls and good mothers and fathers.
+
+    - If we're going to be one of those good things, better get used to being depressed.
+    - Depression is the reward we get for being "good."
+
+  - But, *if you want to feel better, I'd like you to clarify what you would like people to do to make life more wonderful for you.*
+
+** Making Requests Consciously
+
+- When we simply express our feelings, it may not be clear to the listener what we want them to do.
+- Even more often, we are simply not conscious of what we are requesting when we speak.
+
+  - We talk to others or at them without knowing how to engage in a dialogue with them.
+
+- Requests may sound like demands when unaccompanied by the speaker's feelings and needs.
+
+  - This is especially true when the request takes the form of a question.
+
+    - "Why don't you go and get a haircut?"
+    - "We're worried that your hair is getting so long it might keep you from seeing things, especially when you're on your bike. How about a haircut?"
+
+- The clearer we are about what we want, the more likely it is that we'll get it.
+
+  - It is more common, however, for people to talk without being conscious of what they are asking for.
+  - whenever we say something to another person, we are requesting something in return.
+
+    - It may simply be an empathic connection—a verbal or nonverbal acknowledgment that our words have been understood.
+    - Or we may be requesting honesty: we wish to know the listener's honest reaction to our words.
+    - Or we may be requesting an action that we hope would fulfill our needs.
+
+** Asking for a Reflection
+
+- The message we send is not always the message that's received.
+- To make sure the message we sent is the message that's received, ask the listener to reflect it back.
+- Express appreciation when your listener tries to meet your request for a reflection. "I'm grateful to you for telling me what you heard. I can see that I didn't make myself as clear as I'd have liked, so let me try again."
+- Empathize with the listener who doesn't want to reflect back.
+
+  - we can explain to people ahead of time why we may sometimes ask them to reflect back our words.
+  - We make clear that we're not testing their listening skills, but checking out whether we've expressed ourselves clearly.
+  - However, should the listener retort, "I heard what you said; I'm not stupid!" we have the option to focus on the listener's feelings and needs and ask—either aloud or silently—"Are you saying you're feeling annoyed because you want respect for your ability to understand things?"
+
+** Requesting Honesty
+
+- After we express ourselves vulnerably, we often want to know
+
+  1. what the listener is feeling, and the reasons for those feelings.
+
+#+begin_src awk
+
+"I would like you to tell me how you feel about what I just said, and
+your reasons for feeling as you do."
+#+end_src
+  2. what the listener is thinking;
+
+     - Sometimes we'd like to know something about our listener's thoughts in response to what they just heard us say.
+     - At these times, it's important to specify which thoughts we'd like them to share.
+
+#+begin_src awk
+
+"I'd like you to tell me if you predict that my proposal would be
+successful, and if not, what you believe would prevent its success,"
+#+end_src
+     - When we don't specify which thoughts we would like to receive, the other person may respond at great length with thoughts that aren't the ones we are seeking.
+
+#+begin_src awk
+
+"I'd like you to tell me what you think about what I've said."
+#+end_src
+
+  3. whether the listener would be willing to take a particular action.
+
+#+begin_src awk
+
+"I'd like you to tell me if you would be willing to postpone our meeting for one week."
+#+end_src
+
+- The use of NVC requires that we
+
+  - be conscious of the specific form of honesty we would like to receive
+  - to make that request for honesty in concrete language.
+
+** Making Requests of a Group
+
+- In a group, much time is wasted when speakers aren't certain what response they're wanting.
+
+  - *When we address a group without being clear what we are wanting back, unproductive discussions will often follow.*
+  - However, if even one member of a group is conscious of the importance of clearly requesting the response that is desired, he or she can extend this consciousness to the group.
+
+- In India, when people have received the response they want in conversations they have initiated, they say "bas" (pronounced "bus").
+
+  - This means, "You need not say more. I feel satisfied and am now ready to move on to something else."
+  - Though we lack such a word in our own language, we can benefit from developing and promoting "bas-consciousness" in all our interactions.
+
+** Requests versus Demands
+
+- Our requests are received as demands when others believe they will be blamed or punished if they do not comply
+
+  - When people hear a demand, they see only two options
+
+    1. to submit
+    2. to rebel
+
+  - Either way,
+
+    1. the person requesting is perceived as coercive,
+    2. the listener's capacity to respond compassionately to the request is diminished
+
+- To tell if it's a demand or a request, observe what the speaker does if the request is not complied with
+
+  - It's a demand if the speaker then criticizes or judges
+  - It's a demand if the speaker then lays a guilt trip
+
+    - The more we interpret noncompliance as rejection, the more likely our requests will be heard as demands.
+    - This leads to a self-fulfilling prophecy, for the more people hear demands, the less they enjoy being around us.
+
+  - It's a request if the speaker then shows empathy toward the other person's needs
+
+    - We can help others trust that we are requesting, not demanding, by indicating that we would only want them to comply if they can do so willingly.
+
+#+begin_src awk
+
+"Would you be willing to set the table?"
+v.s.
+"I would like you to set the table."
+#+end_src
+    - The most powerful way to communicate that we are making a genuine request is to empathize with people when they don't agree to the request.
+
+- Choosing to request rather than demand
+
+  - does not mean we give up when someone says no to our request.
+  - It does mean that we don't engage in persuasion until we have empathized with what's preventing the other person from saying yes.
+
+** Defining Our Objective When Making Requests
+
+- Our objective is a relationship based on honesty and empathy.
+
+  - If our objective is only to change people and their behavior or to get our way, then NVC is not an appropriate tool.
+  - The process is designed for those of us who would like others to change and respond, but only if they choose to do so willingly and compassionately
+  - When others trust that our primary commitment is to the quality of the relationship, and that we expect this process to fulfill everyone's needs, then they can trust that our requests are true requests and not camouflaged demands.
+
+- During the initial phases of learning this process, we may find ourselves applying the components of NVC mechanically without awareness of the underlying purpose.
+- Sometimes, however, even when we're conscious of our intent and express our request with care, people may still hear a demand.
+
+  - This is particularly true when we occupy positions of authority and are speaking with those who have had past experiences with coercive authority figures.
+  - When we give people labels, we tend to act in a way that contributes to the very behavior that concerns us, which we then view as further confirmation of our diagnosis.
+
+- When making a request, it is also helpful to scan our minds for the sort of thoughts that automatically transform requests into demands:
+
+  - He should be cleaning up after himself.
+  - She's supposed to do what I ask.
+  - I deserve to get a raise.
+  - I'm justified in having them stay later.
+  - I have a right to more time off.
+
+** Summary
+
+- The objective of NVC is not to change people and their behavior in order to get our way; it is to establish relationships based on honesty and empathy that will eventually fulfill everyone's needs.
+
+** NVC in Action: Sharing Fears About a Best Friend's Smoking
+** Exercise 4: Expressing Requests
+
+2 +4+ +6+ 7
+
+* 7 Receiving Empathically
+
+- Now we turn from self-expression to apply these same four components to hearing what others are observing, feeling, needing, and requesting.
+- The two parts of NVC:
+
+  1. expressing honestly
+  2. receiving empathically
+
+** Presence: Don’t Just Do Something, Stand There
+
+- Empathy: emptying our mind and listening with our whole being
+
+  - [[https://books.google.com/books/about/The_Way_of_Chuang_Tz%C5%AD.html?id=LDOCZPyg2MQC][The Chinese philosopher Chuang-Tzu stated]] that true empathy requires listening with the whole being:
+
+#+begin_quote
+
+    “The hearing that is only in the ears is one thing. The hearing of the understanding is another. But the hearing of the spirit is not limited to any one faculty, to the ear, or to the mind. Hence it demands the emptiness of all the faculties. And when the faculties are empty, then the whole being listens. There is then a direct grasp of what is right there before you that can never be heard with the ear or understood with the mind.”
+
+#+end_quote
+  - Empathy with others occurs only when we have successfully shed all preconceived ideas and judgments about them.
+  - “In spite of all similarities, every living situation has, like a newborn child, a new face, that has never been before and will never come again. It demands of you a reaction that cannot be prepared beforehand. It demands nothing of what is past. It demands presence, responsibility; it demands you.” Martin Buber
+
+- The presence that empathy requires is not easy to maintain.
+
+  - Instead of offering empathy, we tend instead to give advice or reassurance and to explain our own position or feeling.
+  - Empathy, on the other hand, requires us to focus full attention on the other person’s message.
+  - We give to others the time and space they need to express themselves fully and to feel understood.
+  - There is a Buddhist saying that aptly describes this ability: “Don’t just do something, stand there.”
+
+- Ask before offering advice or reassurance.
+
+  - It is often frustrating for someone needing empathy to have us assume that they want reassurance or “fix-it” advice.
+  - check whether advice or reassurance is wanted before offering any.
+
+- some common behaviors that prevent us from being sufficiently present to connect empathically with others.
+
+  - Advising: “I think you should … ” “How come you didn’t … ?”
+  - One-upping: “That’s nothing; wait’ll you hear what happened to me.”
+  - Educating: “This could turn into a very positive experience for you if you just … ”
+  - Consoling: “It wasn’t your fault; you did the best you could.”
+  - Story-telling: “That reminds me of the time … ”
+  - Shutting down: “Cheer up. Don’t feel so bad.”
+  - Sympathizing: “Oh, you poor thing … ”
+  - Interrogating: “When did this begin?”
+  - Explaining: “I would have called but … ”
+  - Correcting: “That’s not how it happened.”
+
+- Believing we have to “fix” situations and make others feel better prevents us from being present.
+
+  - intellectual understanding of a problem blocks the kind of presence that empathy requires.
+  - When we are thinking about people’s words and listening to how they connect to our theories, we are looking at people—we are not with them.
+
+- The key ingredient of empathy is *presence* :
+
+  - we are wholly present with the other party and what they are experiencing.
+  - This quality of presence distinguishes empathy from either mental understanding or sympathy.
+
+    - While we may choose at times to sympathize with others by feeling their feelings, it’s helpful to be aware that during the moment we are offering sympathy, we are not empathizing.
+
+** Listening for Feelings and Needs
+
+- No matter what others say, we only hear what they are
+
+  1. observing,
+  2. feeling,
+  3. needing,
+  4. requesting.
+
+- Listen to what people are needing rather than what they are thinking.
+
+  - you’ll find people to be less threatening if you hear what they’re needing rather than what they’re thinking about you.
+
+** Paraphrasing
+
+- reflect back by paraphrasing what we have understood.
+
+  - If we have accurately received the other party’s message, our paraphrasing will confirm this for them.
+  - If, on the other hand, our paraphrase is incorrect, we give the speaker an opportunity to correct us.
+
+- Another advantage of choosing to reflect a message back to the other party is that it offers them time to reflect on what they’ve said and an opportunity to delve deeper into themselves.
+- NVC suggests that our paraphrasing take the form of questions that reveal our understanding while eliciting any necessary corrections from the speaker.
+
+  - Questions may focus on these components:
+
+    - what others are observing: “Are you reacting to how many evenings I was gone last week?”
+    - how others are feeling and the needs generating their feelings: “Are you feeling hurt because you would have liked more appreciation of your efforts than you received?”
+    - what others are requesting: “Are you wanting me to tell you my reasons for saying what I did?”
+
+  - These questions require us to sense what’s going on within other people, while inviting their corrections should we have sensed incorrectly.
+
+- When asking for information, first express our own feelings and needs.
+
+  - Notice the difference between these questions and the ones below:
+
+#+begin_quote
+
+    - “What did I do that you are referring to?”
+    - “How are you feeling?” “Why are you feeling that way?”
+    - “What are you wanting me to do about it?”
+
+#+end_quote
+
+    - Asks for information without first sensing the speaker’s reality.
+    - Many such questions may give speakers the impression that we’re a schoolteacher examining them or a psychotherapist working on a case
+
+  - People feel safer if we first reveal the feelings and needs within ourselves that are generating the question.
+
+    - instead of asking someone, “What did I do?”
+    - we might say, “I’m frustrated because I’d like to be clearer about what you are referring to. Would you be willing to tell me what I’ve done that leads you to see me in this way?”
+    - I would recommend it particularly during moments when the questions we ask are accompanied by strong emotions.
+
+- Reflect back messages that are emotionally charged.
+
+  - There are no infallible guidelines regarding when to paraphrase, but as a rule of thumb, it is safe to assume that speakers expressing intensely emotional messages would appreciate our reflecting these back to them.
+
+- When we ourselves are talking, we can make it easier for the listener if we clearly signify when we want or don’t want our words to be reflected back to us
+- Paraphrase only when it contributes to greater compassion and understanding
+- When we paraphrase,
+
+  - the tone of voice we use is highly important.
+
+    - When hearing themselves reflected back, people are likely to be sensitive to the slightest hint of criticism or sarcasm.
+    - They are likewise negatively affected by a declarative tone that implies that we are telling them what is going on inside of them.
+    - If we are consciously listening for other people’s feelings and needs, however, our tone communicates that we’re asking whether we have understood—not claiming that we have understood.
+
+  - We also need to be prepared for the possibility that the intention behind our paraphrasing will be misinterpreted.
+
+    - Should this occur, we continue our effort to sense the speaker’s feelings and needs;
+    - Behind intimidating messages are merely people appealing to us to meet their needs.
+
+      - When we receive messages with this awareness, we never feel dehumanized by what others have to say to us.
+      - We only feel dehumanized when we get trapped in derogatory images of other people or thoughts of wrongness about ourselves.
+
+    - *A difficult message becomes an opportunity to enrich someone’s life.*
+    - If it happens regularly that people distrust our motives and sincerity when we paraphrase their words, we may need to examine our own intentions more closely.
+
+  - If it happens regularly that people distrust our motives and sincerity when we paraphrase their words, we may need to examine our own intentions more closely.
+
+    - Perhaps we are paraphrasing and engaging the components of NVC in a mechanistic way without maintaining clear consciousness of purpose.
+
+      - We might ask ourselves, for example, whether we are more intent on applying the process "correctly" than on connecting with the human being in front of us.
+
+    - Or perhaps, even though we are using the form of NVC, our only interest is in changing the other person’s behavior.
+
+- Paraphrasing saves time
+
+  - Studies in labor-management negotiations demonstrate that the time required to reach conflict resolution is cut in half when each negotiator agrees, before responding, to accurately repeat what the previous speaker had said.
+
+** Sustaining Empathy
+
+- I recommend allowing others the opportunity to fully express themselves before turning our attention to solutions or requests for relief.
+
+  1. When we proceed too quickly to what people might be requesting, we may not convey our genuine interest in their feelings and needs;
+
+     - instead, they may get the impression that we’re in a hurry to either be free of them or to fix their problem
+
+  2. Furthermore, an initial message is often like the tip of an iceberg;
+
+     - it may be followed by as yet unexpressed, but related—and often more powerful—feelings.
+     - *When we stay with empathy, we allow speakers to touch deeper levels of themselves.*
+     - We persist in this manner until the person has exhausted all her feelings surrounding this issue.
+
+- We know a speaker has received adequate empathy when
+
+  1. we sense a release of tension
+
+     - they will experience a sense of relief.
+     - We can become aware of this phenomenon by noticing a corresponding release of tension in our own body.
+
+  2. the flow of words comes to a halt
+
+     - the person will stop talking
+     - If uncertain, we can always ask, "Is there more that you wanted to say?"
+
+** When Pain Blocks Our Ability to Empathize
+
+- It is impossible for us to give something to another if we don’t have it ourselves
+
+  - *We need empathy to give empathy.*
+  - if we find ourselves unable or unwilling to empathize despite our efforts, it is usually a sign that we are too starved for empathy to be able to offer it to others.
+
+- Sometimes, if we openly acknowledge that our own distress is preventing us from responding empathically, the other person may come through with the empathy we need.
+- At other times, it may be necessary to provide ourselves with some "emergency first aid" empathy by *listening to what's going on in ourselves* with the same quality of presence and attention that we offer to others.
+
+  - "The more faithfully you listen to the voice within you, the better you will hear what is happening outside."
+  - If we become skilled at giving ourselves empathy, we often experience in just a few seconds a natural release of energy that then enables us to be present with the other person
+  - If this fails to happen, however, we have a couple of other choices.
+
+    1. scream (nonviolently)
+
+#+begin_src awk
+
+"Hey, I'm in a lot of pain! Right now I really do not want to deal
+with your fighting! I just want some peace and quiet!"
+#+end_src
+
+       - If we are able to speak our pain nakedly without blame, I find that even people in distress are sometimes able to hear our need.
+       - I scream nonviolently by *calling attention to my own desperate needs and pain in the moment.*
+
+    2. physically remove ourselves from the situation
+
+       - If, however, the other party is also experiencing such intensity of feelings that they can neither hear us nor leave us alone, and neither emergency empathy nor nonviolent screaming has served us well,
+       - *We give ourselves time out and the opportunity to acquire the empathy we need to return in a different frame of mind.*
+
+** Summary
+
+- When we sense ourselves being defensive or unable to empathize, we need to
+
+  1. stop, breathe, give ourselves empathy;
+  2. scream nonviolently;
+  3. take time out.
+
+** NVC in Action: A Wife Connects With Her Dying Husband
+
+- Often it is difficult for people to identify what they want in a situation, even though they may know what they don't want.
+
+** Exercise 5: Receiving Empathically versus Non-Empathically
+
+3 6 8
+
+* 8 The Power of Empathy
+** Empathy That Heals
+
+- Empathy allows us "to reperceive [our] world in a new way and to go on."
+- "Don't just do something…."
+- It's harder to empathize with those who appear to possess more power, status, or resources.
+
+** Empathy and the Ability to Be Vulnerable
+
+- *The more we empathize with the other party, the safer we feel.*
+
+  - We will then have touched their humanness and realized the common qualities we share.
+  - The more we connect with the feelings and needs behind their words, the less frightening it is to open up to other people.
+
+- The situations where we are the most reluctant to express vulnerability are often those where we want to maintain a "tough image" for fear of losing authority or control.
+- there was nothing they could throw at me that couldn't be translated into universal human feelings and needs.
+- We "say a lot" by listening for other people's feelings and needs.
+
+** Using Empathy to Defuse Danger
+
+- The ability to offer empathy to people in stressful situations can defuse potential violence.
+- Rather than put your "but" in the face of an angry person, empathize.
+- When we listen for feelings and needs, we no longer see people as monsters.
+- It may be difficult to empathize with those who are closest to us.
+
+** Empathy in Hearing Someone's "No!"
+
+- Empathizing with someone's "no" protects us from taking it personally.
+
+** Empathy to Revive a Lifeless Conversation
+
+- Vitality drains out of conversations when we lose connection with the feelings and needs generating the speaker's words, and with the requests associated with those needs.
+- How and when do we interrupt a dead conversation to bring it back to life?
+
+  - the best time to interrupt is when we've heard one word more than we want to hear.
+
+    - The longer we wait, the harder it is to be civil when we do step in.
+
+  - To bring a conversation back to life: interrupt with empathy.
+
+    - Our intention in interrupting is not to claim the floor for ourselves, but to help the speaker connect to the life energy behind the words being spoken.
+    - We do this by tuning in to possible feelings and needs.
+    - People are not aware that empathy is often what they are needing.
+
+  - Another way to bring a conversation to life is to openly express our desire to be more connected, and to request information that would help us establish that connection.
+
+    - What bores the listener bores the speaker too.
+
+- how we can muster the courage to flatly interrupt someone in the middle of a sentence.
+
+  - Speakers prefer that listeners interrupt rather than pretend to listen.
+  - Their answers gave me courage by convincing me that it is more considerate to interrupt people than to pretend to listen.
+  - All of us want our words to enrich others, not to burden them.
+
+** Empathy for Silence
+
+- One of the hardest messages for many of us to empathize with is silence.
+
+  - This is especially true when we’ve expressed ourselves vulnerably and need to know how others are reacting to our words.
+  - At such times, it’s easy to project our worst fears onto the lack of response and forget to connect with the feelings and needs being expressed through the silence.
+
+- Empathize with silence by listening for the feelings and needs behind it.
+- As listeners, we don’t need insights into psychological dynamics or training in psychotherapy. What is essential is our ability to be present to what’s really going on within—to the unique feelings and needs a person is experiencing in that very moment.
+- *Empathy lies in our ability to be present.*
+
+** Summary
+
+Our ability to offer empathy can allow us to stay vulnerable, defuse potential violence, hear the word no without taking it as a rejection, revive a lifeless conversation, and even hear the feelings and needs expressed through silence. Time and again, people transcend the paralyzing effects of psychological pain when they have sufficient contact with someone who can hear them empathically.
+
+* 9 Connecting Compassionately With Ourselves
+
+- Its (NVC's) most crucial application, however, may be in the way we treat ourselves.
+- When we are internally violent toward ourselves, it is difficult to be genuinely compassionate toward others.
+- *NVC's most important use may be in developing self-compassion.*
+
+** Remembering the Specialness of What We Are
+
+- *We use NVC to evaluate ourselves in ways that engender growth rather than self-hatred.*
+
+  - When critical self-concepts prevent us from seeing the beauty in ourselves, we lose connection with the divine energy that is our source.
+  - Since we want whatever we do to lead to the enrichment of life, it is critical to know how to evaluate events and conditions in ways that help us learn and make ongoing choices that serve us.
+  - Unfortunately, the way we've been trained to evaluate ourselves often promotes more self-hatred than learning.
+
+** Evaluating Ourselves When We’ve Been Less Than Perfect
+
+- These speakers had been taught to judge themselves in ways that imply that what they did was wrong or bad;
+
+  - their self-admonishment implicitly assumes that they deserve to suffer for what they've done.
+  - It is tragic that so many of us get enmeshed in self-hatred rather than benefit from our mistakes, which show us our limitations and guide us towards growth.
+
+- If the way we evaluate ourselves leads us to feel shame, and we consequently change our behavior, we are allowing our growing and learning to be guided by self-hatred.
+
+  - I'd like change to be stimulated by a clear desire to enrich life for ourselves or for others rather than by destructive energies such as shame or guilt.
+  - Even if our intention is to behave with more kindness and sensitivity, if people sense shame or guilt behind our actions, they are less likely to appreciate what we do than if we are motivated purely by the human desire to contribute to life.
+
+- *Avoid shoulding yourself!*
+
+  - In our language there is a word with enormous power to create shame and guilt.
+  - Most of the time when we use this word with ourselves, we resist learning, because should implies that there is no choice.
+  - Human beings, when hearing any kind of demand, tend to resist because it threatens our autonomy—our strong need for choice.
+
+    - We have this reaction to tyranny even when it's internal tyranny in the form of a should.
+    - A similar expression of internal demand occurs in the following self-evaluation: "What I'm doing is just terrible. I really must do something about it!"
+
+      - They keep saying what they "must" do and they keep resisting doing it, because human beings were not meant to be slaves.
+      - And if we do yield and submit to these demands, our actions arise from an energy that is devoid of life-giving joy.
+
+** Translating Self-Judgments and Inner Demands
+
+- A basic premise of NVC is that whenever we imply that someone is wrong or bad, what we are really saying is that he or she is not acting in harmony with our needs.
+- *Self-judgments, like all judgments, are tragic expressions of unmet needs.*
+- Our challenge then, when we are doing something that is not enriching life, is to evaluate ourselves moment by moment in a way that inspires change both
+
+  1. in the direction of where we would like to go
+  2. out of respect and compassion for ourselves, rather than out of self-hatred, guilt or shame
+
+** NVC Mourning
+
+- NVC mourning: *connecting with the feelings and unmet needs stimulated by past actions we now regret.*
+- It is an experience of regret, but regret that helps us learn from what we have done without blaming or hating ourselves.
+- We see how our behavior ran counter to our own needs and values, and we open ourselves to feelings that arise out of that awareness.
+- When our consciousness is focused on what we need, we are naturally stimulated toward creative possibilities for how to get that need met.
+- In contrast, the moralistic judgments we use when blaming ourselves tend to obscure such possibilities and to perpetuate a state of self-punishment.
+
+** Self-Forgiveness
+
+- Turning our attention to the part of the self which chose to act in the way that led to the present situation, we ask ourselves, "When I behaved in the way which I now regret, what need of mine was I trying to meet?"
+- human beings are always acting in the service of needs and values.
+- An important aspect of self-compassion is to be able to empathically hold both parts of ourselves—the self that regrets a past action and the self that took the action in the first place.
+- NVC self-forgiveness: *connecting with the need we were trying to meet when we took the action that we now regret.*
+
+** The Lesson of the Polka-Dotted Suit
+
+- "What need lies behind my judging myself as 'careless' and 'stupid?'"
+
+  - to have given more attention to my own needs while I was rushing to address everyone else's needs.
+
+- We are compassionate with ourselves when we are able to embrace all parts of ourselves and recognize the needs and values expressed by each part.
+- On becoming conscious of both needs, I can imagine ways of behaving differently in similar situations and arriving at solutions more resourcefully than if I lose that consciousness in a sea of self-judgment.
+
+** Don’t Do Anything That Isn’t Play!
+
+- another aspect of self-compassion I emphasize is in the energy that's behind whatever action we take.
+- We want to take action out of the desire to contribute to life rather than out of fear, guilt, shame, or obligation.
+
+** Translating “Have to” to “Choose to”
+
+1. List on a piece of paper all those things that you tell yourself you have to do.
+2. Insert the words "I choose to … " in front of each item you listed.
+
+   - After completing your list, clearly acknowledge to yourself that you are doing these things because you choose to do them, not because you have to.
+
+3. "I choose to … because I want …."
+
+   - After having acknowledged that you choose to do a particular activity, get in touch with the intention behind your choice by completing the statement,
+   - *With every choice you make, be conscious of what need it serves.*
+
+** Cultivating Awareness of the Energy Behind Our Actions
+
+- Be conscious of actions motivated by the desire for money or approval, and by fear, shame, or guilt. *Know the price you pay for them.*
+
+  1. For money
+
+     - Money is a major form of extrinsic reward in our society
+     - Choices prompted by a desire for reward are costly
+     - They deprive us of the joy in life that comes with actions grounded in the clear intention to contribute to a human need
+     - Money is not a "need" as we define it in NVC
+
+  2. For approval
+
+     - Like money, approval from others is a form of extrinsic reward
+     - Our culture has educated us to hunger for reward
+
+       - We attended schools that used extrinsic means to motivate us to study;
+       - we grew up in homes where we were rewarded for being good little boys and girls, and were punished when our caretakers judged us to be otherwise
+
+     - We do things to get people to like us and avoid things that may lead people to dislike or punish us.
+     - In fact, *when we do things solely in the spirit of enhancing life, we will find others appreciating us.*
+     - The recognition that we have chosen to use our power to serve life and have done so successfully brings us the genuine joy of celebrating ourselves in a way that approval from others can never offer.
+
+  3. To escape punishment
+  4. To avoid shame
+
+     - If we do something stimulated solely by the urge to avoid shame, we will generally end up detesting it.
+
+  5. To avoid guilt
+
+     - There is a world of difference between
+
+       1. doing something for others in order to avoid guilt (a world filled with misery)
+       2. doing it out of a clear awareness of our own need to contribute to the happiness of other human beings. (a world filled with play)
+
+  6. To satisfy a sense of duty
+
+     - When we speak a language that denies choice, we forfeit the life in ourselves for a robotlike mentality that disconnects us from our own core.
+     - *The most dangerous of all behaviors may consist of doing things "because we're supposed to."*
+
+- As radical as it may seem, it is possible to do things only out of play.
+
+** Summary
+
+- If we review the joyless acts to which we currently subject ourselves and make the translation from “have to” to “choose to,” we will discover more play and integrity in our lives.
+
+* 10 Expressing Anger Fully
+
+- the expression of anger clearly demonstrates the difference between NVC and other forms of communication.
+- Hurting people is too superficial.
+
+  - If we are truly angry, we would want a much more powerful way to fully express ourselves.
+  - The process we are describing, however, does not encourage us to ignore, squash, or swallow anger, but rather to express the core of our anger fully and wholeheartedly.
+
+** Distinguishing Stimulus From Cause
+
+- The first step to fully expressing anger in NVC is to divorce the other person from any responsibility for our anger.
+- We are never angry because of what someone else did.
+
+  - We rid ourselves of thoughts such as, "He (or she or they) made me angry when they did that."
+  - Such thinking leads us to express our anger superficially by blaming or punishing the other person.
+  - the behavior of others may be a stimulus for our feelings, but not the cause.
+
+- To motivate by guilt, mix up stimulus and cause.
+
+  - In such cultures, it becomes important to trick people into thinking that we can make others feel a certain way.
+  - The English language facilitates the use of this guilt-inducing tactic.
+
+    - "You make me angry." "You hurt me by doing that." "I feel sad because you did that."
+
+- The cause of anger lies in our thinking—in thoughts of blame and judgment.
+
+  - Anger is generated when we choose the second option: whenever we are angry, we are finding fault—we are choosing to play God by judging or blaming the other person for being wrong or deserving punishment.
+  - it is not the behavior of the other person but our own need that causes our feeling.
+
+    - For example, someone arrives late for an appointment and
+
+      - if we need reassurance that she cares about us, we may feel hurt.
+      - If, instead, our need is to spend time purposefully and constructively, we may feel frustrated.
+      - But if our need is for thirty minutes of quiet solitude, we may be grateful for her tardiness and feel pleased.
+
+- When we are connected to our need,
+
+  - we are in touch with our life energy.
+  - We may have strong feelings, but we are never angry.
+  - Anger is a result of life-alienating thinking that is disconnected from needs.
+
+    - It indicates that we have moved up to our head to analyze and judge somebody rather than focus on which of our needs are not getting met.
+
+** All Anger Has a Life-Serving Core
+
+- When we judge others, we contribute to violence.
+- At the core of all anger is a need that is not being fulfilled.
+
+  - Thus anger can be valuable if we use it as an alarm clock to wake us up—to realize we have a need that isn't being met and that we are thinking in a way that makes it unlikely to be met.
+
+- To fully express anger requires full consciousness of our need.
+- In addition, energy is required to get the need met.
+
+  - Anger, however, co-opts our energy by directing it toward punishing people rather than meeting our needs.
+
+- replace the phrase "I am angry because they … " with "I am angry because I am needing … "
+- it's not what the other person does, but the images and interpretations in my own head that produce my anger.
+
+** Stimulus versus Cause: Practical Implications
+
+- I don't say it's wrong to judge people,
+
+  - However, it's that kind of thinking on your part that makes you feel very angry.
+  - Focus your attention on your needs: what are your needs in this situation?
+
+- When we become aware of our needs, anger gives way to life-serving feelings.
+- Violence comes from the belief that other people cause our pain and therefore deserve punishment.
+- We recall four options when hearing a difficult message:
+- Judgments of others contribute to self-fulfilling prophecies.
+
+  - Why would people want to tell the truth, knowing they will be judged and punished for doing so?
+  - The more people hear blame and judgment, the more defensive and aggressive they become and the less they will care about our needs in the future.
+
+** Four Steps to Expressing Anger
+
+1. Stop. Breathe.
+2. Identify our judgmental thoughts.
+3. Connect with our needs.
+4. Express our feelings and unmet needs.
+
+** Offering Empathy First
+
+- The more we hear them, the more they'll hear us.
+
+  - The more we empathize with what leads them to behave in the ways that are not meeting our needs, the more likely it is that they will be able to reciprocate afterwards.
+  - if I were able to empathize, then he would be able to hear me in return.
+  - It would not be easy, but he would be able to.
+
+- Stay conscious of the violent thoughts that arise in our minds, without judging them.
+- When we hear another person's feelings and needs, we recognize our common humanity.
+- Our need is for the other person to truly hear our pain. (Ask for reflection)
+- People do not hear our pain when they believe they are at fault.
+- Blaming is easy. People are used to hearing blame;
+
+  - sometimes they agree with it and hate themselves—which doesn't stop them from behaving the same way—
+  - and sometimes they hate us for calling them racists or whatever—which also doesn't stop their behavior.
+
+- If we sense blame entering their mind, as I did in the cab, we may need to slow down, go back, and hear their pain for a while more.
+
+** Taking Our Time
+
+- if our intention is to consciously live life in harmony with our values, then we'll want to take our time.
+- Practice is essential,
+
+  - because most of us were raised, if not on the streets of Detroit, then somewhere only slightly less violent.
+  - Judging and blaming have become second nature to us.
+  - To practice NVC, we need to proceed slowly, think carefully before we speak, and often just take a deep breath and not speak at all.
+
+- Learning the process and applying it both take time.
+
+** NVC in Action: Parent and Teen Dialogue A Life-Threatening Issue
+* 11 Conflict Resolution and Mediation
+
+- How to apply them in resolving conflicts.
+- Whatever the situation may be, resolving conflicts involves all the principles I outlined previously in this book:
+
+  - observing,
+  - identifying and expressing feelings,
+  - connecting feelings with needs,
+  - and making doable requests of another person using clear, concrete, positive action language.
+
+- it's possible to resolve just about any conflict to everybody's satisfaction. All it takes is
+
+  - a lot of patience,
+  - the willingness to establish a human connection,
+  - the intention to follow NVC principles until you reach a resolution,
+  - and trust that the process will work.
+
+** Human Connection
+
+- In NVC-style conflict resolution, creating a connection between the people who are in conflict is the most important thing.
+
+  - This is what enables all the other steps of NVC to work,
+  - because it's not until you have forged that connection that each side will seek to know exactly what the other side is feeling and needing.
+
+- The parties also need to know from the start that the objective is not to get the other side to do what they want them to do.
+- how we ask for change reflects the value system we're trying to support.
+- When we see the difference between these two objectives,
+
+  - we consciously refrain from trying to get a person to do what we want.
+  - Instead we work to create that quality of mutual concern and respect where each party thinks their own needs matter and they are conscious that their needs and the other person's well-being are interdependent.
+  - When that happens, it's amazing how conflicts that otherwise seem irresolvable are easily resolved.
+
+- Notice that I use the word satisfaction instead of compromise!
+
+  - Most attempts at resolution search for compromise, which means everybody gives something up and neither side is satisfied.
+  - NVC is different; our objective is to meet everyone's needs fully.
+
+** NVC Conflict Resolution versus Traditional Mediation
+
+- the process most mediators use: educating themselves about the issues involved in the conflict and then mediating with those issues as the focus instead of focusing on creating a human connection.
+- Many mediators define their role as a "third head" trying to think of a way to get everybody to come to an agreement.
+
+  - "What do you want them to do?"
+  - "They're unwilling to do that, but how about this?"
+
+- When you make the connection, the problem usually solves itself.
+
+  - if we had a clear statement of each person's needs—what those parties need right now from each other—we will then discover what can be done to get everybody's needs met.
+  - These become the strategies the parties agree to implement after the mediation session concludes and the parties leave the room.
+
+** NVC Conflict Resolution Steps—A Quick Overview
+
+- Five steps
+
+  1. express our own needs
+  2. search for the real needs of the other person
+
+     - no matter how they are expressing themselves
+
+       - opinion
+       - judgment
+       - analysis
+
+     - If they are not expressing a need, we recognize that, and continue to seek the need behind their words, the need underneath what they are saying.
+
+  3. verify that we both accurately recognize the other person's needs
+
+     - if not, continue to seek the need behind their words.
+
+  4. provide as much empathy as is required for us to mutually hear each other's needs accurately.
+  5. propose strategies for resolving the conflict
+
+     - framing them in positive action language.
+
+- Throughout, we're
+
+  1. listening to each other with utmost care,
+  2. avoiding the use of language that implies wrongness on either side.
+
+** On Needs, Strategies, and Analysis
+
+- Fundamentally, needs are the resources life requires to sustain itself.
+
+  - physical needs
+
+    - air
+    - water
+    - food
+    - rest.
+
+  - psychological needs
+
+    - understanding
+    - support
+    - honesty
+    - meaning
+
+- *all people basically have the same needs* regardless of nationality, religion, gender, income, education, etc.
+- The difference between a person's needs and his or her strategy for fulfilling them.
+
+  - Many of us have great difficulty expressing our needs:
+
+    - we have been taught by society to criticize, insult, and otherwise (mis)communicate in ways that keep us apart.
+    - In a conflict, both parties usually spend too much time intent on proving themselves right, and the other party wrong, rather than paying attention to their own and the other's needs.
+    - And such verbal conflicts can far too easily escalate into violence—and even war.
+
+  - In order not to confuse needs and strategies, it is important to recall that
+
+    - needs contain no reference to anybody taking any particular action.
+    - On the other hand, strategies, which may appear in the form of requests, desires, wants, and "solutions," refer to specific actions that specific people may take.
+
+- Intellectual analysis is often received as criticism.
+
+*** Sensing Others' Needs, No Matter What They're Saying
+
+- If we really want to be of assistance to others, the first thing to learn is to translate any message into an expression of a need.
+
+  - The message might take the form of
+
+    - silence
+    - denial
+    - a judgmental remark
+    - a gesture
+    - a request (hopefully)
+
+  - We hone our skills to hear the need within every message, even if at first we have to rely on guesses.
+
+- Learning to recognize the need in statements that don't overtly express any need.
+
+  - It takes practice,
+  - and it always involves some guessing.
+
+- once each side can state the other side's needs, it would take no more than twenty minutes for the conflict to come to a resolution.
+- Criticism and diagnosis get in the way of peaceful resolution of conflicts.
+
+  - When either side hears itself criticized, diagnosed, or interpreted, the energy of the situation will likely turn toward self-defense and counter-accusations rather than toward resolution.
+
+- In fact, when we reflect back incorrect guesses to others,
+
+  - it may help them get in touch with their true needs.
+  - It takes them out of analysis toward greater connection to life.
+
+*** Have the Needs Been Heard?
+
+- We must not assume that when one party expresses a need clearly, that the other party hears it accurately.
+- When we have pain built up over many years, it can get in the way of our ability to hear clearly, even when what is being expressed is clear to others.
+
+** Empathy to Ease the Pain That Prevents Hearing
+
+- People often need empathy before they are able to hear what is being said.
+
+  - When people are upset, they often need empathy before they can hear what is being said to them.
+  - Especially if there is a long history of pain, it is important to offer enough empathy so that the parties feel reassured that their pain is being recognized and understood.
+
+- Just as we are not trained to express our own needs, most of us have not been trained in hearing the needs of others.
+- If we could just say, "Here are the needs of both sides. Here are the resources. What can be done to meet these needs?," conflicts would be easily resolved.
+
+  - But instead, our thinking is focused on dehumanizing one another with labels and judgments until even the simplest of conflicts becomes very difficult to solve.
+  - NVC helps us avoid that trap, thereby enhancing the chances of reaching a satisfying resolution.
+
+** Using Present and Positive Action Language to Resolve Conflict
+
+- Once both parties have connected with each other's needs, the next step is to arrive at strategies that meet those needs.
+- It's important to avoid moving hastily into strategies,
+
+  - as this may result in a compromise that lacks the deep quality of authentic resolution that is possible.
+  - By fully hearing each other's needs before addressing solutions, parties in conflict are much more likely to adhere to the agreements they make to each other.
+
+- It is the presentation of strategies in clear, present, positive action language that moves conflicts toward resolution.
+
+  - A present language statement refers to what is wanted at this moment.
+
+    - The use of a present language request that begins with "Would you be willing to …" helps foster a respectful discussion.
+    - If the other side answers that they are not willing, it invites the next step of understanding what prevents their willingness.
+
+  - The clearer we are regarding the response we want right now from the other party, the more effectively we move the conflict toward resolution.
+
+** Using Action Verbs
+
+- Action language requires the use of action verbs.
+
+  - I suggest instead the use of action verbs to capture something that we can see or hear happening— *something that can be recorded with a video camera.*
+
+    - "Listening" occurs inside a person's head;
+
+      - another person cannot see whether it is happening or not.
+      - One way to determine that someone is actually listening is to have that person reflect back what had been said: we ask the person to take an action that we ourselves can see or hear.
+
+    - Non-action language, such as "Give me the freedom to grow" often exacerbates conflict.
+    - "let" was too vague: "What do you really mean when you say you want somebody to 'let' you?"
+
+- Maintaining respect is a key element in successful conflict resolution.
+
+** Translating "No"
+
+- Listening carefully to the message behind the "no" helps us understand the other person's needs: When they say "no," they're saying they have a need that keeps them from saying "yes" to what we are asking.
+- Many mediations I have witnessed consist of waiting for people to wear down to the point where they'll accept any compromise. This is very different from a resolution in which everyone's needs are met and nobody experiences loss.
+
+** NVC and the Mediator Role
+
+- a few things to keep in mind at those times when we want to use our NVC tools to help two other parties reach a resolution and we take on the role of mediator.
+- Your Role, and Trust in the Process
+
+  - we are not there to take sides, but
+
+    - to support them in hearing each other,
+    - and to help guide them to a solution that meets everyone's needs.
+
+  - Depending on the circumstances, we may also want to convey our confidence that, if the parties follow the steps of NVC, both of their needs will be met in the end.
+
+- Remember: It's Not About Us
+
+  - we are not here to accomplish our own goals.
+  - The mediator's role is to create an environment in which the parties can connect, express their needs, understand each other's needs, and arrive at strategies to meet those needs.
+
+- Emergency First-Aid Empathy
+
+  - as soon as I express empathy toward one side, it is not unusual for the other side to immediately accuse me of favoritism.
+  - At this time, what's called for is emergency first-aid empathy.
+  - This might sound like "So you're really annoyed, and you need some assurance that you're going to get your side on the table?"
+  - It is then helpful to confirm they are in agreement with waiting by asking, for example, "Are you feeling reassured about that, or would you like more reassurance that your opportunity to be heard will come soon?"
+  - We may need to do this repeatedly to keep the mediation on track.
+
+- Keep Track: Follow the Bouncing Ball
+
+  - "follow the bouncing ball": being conscious of where one party left off so we can return to what that party said after the other party has been heard.
+  - use a white board or flip chart to capture the essence of what was spoken by the last speaker who had opportunity to express a feeling or need.
+  - This form of visual tracking can also serve to reassure both parties that their needs will be addressed because so often before we have a chance to fully draw out one party's needs, the other will be jumping ahead to express themselves.
+  - In this way, everyone can more easily offer their full attention to what is being expressed in the current moment.
+
+- Keep the Conversation in the Present
+
+  - awareness of the moment:
+
+    - who needs what right now?
+    - What are their present requests?
+
+  - As we move through the mediation process, it is likely that we will hear a lot of discussion about what happened in the past and what people want to happen differently in the future.
+  - However, conflict resolution can only happen right now, so now is where we need to focus.
+
+- Keep Things Moving
+
+  - keep the conversation from getting bogged down;
+  - people often think that if they just tell that same story one more time, they will finally be understood and the other person will do what they want.
+  - To keep things moving, the mediator needs to ask effective questions, and when necessary, maintain or even speed up the pace.
+  - Use role-play to speed up the mediation process.
+
+    - When relying on this method, I periodically turn to the person whose role I'm playing, addressing them as "my director" to see how I am doing.
+    - any of us can do it as long as we are in touch with our own needs.
+
+      - No matter what else is going on, we all have the same needs.
+      - Needs are universal.
+
+    - Role-play is simply putting ourselves in the other person's shoes.
+
+- Interrupting
+
+  - To keep the process on track under such circumstances, we need to get comfortable with interrupting.
+  - So when both sides are screaming or talking at the same time,
+
+    - I insert myself: "Excuse me, excuse me, excuse me!"
+    - I repeat this as loudly and as often as necessary until I regain their attention.
+
+  - When we are grabbing their attention, we have to be quick.
+  - We might view our role as that of a translator
+
+    - *translating each party's message so as to be understood by the other.*
+    - When I do interrupt, I also check that the speaker feels that I'm translating them accurately.
+
+  - The purpose of interrupting is to *restore the process* .
+
+** When People Say "No" to Meeting Face to Face
+
+- strategies to resolve conflicts where people in conflict are unwilling to meet.
+
+  1. recorded audio
+  2. role-play
+
+- When the hardest thing about resolving a conflict is getting the parties together in the same room, the use of *recorded role-plays* may be the answer.
+
+** Informal Mediation: Sticking Our Nose in Other People's Business
+
+- Informal Mediation: Mediating in situations where we've not been invited to do so.
+- When we witness behaviors that raise concern in us, the first thing we do is to *empathize with the needs of the person who is behaving in the way we dislike*
+- We need to be well practiced at hearing the need in any message.
+- We refrain, however, from mentioning our own needs regarding the person's behavior until it is clear to them that we understand and care about his or her needs.
+
+  - Otherwise people will not care about our needs nor will they see that their needs and ours are one and the same.
+
+- Unless we make sure that both sides are aware of their own as well as each other's needs, it will be hard for us to succeed when we stick our nose in other people's business.
+
+  - We are likely to get caught up in scarcity thinking—seeing only the importance of our own needs being met.
+  - When scarcity thinking then gets mixed with right-and-wrong thinking, any of us can become militant and violent, and blinded to even the most obvious solutions.
+
+** Summary
+* 12 The Protective Use of Force
+** When the Use of Force Is Unavoidable
+
+- In some situations, however, the opportunity for such dialogue may not exist, and the use of force may be necessary to protect life or individual rights.
+- If we do, NVC requires us to differentiate between the protective and the punitive uses of force.
+
+** The Thinking Behind the Use of Force
+
+- When we exercise the protective use of force, we are focusing on the life or rights we want to protect, without passing judgment on either the person or the behavior.
+- Intention
+
+  - The intention behind the protective use of force is to prevent injury or injustice.
+  - The intention behind the punitive use of force is to cause individuals to suffer for their perceived misdeeds.
+
+- Assumption
+
+  - The assumption behind the protective use of force is that people behave in ways injurious to themselves and others due to some form of ignorance.
+
+    1. a lack of awareness of the consequences of our actions
+    2. an inability to see how our needs may be met without injury to others
+    3. the belief that we have the right to punish or hurt others because they "deserve" it
+    4. delusional thinking that involves, for example, hearing a voice that instructs us to kill someone
+
+  - Punitive action, on the other hand, is based on the assumption that people commit offenses because they are bad or evil, and to correct the situation, they need to be made to repent.
+
+    - Their "correction" is undertaken through punitive action designed to make them
+
+      1. suffer enough to see the error of their ways,
+      2. repent, and
+      3. change.
+
+    - In practice, however, punitive action, rather than evoking repentance and learning, is just as likely to generate resentment and hostility and to reinforce resistance to the very behavior we are seeking.
+
+** Types of Punitive Force
+
+1. Physical punishment
+
+   - Fear of corporal punishment obscures children's awareness of the compassion underlying their parents' demands.
+
+2. The use of blame to discredit another person;
+3. The withholding of some means of gratification,
+
+** The Costs of Punishment
+
+- When we submit to doing something solely for the purpose of avoiding punishment,
+
+  - Our attention is distracted from the value of the action itself.
+  - Instead, we are focusing upon the consequences, on what might happen if we fail to take that action.
+
+- Self-esteem is also diminished when punitive force is used.
+- Punishment is costly in terms of goodwill.
+
+  - The more we are seen as agents of punishment, the harder it is for others to respond compassionately to our needs.
+
+** Two Questions That Reveal the Limitations of Punishment
+
+1. What do I want this person to do that's different from what he or she is currently doing?
+
+   - If we ask only this first question, punishment may seem effective,
+   - because the threat or exercise of punitive force may well influence someone's behavior.
+
+2. What do I want this person's reasons to be for doing what I'm asking?
+
+   - However, with the second question, it becomes evident that punishment isn't likely to work:
+   - We seldom address the latter question, but when we do, we soon realize that punishment and reward interfere with people's ability to do things motivated by the reasons we'd like them to have.
+   - it is critical to be aware of the importance of people's reasons for behaving as we request.
+   - NVC, however, fosters a level of moral development based on autonomy and interdependence, whereby we acknowledge responsibility for our own actions and are aware that our own well-being and that of others are one and the same.
+
+** The Protective Use of Force in Schools
+** Summary
+* 13 Liberating Ourselves and Counseling Others
+** Freeing Ourselves From Old Programming
+
+- Passed down through generations, even centuries, much of this *destructive cultural learning is so ingrained in our lives that we are no longer conscious of it.*
+
+  - In the same way, pain engendered by damaging cultural conditioning is such an integral part of our lives that we can no longer distinguish its presence.
+  - It takes tremendous energy and awareness to recognize this destructive learning and to transform it into thoughts and behaviors that are of value and of service to life.
+
+    - This transformation requires a literacy of needs and the ability to get in touch with ourselves, both of which are difficult for people in our culture.
+
+      - Not only have we never been educated about our needs, we are often exposed to cultural training that actively blocks our consciousness of them.
+      - Our culture implies that needs are negative and destructive;
+
+        - the word needy applied to a person suggests inadequacy or immaturity.
+        - When people express their needs, they are often labeled selfish,
+        - and the use of the personal pronoun I is at times equated with selfishness or neediness.
+
+- We can liberate ourselves from cultural conditioning.
+
+** Resolving Internal Conflicts
+
+- Depression is indicative of a state of alienation from our own needs.
+
+  - when we have a judgmental dialogue going on within, we become alienated from what we are needing and cannot then act to meet those needs.
+
+- restate the message in the following form
+
+#+begin_quote
+
+  When a, I feel b, because I am needing c. Therefore I now would like d.
+
+#+end_quote
+#+begin_src ruby
+
+BEFORE:
+I should do something with my life. I’m wasting my education and talents
+
+AFTER:
+When I spend as much time at home with the children as I do without
+practicing my profession, I feel depressed and discouraged because I
+am needing the fulfillment I once had in my profession. Therefore, I
+now would like to find part-time work in my profession.
+
+
+BEFORE:
+You’re being unrealistic. You’re a mother of two children and can’t
+handle that responsibility, so how can you handle anything else?
+
+AFTER:
+When I imagine going to work, I feel scared because I’m needing
+reassurance that the children will be well taken care of. Therefore, I
+now would like to plan how to provide high-quality child care while I
+work and how to find sufficient time to be with the children when I am
+not tired.
+#+end_src
+- The ability to hear our own feelings and needs and empathize with them can free us from depression.
+
+** Caring for Our Inner Environment
+
+When we are entangled in critical, blaming, or angry thoughts, it is difficult to establish a healthy internal environment for ourselves.
+
+1. *Focus on what we want to do rather than what went wrong.*
+
+   - focus on what we are truly wanting
+   - rather than on what is wrong with others or ourselves.
+
+2. Defuse stress by hearing our own feelings and needs.
+
+   - I was amazed how I could create a less stressful situation for myself by simply becoming aware of what I was feeling and needing rather than blaming others.
+
+#+begin_src sql
+
+Everybody who wasn’t driving by my standards was an archenemy, a
+villain. Thoughts spewed through my head: “What the hell is the matter
+with that guy!? Doesn’t he even watch where he’s driving?” In that
+state of mind, all I wanted was to punish the other drivers, and since
+I couldn’t do that, the anger lodged in my body and exacted its toll.
+
+                             |
+                             |
+                             V
+
+“Boy, I am petrified when people drive like that; I really wish they
+would see the danger in what they are doing!”
+#+end_src
+
+3. Defuse stress by empathizing with others.
+
+   - Later I decided to practice empathy toward other drivers and was rewarded with a gratifying first experience.
+
+** Replacing Diagnosis With NVC
+
+- I empathized with clients instead of interpreting them; I revealed myself instead of diagnosing them
+- By adopting the skills and consciousness of NVC, we can counsel others in encounters that are genuine, open, and mutual, rather than resort to professional relationships characterized by emotional distance, diagnosis, and hierarchy.
+
+** Summary
+
+- [[../../Org/notes/books.html#ID-3B834D53-1D1D-4141-A9F1-BBCDE5A4D6A7][NVC enhances inner communication by helping us translate negative
+internal messages into feelings and needs.]]
+- [[../../Org/notes/books.html#ID-A0F2B860-8340-4F8D-B48B-D2FE82A5FAF6][Our ability to distinguish our own feelings and needs and to
+empathize with them can free us from depression.]]
+- [[../../Org/notes/books.html#ID-4962840B-777D-44E8-B622-72B27A98283D][By showing us how to focus on what we truly want rather than on what
+is wrong with others or ourselves, NVC gives us the tools and
+understanding to create a more peaceful state of mind.]]
+- [[../../Org/notes/books.html#ID-A40C8EB2-F2A4-43D6-850D-08D10FCB7E20][Professionals in counseling and psychotherapy may also use NVC to
+engender mutual and authentic relationships with their clients.]]
+
+** NVC in Action: Dealing With Resentment and Self-Judgment
+
+- not "You're frustrated because I am a certain way," but "You're frustrated because you wanted something different from me."
+
+* 14 Expressing Appreciation in Nonviolent Communication
+#+begin_quote
+
+… the more you become a connoisseur of gratitude, the less you are a victim of resentment, depression, and despair. Gratitude will act as an elixir that will gradually dissolve the hard shell of your ego—your need to possess and control—and transform you into a generous being. The sense of gratitude produces true spiritual alchemy, makes us magnanimous—large souled.
+
+#+end_quote
+** The Intention Behind the Appreciation
+
+- *Compliments are often judgments—however positive-of others.*
+
+  - Such statements are typically uttered as expressions of appreciation in life-alienating communication
+
+#+begin_src awk
+
+“You did a good job on that report.”
+“You are a very sensitive person.”
+“It was kind of you to offer me a ride home last evening.”
+#+end_src
+  - recipients of such praise do work harder, but only initially.
+
+    - Once they sense the manipulation behind the appreciation, their productivity drops.
+    - What is most disturbing for me, however, is that the beauty of appreciation is spoiled when people begin to notice the lurking intent to get something out of them.
+    - Furthermore, when we use positive feedback as a means to influence others, it may not be clear how they are receiving the message.
+
+- Express appreciation to celebrate, not to manipulate.
+
+  - Our sole intention is to *celebrate the way our lives have been enriched by others.*
+
+** The Three Components of Appreciation
+
+- NVC clearly distinguishes three components in the expression of appreciation:
+
+  1. the actions that have contributed to our well-being
+  2. the particular needs of ours that have been fulfilled
+  3. the pleasureful feelings engendered by the fulfillment of those needs
+
+- Saying "thank you" in NVC:
+
+  1. This is what you did;
+  2. this is what I feel;
+  3. this is the need of mine that was met.
+
+** Receiving Appreciation
+
+- For many of us, it is difficult to receive appreciation gracefully. (Accustomed to a culture where buying, earning, and deserving are the standard modes of interchange, we are often uncomfortable with simple giving and receiving.)
+
+  - We fret over whether we deserve it.
+  - We worry about what’s being expected of us
+  - We’re nervous about living up to the appreciation.
+
+- NVC encourages us to receive appreciation with the same quality of empathy we express when listening to other messages.
+
+  - We hear what we have done that has contributed to others’ well-being;
+  - we hear their feelings and the needs that were fulfilled.
+  - We take into our hearts the joyous reality that we can each enhance the quality of others’ lives.
+
+- Receive appreciation without feelings of superiority or false humility.
+
+  - If I am aware that it is this power of God working through me that gives me the power to enrich life for others, then I may avoid both the ego trap and the false humility.
+  - Avoid the pitfall of false humility
+
+    - Our deepest fear is not that we are inadequate. Our deepest fear is that we are powerful beyond measure.
+    - We were born to make manifest the glory of God that is within us. It’s not just in some of us, it is in everyone.
+    - And as we let our own light shine, we unconsciously give other people permission to do the same.
+    - As we are liberated from our fear, our presence automatically liberates others.
+
+** The Hunger for Appreciation
+
+- "No matter how hard you work," they would sigh, "you never hear a good word from anyone. But make one mistake and there's always someone jumping all over you."
+- *We tend to notice what's wrong rather than what's right.*
+- Be more aware of what others around me are doing that enriches my life, and to hone my skills in expressing this appreciation.
+
+** Overcoming the Reluctance to Express Appreciation
+
+- [[../../Org/notes/books.html#ID-364B5E86-4F50-469E-B989-06BA97398C0A][The Secret of Staying in Love: John Powell]]
+- Too often I had assumed that others knew the intensity of my appreciation for them, only to discover otherwise.
+- *[[../../Org/inbox.html#ID-A6710CEC-7089-482B-8709-4CEE1094A903][Anything that is worth doing is worth doing poorly!]]*
+
+** Summary
+
+- Conventional compliments often take the form of judgments, however positive, and are sometimes intended to manipulate the behavior of others.
+- NVC encourages the expression of appreciation solely for celebration. We state
+
+  1. the action that has contributed to our well-being,
+  2. the particular need of ours that has been fulfilled,
+  3. the feelings of pleasure engendered as a result.
+
+- When we receive appreciation expressed in this way, we can do so without any feeling of superiority or false humility—instead we can celebrate along with the person who is offering the appreciation.
+
+* Epilogue
+* The Four-Part Nonviolent Communication Process
+
+- Clearly expressing how I am without blaming or criticizing
+
+  Observations
+
+      What I observe (see, hear, remember, imaging, free from my evaluations) that does or does not contribute to my well-being
+
+#+begin_src prolog
+
+When I (see, hear) ...
+#+end_src
+  Feelings
+
+      How I feel (emotion or sensation rather than thought) in relation to what I observe
+
+#+begin_src awk
+
+I feel ...
+#+end_src
+  Needs
+
+      What I need or value (rather than a preference, or a specific action) that causes my feelings
+
+#+begin_src awk
+
+... because I need/value ...
+#+end_src
+  Requests
+
+      Clearly requesting that which would enrich *my* life without demanding
+
+      The concrete actions I would like taken
+
+#+begin_src awk
+
+Would you be willing to ...?
+#+end_src
+
+- Empathically receiving how you are without hearing blame or criticism
+
+  Observations
+
+      What you observe that does or does not contribute to your well-being
+
+#+begin_src awk
+
+When you see/hear ...
+#+end_src
+
+      (Sometimes unspoken when offering empathy)
+
+  Feelings
+
+      How you feel in relation to what you observe
+
+#+begin_src awk
+
+You feel ...
+#+end_src
+  Needs
+
+      What you need or value that causes your feelings
+
+#+begin_src awk
+
+... because you need/value ...
+#+end_src
+  Requests
+
+      Empathically receiving that which would enrich *your* life without hearing any demand
+
+      The concrete actions you would like taken
+
+#+begin_src awk
+
+Would you like ...?
+#+end_src
+
+      (Sometimes unspoken when offering empathy)
+
+* Some Basic Feelings We All Have
+
+[[../../Org/notes/books.html#ID-E2F8E765-E017-4500-AC7F-8E3A8D0B1D20][Building a Vocabulary for Feelings]]
+
+- Feelings when needs are fulfilled
+
+  - Amazed
+  - Comfortable
+  - Confident
+  - Eager
+  - Energetic
+  - Fulfilled
+  - Glad
+  - Hopeful
+  - Inspired
+  - Intrigued
+  - Joyous
+  - Moved
+  - Optimistic
+  - Proud
+  - Relieved
+  - Stimulated
+  - Surprised
+  - Thankful
+  - Touched
+  - Trustful
+
+- Feelings when needs are not fulfilled
+
+  - Angry
+  - Annoyed
+  - Concerned
+  - Confused
+  - Disappointed
+  - Discouraged
+  - Distressed
+  - Embarrassed
+  - Frustrated
+  - Helpless
+  - Hopeless
+  - Impatient
+  - Irritated
+  - Lonely
+  - Nervous
+  - Overwhelmed
+  - Puzzled
+  - Reluctant
+  - Sad
+  - Uncomfortable
+
+* Some Basic Needs We All Have
+
+[[../../Org/notes/books.html#ID-248CA1CF-9C39-4A68-A527-0BEF4B8297A9][The Needs at the Roots of Feelings]]
+
+- Autonomy
+
+  - Choosing dreams/goals/values
+  - Choosing plans for fulfilling one's dreams, goals, values
+
+- Celebration
+
+  - Celebrating the creation of life and dreams fulfilled
+  - Celebrating losses: loved ones, dreams, etc. (mourning)
+
+- Integrity
+
+  - Authenticity
+  - Creativity
+  - Meaning
+  - Self-worth
+
+- Interdependence
+
+  - Acceptance
+  - Appreciation
+  - Closeness
+  - Community
+  - Consideration
+  - Contribution to the enrichment of life
+  - Emotional Safety
+  - Empathy
+  - Honesty (the empowering honesty that enables us to learn from our limitations)
+  - Love
+  - Reassurance
+  - Respect
+  - Support
+  - Trust
+  - Understanding
+
+- Physical Nurturance
+
+  - Air
+  - Food
+  - Movement, exercise
+  - Protection from life-threatening forms of life: viruses, bacteria, insects, predatory animals
+  - Rest
+  - Sexual Expression
+  - Shelter
+  - Touch
+  - Water
+
+- Play
+
+  - Fun
+  - Laughter
+
+- Spiritual Communion
+
+  - Beauty
+  - Harmony
+  - Inspiration
+  - Order
+  - Peace

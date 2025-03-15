@@ -1,0 +1,176 @@
+#+TITLE: How to Partially Restore a PostgreSQL Database?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-01-13]
+#+URI:         blog/2020/01/13/how-to-partially-restore-a-postgre-sql-database/index.html
+#+TAGS:        Database, PostgreSQL
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Recently, I need to restore a PostgreSQL Database from production to staging. Unfortunately, our staging server is not as powerful as our production server. Specifically, our staging only has ~800GB of disk storage. But the total spaces needed for production database is slightly over 800GB. And due to some technical constraints, we can't add more spaces to staging. So we choose to do a partial restore, i.e. only restoring data from tables we needed, excluding data we didn't need. This task turns out to be harder than I expected. I've made many mistakes until I find the correct way to do it. Hope you can learn from my mistakes and restore your data correctly.
+
+* TL;DR
+
+Don't use pg_restore -t for a clean restore! Don't use pg_restore -t for a clean restore! Don't use pg_restore -t for a clean restore!
+
+1. Use pg_restore -l to dump a table of contents of the archive.
+2. Comment out unneeded DATA from the ToC
+3. Use pg_restore -L to restore the whole database except DATA that were excluded in 2
+
+* Problems with pg_restore -t
+
+I searched on StackOverflow. [[https://stackoverflow.com/questions/37038193/exclude-table-during-pg-restore][The first solution]] I found was pg_restore -t. So I dropped the staging db, ran the pg_restore -t command immediately.
+
+But I ran into three annoying issues. Only after I'd fixed all of them, did I realize I shouldn't have used pg_restore -t at the first place.
+
+1. Indices were missing
+
+   The first thing I noticed was the staging app became so slow after the restore. Then I checked the indices in staging database and found nothing. This was the moment I realized that the -t option is doing its job too well.
+
+   (Apparently, another developer has already run into the same issue before: [[https://serverfault.com/questions/806271/pg-restore-on-a-single-table-not-restoring-indexes][postgresql - pg_restore on a single table not restoring indexes - Server Fault]])
+
+2. Constraints were missing
+
+   The next issue happened when I started using the Rails app. Whenever I requested a record, I got the same error: Unknown primary key for table
+
+   This was because all the primary key CONSTRAINTS were missing (not restored) from the database. When these constraints were missing, ActiveRecord didn't know id was the primary key, which triggered the error.
+
+   After primary key constraints were restored, this issue was fixed.
+
+3. Sequences/Defaults were missing
+
+   Finally, I got another issue about id. Whenever I saved a record, I got this error: ActiveRecord::StatementInvalid: PG::Error: ERROR: null value in column “id” violates not-null constraint
+
+   This was because all the SEQUENCES and DEFAULTS for the id columns were missing (not restored) from the database. ActiveRecord uses SEQUENCES and DEFAULTS to make primary keys automatically increment itself when a new record is created in the db. When these two were missing from the database, ActiveRecord could only assign primary key to nil, which violated the constraint.
+
+   More interestingly, I only restored the SEQUENCES for id columns. But the issue still persisted. So I also tried to [[http://www.osny.me/blog/how-to-reset-postgres-id-sequence-in-a-ruby-on-rails-app][reset the   (which didn't work because   were still missing):]]
+
+#+begin_src ruby
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+#+end_src
+
+   After I restored DEFAULTS, the issue was fixed.
+
+After these three annoying issues, I knew I did something wrong. Fortunately, it was only our staging server, so I only wasted my own time and energy.
+
+Reading the documentation for pg_restore -t, I finally realized it wasn't the right tool for the job.
+
+#+begin_src python
+
+-t table
+--table=table
+    Restore definition and/or data of only the named table. For this purpose,
+    "table" includes views, materialized views, sequences, and foreign tables.
+    Multiple tables can be selected by writing multiple -t switches. This
+    option can be combined with the -n option to specify table(s) in a
+    particular schema.
+
+        Note
+        When -t is specified, pg_restore makes no attempt to restore any other
+        database objects that the selected table(s) might depend upon.
+        Therefore, there is no guarantee that a specific-table restore into a
+        clean database will succeed.
+#+end_src
+
+As you may have notices from the Note, pg_restore makes no attempt to restore any other database objects that the selected table(s) might depend upon. (I didn't read this Note because I thought [[https://stackoverflow.com/questions/37038193/exclude-table-during-pg-restore][StackOverflow]] was trustworthy.)
+
+Besides all the missing indices, constraints, sequences, defaults, and more, pg_restore -t won't create any tables that were not specified with the -t option. So any db migration related to the missing tables would fail on staging in the future. Which means this solution is absolutely unacceptable in this use case.
+
+What else shall we do?
+
+* Introducing pg_restore -l and pg_restore -L
+
+Turns out the correct answer is right below the first one in [[https://stackoverflow.com/questions/37038193/exclude-table-during-pg-restore][the same StackOverflow page]].
+
+1. pg_restore -l psql_backup.dump > db.list
+
+   Passing -l option to pg_restore would produce a table of content for the dump file. This ToC includes all the data and their locations included in the dump file:
+
+#+begin_src sql
+
+;
+; Archive created at Mon Sep 14 13:55:39 2009
+;     dbname: DBDEMOS
+;     TOC Entries: 81
+;     Compression: -1
+;     Dump Version: 1.13-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 10.10
+;     Dumped by pg_dump version: 10.10
+;
+;
+; Selected TOC Entries:
+;
+28920 70946 DATABASE - DBDEMOS pasha
+55141; 15509 237 SCHEMA - public pasha
+50798; 80741 51835 COMMENT - SCHEMA public pasha
+66197; 75700 30831 ACL - public pasha
+79603; 43218 86982 TYPE public composite pasha
+59759; 64565 4792 EXTENSION - pg_trgm
+95301; 10755 17786 COMMENT - EXTENSION pg_trgm
+31637; 99705 30851 TABLE public users DBDEMOS
+18171; 24739 26392 SEQUENCE public users_id_seq DBDEMOS
+81822; 19526 48192 SEQUENCE OWNED BY public users_id_seq DBDEMOS
+59215; 11301 6736 DEFAULT public users id DBDEMOS
+2227; 53943 37511 TABLE DATA public users DBDEMOS
+37029; 1384 1099 SEQUENCE SET public users_id_seq DBDEMOS
+14500; 53947 96995 CONSTRAINT public users users_pkey DBDEMOS
+26691; 92878 55511 INDEX public index_users_on_email DBDEMOS
+85474; 88765 68415 TRIGGER public users username_update DBDEMOS
+#+end_src
+
+   Notice that this file contains all types of data in the dump: databases, schemas, comments, access control lists (ACL), extensions, tables, sequences, defaults, table data, constraints, indices, triggers, and so on.
+
+2. Comment out data we do not need
+
+   We can change this ToC by commenting out or deleting the part we don't want to restore. In this case, we don't want to restore DATA from users table, so we delete it.
+
+#+begin_src sql
+
+;
+; Archive created at Mon Sep 14 13:55:39 2009
+;     dbname: DBDEMOS
+;     TOC Entries: 81
+;     Compression: -1
+;     Dump Version: 1.13-0
+;     Format: CUSTOM
+;     Integer: 4 bytes
+;     Offset: 8 bytes
+;     Dumped from database version: 10.10
+;     Dumped by pg_dump version: 10.10
+;
+;
+; Selected TOC Entries:
+;
+28920 70946 DATABASE - DBDEMOS pasha
+55141; 15509 237 SCHEMA - public pasha
+50798; 80741 51835 COMMENT - SCHEMA public pasha
+66197; 75700 30831 ACL - public pasha
+79603; 43218 86982 TYPE public composite pasha
+59759; 64565 4792 EXTENSION - pg_trgm
+95301; 10755 17786 COMMENT - EXTENSION pg_trgm
+31637; 99705 30851 TABLE public users DBDEMOS
+18171; 24739 26392 SEQUENCE public users_id_seq DBDEMOS
+81822; 19526 48192 SEQUENCE OWNED BY public users_id_seq DBDEMOS
+59215; 11301 6736 DEFAULT public users id DBDEMOS
+; 2227; 53943 37511 TABLE DATA public users DBDEMOS
+37029; 1384 1099 SEQUENCE SET public users_id_seq DBDEMOS
+14500; 53947 96995 CONSTRAINT public users users_pkey DBDEMOS
+26691; 92878 55511 INDEX public index_users_on_email DBDEMOS
+85474; 88765 68415 TRIGGER public users username_update DBDEMOS
+#+end_src
+3. pg_restore -L db.list
+
+   -L option would tell pg_restore to only restore the data specified in the Table of Content file.
+
+After restoring with this solution, our staging behaves the same as production. No weird issues like Unknown primary key for table anymore!
+
+* Lessons Learned
+
+The biggest lesson from this experience for me is to always RTFW (read the f**king manual). Don't trust StackOverflow or blog posts online too much. They can be misleading more often than not. Always read the documentation to fully understand the meaning of the script, command, option I'm going to use.
+
+It's lucky that these issues only happened to our staging server, so they didn't impact our users. But I need to train myself to be more careful on staging, and even on my local. Only after good habits are cultivated, can I perform these actions (or automate them) on production safely.

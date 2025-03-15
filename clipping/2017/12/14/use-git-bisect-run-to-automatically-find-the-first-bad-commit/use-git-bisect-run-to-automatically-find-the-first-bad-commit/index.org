@@ -1,0 +1,31 @@
+#+TITLE: Use git bisect run to automatically find the first bad commit
+#+begin_quote
+
+Use git bisect to find the first bad commit.
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=VMcMqrpjAjU][RubyConf 2017: "RSpec no longer works with ActiveRecord" by Sam Phippen - YouTube]]
+
+In this talk, Sam showed us how he debugged a rspec issue using git bisect.
+
+But he is just manually using git bisect good and git bisect bad to mark a commit as good/bad.
+
+Actually, git bisect can run the script automatically:
+
+1. git bisect start
+2. git bisect good HEAD~4 (for example)
+3. git bisect bad HEAD
+4. git bisect run rspec spec/services/some_spec.rb
+
+Then git bisect will automatically run the script and find the first commit from which this spec started to fail.
+
+But in this talk's case, we need to run the script in another git directory. We can use shell script to switch to that directory first and then run the test suite:
+
+#+begin_src shell
+git bisect run sh -c 'cd another/project/; rspec spec/in/that/project'
+#+end_src
+
+Of course, there are more complicated issues in real life projects, like gem dependency issue in the talk. We can always fallback to manually tagging a commit as good/bad if we find something unexpected from the log of git bisect run.
+
+You can also read more about git bisect, rspec bisect in my previous post: [[http://dsdshcym.github.io/blog/2017/09/17/rspec-failures-caused-by-i18nlocale/][RSpec failures caused by I18n.locale - dsdshome]]

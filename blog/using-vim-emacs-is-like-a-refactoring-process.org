@@ -1,0 +1,109 @@
+#+TITLE: Using Vim/Emacs is like a refactoring process
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-01-28]
+#+URI:         blog/2018/01/28/using-vim-emacs-is-like-a-refactoring-process/index.html
+#+TAGS:        Vim, Emacs, Refactor
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This is an idea I got when I was still using vim, and I think this feeling got stronger after I switched to Emacs. It's a bit hard to find out if anyone had similar idea before, because googling "Vim/Emacs Refactoring" would only show some refactoring plugins or packages. So I decided to write it down and share it.
+
+* Refactoring what?
+
+The definition of refactoring is:
+
+#+begin_quote
+
+Restructuring the existing code without changing its behavior.
+
+#+end_quote
+
+So what are we restructuring here by using Vim/Emacs? I think it's our *text editing skills* .
+
+It's kind of obvious since they are both text editors. But they are so powerful that:
+
+1. They can abstract text editing to a higher level.
+2. We can then think of the editing process as a piece of code.
+3. After that, we can refactor this code to make it more efficient.
+
+* Minimize key strokes in vim
+** Find more efficient keys
+
+In vim, we do most of our text editing in the normal mode thanks to its powerful modal editing. Each key is bound to an action, e.g. h/j/k/l is left/down/up/right.
+
+I believe most people just uses hjkl to move around the cursor when they just starts learning Vim. But it's not that efficient and it's still thinking in the normal text editor's way.
+
+Turns out you can move your cursor by using other keys[fn:1]:
+
+- Use w, b, e, and ge to move between words
+- Use f, F, t, T, ; to move within the same line
+- Use {, }, (, ) to jump between paragraphs, sentences
+- Use /, n, N to search texts directly
+
+** Operate on text objects
+
+Keys can be combined together to define the action target (text objects), e.g. d is for deletion, i is for inner, p is for paragraph, dip is deleting all texts inner this paragraph.
+
+These habits changes are like replacing a for-loop with a more efficient native function. After you get familiar with it, your text editing will definitely be more efficient.
+
+** Recording keystrokes in macros
+
+Macro is one of the most powerful things provided by Vim. You can define a macro and save you hundreds and thousands of keystrokes.
+
+But the more powerful feature is that you can edit an macro like editing a piece of code[fn:2].
+
+- Macros are also saved in (paste) registers.
+- So you can paste a macro into a buffer then edit it and save it into the register.
+- Furthermore, you can save this macro as a function in your rc file and use it in the future.
+
+This makes using macro more like refactoring, because once you find a way to generalize your operations on texts, you can record it as a macro and even edit it as editing your code.
+
+* Minimize function calls in Emacs
+** Everything is a function
+
+This was a mind-blown point to me: *in Emacs, every operation is a function.* Even typing a key and inserting the character on it is also a function called self-insert-command.
+
+This turns your text editing process into a coding process: you are writing a code to write the code you want to write. (Meta-Programming!)
+
+** Macro can be turned into function
+
+Native Emacs records a keyboard macro like Vim does: just saving the keystrokes. But it provides a better editing environment for keyboard macros and you can even see which function each key represents:
+
+#+begin_src awk
+
+;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
+;; Original keys: SPC w l SPC w h SPC w s SPC w k
+
+Command: last-kbd-macro
+Key: none
+
+Macro:
+
+SPC w l			;; evil-window-right
+SPC w h			;; evil-window-left
+SPC w s			;; evil-window-split
+SPC w k			;; evil-window-up
+#+end_src
+
+And there is a package elmacro[fn:3] that allows you to translate a keyboard macro directly into elisp function.
+
+* Summary
+
+1. Find a more efficient native function to do the work
+2. Automate things by keyboard macros
+3. Persist macros into functions in your config file
+
+* Footnotes
+[fn:1]
+
+These tips are mostly collected from [[http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/][Habit breaking, habit making]] and some of them are
+
+[fn:2]
+
+[[https://robots.thoughtbot.com/how-to-edit-an-existing-vim-macro][How to Edit an Existing Vim Macro]]
+
+[fn:3]
+
+[[https://github.com/Silex/elmacro][Silex/elmacro: Package to display keyboard macros or latest interactive
+commands as emacs lisp.]]

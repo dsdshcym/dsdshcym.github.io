@@ -1,0 +1,19 @@
+#+TITLE: How to know a book is good before reading it
+* TL;DR
+
+*Time will tell.*
+
+* Clipping
+
+I listened 2 podcasts given by DHH and he mentioned this similar idea in both episodes.
+
+#+begin_quote
+
+How to tell a book is good?
+
+See how old it is. A book published years ago and still gets printed is always better.
+
+#+end_quote
+
+-- from [[https://devchat.tv/ruby-rogues/rr-342-rails-development-david-heinemeier-hansson][RR 342 Rails, Development, and More with David Heinemeier Hansson -
+   Devchat.tv]] and [[https://rework.fm/mailbag-1-2/][Rework Mailbag 1 - Part 2]]

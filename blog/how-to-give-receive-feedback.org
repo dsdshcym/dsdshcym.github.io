@@ -1,0 +1,373 @@
+#+TITLE: How to Give/Receive Feedback?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-07-07]
+#+URI:         blog/2019/07/07/how-to-give-receive-feedback/index.html
+#+TAGS:        Communication
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+#+begin_quote
+
+This is the speaker notes for a talk I gave internally about feedback.
+
+This talk is basically my summary of three incredible books on this topic:
+
+- [[https://dsdshcym.github.io/blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/][Life Changing Tools (Book Review: Nonviolent Communication) - dsdshome]]
+- [[https://dsdshcym.github.io/blog/2019/06/14/make-it-safe-book-review-crucial-conversations/][Make it Safe! (Book Review: Crucial Conversations) - dsdshome]]
+- [[https://www.amazon.com/Thanks-Feedback-Science-Receiving-Well/dp/0670014664][Thanks for the Feedback: The Science and Art of Receiving Feedback
+Well: Douglas Stone, Sheila Heen]]
+
+And you can find the slides in PDF [[https://raw.githubusercontent.com/dsdshcym/dsdshcym.github.io/source/assets/feedback-slides.pdf][here]].
+
+The notes and the slides may seem obscure sometimes. So feel free to ask me any questions in the comments below or via email. I'd be happy to discuss with you.
+
+#+end_quote
+
+Think about these typical situations in our work and life everyday:
+
+1. You just shipped an awesome feature. Then your client asks you to add some commas or periods here and there. You feel angry and think: why is he focusing on these details and ignoring all the awesome work I've done?
+2. You just submitted a merge request. Then your reviewer says you are doing it all wrong. (Or you are the reviewer and you want to say this code sucks.)
+3. You are in your annual performance review meeting. And they say you didn't perform well last year. They say you don't communicate often, you write bad code, you don't ship features fast enough, yada yada yada. You completely disagree to all of these. And you don't know what to do next.
+
+* What is feedback?
+
+Feedback includes any information you get from this world about yourself. So even your reflection in the mirror counts as feedback.
+
+In communication, feedback comes in three forms...
+
+That being said, we often mix different forms of feedback together.
+
+As we will see later, it's extremely easy for us to mix evaluation with other feedback:
+
+- "you did well in this project, thank you" is both evaluation and appreciation,
+- "your code sucks, write it in this way" is both evaluation and coaching.
+
+To simplify things a bit, in this talk, we will focus on coaching and evaluation.
+
+- *Any information you get about yourself.*
+- Broadly, feedback comes in three forms:
+
+  Appreciation
+      Thanks
+  Coaching
+      Here’s a better way to do it
+  Evaluation
+      Here’s where you stand
+
+* Why is learning feedback important?
+
+1. Feedback almost equals to communication
+2. Feedback is how we learn and teach
+3. We are giving & receiving feedback everyday
+
+** Feedback almost equals to communication
+
+Feedback is the most important part of our communication.
+
+If you think about it, our communication is based on information, it's a flow of information.
+
+And information can be categorized into two types:
+
+1. information about ourselves. that's feedback.
+2. information that's not about ourselves. i call it data. it can be opinions of others or facts about this world.
+
+That being said, data can still become feedback. After all, we live in our own life, which is about and only about ourselves. So the data may not relate to us directly, we can still transform it to some kinds of feedback about ourselves.
+
+For example, this presentation about feedback is only data (at least it's what I hope it to be), but you can relate it to yourself, to how you give and receive feedback before. Then this presentation becomes feedback.
+
+This is important because feedback is how we learn ourselves.
+
+Feedback
+    Information about ourselves.
+Data (Opinions & Facts)
+    Information that's not about ourselves.
+
+** Feedback is how we learn and teach
+
+In the broadest sense, feedback is how we learn about ourselves from our experiences and from other people—how we learn from life.
+
+And we all know how learning is important to us as humans.
+
+But, learning about ourselves can be painful and teaching others can be hard.
+
+For example, *you can't take a developer team and tell them: do code reviews, write tests, and learn TDD!* And expect them to just start doing these things. Right?
+
+In addition to our desire to learn and improve, we long for something else that is fundamental: to be loved, accepted, and respected just as we are.
+
+And the very fact of feedback suggests that how we are is not quite okay.
+
+- Why can’t you accept me for who I am and how I am?
+- Why are there always more adjustments, more upgrades?
+- Why is it so hard for you to understand me?
+
+Despite the fact that it's hard to give and receive feedback, they are what we do everyday.
+
+- After all, humans are naturally wired for learning.
+- We may be wired to learn, but it turns out that learning about ourselves is a whole different game.
+
+** We are giving & receiving feedback everyday
+
+Feedback exists in our communications. Thus it exists in our work, in our daily life, in our relationships.
+
+* How to give/receive feedback?
+
+Here are three feedback practices that I think every one of us can improve.
+
+First, we need to find out what we really want when giving or receiving feedback. And focus on that.
+
+Then, we need to make it safe for the feedback giver or receiver to talk. Make sure you have a mutual purpose and you respect each other.
+
+Finally, we will see the feedback cycle and break it down into steps. We can improve every step in this cycle to help us give and receive feedback better.
+
+1. Focus on what you want
+2. Make it safe to talk
+3. Improve every step in the feedback cycle
+
+** Start with heart
+
+1. What are your needs?
+2. What do you want? What do you not want?
+3. Don't try to fix others or win the debate.
+
+Fool's Choices: They worry that if they share their true opinions, others will clam up, stop talking.
+
+- Watch to see if you’re telling yourself that you must choose between peace and honesty, between winning and losing, and so on.
+
+- Skilled people start with heart.
+
+  1. begin high-risk discussions with the right motives,
+  2. stay focused no matter what happens.
+
+- They maintain this focus in two ways.
+
+  1. Know what they want.
+  2. Don’t make Fool’s Choices
+
+*** How to refuse the Fool's Choices
+
+As feedback givers, we need to clarify what you really want.
+
+- To help the project?
+- To help this person?
+- To make your life easier?
+
+And what you really don't want.
+
+- Not to make the other angry
+- Not to win the debate
+
+As feedback receivers, we can ask what the giver wants and doesn't want.
+
+Then we can combine them together and ask ourselves how to achieve these two goals at the same time. There ought to be a solution.
+
+- Is there a way to tell your peer your real concerns and not insult or offend him?
+- Is there a way to talk with your loved one about how you’re spending money and not get into an argument?
+
+1. First, clarify what you really want.
+2. Second, clarify what you really don’t want.
+3. Third, present your brain with a more complex problem.
+
+#+begin_quote
+
+   How to achieve what you want and avoid what you don't want.
+
+#+end_quote
+
+** Make it Safe
+
+After knowing what we really want and focus on only that, we can start by making the conversation safe first.
+
+More than too often, it's how or when we give the feedback that triggers the other, not the feedback itself.
+
+So, step out of the content, and build a mutual purpose. Make it explicit what you really want. And see if the other resonates.
+
+Besides this mutual purpose, you need to respect each other. Saying "your code sucks" directly may hurt a developer's feelings. So you need to build a mutual purpose (I want to help you improve your code) and a mutual respect (I respect you as a developer, your code cannot represent you as a person, we only discuss code here) first, then explain tons of reasons, at last you may be able to say "this code sucks" together.
+
+- *Step out of the content of the conversation.*
+- Don’t stay stuck in what’s being said.
+- Notice what's at risk
+
+  1. Mutual Purpose
+  2. Mutual Respect
+
+** Know the feedback cycle
+
+1. Data is our input information. What the other is doing, saying, behaving (body language).
+2. After we receive this data with our ears, eyes, our brain will interpret it, and tell a story from the data, label different characters. Someone is looking at his laptop. He's not interested at my talk I prepared for a whole week. He doesn't want to improve his communication skills.
+3. Then based on this story, our brain generates thoughts and feelings. -> "What a non-respectful & ungrateful bastard."
+4. Then we have our intentions or requests to others. "Be more respectful to me. Don't look at your cell phone and listen to me."
+5. Finally, our behaviour becomes other's input data.
+6. And the cycle repeats on the other side.
+
+Equipped with the awareness of this cycle, we can work on each steps here and improve our feedback cycle.
+
+1. Data
+2. Interpretation (A Story with Labels)
+3. Needs + Interpretation -> Thoughts & Feelings
+4. Intentions (Requests)
+5. Behavior (Data for others)
+
+*** Separate data from interpretation
+#+begin_quote
+
+Observing without evaluating is the highest form of human intelligence.
+
+#+end_quote
+
+- Observations are specific to time and context.
+
+  1. When
+  2. Where
+  3. What
+  4. Who
+
+||Observation with evaluation |Observation separate from evaluation | |
+||You are too generous. |When I see you give all your lunch money to others, I think you are being too generous. | |
+||Doug procrastinates. |Doug only studies for exams the night before. | |
+||If you don't eat balanced meals, your health will be impaired. |If you don't eat balanced meals, I fear your health may be impaired. | |
+||Immigrants don't take care of their property. |I have not seen the immigrant family living at 1679 Ross shovel the snow on their sidewalk. | |
+||Hank Smith is a poor soccer player. |Hank Smith has not scored a goal in twenty games. | |
+||Jim is ugly. |Jim's looks don't appeal to me. | |
+*** Master your story
+
+After we separate data from interpretation, the next thing we can do is to own our interpretation, master our story.
+
+From the same data, we as humans can generate completely different stories.
+
+"Doug only studies for exams the night before. And he passes all the exams."
+
+1. He procrastinates, he doesn't study hard. He must be cheating in all these exams.
+2. He's talented and super efficient.
+
+Mastering our story is important because it helps us to stay on what we really want. We cannot start with our hearts or make the conversation safe if we think the other is the only problem here.
+
+#+begin_quote
+
+Nothing in this world is good or bad, but thinking makes it so.
+
+-- WILLIAM SHAKESPEARE
+
+#+end_quote
+
+1. We add meaning to the action we observed.
+2. We make a guess at the motive driving the behavior.
+3. Based on these stories, our body responds with an emotion.
+
+- Shift from wrong spotting to difference spotting
+
+  Our story is never complete and we can understand another better and give feedback more efficiently if we try to tell the rest of story first.
+
+  Most of the time, the communication problem exists because we are different.
+
+  - We see things differently. So we have different data.
+
+    What's your biggest blind spot? Yourself. Your own face. Your own tone. Your body language.
+
+    We don’t notice what we don’t notice, so we don’t notice that we don’t notice.
+
+  - We have different brains, body structures, cells. We have different background. So we interpret that (different) data differently.
+
+  Then, we can try to learn the other person's story. How he/she sees things differently from me. By figuring out the differences between our data and our interpretations, we can focus on the right part of the feedback and learn from that.
+
+  - None of us is wrong
+
+    1. We have different data,
+    2. We interpret that data differently.
+
+  - Seeing feedback in the system
+
+    1. Each of us is part of the problem.
+    2. Each of us sees only part of the problem
+       (the part the other person is contributing).
+
+*** Make intentions clear
+
+After found out the right part of the feedback, we can start giving our requests based on our intentions.
+
+First, we need to make it clear if we are giving or receiving coaching or evaluation. It's hard to focus on coaching if they are mixed together. Because evaluation can draw our attention or even disturb our emotions.
+
+Then, when coaching or receiving coaching, we need to clarify the real, actionable advice here. Without a clear, actionable item or task, we can hardly work on the coaching advice. No matter if you are a giver or a receiver, you can always ask yourself, if a person do want to follow the advice, would he/she know how to do so?
+
+It's also useful to only name one thing at one time. Do one thing and do it well. Find the top priority here.
+
+Finally, when giving or receiving evaluations, clarify consequences and expectations. Especially when the evaluation is done and we can do nothing to change the result. So knowing the consequences is actually more important than what to do next.
+
+Coaching
+    Clarify advice
+
+    - Ask: If you do want to follow the advice, would you know how to do so?
+    - Name one thing at one time.
+
+Evaluation
+    Clarify consequences and expectations
+
+    - What does this mean for me?
+    - What will happen next, what is expected of me?
+    - Given where I stand, what should I do now?
+
+- Cultivate a growth identity
+
+  That being said, we can still sort toward coaching all the time, even when you are given an final evaluation. My RubyConf China talk proposal got rejected last week. This is an final evaluation for sure. I couldn't do anything to change that. But that doesn't mean the end to me. I can still ask for what I can do better next time.
+
+  That means we need to cultivate a growth identity. We need to change our world view first.
+
+  - Shift our world view
+
+    The world is too complex that nothing or no-one can be labeled by a single word.
+
+    - Good/bad
+    - Smart/Stupid
+    - Efficient/Non-efficient
+
+    All-or-nothing identities present us with this choice: Either we can exaggerate the feedback, or we can deny it.
+
+    1. Shift from all-or-nothing to realistically complex.
+    2. Shift from fixed to growth.
+
+  - Three practices help
+
+    1. Sort for coaching.
+
+       - Hear coaching as coaching,
+       - Find the coaching in evaluation.
+
+    2. Separate the judgment from assessment and consequences.
+    3. Give yourself a second score for how you handle the first score.
+
+    - Evaluation has three parts
+
+      - Assessment
+      - Consequences
+      - Judgment
+
+    - Why?
+
+      1. You can figure out what about a given evaluation is triggering your identity (most of the time, it's the judgment part)
+      2. Focus on what you want to discuss with the feedback giver
+
+* Key Takeaways
+
+1. Start with heart
+2. Make it safe
+3. Cultivate a growth identity
+
+* Feedback in Organization
+** What leadership and HR can do
+
+1. Explain tradeoffs of different perf. systems
+2. Separate appreciation, coaching, and evaluation
+3. Promote a culture of learners
+
+** What team leaders and feedback givers can do
+
+1. Model learning, request coaching
+2. As givers, manage mindset and identity
+3. Be aware of individual differences
+
+** What receivers can do
+
+- You are responsible for your own learning.
+- You’re surrounded by people you can learn from.
+
+- Regardless of context or the company you keep, you are the most important person in your own learning.
+- Whatever you do in your organization, you’re surrounded by people you can learn from.

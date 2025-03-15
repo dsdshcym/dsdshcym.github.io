@@ -1,0 +1,17 @@
+#+TITLE: Why Do We Need Managers?
+#+begin_quote
+
+- "I've met a lot of charming sociopaths"
+- *The only job of a manager is to make the team more effective*
+
+  - Know what is effective first
+
+#+end_quote
+
+-- from [[http://www.se-radio.net/2019/01/se-radio-episode-352-johnathan-nightingale-on-scaling-engineering-management/][SE-Radio Episode 352: Johnathan Nightingale on Scaling Engineering Management]]
+
+Let's admit it: not everyone would think about how to improve the way they work. If everyone knows the value of continuous improvement and do it, then we don't need managers.
+
+Some companies are so "flat" and they don't have roles for managers. Some of them may say "everyone is responsible to help the team be more effective." But if everyone is responsible, then no one is.
+
+Thus a valuable lesson from this episode (also got mentioned) is just copy an existing structure to your company. It's highly possible that you won't be able to create a better structure than an old but battle-proofed one.

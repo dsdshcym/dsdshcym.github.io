@@ -1,0 +1,88 @@
+#+TITLE: Make a Lot of Lists
+
+1. Outline is a great way to organize thoughts
+
+#+begin_quote
+
+   - The 10-Step Writing Process
+
+     1. Create a Mega Outline
+     2. Build an Archipelago of Ideas
+     3. Outline
+     4. Write a 2nd Rough Draft
+     5. Re-Write Every Sentence
+     6. 10-15 Sentence Article Summary
+     7. Send to Friends and Ask for Feedback
+     8. Write a 3rd Rough Draft
+     9. Turn Outline into a Full Post
+     10. Publish
+
+   - Outline
+
+     - Make the outline as simple as possible.
+
+       - That way, you can focus more on ideas and less on structure.
+
+     - *The first draft is always terrible, but good writing has to start somewhere.*
+     - The outline of an essay is like the skeleton of a body.
+
+       - It provides its fundamental form and structure.
+       - If it helps, write a stock intro and a stock conclusion to stay focused.
+
+         - Stock Intro:
+
+           - What is the purpose of this essay?
+           - How is it going to proceed?
+
+         - Stock Conclusion:
+
+           - How did this essay proceed?
+           - What was its purpose?
+
+     - Keep the post in outline form for as long as possible.
+
+       - Outlines force simplicity
+       - They make it easier to see the ideas and move them around
+       - The vast majority of people should write with shorter sentences; outlines make this easy.
+
+     - The outline should be longer than the final version
+
+       - Organize your outline with subdivisions, sections, and paragraphs.
+       - Each paragraph is a stepping stone to your final destination and every one should focus on a single idea.
+       - Write ten to fifteen sentences per outline heading to complete your paragraphs.
+
+     - While working on the outline, keep moving, keep writing, and don’t get bogged down by the details.
+
+#+end_quote
+
+   -- from [[http://www.perell.com/blog/writing][Riding the Writing Wave — David Perell]]
+
+   - Outlines help us force simplicity and give structure to our ideas. (I think this is because outlines use the same structure as "trees" in computer science, or it's the other way around? But this is another topic.)
+   - Org mode relies on outline-mode heavily. And that's why Org mode is so powerful for organizing information.[fn:1]
+
+2. Outline is also a great way to prioritize things
+
+#+begin_quote
+
+   Thread!
+
+   Productivity tricks that work for me...
+
+   I like [[https://twitter.com/sama?ref_src=twsrc%5Etfw][@sama]]'s approach to prioritization:
+
+   1. Make sure to get the important stuff done
+   2. Don’t waste time on stupid things
+   3. Make a lot of lists
+
+   Make lists of what you want to achieve each year, each month, and each day.
+
+   — ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ (@david_perell) [[https://twitter.com/david_perell/status/1071836429058232320?ref_src=twsrc%5Etfw][December 9, 2018]]#+end_quote
+3. That's why I'm writing a lot of lists in this blog.
+
+   - Especially for Clippings section in this blog, I want to "outlinize" things I read, reveal the fundamental form and structure for a book/post, and then give my thoughts or maybe connect some dots based on this structure.
+   - So go and make a lot of lists! And hope they can help you organize your thoughts and prioritize your tasks.
+
+* Footnotes
+[fn:1]
+
+See also [[https://dsdshcym.github.io/blog/2019/01/18/writing-software-v-s-organizing-notes/][Writing Software v.s. Organizing Notes - dsdshome]]

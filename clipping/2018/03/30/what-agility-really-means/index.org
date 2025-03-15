@@ -1,0 +1,50 @@
+#+TITLE: What Agility Really Means
+#+begin_quote
+
+- What to Do
+
+  1. Find out where you are
+  2. Take a small step towards your goal
+  3. Adjust your understanding based on what you learned
+  4. Repeat
+
+- How to Do It
+
+  - When faced with two of more alternatives that deliver roughly the same value, take the path that makes future change easier
+
+#+end_quote
+
+-- from [[https://www.youtube.com/watch?v=a-BOSpxYJ9M][GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas - YouTube]] and [[https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html][Agile is Dead (Long Live Agility)]]
+
+I think this can be the summary of my current understanding of Agility.
+
+*Only by taking steps as small as possible, can we embrace the changes this interesting world presents us without losing any sanity.* [fn:1]
+
+And this agility thinking can absolutely be adopted to all the things we are doing at work or even in our daily life:
+
+1. TDD
+2. Issue Solving
+3. Feature Management
+4. Company Management
+5. Skill Learning
+
+Also, this methodology reflects TDD perfectly:
+
+Find out where you are
+    Write a failing test
+Take a small step towards your goal
+    Fix this failing test
+Adjust your understanding based on what you learned
+    Refactor or Start considering next test
+Repeat
+
+I first learned this idea from [[https://www.sandimetz.com/99bottles/][99 Bottles - Sandi Metz]]. (You can also read my review of this book [[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32][here]][fn:2])
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2018/03/27/learn-incremental-deployment-the-hard-way/][Learn Incremental Deployment the Hard Way - dsdshome]]
+
+[fn:2]
+
+[[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgb711f32][Book Review: 99 Bottles of OOP - dsdshome]]

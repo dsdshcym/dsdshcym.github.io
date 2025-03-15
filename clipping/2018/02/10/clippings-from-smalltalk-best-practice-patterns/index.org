@@ -1,0 +1,1529 @@
+#+TITLE: Clippings from Smalltalk Best Practice Patterns
+* Table of Contents
+
+- [[#org7208490][Preface]]
+- [[#orgfbb816f][Introduction]]
+- [[#orgb6cdde9][Patterns]]
+- [[#org86e99bd][Behavior]]
+
+  - [[#org990069d][Methods]]
+
+    - [[#org7c96027][Composed Method]]
+    - [[#orgcb3f590][Constructor Method]]
+    - [[#org2089124][Constructor Parameter Method]]
+    - [[#orgeb0072b][Shortcut Constructor Method]]
+    - [[#orgeeddb6d][Conversion]]
+    - [[#orgae24894][Converter Method]]
+    - [[#org6acced7][Converter Constructor Method]]
+    - [[#orgf312544][Query Method]]
+    - [[#org067e968][Comparing Method]]
+    - [[#org6d646dd][Reversing Method]]
+    - [[#org0204f5a][Method Object]]
+    - [[#orgc8b75c4][Execute Around Method]]
+    - [[#org444f858][Debug Printing Method]]
+    - [[#orge716f18][Method Comment]]
+
+  - [[#org9860c74][Messages]]
+
+    - [[#org339f555][Message]]
+    - [[#org2801324][Choosing Message]]
+    - [[#org016c86d][Decomposing Message]]
+    - [[#org1124755][Intention Revealing Message]]
+    - [[#org9779ed4][Intention Revealing Selector]]
+    - [[#orgc8dcb8a][Dispatched Interpretation]]
+    - [[#orgc81e00b][Double Dispatch]]
+    - [[#orgca8d6da][Mediating Protocol]]
+    - [[#orgc52cb2a][Super]]
+    - [[#orgf05a789][Extending Super]]
+    - [[#org4b39abe][Modifying Super]]
+    - [[#orgede03ae][Delegation]]
+    - [[#orgedd55c1][Simple Delegation]]
+    - [[#org7e4fdb6][Self Delegation]]
+    - [[#org41447c4][Pluggable Behavior]]
+    - [[#org44b85b5][Pluggable Selector]]
+    - [[#orgc1bcb57][Pluggable Block]]
+    - [[#org256bf41][Collecting Parameter]]
+
+- [[#orgef2a2d6][State]]
+
+  - [[#org95cdb4d][Instance Variables]]
+
+    - [[#org219cdda][Common State]]
+    - [[#orgd440a5e][Variable State]]
+    - [[#org0be90b9][Explicit Initialization]]
+    - [[#orgb9b07ab][Lazy Initialization]]
+    - [[#org70d7c67][Default Value Method]]
+    - [[#orga6537f1][Constant Method]]
+    - [[#org3917fd7][Direct Variable Access]]
+    - [[#org7f69477][Indirect Variable Access]]
+    - [[#orgee54e80][Getting Method]]
+    - [[#orge0c8b9b][Setting Method]]
+    - [[#org6f02026][Collection Accessor Method]]
+    - [[#org6475c40][Enumeration Method]]
+    - [[#org2fccd89][Boolean Property Setting Method]]
+    - [[#org37c1362][Role Suggesting Instance Variable Name]]
+
+  - [[#org2b82a0c][Temporary Variable]]
+
+    - [[#org736e35b][Temporary Variable]]
+    - [[#orgd79803f][Collecting Temporary Variable]]
+    - [[#orgd05f4cc][Caching Temporary Variable]]
+    - [[#org7822325][Explaining Temporary Variable]]
+    - [[#org475c7eb][Reusing Temporary Variable]]
+    - [[#org32906e7][Role Suggesting Temporary Variable Name]]
+
+- [[#org7b8b03e][Collections]]
+
+  - [[#org649a19a][Classes]]
+
+    - [[#org1968dc3][Collections and Stream classes equivalences between Smalltalk, Perl, Python and Ruby - Stack Overflow]]
+    - [[#org1a327fd][Collection]]
+    - [[#org3779797][OrderedCollection]]
+    - [[#orga58fe86][RunArray]]
+    - [[#org81bfcfc][Set]]
+    - [[#org3df07b4][Equality Method]]
+    - [[#orgcc516a9][Hashing Method]]
+
+- [[#org3d5bf52][Classes]]
+
+  - [[#orgc0042ca][Simple Superclass Name]]
+  - [[#org22db574][Qualified Subclass Name]]
+
+- [[#org979f99c][Formatting]]
+- [[#org05430b4][Development Example]]
+
+* Preface
+
+- What's it all about?
+
+  - Simple things experienced, successful Smalltalkers do that beginners don't
+  - Style guide
+  - Daily tactics of programming
+
+    - Naming
+    - Splitting methods
+    - Clear code
+
+  - 92 patterns
+
+- Each pattern presents:
+
+  1. A recurring daily programming problem
+  2. the trade-offs that affect solutions to the problem
+  3. a concrete recipe to create a solution for the problem
+
+- Why should you read it?
+
+  - Learning
+  - Programming
+  - Teaching
+  - Managing
+
+- What isn't it about?
+
+  - Methodology
+  - Philosophy
+  - Design
+
+* Introduction
+
+- Smalltalk Best Practice Patterns
+
+  Smalltalk
+      The language
+  Best Practice
+      A Legal term. Best practice is the set of procedures and skills that profes- sionals recognize and use.
+  Patterns
+      A decision an expert makes over and over
+
+- Coding
+
+  - Development consists of two processes that feed each other
+
+    1. Figure out what you want the computer to do
+    2. Instruct the computer to do it (which inevitably changes what you want the computer do)
+
+  - Coding is
+
+    1. where your fuzzy, comfortable ideas awaken in the harsh dawn of reality
+    2. where you learn what your computer can do (if you stop coding, you stop learning)
+    3. where our design guesses are tested
+
+  - Talking Programs
+
+    - Many of the patterns tell you what to do when your program talks to you
+    - Simply follow where the code leads
+    - Some of the biggest improvements
+
+      - Duplicate code
+      - Conditional logic
+      - Complex methods
+      - Structural code (where one object treats another as a data structure)
+
+- Good Software
+
+  - The life of most programs
+
+    1. It is developed in a hurry by a team of developers. Time to market is critical for reducing the business risk of a new product. The prod- uct itself is technically challenging to build but doesn’t break new ground in lots of areas at once.
+    2. The product lives for several years, during which time its capabili- ties are refined and extended, often by developers who weren’t part of the original team.
+    3. Bits and pieces of the product are cannibalized for new projects, again, not by the original developers.
+
+  - A good program balances the needs of these activities
+  - Most of the patterns are designed to preserve a balance between short-term and long-term needs
+  - *The bottlenecks throughout development come from limitations in human communication*
+
+    - When you program, you have to *think about how someone will read your code* , not just how a computer will interpret it
+
+  - Criteria considered in these patterns
+
+    - Productivity
+    - Life-cycle cost
+    - Time to Market
+    - Risk
+
+- Style
+
+  - Good predictors of whether a project is in good shape
+
+    - Once and only once (DRY)
+    - Lots of little pieces
+    - Replacing objects
+    - Moving objects
+
+      - Objects that can be easily moved to new contexts
+      - Ship a couple of systems first
+      - Then generalize little pieces easily
+
+    - Rates of change
+
+      - Same level of abstraction
+      - Don't put two rates of change together
+      - avoid this problem by making lots of little pieces
+
+- What's Missing?
+
+  - Exception handling
+  - Copying
+  - Become
+  - Performance
+
+- Book Organization
+
+  Patterns
+      The philosophy behind patterns.
+  Behavior
+      Patterns for methods and messages. The problems you can solve by creating a new method. You will also find method pat- terns scattered throughout the remainder of the patterns, if a par- ticular kind of method (like accessors) is tied to another pattern. The quick reference guide gathers all the method patterns together for easy reference.
+  State
+      Patterns for using instance and temporary variables. You will find a discussion of the pros and cons of using accessor methods and direct variable access.
+  Collections
+      The major collection classes and messages in the form of patterns. You will also find common tricks using collections.
+  Classes
+      A brief introduction to how to use classes, since most of the topics regarding class creation are outside the scope of this book.
+  Formatting
+      My rules of code formatting, cast as patterns.
+  Development Example
+      An example of developing objects with explicit reference to the patterns, as they apply.
+
+- Adoption
+- Learning a Pattern
+
+  1. Context
+  2. Example
+  3. Problem/Solution
+  4. Look for Examples
+  5. Try to write an Example
+
+* Patterns
+
+- Why Patterns Work
+
+  - A Big Assumption: *There are only so many things objects can do*
+
+    - The same structures of objects keep appearing over and over, *regardless of the application*
+
+  - *The problems in the construction of objects are universal*
+
+    1. name classes
+    2. relate classes via inheritance and delegation
+    3. relate methods in the same class and different classes
+    4. name variables
+
+  - Patterns record these problems and how to approach solving them
+  - How to improve communication?
+
+    1. increase the bandwidth
+
+       - so you can communicate more bits
+       - impractical (one developer can only be sliced into so many pieces)
+
+    2. increase the context shared between sender and receiver
+
+       - so the same number of bits mean more
+
+  - When you want to optimize any process, the first strategy to employ is to find how the common case is simpler than the general case
+
+    general case
+        Programming language. We don't go all the way back to the language to solve problems. We look at what we did last week/month/year
+    common case
+        Patterns. These "catch phrases" speed up our development process
+
+  - Oral tradition has 2 problems
+
+    1. not newbie friendly
+    2. doesn't scale
+
+  - Patterns are a literary form for capturing and transmitting common practice
+
+    - Each pattern records
+
+      1. A recurring problem
+      2. How to construct a solution for the problem
+      3. Why the solution is appropriate
+
+  - Patterns can be articulated at all levels of development
+
+    - How to schedule and sequence system development
+    - How to create an application with a particular class library
+    - How to design new objects
+    - How to format source code so that
+
+- Role of Patterns
+
+  Reading
+      Help you read and understand more quickly and thoroughly
+  Development
+      As a guide for how to solve the same problems
+  Review
+      Group reviews will go much more smoothly if everyone knows and uses the patterns
+  Documentation
+      Describe the system much more imply than if you use ordinary prose
+  Clean up
+
+      - Start with formatting patterns
+      - Simplify methods with Composed Method and Explaining Temporary Variable
+      - Check duplicated code, the sign of an opportunity for improvement
+
+- Format
+
+  - Each pattern records an atomic decision
+  - Each pattern has the same format
+
+    ||Element |Purpose | |
+    ||Title |Names the thing created as a result of executing the pattern. Intended to be used conversationally to refer to the pattern - “Oh, I think you need a State Object here.” | |
+    ||Preceding patterns |Briefly describes which pattern precedes this one and why. Some patterns are nonsense taken out of order. Other orderings are the result of experience about which problems are most important and which can be safely deferred. Appears in Avant Garde Bold Italic. | |
+    ||Problem |Stated as a question. Reading the problem will quickly tell you whether you are interested in the rest of the pattern. Appears in Avant Garde. | |
+    ||Forces |Describes the constraints on any solution to the problem and argues for the solution called for in this pattern. After reading the forces section, you should either be convinced that the solution is valid for your situation or you should know why the solution isn’t valid. Sometimes it takes the form of a description of alternatives and why they don’t work, sometimes it’s just a discussion of the influences on the design decision. | |
+    ||Solution |Gives you an unambiguous, concrete recipe for creating the thing named by the title of the pattern. These will typically be development environment actions—subclass this, name this variable thus-and-so, etc. Appears in Avant Garde Italic. | |
+    ||Discussion |Tells you how to make practical use of the pattern. May contain an example of use or give you issues to watch out for. Appears in Avant Garde. | |
+    ||Following patterns |Tells you what patterns should be considered next. Appears in Avant Garde Bold Italic. | |
+
+* Behavior
+
+- Preface
+
+  - *How to specify behavior so that your intent is clearly communicated to your reader*
+
+    - The more centralized the flow of control, the easier it is to follow
+
+      - in the sense that you don't have to go bouncing around all over the place to understand how work is accomplished
+
+    - Centralizing control kills flexibility
+
+      - You want to have lots of objects involved so you have many opportunities to replace objects to change the system, and so you can completely factor code
+
+  - Behavior v.s. State
+
+    - Behavior is the dynamic, active, computational part of the model
+    - State is what is left after behavior is done
+
+  - Behavior is more important to get right
+
+    - In Procedural languages, you want to get the representation right as quickly as possible because every change to the representation bred changes in many different computations
+    - Objects (done right) change all that
+
+      - Because objects can hide their representation behind a wall of messages
+      - You are free to change representation and only affect one object
+
+** Methods
+
+- Methods are important
+
+  - They must do the work they are supposed to do
+  - They must communicate the intent of the work to be done
+
+- Methods decompose the function of your program into easily digestible chunks
+- Methods are the granularity of overriding
+- Methods don't come for free
+
+  1. writing, naming, remembering, rediscovering, and communicating them all take time
+
+     - *If there is no benefit to be gained, bigger methods would be better than small because of the reduced management overhead*
+
+  2. methods cost in performance as well
+
+     - Using methods as a layer to make your performance measurement and tuning more effective
+     - better factored code, with lots of small methods, both
+
+       allows more accurate and concise performance measurement
+           because there aren't little snippets of code duplicated all over
+       provides leverage for tuning
+           through techniques like Caching Instance Variable
+
+- The goal of breaking your program into methods is to
+
+  1. communicate your intent clearly with your reader
+  2. provide for future flexibility
+  3. set yourself up for effective performance tuning where necessary
+
+*** Composed Method
+
+*How do you divide a program into methods?*
+
+#+begin_quote
+
+Divide your program into methods that perform one identifiable task. Keep all of the operations in a method at the same level of abstraction. This will naturally result in programs with many small methods, each a few lines long
+
+#+end_quote
+
+- Well chosen message names let you correctly assume the meaning of invoked code
+- The opportunity to communicate through intention revealing message names is the most compelling reason to keep methods small
+
+  - People can read your programs much more quickly and accurately if they can understand them in detail, then *chunk those details into higher level structures*
+  - Deviding a program into methods gives you an opportunity to guide that chunking
+
+- Small methods ease maintenance
+- Small methods make inheritance work smoothly
+- How?
+
+  - Top-down
+
+    - invoke several smaller methods, (without having an implementation yet)
+    - A thought tool for breaking your development into pieces
+
+  - Bottom-up
+
+    - Extract Method
+
+*** Constructor Method
+
+*How do you represent instance creation?*
+
+#+begin_quote
+
+Provide methods that create well-formed instances. Pass all required parameters to them
+
+#+end_quote
+
+- How?
+
+  1. Keep parameters for a Constructor Method simple
+  2. Make sure there is a method to represent each valid way to create an instance
+
+     - Most classes only have a single way to create an instance
+     - For the rare exceptions, use Constructor Methods for the common cases and provide Accessor Methods for the remainder
+
+- Describe parameters' roles, instead of types
+
+*** Constructor Parameter Method
+
+*How do you set instance variables from the parameters to a Constructor Method?*
+
+#+begin_quote
+
+Code a single private method that sets all the variables Preface its name with set, then the names of the variables
+
+#+end_quote
+
+- Separate two circumstances
+
+  1. State initialization during instance creation
+  2. State change during computation
+
+- Explicit Initialization
+
+*** Shortcut Constructor Method
+
+*What is the external interface for creating a new object when a Constructor Method is too wordy?*
+
+#+begin_quote
+
+Represent object creation as a message to one of the arguments to the Constructor Method. *Add no more than three of these Shortcut Constructor Methods per system you develop.*
+
+#+end_quote
+
+- Two Problems with an explicit class-based interface for object-creation
+
+  1. wordy
+  2. can be misleading (?)
+
+- The problems with representing object creation as a message to one of the arguments
+
+  1. It puts a burden on the programmer to remember the message
+  2. It cannot be easily looked up by looking at the instance creation methods of the class
+
+*** Conversion
+
+*How do you convert information from one object's format to another's?*
+
+#+begin_quote
+
+Convert from one object to another rather than overwhelm any one object's protocol
+
+#+end_quote
+
+- Converter Method
+- Converter Constructor Method
+
+*** Converter Method
+
+*How do you represent simple conversion of an object to another object with the same protocol but different format?*
+
+#+begin_quote
+
+1. Provide a method in the object to be converted that converts to the new object
+2. Name the method by prepending as to the class of the object returned
+
+#+end_quote
+
+- Problems with representing conversion as methods in the object to be converted
+
+  1. There is no limit to the number of methods that can be added
+  2. It ties the receiver with a class of which it would otherwise be obvious
+
+- *Only* representing conversions with a message to the object to be converted when
+
+  1. The source and destination of conversion share the same protocol
+  2. There is only one reasonable way to implement the conversion
+
+*** Converter Constructor Method
+
+*How do you represent the conversion of an object to another with different protocol*
+
+#+begin_quote
+
+Make a Constructor Method that takes the object to be converted as an argument
+
+#+end_quote
+#+begin_src awk
+Date.from_string
+#+end_src
+*** Query Method
+
+*How do you represent testing a property of an object?*
+
+#+begin_quote
+
+1. Provide a method that returns a Boolean.
+2. Name it by prefacing the name with a form of "be" (is, was, will, etc.) (Or postfix the name with ?)
+
+#+end_quote
+
+- Two decisions here:
+
+  1. Deciding what to return from a method that tests a property
+
+     - It's far easier to maintain a relationship based solely on messages. (Boolean)
+
+  2. What you should name the method
+
+     - Switch#on?
+
+- Provide an inverse method if you use it a lot
+
+*** Comparing Method
+
+*How do you order objects with respect to each other?*
+
+#+begin_quote
+
+Implement <= to return true if the receiver should be ordered before the argument
+
+#+end_quote
+
+- Ordering is often done in terms of Simple Delegation to the ordering of other objects
+- Use a Temporarily Sorted Collection for multiple orderings
+
+*** Reversing Method
+
+*How do you code a smooth flow of messages?*
+
+#+begin_quote
+
+1. Code a method on the parameter.
+2. Derive its name from the original message
+3. Take the original receiver as a parameter to the new method
+4. Implement the method by sending the original message to the original receiver
+
+#+end_quote
+
+- *Good code has a rhythm that makes it easy to understand*
+- Make sure that all messages go through a single object, in a Composed Method
+
+#+begin_src ruby
+class Point
+  def print_on(stream)
+    x.print_on(stream)
+    stream.next_put_all('@')
+    y.print_on(stream)
+  end
+end
+#+end_src
+#+begin_src ruby
+class Stream
+  def print(object)
+    object.print_on(self)
+  end
+end
+
+class Point
+  def print_on(stream)
+    stream.print(x)
+    stream.next_put_all('@')
+    stream.print(y)
+  end
+end
+#+end_src
+*** Method Object
+
+*How do you code a method where many lines of code share many arguments and temporary variables*
+
+#+begin_quote
+
+1. Create a class named after the method.
+2. Give it an instance variable for the receiver of the original method, each argument, and each temporary variable.
+3. Give it a Constructor Method that takes the original receiver and the method arguments.
+4. Give it one instance method, #compute, implemented by copying the body of the original method.
+5. Replace the method with one that creates an instance of the new class and sends it #compute.
+
+#+end_quote
+*** Execute Around Method
+
+*How do you represent pairs of actions that have to be taken together?*
+
+#+begin_quote
+
+1. Code a method that takes a Block as an argument.
+2. Name the method by appending “During: aBlock” to the name of the first method that needs to be invoked.
+3. In the body of the Execute Around Method, invoke the first method, evaluate the block, then invoke the second method.
+
+#+end_quote
+*** Debug Printing Method
+
+*How do you code the default printing method*
+
+#+begin_quote
+
+Override printOn: (#to_s) to provide information about an object's structure to the programmer
+
+#+end_quote
+
+- Separate string interfaces for clients and debugging
+
+*** Method Comment
+
+*How do you comment methods?*
+
+#+begin_quote
+
+Communicate important information that is not obvious from the code in a comment at the beginning of the method
+
+1. Method dependencies
+2. TODO
+3. Reasons for change, particularly base class (Git Message)
+
+#+end_quote
+
+- Intention Revealing Selector communicates what the method does
+- Type Suggesting Parameter Name says what the arguments are expected to be
+- patterns like Query Method suggest return types
+- Each method only computes a single case
+
+** Messages
+
+- Procedural languages explicitly make choices
+- OO languages use messages to make choices for you
+
+*** Message
+
+*How do you invoke computation?*
+
+#+begin_quote
+
+Send a named message and let the receiving object decide what to do with it
+
+#+end_quote
+
+- All procedural control structures, conditionals and loops, are implemented in terms of messages in Smalltalk
+
+*** Choosing Message
+
+*How do you execute one of several alternatives?*
+
+#+begin_quote
+
+Send a message to one of several different kinds of objects, each of which executes one alternative
+
+#+end_quote
+
+- Messages provide a disciplined way to handle theme-and-variation programming
+
+  1. The variations live in different objects, they have much less opportunity to interfere with each other than just putting the variations in different parts of the same routine
+  2. The object invoking the variations is also isolated from what variation is currently active
+
+*** Decomposing Message
+
+*How do you invoke parts of a computation?*
+
+#+begin_quote
+
+Send several messages to self
+
+#+end_quote
+
+- Keep methods fit into a few lines, (less than 10, often 3 or 4)
+
+*** Intention Revealing Message
+
+*How do you communicate your intent when the implementation is simple?*
+
+#+begin_quote
+
+1. Send a message to self
+2. Name the message so it communicates *what is to be done* rather than how it is to be done
+3. Code a simple method for the message
+
+#+end_quote
+
+- Intention Revealing Messages are the most extreme case of *writing for readers* instead of the computer
+
+*** Intention Revealing Selector
+
+*What od you name a method?*
+
+#+begin_quote
+
+Name methods after what they accomplish
+
+#+end_quote
+
+- Leave "how" to the various method bodies
+- A simple exercise that will help you generalize names of messages with a single implementation
+
+  1. Imagine a second, very different implementation
+  2. Ask yourself if you'd give that method the same name
+  3. If so, you've probably abstracted the name as much as you know how to at the moment
+
+*** Dispatched Interpretation
+
+*How can two objects cooperate when one wishes to conceal its representation?*
+
+#+begin_quote
+
+1. Have the client send a message to the encoded object.
+2. Pass a parameter to which the encoded object will send decoded messages
+
+#+end_quote
+
+- How you distribute responsibility among objects (messages) is the critical decision, encoding (data structure) is a distant second
+- example (#each)
+
+#+begin_src ruby
+array.each do |item|
+  item.decode
+end
+#+end_src
+
+*** Double Dispatch
+
+*How can you code a computation that has many cases, the cross product of two families of classes?*
+
+#+begin_quote
+
+1. Send a message to the argument.
+2. Append the class name of the receiver to the selector
+3. Pass the receiver as an argument
+
+#+end_quote
+
+- Visitor pattern and double dispatch in ruby - BigBinary Blog
+- Example
+
+  1. binary operator like +
+
+#+begin_src ruby
+class Integer
+  def +(number)
+    number.add_integer(self)
+  end
+
+  def add_integer(integer)
+    self.+(integer)
+  end
+
+  def add_float(float)
+    self.to_float.add_float(float)
+  end
+end
+
+class Float
+  def +(number)
+    number.add_float(self)
+  end
+
+  def add_integer(integer)
+    self.add_float(integer.to_float)
+  end
+
+  def add_float(float)
+    self.+(float)
+  end
+end
+#+end_src
+  2. drag-and-drop operations
+
+#+begin_src awk
+
+You want to execute different code depending on what kind of object is
+being dragged over what kind of receiver
+#+end_src
+
+- In the worst cast, Double Dispatch can lead to N * M methods
+
+  N
+      the number of classes of the original receiver
+  M
+      the number of classes of the original argument
+
+*** Mediating Protocol
+
+*How do you code the interaction between two objects that need to remain independent?*
+
+#+begin_quote
+
+Refine the protocol between the objects so the words used are consistent.
+
+#+end_quote
+
+- Put all the methods to support a Mediating Protocol in a single method protocol, so that they are easy to find and duplicate
+
+*** Super
+
+*How can you invoke super-class behavior?*
+
+#+begin_quote
+
+Invoke code in a super-class explicitly by sending a message to super instead of self
+
+#+end_quote
+
+- like calling super in initialize
+- Always check code using super carefully
+
+  - *Change super to self if doing so does not change how the code executes
+
+*** Extending Super
+
+*How do you add to a super-class' implementation of a method?*
+
+#+begin_quote
+
+Override the method and send a message to super in the overriding method
+
+#+end_quote
+*** Modifying Super
+
+*How do you change part of the behavior of a super-class' method without modifying it?*
+
+#+begin_quote
+
+Override the method and invoke super, then execute the code to modify the results
+
+#+end_quote
+
+- Use Composed Method to split super method into smaller pieces and override some of them
+- Use a Default Value Method to represent the default value
+
+*** Delegation
+
+*How does an object share implementation without inheritance?*
+
+#+begin_quote
+
+Pass part of its work on to another object
+
+#+end_quote
+
+- Use Simple Delegation when the delegate need know nothing about the original object
+- Use Self Delegation when the identity of the original object or some of its state is needed by the delegate
+
+*** Simple Delegation
+
+*How do you invoke a disinterested delegate?*
+
+#+begin_quote
+
+Delegate messages unchanged
+
+#+end_quote
+
+1. Is the identity of the delegating object important?
+2. Is the state of the delegating object important to the delegate?
+
+*** Self Delegation
+
+*How do you implement delegation to an object that needs reference to the delegating object?*
+
+#+begin_quote
+
+Pass along the delegating object (self) in an additional parameter
+
+#+end_quote
+
+- Use Double Dispatch if the delegate needs different logic depending on who is delegating
+
+*** Pluggable Behavior
+
+*How do you parameterize the behavior of an object?*
+
+#+begin_quote
+
+Add a variable that will be used to trigger different behavior.
+
+#+end_quote
+
+- Benefits and Drawbacks of Classes
+
+  - Benefits
+
+    - Useful to instantiate and/or specialize
+
+  - Drawbacks
+
+    - Puts a burden on writer to communicate its purpose and implementation well
+    - A namespace across many classes is hard to manage
+    - *Classes are not flexible*
+
+      - You cannot change an existing object's class without completely ruining the ability to understand the code *statically*
+
+- A large family of classes with only a single method each is unlikely to be valuable
+- Consider before using Pluggable Behavior
+
+  - How much flexibility do you need?
+  - How many methods will need to vary dynamically?
+  - How hard is it to follow the code?
+  - Will clients need to specify the behavior to be plugged, or can it be hidden within the plugged object?
+
+- Example
+
+#+begin_src awk
+
+User Interface components that have to display the contents of many
+different objets
+#+end_src
+
+*** Pluggable Selector
+
+*How do you code simple instance specific behavior?*
+
+#+begin_quote
+
+1. Add a variable that contains a selector to be performed.
+2. Append "Message" to the Role Suggesting Instance Variable Name.
+3. Create a Composed Method that simply performs the selector.
+
+#+end_quote
+*** Pluggable Block
+
+*How do you code complex Pluggable behavior that is not quite worth its own class?*
+
+#+begin_quote
+
+1. Add an instance variable to store a block.
+2. Append "Block" to the Role Suggesting Instance Variable Name.
+3. Create a Composed Method to evaluate the Block to invoke the Pluggable Behavior.
+
+#+end_quote
+
+- Enormous Cost
+
+  1. You can never statically analyze the code to understand the flow of control.
+
+     Only by single stepping through the invocation of the block will the reader understand what is going on
+
+  2. Blocks are more difficult to persist
+
+*** Collecting Parameter
+
+*How do you return a collection that is the collaborative result of several methods?*
+
+#+begin_quote
+
+Add a parameter that collects their results to all of the submethods.
+
+#+end_quote
+
+- married_man_and_unmarried_women
+
+#+begin_src ruby
+def married_man_and_unmarried_women
+  result = []
+
+  people.each do |person|
+    result << person if person.married? && person.man?
+  end
+
+  people.each do |person|
+    result << person if person.unmarried? && person.woman?
+  end
+
+  result
+end
+#+end_src
+- Composed Method
+
+#+begin_src ruby
+def married_man_and_unmarried_women
+  married_men + unmarried_women
+end
+
+def married_men
+  result = []
+
+  people.each do |person|
+    result << person if person.married? && person.man?
+  end
+
+  result
+end
+
+def unmarried_women
+  result = []
+
+  people.each do |person|
+    result << person if person.married? && person.man?
+  end
+
+  result
+end
+#+end_src
+- Pass result into married_men and unmarried_women
+
+#+begin_src ruby
+def married_man_and_unmarried_women
+  result = []
+
+  add_married_men_to(result)
+  add_unmarried_women_to(result)
+
+  result
+end
+
+def add_married_men_to(collection)
+  people.each do |person|
+    collection << person if person.married? && person.man?
+  end
+end
+
+def add_unmarried_women_to(collection)
+  people.each do |person|
+    collection << person if person.married? && person.man?
+  end
+end
+#+end_src
+
+* State
+
+- Most state-related decisions have more to do with modeling and less with coding
+- Two kinds of state
+
+  1. instance variables
+  2. temporary variables
+
+** Instance Variables
+
+- Temporary variables really are all about coding (tactical)
+- Most uses of instance variables are not tactical
+
+  - The choice of how to represent a model is at the core of modeling
+
+*** Common State
+
+*How do you represent state, different values for which will exists in all instance of a class?*
+
+#+begin_quote
+
+Declare an instance variable in the class
+
+#+end_quote
+
+- FP languages never caught on for commercial software
+
+  - The problem is that programmers think and model in terms of state
+  - State is a pretty darn good way to think about the world
+
+- State is good, but only when properly managed
+
+  - It's manageable if it is chopped into little pieces, some alike and some different
+  - Related programs are chopped into little pieces, some alike and some different
+
+- Instance variables have a very important *communicative role* to play
+
+  - Here's what I'm modeling with this object
+  - Declare instance variables in order of *importance* in the class definition
+
+*** Variable State
+
+*How do you represent state whose presence varies from instance to instance?*
+
+#+begin_quote
+
+1. Put variables that only some instances will have in a Dictionary stored in an instance variable called "properties"
+2. Implement propertyAt: aSymbol and propertyAt: aSymbol put: anObject to access properties
+
+#+end_quote
+
+- Cons
+
+  - You can't read the code and understand what is going on
+  - The programming tools don't support this style of programming as well
+
+- Make sure that with any variables, all or nearly all instances shared are implemented as instance variables, not as entries on the property list
+- Variable State is often used as a temporary convenience and never revisited, even though its generality is not used
+
+*** Explicit Initialization
+
+*How do you initialize instance variables to their default value?*
+
+#+begin_quote
+
+1. Implement a method initialize that sets all the values explicitly.
+2. Override the class message new to invoke it on new instances
+
+#+end_quote
+
+- Emphasizes readability over flexibility
+
+*** Lazy Initialization
+
+*How do you initialize an instance variable to its default value?*
+
+#+begin_quote
+
+1. Write a Getting Method for the variable.
+2. Initialize it if necessary with a Default Value Method
+
+#+end_quote
+
+- Emphasizes flexibility over readability
+
+  - Change the default value by overriding the Default Value Method
+  - You have to look at several methods to see all the values
+
+- Prefer Explicit Initialization
+
+  - *Lots of flexibility is never used*
+  - Do it the simple way first
+  - Fix it if it's a problem
+
+*** Default Value Method
+
+*How do you represent the default value of a variable?*
+
+#+begin_quote
+
+1. Create a method that returns the value.
+2. Prepend default to the name of the variable as the name of the method
+
+#+end_quote
+*** Constant Method
+
+*How do you code a constant?*
+
+#+begin_quote
+
+Create a method that returns the constant
+
+#+end_quote
+
+- Drawbacks of Pools (A class with lots of Constants)
+
+  - *They make it too easy to stop making useful responsibilities and instead just spread data around*
+
+- *Limit the visibility of constants to a single class*
+
+  - If you can refactor your code so that only a single class cares about a constant, you can represent that constant as a method
+
+*** Direct Variable Access
+
+*How do you get and set an instance variable's value*
+
+#+begin_quote
+
+Access and set the variable directly
+
+#+end_quote
+
+- You need to access Common State as readably as possible
+- Accessing state is a topic like initialization (Two good answers for different needs)
+
+  More readable
+      Use the variables directly in all the methods that need their values
+  More flexible
+      Send a message every time you need to use or change an instance variable's value
+
+      - Getter and setter can easily double the number of methods in your class
+      - Twice as many methods to buy you *flexibility that you may never use*
+
+- Direct Variable Access can make it hard to subclass a class
+
+*** Indirect Variable Access
+
+*How do you get and set an instance variable's value*
+
+#+begin_quote
+
+Access and set its value only through a Getting Method and Setting Method
+
+#+end_quote
+
+- You need to access Common State as flexibly as possible
+
+*** Getting Method
+
+*How do you provide access to an instance variable?*
+
+#+begin_quote
+
+1. Provide a method that returns the value of the variable
+2. Give it the same name as the variable
+
+#+end_quote
+
+- *Make getting methods private at first*
+
+*** Setting Method
+
+*How do you change the value of an instance variable?*
+
+#+begin_quote
+
+1. Provide a method that returns the value of the variable
+2. Give it the same name as the variable
+3. Have it take a single parameter, the value to be set
+
+#+end_quote
+
+- Setting Methods should be even *more private*
+
+*** Collection Accessor Method
+
+*How do you provide access to an instance variable that holds a collection?*
+
+#+begin_quote
+
+1. Provide methods that are implemented with Delegation to the collection.
+2. To name the methods, add the name of the collection to the collection messages
+
+   - Find a better word from the domain rather than just adding the collection message it delegates to the name (e.g. prefer employs? over includesEmployee)
+
+#+end_quote
+
+- A simple Getting Method for a collection *opens up too much of the implementation to the outside world*
+
+  - If the variable choose another collection class, the client code may break
+  - The client code can change this object's state without the object knowing it (Break counter cache, etc.)
+
+- Use Indirect Variable Access for a collection
+
+  - You can do whatever other processing you need to (in the accessor)
+  - But you have to implement all of these methods (getter, setter, etc.)
+
+    - It's worth it in the long run
+
+*** Enumeration Method
+
+*How do you provide safe, general access to collection elements?*
+
+#+begin_quote
+
+1. Implement a method that executes a Block for each element of the collection
+2. Name the method by concatenating the name of the collection and Do: (_each)
+
+#+end_quote
+*** Boolean Property Setting Method
+
+*How do you set a Boolean property?*
+
+#+begin_quote
+
+1. Create two methods beginning with be_
+2. One has property name, the other the negation
+3. Add toggle if the client doesn't want to know about the current state
+
+#+end_quote
+
+- 2 Problems with just using Setting Method
+
+  1. it exposes the representation of the status of the switch to clients
+  2. it's hard to answer simple questions like "who turns on the switch?" (decide who is the best caller)
+
+- The benefits this method provides are like what Query Method provides
+
+*** Role Suggesting Instance Variable Name
+
+*What do you name an instance variable?*
+
+#+begin_quote
+
+1. Name instance variables for the role they play in the computation
+2. Make the name plural if the variable will hold a Collection
+
+#+end_quote
+
+- *2 important pieces of information to communicate about any variable* :
+
+  1. What is its purpose(role)?
+
+     - It helps direct their attention appropriately
+     - Skim over irrelevant code that uses variable whose role is unrelated to reader's current purpose
+     - Narrow reader's reading to relevant code
+
+  2. How is it used?
+
+     - its "type" ("class")
+     - *Substitution of objects is the heart of disciplined maintenance and reuse* (Duck Typing / LSP)
+
+** Temporary Variable
+*** Temporary Variable
+
+*How do you save the value of an expression for later use within a method?*
+
+#+begin_quote
+
+1. Create a variable whose scope and extent is a single method
+2. Declare it just below the method selector
+3. Assign it as soon as the expression is valid
+
+#+end_quote
+
+- Each variable has several features
+
+  Scope
+      The textual area within which it can be used
+  Extent
+      How long its value lasts
+  Type
+*The signature of messages sent to it*
+
+- *Long extent* , *wide scope* , and *large type* all make variables difficult to manage
+
+  - Limiting the scope, extent, and type of variables wherever possible produces programs that are easier to understand, modify, and reuse
+
+- Explicit and early declaration can help readers to start understand your code
+
+*** Collecting Temporary Variable
+
+*How do you gradually collect values to be used later in a method?*
+
+#+begin_quote
+
+When you need to collect or merge objects over a complex enumeration, use a temporary variable to hold the collection or merged value
+
+#+end_quote
+
+- The right set of enumeration protocol would make this question moot
+
+  - Inject:into: (reduce) often eliminates the need for a temporary variable
+
+*** Caching Temporary Variable
+
+*How do you improve the performance of a method?*
+
+#+begin_quote
+
+1. Set a temporary variable to the value of the expression as soon as it is valid
+2. Use the variable instead of the expression in the remainder of the method
+
+#+end_quote
+
+- All performance tuning boils down to two techniques
+
+  1. Execute code less often
+  2. Execute code that costs less
+
+*** Explaining Temporary Variable
+
+*How do you simplify a complex expression within a method?*
+
+#+begin_quote
+
+1. Take a sub-expression out of the complex expression
+2. Assign its value to a temporary variable before the complex expression
+3. Use the variable instead in the complex expression
+
+#+end_quote
+*** Reusing Temporary Variable
+
+*How do you use an expression several places in a method when its value may change?*
+
+#+begin_quote
+
+1. Execute the expression once and set a temporary variable
+2. Use the variable instead of the expression in the remainder of the method
+
+#+end_quote
+*** Role Suggesting Temporary Variable Name
+
+*What do you call a temporary variable?*
+
+#+begin_quote
+
+Name a temporary variable for the role it plays in the computation
+
+#+end_quote
+
+- 2 important dimensions to communicate about a variable
+
+  1. *Type*
+  2. *Role*
+
+- Temporary variables' types are easy to guess
+- Temporary variables' roles are hard to guess unless you give them role suggesting names
+
+* Collections
+
+- During code reviews, I commonly find opportunities to transform four, five, or six line expressions into a single line using the full power of the collection protocol
+
+** Classes
+
+*The circumstances under which you would choose to use each of the major collection classes*
+
+*** [[https://stackoverflow.com/questions/7184240/collections-and-stream-classes-equivalences-between-smalltalk-perl-python-and/7185084#7185084][Collections and Stream classes equivalences between Smalltalk, Perl, Python and Ruby - Stack Overflow]]
+
+||Smalltalk |Ruby | |
+||FileStream |File | |
+||ReadWriteStream |IO (or other things that duck type like it) | |
+||Set |require 'set', then use the Set class | |
+||Dictionary |Hash | |
+||OrderedCollection |Array | |
+||SortedCollection |nothing similar | |
+||Bag |nothing similar | |
+||Interval |Range | |
+||Array |Ruby has no fixed-length collection class. | |
+*** Collection
+
+*How do you represent a one-to-many relationship?*
+
+#+begin_quote
+
+Use a Collection (Enumerable in Ruby)
+
+#+end_quote
+
+- Iteration is the responsibility of the object representing the relationship itself
+- The downside of Collection is the learning curve (a new vocabulary to manipulate data)
+
+*** OrderedCollection
+
+*How do you code Collections whose size can't be determined when they are created?*
+
+#+begin_quote
+
+Use an OrderedCollection (Array in Ruby) as your default dynamically sized Collection
+
+#+end_quote
+
+- Cost
+
+  - More memory usages (consider this problem latter)
+
+*** RunArray
+
+*How do you compactly code an OrderedCollection or Array where you have the same element many times in a row?*
+
+#+begin_quote
+
+Use a RunArray to compress long runs of the same element
+
+#+end_quote
+
+- Start with an OrderedCollection=/=Array first
+- Migrate to RunArray for improvements
+
+#+begin_src r
+[[50, 'style 1'], [200, 'style 2'], [90, 'style 3']]
+#+end_src
+- Use RunArray when inspecting an Array and there is an same element printing over and over again
+
+*** Set
+
+*How do you code a Collection whose elements are unique?*
+
+#+begin_quote
+
+Use a Set
+
+#+end_quote
+*** Equality Method
+
+*How do you code equality for new objects?*
+
+#+begin_quote
+
+1. Define a method ==
+2. Protect == so only objects of compatible classes will be fully tested for equality
+
+#+end_quote
+*** Hashing Method
+* Classes
+** Simple Superclass Name
+#+begin_quote
+
+Name a superclass with a single word that conveys its purpose in the design
+
+#+end_quote
+
+- No abbreviations
+
+  - Abbreviations optimize typing over reading
+
+    Typing
+        a 10-100 times in 20 years task
+    Reading
+        a 1000-10000 times in 20 years task
+
+  - Abbreviations make the interpretation of a name a 2 step process
+
+    1. what do the letters stand for
+    2. what do those words mean
+
+** Qualified Subclass Name
+
+1. Use the common name if it's in common use
+
+   - Unique names conveys a lot of information without creating names that are long an unwieldy
+   - Examples
+
+     - Array < Collection
+     - Number < Magnitude
+     - String < Collection
+
+2. 2 pieces of information you need to communicate:
+
+   1. How the new class is the same
+   2. How the new class is different
+
+#+begin_quote
+
+Name subclasses in your hierarchies by prepending an adjective to the superclass name
+
+#+end_quote
+
+- OrderedCollection < Collection
+- SortedCollection < Collection
+- LargeInteger < Integer
+
+* Formatting
+* Development Example
+
+- Double Dispatch

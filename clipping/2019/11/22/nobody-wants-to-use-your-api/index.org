@@ -1,0 +1,58 @@
+#+TITLE: Nobody Wants To Use Your API
+
+When writing an API endpoint or a function, I often find myself being obsessed with it, adding tons of toggles or options so this endpoint handles too many use-cases. In the end, not all of the toggles are used by the client. Even worse, the code is too complex to maintain.
+
+So how do we, as programmers, avoid this pitfall? I think we should apply some product thinking here. First, think of our API as our product. Then, realize that [[https://www.smashingmagazine.com/2016/01/nobody-wants-use-your-product/][Nobody Wants To Use Your Product]]. Finally, we write simple APIs that are easy to learn and easy to use.
+
+* API is the only product of programming
+
+What is an API, anyway? According to [[https://en.wikipedia.org/wiki/Application_programming_interface][Wikipedia]], an API is a "contract" between "the client" and "the server".
+
+Notice that "the client" and "the server" don't need to be talking over a network. So we are defining an API ("a contract") at every level of our application:
+
+When writing a function, we are designing an API for the callers of this function.
+    What's the name of the function? What arguments does this function need? What results would this function return?
+When writing a library, we are designing an API for other programmers.
+    What classes/modules does this library have? How to use these classes/modules? What results can these classes/modules achieve?
+When writing a RESTful controller action, we are designing an API for the browser.
+    What's the path to this action? What's the verb to use here? (GET, POST, PUT, DELETE) What's the response structure?
+When writing a page view with HTML, JS, and CSS, we are designing an API for the user.
+    What's this form used for? What would happen after clicking this button? What's the content of this page?
+
+And everything else we do, is to fulfill the API ("the contract") we defined.
+
+Write business code
+    Fulfill the business logic contract.
+Write automated tests
+    Make sure we fulfill the business contract as specified.
+Fix various bugs
+    The contract was broken, we need to fulfill it again.
+Improve performance
+    Fulfill the performance contract (return the results within x seconds).
+Document the API
+    Explain the contract to the user.
+
+Or we can think it from the opposite. If you as "the server" don't expose an API to "the client", then it doesn't matter how much work you do behind the scenes. Because nobody can use it anyhow.
+
+So API is the most important, if not the only, product of programming.
+
+* Nobody wants to use your API
+
+After understanding that API == product in programming, we can start to think from a product perspective. In the article [[https://www.smashingmagazine.com/2016/01/nobody-wants-use-your-product/][Nobody Wants To Use Your Product]], Goran Peuc summarizes this presumption about human nature as:
+
+#+begin_quote
+
+People are not really into using products. Rather, people are more interested in the end result and in obtaining that result in the quickest, least intrusive and most efficient manner possible.
+
+#+end_quote
+
+The same product thinking applies to programming as well. Other programmers are not really into using our API. They may use our API to get some data. Or they may use our API to avoid reinventing the wheel and thus simplify their own code. In a word, they use our API to *achieve a result* .
+
+* KISS (Keep it simple, stupid)[fn:1]
+
+So what can we do as API designers? If nobody wants to use our API, and people use it only because they want to achieve a result, then we should make our API really simple. And by "simple", I mean easy to learn and easy to use. It's simple to say, but it's hard to do. The ultimate goal requires us to spend tons of efforts: people can spend almost no time to learn our API and start using it. So they can focus on their own concerns, and spend more time figuring out how to succeed in their own way.
+
+* Footnotes
+[fn:1]
+
+[[http://principles-wiki.net/principles:keep_it_simple_stupid][Keep It Simple Stupid (KISS) {Principles Wiki}]]

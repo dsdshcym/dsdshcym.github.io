@@ -1,0 +1,18 @@
+#+TITLE: 人生的意义
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-05]
+#+URI:         blog/2017/12/05/meaning-of-life/index.html
+#+TAGS:        Clipping, Life
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+这也是我现在的理解：
+
+#+begin_quote
+
+人活着的意义和人生的价值就在于提升心性、磨炼灵魂。
+
+#+end_quote
+
+-- from [[../../Org/rss_feed.html#ID-BD72211A-9B24-4CAD-83B2-83437371A868][成熟开发者的 “元品质” – ThoughtWorks 洞见]]

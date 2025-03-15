@@ -1,0 +1,25 @@
+#+TITLE: Following the crowd is easy
+#+begin_quote
+
+*Following the crowd is easy, but it's often a shortcut to the wrong place.*
+
+#+end_quote
+
+-- from [[http://soveran.com/popularity.html][Popularity — soveran]]
+
+My [[http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/][last post about Spacemacs v.s. Doom-emacs]][fn:1] also reminds me of Rails v.s. Cuba/Sinatra. [[http://soveran.com/popularity.html][Popularity by soveran]] is a great post on this topic.
+
+People will recommend whatever works for them, but we must trust our instincts and abilities to choose the way that suits us the most.
+
+#+begin_quote
+
+If I find too many people adopting a certain idea I'd probably think it's wrong
+
+#+end_quote
+
+-- from [[https://youtu.be/75Ju0eM5T2c?t=30s][Donald Knuth - My advice to young people (93/97) - YouTube]]
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2018/01/22/compare-doom-emacs-spacemacs-vanilla-emacs/][Compare Doom-emacs, Spacemacs, and vanilla Emacs - dsdshome]]

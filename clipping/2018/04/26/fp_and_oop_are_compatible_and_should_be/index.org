@@ -1,0 +1,44 @@
+#+TITLE: FP and OOP are compatible (and should be)
+#+begin_quote
+
+Both OOP and functional computation can be completely compatible (and should be!). There is no reason to munge state in objects, and there is no reason to invent "monads" in FP. We just have to realize that "computers are simulators" and figure out what to simulate.
+
+#+end_quote
+
+-- from [[https://www.quora.com/Why-is-functional-programming-seen-as-the-opposite-of-OOP-rather-than-an-addition-to-it/answer/Alan-Kay-11][Alan Kay's answer to Why is functional programming seen as the
+   opposite of OOP rather than an addition to it? - Quora]]
+
+#+begin_quote
+
+- *FP and OO are completely orthogonal* (based on their reductive definitions)
+
+  OO
+      The technique of using dynamic polymorphism to call functions without the source code of the caller depending upon the source code of the callee.
+  FP
+      Referential Transparency – no reassignment of values.
+
+- *Orthogonality does not imply mutual exclusion (just ask James Clerk Maxwell)*
+- It's desirable to *build a system that employs both dynamic polymorphism and referential transparency.*
+
+  Dynamic polymorphism
+      strongly decoupled
+  Referential transparency
+      predictable
+
+- A system that is built on both OO and FP principles will maximize flexibility, maintainability, testability, simplicity, and robustness.
+
+#+end_quote
+
+-- from [[http://blog.cleancoder.com/uncle-bob/2018/04/13/FPvsOO.html][FP vs. OO - Clean Coder Blog]]
+
+I've started trying to write more functional objects after learned about Imperative Shell around the Functional Core[fn:1]. And I can really feel the benefits of predictable code brought by the functional paradigm to my Ruby (Object-Oriented) code.
+
+And I'm also switching to Elixir as my main language these days. One of the reasons behind this decision is that I think Elixir is a language that can provide both benefits of OOP and FP.
+
+1. Elixir is a functional programming language in its heart.
+2. But it can still achieve polymorphism by writing Protocols or using Pattern Matching.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/clipping/2017/12/12/imperative-shell-around-the-functional-core/imperative-shell-around-the-functional-core/][Imperative Shell around the Functional Core - dsdshome]]

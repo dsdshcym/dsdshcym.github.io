@@ -1,0 +1,29 @@
+#+TITLE: TDD Gives You a Tractable Task Board
+#+begin_quote
+
+- Kent's personal mission: help geeks feel safe in the world
+- Test as a oracle to predict if your change is safe or not
+- [[https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626][The War of Art]]
+- If you can predict an error, it's the same as passing
+- TDD gives you a tractable task board
+
+  - You don't need to know how to implement a thing before writing a test. Having a test case is better than having nothing.
+
+- Write your first test no matter how bad it is.
+
+  - You will know how to write a better one next time.
+
+#+end_quote
+
+-- from [[http://www.rubytestingpodcast.com/kent-beck][024 - Kent Beck, Author of Test-Driven Development: By Example - The Ruby Testing Podcast]]
+
+I also use TDD as a task board, i.e.
+
+1. write down descriptions for all the cases I need to test
+2. then fill-in the body and make these tests pass one by one
+3. if I think of something that needs to be added, I add a description and come back to it after I finish all the description I have
+
+It's a simple and lightweight GTD system. So I don't need to leave my code to track my todos.
+
+I learned this technique from [[https://online-training.jbrains.ca/p/wbitdd-01][The World's Best Intro to TDD, Level 1:
+TDD Done Right - jbrains.c]]. And I recommend you to give it a shot.

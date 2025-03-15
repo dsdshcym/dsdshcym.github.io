@@ -1,0 +1,112 @@
+#+TITLE: Ruby Tips from Ben Orenstein
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-20]
+#+URI:         blog/2017/10/20/ruby-tips-from-ben-orenstein/index.html
+#+TAGS:        Ruby, Rails, Object-Oriented
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Several weeks ago, I posted a blog post about [[http://dsdshcym.github.io/blog/2017/08/23/sandi-metzs-rules-for-oop/][Sandi Metz's Rules]] and shout out for writing short code.
+
+I didn't provide great examples for that article but I found this perfect example from Ben Orenstein's new screencast: [[https://www.youtube.com/watch?v=0rsilnpU1DU&__s=gdnpmshvmmhtjqmtnhm2][A Grab-Bag of
+Ruby/Rails Tips]].
+
+In this screencast, he steps through a refactoring process that makes a code shorter (or more abstracted).
+
+1. The original code
+
+#+begin_src ruby
+class Post
+  def display_on_featured_page!
+    if created_at < 10.days.ago && user.has_confirmed_email?
+      update(featured: true)
+    end
+  end
+end
+#+end_src
+
+   - It's not clear enough at the first glance what are created_at < 10.days.ago and user.has_confirmed_email? doing
+   - So Ben extracted them into private methods and give them better names.
+
+2. Extract conditional statement to private methods
+
+#+begin_src ruby
+class Post
+  def display_on_featured_page!
+    if good_candidate_for_featuring?
+      update(featured: true)
+    end
+  end
+
+  def good_candidate_for_featuring?
+    not_too_old? && low_spam_risk?
+  end
+
+  private
+
+  def not_too_old?
+    created_at < 10.days.ago
+  end
+
+  def low_spam_risk?
+    user.has_confirmed_email?
+  end
+end
+#+end_src
+
+   - After this refactoring, this code's abstraction level is higher and the code itself becomes more clear
+   - But Ben didn't stop at here, he continued discussing about what if we need to add another condition into this code: we need to add a Policy object handle this
+
+3. Policy Object
+
+#+begin_src ruby
+class Post
+  def display_on_featured_page!
+    if good_candidate_for_featuring?
+      update(featured: true)
+    end
+  end
+
+  def good_candidate_for_featuring?
+    FeatureablePostPolicy.new(self).good_candidate?
+  end
+end
+
+class FeatureablePostPolicy
+  def initiatives(post)
+    @post = post
+  end
+
+  def good_candidate?
+    not_too_old? && low_spam_risk? # && ...
+  end
+
+  private
+
+  def not_too_old?
+    @post.created_at < 10.days.ago
+  end
+
+  def low_spam_risk?
+    @post.user.has_confirmed_email?
+  end
+
+  # ...
+end
+#+end_src
+
+   - When the logic becomes more and more complicated, it's definitely necessary to move them into a separated object (Like FeatureablePostPolicy)
+
+This example shows a perfect path for our code logic to grow:
+
+1. At first, we write logic directly into our (public) method to pass the tests
+2. Then, we extract some (private) methods as helpers to support the original method (with the help of existing tests)
+3. At last, we extract these (private) methods into a separated new object
+
+In this screencast, he not only talked about this example, but also many other pretty useful tips for Ruby/Rails development.
+
+And this screencast is actually a part of his new course [[http://refactoringrails.io/][Refactoring
+Rails]]. In this course, he will explain more great ways to refactor your Rails application.
+
+So if you are interested, definitely check them out.

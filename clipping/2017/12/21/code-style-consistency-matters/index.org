@@ -1,0 +1,110 @@
+#+TITLE: Code style consistency matters
+#+begin_quote
+
+Consistency in formatting is easy; consistency in system design is hard. I'm skeptical that anyone can reliably do the latter without reliably doing the former.
+
+#+end_quote
+
+-- from [[https://twitter.com/garybernhardt/status/943194907807686657][Gary Bernhardt on Twitter: "Consistency in formatting is easy;
+   consistency in system design is hard. I'm skeptical that anyone can
+   reliably do the latter without reliab… https://t.co/iYTpefdYK6"]]
+
+* Code style consistency matters
+** It reads better
+
+Writing code is like writing a letter to your future self (or other developers) to make them understand what you want to express now.[fn:1]
+
+A good code style can help a lot on the readability level of this "letter".
+
+** It makes it easier to find potential refactor points
+
+Many times when we refactor our code, we need to find the common qualities first so that we can extract them.
+
+As it's mentioned in 99 Bottles of OOP[fn:2]:
+
+#+begin_quote
+
+Various conditional forms will disguise the common shape.
+
+#+end_quote
+
+- A bad example is like this:
+
+#+begin_src ruby
+# Verbose conditional
+def container(number)
+  if number == 1
+    "bottle"
+  else
+    "bottles"
+  end
+end
+
+# Guard clause
+def quantity(number)
+  return "no more" if number == 0
+  number.to_s
+end
+
+# Ternary expression
+def pronoun(number)
+  number == 1 ? "it" : "one"
+end
+#+end_src
+
+  In this example, it uses 3 different forms of conditional expressions. It's really hard to find out the commonality between these methods. (At least not possible on your first glance)
+
+- A better one would be:
+
+#+begin_src ruby
+def container(number)
+  if number == 1
+    "bottle"
+  else
+    "bottles"
+  end
+end
+
+def quantity(number)
+  if number == 0
+    "no more"
+  else
+    number.to_s
+  end
+end
+
+def pronoun(number)
+  if number == 1
+    "it"
+  else
+    "one"
+  end
+end
+#+end_src
+
+  In this example, we can easily tell that these 3 methods are sharing some logic in common. Because their shapes are so similar that we can hardly miss it.
+
+  This can enable so many possible refactorings.
+
+** It shows that you really care about your code
+
+If a developer really cares the shape of the code, he/she would definitely care more about the core of the code. (which is said in the twitter I clipped above)
+
+* Elixir formatter is coming in Elixir 1.6
+
+Another thing that excites me is that an official formatter is coming to Elixir in Elixir 1.6 (Maybe in Jan 2018?)
+
+If you are interested, go and check it out:
+
+- [[https://github.com/uohzxela/ex_format][uohzxela/ex_format: ExFormat formats Elixir source code according to a standard set of rules]]
+- [[https://www.youtube.com/watch?v=Wa7_I_pc0yo][ElixirConf 2017 - Day 2 Morning Keynote - José Valim - YouTube]]
+- [[https://soundcloud.com/elixirtalk/episode-106-chat-with-jose-valim][Episode 106 - Chat with José Valim by ElixirTalk | Elixir Talk | Free Listening on SoundCloud]]
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/clipping/2017/12/11/write-your-code-as-if-you're-writing-a-letter/][Write your code as if you're writing a letter - dsdshome]]
+
+[fn:2]
+
+[[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/][Book Review: 99 Bottles of OOP - dsdshome]]

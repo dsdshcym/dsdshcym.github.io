@@ -1,0 +1,77 @@
+#+TITLE: The Ovarian Lottery Thought Experiment
+
+I came across this thought experiment on Twitter the other day. I was quite interested so I put some thoughts into it. I think I have a good answer now. So I'm going to share this experiment and my answer in this post with you.
+
+* What an Unequal World
+#+begin_quote
+
+文章开头这个巴菲特提出的 thought experiment 不错：假设还有 24 小时你就要来到人世间了；你突然有了一种超能力，可以制定你即将进入的这个人世间的社会、经济、政府管理法则，你会怎么设置才能让你以及你的后代的一生过得好一点？注意：你不能决定生在哪个国家、性别、贫富，这些属性仍然是随机的。
+
+— Wanqu 湾区日报 (@wanquribao) [[https://twitter.com/wanquribao/status/1137440320998608896?ref_src=twsrc%5Etfw][June 8, 2019]]#+end_quote
+#+begin_quote
+
+- The thought experiment
+
+  - It's 24 hours before your birth, and a genie appears to you. He tells you that you can set the rules for the world you're about to enter — economic, social, political — the whole enchilada. Sounds great, right? What's the catch?
+  - Before you enter the world, you will pick one ball from a barrel of 6.8 billion (the number of people on the planet). That ball will determine your gender, race, nationality, natural abilities, and health — whether you are born rich or poor, sick or able-bodied, brilliant or below average, American or Zimbabwean.
+
+- We should be designing a society that, as Buffett says, “doesn't leave behind someone who accidentally got the wrong ball and is not well-wired for this particular system.”
+
+#+end_quote
+
+-- from [[https://www.getrichslowly.org/warren-buffett-on-the-lottery-of-birth/][Warren Buffett on the Lottery of Birth]]
+
+In our current world, where and when we are born are really important. Take myself for example:
+
+- It's not bad for me to be born in one of more-advanced province in China in the mid of 1990s. So that I was able to go to one of the best university in Shanghai after several years of hard study. I'm always grateful for that.
+- But I'm also jealous of people who were born in U.S. or Europe.
+
+  - "What if I was able to learn programming way earlier like [some legendary programmer]?"
+  - "What if I could join [a dream company] in the bay area?"
+
+  That being said, I still tell myself, even if I was born in U.S., I would just face other problems, which may even be harder than these. So I'm okay with who I am and where I am now.
+
+So it didn't surprise me that Buffett thought this ball we got from that lottery was the most important thing in our lives. And that's why this experiment is interesting to me. How can we change one rule in this world so that we won't leave anyone behind?
+
+* Communication Comes to the Rescue
+
+I'm not an economic expert, not to even mention social or political. I can only come up with this rule to change:
+
+#+begin_quote
+
+*everyone need to master communication skills during their education.*
+
+- It can be a series of mandated courses like [[https://www.youtube.com/watch?v=VNu0DsyrgsQ&feature=youtu.be][Healthy Relationships
+101]].
+- It can be a social rule that enforces everyone to think from each others' perspective during daily interactions ([[https://www.amazon.com/How-Win-Friends-Influence-People/dp/8183220630][How to Win Friends &
+Influence People]]).
+
+#+end_quote
+
+As Michael Jascz explained in his [[https://www.youtube.com/watch?v=VNu0DsyrgsQ&feature=youtu.be][talk]], we received too few educations around how to communicate well and maintain healthy relationships with each other. My parents didn't teach me how to communicate, and they don't know the best practices as far as I know. My schools didn't have courses on this topic neither.
+
+And I believe this lack of education, or this inability to communicate well is what prevents everyone in this world to live a better life. Most of the issues I had in my daily work were caused by miscommunications. Most of the misunderstandings I had in my daily life were caused by miscommunications.
+
+If this rule becomes true everywhere, everyone can live a better life, no matter what kind of ball we got. Because this betterment of communication brings us much more understanding and eases so many pain points in our lives.
+
+* What Kind of Bad Things Can Happen?
+
+Then, I took this idea to extreme and thought "Can this rule change go bad?"
+
+Yes, it might.
+
+We've already had a perfect example of highly-efficient communication in our world: Internet.
+
+The thought processes are the same
+    Different machines can have the same infrastructure, the same CPU, the same instruction set. Then given the same program, they can "think" in the exactly the same way.
+The language used for communicating is the same
+
+    Even better, the language that used by different machines to talk over the internet is the same. It's all just 0s or 1s.
+
+    The higher level of this communicating is also very efficient. We've defined several common formats for machines to communicate with each other: JSON, XML, YAML, etc. Different machines understand a piece of string in the exactly the same way.
+
+But this kind of highly-efficient communication is not what I asked for humans. To gain this kind of efficiency, machines lose the creativity along the way. After all, *every mistake is a new idea* (from one of my favorite book: Becoming a Technical Leader.)
+
+So, what I asked was not "accept others' ideas no matter what", it was "understand others' ideas from others' point of view first, then use our best judgment to solve the problem together". This is, what I believe, a better form of communication.
+
+Hope you would agree so and let's build toward a better world by improving our own communication skills first!

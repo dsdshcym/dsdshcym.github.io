@@ -1,0 +1,265 @@
+#+TITLE: How to do Code Review correctly
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-30]
+#+URI:         blog/2017/10/30/how-to-do-code-review-correctly/index.html
+#+TAGS:        Code Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+Last week, I posted this post about my [[http://dsdshcym.github.io/blog/2017/10/26/thoughts-on-implementing-a-strong-code-review-culture/][Thoughts on "Implementing a
+Strong Code-Review Culture"]].
+
+After that, I shared this talk with my whole team and it was a great success: everyone got interested in code review and wanted to do more reviews in their daily work. But a question raised up pretty quickly: How to do Code Review correctly. (I cut this part out to keep my sharing short and just to lure people into the world of Code Review).
+
+So, in this post, I'll explain my current understanding of how to do Code Review correctly and efficiently.
+
+* Always submit a merge request for review
+
+No matter you are senior or junior, you can always learn something from code review.
+
+No matter your code is a new feature or a hotfix, it can always be better after being reviewed.
+
+So, always send a merge request for a new change and assign it to someone to review it.
+
+* Keep your build passing
+
+Though the goal is code discussing, it's still important to keep your build passing.
+
+- *as the author* , you need to do following things before you send the MR link to your peer:
+
+  1. Make sure all the new features in this merge request are covered by tests.
+
+     - Write integration test (e.g. use Capybara) for the new feature (at least cover the happy path)
+     - Write unit test to test your models, controllers, services, and even views
+     - Attach screenshot for features that's hard to test using Capybara
+
+  2. Make sure style checkers are passing (rubocops, stylelint, eslint)
+  3. Make sure CI pipeline is passing
+
+- *As the reviewer* , you need to do following things:
+
+  1. Make sure CI pipeline is passing (If not, notify the author and fix it together)
+  2. Check if all the new features are covered by test cases
+  3. You should be able to NOT check styles in a merge request because the style checker in your CI pipeline covers it for you (If it's not the case, update your CI settings)
+
+** What if CI is failing for something else
+
+For example, due to a third API failure, CI failed because of a non-related test.
+
+Same solution: *DISCUSS* it with your reviewer/author.
+
+- Try to find a way to fix it
+
+  1. Wrap the third party API in a new class
+  2. Open a new branch/MR for it
+  3. rebase the current branch to this new branch
+
+- If you cannot fix it:
+
+  1. Discuss with your peer and see if it can be merged
+  2. If your peer agrees, let him post a comment under the merge request and explain the reason for this failure
+  3. Maybe post a solution for this failure (Open a new task about this)
+  4. Merge it
+
+* Write reasons down
+
+Don't let the reviewers guess the reasons behind your changes, so,
+
+- *as an author* :
+
+  1. Make sure you write every commit message with enough contexts
+
+     But it also needs to be pointed out that contexts are really important for a message. In another word, you should write down **why you are doing this change* :
+
+     1. Why is this refactor nesseccary? (e.g. The name is clearer)
+     2. Why remove this line of code? (e.g. For issue #1234, the code was casuing xxx issue, removing it will still keep the behaviors the same, but prevent xxx issue from happenning again)
+
+     You can also see a great example for commit message with enough contexts here: [[https://youtu.be/PJjmw9TRB7s?t=7m51s][RailsConf 2015 - Implementing a Strong Code-Review
+Culture - Commit Message Example]]
+
+  2. Make sure you write every Merge Request message with enough contexts
+
+     It's the same idea as writting commit messages.
+
+     You should write down **why and how this merge request can help solve the issue*
+
+     A good template is like this:
+
+#+begin_src lisp
+
+Before this merge request:
+- (list the issues here)
+- (or the reasons for the new feature)
+
+This merge request:
+- (list the changes here)
+- (and try to guide your reviewer to follow your path)
+
+After this merge request:
+- (list the results here)
+- (maybe attach the screenshot as well)
+
+Thus fixes the issue
+#+end_src
+
+- And *as a reviewer* :
+
+  1. Post comments aggresively
+
+     If you think something is wrong, don't just reject the whole merge request. Post a comment, and *discuss it with the author* .
+
+  2. Record your discussions on GitLab
+
+     GitLab provides great tools for reviewing a merge request. (Like commenting on a line of change, mentioning another MR/issue, etc.) Use them well and keep every discussion on GitLab.
+
+     If your conversation happens on Slack, copy/paste it to GitLab comments.
+
+  3. Check the commit messages as well
+
+     Code Review is not only about reviewing code changes, we should also check if the reason behind these changes are explained well.
+
+     If it's not, you may find yourself in a bad place trying to figure out why the code looks like this when you try to blame this code after several months.
+
+* Keep your merge request small
+
+It's hard to review code that's over hundreds of lines long. So, keep your changes in a merge request small so that your reviewer will be happier to review your code.
+
+It's the best to keep your merge request small enough so that the reviewer can review it in *under 10 minutes* .
+
+** Techniques to keep merge request small
+
+Since our merge requests are feature based now, sometimes it's hard to keep the whole merge request small. Here are some techniques that would help:
+
+1. Keep your commit small
+
+   Although the merge request can be large, each commits in it can be small enough (several lines of changes) and each with enough contexts.
+
+   So that you can guide your reviewer through the same path you went when you developed this feature. And it would be easier to understand the whole merge request step by step.
+
+2. Use a feature branch
+
+   - Branch out a new feature branch
+   - Branch out a small feature branch
+   - Send merge request from small feature branch to feature branch.
+
+   So that the reviewer can review one change at a time.
+
+3. Separate Refactor branch and Feature branch
+
+   It's kind of like 2 but worth explained separately.
+
+   It's highly recommended to REFACTOR your code first before you make any changes so that the change can be made easier than before.
+
+   It will keep our codebase cleaner, and when a similar change comes, it can be added easily as well.
+
+   Another advantage is that, even if the feature is rejected, the refactor branch can still be merged, so your work is not completely a waste of time.
+
+* Review your own merge request
+
+To make things easier for reviewers, I highly recommend review your own merge request before sending it out to them.
+
+** Fix silly mistakes
+
+We all make silly mistakes sometimes, like typos or forgetting to finish the descriptions.
+
+It's the best chance for us to review our own merge requests again and fix these embarrassing mistakes.
+
+** Review it as a reviewer
+
+After all, software development is all about empathy and how to make other developers understand your code better.
+
+Reviewing the merge request as the reviewer forces us to check our merge requests in our reviewer's perspective. And we can see if the code changes, commit messages, merge request descriptions, etc. etc. all makes sense to a third person.
+
+If not, we better fix the problem before we send it out to others.
+
+* Keep server branches clean
+
+It's also important to keep the branches on our server as less as possible. It doesn't make sense to keep a merged branch on our server. And it will build a barrier for new developers to see what's really going on.
+
+Do not destroy feature/bug/hotfix/refactor branches until they have been merged into master branch. But *do destroy them after they are merged.*
+
+- *As the author* :
+
+  - Check the checkbox for Remove source branch when merge request is accepted. when you open a new merge request.
+
+- *As the reviewer* :
+
+  - Check if Remove source branch when merge request is accepted. is checked
+  - If not, delete the branch after the merge request gets merged.
+
+* When to merge a merge request
+
+The base line is: *merge a merge request when another dev approves it*
+
+It doesn't matter who merges it, but the reviewer must give some evidence that he/she has reviewed the changes (it can be a thumb-up emoji, or a "reviewed" comment)
+
+So that it's clear that the change has been reviewed and if anything goes wrong, both reviewer and author need to take the responsibility to fix it.
+
+** When to force merge
+
+If there is still something unresolved (failing specs, style issues, etc.), and this merge request is kind of urgent, you can still merge it. But make sure the unresolved issues get solved soon.
+
+If there are just some style issues, and you trust the author enough, you can just merge it and let him/her fix it in another merge request. Everyone reviews their expertise Everyone should review their expertise. So that everyone can learn the best from each other.
+
+- *As the author* :
+
+  - Send the merge request to different people to review
+  - Guide them for the changes they need to review
+
+- *As the reviewer* : (e.g. you are a backend developer and the code is a mix of backend and frontend code)
+
+  - If the merge request contains something out of your area of expertise, don't hesitate to assign the rest of it to someone else.
+  - It's ok to involve developers from outside the project if necessary.
+  - Tell the next developer why you are assigning this merge request to them and what parts you'd like them to inspect.
+
+* Summary
+
+Here are two lists for both author and reviewer when doing code reviews:
+
+- As the author
+
+  1. Before Submitting the Merge Request
+
+     1. Open a new branch with short and well descriptive name
+     2. Make sure writing every commit message with enough contexts
+     3. Make sure all the new features in this branch are covered by tests.
+     4. Make sure style checkers are passing (rubocops, stylelint, eslint)
+
+  2. When Submitting the Merge Request
+
+     1. Make sure CI pipeline is passing
+     2. Make sure writing every Merge Request message with enough contexts
+     3. Check the checkbox for Remove source branch when merge request is accepted. when you open a new merge request.
+     4. Review the Merge Request as a reviewer again before clicking the "Submit" button.
+
+  3. After Submitting the Merge Request
+
+     1. Send/Assign the merge request to different people to review
+     2. Guide them for the changes they need to review
+
+- As the reviewer
+
+  1. Make sure CI pipeline is passing (If not, notify the author and fix it together)
+  2. Check if all the new features are covered by test cases
+  3. Check if Remove source branch when merge request is accepted. is checked
+
+     - You should be able to NOT check styles in a merge request because the style checker in your CI pipeline covers it for you (If it's not the case, update your CI settings)
+     - If not, delete the branch after the merge request gets merged. (e.g. you are a backend developer and the code is a mix of backend and frontend code)
+
+  4. If the merge request contains something out of your area of expertise, don't hesitate to assign the rest of it to someone else.
+
+     - It's ok to involve developers from outside the project if necessary.
+     - Tell the next developer why you are assigning this merge request to them and what parts you'd like them to inspect.
+
+Code Review is an important in our development process. There are definitely more to talk about on this topic. Stay tuned for my future blog posts if you are interested!
+
+* Other resources for Code Review
+
+- [[https://webexpo.net/prague2016/talk/how-to-successfully-grow-a-code-review-culture/][How to Successfully Grow a Code Review Culture → WebExpo 2016]]
+- [[http://www.flickering.cn/uncategorized/2014/08/%E8%AE%A9-code-review%E6%88%90%E4%B8%BA%E4%B8%80%E7%A7%8D%E4%B9%A0%E6%83%AF/][让 Code Review 成为一种习惯 - 火光摇曳]]
+- [[http://coolshell.cn/articles/11432.html][从 Code Review 谈如何做技术 - - 酷 壳 - CoolShell]]
+- [[https://blog.scottnonnenberg.com/top-ten-pull-request-review-mistakes/][Top ten pull request review mistakes - Scott Nonnenberg]]
+- [[http://ana-balica.github.io/2017/02/21/code-review-checklist/][Ana Balica - Code review checklist]]
+- [[http://robertheaton.com/2014/06/20/code-review-without-your-eyes/][Code review without your glasses - Robert Heaton]]
+- [[https://www.youtube.com/watch?v=PJjmw9TRB7s][RailsConf 2015 - Implementing a Strong Code-Review Culture - YouTube]]

@@ -1,0 +1,50 @@
+#+TITLE: Practical Tools for Playing Well with Others
+
+This is, by far, the best talk I've watched on communication. And I would recommend it to everyone I can. You should watch it because it's difficult to get the point from just my notes:
+
+#+begin_quote
+
+How I learned to stop worrying and love working with silly bags of meat
+
+- Debugging a conversation
+
+  1. Intake (misperception -> difference of perception)
+
+     - *What do we see, hear, or read?*
+     - [[https://www.youtube.com/watch?v=vJG698U2Mvo][Gorilla test]]
+     - *That's not what I think I said*
+
+  2. Meaning (misunderstanding -> difference of understanding)
+
+     - *decoding the signals*
+     - When you say bla, what do you mean by that?
+     - Provide a base line (when people say bla, they often mean blabla, what do you mean by that?)
+     - Airline *lose and find* technique
+
+  3. Significance ( *misinterpretation* -> difference of interpretation)
+
+     - *Why* is the other person behaving this way.
+
+  4. Response
+
+     - The path from significance to response is so deep inside us, and it's impossible to change
+     - *Assume their response makes perfect sense given that interpretation*
+
+- Prebug a conversation (TDD a conversation)
+- [[https://www.infoq.com/articles/satir-communication-model-teams][Don't let miscommunication spiral out of control]]
+- A Few Helpful Tricks
+
+  1. Think of 3 ways to interpret what just happened
+
+     - Empathy
+
+  2. Ask, "What did you intend by that [surprising comment, question, action...]?"
+  3. Communicate in E-Prime to reduce judgmental perception
+
+     - E-Prime: do not use to-be (to avoid judgement)
+
+  4. Warn the other person when you need to say something uncomfortable
+
+#+end_quote
+
+-- from [[https://vimeo.com/78917211][Øredev 2013 - J.B. Rainsberger - Practical Tools for Playing Well with Others on Vimeo]]

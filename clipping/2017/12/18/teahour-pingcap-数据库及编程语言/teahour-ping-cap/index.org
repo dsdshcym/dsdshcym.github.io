@@ -1,0 +1,46 @@
+#+TITLE: Teahour: PingCAP 数据库及编程语言
+
+一期长达 3 小时的 Teahour。
+
+比较震惊的一点是 PingCAP 为了跑测试还另外搭建了分布式的测试系统，将原来两个多小时的 CI 时间缩短到 7 分钟。
+
+感觉干货颇多，放一个简要的摘要在这里，如果有兴趣请务必去 Teahour 上听。
+
+#+begin_quote
+
+- 测试是数据库的命脉
+- pg 是更学院派，更先进的数据库
+- mysql 更接地气
+- mongodb 营销做得好，技术上需要加强
+- 企业级技术栈在经历从闭源到开源的变革
+- Gifey (goggle infrastructure for everyone else)
+- C++ 越来越像 Rust
+
+  - C++17
+
+- 所有不会写代码的 CTO 都是忽悠
+
+  - 必须热爱写代码
+
+- 代码风格要跟着社区走
+- 数据库在未来会越来越去中心化
+
+  - 像区块链
+  - 所有人用同一个数据库（分布式）
+
+- Picks
+
+  - 大教堂与集市 开源圣经
+  - Unix 编程艺术
+  - Code Rush
+  - 操作系统革命
+  - 硅谷海盗
+  - Dynamo
+  - GFS
+  - Big Table
+  - Finding a needle in Haystack: Facebook's photo storage
+  - Introducing mcrouter: A memcached protocol router
+
+#+end_quote
+
+-- from [[http://teahour.fm/2017/11/22/new-database-go-and-rust-with-cto-of-pingcap.html][和 PingCAP CTO 畅谈数据库和编程语言 - Teahour.fm]]

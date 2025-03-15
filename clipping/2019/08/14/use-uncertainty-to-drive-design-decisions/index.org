@@ -1,0 +1,77 @@
+#+TITLE: Use Uncertainty to Drive Design Decisions
+* [[../../Org/notes/programming.html#ID-F6ECB5E2-0506-4EE6-BF48-201D8F044FE2][The programmer as decision maker]]
+
+We, as programmers, are making tons of technical decisions everyday:
+
+#+begin_quote
+
+- As a programmer, your job is to make technical decisions.
+- It seems to me that programmers often defer too much authority to their managers.
+- Technical decisions
+
+  - If your job is programmer, software developer, or similar, the value you add to the team is that you bring technical expertise.
+  - Even if the project manager or other superiors used to program, unless they're also writing code for the current code base, they only have general technical expertise, but not specific expertise related to the code base you're working with.
+  - You are decision makers.
+
+#+end_quote
+
+-- from [[../../Org/notes/programming.html#ID-F6ECB5E2-0506-4EE6-BF48-201D8F044FE2][The programmer as decision maker]]
+
+Among these technical decisions, design decisions that affect how we architect our application are the most important yet the most difficult ones. So how to make these kinds of design decisions?
+
+* [[../../Org/notes/software_engineering.html#ID-C6950E73-57E4-4E0E-A9B8-C786DD45EDA3][Use Uncertainty As a Driver – Medium]]
+
+In this article, Kevlin Henney gave us a great answer.
+
+#+begin_quote
+
+- Difference between effective and ineffective architectures
+
+  - An effective architecture is one that generally reduces the significance of design decisions in the areas of greatest change.
+  - An ineffective architecture will amplify significance.
+
+- Instead of trying to decide between options A and B, the question becomes *“How do I design so that the choice between A and B is less significant?”*
+
+  - The most interesting thing is not actually the choice between A and B, but that
+
+    1. there is a choice between A and B
+    2. the appropriate choice is not necessarily either obvious or stable.
+
+- Structuring by uncertainty is not new. ([[../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4][On the Criteria To Be Used in Decomposing Systems into Modules]])
+
+#+end_quote
+
+There is no silver bullet in the technical world. Every choice has its trade-offs. So the best choice is to make the choice less significant. Or to make the switch between these different options easy. So that we can test them easily or switch to another if we find the current one doesn't suit our use cases.
+
+* [[../../Org/inbox.html#ID-5BD36244-0785-48AE-9610-00A30B9870DB][Maciej Kaszubowski - Modular Design in Elixir - ElixirConf EU 2019 - YouTube]]
+
+Speaking of [[../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4][On the Criteria To Be Used in Decomposing Systems into
+Modules]], it was mentioned in [[../../Org/inbox.html#ID-5BD36244-0785-48AE-9610-00A30B9870DB][this talk about Modular Design in Elixir]] as well:
+
+#+begin_quote
+
+- Modular Design
+
+  - [[../../Org/notes/programming.html#ID-57CCD41D-6BDE-4E53-B323-C5E8B9DF01E4][On the Criteria To Be Used in Decomposing Systems into Modules]]
+  - One big problem
+  - Goals
+
+    - smaller, simpler modules
+    - strong boundaries
+    - low coupling
+
+  - Each module can be:
+
+    - understood in isolation
+    - modified in isolation
+    - tested in isolation
+    - replaced or removed
+
+  - How?
+
+    1. Extracting behaviour
+    2. Isolate important decisions
+
+#+end_quote
+
+If you are into Elixir and want to see how to use uncertainty to drive your design in an Elixir application, you can't miss this talk!

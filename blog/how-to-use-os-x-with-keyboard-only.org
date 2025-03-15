@@ -1,0 +1,65 @@
+#+TITLE: How To Use OS X With Keyboard Only
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2015-12-19]
+#+URI:         blog/2015/12/19/how-to-use-os-x-with-keyboard-only/index.html
+#+TAGS:        Mac, OS X, Keyboard
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I've been using my Mac with only my keyboard for about two weeks, no trackpad or mouse most of the time. And I feel totally comfortable with this. I'll share how I can do this in this article.
+
+* My most frequently used apps
+
+- Emacs
+- Chrome
+- Telegram
+- Netease Music
+- iTunes
+
+Most of the time I spend with my Mac, I'm using either Emacs or a Browser. And at the same time, I will use netease music or iTunes to play some music. Another app I use is Telegram, on which I chat with my friends.
+
+* Emacs
+
+Of cause I don't need a mouse to use Emacs. Because it's Emacs. :)
+
+And it can cover almost any of my needs of using a computer:
+
+- Coding
+- Taking notes
+- Calendar
+- Email
+- RSS
+- etc.
+
+Unfortunately, web browsing isn't one of them. So that's why I need Chrome.
+
+* Chrome
+
+I use [[https://github.com/1995eaton/chromium-vim][cVim]] to get a browser that can be controlled by vim commands, and can be customized in a certain degree. Although it can't be as flexible as Emacs. But it's good enough.
+
+I also did some customization. Here is my cVim [[https://gist.github.com/3e5c2d12c2313b4aec5f][rcfile]].
+
+P.S. I use presentation mode in Chrome to get rid of the address bar or anything that are not in the website I'm visiting. This feature gives me the most immersive experience to browse the web.
+
+* Telegram
+
+You don't need to chat using your mouse, do you? I can use Tab and S-Tab to switch between different chats. And that's enough. All the things left is typing my words and hit enter.
+
+I've been wondering for a long time that why there is no Telegram-mode in Emacs until now. Maybe most people using Emacs think email and irc is good enough? And I'm planning to make my own if there is still no one on Github this winter holiday.
+
+* Netease Music & iTunes
+
+They are all good products for music streaming. But you may be wondering how can I only use my keyboard to control these and all the other apps I don't use often.
+
+Well, here are the two apps I'm using to solve this problem.
+
+** Shortcat
+
+It's an app for OS X like avy-mode for Emacs. I can type in text on a link or a button to click it by using [[https://shortcatapp.com/][shortcat]].
+
+** Karabiner
+
+This is my last resort. I have to admit that I cheated in the beginning. There are still some times I have to use mouse. But luckily I can simulate my mouse using keyboard.
+
+There is a mouse keys mode in Karabiner. Actually, there are two mouse keys mode, which can control mouse using some special keybindings. I've been using mouse keys mode v2 in these two weeks. But today I find that v1 has more options and conflicts less with normal typing.

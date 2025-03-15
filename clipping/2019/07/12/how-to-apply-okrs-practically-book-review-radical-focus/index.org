@@ -1,0 +1,122 @@
+#+TITLE: How to Apply OKRs Practically? (Book Review: Radical Focus)
+
+After I learned [[/clipping/2019/05/07/clippings-from-measure-what-matters/][what OKR is]], I felt excited and started immediately preaching OKRs and applying them in my work.
+
+The result was not very exciting. I found it was really hard to convince people to start using it. At its core, [[/clipping/2019/07/03/clippings-of-2019-jun/#orge6ea9b2][OKRs is just a way to
+set goals and review them regularly]]. It seems natural and obvious to me. But some people don't believe in planning and prefers a more "agile" way of doing things. Or some people just don't write down their goals and review them regularly. Though I personally have [[/blog/2019/05/22/my-gtd-workflow-2019-ver/][some
+experiences with setting goals and reviewing them]], I can't easily change the working style people are already familiar with.
+
+[[/clipping/2019/05/07/clippings-from-measure-what-matters/][Measure What Matters]] can't help me much in these cases. It is a great book. But most of this book is just stories about how a company became successful with OKRs. It doesn't provide enough directions on how to use OKRs.
+
+Thankfully, I found [[https://www.amazon.com/gp/product/0996006028/][Radical Focus]] right after I finished [[/clipping/2019/05/07/clippings-from-measure-what-matters/][Measure
+What Matters]]. And it answers exactly the question I had: How to apply OKRs practically?
+
+So, if you are like me, also want to know how to set stretched goals and achieve them with your team, read this book!
+
+* Bonus: Some highlights from this book
+** Turn important things into urgent things
+#+begin_quote
+
+Tying Actions to Goals
+
+- It’s mentally quite difficult to drop things that don’t matter (especially if someone is nagging us). So a solution is to *time-constrain things that are important but not urgent, thus making them urgent.*
+- if you review the priorities each week, you discover
+
+  1. what conditions allow you to achieve them.
+  2. what keeps you from getting things done. (more valuable)
+
+#+end_quote
+
+When I read about this, I just finished [[/blog/2019/05/22/my-gtd-workflow-2019-ver/][the summary for my GTD
+workflow]]. And the idea behind my workflow is exactly the same as above:
+
+1. turn important but less urgent things into urgent things by setting deadlines
+2. filter out things that seem to be important by reviewing often and spotting deadline slips.
+
+** OKRs are about continuous improvement
+#+begin_quote
+
+- *OKRs are about continuous improvement and learning cycles.*
+
+  - So you didn’t hit any of your KRs. Ask yourself why, and fix it.
+  - So you hit them all? Set harder goals, and move on.
+
+- *Focus on learning, getting smarter and having better things to celebrate every Friday.*
+
+#+end_quote
+
+Continuous improvement is the key for both operations and individuals. And it's mentioned in multiple books covering different topics:
+
+- [[/clipping/2019/04/07/clippings-from-accelerate-the-science-of-lean-software-and-dev-ops/#org206a954][Accelerate - TIPS TO IMPROVE CULTURE AND SUPPORT YOUR TEAMS]]
+
+#+begin_quote
+
+  Help create a climate of learning
+
+  - Creating a training budget and advocating for it internally
+  - Ensuring that your team has the resources to engage in informal learning and the space to explore ideas.
+  - Making it safe to fail.
+  - Creating opportunities and spaces to share information
+  - Encourage sharing and innovation by having demo days and forums
+
+#+end_quote
+- [[https://www.amazon.com/Thanks-Feedback-Science-Receiving-Well/dp/0670014664][Thanks for the Feedback - PULL TOGETHER: Feedback in Organizations]]
+
+#+begin_quote
+
+  PROMOTE A CULTURE OF LEARNERS
+
+  - In every organization explicit and implicit messages evolve about what is (actually) valued and what is (actually) rewarded.
+  - If you want “learning” to be valued, it has to be embedded in
+
+    - what is talked about with admiration,
+    - what is highlighted as important in the war stories that are told,
+    - what matters when it comes to visible projects and key promotions.
+
+  - Here are five ideas that help promote a culture of learning.
+
+    1. Highlight Learning Stories
+    2. Cultivate Growth Identities
+    3. Discuss Second Scores
+    4. Create Multitrack Feedback
+    5. Leverage Positive Social Norming
+
+#+end_quote
+
+To achieve this continuous improvement in our organizations, we need to have *continuous conversations* with our team members or a Continuous Performance Management system:
+
+- [[https://www.amazon.com/gp/product/0996006028/][Radical Focus - OKRs and the Annual Review]]
+
+#+begin_quote
+
+  - Instead of a one-time performance review event, use *continuous conversations* to coach and calibrate.
+  - Have 1-on-1’s *at least twice a month* and calibrate on three things:
+
+    1. engagement
+    2. performance
+    3. alignment
+
+  - End of year, your employees had 24 conversations with opportunities to improve and recognition -- it’s more authentic, builds skill and improves performance.
+  - Reviews are simple because the facts are shared, there are no surprises and it is just another in a series of performance conversations.
+
+#+end_quote
+- [[/clipping/2019/05/07/clippings-from-measure-what-matters/#org3327442][Measure What Matters - Continuous Performance Management]]
+
+#+begin_quote
+
+  - We need a new HR model for the new world of work.
+
+    - Annual performance reviews are costly, exhausting, and mostly futile.
+    - *individuals cannot be reduced to numbers.*
+
+  - That transformational system, the contemporary alternative to annual reviews, is continuous performance management
+  - It is implemented with an instrument called CFRs, for:
+
+    Conversations
+        an authentic, richly textured exchange between manager and contributor, aimed at driving performance
+    Feedback
+        bidirectional or networked communication among peers to evaluate progress and guide future improvement
+    Recognition
+        expressions of appreciation to deserving individuals for contributions of all sizes
+
+#+end_quote

@@ -1,0 +1,143 @@
+#+TITLE: GOOS: Build a Faster Feedback Loop
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-10-18]
+#+URI:         blog/2017/10/18/build-a-faster-feed-back-loop/index.html
+#+TAGS:        Book Review, TDD, Agile
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I just finished reading Growing Object-Oriented Software Guided by Tests (a.k.a GOOS) a few months ago. And it's the best TDD book I've read by far. It answered many of my questions about Testing and TDD.
+
+In this post, I'll explain what I think that is the most valuable thing from this book: the point of TDD is all about *building a faster feedback loop* .
+
+* Why do we need a fast feedback loop?
+
+I think in the reason for this was explained pretty well in Chapter 1: What Is the Point of Test-Driven Development?:
+
+- *Everything around our software is continuously changing*
+- Our development process is a learning process for us to get more familiar with the domain and the tools we have.
+- *To make us learn faster, we need a faster feedback loop.*
+
+#+begin_quote
+
+- Software Development as a Learning Process
+
+  1. All but the most routine projects have elements of surprise
+
+     - Almost all software projects are attempting something that nobody has done before
+
+  2. Developers often don't completely understand the technologies they're using
+
+     - New apps can force even senior dev into unfamiliar corners
+     - Complex system can be too complex to understand
+
+  3. Customers and users have to look at their organization more closely than they have before
+  4. Everyone involved has to learn as it progresses
+
+     - They all know there will be changes
+     - They just don't know what changes
+     - They need a process to anticipate unanticipated changes
+
+#+end_quote
+* How does TDD help us to build a faster feedback loop?
+
+TDD requires us to have the following three things, and they all make the feedback loop in our development process faster.
+
+** Different Levels of Testing
+
+*We need to have at least two levels of tests* :
+
+1. Acceptance tests
+
+   - Acceptance tests set goals for our software's external (user-facing) behaviors.
+   - It has to be as end-to-end and automated as possible.
+   - So we can know that a feature is completed when its acceptance test passes.
+   - And when it's passed, the code can be accepted into our code base. (Thus it's called *Acceptance* test)
+
+2. Unit tests
+
+   - Unit tests set goals for our software's internal (sub-system) behaviors.
+   - It has to be as simple as possible. (Just test the target unit)
+   - So we can use these tests as guidance when we write little pieces of code.
+
+These two levels of tests provides different levels of feedback for our development process:
+
+Feature level feedback (outer loops)
+
+    Acceptance tests
+
+    Acceptance tests keep us on the right track for solving our users' problems.
+
+Code level feedback (inner loops)
+
+    Unit tests
+
+    Unit tests keep our internal code quality good, so that our software can embrace changes easily when it needs to.
+
+** Constantly Automated Testing
+
+*We need to constantly run automated tests when we develop software*
+
+Even if we have two different levels of tests, the feedback loop won't help us if we don't run it constantly on our local machines or in our CI pipelines.
+
+GOOS tells us to run our tests constantly. It's definitely the best practice because *nothing can beat automated tests on feedback speeds.*
+
+- With automated tests, the feedback loop length is at *milliseconds* level.
+- Without automated tests, say if we need to go to the browser and refresh the page every time to test a UI change, the feedback loop will be at least *seconds* long (even with the help of auto-reloading, etc.)
+
+(P.S. This is also the reason we need to keep our tests fast.)
+
+From my personal experience, I feel much more comfortable writing backend code than frontend code now, because either it takes much more time even if the tests are automated or it's just a lot harder to automate. And switching to the browser and testing by hand really makes me feel a lot more unproductive.
+
+** Gather Feedback from Test Results
+
+*We need to constantly check the test results* .
+
+Test results can give us incredible feedback on not only the correctness but also many other parts of our code.
+
+Let's take error messages as an example.
+
+- Error messages
+
+  One interesting points raised in GOOS is that we need to make improving the diagnostics as part of the TDD cycle.
+
+  In another word, instead of following a typical red-green-refactor TDD cycle, the TDD cycle GOOS recommends is that:
+
+  1. Write a failing test (Red)
+  2. Make the diagnostics clear (Watch the test fail)
+  3. Make the test pass (Green)
+  4. Refactor (Refactor)
+
+  This cycle makes sure error messages are a important part of the feedback our test. Because a good error message help us in three ways:
+
+  1. It checks our assumptions about our code. If the message doesn't make sense, there must be something wrong.
+  2. It checks our emphasis on expressing our intentions in this test, which is fundamental for developing reliable, maintainable systems.
+  3. Every time one test fails, we can fix it quickly and spend our time on things that matters. (But this is just a nice side-effect)
+
+* Build fast feedback loops in our whole project life cycle.
+
+With these all said, I'm also thinking that we can apply this kind of thinking in our project life cycle: *build a feedback loop for everything we do, and always try to make it faster.*
+
+In the project development process, we have tons of ways to gather different feedback, I'll just take a list from GOOS that ranges from seconds to months:
+
+1. Pair programming
+
+   It's interesting to see it here, because it's an even faster loop than unit tests. But it makes sense, and that's why it's great to pair programming.
+
+2. Unit tests
+3. Acceptance tests
+4. Code Review
+
+   Code Review is just like Pair programming, but it has a slower feedback loop, which is why pair programming is better in this sense.
+
+5. Daily meetings
+
+   Scrum is a great example for this. By improving the team workflow, we can get a faster feedback loop on project level.
+
+6. Iterations
+7. Releases
+
+   If we can release every day, then all the things above will be forced to be faster as well. That's why we need to build daily (or even faster).
+
+P.S. Another interesting thing is that we can even take this thinking into our daily life: *build a fast feedback loop for everything in our life* , blog posts, fitness goals, you name it.

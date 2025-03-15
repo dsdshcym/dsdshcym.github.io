@@ -1,0 +1,72 @@
+#+TITLE: $handle_undefined_function in Elixir/Erlang
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-11-27]
+#+URI:         blog/2018/11/27/$handle-undefined-function-in-elixir-erlang/index.html
+#+TAGS:        Elixir, Meta-Programming
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I was searching for ways to implement Ruby's method_missing in Elixir the other day. Then I ran into this package: [[https://github.com/andrewvy/method_missing][andrewvy/method_missing: Elixir Library for dynamic code
+execution]]. And it implements exactly what I want: a method_missing function to dynamically generate function body for what's not defined yet.
+
+#+begin_src erlang
+defmodule Dog do
+  use MethodMissing
+
+  def method_missing(func, _args) do
+    func_name = Atom.to_string(func)
+
+    cond do
+      Regex.match?(~r/bark|woof/, func_name) -> "WOOF"
+      true -> "?"
+    end
+  end
+end
+
+Dog.bark()
+# > "WOOF"
+Dog.woof()
+# > "WOOF"
+Dog.meow()
+# > "?"
+#+end_src
+
+I was curious about how it was implemented in Elixir, so I looked into the lib directory. Surprisingly, it's fairly simple:
+
+#+begin_src ruby
+defmodule MethodMissing do
+  defmacro __using__(_opts) do
+    quote do
+      def method_missing(_func, _args) do
+      end
+
+      def unquote(:"$handle_undefined_function")(func, args), do: method_missing(func, args)
+
+      defoverridable method_missing: 2
+    end
+  end
+end
+#+end_src
+
+From this implementation, we can know that we don't even need to use this package to get method_missing in Elixir. (The name method_missing is not very functional either.)
+
+All we need to do is to define $handle_undefined_function/2. And just like method_missing, it will receive two arguments, one for the function name, and one for the list of arguments.
+
+Again, I want to praise Elixir/Erlang when I discovered this feature. Almost every time I miss something in Ruby, Elixir already has a solution for that.
+
+Although, I doubt that $handle_undefined_function will be as popular in the Elixir community as method_missing in the Ruby community.
+
+1. Elixir is a language that emphasize on explicity.
+
+   Looking for behaviors that are hidden under $handle_undefined_function is a long trip.
+
+   This kind of meta-programming would always be the last resort for an Elixir developer.
+
+2. $handle_undefined_function might not be as efficient as method_missing
+
+   When we use method_missing, we usually use define_method to speed up future method calls.
+
+   But Elixir, as a compiled language, doesn't have a function like define_method to generate new functions. So it may be much slower.
+
+After all, I'm very glad that Elixir/Erlang provide us an option to do this kind of meta-programming. And I can't wait to see more surprises Elixir/Erlang bring to me in the future.

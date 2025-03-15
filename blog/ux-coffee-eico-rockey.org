@@ -1,0 +1,34 @@
+#+TITLE: 设计的能力边界
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-12-11]
+#+URI:         blog/2017/12/11/ux-coffee-eico-rockey/index.html
+#+TAGS:        Podcast, Clipping, Design
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+其实，代码/架构的设计和 UI/UX 的设计很大程度上是类似的。
+
+- 设计只能锦上添花，不能雪中送炭
+- 设计是带有人文价值的技术性工作
+
+  - 设计的目标是在多项权衡（商业、技术）下找到最优解
+  - 设计成果能不能解决商业问题，而不是单单解决技术问题
+
+- eico 现在做的是用产品思维辅助创业公司解决创业过程中遇到的各种问题
+
+  - 发布会
+  - 微信公众号
+  - 宣传
+  - 装修
+
+- 创业的四个问题
+
+  - 想法
+  - 人才
+  - 产品
+  - 资金
+
+- 设计能帮助到「想法」和「产品」的核心部分
+
+-- from [[http://uxcoffee.co/3127f6b0][#38：设计的能力边界（EICO 联合创始人 Rokey 张伟 - 上） | UX Coffee 设计咖]]

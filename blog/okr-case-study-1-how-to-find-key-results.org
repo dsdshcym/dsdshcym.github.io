@@ -1,0 +1,67 @@
+#+TITLE: OKR Case Study #1 - How to find KEY results?
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-04-17]
+#+URI:         blog/2020/04/17/okr-case-study-1-how-to-find-key-results/index.html
+#+TAGS:        OKR, Management, OKR Case Study
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+This is the first post of my OKR Case Study series. In this series, we'll walk through a few OKRs and explain how to define great OKRs. Let's first see how to find the KEY results for an objective.
+
+For every objective, we can set different results. Some of them can help us focus on the objective and achieve what we really want. They are the KEY results we want to use. Some results are not really the KEY result. They may not really related to the objective or may misguide people. Finding the KEY results is one of the most important thing when setting your OKRs.
+
+* Two ways to validate key results
+
+To check if our key results are really the KEY results, we can:
+
+1. Think about the worst actions we can take to achieve each key result.
+
+   We want key result to be a guidance for our actions, but not too restricted, nor lead to bad behaviours.
+
+2. Ask these two questions:
+
+   1. If we've already got all the key results listed here, can we call this objective achieved?
+   2. If a key result is not achieved (or we get the opposite of it), can we still achieve the same objective?
+
+* Always dig deeper
+#+begin_quote
+
+*Objective* : Improve efficiency and organization in projects
+
+- KR 1: Reduce sprint meetings by 15 minutes
+- KR 2: Close at least 80% of issues for each sprint
+
+#+end_quote
+
+The worst actions for these two results are simple:
+
+1. Stop every sprint call when we hit the time limit (say 45mins).
+
+   This is the worst action because we still want to continue (or improve) our communications with devs, and this action goes against this goal.
+
+2. Close issues at the end of sprint, and create new ones if some of them are not finished/shipped.
+
+   This is the worst action because recreating unfinished issues is basically the same as moving the old issues to the next sprint but creates too many work overhead.
+
+Note that I'm not saying that we are definitely going to take the worse actions for the sake of achieving these key results. But considering these can help us digger deeper and find the key results we really want.
+
+Now let's test these key results with the two questions above:
+
+1. If we've already reduced sprint calls by 15mins, is efficiency improved?
+
+   Maybe not, especially if we rushed through meetings and communications are bad.
+
+   And if we extend the sprint calls to a half day, but communications are extremely good, everybody knows what we are going to do in the following week. So everything goes smoothly in the following week, I think the efficiency is improved, too. (And I as a developer would be love to attend this half-day long sprint call)
+
+   So maybe time of sprint calls is not the *KEY* result here, but the *internal communication efficiency* (the result of this efficiency may appear in feature ship speed).
+
+2. If we've closed 80% issues for each sprint, is efficiency improved?
+
+   Again, maybe not, especially if they are just closed when the sprint ends, or if we are just shipping 8 out of 10 tiny issues/features.
+
+   And if issues are not closed at all, but features are shipped faster and better, I'd call efficiency improved, too.
+
+   So maybe issue close rate is not the *KEY* result here, but the *feature ship rate/bug fix rate* .
+
+So, always review your OKR after you've defined one, and always dig deeper to find the real *KEY* results.

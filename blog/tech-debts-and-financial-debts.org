@@ -1,0 +1,77 @@
+#+TITLE: Tech Debts and Financial Debts
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2018-02-12]
+#+URI:         blog/2018/02/12/tech-debts-and-financial-debts/index.html
+#+TAGS:        Clean Code
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I was reading Soft Skills: The software developer's life manual recently. And in Chapter 54, it talked about financial debts and why it's the most dangerous finance mistake we can make.
+
+I think this chapter can be applied to technical debts perfectly and help us manage our technical finance status better.
+
+* Some common debt follies
+** Saving money while holding debt
+
+It doesn't make any sense on paper but actually many people are doing this both financially and technically.
+
+I've seen many times that developers just keep adding new features without doing any refactoring and ignore all the technical debts in the codebase.
+
+Most of the time, this will end pretty badly, because, as it's said in Soft Skills, the (development time) interest you're paying on the debt you have is costing you more than the interest you're making by adding features without refactoring. And once the debt is large enough, you will find this project hard to maintain and it will cost you a lot more time to fix these issues.
+
+So how to avoid this? I think the best solution is: whenever we are going to add a new feature, we pay off as many tech debts as possible (and make adding this feature easy), then make the easy change to add this feature.[fn:1]
+
+** Paying off debt in the wrong order
+
+I've actually made many of this kind of mistakes before.
+
+A typical example for this is that focusing on the style issues more than code structure issues. Yes, the code style matters but what matters more is that the code is easy to change and easy to maintain.
+
+But what's more often is that we will ignore some larger issues since we don't know they are there. (I'll explain more about this later.)
+
+** Unnecessary debt
+
+Technical debts are necessary or inevitable because we need to ship our product and we need to borrow some time from here and there.
+
+But sometimes people still adds many technical debts to their code bases even if they still have enough time to pay it off.
+
+My suggestion is to always revise your code right after you write it and see if you can refactor it. It's always easier to pay the tech debt earlier than later.[fn:2]
+
+* Differences between Tech Debts and Financial Debts
+
+Of course, Tech Debts and Financial Debts are not completely the same. I think Tech Debts are much harder to deal with, otherwise, there would not be so many teams that are still struggling with it.
+
+Here are some differences that I can think of:
+
+** Tech Debts are highly context dependent
+
+One of the important differences is that tech debts are highly *context dependent* . Unlike financial debts (a debt is always a negative number in your ledger), a tech debt in a code base may not be a debt in another code base.
+
+** Tech Debts will not cost you immediately
+
+Another difference I can think of is that tech debts will not cost you immediately (like a credit card debt), but it will accumulate or propagate other tech debts and finally break out and ruin your whole project one day.
+
+Since it will not cost you immediately, you will hardly notice it when it's easy to fix it. Until you notice it, it might already be too late.
+
+** Tech Debts are hard to measure or quantify
+
+The last and the biggest difference I think is that tech debts are really hard to measure. Unlike financial debts, it's nearly impossible to say that this project still owes X hours or Y days as its tech debt.
+
+Since it's hard to measure, it's hard to say whether a refactoring is paying off the tech debts or adding the tech debts.
+
+The best we can do for now is to use some statistic analytic tools[fn:3] to help us measure it, but it's not always accurate. And we still need more experiences and knowledge on tech debts to recognize them and eliminate these code smells.
+
+* Footnotes
+[fn:1]
+
+[[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/#orgcad1cb7][Make the change easy first]] from [[http://dsdshcym.github.io/blog/2017/12/08/book-review-99-bottles-of-oop/][Book Review: 99 Bottles of OOP - dsdshome]]
+
+[fn:2]
+
+It's also called [[http://www.informit.com/articles/article.aspx?p=1235624&seqNum=6][The Boy Scout Rule]]
+
+[fn:3]
+
+Like [[../../Org/notes/notes.html#ID-84054942-41B9-4373-82E8-E4CE9F972055][Code Climate]], if you are interested, you can also check out [[https://www.youtube.com/watch?v=vcH0RBe4Eew][GORUCO
+2016 - Keynote: Code Quality Lessons Learned Bryan Helmkamp - YouTube]]

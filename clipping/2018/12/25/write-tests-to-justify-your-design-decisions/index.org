@@ -1,0 +1,29 @@
+#+TITLE: Write Tests to Justify Your Design Decisions
+#+begin_quote
+
+- *Write tests to justify your design decisions*
+
+  - Look for test examples to force that code into existence
+  - Avoid writing unnecessary code
+
+#+end_quote
+
+-- from [[https://online-training.jbrains.ca/courses/wbitdd-01/lectures/133486][Add Fractions in Java Part 2 - The World's Best Intro to TDD, Level 1: TDD Done Right - jbrains.c]]
+
+Because [[https://dsdshcym.github.io/clipping/2018/12/24/no_code_is_better_than_no-code/][No Code is Better Than No-Code]], we should not only delete (deduplicate) our code as much as possible, but also write as little production code as possible.
+
+Writing tests to justify our decisions to add more code is a great way to help us to do that.
+
+And this is the same reason why we need a failing (RED) test first in the TDD cycle:
+
+1. If we expect this test to fail and it does, then we can figure out the simplest way to pass this test and add as few lines of code as possible.
+2. If we expect this test to fail but it passes, then great! Our code can already handle this case now, we don't need to add more code.
+
+Ideally, for every single line of new code, you need to write a failing test to justify its existence. If you can't do that, you may need to refactor your code first:
+
+#+begin_quote
+
+[[https://twitter.com/KentBeck/status/250733358307500032][Kent Beck on Twitter: "for each desired change, make the change easy
+(warning: this may be hard), then make the easy change"]]
+
+#+end_quote

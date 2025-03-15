@@ -1,0 +1,73 @@
+#+TITLE: Stop Thinking in Your "Head"
+#+begin_quote
+
+- 99% of your thoughts are useless.
+
+  - "A great many people think they are thinking when they are merely rearranging their prejudices." - William James
+  - "The greatest weapon against stress is our ability to choose one thought over another." - William James
+
+- You have the ability to decide what you think.
+
+  - Your mind should work for you, not against you.
+  - You can choose NOT to think.
+
+- Which thoughts are useful?
+
+  - Thinking about how you can solve problems.
+  - Understanding knowledge.
+
+- Stop thinking and start feeling.
+- How do I train myself to stop thinking useless thoughts?
+
+  - Awareness
+  - Every time you start drifting off, become aware of it.
+  - Don't judge. Don't think you're stupid. If you do that, you're thinking again.
+
+- [[https://dariusforoux.com/think-straight/][THINK STRAIGHT by Darius Foroux - Out November 27]]
+
+#+end_quote
+
+-- from [[https://dariusforoux.com/stop-spending-time-in-your-head/][Stop Spending So Much Time In Your Head - Darius Foroux]]
+
+* Stop Thinking in Your Brain
+
+One thing I noticed a lot in my work or daily life is that: people (including me) tend to think, *a lot* . But like this article said, most of our thoughts are just useless. And they are affecting our productivity because of two reasons:
+
+1. Our time is limited. If we spend too much time on these useless thoughts, we would have less time on working or thinking the right things.
+2. A huge parts of these useless thoughts prevent us from doing the real work.
+
+A great example is from an intern I'm mentoring these days:
+
+- In our first-week review meeting, she said that she was afraid that
+
+  1. her change would break the app badly because she was not familiar with development (Rails, Git, etc.)
+  2. her work (code format, commit messages, etc.) could not meet the company guideline/standard
+  3. her interruptions (asking questions, status updates, etc.) would cause trouble to other team members.
+
+- Due to these thoughts, she didn't take many actions in her first week.
+- But from my point of view, these thoughts are useless because:
+
+  1. If her change breaks the app, we still have Git to recover everything. And she needs more "efforts" to break our codebase on our GitLab server, given that we have branch protection and code reviews.
+  2. If her work doesn't meet the company standards, her mentor would point it out. And as an intern, it's important to make mistakes and learn from them.
+  3. "Projects fail from under-communicating, not over-communicating" (From [[https://dsdshcym.github.io/clipping/2019/02/05/clippings-from-the-effective-enginner/][The Effective Enginner]])
+
+* Stop Thinking in Your Team
+
+Sometimes, we as a team would make the same mistake as well. If you think of every member of this team as a part of our brain, and the communication between them as the team talking to itself (or thinking in its brain), you'll find that the team also over-thinks, *a lot* . Here are some examples:
+
+1. Adding too many features without talking to the customer.
+2. Coming up with many edge-cases to make the app "perfect" (bug-free, resilient, performant, etc.).
+3. Arguing about two different solutions rather than A/B testing them.
+
+Thinking too much as a team would hurt as much, if not more, as a person.
+
+Fortunately, we can use the same solution above to fight that: *Awareness* .
+
+- Some signs that the team is thinking too much:
+
+  - Long meetings/discussions/debates
+  - No new releases for quite some time
+  - Polished wireframes that may take weeks/months/years to build
+
+- Every time we discover these signs, we need to become aware of our "thinking" and stop them immediately.
+- Start taking real actions and "let the world push you towards more complexities".

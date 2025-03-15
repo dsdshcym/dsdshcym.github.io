@@ -1,0 +1,24 @@
+#+TITLE: UI/UX design and software/code design are very alike
+#+begin_quote
+
+- What started out as casual conversation with my friends turned into a deep investigation into our habits as humans and needs as listeners.
+- I explored each facet of user experience design and found that my fascination with human-computer interaction stemmed from my compassion for people (empathy).
+- Some powerful things I learned was knowing how to handle change, how crucial iteration is, and being thorough. Most importantly, there is a lot more to learn in design and research.
+
+#+end_quote
+
+-- from [[https://medium.freecodecamp.org/my-friends-hate-soundcloud-ios-so-i-redesigned-it-for-them-d3038cdd020b][My friends hate SoundCloud iOS so I redesigned it for them]]
+
+A coworker of mine did an internal sharing for [[https://medium.freecodecamp.org/my-friends-hate-soundcloud-ios-so-i-redesigned-it-for-them-d3038cdd020b][this article]][fn:1] last Friday.
+
+I think the learning from this experiment actually resonates so well with my programming experiences. And I always think UI/UX design and software design are very much alike somehow.
+
+1. HCI and programming are all about empathy.
+2. Embrace change
+3. Fast iterations
+4. Continuous learning
+
+* Footnotes
+[fn:1]
+
+[[https://medium.freecodecamp.org/my-friends-hate-soundcloud-ios-so-i-redesigned-it-for-them-d3038cdd020b][My friends hate SoundCloud iOS so I redesigned it for them]]

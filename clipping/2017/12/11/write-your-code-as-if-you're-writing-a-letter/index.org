@@ -1,0 +1,11 @@
+#+TITLE: Write your code as if you're writing a letter
+#+begin_quote
+
+Next time you have to write any significant amount of code, imagine that you are going to have to write a letter that teaches someone how to reproduce it. The only code you can show them are tests. It really changes how you approach the problem.
+
+#+end_quote
+
+-- from [[https://twitter.com/jamis/status/939183075291947008][Jamis Buck on Twitter: "Next time you have to write any
+   significant amount of code, imagine that you are going to have to
+   write a letter that teaches someone how to…
+   https://t.co/vjk0Uh7Eya"]]

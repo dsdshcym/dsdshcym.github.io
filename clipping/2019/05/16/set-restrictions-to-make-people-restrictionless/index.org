@@ -1,0 +1,54 @@
+#+TITLE: Set Restrictions to Make People Restrictionless
+
+Though I have only worked at several "modern" tech companies until now. I still see some common factors about these companies. One of them is that they are all "flat", which means there are no vertical structures, with no managers, and everyone can stand out and improve any areas of the company as they want.
+
+I can get the good will behind the "flat" structure: to trust people and to not give people restrictions on what they can work on.
+
+But it doesn't work in reality, at least from my experiences. People are still restricted by their roles and just doing their job. Developers just write code day by day. Designers just sketches day by day. PMs just have meetings day by day. No one is thinking about improving the company or even their own work.
+
+Why is that? And how to fix it and make people work more effectivly, to be truly restrictionless?
+
+* If everyone is responsible, then no one is.
+
+As I mentioned in [[https://dsdshcym.github.io/clipping/2019/04/12/why-do-we-need-managers/][Why Do We Need Managers?]]:
+
+#+begin_quote
+
+Let's admit it: not everyone would think about how to improve the way they work. If everyone knows the value of continuous improvement and do it, then we don't need managers.
+
+#+end_quote
+* Only discipline can bring freedom
+#+begin_quote
+
+- 后来才发现自律者才会有自由。
+- 当一个人缺乏自律的时候，他做的事情总是在受习惯和即时诱惑的影响，要么就是被他人的思想观念所扰，几乎永远不可能去做内心真正渴望的事。
+
+#+end_quote
+
+-- from [[https://mobile.twitter.com/not_2b_or_2b/status/1117894118032601089][To be, or not to be on Twitter: "你最深刻的错误认识是什么？ 以为自由就是想做啥做啥。" / Twitter]]
+
+To translate it into English:
+
+#+begin_quote
+
+- Only disciplined person can have freedom
+- When a person lacks discipline, everything he/she does would either be directed by habits or impulses, or be influenced by others' opinions. Thus he/she can't work on what he/she really wants.
+
+#+end_quote
+
+It's the same for "flat" v.s. "non-flat" structures. Both of them can be effective structure as long as we have disciplines to back us up. It's just easier to lose the discipline in a "flat" environment because many people understand "flat" as "being undisciplined" which is not the case.
+
+And even if you are being truly "flat" like Valve did, people would still find restrictions for themselves:
+
+#+begin_quote
+
+- there is actually a hidden layer of powerful management structure in the company and it felt a lot like high school. There are popular kids that have acquired power in the company, then there's the trouble makers, and everyone in between
+- According to the interview, it works well for small groups like her hardware team. The problem as she sees it is one of scalability. *What works for five or 20 people doesn't necessarily support 300.*
+
+#+end_quote
+
+-- from [[https://www.wired.com/2013/07/wireduk-valve-jeri-ellsworth/][Former Valve Employee: 'It Felt a Lot Like High School' - WIRED]]
+
+* Being disciplined and flat at the same time
+
+So here comes the solution to the problem we have: setting clear goals and always stretching for more. And I'm trying to adopt [[https://dsdshcym.github.io/clipping/2019/05/07/clippings-from-measure-what-matters/][OKRs]] in my current company now. In the future, I may write another post to update how it goes.

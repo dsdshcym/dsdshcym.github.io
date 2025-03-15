@@ -1,0 +1,97 @@
+#+TITLE: Ideas Are Cheap
+
+I used to struggle with generating ideas. I couldn't find topics for my blog. I couldn't find ideas for my side projects. It's different now. I have so many topics that I don't have enough time to write them all. I have several side project ideas that I need to choose one to execute. My ideas are cheap now. What's more important is to recognize which ones are more valuable and to execute on them.
+
+This clipping is about how easy generating new ideas is, and what to do after you have tons of cheap ideas.
+
+* How to Generate New Ideas
+
+Reading [[https://www.amazon.com/Becoming-Technical-Leader-Problem-Solving-Approach/dp/0932633021][Becoming a Technical Leader]] was turning point for me. In this great book about problem-solving leadership, Gerald Weinberg explained "the three great strategies for developing ideas."
+
+#+begin_quote
+
+Creative errors
+    Every mistake is a new idea.
+Stolen ideas
+    By “stealing,” I include both taking ideas from one person (which is called “plagiarizing”) or from many (which is called “research”).
+Copulation
+    Putting together two ideas to form a new one that’s better than either of its parents.
+
+#+end_quote
+
+After knowing these strategies, I can collect more ideas than before:
+
+1. By building self-awareness, I note my errors as new ideas .
+2. By reading books or thinking about the original ideas behind a creative design, I learn others' ideas and then build upon them.
+3. By combining two ideas together, I generate my own new ideas.
+
+When asked about how to develop an intuition for what should exist (aka. new ideas), Dan Abramov also gave a similar answer:
+
+#+begin_quote
+
+Learn about the landscape beyond what is commonly used in your ecosystem. Look for inspiration elsewhere, both in the past and in other communities. Figure out what you wish existed and try to make it. Look under the hood of what you use every day.
+
+— Dan Abramov (@dan_abramov) [[https://twitter.com/dan_abramov/status/1151582907728834561?ref_src=twsrc%5Etfw][July 17, 2019]] #+end_quote
+* Ideas Are Easy, Innovations Are Still Hard
+
+So I have many ideas, what's next? Will innovation happen by itself? Definitely not! We still need to pick one idea from our idea pool and execute on it. As you may already know, generating ideas is the easiest part, sorting them and executing are the hardest part.
+
+There are several steps to pick the idea that can lead to innovation:
+
+1. Recognition
+
+[[https://hbr.org/2013/07/innovation-isnt-an-idea-proble][Innovation Isn’t an Idea Problem]] explained the idea-recognition problem. More or less, we've already been generating new ideas via the three strategies above. Every people/organization should've already got enough new ideas to execute upon. The problem now becomes whether we can recognize these ideas or not.
+
+#+begin_quote
+
+   - It’s not an idea problem; it’s a recognition problem.
+
+     - innovation isn’t hampered by a lack of ideas,
+     - but rather a lack of noticing the good ideas already there.
+
+   - they actually reflect a bias we all share — a bias against new and creative ideas when we’re faced with even small amounts of uncertainty.
+
+     - few executives would claim that they’re not working in an uncertain industry.
+     - The same uncertainty that triggers the need for companies to innovate may also be triggering executives to be rejecting the discoveries that could help them gain a competitive advantage.
+
+   - One possible solution to this “idea killing” problem is to change the structure ideas have to move through.
+
+     - Internal Virtual Idea Market
+
+#+end_quote
+
+   There's another real-world example for the Internal Virtual Idea Market mentioned in this post: [[https://www.bloomberg.com/news/articles/2019-06-20/charging-employees-for-conference-rooms-helps-disco-boost-profit][Disco Corp. has been giving its
+employees a virtual currency]] and let them invest on their ideas.
+
+#+begin_quote
+
+   - At Disco, everything has a price, from office desks and PCs to a spot for your wet umbrella.
+
+     - Teams bill each other for their work, while individuals operate as one-person startups, with *daily auctions of work assignments and battles for the best ideas* in the aptly named “Colosseum.”
+     - “Work should be about freedom, not orders.”
+
+   - charging about $100 an hour to use meeting rooms
+
+#+end_quote
+2. Sorting
+
+   After recognizing the ideas hidden in our life/work, we need to sort them. In [[https://productcoalition.com/ask-people-for-problems-not-ideas-3cc2a09b888a][this post about project management]], Sari Harrison gave innovation a definition and explained the importance of sorting ideas.
+
+#+begin_quote
+
+   - ideas are not the hard part of innovation and neither is execution.
+
+     - *It’s deciding which ideas, in what incarnation, and in what order that’s hard.*
+     - This role that we PMs have — the role of *“idea sorter”* is incredibly important, undervalued, and hard to do.
+
+   - For something to be considered innovation, it needs to be *new* , *valuable* , *implemented* , and *adopted* .
+
+#+end_quote
+
+   So how to sort all the ideas you have? I would recommend Basecamp's methodology: [[https://basecamp.com/shapeup][SHAPE UP]]. Their idea sorting process is the most agile way I've ever seen. So definitely check it out!
+
+3. Executing
+
+   Finally, you need execute on an idea to make it come true. Just like Sari said, an idea becomes an innovation only when it's implemented well.
+
+   But it's a long story to execute well, so maybe I'll talk about it in another post. Stay tuned!

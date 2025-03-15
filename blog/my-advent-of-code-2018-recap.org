@@ -1,0 +1,139 @@
+#+TITLE: My Advent of Code 2018 Recap
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-01-29]
+#+URI:         blog/2019/01/29/my-advent-of-code-2018-recap/index.html
+#+TAGS:        Elixir, Functional Programming
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I discovered [[https://adventofcode.com/][Advent of Code]] in 2017, but didn't follow along. I tried to follow this year's (2018) [[https://adventofcode.com/2018][Advent of Code]] and learned a lot about Elixir and Functional Programming from [[https://www.twitch.tv/videos/343661380][José Valim's live streams]] and [[https://github.com/sasa1977/aoc][Saša Jurić's solutions]]. This post is a summary of some takeaways from this journey. You can also find my solutions [[https://github.com/dsdshcym/Advent-of-Code-2018-Elixir][here]].
+
+* Stop Thinking, Start Solving
+
+I got paralyzed when solving [[https://adventofcode.com/2018/day/20][Day 20: A Regular Map]].
+
+Due to the algorithm contest training I got from my high school, I tend to think about the worst scenario of the input data first, and the fastest algorithm based on this scenario.
+
+When I encountered a puzzle like this one, I know there would be around 100_000 nodes and branches. If there are nested branches, we need to simulate multiple positions at the same time, the number of the possible positions would be O(n^m) (given n as how many branches we have each time, m as how many levels of nested branches we have). This fact paralyzed my thinking, and I stopped doing any further investigations or experiments.
+
+Not until I watched [[https://www.twitch.tv/videos/352178620][the live stream from José]], did I realize that I missed an important assumption: this regex input is a map for a maze, which lead to every room in this maze, and every branch would either lead to a dead-end or cycle back to the original room. Even without this assumption, I should've known that this maze would not be hard to build (a.k.a the possible positions would not be that many).
+
+So, I should stop thinking too much up-front, and start solving the problem by taking small steps to validate my assumptions first.
+
+* Functional thinking
+
+I also learned a lot about functional programming by comparing my solutions with [[https://github.com/sasa1977/aoc][Saša Jurić's]].
+
+A typical example is [[https://adventofcode.com/2018/day/14][Day 14: Chocolate Charts]]:
+
+- [[https://github.com/dsdshcym/Advent-of-Code-2018-Elixir/blob/75e4eb8d7bc52aa5d664eaaeb8f813acf301afa6/day_14/lib/day_14.ex][I used recursion for simulating recipe generation and deciding when
+to stop the simulation]]:
+
+#+begin_src ruby
+def iterate_until_ended_with(scoreboard, recipes) do
+  # ...
+end
+
+def iterate_until(%{recipes: recipes} = scoreboard, target) when map_size(recipes) >= target do
+  scoreboard
+end
+
+def iterate_until(scoreboard, target) do
+  scoreboard
+  |> iterate()
+  |> iterate_until(target)
+end
+#+end_src
+- [[https://github.com/sasa1977/aoc/blob/1e442199748588e46d5195bdedbcf943757f67a8/lib/2018/day14.ex][Saša used   to do the same thing]]:
+
+#+begin_src erlang
+defp part1(), do: recipes() |> Stream.drop(306_281) |> Enum.take(10) |> Enum.join("")
+defp part2(), do: recipes() |> find_sublist_index(Integer.digits(306_281))
+
+defp recipes(),
+  do:
+    Stream.resource(
+      &initial_state/0,
+      &{state(&1, :new_recipes), next_recipes(&1)},
+      fn _ -> :ok end
+    )
+#+end_src
+
+I don't think one of these two implementations is better than the other. They are essentially the same thing, but with different trade-offs:
+
+Recursion
+    Passes states as arguments into recursive function calls, returns final results when states reach a certain point
+
+    - Easier to implement since it's just pure functions. Stream requires understanding the concept of Enumerable and Stream.
+    - More straightforward and more readable.
+    - More performant with tail call optimization and pattern matching.
+
+Stream
+    Returns states as a stream
+
+    - More flexible because the client can decide how to deal with the results (like when to stop iterating or how to deal with relationships between a series of states). Recursion can only deal with one pre-configured condition.
+
+      - Put this in another way: Recursion couples the logic of when to stop the calculation with the logic of the calculation. Stream decouples them.
+
+    - More performant when the dataset is large because the calculation of each state is lazy.
+
+In the context of Advent of Code, where the requirements for the second parts of the puzzle is unclear, it's wiser to choose using Stream because it's more flexible compared to Recursion.
+
+* Don't Use Processes for Encapsulation
+
+Another thing I tried when solving [[../../Org/side_projects.html#ID-A416DC7D-8BC3-45ED-AABD-AF4BDBBD050A][Day 24: Immune System Simulator
+20XX]] is to [[https://github.com/dsdshcym/Advent-of-Code-2018-Elixir/commit/88cabbfb00f738b25bf36cd2bf96749235c0410e][write a GenServer for encapsulating a domain concept]]. This idea was inspired by [[https://github.com/pragdave/component][Dave Thomas' component library]].
+
+But the result is not very promising. After [[https://github.com/dsdshcym/Advent-of-Code-2018-Elixir/commit/461cf7292b8df824acf19123ab1e07a2405c200a][the refactoring]], the performance dropped a lot (the time to run the test raised from ~0.2s to ~1.2s). Because the GenServer I wrote is not communicating with others concurrently, and it even sends messages to another GenServer and waits for it to reply. These all add performance costs rather than reducing them.
+
+After this failed attempt, I read the famous Elixir essay [[http://www.theerlangelist.com/article/spawn_or_not][To spawn, or
+not to spawn?]] on this topic (also written by Saša Jurić). And with this experience in mind, I can't agree more with the conclusion made in the essay:
+
+#+begin_quote
+
+1. *Use functions and modules to separate thought concerns.*
+2. *Use processes to separate runtime concerns.*
+
+   - Processes are used to address runtime concerns - properties which can be observed in a running system.
+
+     Fault tolerant
+         when you want to prevent a failure of one job to affect other activities in the system.
+     Concurrency
+         when you want to introduce a potential for parallelism, allowing multiple jobs to run simultaneously.
+
+3. Do not use processes (not even agents) to separate thought concerns.
+
+   - Using processes (e.g. agents) for this is a mistake I see people make frequently.
+   - Such approach essentially sidesteps the functional part of Elixir, and instead attempts to simulate objects with processes.
+   - The implementation will very likely be inferior to the plain FP approach (or even an equivalent in an OO language).
+
+     - Keep in mind that there is a price associated with processes (memory and communication overhead).
+     - Therefore, reach for processes when there are some tangible benefits which justify that price.
+
+       - Code organization is not among those benefits
+
+#+end_quote
+* Binary Search FTW
+
+The only puzzle that I didn't have any clue is the second part of [[https://adventofcode.com/2018/day/23][Day
+23: Experimental Emergency Teleportation]].
+
+It turns out that Binary Search + Breadth First Search (BFS) is the way to go.
+
+It's always a problem for me to not consider Binary Search early enough. I think this illustrate that I still don't understand Binary Search well enough to use it in a wider problem space.
+
+Like in this puzzle, I got paralyzed again when I thought of the large input range (the coordinates ranges from -100_000_000 to 100_000_000, plus there are three dimensions).
+
+But with Binary Search and a good BFS strategy, we can easily search for the optimal point in this large space without going through all the points.
+
+* Summary
+
+I didn't got the time to solve every puzzle as soon as it got released. And I only finished most of them in January 2019. Then I lost the momentum/patience to finish the last remaining ones:
+
+[[https://adventofcode.com/2018/day/15][Day 15: Beverage Bandits]]
+    A complex and verbose battle simulation.
+[[https://adventofcode.com/2018/day/21][Day 21: Chronal Conversion]]
+    The final puzzle of the "reverse engineering" series.
+
+I wish I can follow up the release pace of AoC 2019. And maybe solve them in a new language (Rust probably?).

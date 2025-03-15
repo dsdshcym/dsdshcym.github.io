@@ -1,0 +1,323 @@
+#+TITLE: Clippings of 2019 May
+* [[https://coolshell.cn/articles/19271.html][“努力就会成功”]]
+
+How hard you work is less important than how smart you work.
+
+#+begin_quote
+
+- 努力只是成功的必要条件之一。
+- 这种诉求其实就是一种只要使力只要拼命了就可以成功的心理诉求，
+
+  - 因为这类人基本上都是能力有限，不知道怎么提升自己的人，当他们看到只要拼命使力就可以成功的观点时，他们就会有共鸣，就会感到，不用学习那些晦涩难懂高级的知识，不用掌握和练习哪些高级技能，自己只需要在低级的事情上拼命和努力，加更多的班和干更多活，自己就会像电影中的那些小人物一样，总有一天会成功的……
+  - 不但符合那些低级管理者的利益诉求，同样符合那些能力不足不愿意学习和成长的人的诉求。因为，他们混淆了行动与进展，忙碌与多产，他们以为能靠蛮力可以弥补思维上的惰性，靠拼命可以弥补能力上的不足……
+
+- 当一件事的难度超过一定程度的时候，那些聪明的人会找到更省力的方法，而能力上有问题的，还是在那使蛮力。
+- 我的职业生涯的成长， *最根本的不是你有多努力，有多勤奋，而是你能搞定很多人搞不定的事！*
+
+  - 而我失败的时候，总是因为我搞不定事，即便是加班拼命努力也无济于事！
+  - 再回想一下我以前在职场上的很多关键点，不是因为我加班了，而是因为在某些关键问题上，我跳出来解决了其它人都解决不了的问题
+
+- 同样是一个简单的 for-loop 语句，有人写的就值 1 万元一行，而你写的则一文不值。关键不在于谁写的代码多，关键在于我们解决了什么样的问题。
+- *无法通过努力工作改善我思维的不足*
+
+#+end_quote
+* [[https://firstround.com/review/How-to-Make-OKRs-Actually-Work-at-Your-Startup/][How to Make OKRs Actually Work at Your Startup - First Round Review]]
+
+I'm trying to use OKRs in my current company recently. But I didn't know exactly how to do it after reading [[https://dsdshcym.github.io/clipping/2019/05/07/clippings-from-measure-what-matters/][Measure What Matters]]. This article helped a lot by providing a real world example at Swipely.
+
+1. There is no silver bullet. Not in the development world, not in the management world.
+
+#+begin_quote
+
+   - Just because a system’s worked like gangbusters before, doesn’t mean one size fits all. *You have to figure out how to put OKRs to work for you.*
+
+#+end_quote
+2. The purpose of implement OKRs is to talk about *the purpose* .
+
+#+begin_quote
+
+   - The right way to look at OKRs is *a way to communicate so there's clarity of purpose*
+
+     - At Swipely, (personal) OKRs are made up of
+
+       1. a high level objective
+       2. a more detailed description of why that objective is important
+       3. a summary of how the objective aligns with the broader goals of both the person's team and the company
+
+          - When personal objectives are directly and clearly connected to the broader goals of the company, they're suddenly more inspiring, less myopic
+
+       4. the three to five key results that will help them achieve that goal
+
+     - Having public goals forces different types of thinking around how people ask for help from others
+
+       1. everyone can see what's on their co-workers' plates and employees no longer feel like they're toiling in a vacuum, or for their manager's approval
+       2. That way, OKRs become a built-in way for people to
+
+          1. ask for resources,
+          2. easily spot where they can come to their colleagues' aid
+
+#+end_quote
+3. Examples
+
+#+begin_quote
+
+   1. Paul, a member of Swipely’s engineering team
+
+#+begin_src ruby
+
+Objective: Ship [X] feature to increase engagement.
+
+Description: Our [X] will allow merchants to access Swipely anywhere,
+increasing engagement, value and differentiation which will reduce
+churn and differentiate our offering with an exciting new value
+proposition.
+
+Alignment: A company-wide objective is to “Become a ‘must-have’ tool
+merchants love to use,” which has a key result, “Ship [X] product to
+increase engagement and drive excitement in sale.” The individual
+objective to ship [X] is aligned with this company-wide objective.
+
+Key Results:
+
+    Deliver alpha version to targeted devices for alpha testing
+    feedback from 10 early customers by [date: mm/dd/yyyy].
+
+    Provide screenshots/screencast to support marketing launch of the
+    app by [date: mm/dd/yyyy].
+
+    Release beta version by [date: mm/dd/yyyy].
+
+    Achieve engagement DAU / MAU metric of [X] with beta audience.
+#+end_src
+   2. Cindy, a sales account executive who wants to turn more dials into demos.
+
+#+begin_src emacslisp
+
+Objective: Develop better prospecting skills.
+
+Description: By improving prospecting skills, I will get into more
+initial presentations and win more business!
+
+Alignment: A company-wide objective is to “accelerate revenue growth,”
+which has a key result, “grow booked ARR by $XX to $YY mm, thanks to
+new AEs, channel, and fully ramped AEs.” The individual objective to
+improve prospecting skills is aligned with this company-wide objective
+because it will help Cindy attain her quota targets. It also aligns
+with a company-wide objective to strengthen the team.
+
+Key Results:
+
+    Review training materials from our online coaching resource.
+
+    Do 2 60-minute game tape reviews with the sales manager, reviewing
+    20+ prospecting calls for coaching on what’s working, what’s not
+    working.
+
+    Do a role-playing session with Allie, who has our team’s top
+    connect-to-meeting rate.
+
+    Test 5 new “compelling reason” pitches on prospecting calls to
+    introduce humor, rapport and other techniques.
+
+    Increase my weekly connect-to-meeting rate from X% to Y%.
+#+end_src
+
+#+end_quote
+
+* [[https://carta.com/blog/carta-101/][Carta 101 - Introduction to our company, values and strategy - Carta]]
+
+After reading this article, Carta became a company that's very appealing to me.
+
+- Who don't want to work at a place to create leverage, not efficiency?
+- Who don't want to work a place to learn and execute what's learned?
+
+P.S. The talk [[https://www.youtube.com/watch?v=ReSlJ5cq5D0][We are Software People]] mentioned in this article is also great! Highly recommended!
+
+#+begin_quote
+
+- [[https://www.youtube.com/watch?v=ReSlJ5cq5D0][We are Software People]]
+
+  - Every day we deliver “an amazing customer experience at scale” and “suck more of the world into our software.”
+  - You don’t have to be an engineer to do this.
+  - You just have to believe that *your job is to translate real-world problems into software problems.*
+  - Nobody at Carta does the same thing everyday.
+
+    - Everyone is working to put themselves out of a job.
+    - This is our “creative destruction” that drives us to evolve, grow, and adapt.
+
+- Create Leverage, Not Efficiency
+
+  - They are different.
+
+    Efficiency
+        fixing a desired output and minimizing the effort to achieve it
+    Leverage
+        maximizing the impact for a fixed amount of effort
+
+  - Efficiency is what lazy people aspire to. Leverage is what we do.
+
+- Learn vs Execute
+
+  - There are two types of work that you will do on a daily basis.
+
+    1. Learning
+
+       - In any role there will always be an initial learning phase before you get brought up to speed
+       - At a certain point your learning will plateau -> executing
+
+    2. Executing
+
+       - Applying that knowledge to get the job done and create leverage
+       - Eventually, you will create enough leverage to automate the job or grow out of it -> learning
+
+#+end_quote
+* [[https://www.forbes.com/sites/forbescoachescouncil/2018/10/30/things-that-are-worth-doing-are-worth-doing-poorly/#250a6e726931][Council Post: Things That Are Worth Doing Are Worth Doing Poorly]]
+
+This article resonated with my experience of fighting procrastination so well. The only way to fight procrastination is to start doing things poorly.
+
+And I think it can also relate to [[https://dsdshcym.github.io/blog/2019/05/16/defining-a-mvp-by-setting-okrs/][the idea of MVP]]: a MVP is how a product is doing poorly. So MVP can help you validate your idea. If your product is worth doing, then the MVP would be worth doing, and you can see that by the feedback from its user.
+
+#+begin_quote
+
+- *When it comes to implementing an idea, things that are worth doing are worth doing poorly.*
+- Why many things don't get done at all because the concern for perfection trumps the practice of "just do it?"
+
+  1. Overthinking
+  2. Self-doubt
+  3. Procrastination
+  4. Self-criticism
+  5. Indecision
+
+- Five Reasons Why Anything Worth Doing Is Worth Doing Poorly
+
+  1. Clarity comes from action, not thinking
+  2. Creativity flows when you don't block it
+  3. *Energy is created from action*
+  4. Growth comes from progress, not perfection
+  5. Momentum becomes self-generating when you stay focused on the immediate next step
+
+#+end_quote
+* [[https://www.perell.com/blog/the-ultimate-guide-to-writing-online][The Ultimate Guide to Writing Online — David Perell]]
+
+I'm glad that I'm already doing some of the things mentioned in this article. For example: this [[https://dsdshcym.github.io/clipping/][Clipping]] section is exactly how I make my *curations* .
+
+And I learned that I need to *share my ideas* more often. For now, I only keep a list of ideas in my local and never share them with others before I finish a blog post. From now on, I'll share these ideas with my friends and also on Twitter.
+
+#+begin_quote
+
+- A way to "bootstrap" your way to an audience: *curation*
+
+  The Thought Leader Strategy
+      curate a summary of your favorite thought leader's best work.
+  The Idea Strategy
+      pick an idea you're interested in and curate a list of the best resources on the topic.
+
+- *Listen to feedback*
+
+  - Test your ideas out on intelligent friends, and don’t be afraid to state the obvious.
+
+    - If an idea consistently surprises somebody, it’s probably good,
+    - but if people look bored or confused when you’re sharing an idea, you should either drop it or communicate the idea differently.
+
+  - Many writers wait until they publish a blog post to share an idea with somebody. I do the opposite. I *share my ideas as much as I can* and run them through numerous filters.
+
+    1. conversations
+    2. tweets
+    3. emails
+    4. blog posts
+
+  - With it, we had instant access to more wisdom, experience, perspective, and diversity, in one minute than we could have gained in a hundred lifetimes.
+
+#+end_quote
+
+(There are many more great ideas in this article. Please do check it out if you also want to write online!)
+
+* *[[https://twitter.com/KentBeck/status/1134136476646559744][deliver half the stuff in half the time]]*
+
+Another accurate summary from Kent Beck.
+
+#+begin_quote
+
+Great reminder yesterday of how much of project management boils down to: deliver half the stuff in half the time. If you're always thinking about how to do that then the details will sort themselves out.
+
+— Kent Beck (@KentBeck) [[https://twitter.com/KentBeck/status/1134136476646559744?ref_src=twsrc%5Etfw][May 30, 2019]]#+end_quote
+
+And there is an idea that's exactly the same in [[https://dev.tube/video/TQ9rng6YFeY][DevTernity 2018:
+J.B. Rainsberger - The Economics of Software Design #devternity –
+Watch Video @ Dev.Tube]].
+
+#+begin_quote
+
+- Almost every problem boils down to *long feedback cycles* (two people don't like to talk to each other)
+
+  - Cut it in half
+
+    - It's already hard enough to change the way you work
+    - It's challenging enough that make you energized enough to work on it
+
+  - Repeat when half the length feels long again
+  - [[https://www.amazon.com/Million-Dollar-Consulting-Alan-Weiss/dp/0071622101][Million Dollar Consulting: Alan Weiss: 9780071622103: Amazon.com: Books]]
+
+#+end_quote
+* Joe's reply to The OOP Concept according to Erlang - Erlang & BEAM Forum / Questions / Help - Elixir Forum
+
+I want to say I'm so sad that Joe Armstrong passed away on Saturday April 20th, 2019. I learned so much from Joe's work and writings. It's such a pity that we've lost a great mind and a great soul.
+
+#+begin_quote
+
+- [[https://elixirforum.com/t/the-oop-concept-according-to-erlang/21078/2][To me]]
+
+  - an OOPL has the following properties
+
+    Isolated objects (= Erlang processes)
+        if one process can in any way damage another object then you cannot write decent code
+    Polymorphic
+
+        this makes life easy for the programmer
+
+#+begin_src awk
+
+you could send a “print_yourself” message to any process and it would
+know how to deal with it
+#+end_src
+    Late binding
+        You can send a message to a process, and send code to a process, provided the code gets their first, everything is fine
+    Dynamic (possible to evolve in a biological sense)
+        keeping the entire world strongly consistent (in the sense of a strict type system) is impossible - even types change with time - in live systems the code must be able to evolve.
+
+  - All this stuff about classes and methods is “just” a way of defining and grouping abstract data types.
+  - Inheritance is just a hack - in Erlang/Elixir you can just send a message down a chain of processes until somebody recognises it.
+  - In my opinion
+
+    - Erlang/Elixir/Pony etc are the only languages which can be called OO.
+
+      - Java/C++/Smalltalk do not protect objects - send a “message” (or evoke a method) that leads to an infinite loop and you screw up the system.
+      - Erlang/Elixir are rather nice send a message to a process that sends the process into an infinite loop and you won’t even notice it.
+
+- [[https://elixirforum.com/t/the-oop-concept-according-to-erlang/21078/10][I had always (and still) viewed this reuse stuff as total nonsense]]
+
+  - functional re-use is possible
+  - but the non-functional properties of a program cannot be re-used.
+
+#+end_quote
+* [[http://confreaks.tv/videos/rubyconf2018-code-review-forwards-and-back][Code Review, Forwards and Back - Ruby Conference 2018]]
+
+A funny show but full of useful thinking around code reviews. If you care about how to do code reviews in your team, it is a must watch.
+
+#+begin_quote
+
+- Your team’s code review practices cause ripple effects far into the future. In this play, see several ways a single code review can go, then fast-forward and rewind to see the effects – on codebase and culture – of different code review approaches.
+
+#+end_quote
+* [[https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/][The Engineer/Manager Pendulum – charity.wtf]]
+
+At first, I'm thankful and happy to have the opportunity to spend more time on the management side when I'm just two years into this industry. But sometimes I still wonder if this is too early. After reading this post, I'll no longer be so confused and will be more thankful for this chance.
+
+#+begin_quote
+
+*Tech is the easy part, herding humans is the harder part.*
+
+#+end_quote
+* [[https://www.youtube.com/watch?v=OyfBQmvr2Hc][William Byrd on "The Most Beautiful Program Ever Written" {PWL NYC} - YouTube]]
+
+The Lisp code auto-generation demoed in this talk is amazing. And the process that was driven by test cases reminded me of how TDD works. If you are interested in Artificial Intelligence, TDD, or how to write programs in general, you will not regret spend some time watching this talk.

@@ -1,0 +1,95 @@
+#+TITLE: 如何在阿里云上部署 Dokku - 打造私有软件部署平台
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2020-05-09]
+#+URI:         blog/2020/05/09/setup-dokku-on-an-aliyun-server/index.html
+#+TAGS:        Dokku, DevOps, Platform as a Service (PaaS), GFW
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+我想要通过最简单的方式部署、维护一个 Web 应用。在运维上花的时间、精力越少，我就能更加专注地投入到核心业务功能的开发上去。像 [[https://www.heroku.com/][Heroku]] 这样的软件部署平台服务（Platform as a Service, PaaS）就提供了这样的用户体验：只需一条 git push 命令，Web 应用就部署到了生产环境。之后域名的绑定、HTTPS 证书的配置，都可以很容易地完成。
+
+但是，国内的用户其实很难访问部署到 Heroku 上的应用。备案这些「必须」的业务流程也难以走通。一番搜索之后，我也没找到国内比较像样的 PaaS 平台[fn:1]。最终，只好使用 [[http://dokku.viewdocs.io/dokku/][Dokku]] 在阿里云上自己搭建一个 PaaS 服务。
+
+Dokku 给自己的产品定位是「最简单的软件部署平台实现」。它利用容器化技术（Docker）模拟出了 Heroku 的使用体验。在任意一台服务器上部署了 Dokku 之后，我们就拥有了一个专属于我们自己的 PaaS 服务。之后我们就能通过 git push 命令，快速地部署我们的应用。另外，Dokku 通过插件机制支持了数据库，域名绑定，HTTPS 证书配置等 Web 应用开发过程中常见的需求。最后，对于一些应用特殊的需求，我们还可以连接到 Docker 容器内部直接进行操作。
+
+当然，在国内部署 Dokku 也不是一件容易的事情。我希望能在这篇文章里分享一些我在阿里云服务器上部署 Dokku 的经验。
+
+* Dokku 需要 64 位的操作系统
+
+安装 Dokku 其实很简单，只需要运行官方提供的命令就可以了：
+
+#+begin_src shell
+wget https://raw.githubusercontent.com/dokku/dokku/v0.20.4/bootstrap.sh
+sudo DOKKU_TAG=v0.20.4 bash bootstrap.sh
+#+end_src
+
+但是，我在配置服务器时贪了便宜，选择了 Ubuntu 14.04 32 位系统。在运行这个脚本时就卡住了，一直安装失败。刚开始我以为是因为 Dokku 在 0.20 版本取消了对 14.04 的支持，就尝试安装 0.19 版本，但是依然安装失败。后来我才意识到 Dokku 的核心——Docker 需要运行在 64 位系统上，因此没有在 32 位系统的 apt 源里提供安装包。最后，我重新配置了一台 64 位系统的服务器，就能顺利安装 Dokku 了。
+
+* 如何实现部署时「翻墙」
+
+接下来最麻烦就是部署应用时的「网络」问题。基于 Elixir/Phoenix 或者 Ruby/Rails 的 Web 应用，在部署时都需要下载第三方库。而要下载这些第三方库，就需要访问 GitHub 或者 Hex/Rubygems 这些国外的服务器。在国内服务器上访问这些国外的服务并不稳定，要么速度太慢，要么直接访问失败。因此，最好的方案就是在部署应用时「翻墙」，稳定快速地下载第三方库；在应用运行时则不「翻墙」，正常地提供服务。
+
+首先，我们需要在服务器上配置 HTTP 代理服务：
+
+1. 在运行了 Dokku 的服务器上配置 shadowsocks 客户端（可参考 [[http://claude-ray.com/2018/12/01/ss-local/][Ubuntu配置ss-local客户端 - Claude's Blog]]）
+2. 通过 [[https://www.privoxy.org/][Privoxy]] 或者 [[https://www.irif.fr/~jch/software/polipo/][Polipo]][fn:2] 将本地的 shadowsocks SOCKS 代理服务转发为 HTTP 代理服务（可参考 [[https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/][Linux中使用ShadowSocks+Privoxy代理 - Polar Snow Documentation]]）
+
+配置好之后，难点出现了：如何让 Dokku 在编译/部署应用时使用 HTTP 代理呢？
+
+** 为 build container 设置环境变量
+
+要解决这个问题，我们需要先了解 Dokku 是怎么编译、部署、运行一个应用的。为了将应用的编译环境和运行环境隔离开，Dokku 在部署一个应用时都会先启动一个 Docker Container 编译应用，在编译完成之后再启动另一个 Docker Container 运行应用。因此，我们可以借助这个「先部署再运行」机制，实现「部署时翻墙，运行时不翻墙」的需求。
+
+而 Dokku 也提供了 [[http://dokku.viewdocs.io/dokku/advanced-usage/docker-options/][Docker Container Options]] 让我们分别定制编译环境和运行环境下的 container 选项：
+
+#+begin_src awk
+dokku docker-options:add <app_name> build "--env http_proxy=<proxy_url> --env https_proxy=<proxy_url>"
+#+end_src
+
+不过，我在使用这种方式声明了部署阶段的 http(s)_proxy 后，发现应用在运行时也带有 http(s)_proxy 变量。这有可能是 Dokku 的 bug （没有彻底区分 build phase 和 deploy phase 的 docker options）。因此，我又尝试了另外的一个解决方案。
+
+** 在 Buildpack 模式下用 .env 文件配置代理
+
+[[https://devcenter.heroku.com/articles/buildpacks][Buildpacks]] 是 Heroku 默认支持的部署机制。通过类似插件的机制，Heroku 官方可以借助社区的力量为每个编程语言/框架提供定制的通用部署脚本（Buildpack）。在 Heroku 上，我们可以通过在代码库根目录下的 .env 文件为 Buildpacks 环境设置一些必要的环境变量。 Dokku 为了提供 Heroku 一样的体验，默认支持通过 Buildpacks 编译、部署，也支持 .env 文件里的环境变量。
+
+当代码库根目录下存在一个 .env 文件时，Dokku 会在部署这个应用的时候将 .env 里的配置添加到环境变量中去；而在应用运行时， .env 文件并不会起作用。因此，我们可以将代理设置放在这个文件中，达到在部署时代理，运行时无代理的效果。
+
+1. 在应用根目录创建一个 .env 文件，其中包含：
+
+#+begin_src awk
+http_proxy=http://172.17.0.1:8123
+https_proxy=http://172.17.0.1:8123
+#+end_src
+
+   （8123 时 Privoxy 暴露的 HTTP 代理端口）
+
+2. commit .env 文件之后，再通过 git push 部署应用，部署阶段的网络请求就会通过 Privoxy-Shadowsocks 代理发出了。
+
+这里用到了两个机制：
+
+1. [[https://github.com/dokku/dokku/blob/master/docs/configuration/environment-variables.md][Dokku 对 Heroku 的   文件支持]]
+2. [[https://docs.docker.com/network/network-tutorial-standalone/][Docker 默认在容器中使用 172.17.0.1 作为宿主机的 IP 地址]]
+
+   Dokku 上的应用实际上都是运行在单独的 Docker 容器中。因此应用部署环境下的 127.0.0.1 或者 localhost 访问到的都是 Docker 容器本身，不是宿主机。我们需要通过 Docker 自身的网络桥接机制，让部署环境访问到宿主机上的 HTTP 代理服务。
+
+当然，这两个机制都和 Dokku/Docker 的实现细节紧密相连，也并没有详细的文档描述。如果任意一个机制发生了改变，我们的部署都会受到影响。在使用这个方案的时候需要注意这个风险。
+
+* 配置安全组规则打开端口
+
+最后，阿里云的安全组规则默认并没有开放 Web 服务默认使用的 80 端口。我们需要额外添加一条规则允许 80 端口的接入（可参考：[[https://yq.aliyun.com/articles/87135][阿里云服务器公网ip无法访问解决办法-云栖社区-阿里云]]）
+
+* 小结
+
+这样一来，我们就拥有了一个可以快速部署 Web 应用的私有平台。只需要一个 git push 命令，就能将代码顺利地部署到生产服务器上。
+
+希望这篇文章能帮助你开始使用 Dokku。如果你在配置 Dokku 的过程中遇到了其他任何问题，欢迎留言，希望我也能帮忙解答。
+
+* Footnotes
+[fn:1]
+
+在我使用了 Dokku 之后发现了 [[https://www.21yunbox.com/][21云盒子]]，但是还没机会尝试。
+
+[fn:2]
+
+这里不推荐使用 Polipo。因为它已经不再维护了。

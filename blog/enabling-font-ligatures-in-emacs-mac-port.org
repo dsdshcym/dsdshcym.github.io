@@ -1,0 +1,73 @@
+#+TITLE: Enabling Font Ligatures in emacs-mac-port
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2017-11-10]
+#+URI:         blog/2017/11/10/enabling-font-ligatures-in-emacs-mac-port/index.html
+#+TAGS:        macOS, Emacs, Font
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+* Iosevka
+
+Several months ago, I switched to using Iosevka[fn:1] as my main font for both editor and terminal.
+
+It's an awesome font with reasonable defaults while providing the same customizability as Input[fn:2].
+
+Additionally, it also supports font ligatures[fn:3] (while Input removed its support for ligatures in its latest version[fn:4])
+
+* Cause
+
+I first noticed this feature in a talk given by Dave Thomas[fn:5]. In this talk, his Elixir code looked better in Emacs with the font ligature feature enabled. (Though, he's using a different font, FiraCode maybe)
+
+[[https://i.loli.net/2017/11/10/5a0576e364c10.jpg]]
+
+So I tried to get the same effect in my Emacs.
+
+* How
+
+Then I found this simple function to enable this feature for emacs-mac-port[fn:6]:
+
+#+begin_src emacslisp
+(mac-auto-operator-composition-mode t)
+#+end_src
+
+Unfortunately, this function does not exist in GNU Emacs for macOS. Because GNU Emacs doesn't support font ligature yet. (You can kind of enable it via prettify-symbol-mode[fn:7])
+
+(P.S. actually, I've tried to move back to GNU Emacs for a lightly better performance. But I found I kinda missed this font ligature feature and other nicer integration with the whole macOS system. And the performance of emacs-mac-port got better and better through Emacs 25 and Emacs 26.0.90. So I think I'm gonna stick with emacs-mac-port for a while.)
+
+The result looks like this:
+
+[[https://i.loli.net/2017/11/10/5a057968d79e1.jpg]]
+
+Hope this post can help you! And you can find more information below:
+
+- [[https://github.com/tonsky/FiraCode/issues/42][What would it take to get ligatures working in emacs? · Issue #42 · tonsky/FiraCode]]
+- [[https://github.com/be5invis/Iosevka/issues/56#issuecomment-291626486][Programming Ligatures (like in Fira Code—or PragmataPro) · Issue #56 · be5invis/Iosevka]]
+
+* Footnotes
+[fn:1]
+
+[[https://github.com/be5invis/Iosevka][be5invis/Iosevka: Spatial efficient monospace font family for programming. Built from code.]]
+
+[fn:2]
+
+[[http://input.fontbureau.com/][Input: Fonts for Code]]
+
+[fn:3]
+
+[[https://en.wikipedia.org/wiki/Typographic_ligature][Typographic ligature - Wikipedia]]
+
+[fn:4]
+
+[[http://input.fontbureau.com/changelog/][http://input.fontbureau.com/changelog/]]
+
+[fn:5]
+
+[[https://www.youtube.com/watch?v=fTYkbPBOt1o][ElixirDaze 2017- Yesterday's Cargo by Dave Thomas - YouTube]]
+
+[fn:6]
+
+[[https://bitbucket.org/mituharu/emacs-mac/][mituharu / emacs-mac — Bitbucket]]
+
+[fn:7]
+
+[[https://gist.github.com/mrkgnao/49c7480e1df42405a36b7ab09fe87f3d][Render Iosevka ligatures to Private Use Area glyphs, for Emacs]]

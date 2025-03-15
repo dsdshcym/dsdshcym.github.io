@@ -1,0 +1,69 @@
+#+TITLE: Life Changing Tools (Book Review: Nonviolent Communication)
+#+AUTHOR:      Yiming Chen
+#+EMAIL:       me@yiming.dev
+#+DATE:        [2019-06-24]
+#+URI:         blog/2019/06/24/life-changing-tools-book-review-non-violent-communication/index.html
+#+TAGS:        Communication, Book Review
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:nil
+
+
+I've thought myself as a person with empathy for a long time. I always try to put myself in others' shoes. No matter it's a normal chat or a heated debate, I would try my best to understand others' incentives. And when writing code or documentations, I would imagine that I am the reader and review it from his perspective.
+
+But communicating with others still feels hard (if not the hardest) to me. At first, I found it hard to receive feedback in code reviews or 1-on-1 meetings. Then, I found it even harder to give feedback in code reviews or 1-on-1 meetings. And even in my daily life, there are still conflicts between me and others, especially between me and people I love.
+
+Often, I can understand their points. But then immediately, I feel powerless because I don't know what to do next. I often find myself choosing to be silent and accepting others' opinion as much as I can. This works but I can feel the hurt this not-so-optimal behavior brings me.
+
+Then I started wondering, How to help them understand me better? How to feel less defensive when receiving useful feedback? How to communicate in a peaceful way?
+
+Thankfully, this book helped me answer these questions. I can't wait to apply the methodology from this book to my life and see what changes it can bring to it.
+
+* [[https://dsdshcym.github.io/clipping/2019/05/08/clippings-from-nonviolent-communication/#org502ef4c][The NVC Process]]
+
+The NVC Process is actually very easy to understand and remember.
+
+First, there are four fundamental components of NVC:
+
+Observations
+    The concrete actions we observe that affect our well-being
+Feelings
+    How we feel in relation to what we observe
+Needs
+    The needs, values, desires, etc. that create our feelings
+Requests
+    The concrete actions we request in order to enrich our lives
+
+Then, we only need to focus on these four components in our communications.
+
+1. expressing honestly through the four components
+2. receiving empathically through the four components
+
+Sounds simple, right? But I only realized how violent my daily communications were after reading through this book.
+
+I often mix my observations with judgments. I ignore my own feelings. I suppress my needs in favor of others' requests. I give obscure requests or even no requests.
+
+After reading this book, I can recognize these anti-patterns and work on fixing them. So this book gave me hope and a way to become better at communication in the future.
+
+* Applying NVC in Real Life
+
+That being said, recognizing anti-patterns is just the first step. Applying NVC in our real life is still hard.
+
+It's extremely hard to not give judgments. Even [[https://dsdshcym.github.io/clipping/2019/05/08/clippings-from-nonviolent-communication/#org0bddfa1][compliments are often
+judgments]]. By complimenting others with evaluations, we are basically saying they are good and if they don't continue doing so, they will become bad.
+
+In a recent episode of the popular TV show Black Mirror S05 E02 Smithereens, the experts gave the CEO these two pieces of communication advice for a crucial conversation:
+
+1. let him know you're listening
+2. empathize with his position
+
+But even equipped with them, the CEO still can't change the conversation to a nonviolent one. Then they fallback to violent communication patterns again.
+
+This example demonstrates the importance of practice for learning nonviolent communications.
+
+And I'm learning this lesson the hard way now. Even after reading these books about how to communicate well, I still find it hard. There are two specific reasons for me:
+
+1. These books are all in English. But I mainly use Chinese for my daily communication. This language gap makes my attempts look more awkward. I guess I need to get used to it and learn how to apply the techniques in a Chinese environment.
+2. It's hard for me to break the existing communication patterns between me and people that are more familiar and important to me. I found it was easier to use these techniques on co-workers or even strangers. To break the bad habits, I need to try harder.
+
+* Read this book now
+
+I believe this book will bring a lot of positive changes to my life. And I would recommend you to read this book immediately. Hopefully you will also find answers for the communication problems you have.
